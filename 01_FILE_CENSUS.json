@@ -374,8 +374,8 @@
       "sha": "46353162627210af65296c6dee62e422a3400373",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0031 note](02_FILE_NOTES/MP-0031.md)"
     },
     {
       "mp_id": "MP-0032",
@@ -386,8 +386,8 @@
       "sha": "706365ca56fc2c5253fe407a72c494c51cb91c2e",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0032 note](02_FILE_NOTES/MP-0032.md)"
     },
     {
       "mp_id": "MP-0033",
