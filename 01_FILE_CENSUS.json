@@ -998,8 +998,8 @@
       "sha": "a578dd0a34ad0a8886abe7e7642b100106ba86d6",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0083 note](02_FILE_NOTES/MP-0083.md)"
     },
     {
       "mp_id": "MP-0084",
