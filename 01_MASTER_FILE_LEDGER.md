@@ -34,8 +34,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0016 | .changeset/wait-what-context-map.md | 100644/blob | 191 | edaa4d6a86c16095fef8e18f8214487627a9cba2 | changeset | READ | [MP-0016 note](02_FILE_NOTES/MP-0016.md) |  |  | LOW |  |
 | MP-0017 | .claude-plugin/marketplace.json | 100644/blob | 605 | 1f868cee17708d691ad71d963e847dad209d0c07 | distribution | READ | [MP-0017 note](02_FILE_NOTES/MP-0017.md) |  |  | HIGH |  |
 | MP-0018 | .claude-plugin/plugin.json | 100644/blob | 1636 | 0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d | distribution | READ | [MP-0018 note](02_FILE_NOTES/MP-0018.md) |  |  | HIGH |  |
-| MP-0019 | .github/workflows/release.yml | 100644/blob | 780 | b503eff7b073afe8a08d0b25cc31efca78caea02 | ci-release | UNREAD |  |  |  | HIGH |  |
-| MP-0020 | .gitignore | 100644/blob | 21 | 98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf | root | UNREAD |  |  |  | LOW |  |
+| MP-0019 | .github/workflows/release.yml | 100644/blob | 780 | b503eff7b073afe8a08d0b25cc31efca78caea02 | ci-release | READ | [MP-0019 note](02_FILE_NOTES/MP-0019.md) |  |  | HIGH |  |
+| MP-0020 | .gitignore | 100644/blob | 21 | 98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf | root | READ | [MP-0020 note](02_FILE_NOTES/MP-0020.md) |  |  | LOW |  |
 | MP-0021 | .out-of-scope/mainstream-issue-trackers-only.md | 100644/blob | 1573 | 72f09fe5a9cb64bd55a46d45e116cd538d48fe20 | negative-memory | UNREAD |  |  |  | LOW |  |
 | MP-0022 | .out-of-scope/question-limits.md | 100644/blob | 1259 | 5a3a7f677027a48a9e2a08df7c6d601b322f38da | negative-memory | UNREAD |  |  |  | LOW |  |
 | MP-0023 | .out-of-scope/setup-skill-verify-mode.md | 100644/blob | 1125 | 418dba12c17b2cd77e0b3161b107c624b7b2ee97 | negative-memory | UNREAD |  |  |  | LOW |  |

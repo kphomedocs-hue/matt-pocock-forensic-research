@@ -230,8 +230,8 @@
       "sha": "b503eff7b073afe8a08d0b25cc31efca78caea02",
       "category": "ci-release",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0019 note](02_FILE_NOTES/MP-0019.md)"
     },
     {
       "mp_id": "MP-0020",
@@ -242,8 +242,8 @@
       "sha": "98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0020 note](02_FILE_NOTES/MP-0020.md)"
     },
     {
       "mp_id": "MP-0021",
