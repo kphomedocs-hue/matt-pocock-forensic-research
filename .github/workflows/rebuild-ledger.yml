@@ -12,10 +12,10 @@ on:
 permissions:
   contents: write
 
-# Generated-file workflows share one write lane. Connector/API writes can still
-# land while a run is active, so the push step also rebases and retries.
+# Keep repeated ledger rebuilds ordered without cancelling other generated-file
+# workflows. Cross-workflow write races are handled by the push/rebase retry.
 concurrency:
-  group: forensic-generated-main-writes
+  group: forensic-rebuild-ledger
   cancel-in-progress: false
 
 jobs:
