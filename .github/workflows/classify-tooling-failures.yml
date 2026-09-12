@@ -25,6 +25,9 @@ concurrency:
 
 jobs:
   classify:
+    # Successful upstream runs cannot add a failure/cancellation incident, so
+    # only refresh on a non-success completion. Push/manual runs still execute.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
@@ -36,41 +39,45 @@ jobs:
           python-version: '3.12'
       - name: Sync latest main before generation
         run: git pull --ff-only origin main
-      - name: Classify failed runs
+      - name: Classify failed and cancelled runs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/classify_failed_workflows.py
-      - name: Validate failure ledger outputs
+      - name: Validate tooling incident ledger outputs
         run: |
           test -s 00_TOOLING_FAILURE_LEDGER.json
           test -s 00_TOOLING_FAILURE_LEDGER.md
           python - <<'PY'
           import json
           d = json.load(open('00_TOOLING_FAILURE_LEDGER.json', encoding='utf-8'))
-          assert d['classification_version'] == 2, d.get('classification_version')
-          assert d['failed_job_entry_count'] >= d['failed_run_count']
-          assert sum(d['classification_counts'].values()) == d['failed_job_entry_count']
-          assert sum(d['impact_counts'].values()) == d['failed_job_entry_count']
+          assert d['classification_version'] == 3, d.get('classification_version')
+          assert d['incident_run_count'] == d['failed_run_count'] + d['cancelled_run_count']
+          assert d['incident_entry_count'] >= d['incident_run_count']
+          assert sum(d['classification_counts'].values()) == d['incident_entry_count']
+          assert sum(d['impact_counts'].values()) == d['incident_entry_count']
           assert d['unknown_entries'] == 0, d['unknown_entries']
+          assert d['unresolved_entries'] == 0, d['unresolved_entries']
           print('failed_runs=', d['failed_run_count'])
+          print('cancelled_runs=', d['cancelled_run_count'])
           print('classifications=', d['classification_counts'])
           print('unknown_entries=', d['unknown_entries'])
+          print('unresolved_entries=', d['unresolved_entries'])
           PY
-      - name: Commit failure ledger
+      - name: Commit tooling incident ledger
         run: |
           if [[ -z "$(git status --porcelain -- 00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md)" ]]; then
-            echo "Failure ledger already current"
+            echo "Tooling incident ledger already current"
             exit 0
           fi
           git config user.name forensic-tooling-bot
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add 00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md
-          git commit -m "tooling: rebuild historical failure ledger"
+          git commit -m "tooling: rebuild historical failure and cancellation ledger"
           for attempt in 1 2 3 4 5; do
             if git push; then exit 0; fi
             echo "Push race on attempt $attempt; rebasing onto latest main"
             git fetch origin main
             git rebase origin/main
           done
-          echo "Failed to publish failure ledger after retries" >&2
+          echo "Failed to publish tooling incident ledger after retries" >&2
           exit 1
