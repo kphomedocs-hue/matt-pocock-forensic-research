@@ -167,8 +167,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0149 | skills/productivity/grilling/agents/openai.yaml | 100644/blob | 113 | ddbdb96139c0c1dfe6bca698f39d0465674b8a39 | codex-metadata | READ | [MP-0149 note](02_FILE_NOTES/MP-0149.md) |  |  | MEDIUM |  |
 | MP-0150 | skills/productivity/handoff/SKILL.md | 100644/blob | 894 | 2eb98a51b97bb5bac461a26ad14828eeac827909 | skill | READ | [MP-0150 note](02_FILE_NOTES/MP-0150.md) |  |  | MEDIUM |  |
 | MP-0151 | skills/productivity/handoff/agents/openai.yaml | 100644/blob | 141 | 6e1d8da121beceddc2f9ec7fa8714c1d914dd11a | codex-metadata | READ | [MP-0151 note](02_FILE_NOTES/MP-0151.md) |  |  | MEDIUM |  |
-| MP-0152 | skills/productivity/teach/GLOSSARY-FORMAT.md | 100644/blob | 2122 | fdd7e366ad9760588b28981e42b3d3b561e56aca | skill-support | UNREAD |  |  |  | LOW |  |
-| MP-0153 | skills/productivity/teach/LEARNING-RECORD-FORMAT.md | 100644/blob | 2747 | 953c61422776b47612c3c945920358ad7b5daee7 | skill-support | UNREAD |  |  |  | LOW |  |
+| MP-0152 | skills/productivity/teach/GLOSSARY-FORMAT.md | 100644/blob | 2122 | fdd7e366ad9760588b28981e42b3d3b561e56aca | skill-support | READ | [MP-0152 note](02_FILE_NOTES/MP-0152.md) |  |  | LOW |  |
+| MP-0153 | skills/productivity/teach/LEARNING-RECORD-FORMAT.md | 100644/blob | 2747 | 953c61422776b47612c3c945920358ad7b5daee7 | skill-support | READ | [MP-0153 note](02_FILE_NOTES/MP-0153.md) |  |  | LOW |  |
 | MP-0154 | skills/productivity/teach/MISSION-FORMAT.md | 100644/blob | 1540 | 45250bb1bad70988bf381625931df64645e10246 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0155 | skills/productivity/teach/RESOURCES-FORMAT.md | 100644/blob | 1924 | 18b588c8b6f96a50ae2352f264928c643d2782e4 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0156 | skills/productivity/teach/SKILL.md | 100644/blob | 9506 | c679eeccd48ca720c8196e5d9a9e58223abf213b | skill | UNREAD |  |  |  | MEDIUM |  |
