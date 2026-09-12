@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`
 
-Hard integrity errors: **1**
+Hard integrity errors: **0**
 
 Warnings / normalization gaps: **0**
 
@@ -81,7 +81,7 @@ These are normalization measurements, not Phase 2 failures. Existing evidence is
 
 ## Hard errors
 
-- Duplicate current contradiction IDs
+- None.
 
 ## Normalization warnings
 

@@ -4,9 +4,7 @@
     "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
     "physical_files": 164
   },
-  "hard_errors": [
-    "Duplicate current contradiction IDs"
-  ],
+  "hard_errors": [],
   "warnings": [],
   "note_status_counts": {
     "READ": 164
