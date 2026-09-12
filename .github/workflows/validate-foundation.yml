@@ -1,0 +1,59 @@
+name: Validate forensic foundation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '01_FILE_CENSUS.json'
+      - '02_FILE_NOTES/**'
+      - '04_CONTRADICTION_REGISTER.md'
+      - '05_HISTORY_LEDGER.md'
+      - 'scripts/validate_foundation.py'
+      - '.github/workflows/validate-foundation.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-generated-main-writes
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before validation
+        run: git pull --ff-only origin main
+      - name: Validate foundation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_foundation.py
+      - name: Validate generated report files
+        run: |
+          test -s 00_FOUNDATION_INTEGRITY.json
+          test -s 00_FOUNDATION_INTEGRITY.md
+      - name: Commit generated foundation report
+        run: |
+          if [[ -z "$(git status --porcelain -- 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)" ]]; then
+            echo "Foundation report already current"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md
+          git commit -m "foundation: refresh integrity report"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Failed to publish foundation report after 5 attempts" >&2
+          exit 1
