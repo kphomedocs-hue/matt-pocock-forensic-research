@@ -5,57 +5,41 @@
     "physical_files": 164
   },
   "hard_errors": [
-    "02_FILE_NOTES/MP-0021.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0021.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0022.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0022.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0023.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0023.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0024.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0024.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0025.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0025.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0026.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0026.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0027.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0027.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0028.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0028.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0029.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0029.md: blob SHA missing/mismatch against census",
-    "02_FILE_NOTES/MP-0030.md: frozen commit missing/mismatch",
-    "02_FILE_NOTES/MP-0030.md: blob SHA missing/mismatch against census"
+    "02_FILE_NOTES/MP-0024.md: frozen commit missing/mismatch"
   ],
   "warnings": [
-    "02_FILE_NOTES/MP-0021.md: category line missing",
-    "02_FILE_NOTES/MP-0022.md: category line missing",
-    "02_FILE_NOTES/MP-0023.md: category line missing",
-    "02_FILE_NOTES/MP-0024.md: category line missing",
-    "02_FILE_NOTES/MP-0025.md: category line missing",
-    "02_FILE_NOTES/MP-0026.md: category line missing",
-    "02_FILE_NOTES/MP-0027.md: category line missing",
-    "02_FILE_NOTES/MP-0028.md: category line missing",
-    "02_FILE_NOTES/MP-0029.md: category line missing",
-    "02_FILE_NOTES/MP-0030.md: category line missing",
-    "02_FILE_NOTES/MP-0031.md: category line missing",
-    "02_FILE_NOTES/MP-0032.md: category line missing",
-    "02_FILE_NOTES/MP-0033.md: category line missing",
-    "02_FILE_NOTES/MP-0034.md: category line missing",
-    "02_FILE_NOTES/MP-0035.md: category line missing",
-    "02_FILE_NOTES/MP-0036.md: category line missing",
-    "02_FILE_NOTES/MP-0037.md: category line missing",
-    "02_FILE_NOTES/MP-0038.md: category line missing",
-    "02_FILE_NOTES/MP-0039.md: category line missing",
-    "02_FILE_NOTES/MP-0040.md: category line missing",
-    "Could not mechanically confirm all expected link buckets from script text; detected ['in-progress', 'misc', 'deprecated']"
+    "02_FILE_NOTES/MP-0021.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0022.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0023.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0024.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0025.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0026.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0027.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0028.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0029.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0030.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0031.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0032.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0033.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0034.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0035.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0036.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0037.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0038.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0039.md: category line missing; category remains authoritative in census",
+    "02_FILE_NOTES/MP-0040.md: category line missing; category remains authoritative in census"
   ],
   "note_status_counts": {
     "READ": 164
   },
+  "note_provenance_styles": {
+    "direct": 154,
+    "evidence": 9
+  },
   "note_schema_coverage": {
     "read_evidence": 144,
-    "source_facts": 154,
-    "connections": 20,
+    "source_facts": 162,
+    "connections": 27,
     "unresolved": 20
   },
   "note_count": 164,
@@ -378,7 +362,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0002",
@@ -389,7 +374,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0003",
@@ -400,7 +386,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0004",
@@ -411,7 +398,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0005",
@@ -422,7 +410,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0006",
@@ -433,7 +422,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0007",
@@ -444,7 +434,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0008",
@@ -455,7 +446,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0009",
@@ -466,7 +458,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0010",
@@ -477,7 +470,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0011",
@@ -488,7 +482,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0012",
@@ -499,7 +494,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0013",
@@ -510,7 +506,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0014",
@@ -521,7 +518,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0015",
@@ -532,7 +530,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0016",
@@ -543,7 +542,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0017",
@@ -554,7 +554,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0018",
@@ -565,7 +566,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0019",
@@ -576,7 +578,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0020",
@@ -587,7 +590,8 @@
         "source_facts": true,
         "connections": true,
         "unresolved": true
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0021",
@@ -595,10 +599,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0022",
@@ -606,10 +611,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0023",
@@ -617,10 +623,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0024",
@@ -631,7 +638,8 @@
         "source_facts": false,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0025",
@@ -639,10 +647,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
+        "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0026",
@@ -650,10 +659,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0027",
@@ -661,10 +671,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0028",
@@ -675,7 +686,8 @@
         "source_facts": false,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0029",
@@ -683,10 +695,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0030",
@@ -694,10 +707,11 @@
       "status": "READ",
       "sections": {
         "read_evidence": false,
-        "source_facts": false,
-        "connections": false,
+        "source_facts": true,
+        "connections": true,
         "unresolved": false
-      }
+      },
+      "provenance_style": "evidence"
     },
     {
       "mp_id": "MP-0031",
@@ -708,7 +722,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0032",
@@ -719,7 +734,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0033",
@@ -730,7 +746,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0034",
@@ -741,7 +758,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0035",
@@ -752,7 +770,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0036",
@@ -763,7 +782,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0037",
@@ -774,7 +794,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0038",
@@ -785,7 +806,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0039",
@@ -796,7 +818,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0040",
@@ -807,7 +830,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0041",
@@ -818,7 +842,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0042",
@@ -829,7 +854,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0043",
@@ -840,7 +866,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0044",
@@ -851,7 +878,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0045",
@@ -862,7 +890,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0046",
@@ -873,7 +902,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0047",
@@ -884,7 +914,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0048",
@@ -895,7 +926,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0049",
@@ -906,7 +938,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0050",
@@ -917,7 +950,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0051",
@@ -928,7 +962,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0052",
@@ -939,7 +974,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0053",
@@ -950,7 +986,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0054",
@@ -961,7 +998,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0055",
@@ -972,7 +1010,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0056",
@@ -983,7 +1022,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0057",
@@ -994,7 +1034,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0058",
@@ -1005,7 +1046,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0059",
@@ -1016,7 +1058,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0060",
@@ -1027,7 +1070,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0061",
@@ -1038,7 +1082,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0062",
@@ -1049,7 +1094,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0063",
@@ -1060,7 +1106,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0064",
@@ -1071,7 +1118,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0065",
@@ -1082,7 +1130,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0066",
@@ -1093,7 +1142,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0067",
@@ -1104,7 +1154,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0068",
@@ -1115,7 +1166,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0069",
@@ -1126,7 +1178,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0070",
@@ -1137,7 +1190,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0071",
@@ -1148,7 +1202,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0072",
@@ -1159,7 +1214,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0073",
@@ -1170,7 +1226,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0074",
@@ -1181,7 +1238,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0075",
@@ -1192,7 +1250,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0076",
@@ -1203,7 +1262,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0077",
@@ -1214,7 +1274,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0078",
@@ -1225,7 +1286,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0079",
@@ -1236,7 +1298,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0080",
@@ -1247,7 +1310,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0081",
@@ -1258,7 +1322,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0082",
@@ -1269,7 +1334,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0083",
@@ -1280,7 +1346,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0084",
@@ -1291,7 +1358,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0085",
@@ -1302,7 +1370,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0086",
@@ -1313,7 +1382,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0087",
@@ -1324,7 +1394,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0088",
@@ -1335,7 +1406,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0089",
@@ -1346,7 +1418,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0090",
@@ -1357,7 +1430,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0091",
@@ -1368,7 +1442,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0092",
@@ -1379,7 +1454,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0093",
@@ -1390,7 +1466,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0094",
@@ -1401,7 +1478,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0095",
@@ -1412,7 +1490,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0096",
@@ -1423,7 +1502,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0097",
@@ -1434,7 +1514,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0098",
@@ -1445,7 +1526,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0099",
@@ -1456,7 +1538,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0100",
@@ -1467,7 +1550,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0101",
@@ -1478,7 +1562,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0102",
@@ -1489,7 +1574,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0103",
@@ -1500,7 +1586,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0104",
@@ -1511,7 +1598,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0105",
@@ -1522,7 +1610,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0106",
@@ -1533,7 +1622,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0107",
@@ -1544,7 +1634,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0108",
@@ -1555,7 +1646,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0109",
@@ -1566,7 +1658,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0110",
@@ -1577,7 +1670,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0111",
@@ -1588,7 +1682,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0112",
@@ -1599,7 +1694,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0113",
@@ -1610,7 +1706,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0114",
@@ -1621,7 +1718,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0115",
@@ -1632,7 +1730,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0116",
@@ -1643,7 +1742,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0117",
@@ -1654,7 +1754,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0118",
@@ -1665,7 +1766,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0119",
@@ -1676,7 +1778,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0120",
@@ -1687,7 +1790,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0121",
@@ -1698,7 +1802,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0122",
@@ -1709,7 +1814,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0123",
@@ -1720,7 +1826,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0124",
@@ -1731,7 +1838,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0125",
@@ -1742,7 +1850,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0126",
@@ -1753,7 +1862,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0127",
@@ -1764,7 +1874,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0128",
@@ -1775,7 +1886,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0129",
@@ -1786,7 +1898,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0130",
@@ -1797,7 +1910,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0131",
@@ -1808,7 +1922,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0132",
@@ -1819,7 +1934,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0133",
@@ -1830,7 +1946,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0134",
@@ -1841,7 +1958,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0135",
@@ -1852,7 +1970,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0136",
@@ -1863,7 +1982,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0137",
@@ -1874,7 +1994,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0138",
@@ -1885,7 +2006,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0139",
@@ -1896,7 +2018,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0140",
@@ -1907,7 +2030,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0141",
@@ -1918,7 +2042,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0142",
@@ -1929,7 +2054,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0143",
@@ -1940,7 +2066,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0144",
@@ -1951,7 +2078,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0145",
@@ -1962,7 +2090,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0146",
@@ -1973,7 +2102,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0147",
@@ -1984,7 +2114,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0148",
@@ -1995,7 +2126,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0149",
@@ -2006,7 +2138,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0150",
@@ -2017,7 +2150,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0151",
@@ -2028,7 +2162,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0152",
@@ -2039,7 +2174,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0153",
@@ -2050,7 +2186,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0154",
@@ -2061,7 +2198,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0155",
@@ -2072,7 +2210,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0156",
@@ -2083,7 +2222,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0157",
@@ -2094,7 +2234,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0158",
@@ -2105,7 +2246,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0159",
@@ -2116,7 +2258,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0160",
@@ -2127,7 +2270,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0161",
@@ -2138,7 +2282,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0162",
@@ -2149,7 +2294,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0163",
@@ -2160,7 +2306,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0164",
@@ -2171,7 +2318,8 @@
         "source_facts": true,
         "connections": false,
         "unresolved": false
-      }
+      },
+      "provenance_style": "direct"
     }
   ]
 }

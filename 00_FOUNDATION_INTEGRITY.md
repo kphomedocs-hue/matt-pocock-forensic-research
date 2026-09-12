@@ -2,15 +2,16 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`
 
-Hard integrity errors: **20**
+Hard integrity errors: **1**
 
-Warnings / normalization gaps: **21**
+Warnings / normalization gaps: **20**
 
 ## Durable provenance
 
 - Census rows: **164 / 164**
 - Durable notes found: **164 / 164**
 - Status counts: `{'READ': 164}`
+- Provenance syntax styles accepted: `{'direct': 154, 'evidence': 9}`
 
 ## Note-schema coverage
 
@@ -19,8 +20,8 @@ These are normalization measurements, not Phase 2 failures. Existing evidence is
 | Recommended field group | Notes containing it | Total |
 |---|---:|---:|
 | read_evidence | 144 | 164 |
-| source_facts | 154 | 164 |
-| connections | 20 | 164 |
+| source_facts | 162 | 164 |
+| connections | 27 | 164 |
 | unresolved | 20 | 164 |
 
 ## Register cross-checks
@@ -80,50 +81,30 @@ These are normalization measurements, not Phase 2 failures. Existing evidence is
 
 ## Hard errors
 
-- 02_FILE_NOTES/MP-0021.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0021.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0022.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0022.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0023.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0023.md: blob SHA missing/mismatch against census
 - 02_FILE_NOTES/MP-0024.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0024.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0025.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0025.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0026.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0026.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0027.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0027.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0028.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0028.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0029.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0029.md: blob SHA missing/mismatch against census
-- 02_FILE_NOTES/MP-0030.md: frozen commit missing/mismatch
-- 02_FILE_NOTES/MP-0030.md: blob SHA missing/mismatch against census
 
 ## Normalization warnings
 
-- 02_FILE_NOTES/MP-0021.md: category line missing
-- 02_FILE_NOTES/MP-0022.md: category line missing
-- 02_FILE_NOTES/MP-0023.md: category line missing
-- 02_FILE_NOTES/MP-0024.md: category line missing
-- 02_FILE_NOTES/MP-0025.md: category line missing
-- 02_FILE_NOTES/MP-0026.md: category line missing
-- 02_FILE_NOTES/MP-0027.md: category line missing
-- 02_FILE_NOTES/MP-0028.md: category line missing
-- 02_FILE_NOTES/MP-0029.md: category line missing
-- 02_FILE_NOTES/MP-0030.md: category line missing
-- 02_FILE_NOTES/MP-0031.md: category line missing
-- 02_FILE_NOTES/MP-0032.md: category line missing
-- 02_FILE_NOTES/MP-0033.md: category line missing
-- 02_FILE_NOTES/MP-0034.md: category line missing
-- 02_FILE_NOTES/MP-0035.md: category line missing
-- 02_FILE_NOTES/MP-0036.md: category line missing
-- 02_FILE_NOTES/MP-0037.md: category line missing
-- 02_FILE_NOTES/MP-0038.md: category line missing
-- 02_FILE_NOTES/MP-0039.md: category line missing
-- 02_FILE_NOTES/MP-0040.md: category line missing
-- Could not mechanically confirm all expected link buckets from script text; detected ['in-progress', 'misc', 'deprecated']
+- 02_FILE_NOTES/MP-0021.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0022.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0023.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0024.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0025.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0026.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0027.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0028.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0029.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0030.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0031.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0032.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0033.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0034.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0035.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0036.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0037.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0038.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0039.md: category line missing; category remains authoritative in census
+- 02_FILE_NOTES/MP-0040.md: category line missing; category remains authoritative in census
 
 ## Gate
 
