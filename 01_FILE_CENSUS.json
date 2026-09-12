@@ -134,8 +134,8 @@
       "sha": "0fc8ee080d9d5b7ed6709af70a5d66a4b65ca5cb",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0011 note](02_FILE_NOTES/MP-0011.md)"
     },
     {
       "mp_id": "MP-0012",
@@ -146,8 +146,8 @@
       "sha": "6cd562fb6a8b46afb9db06756deb76a2bd6688aa",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0012 note](02_FILE_NOTES/MP-0012.md)"
     },
     {
       "mp_id": "MP-0013",
