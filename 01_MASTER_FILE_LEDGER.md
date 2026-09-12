@@ -32,7 +32,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0014 | .changeset/skill-tool-invocation-terminology.md | 100644/blob | 1006 | 153b5564e6ab98f85ddb36988f72a00adfe1a716 | changeset | READ | [MP-0014 note](02_FILE_NOTES/MP-0014.md) |  |  | LOW |  |
 | MP-0015 | .changeset/user-invoked-skill-invocation.md | 100644/blob | 1565 | 18e6a7c38d55a5fb75f3b4bfceb6807e95060032 | changeset | READ | [MP-0015 note](02_FILE_NOTES/MP-0015.md) |  |  | LOW |  |
 | MP-0016 | .changeset/wait-what-context-map.md | 100644/blob | 191 | edaa4d6a86c16095fef8e18f8214487627a9cba2 | changeset | READ | [MP-0016 note](02_FILE_NOTES/MP-0016.md) |  |  | LOW |  |
-| MP-0017 | .claude-plugin/marketplace.json | 100644/blob | 605 | 1f868cee17708d691ad71d963e847dad209d0c07 | distribution | UNREAD |  |  |  | HIGH |  |
+| MP-0017 | .claude-plugin/marketplace.json | 100644/blob | 605 | 1f868cee17708d691ad71d963e847dad209d0c07 | distribution | READ | [MP-0017 note](02_FILE_NOTES/MP-0017.md) |  |  | HIGH |  |
 | MP-0018 | .claude-plugin/plugin.json | 100644/blob | 1636 | 0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d | distribution | UNREAD |  |  |  | HIGH |  |
 | MP-0019 | .github/workflows/release.yml | 100644/blob | 780 | b503eff7b073afe8a08d0b25cc31efca78caea02 | ci-release | UNREAD |  |  |  | HIGH |  |
 | MP-0020 | .gitignore | 100644/blob | 21 | 98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf | root | UNREAD |  |  |  | LOW |  |
