@@ -91,8 +91,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0073 | skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh | 100644/blob | 1316 | 243198464a8401a7ba1d63b3708fa43c3d067665 | skill-executable-config | READ | [MP-0073 note](02_FILE_NOTES/MP-0073.md) |  |  | HIGH |  |
 | MP-0074 | skills/engineering/domain-modeling/ADR-FORMAT.md | 100644/blob | 2733 | d7e61f30a9fd8ca70d9ee68f019c2a9ebf2d13f7 | skill-support | READ | [MP-0074 note](02_FILE_NOTES/MP-0074.md) |  |  | LOW |  |
 | MP-0075 | skills/engineering/domain-modeling/CONTEXT-FORMAT.md | 100644/blob | 2290 | 79bbb32f6fda55758b377c980f72a6cb2b8c670e | skill-support | READ | [MP-0075 note](02_FILE_NOTES/MP-0075.md) |  |  | LOW |  |
-| MP-0076 | skills/engineering/domain-modeling/SKILL.md | 100644/blob | 3331 | 9b97707e19ef1f590aada356f2b3f6bb881f91be | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0077 | skills/engineering/domain-modeling/agents/openai.yaml | 100644/blob | 101 | 7f1522d2f11506ee205275ab7c282aa52366ecf6 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0076 | skills/engineering/domain-modeling/SKILL.md | 100644/blob | 3331 | 9b97707e19ef1f590aada356f2b3f6bb881f91be | skill | READ | [MP-0076 note](02_FILE_NOTES/MP-0076.md) |  |  | MEDIUM |  |
+| MP-0077 | skills/engineering/domain-modeling/agents/openai.yaml | 100644/blob | 101 | 7f1522d2f11506ee205275ab7c282aa52366ecf6 | codex-metadata | READ | [MP-0077 note](02_FILE_NOTES/MP-0077.md) |  |  | MEDIUM |  |
 | MP-0078 | skills/engineering/grill-with-docs/SKILL.md | 100644/blob | 247 | 62b9efb6f991d1b229adee7506962f13ced0c499 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0079 | skills/engineering/grill-with-docs/agents/openai.yaml | 100644/blob | 145 | 5dbe2780a51be3e9b118bd7758a73e54a9384e11 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0080 | skills/engineering/implement/SKILL.md | 100644/blob | 433 | 7a0b11f5f4fe9505ea5c7983c3083ba1bf754f69 | skill | UNREAD |  |  |  | MEDIUM |  |
