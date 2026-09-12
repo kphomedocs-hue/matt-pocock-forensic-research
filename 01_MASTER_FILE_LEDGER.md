@@ -29,7 +29,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0011 | .changeset/grilling-add-hr-between-questions.md | 100644/blob | 169 | 0fc8ee080d9d5b7ed6709af70a5d66a4b65ca5cb | changeset | READ | [MP-0011 note](02_FILE_NOTES/MP-0011.md) |  |  | LOW |  |
 | MP-0012 | .changeset/grilling-remove-em-dashes.md | 100644/blob | 162 | 6cd562fb6a8b46afb9db06756deb76a2bd6688aa | changeset | READ | [MP-0012 note](02_FILE_NOTES/MP-0012.md) |  |  | LOW |  |
 | MP-0013 | .changeset/remove-em-dashes-repo-wide.md | 100644/blob | 350 | a3909afb95f471194fe96430127799bb7e7df5b1 | changeset | READ | [MP-0013 note](02_FILE_NOTES/MP-0013.md) |  |  | LOW |  |
-| MP-0014 | .changeset/skill-tool-invocation-terminology.md | 100644/blob | 1006 | 153b5564e6ab98f85ddb36988f72a00adfe1a716 | changeset | UNREAD |  |  |  | LOW |  |
+| MP-0014 | .changeset/skill-tool-invocation-terminology.md | 100644/blob | 1006 | 153b5564e6ab98f85ddb36988f72a00adfe1a716 | changeset | READ | [MP-0014 note](02_FILE_NOTES/MP-0014.md) |  |  | LOW |  |
 | MP-0015 | .changeset/user-invoked-skill-invocation.md | 100644/blob | 1565 | 18e6a7c38d55a5fb75f3b4bfceb6807e95060032 | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0016 | .changeset/wait-what-context-map.md | 100644/blob | 191 | edaa4d6a86c16095fef8e18f8214487627a9cba2 | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0017 | .claude-plugin/marketplace.json | 100644/blob | 605 | 1f868cee17708d691ad71d963e847dad209d0c07 | distribution | UNREAD |  |  |  | HIGH |  |
