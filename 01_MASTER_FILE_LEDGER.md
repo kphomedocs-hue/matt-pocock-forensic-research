@@ -23,7 +23,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0005 | .agents/writing-docs.md | 100644/blob | 12688 | 68f9216230f2bbafefc985eccf81fcc506c14b3b | governance | READ | [MP-0005 note](02_FILE_NOTES/MP-0005.md) |  |  | MEDIUM |  |
 | MP-0006 | .changeset/README.md | 100644/blob | 512 | 654c6d4750dca19541bd9803371735943bb3fe4e | changeset | READ | [MP-0006 note](02_FILE_NOTES/MP-0006.md) |  |  | LOW |  |
 | MP-0007 | .changeset/add-implement-spec-skill.md | 100644/blob | 450 | 2128b7d4220ed30503e957fe8c8bbcf9b521931d | changeset | READ | [MP-0007 note](02_FILE_NOTES/MP-0007.md) |  |  | LOW |  |
-| MP-0008 | .changeset/config.json | 100644/blob | 380 | 06c7350518b33bdaedd0eae254f75fd887f16963 | changeset | UNREAD |  |  |  | LOW |  |
+| MP-0008 | .changeset/config.json | 100644/blob | 380 | 06c7350518b33bdaedd0eae254f75fd887f16963 | changeset | READ | [MP-0008 note](02_FILE_NOTES/MP-0008.md) |  |  | LOW |  |
 | MP-0009 | .changeset/domain-modeling-trigger-context-adr.md | 100644/blob | 437 | 8ab6722a781dedf4d52456d6a02f83e358e62f1f | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0010 | .changeset/fix-yaml-frontmatter-colons.md | 100644/blob | 387 | 64f830b202aaef799c5dabe2ba53d0ab05f87efa | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0011 | .changeset/grilling-add-hr-between-questions.md | 100644/blob | 169 | 0fc8ee080d9d5b7ed6709af70a5d66a4b65ca5cb | changeset | UNREAD |  |  |  | LOW |  |
