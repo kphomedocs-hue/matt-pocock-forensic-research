@@ -1,0 +1,62 @@
+name: Classify tooling failures
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/classify_failed_workflows.py'
+      - '.github/workflows/classify-tooling-failures.yml'
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: forensic-generated-main-writes
+  cancel-in-progress: false
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
+      - name: Classify failed runs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/classify_failed_workflows.py
+      - name: Validate failure ledger outputs
+        run: |
+          test -s 00_TOOLING_FAILURE_LEDGER.json
+          test -s 00_TOOLING_FAILURE_LEDGER.md
+          python - <<'PY'
+          import json
+          d=json.load(open('00_TOOLING_FAILURE_LEDGER.json',encoding='utf-8'))
+          assert d['failed_run_count'] >= 71, d['failed_run_count']
+          assert d['failed_job_entry_count'] >= d['failed_run_count']
+          print(d['classification_counts'])
+          print('unknown_entries=', d['unknown_entries'])
+          PY
+      - name: Commit failure ledger
+        run: |
+          if [[ -z "$(git status --porcelain -- 00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md)" ]]; then
+            echo "Failure ledger already current"
+            exit 0
+          fi
+          git config user.name forensic-tooling-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md
+          git commit -m "tooling: rebuild historical failure ledger"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Failed to publish failure ledger after retries" >&2
+          exit 1
