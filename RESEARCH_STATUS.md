@@ -11,16 +11,18 @@ Physical denominator: **164 blobs/files**
 
 ## Current phase position
 
-Primary phase focus: **Phase 1 — Census & Ledger**, while preserving already-collected evidence from later phases.
+Primary phase focus: **Phase 2 — Full Physical Read**.
 
-Reason: thematic research started before a durable row-by-row physical ledger existed. The recovery plan requires rebuilding the exact 164-file census in this repository before any completion percentages become authoritative.
+Phase 1 is complete. The exact frozen recursive tree is now materialized in `01_MASTER_FILE_LEDGER.md` and `01_FILE_CENSUS.json`, generated deterministically from the Git tree by `scripts/build_master_ledger.py`. The workflow `.github/workflows/rebuild-ledger.yml` validates 164 unique blobs, 164 unique paths, 164 unique MP-IDs, and rejects truncated source trees.
+
+The Phase 2 ledger baseline is intentionally conservative: all rows begin `UNREAD`. Prior chat reading does not promote status automatically. A row moves to `READ` only after its full frozen contents are re-inspected and durable evidence is recorded in this repository.
 
 ## Phase status
 
 | Phase | Status | Gate state |
 |---|---|---|
-| 1. Census & Ledger | IN PROGRESS | 164 denominator confirmed; row-by-row MP-ID ledger not yet populated. |
-| 2. Full Physical Read | IN PROGRESS / evidence accumulated | Many files freshly read, but exact READ count is not authoritative until ledger reconciliation. |
+| 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
+| 2. Full Physical Read | **IN PROGRESS** | Starting conservative queue: 164 UNREAD. Read status will be promoted only from durable evidence. |
 | 3. Connection Mapping | IN PROGRESS / evidence accumulated | Several operative/reference relationships traced; exhaustive graph not complete. |
 | 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified. |
 | 5. History | IN PROGRESS | Root CHANGELOG fully read; several high-impact PRs/commits traced. |
@@ -30,23 +32,25 @@ Reason: thematic research started before a durable row-by-row physical ledger ex
 | 9. Red-Team Verification | NOT STARTED formally | Individual falsification checks exist, but no systematic red-team pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Preliminary synthesis exists but is not final. |
 
-## Exact counts that are authoritative now
+## Authoritative counts
 
 - Physical blobs/files: **164**
+- Ledger rows: **164**
 - Current SKILL.md files: **37**
 - Promoted skills: **25**
 - Local link skill set: **33**
 - Promoted invocation split: **14 user-invoked / 11 model-invoked**
+- Phase 2 conservative baseline: **164 UNREAD / 0 READ / 0 CONNECTIONS TRACED / 0 VERIFIED**
 
-No exact READ/VERIFIED percentage is authoritative yet.
+The Phase 2 counts will change only when the durable ledger is updated.
 
 ## Immediate next execution steps
 
-1. Re-fetch frozen recursive tree if needed and write all 164 rows into `01_MASTER_FILE_LEDGER.md` with MP-IDs in deterministic path order.
-2. Assign only conservative statuses based on durable evidence.
-3. Derive exact UNREAD/RECONCILE queue.
-4. Continue physical read burn-down in deterministic order.
-5. In parallel only when directly relevant, update claim/contradiction/history registers.
+1. Read files in deterministic MP-ID order from `MP-0001` onward.
+2. For each file, inspect complete frozen contents; use fixed line windows when responses truncate.
+3. Store a durable per-file note under `02_FILE_NOTES/` containing the blob SHA, read evidence, observations, references, unresolved questions, and any claim/contradiction IDs created.
+4. Promote the corresponding ledger row only after the note exists.
+5. Continue until `UNREAD = 0`.
 6. Do not return to broad KP recommendations until source gates are satisfied.
 
 ## Resume instruction
