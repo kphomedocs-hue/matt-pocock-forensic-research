@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forensic-generated-main-writes
+  group: forensic-classify-tooling-failures
   cancel-in-progress: false
 
 jobs:
