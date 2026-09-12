@@ -155,11 +155,11 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0137 | skills/misc/git-guardrails-claude-code/agents/openai.yaml | 100644/blob | 112 | 3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1 | codex-metadata | READ | [MP-0137 note](02_FILE_NOTES/MP-0137.md) |  |  | MEDIUM |  |
 | MP-0138 | skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh | 100755/blob | 507 | c40b59cb47880fc9da8fe4179bd742f51f09d17d | skill-executable-config | READ | [MP-0138 note](02_FILE_NOTES/MP-0138.md) |  |  | HIGH |  |
 | MP-0139 | skills/misc/migrate-to-shoehorn/SKILL.md | 100644/blob | 2795 | ae4f965e204fc93cedbc4e2c306e92829d93f800 | skill | READ | [MP-0139 note](02_FILE_NOTES/MP-0139.md) |  |  | MEDIUM |  |
-| MP-0140 | skills/misc/migrate-to-shoehorn/agents/openai.yaml | 100644/blob | 110 | 3bd79ee2b502075c6d1fe40e6fe98f4fe3f3c5f5 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0141 | skills/misc/scaffold-exercises/SKILL.md | 100644/blob | 3589 | d87df28e7d8abb4e57ecc6e47d71c274d16054c7 | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0142 | skills/misc/scaffold-exercises/agents/openai.yaml | 100644/blob | 108 | 963723a58973effa256cbfe0f23a7bcc03a374b8 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0143 | skills/misc/setup-pre-commit/SKILL.md | 100644/blob | 2258 | 1b9708168263067adb4684d06ebb8f4ccfe9682c | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0144 | skills/misc/setup-pre-commit/agents/openai.yaml | 100644/blob | 99 | e5a1c63df9e0703893cdad799bd5e2a6b5e6939d | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0140 | skills/misc/migrate-to-shoehorn/agents/openai.yaml | 100644/blob | 110 | 3bd79ee2b502075c6d1fe40e6fe98f4fe3f3c5f5 | codex-metadata | READ | [MP-0140 note](02_FILE_NOTES/MP-0140.md) |  |  | MEDIUM |  |
+| MP-0141 | skills/misc/scaffold-exercises/SKILL.md | 100644/blob | 3589 | d87df28e7d8abb4e57ecc6e47d71c274d16054c7 | skill | READ | [MP-0141 note](02_FILE_NOTES/MP-0141.md) |  |  | MEDIUM |  |
+| MP-0142 | skills/misc/scaffold-exercises/agents/openai.yaml | 100644/blob | 108 | 963723a58973effa256cbfe0f23a7bcc03a374b8 | codex-metadata | READ | [MP-0142 note](02_FILE_NOTES/MP-0142.md) |  |  | MEDIUM |  |
+| MP-0143 | skills/misc/setup-pre-commit/SKILL.md | 100644/blob | 2258 | 1b9708168263067adb4684d06ebb8f4ccfe9682c | skill | READ | [MP-0143 note](02_FILE_NOTES/MP-0143.md) |  |  | MEDIUM |  |
+| MP-0144 | skills/misc/setup-pre-commit/agents/openai.yaml | 100644/blob | 99 | e5a1c63df9e0703893cdad799bd5e2a6b5e6939d | codex-metadata | READ | [MP-0144 note](02_FILE_NOTES/MP-0144.md) |  |  | MEDIUM |  |
 | MP-0145 | skills/productivity/README.md | 100644/blob | 1480 | 0ac94ab2de3dfa98639c2cc17c12a291f4924f54 | bucket-docs | UNREAD |  |  |  | LOW |  |
 | MP-0146 | skills/productivity/grill-me/SKILL.md | 100644/blob | 157 | 3947ff9c4ad980d14fc07fccbf659d47c114e81d | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0147 | skills/productivity/grill-me/agents/openai.yaml | 100644/blob | 137 | 4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
