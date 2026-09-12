@@ -842,8 +842,8 @@
       "sha": "3180715edb37f6e96bec42f92f00169faa8886ef",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0070 note](02_FILE_NOTES/MP-0070.md)"
     },
     {
       "mp_id": "MP-0071",

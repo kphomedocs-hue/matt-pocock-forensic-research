@@ -85,7 +85,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0067 | skills/engineering/codebase-design/DEEPENING.md | 100644/blob | 2553 | cd94075cfd754d147555c5d747a16431ed4c7dd8 | skill-support | READ | [MP-0067 note](02_FILE_NOTES/MP-0067.md) |  |  | LOW |  |
 | MP-0068 | skills/engineering/codebase-design/DESIGN-IT-TWICE.md | 100644/blob | 2664 | 7edc861a31b1b219b933af18079f66b564c5de67 | skill-support | READ | [MP-0068 note](02_FILE_NOTES/MP-0068.md) |  |  | LOW |  |
 | MP-0069 | skills/engineering/codebase-design/SKILL.md | 100644/blob | 6446 | 3f63c8146dd2604b419c929e9876b90c30d410e9 | skill | READ | [MP-0069 note](02_FILE_NOTES/MP-0069.md) |  |  | MEDIUM |  |
-| MP-0070 | skills/engineering/codebase-design/agents/openai.yaml | 100644/blob | 102 | 3180715edb37f6e96bec42f92f00169faa8886ef | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0070 | skills/engineering/codebase-design/agents/openai.yaml | 100644/blob | 102 | 3180715edb37f6e96bec42f92f00169faa8886ef | codex-metadata | READ | [MP-0070 note](02_FILE_NOTES/MP-0070.md) |  |  | MEDIUM |  |
 | MP-0071 | skills/engineering/diagnosing-bugs/SKILL.md | 100644/blob | 8529 | 061c25a524acaa93d4534e9e08a793c0a5fe45fd | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0072 | skills/engineering/diagnosing-bugs/agents/openai.yaml | 100644/blob | 103 | a13a755a77634ce61a649a3a0d905a66d3865b35 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0073 | skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh | 100644/blob | 1316 | 243198464a8401a7ba1d63b3708fa43c3d067665 | skill-executable-config | UNREAD |  |  |  | HIGH |  |
