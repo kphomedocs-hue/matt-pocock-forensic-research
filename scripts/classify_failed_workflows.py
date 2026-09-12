@@ -10,6 +10,7 @@ import json
 import os
 import pathlib
 import re
+import subprocess
 import urllib.request
 import zipfile
 from collections import Counter
@@ -52,9 +53,24 @@ def fetch_failed_runs() -> list[dict]:
 
 
 def fetch_job_log(job_id: int) -> str:
+    """Use curl for GitHub's cross-host signed-log redirect.
+
+    urllib can forward Authorization to the redirected blob host and historical
+    signed URLs then fail unexpectedly. curl strips auth on cross-host redirects
+    by default, matching the required GitHub flow.
+    """
     try:
-        raw = request(f"{API}/actions/jobs/{job_id}/logs", accept="application/vnd.github+json")
-        # GitHub may return a ZIP or plain decoded text depending on redirect path.
+        token = os.environ.get("GITHUB_TOKEN", "")
+        cmd = [
+            "curl", "-L", "--fail", "--silent", "--show-error",
+            "-H", "Accept: application/vnd.github+json",
+            "-H", "X-GitHub-Api-Version: 2022-11-28",
+            "-H", "User-Agent: forensic-workflow-failure-classifier",
+        ]
+        if token:
+            cmd += ["-H", f"Authorization: Bearer {token}"]
+        cmd += [f"{API}/actions/jobs/{job_id}/logs"]
+        raw = subprocess.check_output(cmd, timeout=90)
         if raw[:2] == b"PK":
             with zipfile.ZipFile(io.BytesIO(raw)) as zf:
                 return "\n".join(zf.read(n).decode("utf-8", errors="replace") for n in zf.namelist())
@@ -72,7 +88,7 @@ def classify(failed_step: str, log: str) -> tuple[str, str, str]:
         if "nothing to commit" in l:
             return "COMMIT_GATE", "NO_EVIDENCE_CORRUPTION", "Commit step found no staged change."
     if "rebuild frozen census and ledger" in s:
-        if "has no durable `status:` line" in l or "invalid durable status" in l:
+        if "has no durable `status:` line" in l or "invalid durable status" in l or "invalid durable" in l:
             return "STATUS_PARSER", "DELAYED_PROMOTION", "Ledger failed closed on durable-note status parsing."
         return "LEDGER_BUILD", "REQUIRES_REVIEW", "Ledger generation itself failed."
     if "validate physical denominator" in s:
