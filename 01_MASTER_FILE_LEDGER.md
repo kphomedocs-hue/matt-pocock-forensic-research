@@ -62,8 +62,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0044 | docs/engineering/to-tickets.md | 100644/blob | 10724 | 6f6f894fe0bfecd2a8b05fb1053b22da74985d90 | human-docs | READ | [MP-0044 note](02_FILE_NOTES/MP-0044.md) |  |  | LOW |  |
 | MP-0045 | docs/engineering/triage.md | 100644/blob | 13140 | 10ddf79c6fbfb8c27e86f2e03998905fefa90ec1 | human-docs | READ | [MP-0045 note](02_FILE_NOTES/MP-0045.md) |  |  | LOW |  |
 | MP-0046 | docs/engineering/wayfinder.md | 100644/blob | 15976 | 1efc4b18bd8a1d7733852813873474475abb3a2b | human-docs | READ | [MP-0046 note](02_FILE_NOTES/MP-0046.md) |  |  | LOW |  |
-| MP-0047 | docs/engineering/wizard.md | 100644/blob | 9877 | 84e047b2481c2afe4e5247231a8600d9721f1b88 | human-docs | UNREAD |  |  |  | LOW |  |
-| MP-0048 | docs/productivity/grill-me.md | 100644/blob | 6489 | d79d4864eca912ed2ed4ea3c13137c384e0868fb | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0047 | docs/engineering/wizard.md | 100644/blob | 9877 | 84e047b2481c2afe4e5247231a8600d9721f1b88 | human-docs | READ | [MP-0047 note](02_FILE_NOTES/MP-0047.md) |  |  | LOW |  |
+| MP-0048 | docs/productivity/grill-me.md | 100644/blob | 6489 | d79d4864eca912ed2ed4ea3c13137c384e0868fb | human-docs | READ | [MP-0048 note](02_FILE_NOTES/MP-0048.md) |  |  | LOW |  |
 | MP-0049 | docs/productivity/grilling.md | 100644/blob | 10413 | 512d76af564bc0899c59c90a5287a442f7846530 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0050 | docs/productivity/handoff.md | 100644/blob | 8746 | 72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0051 | docs/productivity/teach.md | 100644/blob | 13260 | 012113bd2379a4318ad3c1c7e4f4e848bbc29990 | human-docs | UNREAD |  |  |  | LOW |  |
