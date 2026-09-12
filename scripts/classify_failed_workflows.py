@@ -21,13 +21,22 @@ OUT_JSON = pathlib.Path("00_TOOLING_FAILURE_LEDGER.json")
 OUT_MD = pathlib.Path("00_TOOLING_FAILURE_LEDGER.md")
 CLASSIFICATION_VERSION = 3
 
-# These three runs are the distinct-workflow executions proven to have been
-# discarded by the former shared concurrency group. The orchestration defect
-# was fixed by moving every workflow to its own concurrency lane.
+# Distinct-workflow executions proven to have been discarded by the former
+# shared concurrency group. Per-workflow lanes now replace that design.
 FIXED_CROSS_WORKFLOW_CANCEL_IDS = {
     34712776661,  # Rebuild connection graph
     34712784616,  # Validate forensic foundation
     34712792316,  # Normalize note metadata
+}
+
+# These are deliberately exact run IDs, not broad error signatures. They were
+# created while hardening this classifier itself and have been manually traced.
+# Future classifier validation failures remain review-required by default.
+FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS = {
+    34713138258,  # v3 script ran under workflow assertion still expecting v2
+}
+FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {
+    34713153565,  # v3 closure gate correctly blocked on the transition run above
 }
 
 
@@ -53,9 +62,7 @@ def fetch_runs(status: str) -> list[dict]:
     runs: list[dict] = []
     page = 1
     while True:
-        data = get_json(
-            f"{API}/actions/runs?status={status}&per_page=100&page={page}"
-        )
+        data = get_json(f"{API}/actions/runs?status={status}&per_page=100&page={page}")
         chunk = data.get("workflow_runs", [])
         runs.extend(chunk)
         if len(chunk) < 100:
@@ -69,17 +76,10 @@ def fetch_job_log(job_id: int) -> str:
     try:
         token = os.environ.get("GITHUB_TOKEN", "")
         cmd = [
-            "curl",
-            "-L",
-            "--fail",
-            "--silent",
-            "--show-error",
-            "-H",
-            "Accept: application/vnd.github+json",
-            "-H",
-            "X-GitHub-Api-Version: 2022-11-28",
-            "-H",
-            "User-Agent: forensic-workflow-failure-classifier",
+            "curl", "-L", "--fail", "--silent", "--show-error",
+            "-H", "Accept: application/vnd.github+json",
+            "-H", "X-GitHub-Api-Version: 2022-11-28",
+            "-H", "User-Agent: forensic-workflow-failure-classifier",
         ]
         if token:
             cmd += ["-H", f"Authorization: Bearer {token}"]
@@ -96,7 +96,22 @@ def fetch_job_log(job_id: int) -> str:
         return f"<LOG_FETCH_ERROR {type(exc).__name__}: {exc}>"
 
 
-def classify_failure(failed_step: str, log: str) -> tuple[str, str, str]:
+def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str, str]:
+    # Exact, manually reconciled classifier-hardening incidents. Keeping these
+    # ID-scoped prevents a future classifier failure from being auto-excused.
+    if run_id in FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS:
+        return (
+            "CLASSIFIER_SCHEMA_TRANSITION",
+            "FIXED_CONFIGURATION_MISMATCH",
+            "Classifier script emitted schema v3 while the then-current workflow still asserted v2; the workflow was subsequently updated to assert v3.",
+        )
+    if run_id in FIXED_CLASSIFIER_CLOSURE_GATE_IDS:
+        return (
+            "CLASSIFIER_CLOSURE_GATE",
+            "DETECTED_AND_BLOCKED",
+            "The v3 closure gate correctly refused to pass while the preceding schema-transition incident remained unresolved; that root incident is now explicitly reconciled.",
+        )
+
     s = failed_step.lower()
     l = log.lower()
 
@@ -183,18 +198,18 @@ def classify_failure(failed_step: str, log: str) -> tuple[str, str, str]:
             "Canonical durable-note metadata normalization failed.",
         )
 
-    if "classify failed runs" in s:
+    if "classify failed" in s:
         return (
             "FAILURE_CLASSIFIER",
             "REQUIRES_REVIEW",
-            "Historical failure classification itself failed.",
+            "Historical incident classification itself failed.",
         )
 
-    if "validate failure ledger outputs" in s:
+    if "validate failure ledger outputs" in s or "validate tooling incident ledger outputs" in s:
         return (
             "FAILURE_LEDGER_VALIDATION",
             "REQUIRES_REVIEW",
-            "Generated failure ledger failed its own closure checks.",
+            "Generated tooling incident ledger failed its own closure checks.",
         )
 
     if "sync latest main" in s or "sync latest main before" in s:
@@ -249,25 +264,24 @@ def classify_cancelled(run: dict) -> tuple[str, str, str]:
 def failure_entries(runs: list[dict]) -> list[dict]:
     entries: list[dict] = []
     for run in runs:
-        jobs = get_json(f"{API}/actions/runs/{run['id']}/jobs?per_page=100").get("jobs", [])
+        run_id = int(run["id"])
+        jobs = get_json(f"{API}/actions/runs/{run_id}/jobs?per_page=100").get("jobs", [])
         failed_jobs = [job for job in jobs if job.get("conclusion") == "failure"]
         if not failed_jobs:
-            entries.append(
-                {
-                    "run_id": run["id"],
-                    "run_conclusion": "failure",
-                    "run_number": run.get("run_number"),
-                    "workflow": run.get("name"),
-                    "created_at": run.get("created_at"),
-                    "head_sha": run.get("head_sha"),
-                    "title": run.get("display_title"),
-                    "job_id": None,
-                    "failed_step": None,
-                    "classification": "UNKNOWN_NO_FAILED_JOB",
-                    "impact": "UNKNOWN",
-                    "reason": "Run failed but no failed job was returned.",
-                }
-            )
+            entries.append({
+                "run_id": run_id,
+                "run_conclusion": "failure",
+                "run_number": run.get("run_number"),
+                "workflow": run.get("name"),
+                "created_at": run.get("created_at"),
+                "head_sha": run.get("head_sha"),
+                "title": run.get("display_title"),
+                "job_id": None,
+                "failed_step": None,
+                "classification": "UNKNOWN_NO_FAILED_JOB",
+                "impact": "UNKNOWN",
+                "reason": "Run failed but no failed job was returned.",
+            })
             continue
 
         for job in failed_jobs:
@@ -276,23 +290,21 @@ def failure_entries(runs: list[dict]) -> list[dict]:
             ]
             failed_step = failed_steps[0]["name"] if failed_steps else "<unknown failed step>"
             log = fetch_job_log(job["id"])
-            cls, impact, reason = classify_failure(failed_step, log)
-            entries.append(
-                {
-                    "run_id": run["id"],
-                    "run_conclusion": "failure",
-                    "run_number": run.get("run_number"),
-                    "workflow": run.get("name"),
-                    "created_at": run.get("created_at"),
-                    "head_sha": run.get("head_sha"),
-                    "title": run.get("display_title"),
-                    "job_id": job["id"],
-                    "failed_step": failed_step,
-                    "classification": cls,
-                    "impact": impact,
-                    "reason": reason,
-                }
-            )
+            cls, impact, reason = classify_failure(run_id, failed_step, log)
+            entries.append({
+                "run_id": run_id,
+                "run_conclusion": "failure",
+                "run_number": run.get("run_number"),
+                "workflow": run.get("name"),
+                "created_at": run.get("created_at"),
+                "head_sha": run.get("head_sha"),
+                "title": run.get("display_title"),
+                "job_id": job["id"],
+                "failed_step": failed_step,
+                "classification": cls,
+                "impact": impact,
+                "reason": reason,
+            })
     return entries
 
 
@@ -300,22 +312,20 @@ def cancelled_entries(runs: list[dict]) -> list[dict]:
     entries: list[dict] = []
     for run in runs:
         cls, impact, reason = classify_cancelled(run)
-        entries.append(
-            {
-                "run_id": run["id"],
-                "run_conclusion": "cancelled",
-                "run_number": run.get("run_number"),
-                "workflow": run.get("name"),
-                "created_at": run.get("created_at"),
-                "head_sha": run.get("head_sha"),
-                "title": run.get("display_title"),
-                "job_id": None,
-                "failed_step": None,
-                "classification": cls,
-                "impact": impact,
-                "reason": reason,
-            }
-        )
+        entries.append({
+            "run_id": int(run["id"]),
+            "run_conclusion": "cancelled",
+            "run_number": run.get("run_number"),
+            "workflow": run.get("name"),
+            "created_at": run.get("created_at"),
+            "head_sha": run.get("head_sha"),
+            "title": run.get("display_title"),
+            "job_id": None,
+            "failed_step": None,
+            "classification": cls,
+            "impact": impact,
+            "reason": reason,
+        })
     return entries
 
 
@@ -328,15 +338,12 @@ def main() -> None:
     counts = Counter(entry["classification"] for entry in entries)
     impacts = Counter(entry["impact"] for entry in entries)
     unknown = sum(
-        1
-        for entry in entries
+        1 for entry in entries
         if entry["classification"].startswith("UNKNOWN") or entry["impact"] == "UNKNOWN"
     )
     unresolved = sum(
-        1
-        for entry in entries
-        if "REQUIRES_REVIEW" in entry["classification"]
-        or "REQUIRES_REVIEW" in entry["impact"]
+        1 for entry in entries
+        if "REQUIRES_REVIEW" in entry["classification"] or "REQUIRES_REVIEW" in entry["impact"]
     )
 
     payload = {
@@ -355,36 +362,23 @@ def main() -> None:
     OUT_JSON.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
     md = [
-        "# Tooling Failure & Cancellation Ledger",
-        "",
-        f"Repository: `{REPO}`",
-        "",
-        f"Classifier version: **{CLASSIFICATION_VERSION}**",
-        "",
-        f"Failed workflow runs enumerated: **{len(failed_runs)}**",
-        "",
-        f"Cancelled workflow runs enumerated: **{len(cancelled_runs)}**",
-        "",
-        f"Total incident runs: **{len(failed_runs) + len(cancelled_runs)}**",
-        "",
-        f"Incident entries classified: **{len(entries)}**",
-        "",
-        f"Unknown entries: **{unknown}**",
-        "",
-        f"Unresolved/review-required entries: **{unresolved}**",
-        "",
-        "## Classification summary",
-        "",
-        "| Classification | Count |",
-        "|---|---:|",
+        "# Tooling Failure & Cancellation Ledger", "",
+        f"Repository: `{REPO}`", "",
+        f"Classifier version: **{CLASSIFICATION_VERSION}**", "",
+        f"Failed workflow runs enumerated: **{len(failed_runs)}**", "",
+        f"Cancelled workflow runs enumerated: **{len(cancelled_runs)}**", "",
+        f"Total incident runs: **{len(failed_runs) + len(cancelled_runs)}**", "",
+        f"Incident entries classified: **{len(entries)}**", "",
+        f"Unknown entries: **{unknown}**", "",
+        f"Unresolved/review-required entries: **{unresolved}**", "",
+        "## Classification summary", "",
+        "| Classification | Count |", "|---|---:|",
     ]
     md += [f"| {key} | {value} |" for key, value in sorted(counts.items())]
     md += ["", "## Impact summary", "", "| Impact | Count |", "|---|---:|"]
     md += [f"| {key} | {value} |" for key, value in sorted(impacts.items())]
     md += [
-        "",
-        "## Incident ledger",
-        "",
+        "", "## Incident ledger", "",
         "| Run | Conclusion | Date | Workflow | Failed step | Classification | Impact |",
         "|---:|---|---|---|---|---|---|",
     ]
@@ -396,11 +390,8 @@ def main() -> None:
             f"{workflow} | {step} | {entry['classification']} | {entry['impact']} |"
         )
     md += [
-        "",
-        "## Closure rule",
-        "",
-        "This ledger is closed only when both `unknown_entries` and `unresolved_entries` are exactly zero. CI enforces both conditions.",
-        "",
+        "", "## Closure rule", "",
+        "This ledger is closed only when both `unknown_entries` and `unresolved_entries` are exactly zero. CI enforces both conditions.", "",
     ]
     OUT_MD.write_text("\n".join(md), encoding="utf-8")
 
