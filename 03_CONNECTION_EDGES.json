@@ -1,0 +1,1673 @@
+{
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "file_count": 164,
+  "edge_count": 204,
+  "unresolved_internal_count": 5,
+  "edges": [
+    {
+      "from": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "type": "DOC_LINK",
+      "to": ".agents/install-block.md",
+      "evidence": "markdown link: ../install-block.md",
+      "inferred": false,
+      "edge_id": "EG-A0001"
+    },
+    {
+      "from": ".agents/install-block.md",
+      "type": "DOC_LINK",
+      "to": ".agents/writing-docs.md",
+      "evidence": "markdown link: ./writing-docs.md",
+      "inferred": false,
+      "edge_id": "EG-A0002"
+    },
+    {
+      "from": ".agents/invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "Skill tool call: domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0003"
+    },
+    {
+      "from": ".agents/invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "evidence": "Skill tool call: setup-matt-pocock-skills",
+      "inferred": false,
+      "edge_id": "EG-A0004"
+    },
+    {
+      "from": ".agents/invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0005"
+    },
+    {
+      "from": ".agents/writing-docs.md",
+      "type": "DOC_LINK",
+      "to": ".agents/install-block.md",
+      "evidence": "markdown link: ./install-block.md",
+      "inferred": false,
+      "edge_id": "EG-A0006"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/code-review/SKILL.md",
+      "evidence": "Skill tool call: code-review",
+      "inferred": false,
+      "edge_id": "EG-A0007"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "evidence": "Skill tool call: diagnosing-bugs",
+      "inferred": false,
+      "edge_id": "EG-A0008"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "Skill tool call: domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0009"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/grill-with-docs/SKILL.md",
+      "evidence": "Skill tool call: grill-with-docs",
+      "inferred": false,
+      "edge_id": "EG-A0010"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "evidence": "Skill tool call: improve-codebase-architecture",
+      "inferred": false,
+      "edge_id": "EG-A0011"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/tdd/SKILL.md",
+      "evidence": "Skill tool call: tdd",
+      "inferred": false,
+      "edge_id": "EG-A0012"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/to-spec/SKILL.md",
+      "evidence": "Skill tool call: to-spec",
+      "inferred": false,
+      "edge_id": "EG-A0013"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/to-tickets/SKILL.md",
+      "evidence": "Skill tool call: to-tickets",
+      "inferred": false,
+      "edge_id": "EG-A0014"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/triage/SKILL.md",
+      "evidence": "Skill tool call: triage",
+      "inferred": false,
+      "edge_id": "EG-A0015"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/wayfinder/SKILL.md",
+      "evidence": "Skill tool call: wayfinder",
+      "inferred": false,
+      "edge_id": "EG-A0016"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grill-me/SKILL.md",
+      "evidence": "Skill tool call: grill-me",
+      "inferred": false,
+      "edge_id": "EG-A0017"
+    },
+    {
+      "from": ".changeset/skill-tool-invocation-terminology.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0018"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/code-review/SKILL.md",
+      "evidence": "Skill tool call: code-review",
+      "inferred": false,
+      "edge_id": "EG-A0019"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "evidence": "Skill tool call: diagnosing-bugs",
+      "inferred": false,
+      "edge_id": "EG-A0020"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "evidence": "Skill tool call: setup-matt-pocock-skills",
+      "inferred": false,
+      "edge_id": "EG-A0021"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/to-spec/SKILL.md",
+      "evidence": "Skill tool call: to-spec",
+      "inferred": false,
+      "edge_id": "EG-A0022"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/to-tickets/SKILL.md",
+      "evidence": "Skill tool call: to-tickets",
+      "inferred": false,
+      "edge_id": "EG-A0023"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/triage/SKILL.md",
+      "evidence": "Skill tool call: triage",
+      "inferred": false,
+      "edge_id": "EG-A0024"
+    },
+    {
+      "from": ".changeset/user-invoked-skill-invocation.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/wayfinder/SKILL.md",
+      "evidence": "Skill tool call: wayfinder",
+      "inferred": false,
+      "edge_id": "EG-A0025"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/ask-matt/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/ask-matt",
+      "inferred": false,
+      "edge_id": "EG-A0026"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/code-review/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/code-review",
+      "inferred": false,
+      "edge_id": "EG-A0027"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/codebase-design",
+      "inferred": false,
+      "edge_id": "EG-A0028"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/diagnosing-bugs",
+      "inferred": false,
+      "edge_id": "EG-A0029"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0030"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/grill-with-docs/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/grill-with-docs",
+      "inferred": false,
+      "edge_id": "EG-A0031"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/implement/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/implement",
+      "inferred": false,
+      "edge_id": "EG-A0032"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/improve-codebase-architecture",
+      "inferred": false,
+      "edge_id": "EG-A0033"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/prototype",
+      "inferred": false,
+      "edge_id": "EG-A0034"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/research/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/research",
+      "inferred": false,
+      "edge_id": "EG-A0035"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/resolving-merge-conflicts",
+      "inferred": false,
+      "edge_id": "EG-A0036"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/setup-matt-pocock-skills",
+      "inferred": false,
+      "edge_id": "EG-A0037"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/tdd/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/tdd",
+      "inferred": false,
+      "edge_id": "EG-A0038"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/to-spec/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/to-spec",
+      "inferred": false,
+      "edge_id": "EG-A0039"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/to-tickets/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/to-tickets",
+      "inferred": false,
+      "edge_id": "EG-A0040"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/triage/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/triage",
+      "inferred": false,
+      "edge_id": "EG-A0041"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/wayfinder/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/wayfinder",
+      "inferred": false,
+      "edge_id": "EG-A0042"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/engineering/wizard/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/engineering/wizard",
+      "inferred": false,
+      "edge_id": "EG-A0043"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/grill-me/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/grill-me",
+      "inferred": false,
+      "edge_id": "EG-A0044"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/grilling",
+      "inferred": false,
+      "edge_id": "EG-A0045"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/handoff/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/handoff",
+      "inferred": false,
+      "edge_id": "EG-A0046"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/teach/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/teach",
+      "inferred": false,
+      "edge_id": "EG-A0047"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/to-questionnaire/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/to-questionnaire",
+      "inferred": false,
+      "edge_id": "EG-A0048"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/wait-what/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/wait-what",
+      "inferred": false,
+      "edge_id": "EG-A0049"
+    },
+    {
+      "from": ".claude-plugin/plugin.json",
+      "type": "DISTRIBUTION_ENTRY",
+      "to": "skills/productivity/writing-for-agents/SKILL.md",
+      "evidence": "plugin skills entry: ./skills/productivity/writing-for-agents",
+      "inferred": false,
+      "edge_id": "EG-A0050"
+    },
+    {
+      "from": "AGENTS.md",
+      "type": "SYMLINK",
+      "to": "CLAUDE.md",
+      "evidence": "git symlink blob target",
+      "inferred": false,
+      "edge_id": "EG-A0051"
+    },
+    {
+      "from": "CLAUDE.md",
+      "type": "DOC_LINK",
+      "to": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "evidence": "markdown link: ./.agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "inferred": false,
+      "edge_id": "EG-A0052"
+    },
+    {
+      "from": "CLAUDE.md",
+      "type": "DOC_LINK",
+      "to": ".agents/install-block.md",
+      "evidence": "markdown link: ./.agents/install-block.md",
+      "inferred": false,
+      "edge_id": "EG-A0053"
+    },
+    {
+      "from": "CLAUDE.md",
+      "type": "DOC_LINK",
+      "to": ".agents/invocation.md",
+      "evidence": "markdown link: ./.agents/invocation.md",
+      "inferred": false,
+      "edge_id": "EG-A0054"
+    },
+    {
+      "from": "CLAUDE.md",
+      "type": "DOC_LINK",
+      "to": ".agents/writing-docs.md",
+      "evidence": "markdown link: ./.agents/writing-docs.md",
+      "inferred": false,
+      "edge_id": "EG-A0055"
+    },
+    {
+      "from": "CLAUDE.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/ask-matt/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/ask-matt/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0056"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "evidence": "markdown link: ./.agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "inferred": false,
+      "edge_id": "EG-A0057"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/ask-matt/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/ask-matt/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0058"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/code-review/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/code-review/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0059"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/codebase-design/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0060"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/diagnosing-bugs/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0061"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/domain-modeling/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0062"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/grill-with-docs/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/grill-with-docs/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0063"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/implement/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/implement/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0064"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/improve-codebase-architecture/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0065"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/prototype/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0066"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/research/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/research/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0067"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0068"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0069"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/tdd/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/tdd/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0070"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/to-spec/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/to-spec/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0071"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/to-tickets/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/to-tickets/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0072"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/triage/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/triage/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0073"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/wayfinder/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/wayfinder/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0074"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/wizard/SKILL.md",
+      "evidence": "markdown link: ./skills/engineering/wizard/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0075"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/grill-me/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/grill-me/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0076"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/grilling/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0077"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/handoff/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/handoff/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0078"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/teach/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/teach/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0079"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/to-questionnaire/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/to-questionnaire/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0080"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/wait-what/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/wait-what/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0081"
+    },
+    {
+      "from": "README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/writing-for-agents/SKILL.md",
+      "evidence": "markdown link: ./skills/productivity/writing-for-agents/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0082"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/ask-matt/SKILL.md",
+      "evidence": "markdown link: ./ask-matt/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0083"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/code-review/SKILL.md",
+      "evidence": "markdown link: ./code-review/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0084"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "markdown link: ./codebase-design/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0085"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "evidence": "markdown link: ./diagnosing-bugs/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0086"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "markdown link: ./domain-modeling/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0087"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/grill-with-docs/SKILL.md",
+      "evidence": "markdown link: ./grill-with-docs/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0088"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/implement/SKILL.md",
+      "evidence": "markdown link: ./implement/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0089"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "evidence": "markdown link: ./improve-codebase-architecture/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0090"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "markdown link: ./prototype/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0091"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/research/SKILL.md",
+      "evidence": "markdown link: ./research/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0092"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "evidence": "markdown link: ./resolving-merge-conflicts/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0093"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "evidence": "markdown link: ./setup-matt-pocock-skills/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0094"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/tdd/SKILL.md",
+      "evidence": "markdown link: ./tdd/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0095"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/to-spec/SKILL.md",
+      "evidence": "markdown link: ./to-spec/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0096"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/to-tickets/SKILL.md",
+      "evidence": "markdown link: ./to-tickets/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0097"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/triage/SKILL.md",
+      "evidence": "markdown link: ./triage/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0098"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/wayfinder/SKILL.md",
+      "evidence": "markdown link: ./wayfinder/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0099"
+    },
+    {
+      "from": "skills/engineering/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/wizard/SKILL.md",
+      "evidence": "markdown link: ./wizard/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0100"
+    },
+    {
+      "from": "skills/engineering/ask-matt/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+      "evidence": "markdown link: PHASE-BOUNDARIES.md",
+      "inferred": false,
+      "edge_id": "EG-A0101"
+    },
+    {
+      "from": "skills/engineering/ask-matt/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/ask-matt/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0102"
+    },
+    {
+      "from": "skills/engineering/code-review/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/code-review/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0103"
+    },
+    {
+      "from": "skills/engineering/codebase-design/DEEPENING.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "markdown link: SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0104"
+    },
+    {
+      "from": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/DEEPENING.md",
+      "evidence": "markdown link: DEEPENING.md",
+      "inferred": false,
+      "edge_id": "EG-A0105"
+    },
+    {
+      "from": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "markdown link: SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0106"
+    },
+    {
+      "from": "skills/engineering/codebase-design/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/DEEPENING.md",
+      "evidence": "markdown link: DEEPENING.md",
+      "inferred": false,
+      "edge_id": "EG-A0107"
+    },
+    {
+      "from": "skills/engineering/codebase-design/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "evidence": "markdown link: DESIGN-IT-TWICE.md",
+      "inferred": false,
+      "edge_id": "EG-A0108"
+    },
+    {
+      "from": "skills/engineering/codebase-design/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0109"
+    },
+    {
+      "from": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0110"
+    },
+    {
+      "from": "skills/engineering/domain-modeling/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "evidence": "markdown link: ./ADR-FORMAT.md",
+      "inferred": false,
+      "edge_id": "EG-A0111"
+    },
+    {
+      "from": "skills/engineering/domain-modeling/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "evidence": "markdown link: ./CONTEXT-FORMAT.md",
+      "inferred": false,
+      "edge_id": "EG-A0112"
+    },
+    {
+      "from": "skills/engineering/domain-modeling/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0113"
+    },
+    {
+      "from": "skills/engineering/grill-with-docs/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "Skill tool call: domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0114"
+    },
+    {
+      "from": "skills/engineering/grill-with-docs/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0115"
+    },
+    {
+      "from": "skills/engineering/grill-with-docs/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/grill-with-docs/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0116"
+    },
+    {
+      "from": "skills/engineering/implement/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/implement/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0117"
+    },
+    {
+      "from": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/improve-codebase-architecture/HTML-REPORT.md",
+      "evidence": "markdown link: HTML-REPORT.md",
+      "inferred": false,
+      "edge_id": "EG-A0118"
+    },
+    {
+      "from": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "Skill tool call: codebase-design",
+      "inferred": false,
+      "edge_id": "EG-A0119"
+    },
+    {
+      "from": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "Skill tool call: domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0120"
+    },
+    {
+      "from": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0121"
+    },
+    {
+      "from": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0122"
+    },
+    {
+      "from": "skills/engineering/prototype/LOGIC.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "markdown link: SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0123"
+    },
+    {
+      "from": "skills/engineering/prototype/LOGIC.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/UI.md",
+      "evidence": "markdown link: UI.md",
+      "inferred": false,
+      "edge_id": "EG-A0124"
+    },
+    {
+      "from": "skills/engineering/prototype/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/LOGIC.md",
+      "evidence": "markdown link: LOGIC.md",
+      "inferred": false,
+      "edge_id": "EG-A0125"
+    },
+    {
+      "from": "skills/engineering/prototype/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/UI.md",
+      "evidence": "markdown link: UI.md",
+      "inferred": false,
+      "edge_id": "EG-A0126"
+    },
+    {
+      "from": "skills/engineering/prototype/UI.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/LOGIC.md",
+      "evidence": "markdown link: LOGIC.md",
+      "inferred": false,
+      "edge_id": "EG-A0127"
+    },
+    {
+      "from": "skills/engineering/prototype/UI.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "markdown link: SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0128"
+    },
+    {
+      "from": "skills/engineering/prototype/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0129"
+    },
+    {
+      "from": "skills/engineering/research/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/research/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0130"
+    },
+    {
+      "from": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0131"
+    },
+    {
+      "from": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "evidence": "markdown link: ./domain.md",
+      "inferred": false,
+      "edge_id": "EG-A0132"
+    },
+    {
+      "from": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "evidence": "markdown link: ./issue-tracker-github.md",
+      "inferred": false,
+      "edge_id": "EG-A0133"
+    },
+    {
+      "from": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "evidence": "markdown link: ./issue-tracker-gitlab.md",
+      "inferred": false,
+      "edge_id": "EG-A0134"
+    },
+    {
+      "from": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "evidence": "markdown link: ./issue-tracker-local.md",
+      "inferred": false,
+      "edge_id": "EG-A0135"
+    },
+    {
+      "from": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "evidence": "markdown link: ./triage-labels.md",
+      "inferred": false,
+      "edge_id": "EG-A0136"
+    },
+    {
+      "from": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0137"
+    },
+    {
+      "from": "skills/engineering/tdd/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/tdd/mocking.md",
+      "evidence": "markdown link: mocking.md",
+      "inferred": false,
+      "edge_id": "EG-A0138"
+    },
+    {
+      "from": "skills/engineering/tdd/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/tdd/tests.md",
+      "evidence": "markdown link: tests.md",
+      "inferred": false,
+      "edge_id": "EG-A0139"
+    },
+    {
+      "from": "skills/engineering/tdd/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "Skill tool call: codebase-design",
+      "inferred": false,
+      "edge_id": "EG-A0140"
+    },
+    {
+      "from": "skills/engineering/tdd/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/tdd/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0141"
+    },
+    {
+      "from": "skills/engineering/to-spec/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/to-spec/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0142"
+    },
+    {
+      "from": "skills/engineering/to-tickets/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/to-tickets/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0143"
+    },
+    {
+      "from": "skills/engineering/triage/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/triage/AGENT-BRIEF.md",
+      "evidence": "markdown link: AGENT-BRIEF.md",
+      "inferred": false,
+      "edge_id": "EG-A0144"
+    },
+    {
+      "from": "skills/engineering/triage/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/triage/OUT-OF-SCOPE.md",
+      "evidence": "markdown link: OUT-OF-SCOPE.md",
+      "inferred": false,
+      "edge_id": "EG-A0145"
+    },
+    {
+      "from": "skills/engineering/triage/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "Skill tool call: domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0146"
+    },
+    {
+      "from": "skills/engineering/triage/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0147"
+    },
+    {
+      "from": "skills/engineering/triage/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/triage/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0148"
+    },
+    {
+      "from": "skills/engineering/wayfinder/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/domain-modeling/SKILL.md",
+      "evidence": "Skill tool call: domain-modeling",
+      "inferred": false,
+      "edge_id": "EG-A0149"
+    },
+    {
+      "from": "skills/engineering/wayfinder/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/prototype/SKILL.md",
+      "evidence": "Skill tool call: prototype",
+      "inferred": false,
+      "edge_id": "EG-A0150"
+    },
+    {
+      "from": "skills/engineering/wayfinder/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/research/SKILL.md",
+      "evidence": "Skill tool call: research",
+      "inferred": false,
+      "edge_id": "EG-A0151"
+    },
+    {
+      "from": "skills/engineering/wayfinder/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0152"
+    },
+    {
+      "from": "skills/engineering/wayfinder/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/wayfinder/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0153"
+    },
+    {
+      "from": "skills/engineering/wizard/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/engineering/wizard/template.sh",
+      "evidence": "markdown link: template.sh",
+      "inferred": false,
+      "edge_id": "EG-A0154"
+    },
+    {
+      "from": "skills/engineering/wizard/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/engineering/wizard/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0155"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/claude-handoff/SKILL.md",
+      "evidence": "markdown link: ./claude-handoff/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0156"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/implement-spec/SKILL.md",
+      "evidence": "markdown link: ./implement-spec/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0157"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/loop-me/SKILL.md",
+      "evidence": "markdown link: ./loop-me/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0158"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/retro/SKILL.md",
+      "evidence": "markdown link: ./retro/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0159"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "evidence": "markdown link: ./setup-ts-deep-modules/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0160"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/writing-beats/SKILL.md",
+      "evidence": "markdown link: ./writing-beats/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0161"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/writing-fragments/SKILL.md",
+      "evidence": "markdown link: ./writing-fragments/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0162"
+    },
+    {
+      "from": "skills/in-progress/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/writing-shape/SKILL.md",
+      "evidence": "markdown link: ./writing-shape/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0163"
+    },
+    {
+      "from": "skills/in-progress/claude-handoff/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/claude-handoff/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0164"
+    },
+    {
+      "from": "skills/in-progress/implement-spec/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/implement-spec/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0165"
+    },
+    {
+      "from": "skills/in-progress/loop-me/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/loop-me/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0166"
+    },
+    {
+      "from": "skills/in-progress/retro/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/writing-for-agents/SKILL.md",
+      "evidence": "Skill tool call: writing-for-agents",
+      "inferred": false,
+      "edge_id": "EG-A0167"
+    },
+    {
+      "from": "skills/in-progress/retro/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/retro/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0168"
+    },
+    {
+      "from": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "evidence": "markdown link: ./dependency-cruiser.config.cjs",
+      "inferred": false,
+      "edge_id": "EG-A0169"
+    },
+    {
+      "from": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/engineering/codebase-design/SKILL.md",
+      "evidence": "Skill tool call: codebase-design",
+      "inferred": false,
+      "edge_id": "EG-A0170"
+    },
+    {
+      "from": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0171"
+    },
+    {
+      "from": "skills/in-progress/writing-beats/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/writing-beats/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0172"
+    },
+    {
+      "from": "skills/in-progress/writing-fragments/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/writing-fragments/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0173"
+    },
+    {
+      "from": "skills/in-progress/writing-shape/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/in-progress/writing-shape/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0174"
+    },
+    {
+      "from": "skills/misc/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "evidence": "markdown link: ./git-guardrails-claude-code/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0175"
+    },
+    {
+      "from": "skills/misc/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "evidence": "markdown link: ./migrate-to-shoehorn/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0176"
+    },
+    {
+      "from": "skills/misc/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/misc/scaffold-exercises/SKILL.md",
+      "evidence": "markdown link: ./scaffold-exercises/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0177"
+    },
+    {
+      "from": "skills/misc/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/misc/setup-pre-commit/SKILL.md",
+      "evidence": "markdown link: ./setup-pre-commit/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0178"
+    },
+    {
+      "from": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "evidence": "markdown link: scripts/block-dangerous-git.sh",
+      "inferred": false,
+      "edge_id": "EG-A0179"
+    },
+    {
+      "from": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0180"
+    },
+    {
+      "from": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0181"
+    },
+    {
+      "from": "skills/misc/scaffold-exercises/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/misc/scaffold-exercises/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0182"
+    },
+    {
+      "from": "skills/misc/setup-pre-commit/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/misc/setup-pre-commit/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0183"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/grill-me/SKILL.md",
+      "evidence": "markdown link: ./grill-me/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0184"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "markdown link: ./grilling/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0185"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/handoff/SKILL.md",
+      "evidence": "markdown link: ./handoff/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0186"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/teach/SKILL.md",
+      "evidence": "markdown link: ./teach/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0187"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/to-questionnaire/SKILL.md",
+      "evidence": "markdown link: ./to-questionnaire/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0188"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/wait-what/SKILL.md",
+      "evidence": "markdown link: ./wait-what/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0189"
+    },
+    {
+      "from": "skills/productivity/README.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/writing-for-agents/SKILL.md",
+      "evidence": "markdown link: ./writing-for-agents/SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0190"
+    },
+    {
+      "from": "skills/productivity/grill-me/SKILL.md",
+      "type": "OPERATIVE_CALL",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "Skill tool call: grilling",
+      "inferred": false,
+      "edge_id": "EG-A0191"
+    },
+    {
+      "from": "skills/productivity/grill-me/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/grill-me/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0192"
+    },
+    {
+      "from": "skills/productivity/grilling/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/grilling/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0193"
+    },
+    {
+      "from": "skills/productivity/handoff/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/handoff/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0194"
+    },
+    {
+      "from": "skills/productivity/teach/RESOURCES-FORMAT.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/teach/SKILL.md",
+      "evidence": "markdown link: ./SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0195"
+    },
+    {
+      "from": "skills/productivity/teach/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+      "evidence": "markdown link: ./LEARNING-RECORD-FORMAT.md",
+      "inferred": false,
+      "edge_id": "EG-A0196"
+    },
+    {
+      "from": "skills/productivity/teach/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/teach/MISSION-FORMAT.md",
+      "evidence": "markdown link: ./MISSION-FORMAT.md",
+      "inferred": false,
+      "edge_id": "EG-A0197"
+    },
+    {
+      "from": "skills/productivity/teach/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/teach/RESOURCES-FORMAT.md",
+      "evidence": "markdown link: ./RESOURCES-FORMAT.md",
+      "inferred": false,
+      "edge_id": "EG-A0198"
+    },
+    {
+      "from": "skills/productivity/teach/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/teach/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0199"
+    },
+    {
+      "from": "skills/productivity/to-questionnaire/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/to-questionnaire/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0200"
+    },
+    {
+      "from": "skills/productivity/wait-what/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/wait-what/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0201"
+    },
+    {
+      "from": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/writing-for-agents/SKILL.md",
+      "evidence": "markdown link: SKILL.md",
+      "inferred": false,
+      "edge_id": "EG-A0202"
+    },
+    {
+      "from": "skills/productivity/writing-for-agents/SKILL.md",
+      "type": "DOC_LINK",
+      "to": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "evidence": "markdown link: SKILL-MECHANICS.md",
+      "inferred": false,
+      "edge_id": "EG-A0203"
+    },
+    {
+      "from": "skills/productivity/writing-for-agents/agents/openai.yaml",
+      "type": "CONFIG_BINDING",
+      "to": "skills/productivity/writing-for-agents/SKILL.md",
+      "evidence": "agents/openai.yaml ownership",
+      "inferred": false,
+      "edge_id": "EG-A0204"
+    }
+  ],
+  "unresolved_internal": [
+    {
+      "from": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "raw": "./src/ordering/CONTEXT.md",
+      "resolved": "skills/engineering/domain-modeling/src/ordering/CONTEXT.md",
+      "kind": "markdown-link"
+    },
+    {
+      "from": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "raw": "./src/billing/CONTEXT.md",
+      "resolved": "skills/engineering/domain-modeling/src/billing/CONTEXT.md",
+      "kind": "markdown-link"
+    },
+    {
+      "from": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "raw": "./src/fulfillment/CONTEXT.md",
+      "resolved": "skills/engineering/domain-modeling/src/fulfillment/CONTEXT.md",
+      "kind": "markdown-link"
+    },
+    {
+      "from": "skills/engineering/wayfinder/SKILL.md",
+      "raw": "link",
+      "resolved": "skills/engineering/wayfinder/link",
+      "kind": "markdown-link"
+    },
+    {
+      "from": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "raw": "./src/packages/README.md",
+      "resolved": "skills/in-progress/setup-ts-deep-modules/src/packages/README.md",
+      "kind": "markdown-link"
+    }
+  ]
+}
