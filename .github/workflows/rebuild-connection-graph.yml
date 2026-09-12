@@ -25,7 +25,7 @@ jobs:
         run: python scripts/build_connection_graph.py
       - name: Commit generated graph
         run: |
-          if git diff --quiet -- 03_CONNECTION_EDGES.json 03_CONNECTION_INDEX.md; then
+          if [[ -z "$(git status --porcelain -- 03_CONNECTION_EDGES.json 03_CONNECTION_INDEX.md)" ]]; then
             echo "No graph changes"
             exit 0
           fi
