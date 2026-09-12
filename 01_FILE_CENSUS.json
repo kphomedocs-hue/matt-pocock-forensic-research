@@ -158,8 +158,8 @@
       "sha": "a3909afb95f471194fe96430127799bb7e7df5b1",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0013 note](02_FILE_NOTES/MP-0013.md)"
     },
     {
       "mp_id": "MP-0014",
