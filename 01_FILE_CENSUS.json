@@ -254,8 +254,8 @@
       "sha": "72f09fe5a9cb64bd55a46d45e116cd538d48fe20",
       "category": "negative-memory",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0021 note](02_FILE_NOTES/MP-0021.md)"
     },
     {
       "mp_id": "MP-0022",
@@ -266,8 +266,8 @@
       "sha": "5a3a7f677027a48a9e2a08df7c6d601b322f38da",
       "category": "negative-memory",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0022 note](02_FILE_NOTES/MP-0022.md)"
     },
     {
       "mp_id": "MP-0023",
@@ -278,8 +278,8 @@
       "sha": "418dba12c17b2cd77e0b3161b107c624b7b2ee97",
       "category": "negative-memory",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0023 note](02_FILE_NOTES/MP-0023.md)"
     },
     {
       "mp_id": "MP-0024",
@@ -290,8 +290,8 @@
       "sha": "681311eb9cf453d0faddf3aacaec7357e97ba8e9",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0024 note](02_FILE_NOTES/MP-0024.md)"
     },
     {
       "mp_id": "MP-0025",
@@ -302,8 +302,8 @@
       "sha": "26d68ffa7cf2f58471abd578042dded7b75675aa",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0025 note](02_FILE_NOTES/MP-0025.md)"
     },
     {
       "mp_id": "MP-0026",
@@ -314,8 +314,8 @@
       "sha": "6de72d80dfdfbba9c8ce93d69a85254fdaebf2b6",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0026 note](02_FILE_NOTES/MP-0026.md)"
     },
     {
       "mp_id": "MP-0027",
@@ -326,8 +326,8 @@
       "sha": "76ebd23dbb8266dab9491425b39f3c4857fb4a52",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0027 note](02_FILE_NOTES/MP-0027.md)"
     },
     {
       "mp_id": "MP-0028",
@@ -338,8 +338,8 @@
       "sha": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0028 note](02_FILE_NOTES/MP-0028.md)"
     },
     {
       "mp_id": "MP-0029",
@@ -350,8 +350,8 @@
       "sha": "ff9b797a342d3a64b52f9f5a83d9fc4ce28709dc",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0029 note](02_FILE_NOTES/MP-0029.md)"
     },
     {
       "mp_id": "MP-0030",
@@ -362,8 +362,8 @@
       "sha": "67d1e46192cc22f2f93f6d463dbd831ce174518e",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0030 note](02_FILE_NOTES/MP-0030.md)"
     },
     {
       "mp_id": "MP-0031",

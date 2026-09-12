@@ -36,16 +36,16 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0018 | .claude-plugin/plugin.json | 100644/blob | 1636 | 0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d | distribution | READ | [MP-0018 note](02_FILE_NOTES/MP-0018.md) |  |  | HIGH |  |
 | MP-0019 | .github/workflows/release.yml | 100644/blob | 780 | b503eff7b073afe8a08d0b25cc31efca78caea02 | ci-release | READ | [MP-0019 note](02_FILE_NOTES/MP-0019.md) |  |  | HIGH |  |
 | MP-0020 | .gitignore | 100644/blob | 21 | 98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf | root | READ | [MP-0020 note](02_FILE_NOTES/MP-0020.md) |  |  | LOW |  |
-| MP-0021 | .out-of-scope/mainstream-issue-trackers-only.md | 100644/blob | 1573 | 72f09fe5a9cb64bd55a46d45e116cd538d48fe20 | negative-memory | UNREAD |  |  |  | LOW |  |
-| MP-0022 | .out-of-scope/question-limits.md | 100644/blob | 1259 | 5a3a7f677027a48a9e2a08df7c6d601b322f38da | negative-memory | UNREAD |  |  |  | LOW |  |
-| MP-0023 | .out-of-scope/setup-skill-verify-mode.md | 100644/blob | 1125 | 418dba12c17b2cd77e0b3161b107c624b7b2ee97 | negative-memory | UNREAD |  |  |  | LOW |  |
-| MP-0024 | AGENTS.md | 120000/blob | 9 | 681311eb9cf453d0faddf3aacaec7357e97ba8e9 | root | UNREAD |  |  |  | LOW | Git symlink blob; logical target must be reconciled separately. |
-| MP-0025 | CHANGELOG.md | 100644/blob | 44408 | 26d68ffa7cf2f58471abd578042dded7b75675aa | root | UNREAD |  |  |  | LOW |  |
-| MP-0026 | CLAUDE.md | 100644/blob | 3737 | 6de72d80dfdfbba9c8ce93d69a85254fdaebf2b6 | root | UNREAD |  |  |  | LOW |  |
-| MP-0027 | CONTEXT.md | 100644/blob | 1768 | 76ebd23dbb8266dab9491425b39f3c4857fb4a52 | root | UNREAD |  |  |  | LOW |  |
-| MP-0028 | LICENSE | 100644/blob | 1068 | f1dd2c09108dde1a5f56097cee8461b3ea834499 | root | UNREAD |  |  |  | LOW |  |
-| MP-0029 | README.md | 100644/blob | 15587 | ff9b797a342d3a64b52f9f5a83d9fc4ce28709dc | root | UNREAD |  |  |  | LOW |  |
-| MP-0030 | docs/engineering/ask-matt.md | 100644/blob | 10723 | 67d1e46192cc22f2f93f6d463dbd831ce174518e | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0021 | .out-of-scope/mainstream-issue-trackers-only.md | 100644/blob | 1573 | 72f09fe5a9cb64bd55a46d45e116cd538d48fe20 | negative-memory | READ | [MP-0021 note](02_FILE_NOTES/MP-0021.md) |  |  | LOW |  |
+| MP-0022 | .out-of-scope/question-limits.md | 100644/blob | 1259 | 5a3a7f677027a48a9e2a08df7c6d601b322f38da | negative-memory | READ | [MP-0022 note](02_FILE_NOTES/MP-0022.md) |  |  | LOW |  |
+| MP-0023 | .out-of-scope/setup-skill-verify-mode.md | 100644/blob | 1125 | 418dba12c17b2cd77e0b3161b107c624b7b2ee97 | negative-memory | READ | [MP-0023 note](02_FILE_NOTES/MP-0023.md) |  |  | LOW |  |
+| MP-0024 | AGENTS.md | 120000/blob | 9 | 681311eb9cf453d0faddf3aacaec7357e97ba8e9 | root | READ | [MP-0024 note](02_FILE_NOTES/MP-0024.md) |  |  | LOW | Git symlink blob; logical target must be reconciled separately. |
+| MP-0025 | CHANGELOG.md | 100644/blob | 44408 | 26d68ffa7cf2f58471abd578042dded7b75675aa | root | READ | [MP-0025 note](02_FILE_NOTES/MP-0025.md) |  |  | LOW |  |
+| MP-0026 | CLAUDE.md | 100644/blob | 3737 | 6de72d80dfdfbba9c8ce93d69a85254fdaebf2b6 | root | READ | [MP-0026 note](02_FILE_NOTES/MP-0026.md) |  |  | LOW |  |
+| MP-0027 | CONTEXT.md | 100644/blob | 1768 | 76ebd23dbb8266dab9491425b39f3c4857fb4a52 | root | READ | [MP-0027 note](02_FILE_NOTES/MP-0027.md) |  |  | LOW |  |
+| MP-0028 | LICENSE | 100644/blob | 1068 | f1dd2c09108dde1a5f56097cee8461b3ea834499 | root | READ | [MP-0028 note](02_FILE_NOTES/MP-0028.md) |  |  | LOW |  |
+| MP-0029 | README.md | 100644/blob | 15587 | ff9b797a342d3a64b52f9f5a83d9fc4ce28709dc | root | READ | [MP-0029 note](02_FILE_NOTES/MP-0029.md) |  |  | LOW |  |
+| MP-0030 | docs/engineering/ask-matt.md | 100644/blob | 10723 | 67d1e46192cc22f2f93f6d463dbd831ce174518e | human-docs | READ | [MP-0030 note](02_FILE_NOTES/MP-0030.md) |  |  | LOW |  |
 | MP-0031 | docs/engineering/code-review.md | 100644/blob | 10553 | 46353162627210af65296c6dee62e422a3400373 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0032 | docs/engineering/codebase-design.md | 100644/blob | 12370 | 706365ca56fc2c5253fe407a72c494c51cb91c2e | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0033 | docs/engineering/diagnosing-bugs.md | 100644/blob | 10701 | cd6887ac414d40695b52c6a121ba033cb8d5ce98 | human-docs | UNREAD |  |  |  | LOW |  |
