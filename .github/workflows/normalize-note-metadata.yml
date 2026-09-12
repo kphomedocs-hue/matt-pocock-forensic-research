@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forensic-generated-main-writes
+  group: forensic-normalize-note-metadata
   cancel-in-progress: false
 
 jobs:
