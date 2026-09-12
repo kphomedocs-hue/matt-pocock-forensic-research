@@ -52,8 +52,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0034 | docs/engineering/domain-modeling.md | 100644/blob | 10742 | fb8100db71dca3bb044076f537a2e6ba1ed7c3ef | human-docs | READ | [MP-0034 note](02_FILE_NOTES/MP-0034.md) |  |  | LOW |  |
 | MP-0035 | docs/engineering/grill-with-docs.md | 100644/blob | 9922 | 26ac9de3bbdf49db18c7a1aa0ff508c6bf680cda | human-docs | READ | [MP-0035 note](02_FILE_NOTES/MP-0035.md) |  |  | LOW |  |
 | MP-0036 | docs/engineering/implement.md | 100644/blob | 10259 | 25f9980d382ba65d1fa44fc8849412469200d626 | human-docs | READ | [MP-0036 note](02_FILE_NOTES/MP-0036.md) |  |  | LOW |  |
-| MP-0037 | docs/engineering/improve-codebase-architecture.md | 100644/blob | 11814 | 076fad04c9d16903334baf8ecee8e14b47fd2d1b | human-docs | UNREAD |  |  |  | LOW |  |
-| MP-0038 | docs/engineering/prototype.md | 100644/blob | 9630 | 03703cac77b4d361e7b06c9e6ef4366501c12087 | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0037 | docs/engineering/improve-codebase-architecture.md | 100644/blob | 11814 | 076fad04c9d16903334baf8ecee8e14b47fd2d1b | human-docs | READ | [MP-0037 note](02_FILE_NOTES/MP-0037.md) |  |  | LOW |  |
+| MP-0038 | docs/engineering/prototype.md | 100644/blob | 9630 | 03703cac77b4d361e7b06c9e6ef4366501c12087 | human-docs | READ | [MP-0038 note](02_FILE_NOTES/MP-0038.md) |  |  | LOW |  |
 | MP-0039 | docs/engineering/research.md | 100644/blob | 9674 | a2b2074c426720af9ef50dc1cd697b3064eb8844 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0040 | docs/engineering/resolving-merge-conflicts.md | 100644/blob | 5326 | ee5e0e2db00c994a1cb5eaf4a49efdc379f93ac7 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0041 | docs/engineering/setup-matt-pocock-skills.md | 100644/blob | 9359 | d7f4933af11e6dfaf2dd307b7a69d3edb2b74dbc | human-docs | UNREAD |  |  |  | LOW |  |
