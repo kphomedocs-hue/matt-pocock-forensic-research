@@ -124,8 +124,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0106 | skills/engineering/to-tickets/SKILL.md | 100644/blob | 5671 | e868c831fcfb1e124e010bcdf84a429ec879160f | skill | READ | [MP-0106 note](02_FILE_NOTES/MP-0106.md) |  |  | MEDIUM |  |
 | MP-0107 | skills/engineering/to-tickets/agents/openai.yaml | 100644/blob | 146 | 24605a5db64e4fc750b999aa94aea126bee814ee | codex-metadata | READ | [MP-0107 note](02_FILE_NOTES/MP-0107.md) |  |  | MEDIUM |  |
 | MP-0108 | skills/engineering/triage/AGENT-BRIEF.md | 100644/blob | 7942 | 1462fcd9e8cc21921158c296149dc05d9be39d20 | skill-support | READ | [MP-0108 note](02_FILE_NOTES/MP-0108.md) |  |  | LOW |  |
-| MP-0109 | skills/engineering/triage/OUT-OF-SCOPE.md | 100644/blob | 4667 | c9fba2f77ee0619975ec8488c0d4861a0c7e3151 | skill-support | UNREAD |  |  |  | LOW |  |
-| MP-0110 | skills/engineering/triage/SKILL.md | 100644/blob | 6557 | 37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e | skill | UNREAD |  |  |  | MEDIUM |  |
+| MP-0109 | skills/engineering/triage/OUT-OF-SCOPE.md | 100644/blob | 4667 | c9fba2f77ee0619975ec8488c0d4861a0c7e3151 | skill-support | READ | [MP-0109 note](02_FILE_NOTES/MP-0109.md) |  |  | LOW |  |
+| MP-0110 | skills/engineering/triage/SKILL.md | 100644/blob | 6557 | 37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e | skill | READ | [MP-0110 note](02_FILE_NOTES/MP-0110.md) |  |  | MEDIUM |  |
 | MP-0111 | skills/engineering/triage/agents/openai.yaml | 100644/blob | 135 | acb366cf0f2527e8925ff1223b77610ac0b1be4c | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0112 | skills/engineering/wayfinder/SKILL.md | 100644/blob | 11908 | 812805b760baf328db0ebdef6f3807e381f97016 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0113 | skills/engineering/wayfinder/agents/openai.yaml | 100644/blob | 144 | b37544751e0570f9df8de6c02aef238de8c3e1e0 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
