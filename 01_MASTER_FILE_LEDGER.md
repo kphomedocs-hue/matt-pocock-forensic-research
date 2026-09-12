@@ -178,5 +178,5 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0160 | skills/productivity/wait-what/SKILL.md | 100644/blob | 394 | f8854f1b4527bca90378baf5430557172136a1bf | skill | READ | [MP-0160 note](02_FILE_NOTES/MP-0160.md) |  |  | MEDIUM |  |
 | MP-0161 | skills/productivity/wait-what/agents/openai.yaml | 100644/blob | 158 | 6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3 | codex-metadata | READ | [MP-0161 note](02_FILE_NOTES/MP-0161.md) |  |  | MEDIUM |  |
 | MP-0162 | skills/productivity/writing-for-agents/SKILL-MECHANICS.md | 100644/blob | 2629 | 9cdbdb22aadc438755392216e75ad9a14cc9832e | skill-support | READ | [MP-0162 note](02_FILE_NOTES/MP-0162.md) |  |  | LOW |  |
-| MP-0163 | skills/productivity/writing-for-agents/SKILL.md | 100644/blob | 10886 | a37608daf6e835e767deecfb498facecaaba82ba | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0164 | skills/productivity/writing-for-agents/agents/openai.yaml | 100644/blob | 102 | 079c933b75743dec18b5d0c01006def20b6aad26 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0163 | skills/productivity/writing-for-agents/SKILL.md | 100644/blob | 10886 | a37608daf6e835e767deecfb498facecaaba82ba | skill | READ | [MP-0163 note](02_FILE_NOTES/MP-0163.md) |  |  | MEDIUM |  |
+| MP-0164 | skills/productivity/writing-for-agents/agents/openai.yaml | 100644/blob | 102 | 079c933b75743dec18b5d0c01006def20b6aad26 | codex-metadata | READ | [MP-0164 note](02_FILE_NOTES/MP-0164.md) |  |  | MEDIUM |  |
