@@ -1898,8 +1898,8 @@
       "sha": "dadd0c00d6a350acaa15bb9ca1b96b20ead684ca",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0158 note](02_FILE_NOTES/MP-0158.md)"
     },
     {
       "mp_id": "MP-0159",
@@ -1910,8 +1910,8 @@
       "sha": "a58d14765beb4acb4c9708b516310558e1308a22",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0159 note](02_FILE_NOTES/MP-0159.md)"
     },
     {
       "mp_id": "MP-0160",
@@ -1922,8 +1922,8 @@
       "sha": "f8854f1b4527bca90378baf5430557172136a1bf",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0160 note](02_FILE_NOTES/MP-0160.md)"
     },
     {
       "mp_id": "MP-0161",
@@ -1934,8 +1934,8 @@
       "sha": "6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0161 note](02_FILE_NOTES/MP-0161.md)"
     },
     {
       "mp_id": "MP-0162",
@@ -1946,8 +1946,8 @@
       "sha": "9cdbdb22aadc438755392216e75ad9a14cc9832e",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0162 note](02_FILE_NOTES/MP-0162.md)"
     },
     {
       "mp_id": "MP-0163",

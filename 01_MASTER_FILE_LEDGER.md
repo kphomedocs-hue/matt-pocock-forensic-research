@@ -173,10 +173,10 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0155 | skills/productivity/teach/RESOURCES-FORMAT.md | 100644/blob | 1924 | 18b588c8b6f96a50ae2352f264928c643d2782e4 | skill-support | READ | [MP-0155 note](02_FILE_NOTES/MP-0155.md) |  |  | LOW |  |
 | MP-0156 | skills/productivity/teach/SKILL.md | 100644/blob | 9506 | c679eeccd48ca720c8196e5d9a9e58223abf213b | skill | READ | [MP-0156 note](02_FILE_NOTES/MP-0156.md) |  |  | MEDIUM |  |
 | MP-0157 | skills/productivity/teach/agents/openai.yaml | 100644/blob | 139 | 3452a850e3b0c1f0a3d41b2bfd45164d2d38d7f6 | codex-metadata | READ | [MP-0157 note](02_FILE_NOTES/MP-0157.md) |  |  | MEDIUM |  |
-| MP-0158 | skills/productivity/to-questionnaire/SKILL.md | 100644/blob | 2904 | dadd0c00d6a350acaa15bb9ca1b96b20ead684ca | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0159 | skills/productivity/to-questionnaire/agents/openai.yaml | 100644/blob | 166 | a58d14765beb4acb4c9708b516310558e1308a22 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0160 | skills/productivity/wait-what/SKILL.md | 100644/blob | 394 | f8854f1b4527bca90378baf5430557172136a1bf | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0161 | skills/productivity/wait-what/agents/openai.yaml | 100644/blob | 158 | 6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0162 | skills/productivity/writing-for-agents/SKILL-MECHANICS.md | 100644/blob | 2629 | 9cdbdb22aadc438755392216e75ad9a14cc9832e | skill-support | UNREAD |  |  |  | LOW |  |
+| MP-0158 | skills/productivity/to-questionnaire/SKILL.md | 100644/blob | 2904 | dadd0c00d6a350acaa15bb9ca1b96b20ead684ca | skill | READ | [MP-0158 note](02_FILE_NOTES/MP-0158.md) |  |  | MEDIUM |  |
+| MP-0159 | skills/productivity/to-questionnaire/agents/openai.yaml | 100644/blob | 166 | a58d14765beb4acb4c9708b516310558e1308a22 | codex-metadata | READ | [MP-0159 note](02_FILE_NOTES/MP-0159.md) |  |  | MEDIUM |  |
+| MP-0160 | skills/productivity/wait-what/SKILL.md | 100644/blob | 394 | f8854f1b4527bca90378baf5430557172136a1bf | skill | READ | [MP-0160 note](02_FILE_NOTES/MP-0160.md) |  |  | MEDIUM |  |
+| MP-0161 | skills/productivity/wait-what/agents/openai.yaml | 100644/blob | 158 | 6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3 | codex-metadata | READ | [MP-0161 note](02_FILE_NOTES/MP-0161.md) |  |  | MEDIUM |  |
+| MP-0162 | skills/productivity/writing-for-agents/SKILL-MECHANICS.md | 100644/blob | 2629 | 9cdbdb22aadc438755392216e75ad9a14cc9832e | skill-support | READ | [MP-0162 note](02_FILE_NOTES/MP-0162.md) |  |  | LOW |  |
 | MP-0163 | skills/productivity/writing-for-agents/SKILL.md | 100644/blob | 10886 | a37608daf6e835e767deecfb498facecaaba82ba | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0164 | skills/productivity/writing-for-agents/agents/openai.yaml | 100644/blob | 102 | 079c933b75743dec18b5d0c01006def20b6aad26 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
