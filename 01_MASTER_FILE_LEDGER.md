@@ -16,7 +16,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 
 | MP-ID | Path | Mode/Type | Size | Blob SHA | Category | Status | Evidence | Ref-out | Ref-in | Runtime Risk | Notes |
 |---|---|---|---:|---|---|---|---|---|---|---|---|
-| MP-0001 | .agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md | 100644/blob | 1154 | 56b348d9fea2d7ee2e326fe1838215d0c94c413b | governance | UNREAD |  |  |  | MEDIUM |  |
+| MP-0001 | .agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md | 100644/blob | 1154 | 56b348d9fea2d7ee2e326fe1838215d0c94c413b | governance | READ | [MP-0001 note](02_FILE_NOTES/MP-0001.md) |  |  | MEDIUM |  |
 | MP-0002 | .agents/adr/0002-ship-as-a-claude-code-plugin.md | 100644/blob | 5528 | 263d10290d60ea15119d2d3c51af5f4f08b5f178 | governance | UNREAD |  |  |  | MEDIUM |  |
 | MP-0003 | .agents/install-block.md | 100644/blob | 2780 | a93751108599407637bec35c08dde6c4eb1afefe | governance | UNREAD |  |  |  | MEDIUM |  |
 | MP-0004 | .agents/invocation.md | 100644/blob | 3848 | c13b8a5ea97466e14259de602c6b66e72133fef1 | governance | UNREAD |  |  |  | MEDIUM |  |
