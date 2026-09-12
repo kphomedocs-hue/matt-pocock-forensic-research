@@ -143,7 +143,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0125 | skills/in-progress/retro/agents/openai.yaml | 100644/blob | 146 | a2f0bac3f9cebf29beee2e79960cb876e0adc65d | codex-metadata | READ | [MP-0125 note](02_FILE_NOTES/MP-0125.md) |  |  | MEDIUM |  |
 | MP-0126 | skills/in-progress/setup-ts-deep-modules/SKILL.md | 100644/blob | 7546 | 7e30047eaeda175de5d93886596a37baf365bb90 | skill | READ | [MP-0126 note](02_FILE_NOTES/MP-0126.md) |  |  | MEDIUM |  |
 | MP-0127 | skills/in-progress/setup-ts-deep-modules/agents/openai.yaml | 100644/blob | 149 | 5d0581bdd4f9337cfb1e13feb7e1e18f43ea9db1 | codex-metadata | READ | [MP-0127 note](02_FILE_NOTES/MP-0127.md) |  |  | MEDIUM |  |
-| MP-0128 | skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs | 100644/blob | 3712 | 54030ede7d36b7f72fc0f645fa414efa9b6f63ed | skill-executable-config | UNREAD |  |  |  | HIGH |  |
+| MP-0128 | skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs | 100644/blob | 3712 | 54030ede7d36b7f72fc0f645fa414efa9b6f63ed | skill-executable-config | READ | [MP-0128 note](02_FILE_NOTES/MP-0128.md) |  |  | HIGH |  |
 | MP-0129 | skills/in-progress/writing-beats/SKILL.md | 100644/blob | 4855 | 3d3b25b605491adc5c62ae5423127717a94b9632 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0130 | skills/in-progress/writing-beats/agents/openai.yaml | 100644/blob | 142 | e8eaa188d4c70b582eed2d1775fe4c4ea3562b25 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0131 | skills/in-progress/writing-fragments/SKILL.md | 100644/blob | 3558 | c7c889b880cf9c8d289119dea5ff240641b615ca | skill | UNREAD |  |  |  | MEDIUM |  |

@@ -1538,8 +1538,8 @@
       "sha": "54030ede7d36b7f72fc0f645fa414efa9b6f63ed",
       "category": "skill-executable-config",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0128 note](02_FILE_NOTES/MP-0128.md)"
     },
     {
       "mp_id": "MP-0129",
