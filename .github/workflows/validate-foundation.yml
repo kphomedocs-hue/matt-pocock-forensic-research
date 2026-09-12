@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forensic-generated-main-writes
+  group: forensic-validate-foundation
   cancel-in-progress: false
 
 jobs:
