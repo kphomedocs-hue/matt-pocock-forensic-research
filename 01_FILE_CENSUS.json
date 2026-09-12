@@ -1406,8 +1406,8 @@
       "sha": "ee394b7985a8c296ffa068e63e4f5dcf23b8969b",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0117 note](02_FILE_NOTES/MP-0117.md)"
     },
     {
       "mp_id": "MP-0118",
