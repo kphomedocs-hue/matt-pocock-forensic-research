@@ -12,25 +12,38 @@ on:
 permissions:
   contents: write
 
+# Generated-file workflows share one write lane. Connector/API writes can still
+# land while a run is active, so the push step also rebases and retries.
+concurrency:
+  group: forensic-generated-main-writes
+  cancel-in-progress: false
+
 jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout research repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
+
       - name: Rebuild frozen census and ledger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/build_master_ledger.py
 
-      - name: Validate physical denominator
+      - name: Validate physical denominator and outputs
         run: |
+          test -s 01_FILE_CENSUS.json
+          test -s 01_MASTER_FILE_LEDGER.md
           python - <<'PY'
           import json
           data = json.load(open('01_FILE_CENSUS.json', encoding='utf-8'))
@@ -44,7 +57,7 @@ jobs:
 
       - name: Commit regenerated ledger
         run: |
-          if git diff --quiet -- 01_MASTER_FILE_LEDGER.md 01_FILE_CENSUS.json; then
+          if [[ -z "$(git status --porcelain -- 01_MASTER_FILE_LEDGER.md 01_FILE_CENSUS.json)" ]]; then
             echo "Ledger already current"
             exit 0
           fi
@@ -52,4 +65,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add 01_MASTER_FILE_LEDGER.md 01_FILE_CENSUS.json
           git commit -m "audit: rebuild 164-file frozen census"
-          git push
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish regenerated ledger after 5 attempts" >&2
+          exit 1
