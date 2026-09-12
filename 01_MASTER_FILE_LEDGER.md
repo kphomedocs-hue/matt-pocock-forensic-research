@@ -120,10 +120,10 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0102 | skills/engineering/tdd/mocking.md | 100644/blob | 1481 | 71cbfee674d93244ce81d1830b930ca9a69200bd | skill-support | READ | [MP-0102 note](02_FILE_NOTES/MP-0102.md) |  |  | LOW |  |
 | MP-0103 | skills/engineering/tdd/tests.md | 100644/blob | 2214 | 7ab86479f925a1f9e8ba680af33cb3b12e015381 | skill-support | READ | [MP-0103 note](02_FILE_NOTES/MP-0103.md) |  |  | LOW |  |
 | MP-0104 | skills/engineering/to-spec/SKILL.md | 100644/blob | 3043 | 3f52599ae2a4347aee5a07432c2707518e691a7f | skill | READ | [MP-0104 note](02_FILE_NOTES/MP-0104.md) |  |  | MEDIUM |  |
-| MP-0105 | skills/engineering/to-spec/agents/openai.yaml | 100644/blob | 135 | 549e6f76f020a1b9ba65f52ccda336566ee6222a | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0106 | skills/engineering/to-tickets/SKILL.md | 100644/blob | 5671 | e868c831fcfb1e124e010bcdf84a429ec879160f | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0107 | skills/engineering/to-tickets/agents/openai.yaml | 100644/blob | 146 | 24605a5db64e4fc750b999aa94aea126bee814ee | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0108 | skills/engineering/triage/AGENT-BRIEF.md | 100644/blob | 7942 | 1462fcd9e8cc21921158c296149dc05d9be39d20 | skill-support | UNREAD |  |  |  | LOW |  |
+| MP-0105 | skills/engineering/to-spec/agents/openai.yaml | 100644/blob | 135 | 549e6f76f020a1b9ba65f52ccda336566ee6222a | codex-metadata | READ | [MP-0105 note](02_FILE_NOTES/MP-0105.md) |  |  | MEDIUM |  |
+| MP-0106 | skills/engineering/to-tickets/SKILL.md | 100644/blob | 5671 | e868c831fcfb1e124e010bcdf84a429ec879160f | skill | READ | [MP-0106 note](02_FILE_NOTES/MP-0106.md) |  |  | MEDIUM |  |
+| MP-0107 | skills/engineering/to-tickets/agents/openai.yaml | 100644/blob | 146 | 24605a5db64e4fc750b999aa94aea126bee814ee | codex-metadata | READ | [MP-0107 note](02_FILE_NOTES/MP-0107.md) |  |  | MEDIUM |  |
+| MP-0108 | skills/engineering/triage/AGENT-BRIEF.md | 100644/blob | 7942 | 1462fcd9e8cc21921158c296149dc05d9be39d20 | skill-support | READ | [MP-0108 note](02_FILE_NOTES/MP-0108.md) |  |  | LOW |  |
 | MP-0109 | skills/engineering/triage/OUT-OF-SCOPE.md | 100644/blob | 4667 | c9fba2f77ee0619975ec8488c0d4861a0c7e3151 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0110 | skills/engineering/triage/SKILL.md | 100644/blob | 6557 | 37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0111 | skills/engineering/triage/agents/openai.yaml | 100644/blob | 135 | acb366cf0f2527e8925ff1223b77610ac0b1be4c | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
