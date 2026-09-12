@@ -13,9 +13,11 @@ Physical denominator: **164 blobs/files**
 
 Primary phase focus: **Phase 3 — Connection Mapping**.
 
-Phase 1 and Phase 2 are complete. The exact frozen recursive tree is materialized in `01_MASTER_FILE_LEDGER.md` and `01_FILE_CENSUS.json`, generated deterministically from the Git tree by `scripts/build_master_ledger.py`. The workflow `.github/workflows/rebuild-ledger.yml` validates 164 unique blobs, 164 unique paths, 164 unique MP-IDs, rejects truncated source trees, and derives READ-or-higher status from durable notes in `02_FILE_NOTES/`.
+Phase 1 and Phase 2 are complete. The exact frozen recursive tree is materialized in `01_MASTER_FILE_LEDGER.md` and `01_FILE_CENSUS.json`, generated deterministically from the Git tree by `scripts/build_master_ledger.py`. Every frozen physical blob has a durable per-file note and is mechanically marked READ.
 
-Every frozen physical blob now has a durable per-file note and is mechanically marked READ. This closes physical coverage only; it does **not** mean the forensic audit is complete. Connection tracing, behavior/enforcement reconciliation, history closure, contradiction/orphan analysis, runtime/distribution validation, second pass, red-team verification, and final reconstruction remain.
+Phase 3 now has both a manually curated semantic graph (`03_CONNECTION_GRAPH.md`) and a deterministic extractor (`scripts/build_connection_graph.py`) backed by `.github/workflows/rebuild-connection-graph.yml`. The extractor reads all 164 frozen blobs by SHA from the census and derives source-explicit/structural relationships instead of relying on ranked search.
+
+The first complete extraction run succeeded over all 164 blobs and reported **204 extracted edges** plus **5 unresolved internal-looking references**. The initial workflow exposed a research-tooling bug: `git diff --quiet` ignored newly generated untracked graph files. That commit gate was corrected to use `git status --porcelain`; this is a tooling defect in the audit repo, not a source-repository finding.
 
 ## Phase status
 
@@ -23,7 +25,7 @@ Every frozen physical blob now has a durable per-file note and is mechanically m
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
 | 2. Full Physical Read | **COMPLETE** | **164 READ / 0 UNREAD**. Every physical blob has a durable note in `02_FILE_NOTES/`. |
-| 3. Connection Mapping | **IN PROGRESS** | Several relationships are already evidenced, but exhaustive incoming/outgoing typed-edge mapping is not complete. |
+| 3. Connection Mapping | **IN PROGRESS** | Deterministic 164-blob extraction now produces 204 candidate explicit/structural edges and 5 unresolved internal-looking references; semantic reconciliation and incoming/outgoing closure remain. |
 | 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified; CT-010 confirmed from operative sources. |
 | 5. History | IN PROGRESS | Root CHANGELOG has a formal durable reread; several high-impact PRs/commits have also been traced. |
 | 6. Contradictions & Orphans | IN PROGRESS | Multiple current and historical contradictions have frozen-source evidence; exhaustive orphan/incoming-reference analysis remains. |
@@ -38,6 +40,8 @@ Every frozen physical blob now has a durable per-file note and is mechanically m
 - Ledger rows: **164**
 - Phase 2 READ: **164**
 - Phase 2 UNREAD: **0**
+- Deterministic Phase 3 extracted edges: **204**
+- Deterministic Phase 3 unresolved internal-looking references: **5**
 - CONNECTIONS TRACED: **0** formally promoted in the durable ledger
 - VERIFIED: **0** formally promoted in the durable ledger
 - Current SKILL.md files: **37**
@@ -45,35 +49,27 @@ Every frozen physical blob now has a durable per-file note and is mechanically m
 - Local link skill set: **33**
 - Promoted invocation split: **14 user-invoked / 11 model-invoked**
 
-## Most recent durable range
+## Phase 3 extraction coverage
 
-`MP-0001` through `MP-0164` are READ with notes in `02_FILE_NOTES/`.
+The deterministic extractor currently handles:
+- internal relative Markdown links as `DOC_LINK`;
+- explicit Skill-tool calls as `OPERATIVE_CALL`;
+- `agents/openai.yaml` ownership as `CONFIG_BINDING`;
+- Claude plugin skill entries as `DISTRIBUTION_ENTRY`;
+- Git symlink targets as `SYMLINK`;
+- exact per-file incoming/outgoing counts against the full 164-file census;
+- an explicit unresolved-reference queue rather than silently dropping unresolved targets.
 
-The final Phase 2 range covered:
-- remaining engineering Wayfinder/Wizard source, metadata, and wizard executable template;
-- all in-progress bucket source, metadata, support, and dependency-cruiser config;
-- complete misc bucket including the executable Git guardrail hook;
-- complete productivity bucket including teaching formats/source and writing-for-agents source/mechanics.
-
-Durable findings strengthened in the final range:
-- Wayfinder's default `plan, don't do` constraint can be overridden from map Notes, so the constrained workflow can carry an authored exception;
-- Wizard hides secret entry but deliberately persists captured values to plaintext `.env`; hidden input is not at-rest secrecy;
-- `retro` is substantial operative behavior despite the in-progress README calling it a non-functional STUB;
-- `setup-ts-deep-modules` has a strong enforcement proof gate: pass → deliberate violation must fail → revert → pass;
-- dependency-cruiser config implements five error-level rules, including a private tests-folder rule in addition to the four-rule prose summary;
-- Git guardrails are a real pre-execution gate but rely on regex command-string matching rather than parsed Git/shell semantics;
-- writing-fragments is explicitly explore while writing-beats/writing-shape are exploit, with concept-grounding as a sequencing constraint;
-- Teach's glossary format exists and is substantive, while the operative Teach skill does not directly link that support file;
-- writing-for-agents treats environment/config as source of truth, duplicated prose as caches, and checkable/exhaustive completion criteria as a defense against premature completion.
+This extraction layer is evidence collection, not final semantic verification. Aggregate/semantic references, history edges, installer/linker set semantics, invocation-policy joins, and false-positive/false-negative review still require reconciliation before any file is promoted to `CONNECTIONS TRACED`.
 
 ## Immediate next execution steps
 
-1. Start exhaustive Phase 3 connection mapping from the frozen source and durable file notes.
-2. Build typed edges using: `OPERATIVE_CALL`, `PASSIVE_REFERENCE`, `DOC_LINK`, `DISTRIBUTION_ENTRY`, `CONFIG_BINDING`, `HISTORY_REFERENCE`, and `SYMLINK`; keep inferred edges separate.
-3. For every MP file, record outgoing and incoming internal references; do not promote `CONNECTIONS TRACED` until both directions are reconciled.
-4. Run negative/orphan searches after the graph is materialized; do not claim absence from ranked search alone.
-5. Use the completed graph to drive Phase 4 behavior/enforcement reconciliation and Phase 5 targeted history.
-6. Do not return to broad KP recommendations until prior gates are satisfied.
+1. Persist and inspect the generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` from the corrected workflow.
+2. Reconcile the 5 unresolved internal-looking references one by one as valid external/generated/anchor cases or real broken references.
+3. Expand aggregate relationships (especially ask-matt and setup templates) into exact per-target edges.
+4. Join every `OPERATIVE_CALL` target against user/model invocation classification and flag illegal current calls.
+5. Build exact distribution symmetry across plugin, linker, list-skills, docs, router, and Codex metadata.
+6. Promote a file to `CONNECTIONS TRACED` only after outgoing, incoming, links, invocation class, and unresolved relationships are closed.
 
 ## Resume instruction
 
