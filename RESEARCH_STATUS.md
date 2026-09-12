@@ -22,12 +22,12 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 | Phase | Status | Gate state |
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
-| 2. Full Physical Read | **IN PROGRESS** | **81 READ / 83 UNREAD**. Next deterministic file: `MP-0082`. |
+| 2. Full Physical Read | **IN PROGRESS** | **111 READ / 53 UNREAD**. Next deterministic file: `MP-0112`. |
 | 3. Connection Mapping | IN PROGRESS / evidence accumulated | Several operative/reference relationships traced; exhaustive graph not complete. |
-| 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified; CT-010 now confirmed from operative sources. |
+| 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified; CT-010 confirmed from operative sources. |
 | 5. History | IN PROGRESS | Root CHANGELOG has a formal Phase 2 durable reread; several high-impact PRs/commits have also been traced. |
-| 6. Contradictions & Orphans | IN PROGRESS | CT-003, CT-007, CT-009 and CT-010 now have operative-source closure on their relevant sides. |
-| 7. Runtime & Distribution | IN PROGRESS | High-risk package/runtime block MP-0055 through MP-0059 is complete; operative engineering skills are now being read in path order. |
+| 6. Contradictions & Orphans | IN PROGRESS | CT-001, CT-003, CT-007, CT-008, CT-009 and CT-010 now have strong frozen-source evidence. |
+| 7. Runtime & Distribution | IN PROGRESS | High-risk package/runtime block is complete; operative engineering skills are now read through triage. |
 | 8. Second Pass | NOT STARTED formally | No formal high-impact second-pass gate yet. |
 | 9. Red-Team Verification | NOT STARTED formally | Individual falsification checks exist, but no systematic red-team pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Preliminary synthesis exists but is not final. |
@@ -36,8 +36,8 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 - Physical blobs/files: **164**
 - Ledger rows: **164**
-- Phase 2 READ: **81**
-- Phase 2 UNREAD: **83**
+- Phase 2 READ: **111**
+- Phase 2 UNREAD: **53**
 - CONNECTIONS TRACED: **0** formally in the durable ledger
 - VERIFIED: **0** formally in the durable ledger
 - Current SKILL.md files: **37**
@@ -47,29 +47,30 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 ## Most recent durable range
 
-`MP-0001` through `MP-0081` are READ with notes in `02_FILE_NOTES/`.
+`MP-0001` through `MP-0111` are READ with notes in `02_FILE_NOTES/`.
 
 The latest range covered:
-- operative `code-review` source and Codex metadata;
-- codebase-design support files, source, and metadata;
-- operative diagnosing-bugs source, metadata, and HITL template;
-- domain-modeling ADR/CONTEXT formats, source, and metadata;
-- grill-with-docs source and metadata;
-- implement source and metadata.
+- improve-codebase-architecture report/source/metadata;
+- prototype logic/UI/source/metadata;
+- research and resolving-merge-conflicts source/metadata;
+- setup source plus GitHub/GitLab/local tracker/domain/triage-label templates;
+- TDD source/metadata/mocking/tests;
+- to-spec and to-tickets source/metadata;
+- triage agent-brief/out-of-scope/source/metadata.
 
 Durable findings strengthened in this range:
-- CT-010 is confirmed from operative sources: implement invokes code-review before commit, while code-review only inspects `<fixed-point>...HEAD` and fails on an empty committed diff;
-- CT-007 is confirmed as stale human docs: operative diagnosing-bugs source has explicit redaction behavior;
-- CT-009 is confirmed on the operative side: current diagnosing-bugs source contains no architecture handoff, while docs/router still describe it;
-- grill-with-docs is a one-line wrapper whose correct behavior depends on loading both `grilling` and `domain-modeling`;
-- codebase-design formalizes exact vocabulary and progressive-disclosure support files;
-- diagnosing-bugs treats lack of a correct regression-test seam as an architectural finding rather than fabricating a shallow test;
-- HITL capture explicitly warns against capturing credentials because values are echoed for agent parsing.
+- CT-008 is source-confirmed: architecture report is a single self-contained file but requires Tailwind/Mermaid CDNs;
+- prototype preserves validated design evidence on throwaway branches while removing prototype implementation from main;
+- setup source confirms CLAUDE.md-first file selection regardless of harness and maps labels without creating them;
+- the GitHub tracker template contains the external-PR `authorAssociation` command that docs identify as failing;
+- operative TDD source explicitly says red → green only, while its Codex short description still says red-green-refactor, strengthening CT-001 into a docs/metadata drift;
+- to-tickets formalizes tracer-bullet vertical slices and expand–migrate–contract for wide refactors;
+- triage makes the agent brief the authoritative durable execution contract and `.out-of-scope/` the persistent negative product-memory layer.
 
 ## Immediate next execution steps
 
-1. Continue deterministic reading at `MP-0082` (`skills/engineering/improve-codebase-architecture/HTML-REPORT.md`).
-2. Continue operative engineering skills and support/metadata files in path order.
+1. Continue deterministic reading at `MP-0112` (`skills/engineering/wayfinder/SKILL.md`).
+2. Finish remaining engineering files, then in-progress, misc, productivity, and remaining support/metadata in path order.
 3. Store one durable note per file before status promotion.
 4. Continue until `UNREAD = 0`.
 5. Update claims/contradictions/history only when directly supported by the current file, without interrupting deterministic read order.
