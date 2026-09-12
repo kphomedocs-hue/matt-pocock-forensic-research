@@ -14,79 +14,83 @@ This audit checks whether our own automation could silently lose, stale, or misc
 
 **State:** FIXED
 
-The first Phase 3 graph workflow generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` successfully (`204 edges`, `5 unresolved`), but the commit gate used:
-
-```sh
-git diff --quiet -- 03_CONNECTION_EDGES.json 03_CONNECTION_INDEX.md
-```
-
-`git diff` does not report newly-created untracked files, so the workflow incorrectly printed `No graph changes` and exited successfully without persisting them.
+The first Phase 3 graph workflow generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` successfully (`204 edges`, `5 unresolved`), but the commit gate used `git diff --quiet`, which does not report newly-created untracked files. The workflow therefore printed `No graph changes` and exited successfully without persisting them.
 
 **Impact:** generated Phase 3 outputs were temporarily absent even though extraction succeeded. Source evidence and Phase 2 notes were not corrupted.
 
-**Fix:** graph workflow now uses `git status --porcelain` for generated-file detection and explicitly requires both generated outputs to exist and be non-empty.
+**Fix:** graph workflow now uses `git status --porcelain` and explicitly requires generated outputs to exist and be non-empty.
 
 ### TI-002 — Concurrent writes causing non-fast-forward workflow push failures
 
 **State:** FIXED / MONITORED
 
-GitHub Actions reports 71 failed runs in the repository's historical run set. A representative ledger failure was inspected in full. The workflow:
+The complete historical failure ledger now classifies **61 runs** as `PUSH_RACE`. Their failed job logs contain the non-fast-forward/fetch-first push signature after generation succeeded locally.
 
-1. rebuilt the 164-file ledger successfully;
-2. validated the exact denominator successfully;
-3. created a local commit successfully;
-4. failed only at `git push` because another write had reached `main` first:
+**Impact:** generated ledger state could be temporarily stale relative to newly committed per-file notes. Durable notes remained committed.
 
-```text
-! [rejected] main -> main (fetch first)
-error: failed to push some refs
-```
+**Fixes applied to generated-file workflows:**
 
-This confirms that the many connector writes and automatic ledger commits could race each other.
-
-**Impact:** a particular generated ledger commit could fail to publish, leaving the generated ledger temporarily behind the newest per-file notes. The durable notes themselves remained committed. A later successful rebuild generally reconciled the ledger, which is why the final Phase 2 gate still reached mechanically confirmed `164 READ / 0 UNREAD`.
-
-**Fixes now applied to both generated-file workflows:**
-
-- shared GitHub Actions concurrency group: `forensic-generated-main-writes`;
-- `cancel-in-progress: false` so generated work is serialized, not silently discarded;
-- `fetch-depth: 0`;
+- shared concurrency group `forensic-generated-main-writes`;
+- `cancel-in-progress: false`;
+- full-history checkout;
 - `git pull --ff-only origin main` before generation;
-- explicit generated-output existence/non-empty checks;
-- up to five push attempts, fetching and rebasing onto the latest `main` after a push race.
-
-Connector/API writes can still land while a workflow is running, so the retry/rebase path remains necessary even with workflow concurrency.
+- generated-output existence/non-empty checks;
+- up to five push attempts with fetch/rebase after a race.
 
 ### TI-003 — Durable-note status parser format mismatch
 
-**State:** FIXED earlier
+**State:** FIXED
 
-Earlier in Phase 2, notes using `- Status: READ` were not recognized by a parser that expected the older bold form `Status: **READ**`. This caused rebuild failures rather than silent promotion.
+The complete historical failure ledger classifies **10 runs** as `STATUS_PARSER`. Their logs show the old parser rejecting notes such as `MP-0021.md` because it required the older `Status: **...**` form while newer notes used `- Status: READ`.
 
-The current parser accepts both forms and fails closed if a note exists but has no valid durable `Status:` line.
+**Impact:** READ promotion was delayed. The workflow failed closed; no false promotion or source-evidence corruption occurred.
 
-**Impact:** status promotion was delayed; evidence was not silently lost or falsely promoted.
+**Fix:** the current parser accepts both durable status formats and still fails closed for malformed or invalid statuses.
+
+## Complete historical failure classification
+
+`00_TOOLING_FAILURE_LEDGER.md` and `00_TOOLING_FAILURE_LEDGER.json` enumerate every historical failed workflow run and classify it from the actual failed step plus job-log signature.
+
+- Failed runs enumerated: **71**
+- `PUSH_RACE`: **61**
+- `STATUS_PARSER`: **10**
+- Unknown/unclassified: **0**
+
+Impact classification:
+
+- `TEMPORARILY_STALE`: **61**
+- `DELAYED_PROMOTION`: **10**
+- Evidence-corruption failures found: **0**
 
 ## Current workflow assessment
 
 ### `rebuild-ledger.yml`
 
-- Generated files are already tracked, so TI-001 did not apply to this workflow.
 - Exact source-tree denominator remains fail-closed at 164 blobs.
 - Unique MP-ID and path counts are asserted.
-- Current historical risk was TI-002 push concurrency; hardened on 2026-09-12.
-- First hardened run completed successfully.
+- Generated files are tracked, so TI-001 did not apply.
+- Concurrency/push handling is hardened.
+- Hardened workflow has completed successfully.
 
 ### `rebuild-connection-graph.yml`
 
 - TI-001 affected its first run and is fixed.
-- It now shares the serialized write lane with the ledger workflow.
-- It validates `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` exist and are non-empty before commit.
-- It retains the raw unresolved queue rather than silently dropping unresolved internal-looking references.
+- Shares the serialized write lane.
+- Validates generated outputs before commit.
+- Preserves unresolved references for manual reconciliation.
+- Hardened workflow has completed successfully.
+
+### `classify-tooling-failures.yml`
+
+- Enumerates all failed runs via GitHub API.
+- Retrieves failed-job logs through GitHub's signed-log redirect.
+- Writes a durable per-run classification ledger.
+- Closure criterion is zero unknowns or explicit manual disposition.
+- Current historical classification reached **0 unknowns**.
 
 ## What the failures did NOT invalidate
 
-The audit found no evidence that these workflow failures changed the frozen source commit, altered source blob SHAs, deleted per-file notes, or fabricated READ status.
+No classified historical failure changed the frozen source commit, altered source blob SHAs, deleted per-file notes, or fabricated READ status.
 
 Phase 2's final result remains grounded by:
 
@@ -94,17 +98,8 @@ Phase 2's final result remains grounded by:
 - frozen tree `6e84c093fda2026396cea9fad6a924a6da0e1452`;
 - exact 164-blob census;
 - 164 durable per-file notes;
-- a later successful deterministic ledger rebuild showing `164 READ / 0 UNREAD`.
-
-Therefore the historical workflow failures primarily affected **publication freshness and automation reliability**, not the underlying frozen-source reading evidence.
-
-## Residual risks / follow-up
-
-1. The 71 historical failed Actions runs are not yet individually classified one-by-one. At least one large failure class is confirmed as non-fast-forward push races; the exact distribution among push races, earlier parser failures, and any other causes should not be guessed.
-2. Generated outputs should never be considered authoritative merely because a workflow run is green; existence, content invariants, and source provenance must remain explicit gates.
-3. When new generated workflows are added, use `git status --porcelain`, output existence checks, the shared concurrency group, and push-retry/rebase behavior by default.
-4. Periodically compare durable notes to generated ledger status so a successful-looking automation cannot become the sole source of truth.
+- successful deterministic rebuild showing `164 READ / 0 UNREAD`.
 
 ## Integrity conclusion
 
-The audit found real historical automation defects, including a silent-success persistence bug and confirmed concurrent-write failures. Both known classes are now hardened. The defects could make generated artifacts temporarily stale or absent, but the evidence reviewed so far does not indicate corruption of the frozen-source audit or loss of the durable per-file notes.
+The historical tooling issue is now classified rather than open-ended. All **71 failed runs** have a concrete cause: **61 publication races** and **10 fail-closed parser mismatches**. No historical failed run remains UNKNOWN, and no evidence-corruption failure was found. The known automation defects have been hardened before deeper Phase 3 promotion work continues.
