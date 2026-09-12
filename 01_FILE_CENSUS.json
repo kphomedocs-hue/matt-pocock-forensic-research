@@ -722,8 +722,8 @@
       "sha": "aa1242c27b1f5e3f762bd5743affbd966811b5b4",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0060 note](02_FILE_NOTES/MP-0060.md)"
     },
     {
       "mp_id": "MP-0061",
@@ -734,8 +734,8 @@
       "sha": "676977ee31f86172f4a5653ab719f6b5be3072d1",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0061 note](02_FILE_NOTES/MP-0061.md)"
     },
     {
       "mp_id": "MP-0062",
