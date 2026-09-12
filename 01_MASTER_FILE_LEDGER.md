@@ -68,8 +68,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0050 | docs/productivity/handoff.md | 100644/blob | 8746 | 72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672 | human-docs | READ | [MP-0050 note](02_FILE_NOTES/MP-0050.md) |  |  | LOW |  |
 | MP-0051 | docs/productivity/teach.md | 100644/blob | 13260 | 012113bd2379a4318ad3c1c7e4f4e848bbc29990 | human-docs | READ | [MP-0051 note](02_FILE_NOTES/MP-0051.md) |  |  | LOW |  |
 | MP-0052 | docs/productivity/to-questionnaire.md | 100644/blob | 7828 | 52f0e437bb241630c9960f02c7e6fd7091a3030f | human-docs | READ | [MP-0052 note](02_FILE_NOTES/MP-0052.md) |  |  | LOW |  |
-| MP-0053 | docs/productivity/wait-what.md | 100644/blob | 3528 | 0b14100932844507dc8b3de6e3b6bc2002d493e1 | human-docs | UNREAD |  |  |  | LOW |  |
-| MP-0054 | docs/productivity/writing-for-agents.md | 100644/blob | 7784 | de12e66714721f305af1ded601f7a570c6331a72 | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0053 | docs/productivity/wait-what.md | 100644/blob | 3528 | 0b14100932844507dc8b3de6e3b6bc2002d493e1 | human-docs | READ | [MP-0053 note](02_FILE_NOTES/MP-0053.md) |  |  | LOW |  |
+| MP-0054 | docs/productivity/writing-for-agents.md | 100644/blob | 7784 | de12e66714721f305af1ded601f7a570c6331a72 | human-docs | READ | [MP-0054 note](02_FILE_NOTES/MP-0054.md) |  |  | LOW |  |
 | MP-0055 | package-lock.json | 100644/blob | 49290 | db12f086c92da55b5d724f0dd3afecfebd2d793f | dependency-lock | UNREAD |  |  |  | HIGH |  |
 | MP-0056 | package.json | 100644/blob | 597 | 2200fefca3d8c1ebac5a823681915eec736dfa07 | package-config | UNREAD |  |  |  | HIGH |  |
 | MP-0057 | scripts/link-skills.sh | 100755/blob | 2240 | 558fae823c0e296ad0eff528f827142600a18135 | repo-executable | UNREAD |  |  |  | HIGH |  |
