@@ -4,14 +4,14 @@ Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`
 
 Hard integrity errors: **1**
 
-Warnings / normalization gaps: **20**
+Warnings / normalization gaps: **0**
 
 ## Durable provenance
 
 - Census rows: **164 / 164**
 - Durable notes found: **164 / 164**
 - Status counts: `{'READ': 164}`
-- Provenance syntax styles accepted: `{'direct': 154, 'evidence': 9}`
+- Provenance syntax styles accepted: `{'direct': 164}`
 
 ## Note-schema coverage
 
@@ -81,30 +81,11 @@ These are normalization measurements, not Phase 2 failures. Existing evidence is
 
 ## Hard errors
 
-- 02_FILE_NOTES/MP-0024.md: frozen commit missing/mismatch
+- Duplicate current contradiction IDs
 
 ## Normalization warnings
 
-- 02_FILE_NOTES/MP-0021.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0022.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0023.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0024.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0025.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0026.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0027.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0028.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0029.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0030.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0031.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0032.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0033.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0034.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0035.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0036.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0037.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0038.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0039.md: category line missing; category remains authoritative in census
-- 02_FILE_NOTES/MP-0040.md: category line missing; category remains authoritative in census
+- None.
 
 ## Gate
 

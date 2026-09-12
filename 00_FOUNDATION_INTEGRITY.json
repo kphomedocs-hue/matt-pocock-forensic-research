@@ -5,36 +5,14 @@
     "physical_files": 164
   },
   "hard_errors": [
-    "02_FILE_NOTES/MP-0024.md: frozen commit missing/mismatch"
+    "Duplicate current contradiction IDs"
   ],
-  "warnings": [
-    "02_FILE_NOTES/MP-0021.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0022.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0023.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0024.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0025.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0026.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0027.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0028.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0029.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0030.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0031.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0032.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0033.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0034.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0035.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0036.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0037.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0038.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0039.md: category line missing; category remains authoritative in census",
-    "02_FILE_NOTES/MP-0040.md: category line missing; category remains authoritative in census"
-  ],
+  "warnings": [],
   "note_status_counts": {
     "READ": 164
   },
   "note_provenance_styles": {
-    "direct": 154,
-    "evidence": 9
+    "direct": 164
   },
   "note_schema_coverage": {
     "read_evidence": 144,
@@ -603,7 +581,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0022",
@@ -615,7 +593,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0023",
@@ -627,7 +605,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0024",
@@ -639,7 +617,7 @@
         "connections": false,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0025",
@@ -651,7 +629,7 @@
         "connections": false,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0026",
@@ -663,7 +641,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0027",
@@ -675,7 +653,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0028",
@@ -687,7 +665,7 @@
         "connections": false,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0029",
@@ -699,7 +677,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0030",
@@ -711,7 +689,7 @@
         "connections": true,
         "unresolved": false
       },
-      "provenance_style": "evidence"
+      "provenance_style": "direct"
     },
     {
       "mp_id": "MP-0031",
