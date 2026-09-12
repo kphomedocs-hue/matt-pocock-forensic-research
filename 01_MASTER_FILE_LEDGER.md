@@ -169,10 +169,10 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0151 | skills/productivity/handoff/agents/openai.yaml | 100644/blob | 141 | 6e1d8da121beceddc2f9ec7fa8714c1d914dd11a | codex-metadata | READ | [MP-0151 note](02_FILE_NOTES/MP-0151.md) |  |  | MEDIUM |  |
 | MP-0152 | skills/productivity/teach/GLOSSARY-FORMAT.md | 100644/blob | 2122 | fdd7e366ad9760588b28981e42b3d3b561e56aca | skill-support | READ | [MP-0152 note](02_FILE_NOTES/MP-0152.md) |  |  | LOW |  |
 | MP-0153 | skills/productivity/teach/LEARNING-RECORD-FORMAT.md | 100644/blob | 2747 | 953c61422776b47612c3c945920358ad7b5daee7 | skill-support | READ | [MP-0153 note](02_FILE_NOTES/MP-0153.md) |  |  | LOW |  |
-| MP-0154 | skills/productivity/teach/MISSION-FORMAT.md | 100644/blob | 1540 | 45250bb1bad70988bf381625931df64645e10246 | skill-support | UNREAD |  |  |  | LOW |  |
-| MP-0155 | skills/productivity/teach/RESOURCES-FORMAT.md | 100644/blob | 1924 | 18b588c8b6f96a50ae2352f264928c643d2782e4 | skill-support | UNREAD |  |  |  | LOW |  |
-| MP-0156 | skills/productivity/teach/SKILL.md | 100644/blob | 9506 | c679eeccd48ca720c8196e5d9a9e58223abf213b | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0157 | skills/productivity/teach/agents/openai.yaml | 100644/blob | 139 | 3452a850e3b0c1f0a3d41b2bfd45164d2d38d7f6 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0154 | skills/productivity/teach/MISSION-FORMAT.md | 100644/blob | 1540 | 45250bb1bad70988bf381625931df64645e10246 | skill-support | READ | [MP-0154 note](02_FILE_NOTES/MP-0154.md) |  |  | LOW |  |
+| MP-0155 | skills/productivity/teach/RESOURCES-FORMAT.md | 100644/blob | 1924 | 18b588c8b6f96a50ae2352f264928c643d2782e4 | skill-support | READ | [MP-0155 note](02_FILE_NOTES/MP-0155.md) |  |  | LOW |  |
+| MP-0156 | skills/productivity/teach/SKILL.md | 100644/blob | 9506 | c679eeccd48ca720c8196e5d9a9e58223abf213b | skill | READ | [MP-0156 note](02_FILE_NOTES/MP-0156.md) |  |  | MEDIUM |  |
+| MP-0157 | skills/productivity/teach/agents/openai.yaml | 100644/blob | 139 | 3452a850e3b0c1f0a3d41b2bfd45164d2d38d7f6 | codex-metadata | READ | [MP-0157 note](02_FILE_NOTES/MP-0157.md) |  |  | MEDIUM |  |
 | MP-0158 | skills/productivity/to-questionnaire/SKILL.md | 100644/blob | 2904 | dadd0c00d6a350acaa15bb9ca1b96b20ead684ca | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0159 | skills/productivity/to-questionnaire/agents/openai.yaml | 100644/blob | 166 | a58d14765beb4acb4c9708b516310558e1308a22 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0160 | skills/productivity/wait-what/SKILL.md | 100644/blob | 394 | f8854f1b4527bca90378baf5430557172136a1bf | skill | UNREAD |  |  |  | MEDIUM |  |
