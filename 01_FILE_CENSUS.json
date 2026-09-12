@@ -662,8 +662,8 @@
       "sha": "db12f086c92da55b5d724f0dd3afecfebd2d793f",
       "category": "dependency-lock",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0055 note](02_FILE_NOTES/MP-0055.md)"
     },
     {
       "mp_id": "MP-0056",
@@ -674,8 +674,8 @@
       "sha": "2200fefca3d8c1ebac5a823681915eec736dfa07",
       "category": "package-config",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0056 note](02_FILE_NOTES/MP-0056.md)"
     },
     {
       "mp_id": "MP-0057",
@@ -686,8 +686,8 @@
       "sha": "558fae823c0e296ad0eff528f827142600a18135",
       "category": "repo-executable",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0057 note](02_FILE_NOTES/MP-0057.md)"
     },
     {
       "mp_id": "MP-0058",

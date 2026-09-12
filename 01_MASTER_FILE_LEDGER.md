@@ -70,9 +70,9 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0052 | docs/productivity/to-questionnaire.md | 100644/blob | 7828 | 52f0e437bb241630c9960f02c7e6fd7091a3030f | human-docs | READ | [MP-0052 note](02_FILE_NOTES/MP-0052.md) |  |  | LOW |  |
 | MP-0053 | docs/productivity/wait-what.md | 100644/blob | 3528 | 0b14100932844507dc8b3de6e3b6bc2002d493e1 | human-docs | READ | [MP-0053 note](02_FILE_NOTES/MP-0053.md) |  |  | LOW |  |
 | MP-0054 | docs/productivity/writing-for-agents.md | 100644/blob | 7784 | de12e66714721f305af1ded601f7a570c6331a72 | human-docs | READ | [MP-0054 note](02_FILE_NOTES/MP-0054.md) |  |  | LOW |  |
-| MP-0055 | package-lock.json | 100644/blob | 49290 | db12f086c92da55b5d724f0dd3afecfebd2d793f | dependency-lock | UNREAD |  |  |  | HIGH |  |
-| MP-0056 | package.json | 100644/blob | 597 | 2200fefca3d8c1ebac5a823681915eec736dfa07 | package-config | UNREAD |  |  |  | HIGH |  |
-| MP-0057 | scripts/link-skills.sh | 100755/blob | 2240 | 558fae823c0e296ad0eff528f827142600a18135 | repo-executable | UNREAD |  |  |  | HIGH |  |
+| MP-0055 | package-lock.json | 100644/blob | 49290 | db12f086c92da55b5d724f0dd3afecfebd2d793f | dependency-lock | READ | [MP-0055 note](02_FILE_NOTES/MP-0055.md) |  |  | HIGH |  |
+| MP-0056 | package.json | 100644/blob | 597 | 2200fefca3d8c1ebac5a823681915eec736dfa07 | package-config | READ | [MP-0056 note](02_FILE_NOTES/MP-0056.md) |  |  | HIGH |  |
+| MP-0057 | scripts/link-skills.sh | 100755/blob | 2240 | 558fae823c0e296ad0eff528f827142600a18135 | repo-executable | READ | [MP-0057 note](02_FILE_NOTES/MP-0057.md) |  |  | HIGH |  |
 | MP-0058 | scripts/list-skills.sh | 100755/blob | 168 | f13da41774c8bffea798e64505a4c3adc528ee63 | repo-executable | UNREAD |  |  |  | HIGH |  |
 | MP-0059 | scripts/sync-plugin-version.mjs | 100644/blob | 1429 | 44063fc0d14a78927caf3990882ea3809157bc21 | repo-executable | UNREAD |  |  |  | HIGH |  |
 | MP-0060 | skills/deprecated/README.md | 100644/blob | 160 | aa1242c27b1f5e3f762bd5743affbd966811b5b4 | bucket-docs | UNREAD |  |  |  | LOW |  |
