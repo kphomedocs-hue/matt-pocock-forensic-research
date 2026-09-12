@@ -136,7 +136,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0118 | skills/in-progress/claude-handoff/SKILL.md | 100644/blob | 1301 | 9ab14e312a0d5cffe926eeeab12cef7dc8f84d54 | skill | READ | [MP-0118 note](02_FILE_NOTES/MP-0118.md) |  |  | MEDIUM |  |
 | MP-0119 | skills/in-progress/claude-handoff/agents/openai.yaml | 100644/blob | 141 | 0a7aa5da50d0e73248fc17fb8fe82409ec071eaf | codex-metadata | READ | [MP-0119 note](02_FILE_NOTES/MP-0119.md) |  |  | MEDIUM |  |
 | MP-0120 | skills/in-progress/implement-spec/SKILL.md | 100644/blob | 2043 | d5097f847fc003935599a7f7bf8f0f7186427910 | skill | READ | [MP-0120 note](02_FILE_NOTES/MP-0120.md) |  |  | MEDIUM |  |
-| MP-0121 | skills/in-progress/implement-spec/agents/openai.yaml | 100644/blob | 143 | 043f27f43eed1a8a3c0e3fdbf920f07935faf05d | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0121 | skills/in-progress/implement-spec/agents/openai.yaml | 100644/blob | 143 | 043f27f43eed1a8a3c0e3fdbf920f07935faf05d | codex-metadata | READ | [MP-0121 note](02_FILE_NOTES/MP-0121.md) |  |  | MEDIUM |  |
 | MP-0122 | skills/in-progress/loop-me/SKILL.md | 100644/blob | 2522 | e58a474ca80feffdeb28842bc3bdee37da6510e7 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0123 | skills/in-progress/loop-me/agents/openai.yaml | 100644/blob | 140 | 1a4f4111192ff75b4771e8a248c603994d5eafdc | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0124 | skills/in-progress/retro/SKILL.md | 100644/blob | 3388 | f5fed82c7b8597a852a4fa8d292b00a1d5c8bd16 | skill | UNREAD |  |  |  | MEDIUM |  |
