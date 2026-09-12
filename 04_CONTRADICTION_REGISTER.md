@@ -19,6 +19,24 @@ Defect-state labels: `CURRENT / FIXED / PARTIALLY FIXED / DOCS STALE / UNKNOWN`.
 | CT-010 | implement → code-review ordering | Frozen operative implement source MP-0080 explicitly says run `/code-review` once done, then commit. | Frozen operative code-review source MP-0065 reviews only `git diff <fixed-point>...HEAD` and fails early on empty diff; staged/working-tree-only changes are outside that comparison. | WORKFLOW ENFORCEMENT GAP | OPEN | Both operative sources now confirm the mismatch. A run with no interim commit can invoke review before the implementation exists in HEAD. |
 | CT-011 | retro maturity description | Frozen `skills/in-progress/README.md` MP-0117 labels `retro` as `STUB: design notes only, not functional yet`. | Frozen operative `retro/SKILL.md` MP-0124 contains a complete multi-step retrospective workflow, categories, file guidance, and an operative call to `writing-for-agents`. | BUCKET DOCS STALE | OPEN | Current bucket README materially understates the implemented behavior of the in-progress skill. |
 
+## Normalized closure overlay
+
+This overlay adds the canonical fields defined in `00_RESEARCH_SCHEMA.md` without rewriting the evidence table above.
+
+| ID | Origin | Defect state | Impact | Resolution test / next evidence |
+|---|---|---|---|---|
+| CT-001 | SOURCE_REPO | DOCS STALE | User-facing and Codex-facing TDD semantics can disagree with operative behavior. | Confirm all frozen/current secondary surfaces describe red → green only, or document an intentional semantic split. |
+| CT-002 | SOURCE_REPO | DOCS STALE | Router documentation reports wrong plugin/invocation counts. | Recompute promoted/invocation counts mechanically and verify the docs match the generated set. |
+| CT-003 | SOURCE_REPO | CURRENT | Router can make behavior claims without proving the target source was read. | Show an operative mandatory target-source verification step, or classify the gap as accepted design. |
+| CT-004 | SOURCE_REPO | PARTIALLY FIXED | Package metadata contains two version truths; downstream tooling effect is uncertain. | Trace package-lock consumers/runtime and determine whether stale root version has practical effect. |
+| CT-005 | SOURCE_REPO | UNKNOWN | Canonical glossary support may be orphaned from the Teach workflow. | Complete exhaustive incoming-reference scan across the 164-file frozen census and classify referenced vs orphaned. |
+| CT-006 | SOURCE_REPO | UNKNOWN | Relative-path ambiguity may cause writes into installed skill state. | Reproduce in supported harness/runtime or obtain equivalent direct evidence of workspace-root resolution. |
+| CT-007 | SOURCE_REPO | DOCS STALE | Human docs understate shipped redaction safeguards. | Verify current docs align with operative redaction behavior and release history. |
+| CT-008 | SOURCE_REPO | CURRENT | “Self-contained” report can degrade when CDN access is unavailable. | Define self-contained semantics and test offline/locked-down rendering behavior. |
+| CT-009 | SOURCE_REPO | DOCS STALE | Removed architecture handoff remains advertised by docs/router. | Verify all current secondary surfaces remove the deleted handoff or explicitly mark it historical. |
+| CT-010 | SOURCE_REPO | CURRENT | Review can run before implementation exists in HEAD, yielding an empty committed diff. | Reproduce ordering path and verify either interim commit requirement or review support for staged/working-tree changes. |
+| CT-011 | SOURCE_REPO | DOCS STALE | Bucket README materially misstates `retro` maturity. | Compare current bucket README against operative skill state and align the description. |
+
 ## Resolved historical defects retained for pattern analysis
 
 | ID | Area | Defect | Resolution | State |
@@ -26,3 +44,5 @@ Defect-state labels: `CURRENT / FIXED / PARTIALLY FIXED / DOCS STALE / UNKNOWN`.
 | CT-H01 | Cross-skill invocation | PR #878 mechanically rewrote soft references into Skill-tool calls including user-invoked targets. | PR #880 restored human-run preconditions and added invocation-type carve-out. | FIXED |
 | CT-H02 | Router completeness | ask-matt historically missed multiple shipped skills. | Later coherence passes added missing routes and governance rule to re-check router on skill changes. | FIXED, recurrence risk remains |
 | CT-H03 | Plugin/package version | plugin.json manually advanced while package.json lagged. | `sync-plugin-version.mjs` + release workflow now make package.json authoritative for plugin version. | FIXED |
+
+Historical entries above are all `SOURCE_REPO` origin. Audit-tooling defects are tracked separately in `00_TOOLING_INTEGRITY_AUDIT.md` and `00_TOOLING_FAILURE_LEDGER.md`.
