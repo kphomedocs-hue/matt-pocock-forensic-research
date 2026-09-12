@@ -6,100 +6,150 @@ Scope: the forensic research repository itself (`kphomedocs-hue/matt-pocock-fore
 
 ## Purpose
 
-This audit checks whether our own automation could silently lose, stale, or misclassify durable forensic state. It was triggered after the Phase 3 graph workflow generated files successfully but failed to commit them because its change-detection gate ignored untracked files.
+This audit checks whether our own automation could silently lose, stale, cancel, or misclassify durable forensic state. It began after the Phase 3 graph workflow generated files successfully but failed to persist them, and it was extended until failed and cancelled workflow history had an explicit durable disposition.
 
-## Confirmed historical failure classes
+## Current closure state
+
+The durable incident ledger (`00_TOOLING_FAILURE_LEDGER.md` / `.json`, classifier version 3) now covers both failed and cancelled Actions runs.
+
+- Failed runs enumerated: **78**
+- Cancelled runs enumerated: **7**
+- Total incident runs: **85**
+- Incident entries classified: **85**
+- Unknown entries: **0**
+- Unresolved / review-required entries: **0**
+- Evidence-corruption failures found: **0**
+
+Classification totals:
+
+| Classification | Count |
+|---|---:|
+| `PUSH_RACE` | 61 |
+| `STATUS_PARSER` | 10 |
+| `FOUNDATION_GATE` | 1 |
+| `FOUNDATION_PROVENANCE_GATE` | 1 |
+| `FOUNDATION_REGISTER_GATE` | 3 |
+| `CROSS_WORKFLOW_CONCURRENCY_CANCEL` | 3 |
+| `CLASSIFIER_REFRESH_SUPERSEDED` | 4 |
+| `CLASSIFIER_SCHEMA_TRANSITION` | 1 |
+| `CLASSIFIER_CLOSURE_GATE` | 1 |
+
+## Confirmed tooling defects and fixes
 
 ### TI-001 — Untracked generated files ignored by `git diff --quiet`
 
 **State:** FIXED
 
-The first Phase 3 graph workflow generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` successfully (`204 edges`, `5 unresolved`), but the commit gate used `git diff --quiet`, which does not report newly-created untracked files. The workflow therefore printed `No graph changes` and exited successfully without persisting them.
+The first Phase 3 graph workflow generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` successfully (`204 edges`, `5 unresolved`) but used `git diff --quiet` to decide whether to commit. New untracked files are invisible to that check, so the workflow incorrectly reported no graph changes.
 
-**Impact:** generated Phase 3 outputs were temporarily absent even though extraction succeeded. Source evidence and Phase 2 notes were not corrupted.
+**Impact:** generated Phase 3 outputs were temporarily absent. Frozen-source evidence and Phase 2 notes were not corrupted.
 
-**Fix:** graph workflow now uses `git status --porcelain` and explicitly requires generated outputs to exist and be non-empty.
+**Fix:** generated-file workflows use `git status --porcelain` and explicit output existence/non-empty checks.
 
-### TI-002 — Concurrent writes causing non-fast-forward workflow push failures
+### TI-002 — Non-fast-forward publication races
 
 **State:** FIXED / MONITORED
 
-The complete historical failure ledger now classifies **61 runs** as `PUSH_RACE`. Their failed job logs contain the non-fast-forward/fetch-first push signature after generation succeeded locally.
+The incident ledger classifies **61** historical runs as `PUSH_RACE`. Their logs show generation completing locally and publication losing a race to another write on `main`.
 
-**Impact:** generated ledger state could be temporarily stale relative to newly committed per-file notes. Durable notes remained committed.
+**Impact:** a generated ledger/report could be temporarily stale relative to already-committed durable notes. The durable notes themselves remained committed.
 
-**Fixes applied to generated-file workflows:**
+**Fix:** generated workflows synchronize from `main` before generation and retry push after fetch/rebase up to five times. This remains the cross-workflow write-conflict defense.
 
-- shared concurrency group `forensic-generated-main-writes`;
-- `cancel-in-progress: false`;
-- full-history checkout;
-- `git pull --ff-only origin main` before generation;
-- generated-output existence/non-empty checks;
-- up to five push attempts with fetch/rebase after a race.
-
-### TI-003 — Durable-note status parser format mismatch
+### TI-003 — Durable-note status parser mismatch
 
 **State:** FIXED
 
-The complete historical failure ledger classifies **10 runs** as `STATUS_PARSER`. Their logs show the old parser rejecting notes such as `MP-0021.md` because it required the older `Status: **...**` form while newer notes used `- Status: READ`.
+The incident ledger classifies **10** historical runs as `STATUS_PARSER`. The old ledger parser required the older bold syntax while newer notes used `- Status: READ`.
 
-**Impact:** READ promotion was delayed. The workflow failed closed; no false promotion or source-evidence corruption occurred.
+**Impact:** READ promotion was delayed. The workflow failed closed; it did not fabricate a READ state.
 
-**Fix:** the current parser accepts both durable status formats and still fails closed for malformed or invalid statuses.
+**Fix:** the current parser accepts both durable status syntaxes and still fails closed on malformed/invalid status.
 
-## Complete historical failure classification
+### TI-004 — Historical failure ledger could become stale
 
-`00_TOOLING_FAILURE_LEDGER.md` and `00_TOOLING_FAILURE_LEDGER.json` enumerate every historical failed workflow run and classify it from the actual failed step plus job-log signature.
+**State:** FIXED
 
-- Failed runs enumerated: **71**
-- `PUSH_RACE`: **61**
-- `STATUS_PARSER`: **10**
-- Unknown/unclassified: **0**
+The first historical ledger closed at 71 failed runs, but later foundation-hardening work created additional fail-closed runs. The durable ledger therefore stopped matching GitHub history.
 
-Impact classification:
+**Fix:** the classifier now refreshes from GitHub run history and is triggered by non-success completion of the upstream research workflows as well as explicit classifier changes/manual execution. The ledger is regenerated from history rather than incrementally patched.
 
-- `TEMPORARILY_STALE`: **61**
-- `DELAYED_PROMOTION`: **10**
-- Evidence-corruption failures found: **0**
+### TI-005 — Classifier closure rule was descriptive but not enforced
 
-## Current workflow assessment
+**State:** FIXED
 
-### `rebuild-ledger.yml`
+Earlier classifier CI generated `unknown_entries` but did not require the count to be zero.
 
-- Exact source-tree denominator remains fail-closed at 164 blobs.
-- Unique MP-ID and path counts are asserted.
-- Generated files are tracked, so TI-001 did not apply.
-- Concurrency/push handling is hardened.
-- Hardened workflow has completed successfully.
+**Fix:** CI now asserts both `unknown_entries == 0` and `unresolved_entries == 0`. A classifier run cannot publish a closed ledger while either count is non-zero.
 
-### `rebuild-connection-graph.yml`
+### TI-006 — Shared concurrency lane discarded distinct pending workflows
 
-- TI-001 affected its first run and is fixed.
-- Shares the serialized write lane.
-- Validates generated outputs before commit.
-- Preserves unresolved references for manual reconciliation.
-- Hardened workflow has completed successfully.
+**State:** FIXED
 
-### `classify-tooling-failures.yml`
+The earlier hardening used one shared concurrency group, `forensic-generated-main-writes`, with `cancel-in-progress: false`. GitHub concurrency still permits only one running and one pending run per group; newer pending runs can therefore replace older pending runs even when they belong to different workflows.
 
-- Enumerates all failed runs via GitHub API.
-- Retrieves failed-job logs through GitHub's signed-log redirect.
-- Writes a durable per-run classification ledger.
-- Closure criterion is zero unknowns or explicit manual disposition.
-- Current historical classification reached **0 unknowns**.
+Three distinct critical executions were proven discarded by that design:
 
-## What the failures did NOT invalidate
+- connection graph run `34712776661`;
+- foundation validation run `34712784616`;
+- note-normalization run `34712792316`.
 
-No classified historical failure changed the frozen source commit, altered source blob SHAs, deleted per-file notes, or fabricated READ status.
+Four cancelled classifier refreshes were redundant and later superseded by a complete history rebuild.
 
-Phase 2's final result remains grounded by:
+**Fix:** each workflow now has its own concurrency lane (`forensic-rebuild-ledger`, `forensic-rebuild-connection-graph`, `forensic-validate-foundation`, `forensic-normalize-note-metadata`, `forensic-classify-tooling-failures`). Cross-workflow write races are handled by the existing fetch/rebase/push retry path rather than by sharing one cancellation-prone queue.
+
+### TI-007 — Cancelled runs were absent from the incident model
+
+**State:** FIXED
+
+The original classifier queried only failed runs, so orchestration defects expressed as cancellations were invisible.
+
+**Fix:** classifier version 3 enumerates both `failure` and `cancelled`. Any future cancelled run that does not match a reconciled cancellation class becomes `CANCELLED_RUN_REQUIRES_REVIEW` and prevents closure.
+
+### TI-008 — GitHub Actions Node runtime deprecation
+
+**State:** FIXED
+
+The previous workflow actions emitted warnings because older action majors targeted the deprecated Node runtime.
+
+**Fix:** all research workflows now use `actions/checkout@v7.0.1` and `actions/setup-python@v7.0.0`. Successful proof runs show the upgraded actions executing on the current runner without the old Node deprecation warning.
+
+### TI-009 — Classifier hardening transition failures
+
+**State:** FIXED / RECONCILED
+
+Two classifier runs failed while the incident model itself was being strengthened:
+
+- run `34713138258`: classifier script emitted schema version 3 while the then-current workflow still asserted version 2 (`CLASSIFIER_SCHEMA_TRANSITION`);
+- run `34713153565`: the new closure gate correctly refused to pass while the transition run above was still unresolved (`CLASSIFIER_CLOSURE_GATE`).
+
+These are reconciled by exact run ID so future classifier validation failures are **not** automatically excused. The subsequent classifier run `34713382373` completed successfully and published the closed 85-incident ledger.
+
+## Current workflow proof
+
+The post-fix workflows have completed successfully under separate concurrency lanes:
+
+| Workflow | Proof run | Result |
+|---|---:|---|
+| Rebuild master ledger | `34712959458` | SUCCESS |
+| Rebuild connection graph | `34712966927` | SUCCESS |
+| Validate forensic foundation | `34712981139` | SUCCESS |
+| Normalize note metadata | `34712989578` | SUCCESS |
+| Classify tooling failures/cancellations | `34713382373` | SUCCESS |
+
+The latest foundation report remains **0 hard errors / 0 normalization warnings**, with **164/164 durable notes**, **164 READ**, and direct frozen-commit provenance for all 164 notes.
+
+## What these incidents did not invalidate
+
+No classified tooling incident changed the frozen source commit, changed source blob SHAs, deleted the durable per-file evidence set, or fabricated READ status. Phase 2 remains independently grounded by:
 
 - frozen source commit `3cca18b368ae95cdbdebbff572ccafa662551015`;
 - frozen tree `6e84c093fda2026396cea9fad6a924a6da0e1452`;
 - exact 164-blob census;
 - 164 durable per-file notes;
-- successful deterministic rebuild showing `164 READ / 0 UNREAD`.
+- successful deterministic ledger rebuild showing `164 READ / 0 UNREAD`;
+- green foundation validation with zero hard errors.
 
 ## Integrity conclusion
 
-The historical tooling issue is now classified rather than open-ended. All **71 failed runs** have a concrete cause: **61 publication races** and **10 fail-closed parser mismatches**. No historical failed run remains UNKNOWN, and no evidence-corruption failure was found. The known automation defects have been hardened before deeper Phase 3 promotion work continues.
+The fresh recheck found additional real weaknesses in the audit tooling: stale incident accounting, a non-enforced classifier closure rule, missing cancellation accounting, a cancellation-prone shared concurrency design, and an impending Actions runtime deprecation. They are now fixed and mechanically exercised. The complete durable incident history is **85/85 classified, 0 unknown, 0 unresolved/review-required**, with no evidence-corruption incident found.
