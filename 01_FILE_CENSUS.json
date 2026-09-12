@@ -1346,8 +1346,8 @@
       "sha": "812805b760baf328db0ebdef6f3807e381f97016",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0112 note](02_FILE_NOTES/MP-0112.md)"
     },
     {
       "mp_id": "MP-0113",
