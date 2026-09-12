@@ -1334,8 +1334,8 @@
       "sha": "acb366cf0f2527e8925ff1223b77610ac0b1be4c",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0111 note](02_FILE_NOTES/MP-0111.md)"
     },
     {
       "mp_id": "MP-0112",
