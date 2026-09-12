@@ -128,7 +128,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0110 | skills/engineering/triage/SKILL.md | 100644/blob | 6557 | 37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e | skill | READ | [MP-0110 note](02_FILE_NOTES/MP-0110.md) |  |  | MEDIUM |  |
 | MP-0111 | skills/engineering/triage/agents/openai.yaml | 100644/blob | 135 | acb366cf0f2527e8925ff1223b77610ac0b1be4c | codex-metadata | READ | [MP-0111 note](02_FILE_NOTES/MP-0111.md) |  |  | MEDIUM |  |
 | MP-0112 | skills/engineering/wayfinder/SKILL.md | 100644/blob | 11908 | 812805b760baf328db0ebdef6f3807e381f97016 | skill | READ | [MP-0112 note](02_FILE_NOTES/MP-0112.md) |  |  | MEDIUM |  |
-| MP-0113 | skills/engineering/wayfinder/agents/openai.yaml | 100644/blob | 144 | b37544751e0570f9df8de6c02aef238de8c3e1e0 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0113 | skills/engineering/wayfinder/agents/openai.yaml | 100644/blob | 144 | b37544751e0570f9df8de6c02aef238de8c3e1e0 | codex-metadata | READ | [MP-0113 note](02_FILE_NOTES/MP-0113.md) |  |  | MEDIUM |  |
 | MP-0114 | skills/engineering/wizard/SKILL.md | 100644/blob | 4123 | c4294ad8298b9b95fc727496b1b802b1f7363fba | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0115 | skills/engineering/wizard/agents/openai.yaml | 100644/blob | 96 | b601bdf3a321e7d32d5714681540b811287d3988 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0116 | skills/engineering/wizard/template.sh | 100644/blob | 8567 | 1b3cdf40ad4923a9845fd682653d8cc4510f516e | skill-executable-config | UNREAD |  |  |  | HIGH |  |

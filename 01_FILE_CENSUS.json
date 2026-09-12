@@ -1358,8 +1358,8 @@
       "sha": "b37544751e0570f9df8de6c02aef238de8c3e1e0",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0113 note](02_FILE_NOTES/MP-0113.md)"
     },
     {
       "mp_id": "MP-0114",
