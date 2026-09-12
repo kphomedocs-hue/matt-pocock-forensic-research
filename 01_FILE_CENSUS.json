@@ -38,8 +38,8 @@
       "sha": "a93751108599407637bec35c08dde6c4eb1afefe",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0003 note](02_FILE_NOTES/MP-0003.md)"
     },
     {
       "mp_id": "MP-0004",
