@@ -1502,8 +1502,8 @@
       "sha": "a2f0bac3f9cebf29beee2e79960cb876e0adc65d",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0125 note](02_FILE_NOTES/MP-0125.md)"
     },
     {
       "mp_id": "MP-0126",

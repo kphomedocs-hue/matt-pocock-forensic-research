@@ -140,7 +140,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0122 | skills/in-progress/loop-me/SKILL.md | 100644/blob | 2522 | e58a474ca80feffdeb28842bc3bdee37da6510e7 | skill | READ | [MP-0122 note](02_FILE_NOTES/MP-0122.md) |  |  | MEDIUM |  |
 | MP-0123 | skills/in-progress/loop-me/agents/openai.yaml | 100644/blob | 140 | 1a4f4111192ff75b4771e8a248c603994d5eafdc | codex-metadata | READ | [MP-0123 note](02_FILE_NOTES/MP-0123.md) |  |  | MEDIUM |  |
 | MP-0124 | skills/in-progress/retro/SKILL.md | 100644/blob | 3388 | f5fed82c7b8597a852a4fa8d292b00a1d5c8bd16 | skill | READ | [MP-0124 note](02_FILE_NOTES/MP-0124.md) |  |  | MEDIUM |  |
-| MP-0125 | skills/in-progress/retro/agents/openai.yaml | 100644/blob | 146 | a2f0bac3f9cebf29beee2e79960cb876e0adc65d | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0125 | skills/in-progress/retro/agents/openai.yaml | 100644/blob | 146 | a2f0bac3f9cebf29beee2e79960cb876e0adc65d | codex-metadata | READ | [MP-0125 note](02_FILE_NOTES/MP-0125.md) |  |  | MEDIUM |  |
 | MP-0126 | skills/in-progress/setup-ts-deep-modules/SKILL.md | 100644/blob | 7546 | 7e30047eaeda175de5d93886596a37baf365bb90 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0127 | skills/in-progress/setup-ts-deep-modules/agents/openai.yaml | 100644/blob | 149 | 5d0581bdd4f9337cfb1e13feb7e1e18f43ea9db1 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0128 | skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs | 100644/blob | 3712 | 54030ede7d36b7f72fc0f645fa414efa9b6f63ed | skill-executable-config | UNREAD |  |  |  | HIGH |  |
