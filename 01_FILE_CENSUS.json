@@ -1250,8 +1250,8 @@
       "sha": "3f52599ae2a4347aee5a07432c2707518e691a7f",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0104 note](02_FILE_NOTES/MP-0104.md)"
     },
     {
       "mp_id": "MP-0105",
