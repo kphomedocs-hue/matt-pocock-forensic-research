@@ -20,7 +20,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0002 | .agents/adr/0002-ship-as-a-claude-code-plugin.md | 100644/blob | 5528 | 263d10290d60ea15119d2d3c51af5f4f08b5f178 | governance | READ | [MP-0002 note](02_FILE_NOTES/MP-0002.md) |  |  | MEDIUM |  |
 | MP-0003 | .agents/install-block.md | 100644/blob | 2780 | a93751108599407637bec35c08dde6c4eb1afefe | governance | READ | [MP-0003 note](02_FILE_NOTES/MP-0003.md) |  |  | MEDIUM |  |
 | MP-0004 | .agents/invocation.md | 100644/blob | 3848 | c13b8a5ea97466e14259de602c6b66e72133fef1 | governance | READ | [MP-0004 note](02_FILE_NOTES/MP-0004.md) |  |  | MEDIUM |  |
-| MP-0005 | .agents/writing-docs.md | 100644/blob | 12688 | 68f9216230f2bbafefc985eccf81fcc506c14b3b | governance | UNREAD |  |  |  | MEDIUM |  |
+| MP-0005 | .agents/writing-docs.md | 100644/blob | 12688 | 68f9216230f2bbafefc985eccf81fcc506c14b3b | governance | READ | [MP-0005 note](02_FILE_NOTES/MP-0005.md) |  |  | MEDIUM |  |
 | MP-0006 | .changeset/README.md | 100644/blob | 512 | 654c6d4750dca19541bd9803371735943bb3fe4e | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0007 | .changeset/add-implement-spec-skill.md | 100644/blob | 450 | 2128b7d4220ed30503e957fe8c8bbcf9b521931d | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0008 | .changeset/config.json | 100644/blob | 380 | 06c7350518b33bdaedd0eae254f75fd887f16963 | changeset | UNREAD |  |  |  | LOW |  |

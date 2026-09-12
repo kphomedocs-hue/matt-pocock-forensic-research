@@ -62,8 +62,8 @@
       "sha": "68f9216230f2bbafefc985eccf81fcc506c14b3b",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0005 note](02_FILE_NOTES/MP-0005.md)"
     },
     {
       "mp_id": "MP-0006",
