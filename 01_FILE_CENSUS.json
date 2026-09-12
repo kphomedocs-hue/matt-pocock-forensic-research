@@ -590,8 +590,8 @@
       "sha": "512d76af564bc0899c59c90a5287a442f7846530",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0049 note](02_FILE_NOTES/MP-0049.md)"
     },
     {
       "mp_id": "MP-0050",
