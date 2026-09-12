@@ -3,9 +3,17 @@ name: Classify tooling failures
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - 'scripts/classify_failed_workflows.py'
       - '.github/workflows/classify-tooling-failures.yml'
+  workflow_run:
+    workflows:
+      - 'Rebuild master ledger'
+      - 'Rebuild connection graph'
+      - 'Validate forensic foundation'
+      - 'Normalize note metadata'
+    types: [completed]
 
 permissions:
   actions: read
@@ -21,6 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -37,10 +46,14 @@ jobs:
           test -s 00_TOOLING_FAILURE_LEDGER.md
           python - <<'PY'
           import json
-          d=json.load(open('00_TOOLING_FAILURE_LEDGER.json',encoding='utf-8'))
-          assert d['failed_run_count'] >= 71, d['failed_run_count']
+          d = json.load(open('00_TOOLING_FAILURE_LEDGER.json', encoding='utf-8'))
+          assert d['classification_version'] == 2, d.get('classification_version')
           assert d['failed_job_entry_count'] >= d['failed_run_count']
-          print(d['classification_counts'])
+          assert sum(d['classification_counts'].values()) == d['failed_job_entry_count']
+          assert sum(d['impact_counts'].values()) == d['failed_job_entry_count']
+          assert d['unknown_entries'] == 0, d['unknown_entries']
+          print('failed_runs=', d['failed_run_count'])
+          print('classifications=', d['classification_counts'])
           print('unknown_entries=', d['unknown_entries'])
           PY
       - name: Commit failure ledger
@@ -55,6 +68,7 @@ jobs:
           git commit -m "tooling: rebuild historical failure ledger"
           for attempt in 1 2 3 4 5; do
             if git push; then exit 0; fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
             git fetch origin main
             git rebase origin/main
           done
