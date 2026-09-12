@@ -12,14 +12,14 @@ Unknown/unclassified entries: **0**
 
 | Classification | Count |
 |---|---:|
-| LEDGER_BUILD | 10 |
 | PUSH_RACE | 61 |
+| STATUS_PARSER | 10 |
 
 ## Impact summary
 
 | Impact | Count |
 |---|---:|
-| REQUIRES_REVIEW | 10 |
+| DELAYED_PROMOTION | 10 |
 | TEMPORARILY_STALE | 61 |
 
 ## Run ledger
@@ -28,16 +28,16 @@ Unknown/unclassified entries: **0**
 |---:|---|---|---|---|---|
 | 34692928795 | 2026-09-12T12:10:02Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
 | 34693043883 | 2026-09-12T12:12:28Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
-| 34693302869 | 2026-09-12T12:18:10Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693309553 | 2026-09-12T12:18:19Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693318265 | 2026-09-12T12:18:33Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693323918 | 2026-09-12T12:18:42Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693365777 | 2026-09-12T12:19:41Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693423298 | 2026-09-12T12:20:55Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693430325 | 2026-09-12T12:21:04Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693436433 | 2026-09-12T12:21:12Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693445380 | 2026-09-12T12:21:24Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
-| 34693481028 | 2026-09-12T12:22:10Z | Rebuild master ledger | Rebuild frozen census and ledger | LEDGER_BUILD | REQUIRES_REVIEW |
+| 34693302869 | 2026-09-12T12:18:10Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693309553 | 2026-09-12T12:18:19Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693318265 | 2026-09-12T12:18:33Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693323918 | 2026-09-12T12:18:42Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693365777 | 2026-09-12T12:19:41Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693423298 | 2026-09-12T12:20:55Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693430325 | 2026-09-12T12:21:04Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693436433 | 2026-09-12T12:21:12Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693445380 | 2026-09-12T12:21:24Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
+| 34693481028 | 2026-09-12T12:22:10Z | Rebuild master ledger | Rebuild frozen census and ledger | STATUS_PARSER | DELAYED_PROMOTION |
 | 34699083747 | 2026-09-12T14:22:11Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
 | 34699181638 | 2026-09-12T14:24:16Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
 | 34699195524 | 2026-09-12T14:24:34Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |

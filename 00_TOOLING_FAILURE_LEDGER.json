@@ -3,11 +3,11 @@
   "failed_run_count": 71,
   "failed_job_entry_count": 71,
   "classification_counts": {
-    "LEDGER_BUILD": 10,
-    "PUSH_RACE": 61
+    "PUSH_RACE": 61,
+    "STATUS_PARSER": 10
   },
   "impact_counts": {
-    "REQUIRES_REVIEW": 10,
+    "DELAYED_PROMOTION": 10,
     "TEMPORARILY_STALE": 61
   },
   "unknown_entries": 0,
@@ -47,9 +47,9 @@
       "title": "Audit MP-0021 full read",
       "job_id": 103552328423,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693309553,
@@ -60,9 +60,9 @@
       "title": "Audit MP-0022 full read",
       "job_id": 103552349204,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693318265,
@@ -73,9 +73,9 @@
       "title": "Audit MP-0023 full read",
       "job_id": 103552375118,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693323918,
@@ -86,9 +86,9 @@
       "title": "Audit MP-0024 symlink blob",
       "job_id": 103552391834,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693365777,
@@ -99,9 +99,9 @@
       "title": "Audit MP-0025 full changelog reread",
       "job_id": 103552509526,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693423298,
@@ -112,9 +112,9 @@
       "title": "Audit MP-0026 full read",
       "job_id": 103552658380,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693430325,
@@ -125,9 +125,9 @@
       "title": "Audit MP-0027 full read",
       "job_id": 103552677545,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693436433,
@@ -138,9 +138,9 @@
       "title": "Audit MP-0028 full read",
       "job_id": 103552694101,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693445380,
@@ -151,9 +151,9 @@
       "title": "Audit MP-0029 full README reread",
       "job_id": 103552719143,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34693481028,
@@ -164,9 +164,9 @@
       "title": "Audit MP-0030 full router docs reread",
       "job_id": 103552814886,
       "failed_step": "Rebuild frozen census and ledger",
-      "classification": "LEDGER_BUILD",
-      "impact": "REQUIRES_REVIEW",
-      "reason": "Ledger generation itself failed."
+      "classification": "STATUS_PARSER",
+      "impact": "DELAYED_PROMOTION",
+      "reason": "Ledger failed closed on durable-note status parsing."
     },
     {
       "run_id": 34699083747,
