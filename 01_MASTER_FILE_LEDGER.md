@@ -144,8 +144,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0126 | skills/in-progress/setup-ts-deep-modules/SKILL.md | 100644/blob | 7546 | 7e30047eaeda175de5d93886596a37baf365bb90 | skill | READ | [MP-0126 note](02_FILE_NOTES/MP-0126.md) |  |  | MEDIUM |  |
 | MP-0127 | skills/in-progress/setup-ts-deep-modules/agents/openai.yaml | 100644/blob | 149 | 5d0581bdd4f9337cfb1e13feb7e1e18f43ea9db1 | codex-metadata | READ | [MP-0127 note](02_FILE_NOTES/MP-0127.md) |  |  | MEDIUM |  |
 | MP-0128 | skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs | 100644/blob | 3712 | 54030ede7d36b7f72fc0f645fa414efa9b6f63ed | skill-executable-config | READ | [MP-0128 note](02_FILE_NOTES/MP-0128.md) |  |  | HIGH |  |
-| MP-0129 | skills/in-progress/writing-beats/SKILL.md | 100644/blob | 4855 | 3d3b25b605491adc5c62ae5423127717a94b9632 | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0130 | skills/in-progress/writing-beats/agents/openai.yaml | 100644/blob | 142 | e8eaa188d4c70b582eed2d1775fe4c4ea3562b25 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0129 | skills/in-progress/writing-beats/SKILL.md | 100644/blob | 4855 | 3d3b25b605491adc5c62ae5423127717a94b9632 | skill | READ | [MP-0129 note](02_FILE_NOTES/MP-0129.md) |  |  | MEDIUM |  |
+| MP-0130 | skills/in-progress/writing-beats/agents/openai.yaml | 100644/blob | 142 | e8eaa188d4c70b582eed2d1775fe4c4ea3562b25 | codex-metadata | READ | [MP-0130 note](02_FILE_NOTES/MP-0130.md) |  |  | MEDIUM |  |
 | MP-0131 | skills/in-progress/writing-fragments/SKILL.md | 100644/blob | 3558 | c7c889b880cf9c8d289119dea5ff240641b615ca | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0132 | skills/in-progress/writing-fragments/agents/openai.yaml | 100644/blob | 140 | be3713e91e3ddc6c71e04e6b512b6ad6502d7cc8 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0133 | skills/in-progress/writing-shape/SKILL.md | 100644/blob | 5922 | 02f2866d13e72504e010f2ad3458eb9b36b876db | skill | UNREAD |  |  |  | MEDIUM |  |
