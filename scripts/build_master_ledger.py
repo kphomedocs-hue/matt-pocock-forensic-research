@@ -117,9 +117,9 @@ def status_from_note(mp_id: str) -> tuple[str, str] | None:
     if not note.exists():
         return None
     text = note.read_text(encoding="utf-8")
-    match = re.search(r"^Status:\s*\*\*(.+?)\*\*\s*$", text, re.MULTILINE)
+    match = re.search(r"^(?:-\s*)?Status:\s*(?:\*\*)?(.+?)(?:\*\*)?\s*$", text, re.MULTILINE)
     if not match:
-        raise SystemExit(f"{note} exists but has no `Status: **...**` line")
+        raise SystemExit(f"{note} exists but has no durable `Status:` line")
     status = match.group(1).strip()
     if status not in VALID_STATUSES - {"UNREAD"}:
         raise SystemExit(f"{note} has invalid durable status {status!r}")
