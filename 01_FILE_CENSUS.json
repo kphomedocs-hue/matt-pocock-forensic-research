@@ -218,8 +218,8 @@
       "sha": "0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d",
       "category": "distribution",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0018 note](02_FILE_NOTES/MP-0018.md)"
     },
     {
       "mp_id": "MP-0019",
