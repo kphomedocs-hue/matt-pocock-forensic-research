@@ -30,7 +30,7 @@ Never mix these classes.
 - CONNECTIONS TRACED: meaningful outgoing/incoming references checked and recorded.
 - VERIFIED: current file + connected implementation/config/distribution + relevant history reconciled.
 
-Status transitions require evidence.
+Status transitions require evidence and must satisfy the canonical gates in `00_RESEARCH_SCHEMA.md`.
 
 ## Verification dimensions
 
@@ -43,7 +43,7 @@ Track separately where relevant:
 - RUNTIME OBSERVED
 - END-TO-END OBSERVED
 
-Do not collapse these into a single vague 'works'.
+Do not collapse these into a single vague `works` state.
 
 ## Phases and gates
 
@@ -72,21 +72,43 @@ Gate: Claude plugin, Codex metadata, local linking, installer/release/versioning
 Gate: all high-impact files reread after graph/history context is known.
 
 ### Phase 9 — Red-Team Verification
-Gate: counterexamples actively searched for all 'all/never/always/exactly' claims and every numerical claim.
+Gate: counterexamples actively searched for all `all / never / always / exactly` claims and every numerical claim.
 
 ### Phase 10 — System Reconstruction & KP Comparison
-Gate: only after source audit gates are satisfied; synthesize architecture/workflows and then derive KP interpretations/recommendations.
+Gate: only after source-audit gates are satisfied; synthesize architecture/workflows and then derive KP interpretations/recommendations.
+
+## Tooling-integrity rule
+
+Research automation is part of the audit surface. A green workflow alone is not authoritative proof. Generated state must retain explicit source provenance and invariants, and tooling incidents must remain durably classified.
+
+Current tooling controls include:
+
+- `00_FOUNDATION_INTEGRITY.md` / `.json` for frozen-source and durable-note invariants;
+- `00_TOOLING_INTEGRITY_AUDIT.md` for automation defect analysis and fixes;
+- `00_TOOLING_FAILURE_LEDGER.md` / `.json` for failed and cancelled workflow incidents;
+- per-workflow concurrency lanes so distinct workflows cannot discard one another while pending;
+- fetch/rebase/push retry for cross-workflow write races;
+- zero-unknown and zero-review-required closure gates for the tooling incident ledger.
 
 ## Resume rule
 
-At the start of every new session or after major context compression, reload from this GitHub repository first. Minimum resume set:
+At the start of every new session or after major context compression, reload from this GitHub repository first. Minimum authoritative resume set:
 
 1. `00_RESEARCH_MANIFEST.md`
-2. `01_MASTER_FILE_LEDGER.md`
-3. `03_CLAIM_REGISTER.md`
-4. `04_CONTRADICTION_REGISTER.md`
-5. `05_HISTORY_LEDGER.md`
-6. `RESEARCH_STATUS.md`
+2. `00_RESEARCH_SCHEMA.md`
+3. `RESEARCH_STATUS.md`
+4. `00_FOUNDATION_INTEGRITY.md`
+5. `00_TOOLING_INTEGRITY_AUDIT.md`
+6. `00_TOOLING_FAILURE_LEDGER.md`
+7. `01_MASTER_FILE_LEDGER.md`
+8. `01_FILE_CENSUS.json`
+9. `03_CLAIM_REGISTER.md`
+10. `03_CONNECTION_GRAPH.md`
+11. `03_CONNECTION_RECONCILIATION.md`
+12. `04_CONTRADICTION_REGISTER.md`
+13. `05_HISTORY_LEDGER.md`
+
+When Phase 3 numerical state matters, also load generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` rather than relying on prose summaries.
 
 Never resume from chat memory alone.
 
