@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "scripts/build_master_ledger.py"
+      - "02_FILE_NOTES/**"
       - ".github/workflows/rebuild-ledger.yml"
 
 permissions:
