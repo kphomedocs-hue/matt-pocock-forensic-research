@@ -20,6 +20,8 @@ FROZEN_TREE = "6e84c093fda2026396cea9fad6a924a6da0e1452"
 EXPECTED_BLOBS = 164
 LEDGER = pathlib.Path("01_MASTER_FILE_LEDGER.md")
 CENSUS_JSON = pathlib.Path("01_FILE_CENSUS.json")
+NOTES_DIR = pathlib.Path("02_FILE_NOTES")
+VALID_STATUSES = {"UNREAD", "READ", "CONNECTIONS TRACED", "VERIFIED"}
 
 
 def github_json(url: str) -> dict:
@@ -87,7 +89,7 @@ def esc(value: object) -> str:
 
 
 def load_existing_rows() -> dict[str, dict[str, str]]:
-    """Preserve manually promoted status/evidence fields across regeneration."""
+    """Preserve manually recorded fields across regeneration."""
     if not LEDGER.exists():
         return {}
     rows: dict[str, dict[str, str]] = {}
@@ -107,6 +109,21 @@ def load_existing_rows() -> dict[str, dict[str, str]]:
             "notes": notes,
         }
     return rows
+
+
+def status_from_note(mp_id: str) -> tuple[str, str] | None:
+    """A durable file note is the authority for READ-or-higher status."""
+    note = NOTES_DIR / f"{mp_id}.md"
+    if not note.exists():
+        return None
+    text = note.read_text(encoding="utf-8")
+    match = re.search(r"^Status:\s*\*\*(.+?)\*\*\s*$", text, re.MULTILINE)
+    if not match:
+        raise SystemExit(f"{note} exists but has no `Status: **...**` line")
+    status = match.group(1).strip()
+    if status not in VALID_STATUSES - {"UNREAD"}:
+        raise SystemExit(f"{note} has invalid durable status {status!r}")
+    return status, f"[{mp_id} note](02_FILE_NOTES/{mp_id}.md)"
 
 
 def main() -> None:
@@ -138,7 +155,7 @@ def main() -> None:
         "",
         f"Physical denominator: **{len(blobs)} blobs/files**.",
         "",
-        "Generated deterministically by `scripts/build_master_ledger.py`. MP-IDs are assigned in lexicographic path order. Regeneration preserves manually recorded status/evidence fields by path.",
+        "Generated deterministically by `scripts/build_master_ledger.py`. MP-IDs are assigned in lexicographic path order. Durable per-file notes under `02_FILE_NOTES/` are authoritative for READ-or-higher status.",
         "",
         "## Status rules",
         "",
@@ -158,6 +175,9 @@ def main() -> None:
         prev = previous.get(path, {})
         status = prev.get("status", "UNREAD")
         evidence = prev.get("evidence", "")
+        durable = status_from_note(mp_id)
+        if durable:
+            status, evidence = durable
         ref_out = prev.get("ref_out", "")
         ref_in = prev.get("ref_in", "")
         risk = prev.get("risk") or runtime_risk(path, item["mode"])
@@ -179,6 +199,8 @@ def main() -> None:
             "sha": sha,
             "category": cat,
             "runtime_risk": risk,
+            "status": status,
+            "evidence": evidence,
         })
 
     LEDGER.write_text("\n".join(lines) + "\n", encoding="utf-8")
