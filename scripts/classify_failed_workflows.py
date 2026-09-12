@@ -53,12 +53,7 @@ def fetch_failed_runs() -> list[dict]:
 
 
 def fetch_job_log(job_id: int) -> str:
-    """Use curl for GitHub's cross-host signed-log redirect.
-
-    urllib can forward Authorization to the redirected blob host and historical
-    signed URLs then fail unexpectedly. curl strips auth on cross-host redirects
-    by default, matching the required GitHub flow.
-    """
+    """Use curl for GitHub's cross-host signed-log redirect."""
     try:
         token = os.environ.get("GITHUB_TOKEN", "")
         cmd = [
@@ -88,7 +83,14 @@ def classify(failed_step: str, log: str) -> tuple[str, str, str]:
         if "nothing to commit" in l:
             return "COMMIT_GATE", "NO_EVIDENCE_CORRUPTION", "Commit step found no staged change."
     if "rebuild frozen census and ledger" in s:
-        if "has no durable `status:` line" in l or "invalid durable status" in l or "invalid durable" in l:
+        parser_signatures = (
+            "has no durable `status:` line",
+            "has no `status: **...**` line",
+            "has no `status:",
+            "invalid durable status",
+            "invalid durable",
+        )
+        if any(sig in l for sig in parser_signatures):
             return "STATUS_PARSER", "DELAYED_PROMOTION", "Ledger failed closed on durable-note status parsing."
         return "LEDGER_BUILD", "REQUIRES_REVIEW", "Ledger generation itself failed."
     if "validate physical denominator" in s:
