@@ -2,6 +2,7 @@ name: Rebuild connection graph
 
 on:
   push:
+    branches: [main]
     paths:
       - '01_FILE_CENSUS.json'
       - 'scripts/build_connection_graph.py'
@@ -11,18 +12,30 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: forensic-generated-main-writes
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
       - name: Build graph
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/build_connection_graph.py
+      - name: Validate generated outputs
+        run: |
+          test -s 03_CONNECTION_EDGES.json
+          test -s 03_CONNECTION_INDEX.md
       - name: Commit generated graph
         run: |
           if [[ -z "$(git status --porcelain -- 03_CONNECTION_EDGES.json 03_CONNECTION_INDEX.md)" ]]; then
@@ -33,4 +46,15 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add 03_CONNECTION_EDGES.json 03_CONNECTION_INDEX.md
           git commit -m "phase3: rebuild connection graph"
-          git push
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish regenerated graph after 5 attempts" >&2
+          exit 1
