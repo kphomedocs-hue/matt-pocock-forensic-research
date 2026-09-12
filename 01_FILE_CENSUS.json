@@ -794,8 +794,8 @@
       "sha": "9076774ba327f49068db9273feceda03bfe940fa",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0066 note](02_FILE_NOTES/MP-0066.md)"
     },
     {
       "mp_id": "MP-0067",
