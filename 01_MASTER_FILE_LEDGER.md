@@ -56,7 +56,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0038 | docs/engineering/prototype.md | 100644/blob | 9630 | 03703cac77b4d361e7b06c9e6ef4366501c12087 | human-docs | READ | [MP-0038 note](02_FILE_NOTES/MP-0038.md) |  |  | LOW |  |
 | MP-0039 | docs/engineering/research.md | 100644/blob | 9674 | a2b2074c426720af9ef50dc1cd697b3064eb8844 | human-docs | READ | [MP-0039 note](02_FILE_NOTES/MP-0039.md) |  |  | LOW |  |
 | MP-0040 | docs/engineering/resolving-merge-conflicts.md | 100644/blob | 5326 | ee5e0e2db00c994a1cb5eaf4a49efdc379f93ac7 | human-docs | READ | [MP-0040 note](02_FILE_NOTES/MP-0040.md) |  |  | LOW |  |
-| MP-0041 | docs/engineering/setup-matt-pocock-skills.md | 100644/blob | 9359 | d7f4933af11e6dfaf2dd307b7a69d3edb2b74dbc | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0041 | docs/engineering/setup-matt-pocock-skills.md | 100644/blob | 9359 | d7f4933af11e6dfaf2dd307b7a69d3edb2b74dbc | human-docs | READ | [MP-0041 note](02_FILE_NOTES/MP-0041.md) |  |  | LOW |  |
 | MP-0042 | docs/engineering/tdd.md | 100644/blob | 10453 | 63aae75be887420c21bad0f837c444332ec683c1 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0043 | docs/engineering/to-spec.md | 100644/blob | 8790 | e72c71c44c170114d7d83ebbda594a772f955441 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0044 | docs/engineering/to-tickets.md | 100644/blob | 10724 | 6f6f894fe0bfecd2a8b05fb1053b22da74985d90 | human-docs | UNREAD |  |  |  | LOW |  |
