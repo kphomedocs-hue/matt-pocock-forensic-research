@@ -1,9 +1,15 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
-  "classification_version": 2,
-  "failed_run_count": 76,
-  "failed_job_entry_count": 76,
+  "classification_version": 3,
+  "failed_run_count": 78,
+  "cancelled_run_count": 7,
+  "incident_run_count": 85,
+  "incident_entry_count": 85,
   "classification_counts": {
+    "CLASSIFIER_CLOSURE_GATE": 1,
+    "CLASSIFIER_REFRESH_SUPERSEDED": 4,
+    "CLASSIFIER_SCHEMA_TRANSITION": 1,
+    "CROSS_WORKFLOW_CONCURRENCY_CANCEL": 3,
     "FOUNDATION_GATE": 1,
     "FOUNDATION_PROVENANCE_GATE": 1,
     "FOUNDATION_REGISTER_GATE": 3,
@@ -12,13 +18,18 @@
   },
   "impact_counts": {
     "DELAYED_PROMOTION": 10,
-    "DETECTED_AND_BLOCKED": 5,
+    "DETECTED_AND_BLOCKED": 6,
+    "DISCARDED_EXECUTION_FIXED": 3,
+    "FIXED_CONFIGURATION_MISMATCH": 1,
+    "REDUNDANT_REFRESH_DISCARDED": 4,
     "TEMPORARILY_STALE": 61
   },
   "unknown_entries": 0,
+  "unresolved_entries": 0,
   "entries": [
     {
       "run_id": 34692928795,
+      "run_conclusion": "failure",
       "run_number": 14,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:10:02Z",
@@ -32,6 +43,7 @@
     },
     {
       "run_id": 34693043883,
+      "run_conclusion": "failure",
       "run_number": 22,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:12:28Z",
@@ -45,6 +57,7 @@
     },
     {
       "run_id": 34693302869,
+      "run_conclusion": "failure",
       "run_number": 24,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:18:10Z",
@@ -58,6 +71,7 @@
     },
     {
       "run_id": 34693309553,
+      "run_conclusion": "failure",
       "run_number": 25,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:18:19Z",
@@ -71,6 +85,7 @@
     },
     {
       "run_id": 34693318265,
+      "run_conclusion": "failure",
       "run_number": 26,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:18:33Z",
@@ -84,6 +99,7 @@
     },
     {
       "run_id": 34693323918,
+      "run_conclusion": "failure",
       "run_number": 27,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:18:42Z",
@@ -97,6 +113,7 @@
     },
     {
       "run_id": 34693365777,
+      "run_conclusion": "failure",
       "run_number": 28,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:19:41Z",
@@ -110,6 +127,7 @@
     },
     {
       "run_id": 34693423298,
+      "run_conclusion": "failure",
       "run_number": 29,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:20:55Z",
@@ -123,6 +141,7 @@
     },
     {
       "run_id": 34693430325,
+      "run_conclusion": "failure",
       "run_number": 30,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:21:04Z",
@@ -136,6 +155,7 @@
     },
     {
       "run_id": 34693436433,
+      "run_conclusion": "failure",
       "run_number": 31,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:21:12Z",
@@ -149,6 +169,7 @@
     },
     {
       "run_id": 34693445380,
+      "run_conclusion": "failure",
       "run_number": 32,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:21:24Z",
@@ -162,6 +183,7 @@
     },
     {
       "run_id": 34693481028,
+      "run_conclusion": "failure",
       "run_number": 33,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T12:22:10Z",
@@ -175,6 +197,7 @@
     },
     {
       "run_id": 34699083747,
+      "run_conclusion": "failure",
       "run_number": 35,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T14:22:11Z",
@@ -188,6 +211,7 @@
     },
     {
       "run_id": 34699181638,
+      "run_conclusion": "failure",
       "run_number": 41,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T14:24:16Z",
@@ -201,6 +225,7 @@
     },
     {
       "run_id": 34699195524,
+      "run_conclusion": "failure",
       "run_number": 43,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T14:24:34Z",
@@ -214,6 +239,7 @@
     },
     {
       "run_id": 34701078379,
+      "run_conclusion": "failure",
       "run_number": 51,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T15:03:33Z",
@@ -227,6 +253,7 @@
     },
     {
       "run_id": 34701148658,
+      "run_conclusion": "failure",
       "run_number": 57,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T15:04:59Z",
@@ -240,6 +267,7 @@
     },
     {
       "run_id": 34706367588,
+      "run_conclusion": "failure",
       "run_number": 59,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T16:48:51Z",
@@ -253,6 +281,7 @@
     },
     {
       "run_id": 34706373829,
+      "run_conclusion": "failure",
       "run_number": 60,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T16:48:58Z",
@@ -266,6 +295,7 @@
     },
     {
       "run_id": 34706391442,
+      "run_conclusion": "failure",
       "run_number": 62,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T16:49:19Z",
@@ -279,6 +309,7 @@
     },
     {
       "run_id": 34706429708,
+      "run_conclusion": "failure",
       "run_number": 64,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T16:50:06Z",
@@ -292,6 +323,7 @@
     },
     {
       "run_id": 34706458293,
+      "run_conclusion": "failure",
       "run_number": 67,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T16:50:41Z",
@@ -305,6 +337,7 @@
     },
     {
       "run_id": 34706986936,
+      "run_conclusion": "failure",
       "run_number": 75,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:01:41Z",
@@ -318,6 +351,7 @@
     },
     {
       "run_id": 34706991986,
+      "run_conclusion": "failure",
       "run_number": 76,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:01:47Z",
@@ -331,6 +365,7 @@
     },
     {
       "run_id": 34706997261,
+      "run_conclusion": "failure",
       "run_number": 77,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:01:54Z",
@@ -344,6 +379,7 @@
     },
     {
       "run_id": 34707052602,
+      "run_conclusion": "failure",
       "run_number": 80,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:02:59Z",
@@ -357,6 +393,7 @@
     },
     {
       "run_id": 34707066433,
+      "run_conclusion": "failure",
       "run_number": 82,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:03:14Z",
@@ -370,6 +407,7 @@
     },
     {
       "run_id": 34707080152,
+      "run_conclusion": "failure",
       "run_number": 84,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:03:30Z",
@@ -383,6 +421,7 @@
     },
     {
       "run_id": 34707713735,
+      "run_conclusion": "failure",
       "run_number": 88,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:16:04Z",
@@ -396,6 +435,7 @@
     },
     {
       "run_id": 34707737518,
+      "run_conclusion": "failure",
       "run_number": 91,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:16:33Z",
@@ -409,6 +449,7 @@
     },
     {
       "run_id": 34707744102,
+      "run_conclusion": "failure",
       "run_number": 92,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:16:41Z",
@@ -422,6 +463,7 @@
     },
     {
       "run_id": 34707750888,
+      "run_conclusion": "failure",
       "run_number": 93,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:16:48Z",
@@ -435,6 +477,7 @@
     },
     {
       "run_id": 34707805308,
+      "run_conclusion": "failure",
       "run_number": 97,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:17:53Z",
@@ -448,6 +491,7 @@
     },
     {
       "run_id": 34707811404,
+      "run_conclusion": "failure",
       "run_number": 98,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:18:00Z",
@@ -461,6 +505,7 @@
     },
     {
       "run_id": 34707878140,
+      "run_conclusion": "failure",
       "run_number": 103,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:19:23Z",
@@ -474,6 +519,7 @@
     },
     {
       "run_id": 34707885096,
+      "run_conclusion": "failure",
       "run_number": 104,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:19:31Z",
@@ -487,6 +533,7 @@
     },
     {
       "run_id": 34707909234,
+      "run_conclusion": "failure",
       "run_number": 106,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:19:57Z",
@@ -500,6 +547,7 @@
     },
     {
       "run_id": 34707966134,
+      "run_conclusion": "failure",
       "run_number": 109,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:21:03Z",
@@ -513,6 +561,7 @@
     },
     {
       "run_id": 34707972228,
+      "run_conclusion": "failure",
       "run_number": 110,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:21:11Z",
@@ -526,6 +575,7 @@
     },
     {
       "run_id": 34707978527,
+      "run_conclusion": "failure",
       "run_number": 111,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:21:20Z",
@@ -539,6 +589,7 @@
     },
     {
       "run_id": 34707989589,
+      "run_conclusion": "failure",
       "run_number": 113,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:21:34Z",
@@ -552,6 +603,7 @@
     },
     {
       "run_id": 34708206640,
+      "run_conclusion": "failure",
       "run_number": 118,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:25:55Z",
@@ -565,6 +617,7 @@
     },
     {
       "run_id": 34708262250,
+      "run_conclusion": "failure",
       "run_number": 122,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:27:07Z",
@@ -578,6 +631,7 @@
     },
     {
       "run_id": 34708326236,
+      "run_conclusion": "failure",
       "run_number": 127,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:28:28Z",
@@ -591,6 +645,7 @@
     },
     {
       "run_id": 34708346671,
+      "run_conclusion": "failure",
       "run_number": 130,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:28:53Z",
@@ -604,6 +659,7 @@
     },
     {
       "run_id": 34708396654,
+      "run_conclusion": "failure",
       "run_number": 133,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:29:57Z",
@@ -617,6 +673,7 @@
     },
     {
       "run_id": 34708412632,
+      "run_conclusion": "failure",
       "run_number": 135,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:30:15Z",
@@ -630,6 +687,7 @@
     },
     {
       "run_id": 34708419908,
+      "run_conclusion": "failure",
       "run_number": 136,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:30:23Z",
@@ -643,6 +701,7 @@
     },
     {
       "run_id": 34708427721,
+      "run_conclusion": "failure",
       "run_number": 137,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:30:29Z",
@@ -656,6 +715,7 @@
     },
     {
       "run_id": 34708498021,
+      "run_conclusion": "failure",
       "run_number": 140,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:31:50Z",
@@ -669,6 +729,7 @@
     },
     {
       "run_id": 34708504540,
+      "run_conclusion": "failure",
       "run_number": 141,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:31:58Z",
@@ -682,6 +743,7 @@
     },
     {
       "run_id": 34708512247,
+      "run_conclusion": "failure",
       "run_number": 142,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:32:06Z",
@@ -695,6 +757,7 @@
     },
     {
       "run_id": 34708531576,
+      "run_conclusion": "failure",
       "run_number": 144,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:32:29Z",
@@ -708,6 +771,7 @@
     },
     {
       "run_id": 34708537655,
+      "run_conclusion": "failure",
       "run_number": 145,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:32:36Z",
@@ -721,6 +785,7 @@
     },
     {
       "run_id": 34708543731,
+      "run_conclusion": "failure",
       "run_number": 146,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:32:44Z",
@@ -734,6 +799,7 @@
     },
     {
       "run_id": 34708550632,
+      "run_conclusion": "failure",
       "run_number": 147,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:32:53Z",
@@ -747,6 +813,7 @@
     },
     {
       "run_id": 34708659267,
+      "run_conclusion": "failure",
       "run_number": 149,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:35:04Z",
@@ -760,6 +827,7 @@
     },
     {
       "run_id": 34708666970,
+      "run_conclusion": "failure",
       "run_number": 150,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:35:11Z",
@@ -773,6 +841,7 @@
     },
     {
       "run_id": 34708674341,
+      "run_conclusion": "failure",
       "run_number": 151,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:35:18Z",
@@ -786,6 +855,7 @@
     },
     {
       "run_id": 34708681772,
+      "run_conclusion": "failure",
       "run_number": 152,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:35:27Z",
@@ -799,6 +869,7 @@
     },
     {
       "run_id": 34708686926,
+      "run_conclusion": "failure",
       "run_number": 153,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:35:34Z",
@@ -812,6 +883,7 @@
     },
     {
       "run_id": 34708692023,
+      "run_conclusion": "failure",
       "run_number": 154,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:35:41Z",
@@ -825,6 +897,7 @@
     },
     {
       "run_id": 34708711893,
+      "run_conclusion": "failure",
       "run_number": 156,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:36:04Z",
@@ -838,6 +911,7 @@
     },
     {
       "run_id": 34708726530,
+      "run_conclusion": "failure",
       "run_number": 158,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:36:19Z",
@@ -851,6 +925,7 @@
     },
     {
       "run_id": 34708732780,
+      "run_conclusion": "failure",
       "run_number": 159,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:36:27Z",
@@ -864,6 +939,7 @@
     },
     {
       "run_id": 34708739085,
+      "run_conclusion": "failure",
       "run_number": 160,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:36:36Z",
@@ -877,6 +953,7 @@
     },
     {
       "run_id": 34708751006,
+      "run_conclusion": "failure",
       "run_number": 162,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:36:52Z",
@@ -890,6 +967,7 @@
     },
     {
       "run_id": 34708756800,
+      "run_conclusion": "failure",
       "run_number": 163,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:36:59Z",
@@ -903,6 +981,7 @@
     },
     {
       "run_id": 34708763471,
+      "run_conclusion": "failure",
       "run_number": 164,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:37:06Z",
@@ -916,6 +995,7 @@
     },
     {
       "run_id": 34708771788,
+      "run_conclusion": "failure",
       "run_number": 165,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:37:14Z",
@@ -929,6 +1009,7 @@
     },
     {
       "run_id": 34708792909,
+      "run_conclusion": "failure",
       "run_number": 167,
       "workflow": "Rebuild master ledger",
       "created_at": "2026-09-12T17:37:42Z",
@@ -942,6 +1023,7 @@
     },
     {
       "run_id": 34712074395,
+      "run_conclusion": "failure",
       "run_number": 1,
       "workflow": "Validate forensic foundation",
       "created_at": "2026-09-12T18:43:47Z",
@@ -955,6 +1037,7 @@
     },
     {
       "run_id": 34712105550,
+      "run_conclusion": "failure",
       "run_number": 2,
       "workflow": "Validate forensic foundation",
       "created_at": "2026-09-12T18:44:26Z",
@@ -968,6 +1051,7 @@
     },
     {
       "run_id": 34712169805,
+      "run_conclusion": "failure",
       "run_number": 3,
       "workflow": "Validate forensic foundation",
       "created_at": "2026-09-12T18:45:44Z",
@@ -981,6 +1065,7 @@
     },
     {
       "run_id": 34712284713,
+      "run_conclusion": "failure",
       "run_number": 4,
       "workflow": "Validate forensic foundation",
       "created_at": "2026-09-12T18:48:06Z",
@@ -994,6 +1079,7 @@
     },
     {
       "run_id": 34712298868,
+      "run_conclusion": "failure",
       "run_number": 5,
       "workflow": "Validate forensic foundation",
       "created_at": "2026-09-12T18:48:24Z",
@@ -1004,6 +1090,132 @@
       "classification": "FOUNDATION_REGISTER_GATE",
       "impact": "DETECTED_AND_BLOCKED",
       "reason": "Foundation gate blocked on contradiction-register structural consistency."
+    },
+    {
+      "run_id": 34712776661,
+      "run_conclusion": "cancelled",
+      "run_number": 4,
+      "workflow": "Rebuild connection graph",
+      "created_at": "2026-09-12T18:58:29Z",
+      "head_sha": "37d2ba231817df8298621d8beb59abc7ba8fd3c5",
+      "title": "tooling: upgrade graph workflow actions to Node 24 releases",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CROSS_WORKFLOW_CONCURRENCY_CANCEL",
+      "impact": "DISCARDED_EXECUTION_FIXED",
+      "reason": "Distinct workflow execution was discarded by the former shared concurrency lane; per-workflow lanes now replace it."
+    },
+    {
+      "run_id": 34712784616,
+      "run_conclusion": "cancelled",
+      "run_number": 7,
+      "workflow": "Validate forensic foundation",
+      "created_at": "2026-09-12T18:58:40Z",
+      "head_sha": "a9eb2bda7c201178456b8d9b14fb57904261033c",
+      "title": "tooling: upgrade foundation workflow actions to Node 24 releases",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CROSS_WORKFLOW_CONCURRENCY_CANCEL",
+      "impact": "DISCARDED_EXECUTION_FIXED",
+      "reason": "Distinct workflow execution was discarded by the former shared concurrency lane; per-workflow lanes now replace it."
+    },
+    {
+      "run_id": 34712786090,
+      "run_conclusion": "cancelled",
+      "run_number": 7,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-12T18:58:42Z",
+      "head_sha": "a9eb2bda7c201178456b8d9b14fb57904261033c",
+      "title": "Classify tooling failures",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CLASSIFIER_REFRESH_SUPERSEDED",
+      "impact": "REDUNDANT_REFRESH_DISCARDED",
+      "reason": "A classifier refresh was superseded by a newer refresh; the latest refresh reconstructs the complete incident ledger from GitHub history."
+    },
+    {
+      "run_id": 34712787814,
+      "run_conclusion": "cancelled",
+      "run_number": 8,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-12T18:58:45Z",
+      "head_sha": "a9eb2bda7c201178456b8d9b14fb57904261033c",
+      "title": "Classify tooling failures",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CLASSIFIER_REFRESH_SUPERSEDED",
+      "impact": "REDUNDANT_REFRESH_DISCARDED",
+      "reason": "A classifier refresh was superseded by a newer refresh; the latest refresh reconstructs the complete incident ledger from GitHub history."
+    },
+    {
+      "run_id": 34712792316,
+      "run_conclusion": "cancelled",
+      "run_number": 2,
+      "workflow": "Normalize note metadata",
+      "created_at": "2026-09-12T18:58:51Z",
+      "head_sha": "b73d9e1afac80198a6fb154a6ec19eb2fe47177c",
+      "title": "tooling: upgrade metadata workflow actions to Node 24 releases",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CROSS_WORKFLOW_CONCURRENCY_CANCEL",
+      "impact": "DISCARDED_EXECUTION_FIXED",
+      "reason": "Distinct workflow execution was discarded by the former shared concurrency lane; per-workflow lanes now replace it."
+    },
+    {
+      "run_id": 34712806058,
+      "run_conclusion": "cancelled",
+      "run_number": 9,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-12T18:59:08Z",
+      "head_sha": "b363bdd077510c5b9878298edc6e532a3e660fce",
+      "title": "tooling: upgrade failure-classifier actions to Node 24 releases",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CLASSIFIER_REFRESH_SUPERSEDED",
+      "impact": "REDUNDANT_REFRESH_DISCARDED",
+      "reason": "A classifier refresh was superseded by a newer refresh; the latest refresh reconstructs the complete incident ledger from GitHub history."
+    },
+    {
+      "run_id": 34712998533,
+      "run_conclusion": "cancelled",
+      "run_number": 14,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-12T19:02:52Z",
+      "head_sha": "d9fb789ed0984ca7e54141a1ca68cfe84b966306",
+      "title": "tooling: isolate failure-classifier concurrency lane",
+      "job_id": null,
+      "failed_step": null,
+      "classification": "CLASSIFIER_REFRESH_SUPERSEDED",
+      "impact": "REDUNDANT_REFRESH_DISCARDED",
+      "reason": "A classifier refresh was superseded by a newer refresh; the latest refresh reconstructs the complete incident ledger from GitHub history."
+    },
+    {
+      "run_id": 34713138258,
+      "run_conclusion": "failure",
+      "run_number": 16,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-12T19:05:40Z",
+      "head_sha": "8b69872231e5d99605c2bb17a4385c6a936b72dd",
+      "title": "tooling: account for cancelled workflow incidents",
+      "job_id": 103605430123,
+      "failed_step": "Validate failure ledger outputs",
+      "classification": "CLASSIFIER_SCHEMA_TRANSITION",
+      "impact": "FIXED_CONFIGURATION_MISMATCH",
+      "reason": "Classifier script emitted schema v3 while the then-current workflow still asserted v2; the workflow was subsequently updated to assert v3."
+    },
+    {
+      "run_id": 34713153565,
+      "run_conclusion": "failure",
+      "run_number": 17,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-12T19:06:00Z",
+      "head_sha": "3b92cd59c0e05ff82c7880ebef7c71b5b1bd45dc",
+      "title": "tooling: enforce failure and cancellation incident closure",
+      "job_id": 103605610719,
+      "failed_step": "Validate tooling incident ledger outputs",
+      "classification": "CLASSIFIER_CLOSURE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "The v3 closure gate correctly refused to pass while the preceding schema-transition incident remained unresolved; that root incident is now explicitly reconciled."
     }
   ]
 }
