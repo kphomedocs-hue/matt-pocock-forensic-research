@@ -1478,8 +1478,8 @@
       "sha": "1a4f4111192ff75b4771e8a248c603994d5eafdc",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0123 note](02_FILE_NOTES/MP-0123.md)"
     },
     {
       "mp_id": "MP-0124",
@@ -1490,8 +1490,8 @@
       "sha": "f5fed82c7b8597a852a4fa8d292b00a1d5c8bd16",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0124 note](02_FILE_NOTES/MP-0124.md)"
     },
     {
       "mp_id": "MP-0125",
