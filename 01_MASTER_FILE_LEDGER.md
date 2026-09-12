@@ -48,7 +48,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0030 | docs/engineering/ask-matt.md | 100644/blob | 10723 | 67d1e46192cc22f2f93f6d463dbd831ce174518e | human-docs | READ | [MP-0030 note](02_FILE_NOTES/MP-0030.md) |  |  | LOW |  |
 | MP-0031 | docs/engineering/code-review.md | 100644/blob | 10553 | 46353162627210af65296c6dee62e422a3400373 | human-docs | READ | [MP-0031 note](02_FILE_NOTES/MP-0031.md) |  |  | LOW |  |
 | MP-0032 | docs/engineering/codebase-design.md | 100644/blob | 12370 | 706365ca56fc2c5253fe407a72c494c51cb91c2e | human-docs | READ | [MP-0032 note](02_FILE_NOTES/MP-0032.md) |  |  | LOW |  |
-| MP-0033 | docs/engineering/diagnosing-bugs.md | 100644/blob | 10701 | cd6887ac414d40695b52c6a121ba033cb8d5ce98 | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0033 | docs/engineering/diagnosing-bugs.md | 100644/blob | 10701 | cd6887ac414d40695b52c6a121ba033cb8d5ce98 | human-docs | READ | [MP-0033 note](02_FILE_NOTES/MP-0033.md) |  |  | LOW |  |
 | MP-0034 | docs/engineering/domain-modeling.md | 100644/blob | 10742 | fb8100db71dca3bb044076f537a2e6ba1ed7c3ef | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0035 | docs/engineering/grill-with-docs.md | 100644/blob | 9922 | 26ac9de3bbdf49db18c7a1aa0ff508c6bf680cda | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0036 | docs/engineering/implement.md | 100644/blob | 10259 | 25f9980d382ba65d1fa44fc8849412469200d626 | human-docs | UNREAD |  |  |  | LOW |  |

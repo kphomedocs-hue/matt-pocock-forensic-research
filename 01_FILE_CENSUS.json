@@ -398,8 +398,8 @@
       "sha": "cd6887ac414d40695b52c6a121ba033cb8d5ce98",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0033 note](02_FILE_NOTES/MP-0033.md)"
     },
     {
       "mp_id": "MP-0034",
