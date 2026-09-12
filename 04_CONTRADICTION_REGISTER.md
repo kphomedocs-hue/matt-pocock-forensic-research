@@ -21,21 +21,21 @@ Defect-state labels: `CURRENT / FIXED / PARTIALLY FIXED / DOCS STALE / UNKNOWN`.
 
 ## Normalized closure overlay
 
-This overlay adds the canonical fields defined in `00_RESEARCH_SCHEMA.md` without rewriting the evidence table above.
+This overlay adds the canonical fields defined in `00_RESEARCH_SCHEMA.md` without redefining primary contradiction IDs.
 
-| ID | Origin | Defect state | Impact | Resolution test / next evidence |
+| Ref | Origin | Defect state | Impact | Resolution test / next evidence |
 |---|---|---|---|---|
-| CT-001 | SOURCE_REPO | DOCS STALE | User-facing and Codex-facing TDD semantics can disagree with operative behavior. | Confirm all frozen/current secondary surfaces describe red → green only, or document an intentional semantic split. |
-| CT-002 | SOURCE_REPO | DOCS STALE | Router documentation reports wrong plugin/invocation counts. | Recompute promoted/invocation counts mechanically and verify the docs match the generated set. |
-| CT-003 | SOURCE_REPO | CURRENT | Router can make behavior claims without proving the target source was read. | Show an operative mandatory target-source verification step, or classify the gap as accepted design. |
-| CT-004 | SOURCE_REPO | PARTIALLY FIXED | Package metadata contains two version truths; downstream tooling effect is uncertain. | Trace package-lock consumers/runtime and determine whether stale root version has practical effect. |
-| CT-005 | SOURCE_REPO | UNKNOWN | Canonical glossary support may be orphaned from the Teach workflow. | Complete exhaustive incoming-reference scan across the 164-file frozen census and classify referenced vs orphaned. |
-| CT-006 | SOURCE_REPO | UNKNOWN | Relative-path ambiguity may cause writes into installed skill state. | Reproduce in supported harness/runtime or obtain equivalent direct evidence of workspace-root resolution. |
-| CT-007 | SOURCE_REPO | DOCS STALE | Human docs understate shipped redaction safeguards. | Verify current docs align with operative redaction behavior and release history. |
-| CT-008 | SOURCE_REPO | CURRENT | “Self-contained” report can degrade when CDN access is unavailable. | Define self-contained semantics and test offline/locked-down rendering behavior. |
-| CT-009 | SOURCE_REPO | DOCS STALE | Removed architecture handoff remains advertised by docs/router. | Verify all current secondary surfaces remove the deleted handoff or explicitly mark it historical. |
-| CT-010 | SOURCE_REPO | CURRENT | Review can run before implementation exists in HEAD, yielding an empty committed diff. | Reproduce ordering path and verify either interim commit requirement or review support for staged/working-tree changes. |
-| CT-011 | SOURCE_REPO | DOCS STALE | Bucket README materially misstates `retro` maturity. | Compare current bucket README against operative skill state and align the description. |
+| ↳ CT-001 | SOURCE_REPO | DOCS STALE | User-facing and Codex-facing TDD semantics can disagree with operative behavior. | Confirm all frozen/current secondary surfaces describe red → green only, or document an intentional semantic split. |
+| ↳ CT-002 | SOURCE_REPO | DOCS STALE | Router documentation reports wrong plugin/invocation counts. | Recompute promoted/invocation counts mechanically and verify the docs match the generated set. |
+| ↳ CT-003 | SOURCE_REPO | CURRENT | Router can make behavior claims without proving the target source was read. | Show an operative mandatory target-source verification step, or classify the gap as accepted design. |
+| ↳ CT-004 | SOURCE_REPO | PARTIALLY FIXED | Package metadata contains two version truths; downstream tooling effect is uncertain. | Trace package-lock consumers/runtime and determine whether stale root version has practical effect. |
+| ↳ CT-005 | SOURCE_REPO | UNKNOWN | Canonical glossary support may be orphaned from the Teach workflow. | Complete exhaustive incoming-reference scan across the 164-file frozen census and classify referenced vs orphaned. |
+| ↳ CT-006 | SOURCE_REPO | UNKNOWN | Relative-path ambiguity may cause writes into installed skill state. | Reproduce in supported harness/runtime or obtain equivalent direct evidence of workspace-root resolution. |
+| ↳ CT-007 | SOURCE_REPO | DOCS STALE | Human docs understate shipped redaction safeguards. | Verify current docs align with operative redaction behavior and release history. |
+| ↳ CT-008 | SOURCE_REPO | CURRENT | “Self-contained” report can degrade when CDN access is unavailable. | Define self-contained semantics and test offline/locked-down rendering behavior. |
+| ↳ CT-009 | SOURCE_REPO | DOCS STALE | Removed architecture handoff remains advertised by docs/router. | Verify all current secondary surfaces remove the deleted handoff or explicitly mark it historical. |
+| ↳ CT-010 | SOURCE_REPO | CURRENT | Review can run before implementation exists in HEAD, yielding an empty committed diff. | Reproduce ordering path and verify either interim commit requirement or review support for staged/working-tree changes. |
+| ↳ CT-011 | SOURCE_REPO | DOCS STALE | Bucket README materially misstates `retro` maturity. | Compare current bucket README against operative skill state and align the description. |
 
 ## Resolved historical defects retained for pattern analysis
 
