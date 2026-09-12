@@ -25,7 +25,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0007 | .changeset/add-implement-spec-skill.md | 100644/blob | 450 | 2128b7d4220ed30503e957fe8c8bbcf9b521931d | changeset | READ | [MP-0007 note](02_FILE_NOTES/MP-0007.md) |  |  | LOW |  |
 | MP-0008 | .changeset/config.json | 100644/blob | 380 | 06c7350518b33bdaedd0eae254f75fd887f16963 | changeset | READ | [MP-0008 note](02_FILE_NOTES/MP-0008.md) |  |  | LOW |  |
 | MP-0009 | .changeset/domain-modeling-trigger-context-adr.md | 100644/blob | 437 | 8ab6722a781dedf4d52456d6a02f83e358e62f1f | changeset | READ | [MP-0009 note](02_FILE_NOTES/MP-0009.md) |  |  | LOW |  |
-| MP-0010 | .changeset/fix-yaml-frontmatter-colons.md | 100644/blob | 387 | 64f830b202aaef799c5dabe2ba53d0ab05f87efa | changeset | UNREAD |  |  |  | LOW |  |
+| MP-0010 | .changeset/fix-yaml-frontmatter-colons.md | 100644/blob | 387 | 64f830b202aaef799c5dabe2ba53d0ab05f87efa | changeset | READ | [MP-0010 note](02_FILE_NOTES/MP-0010.md) |  |  | LOW |  |
 | MP-0011 | .changeset/grilling-add-hr-between-questions.md | 100644/blob | 169 | 0fc8ee080d9d5b7ed6709af70a5d66a4b65ca5cb | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0012 | .changeset/grilling-remove-em-dashes.md | 100644/blob | 162 | 6cd562fb6a8b46afb9db06756deb76a2bd6688aa | changeset | UNREAD |  |  |  | LOW |  |
 | MP-0013 | .changeset/remove-em-dashes-repo-wide.md | 100644/blob | 350 | a3909afb95f471194fe96430127799bb7e7df5b1 | changeset | UNREAD |  |  |  | LOW |  |
