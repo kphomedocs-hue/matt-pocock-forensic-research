@@ -22,12 +22,12 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 | Phase | Status | Gate state |
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
-| 2. Full Physical Read | **IN PROGRESS** | **54 READ / 110 UNREAD**. Next deterministic file: `MP-0055`. |
+| 2. Full Physical Read | **IN PROGRESS** | **64 READ / 100 UNREAD**. Next deterministic file: `MP-0065`. |
 | 3. Connection Mapping | IN PROGRESS / evidence accumulated | Several operative/reference relationships traced; exhaustive graph not complete. |
 | 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified. |
 | 5. History | IN PROGRESS | Root CHANGELOG has a formal Phase 2 durable reread; several high-impact PRs/commits have also been traced. |
-| 6. Contradictions & Orphans | IN PROGRESS | Current register includes CT-001 through CT-010; several are directly grounded in frozen durable file notes. |
-| 7. Runtime & Distribution | IN PROGRESS | Plugin/Codex/local-link architecture partly reconstructed; high-risk package/script block begins at MP-0055. |
+| 6. Contradictions & Orphans | IN PROGRESS | CT-003 is now confirmed from both docs and operative router source; CT-004/009/010 were strengthened in the latest block. |
+| 7. Runtime & Distribution | IN PROGRESS | High-risk package/runtime block MP-0055 through MP-0059 has been fully read and persisted. |
 | 8. Second Pass | NOT STARTED formally | No formal high-impact second-pass gate yet. |
 | 9. Red-Team Verification | NOT STARTED formally | Individual falsification checks exist, but no systematic red-team pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Preliminary synthesis exists but is not final. |
@@ -36,8 +36,8 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 - Physical blobs/files: **164**
 - Ledger rows: **164**
-- Phase 2 READ: **54**
-- Phase 2 UNREAD: **110**
+- Phase 2 READ: **64**
+- Phase 2 UNREAD: **100**
 - CONNECTIONS TRACED: **0** formally in the durable ledger
 - VERIFIED: **0** formally in the durable ledger
 - Current SKILL.md files: **37**
@@ -47,26 +47,33 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 ## Most recent durable range
 
-`MP-0001` through `MP-0054` are READ with notes in `02_FILE_NOTES/`.
+`MP-0001` through `MP-0064` are READ with notes in `02_FILE_NOTES/`.
 
-The latest range completed the remaining engineering/productivity human docs, including setup, TDD, to-spec, to-tickets, triage, wayfinder, wizard, grill-me, grilling, handoff, teach, to-questionnaire, wait-what, and writing-for-agents.
+The latest range covered:
+- package-lock root metadata and full dependency graph;
+- package.json release/version scripts;
+- maintainer link/list executables;
+- plugin-version synchronization script;
+- deprecated and engineering bucket docs;
+- ask-matt phase-boundary support file;
+- operative ask-matt router and Codex metadata.
 
 Durable findings strengthened in this range:
-- TDD docs explicitly confirm red → green with refactoring moved to code-review, strengthening CT-001;
-- setup docs acknowledge label-creation and harness-file-selection gaps;
-- to-tickets docs acknowledge missing native GitHub sub-issue/blocking behavior despite `gh` support;
-- wayfinder docs expose a control weakness where agent-authored Notes can override the default plan-don't-do rule;
-- handoff docs explicitly classify summaries as secondary sources and warn that unverified assumptions become contracts;
-- teach docs corroborate the glossary orphan/workspace-root ambiguity already tracked in CT-005/CT-006;
-- writing-for-agents reinforces single-source, pointer, no-op, and anti-duplication principles that shape this forensic audit.
+- package-lock retains root version 0.0.0 while package.json is 1.2.3; sync tooling does not touch the lockfile;
+- link-skills.sh destructively removes an existing non-symlink per-skill directory with `rm -rf` before symlinking, so isolated runtime testing is required;
+- list-skills.sh enumerates all current SKILL.md files, not the promoted or local-link subsets;
+- CT-003 is confirmed: ask-matt human docs demand primary-source target-skill verification, but the operative router contains no mandatory verification step;
+- ask-matt operative router still repeats the removed diagnosing-bugs → improve-codebase-architecture handoff, reinforcing CT-009;
+- ask-matt and Engineering README both preserve the implement → code-review-before-commit ordering implicated in CT-010;
+- Engineering README remains stale on TDD red-green-refactor, strengthening CT-001.
 
 ## Immediate next execution steps
 
-1. Continue deterministic reading at `MP-0055` (`package-lock.json`).
-2. Treat `MP-0055` through `MP-0059` as a high-risk package/runtime block and inspect completely.
+1. Continue deterministic reading at `MP-0065` (`skills/engineering/code-review/SKILL.md`).
+2. Read operative engineering skills and their metadata/support files in path order.
 3. Store one durable note per file before status promotion.
 4. Continue until `UNREAD = 0`.
-5. Update claims/contradictions/history only when directly supported by the current file, without interrupting deterministic read order.
+5. Promote contradictions from candidate to confirmed only when operative sources close both sides.
 6. Do not return to broad KP recommendations until source gates are satisfied.
 
 ## Resume instruction
