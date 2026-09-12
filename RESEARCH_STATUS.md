@@ -15,9 +15,11 @@ Primary phase focus: **Phase 3 — Connection Mapping**.
 
 Phase 1 and Phase 2 are complete. The exact frozen recursive tree is materialized in `01_MASTER_FILE_LEDGER.md` and `01_FILE_CENSUS.json`, generated deterministically from the Git tree by `scripts/build_master_ledger.py`. Every frozen physical blob has a durable per-file note and is mechanically marked READ.
 
-Phase 3 now has both a manually curated semantic graph (`03_CONNECTION_GRAPH.md`) and a deterministic extractor (`scripts/build_connection_graph.py`) backed by `.github/workflows/rebuild-connection-graph.yml`. The extractor reads all 164 frozen blobs by SHA from the census and derives source-explicit/structural relationships instead of relying on ranked search.
+Phase 3 now has a manually curated semantic graph (`03_CONNECTION_GRAPH.md`), a deterministic extractor (`scripts/build_connection_graph.py`), generated machine/index artifacts (`03_CONNECTION_EDGES.json`, `03_CONNECTION_INDEX.md`), and semantic reconciliation (`03_CONNECTION_RECONCILIATION.md`). The extractor reads all 164 frozen blobs by SHA from the census rather than relying on ranked search.
 
-The first complete extraction run succeeded over all 164 blobs and reported **204 extracted edges** plus **5 unresolved internal-looking references**. The initial workflow exposed a research-tooling bug: `git diff --quiet` ignored newly generated untracked graph files. That commit gate was corrected to use `git status --porcelain`; this is a tooling defect in the audit repo, not a source-repository finding.
+The first complete extraction produced **204 explicit/structural edges** and **5 unresolved internal-looking references**. All five were manually reconciled: three are consumer-repo example CONTEXT paths, one is Wayfinder's literal `(link)` template placeholder, and one is the generated `src/packages/README.md` target used by setup-ts-deep-modules. Therefore the first unresolved-reference batch is **5/5 reconciled, 0 confirmed broken repository links, 0 semantically unresolved cases**. The raw extractor still reports five by design so original machine evidence remains auditable.
+
+The first workflow run also exposed a research-tooling bug: `git diff --quiet` ignored newly generated untracked graph files. The commit gate was corrected to use `git status --porcelain`, and the corrected workflow completed successfully and persisted the generated graph artifacts. This was an audit-repo tooling defect, not a source-repository finding.
 
 ## Phase status
 
@@ -25,7 +27,7 @@ The first complete extraction run succeeded over all 164 blobs and reported **20
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
 | 2. Full Physical Read | **COMPLETE** | **164 READ / 0 UNREAD**. Every physical blob has a durable note in `02_FILE_NOTES/`. |
-| 3. Connection Mapping | **IN PROGRESS** | Deterministic 164-blob extraction now produces 204 candidate explicit/structural edges and 5 unresolved internal-looking references; semantic reconciliation and incoming/outgoing closure remain. |
+| 3. Connection Mapping | **IN PROGRESS** | Deterministic 164-blob extraction produced 204 explicit/structural edges. Its 5 unresolved-looking references are now 5/5 semantically reconciled with no broken repo links in that queue. Aggregate/plain-text/history/distribution/invocation joins still remain. |
 | 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified; CT-010 confirmed from operative sources. |
 | 5. History | IN PROGRESS | Root CHANGELOG has a formal durable reread; several high-impact PRs/commits have also been traced. |
 | 6. Contradictions & Orphans | IN PROGRESS | Multiple current and historical contradictions have frozen-source evidence; exhaustive orphan/incoming-reference analysis remains. |
@@ -41,7 +43,10 @@ The first complete extraction run succeeded over all 164 blobs and reported **20
 - Phase 2 READ: **164**
 - Phase 2 UNREAD: **0**
 - Deterministic Phase 3 extracted edges: **204**
-- Deterministic Phase 3 unresolved internal-looking references: **5**
+- Raw extractor unresolved internal-looking references: **5**
+- Semantically reconciled from that queue: **5/5**
+- Confirmed broken repository links from that queue: **0**
+- Semantically unresolved from that queue: **0**
 - CONNECTIONS TRACED: **0** formally promoted in the durable ledger
 - VERIFIED: **0** formally promoted in the durable ledger
 - Current SKILL.md files: **37**
@@ -60,15 +65,17 @@ The deterministic extractor currently handles:
 - exact per-file incoming/outgoing counts against the full 164-file census;
 - an explicit unresolved-reference queue rather than silently dropping unresolved targets.
 
-This extraction layer is evidence collection, not final semantic verification. Aggregate/semantic references, history edges, installer/linker set semantics, invocation-policy joins, and false-positive/false-negative review still require reconciliation before any file is promoted to `CONNECTIONS TRACED`.
+The semantic reconciliation layer records why machine-unresolved cases are or are not real repository defects without mutating the raw extraction evidence.
+
+This extraction layer is evidence collection, not final semantic verification. Aggregate/plain-text references, history edges, installer/linker set semantics, invocation-policy joins, and false-positive/false-negative review still require closure before any file is promoted to `CONNECTIONS TRACED`.
 
 ## Immediate next execution steps
 
-1. Persist and inspect the generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` from the corrected workflow.
-2. Reconcile the 5 unresolved internal-looking references one by one as valid external/generated/anchor cases or real broken references.
-3. Expand aggregate relationships (especially ask-matt and setup templates) into exact per-target edges.
-4. Join every `OPERATIVE_CALL` target against user/model invocation classification and flag illegal current calls.
-5. Build exact distribution symmetry across plugin, linker, list-skills, docs, router, and Codex metadata.
+1. Expand aggregate relationships (especially ask-matt and setup templates) into exact per-target edges.
+2. Join every `OPERATIVE_CALL` target against user/model invocation classification and flag illegal current calls.
+3. Add deterministic plain-text/unique-filename reference scanning so orphan claims such as CT-005 do not depend only on Markdown links.
+4. Build exact distribution symmetry across plugin, linker, list-skills, docs, router, and Codex metadata.
+5. Add history-reference edges for behavior-shaping changes already identified in changesets/CHANGELOG/PR history.
 6. Promote a file to `CONNECTIONS TRACED` only after outgoing, incoming, links, invocation class, and unresolved relationships are closed.
 
 ## Resume instruction
