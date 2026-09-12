@@ -65,7 +65,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0047 | docs/engineering/wizard.md | 100644/blob | 9877 | 84e047b2481c2afe4e5247231a8600d9721f1b88 | human-docs | READ | [MP-0047 note](02_FILE_NOTES/MP-0047.md) |  |  | LOW |  |
 | MP-0048 | docs/productivity/grill-me.md | 100644/blob | 6489 | d79d4864eca912ed2ed4ea3c13137c384e0868fb | human-docs | READ | [MP-0048 note](02_FILE_NOTES/MP-0048.md) |  |  | LOW |  |
 | MP-0049 | docs/productivity/grilling.md | 100644/blob | 10413 | 512d76af564bc0899c59c90a5287a442f7846530 | human-docs | READ | [MP-0049 note](02_FILE_NOTES/MP-0049.md) |  |  | LOW |  |
-| MP-0050 | docs/productivity/handoff.md | 100644/blob | 8746 | 72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672 | human-docs | UNREAD |  |  |  | LOW |  |
+| MP-0050 | docs/productivity/handoff.md | 100644/blob | 8746 | 72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672 | human-docs | READ | [MP-0050 note](02_FILE_NOTES/MP-0050.md) |  |  | LOW |  |
 | MP-0051 | docs/productivity/teach.md | 100644/blob | 13260 | 012113bd2379a4318ad3c1c7e4f4e848bbc29990 | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0052 | docs/productivity/to-questionnaire.md | 100644/blob | 7828 | 52f0e437bb241630c9960f02c7e6fd7091a3030f | human-docs | UNREAD |  |  |  | LOW |  |
 | MP-0053 | docs/productivity/wait-what.md | 100644/blob | 3528 | 0b14100932844507dc8b3de6e3b6bc2002d493e1 | human-docs | UNREAD |  |  |  | LOW |  |

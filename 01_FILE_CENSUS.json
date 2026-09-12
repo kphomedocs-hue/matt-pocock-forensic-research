@@ -602,8 +602,8 @@
       "sha": "72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0050 note](02_FILE_NOTES/MP-0050.md)"
     },
     {
       "mp_id": "MP-0051",
