@@ -107,7 +107,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0089 | skills/engineering/research/SKILL.md | 100644/blob | 794 | fecee97e9457ba039678d2fcf1b1bc9fca78307d | skill | READ | [MP-0089 note](02_FILE_NOTES/MP-0089.md) |  |  | MEDIUM |  |
 | MP-0090 | skills/engineering/research/agents/openai.yaml | 100644/blob | 94 | e18b96ca0ccc1003889d5d6991386207c2454bc2 | codex-metadata | READ | [MP-0090 note](02_FILE_NOTES/MP-0090.md) |  |  | MEDIUM |  |
 | MP-0091 | skills/engineering/resolving-merge-conflicts/SKILL.md | 100644/blob | 918 | bfb7e5606e231e6808979f623fce76a9aad4b71c | skill | READ | [MP-0091 note](02_FILE_NOTES/MP-0091.md) |  |  | MEDIUM |  |
-| MP-0092 | skills/engineering/resolving-merge-conflicts/agents/openai.yaml | 100644/blob | 113 | 331ffb9d38937877f51a5f867a66dc61eee259ae | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0092 | skills/engineering/resolving-merge-conflicts/agents/openai.yaml | 100644/blob | 113 | 331ffb9d38937877f51a5f867a66dc61eee259ae | codex-metadata | READ | [MP-0092 note](02_FILE_NOTES/MP-0092.md) |  |  | MEDIUM |  |
 | MP-0093 | skills/engineering/setup-matt-pocock-skills/SKILL.md | 100644/blob | 6841 | 7f6f576e2e54e0d287cbb9731ebe0343f54e50cf | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0094 | skills/engineering/setup-matt-pocock-skills/agents/openai.yaml | 100644/blob | 152 | 65a0da8128c98051183235e490767a8065310868 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0095 | skills/engineering/setup-matt-pocock-skills/domain.md | 100644/blob | 2033 | 35249041162b1eed5b873d97fc430fb3e4adb18f | skill-support | UNREAD |  |  |  | LOW |  |

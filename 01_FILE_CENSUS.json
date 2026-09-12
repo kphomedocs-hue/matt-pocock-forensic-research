@@ -1106,8 +1106,8 @@
       "sha": "331ffb9d38937877f51a5f867a66dc61eee259ae",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0092 note](02_FILE_NOTES/MP-0092.md)"
     },
     {
       "mp_id": "MP-0093",
