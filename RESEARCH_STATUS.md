@@ -22,12 +22,12 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 | Phase | Status | Gate state |
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
-| 2. Full Physical Read | **IN PROGRESS** | **30 READ / 134 UNREAD**. Next deterministic file: `MP-0031`. |
+| 2. Full Physical Read | **IN PROGRESS** | **40 READ / 124 UNREAD**. Next deterministic file: `MP-0041`. |
 | 3. Connection Mapping | IN PROGRESS / evidence accumulated | Several operative/reference relationships traced; exhaustive graph not complete. |
 | 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified. |
-| 5. History | IN PROGRESS | Root CHANGELOG now has a formal Phase 2 durable reread; several high-impact PRs/commits have also been traced. |
-| 6. Contradictions & Orphans | IN PROGRESS | CT-001 and CT-002 are now directly grounded in frozen durable file notes; CT-003 has docs-side evidence and awaits operative router reread. |
-| 7. Runtime & Distribution | IN PROGRESS | Plugin/Codex/local-link architecture partly reconstructed; MP-0017 through MP-0019 have durable READ notes. |
+| 5. History | IN PROGRESS | Root CHANGELOG has a formal Phase 2 durable reread; several high-impact PRs/commits have also been traced. |
+| 6. Contradictions & Orphans | IN PROGRESS | Current register includes CT-001 through CT-010; several are now directly grounded in frozen durable file notes. |
+| 7. Runtime & Distribution | IN PROGRESS | Plugin/Codex/local-link architecture partly reconstructed; distribution files already have durable READ notes. |
 | 8. Second Pass | NOT STARTED formally | No formal high-impact second-pass gate yet. |
 | 9. Red-Team Verification | NOT STARTED formally | Individual falsification checks exist, but no systematic red-team pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Preliminary synthesis exists but is not final. |
@@ -36,8 +36,8 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 - Physical blobs/files: **164**
 - Ledger rows: **164**
-- Phase 2 READ: **30**
-- Phase 2 UNREAD: **134**
+- Phase 2 READ: **40**
+- Phase 2 UNREAD: **124**
 - CONNECTIONS TRACED: **0** formally in the durable ledger
 - VERIFIED: **0** formally in the durable ledger
 - Current SKILL.md files: **37**
@@ -47,27 +47,34 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 ## Most recent durable range
 
-`MP-0001` through `MP-0030` are READ with notes in `02_FILE_NOTES/`.
+`MP-0001` through `MP-0040` are READ with notes in `02_FILE_NOTES/`.
 
-The latest range added:
-- all three `.out-of-scope` negative-memory files;
-- `AGENTS.md` symlink blob;
-- complete fixed-window reread of root `CHANGELOG.md`;
-- `CLAUDE.md`, `CONTEXT.md`, `LICENSE`, and complete fixed-window reread of root `README.md`;
-- complete fixed-window reread of `docs/engineering/ask-matt.md`.
+The latest ten-file range covered the human docs for:
+- code-review;
+- codebase-design;
+- diagnosing-bugs;
+- domain-modeling;
+- grill-with-docs;
+- implement;
+- improve-codebase-architecture;
+- prototype;
+- research;
+- resolving-merge-conflicts.
 
 Durable findings strengthened in this range:
-- CT-001: root README is stale on TDD red-green-refactor after refactor was removed from TDD and moved to review;
-- CT-002: ask-matt docs still say 22 plugin skills / 13 user-invoked while frozen manifest/census shows 25 / 14;
-- CT-003: ask-matt docs require trace evidence of opening target `SKILL.md`; operative enforcement still awaits formal durable router-source reread;
-- negative-memory files are an explicit mechanism for retaining rejected product decisions;
-- `AGENTS.md` is physically a symlink blob containing `CLAUDE.md`.
+- CT-007: diagnosing-bugs docs say redaction is unimplemented even though frozen CHANGELOG records it shipped in 1.2.3;
+- CT-009: diagnosing-bugs docs still describe an architecture handoff that frozen invocation-fix history says was removed;
+- CT-010: implement says review-before-commit, while code-review's three-dot diff excludes uncommitted work;
+- recursive subagent spawning is a documented risk in code-review and research;
+- research artifacts are intentionally short-lived and require explicit reuse pointers;
+- prototype artifacts are preserved as primary-source evidence on throwaway branches rather than merged into main;
+- merge-conflict resolution is explicitly intent-first, using primary sources rather than ours/theirs text selection.
 
-Research tooling note: the ledger-note parser was fixed to accept both `Status: **READ**` and `- Status: READ`; the rebuild workflow is green again.
+Connection check: both the research repository and frozen source repository were successfully read before this range, and GitHub writes succeeded. The automatic ledger rebuild is currently reflecting notes correctly.
 
 ## Immediate next execution steps
 
-1. Continue deterministic reading at `MP-0031` (`docs/engineering/code-review.md`).
+1. Continue deterministic reading at `MP-0041` (`docs/engineering/setup-matt-pocock-skills.md`).
 2. Inspect complete frozen contents; use fixed line windows whenever output truncates.
 3. Store one durable note per file before status promotion.
 4. Continue until `UNREAD = 0`.
