@@ -1,13 +1,18 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
-  "failed_run_count": 71,
-  "failed_job_entry_count": 71,
+  "classification_version": 2,
+  "failed_run_count": 76,
+  "failed_job_entry_count": 76,
   "classification_counts": {
+    "FOUNDATION_GATE": 1,
+    "FOUNDATION_PROVENANCE_GATE": 1,
+    "FOUNDATION_REGISTER_GATE": 3,
     "PUSH_RACE": 61,
     "STATUS_PARSER": 10
   },
   "impact_counts": {
     "DELAYED_PROMOTION": 10,
+    "DETECTED_AND_BLOCKED": 5,
     "TEMPORARILY_STALE": 61
   },
   "unknown_entries": 0,
@@ -934,6 +939,71 @@
       "classification": "PUSH_RACE",
       "impact": "TEMPORARILY_STALE",
       "reason": "Generated output was valid locally but publication lost a race to main."
+    },
+    {
+      "run_id": 34712074395,
+      "run_number": 1,
+      "workflow": "Validate forensic foundation",
+      "created_at": "2026-09-12T18:43:47Z",
+      "head_sha": "e1372c8f4d56460aed6981ee527a11c2bfac9e76",
+      "title": "foundation: add validation workflow",
+      "job_id": 103602518055,
+      "failed_step": "Validate foundation",
+      "classification": "FOUNDATION_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "Foundation validator detected a hard inconsistency and blocked promotion."
+    },
+    {
+      "run_id": 34712105550,
+      "run_number": 2,
+      "workflow": "Validate forensic foundation",
+      "created_at": "2026-09-12T18:44:26Z",
+      "head_sha": "764a1475c8b708649454727e798d4cc996c3d097",
+      "title": "foundation: persist reports before failing integrity gate",
+      "job_id": 103602602039,
+      "failed_step": "Enforce hard-integrity gate",
+      "classification": "FOUNDATION_PROVENANCE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "Foundation gate blocked on durable-note provenance metadata."
+    },
+    {
+      "run_id": 34712169805,
+      "run_number": 3,
+      "workflow": "Validate forensic foundation",
+      "created_at": "2026-09-12T18:45:44Z",
+      "head_sha": "031207fbbe90f8e31ea3bc83bf21e0c488fef375",
+      "title": "foundation: recognize legacy note provenance without weakening checks",
+      "job_id": 103603007857,
+      "failed_step": "Enforce hard-integrity gate",
+      "classification": "FOUNDATION_REGISTER_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "Foundation gate blocked on contradiction-register structural consistency."
+    },
+    {
+      "run_id": 34712284713,
+      "run_number": 4,
+      "workflow": "Validate forensic foundation",
+      "created_at": "2026-09-12T18:48:06Z",
+      "head_sha": "a5442b470708912f131dc3cb2fd6406f161567d3",
+      "title": "foundation: normalize contradiction origin and resolution tests",
+      "job_id": 103603111682,
+      "failed_step": "Enforce hard-integrity gate",
+      "classification": "FOUNDATION_REGISTER_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "Foundation gate blocked on contradiction-register structural consistency."
+    },
+    {
+      "run_id": 34712298868,
+      "run_number": 5,
+      "workflow": "Validate forensic foundation",
+      "created_at": "2026-09-12T18:48:24Z",
+      "head_sha": "835704c00bfcfdf5e45ec3f96ed4355e1b90e75c",
+      "title": "foundation: add explicit history lineage states",
+      "job_id": 103603135028,
+      "failed_step": "Enforce hard-integrity gate",
+      "classification": "FOUNDATION_REGISTER_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "Foundation gate blocked on contradiction-register structural consistency."
     }
   ]
 }

@@ -2,9 +2,11 @@
 
 Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
-Failed workflow runs enumerated: **71**
+Classifier version: **2**
 
-Failed job entries classified: **71**
+Failed workflow runs enumerated: **76**
+
+Failed job entries classified: **76**
 
 Unknown/unclassified entries: **0**
 
@@ -12,6 +14,9 @@ Unknown/unclassified entries: **0**
 
 | Classification | Count |
 |---|---:|
+| FOUNDATION_GATE | 1 |
+| FOUNDATION_PROVENANCE_GATE | 1 |
+| FOUNDATION_REGISTER_GATE | 3 |
 | PUSH_RACE | 61 |
 | STATUS_PARSER | 10 |
 
@@ -20,6 +25,7 @@ Unknown/unclassified entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
+| DETECTED_AND_BLOCKED | 5 |
 | TEMPORARILY_STALE | 61 |
 
 ## Run ledger
@@ -97,7 +103,12 @@ Unknown/unclassified entries: **0**
 | 34708763471 | 2026-09-12T17:37:06Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
 | 34708771788 | 2026-09-12T17:37:14Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
 | 34708792909 | 2026-09-12T17:37:42Z | Rebuild master ledger | Commit regenerated ledger | PUSH_RACE | TEMPORARILY_STALE |
+| 34712074395 | 2026-09-12T18:43:47Z | Validate forensic foundation | Validate foundation | FOUNDATION_GATE | DETECTED_AND_BLOCKED |
+| 34712105550 | 2026-09-12T18:44:26Z | Validate forensic foundation | Enforce hard-integrity gate | FOUNDATION_PROVENANCE_GATE | DETECTED_AND_BLOCKED |
+| 34712169805 | 2026-09-12T18:45:44Z | Validate forensic foundation | Enforce hard-integrity gate | FOUNDATION_REGISTER_GATE | DETECTED_AND_BLOCKED |
+| 34712284713 | 2026-09-12T18:48:06Z | Validate forensic foundation | Enforce hard-integrity gate | FOUNDATION_REGISTER_GATE | DETECTED_AND_BLOCKED |
+| 34712298868 | 2026-09-12T18:48:24Z | Validate forensic foundation | Enforce hard-integrity gate | FOUNDATION_REGISTER_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 
-This ledger is complete only when `unknown_entries` is zero, or every remaining unknown has a separately documented reason and manual disposition.
+This ledger is closed only when `unknown_entries` is exactly zero. The CI workflow enforces this condition.
