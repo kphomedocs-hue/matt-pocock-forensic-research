@@ -86,8 +86,8 @@
       "sha": "2128b7d4220ed30503e957fe8c8bbcf9b521931d",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0007 note](02_FILE_NOTES/MP-0007.md)"
     },
     {
       "mp_id": "MP-0008",
