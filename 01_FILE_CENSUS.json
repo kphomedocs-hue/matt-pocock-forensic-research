@@ -1178,8 +1178,8 @@
       "sha": "0209a19af92c9c485cf3acc3d9e253171517ea17",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0098 note](02_FILE_NOTES/MP-0098.md)"
     },
     {
       "mp_id": "MP-0099",
