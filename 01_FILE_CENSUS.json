@@ -1394,8 +1394,8 @@
       "sha": "1b3cdf40ad4923a9845fd682653d8cc4510f516e",
       "category": "skill-executable-config",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0116 note](02_FILE_NOTES/MP-0116.md)"
     },
     {
       "mp_id": "MP-0117",

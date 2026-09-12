@@ -131,7 +131,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0113 | skills/engineering/wayfinder/agents/openai.yaml | 100644/blob | 144 | b37544751e0570f9df8de6c02aef238de8c3e1e0 | codex-metadata | READ | [MP-0113 note](02_FILE_NOTES/MP-0113.md) |  |  | MEDIUM |  |
 | MP-0114 | skills/engineering/wizard/SKILL.md | 100644/blob | 4123 | c4294ad8298b9b95fc727496b1b802b1f7363fba | skill | READ | [MP-0114 note](02_FILE_NOTES/MP-0114.md) |  |  | MEDIUM |  |
 | MP-0115 | skills/engineering/wizard/agents/openai.yaml | 100644/blob | 96 | b601bdf3a321e7d32d5714681540b811287d3988 | codex-metadata | READ | [MP-0115 note](02_FILE_NOTES/MP-0115.md) |  |  | MEDIUM |  |
-| MP-0116 | skills/engineering/wizard/template.sh | 100644/blob | 8567 | 1b3cdf40ad4923a9845fd682653d8cc4510f516e | skill-executable-config | UNREAD |  |  |  | HIGH |  |
+| MP-0116 | skills/engineering/wizard/template.sh | 100644/blob | 8567 | 1b3cdf40ad4923a9845fd682653d8cc4510f516e | skill-executable-config | READ | [MP-0116 note](02_FILE_NOTES/MP-0116.md) |  |  | HIGH |  |
 | MP-0117 | skills/in-progress/README.md | 100644/blob | 2177 | ee394b7985a8c296ffa068e63e4f5dcf23b8969b | bucket-docs | UNREAD |  |  |  | LOW |  |
 | MP-0118 | skills/in-progress/claude-handoff/SKILL.md | 100644/blob | 1301 | 9ab14e312a0d5cffe926eeeab12cef7dc8f84d54 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0119 | skills/in-progress/claude-handoff/agents/openai.yaml | 100644/blob | 141 | 0a7aa5da50d0e73248fc17fb8fe82409ec071eaf | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
