@@ -31,10 +31,10 @@ jobs:
           python-version: '3.12'
       - name: Sync latest main before validation
         run: git pull --ff-only origin main
-      - name: Validate foundation
+      - name: Generate foundation report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/validate_foundation.py
+        run: python scripts/validate_foundation.py || true
       - name: Validate generated report files
         run: |
           test -s 00_FOUNDATION_INTEGRITY.json
@@ -43,17 +43,31 @@ jobs:
         run: |
           if [[ -z "$(git status --porcelain -- 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)" ]]; then
             echo "Foundation report already current"
-            exit 0
+          else
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git add 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md
+            git commit -m "foundation: refresh integrity report"
+            for attempt in 1 2 3 4 5; do
+              if git push; then break; fi
+              echo "Push race on attempt $attempt; rebasing onto latest main"
+              git fetch origin main
+              git rebase origin/main
+              if [[ "$attempt" == "5" ]]; then
+                echo "Failed to publish foundation report after 5 attempts" >&2
+                exit 1
+              fi
+            done
           fi
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md
-          git commit -m "foundation: refresh integrity report"
-          for attempt in 1 2 3 4 5; do
-            if git push; then exit 0; fi
-            echo "Push race on attempt $attempt; rebasing onto latest main"
-            git fetch origin main
-            git rebase origin/main
-          done
-          echo "Failed to publish foundation report after 5 attempts" >&2
-          exit 1
+      - name: Enforce hard-integrity gate
+        run: |
+          python - <<'PY'
+          import json
+          data = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
+          errors = data.get('hard_errors', [])
+          print(f"Hard integrity errors: {len(errors)}")
+          for error in errors:
+              print(f"- {error}")
+          if errors:
+              raise SystemExit(1)
+          PY
