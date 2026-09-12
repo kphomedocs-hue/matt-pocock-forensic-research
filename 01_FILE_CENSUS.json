@@ -698,8 +698,8 @@
       "sha": "f13da41774c8bffea798e64505a4c3adc528ee63",
       "category": "repo-executable",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0058 note](02_FILE_NOTES/MP-0058.md)"
     },
     {
       "mp_id": "MP-0059",
@@ -710,8 +710,8 @@
       "sha": "44063fc0d14a78927caf3990882ea3809157bc21",
       "category": "repo-executable",
       "runtime_risk": "HIGH",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0059 note](02_FILE_NOTES/MP-0059.md)"
     },
     {
       "mp_id": "MP-0060",

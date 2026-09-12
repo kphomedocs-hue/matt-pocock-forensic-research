@@ -73,8 +73,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0055 | package-lock.json | 100644/blob | 49290 | db12f086c92da55b5d724f0dd3afecfebd2d793f | dependency-lock | READ | [MP-0055 note](02_FILE_NOTES/MP-0055.md) |  |  | HIGH |  |
 | MP-0056 | package.json | 100644/blob | 597 | 2200fefca3d8c1ebac5a823681915eec736dfa07 | package-config | READ | [MP-0056 note](02_FILE_NOTES/MP-0056.md) |  |  | HIGH |  |
 | MP-0057 | scripts/link-skills.sh | 100755/blob | 2240 | 558fae823c0e296ad0eff528f827142600a18135 | repo-executable | READ | [MP-0057 note](02_FILE_NOTES/MP-0057.md) |  |  | HIGH |  |
-| MP-0058 | scripts/list-skills.sh | 100755/blob | 168 | f13da41774c8bffea798e64505a4c3adc528ee63 | repo-executable | UNREAD |  |  |  | HIGH |  |
-| MP-0059 | scripts/sync-plugin-version.mjs | 100644/blob | 1429 | 44063fc0d14a78927caf3990882ea3809157bc21 | repo-executable | UNREAD |  |  |  | HIGH |  |
+| MP-0058 | scripts/list-skills.sh | 100755/blob | 168 | f13da41774c8bffea798e64505a4c3adc528ee63 | repo-executable | READ | [MP-0058 note](02_FILE_NOTES/MP-0058.md) |  |  | HIGH |  |
+| MP-0059 | scripts/sync-plugin-version.mjs | 100644/blob | 1429 | 44063fc0d14a78927caf3990882ea3809157bc21 | repo-executable | READ | [MP-0059 note](02_FILE_NOTES/MP-0059.md) |  |  | HIGH |  |
 | MP-0060 | skills/deprecated/README.md | 100644/blob | 160 | aa1242c27b1f5e3f762bd5743affbd966811b5b4 | bucket-docs | UNREAD |  |  |  | LOW |  |
 | MP-0061 | skills/engineering/README.md | 100644/blob | 3840 | 676977ee31f86172f4a5653ab719f6b5be3072d1 | bucket-docs | UNREAD |  |  |  | LOW |  |
 | MP-0062 | skills/engineering/ask-matt/PHASE-BOUNDARIES.md | 100644/blob | 4249 | fb58ef9febcfd558cdb4517e370f19034869ba26 | skill-support | UNREAD |  |  |  | LOW |  |
