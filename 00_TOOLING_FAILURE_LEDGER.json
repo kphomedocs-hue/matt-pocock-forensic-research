@@ -4,13 +4,13 @@
   "failed_job_entry_count": 71,
   "classification_counts": {
     "LEDGER_BUILD": 10,
-    "UNKNOWN_LOG_UNAVAILABLE": 61
+    "PUSH_RACE": 61
   },
   "impact_counts": {
     "REQUIRES_REVIEW": 10,
-    "UNKNOWN": 61
+    "TEMPORARILY_STALE": 61
   },
-  "unknown_entries": 61,
+  "unknown_entries": 0,
   "entries": [
     {
       "run_id": 34692928795,
@@ -21,9 +21,9 @@
       "title": "Audit MP-0011 full read",
       "job_id": 103551291525,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34693043883,
@@ -34,9 +34,9 @@
       "title": "Audit MP-0019 full read",
       "job_id": 103551606609,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34693302869,
@@ -177,9 +177,9 @@
       "title": "Audit MP-0031 full code-review docs reread",
       "job_id": 103567535802,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34699181638,
@@ -190,9 +190,9 @@
       "title": "Audit MP-0037 full architecture docs reread",
       "job_id": 103567794361,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34699195524,
@@ -203,9 +203,9 @@
       "title": "Audit MP-0039 full research docs reread",
       "job_id": 103567831931,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34701078379,
@@ -216,9 +216,9 @@
       "title": "Audit MP-0047 wizard docs",
       "job_id": 103572834318,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34701148658,
@@ -229,9 +229,9 @@
       "title": "Audit MP-0053 wait-what docs",
       "job_id": 103573025982,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706367588,
@@ -242,9 +242,9 @@
       "title": "Audit MP-0055 package lock",
       "job_id": 103587026341,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706373829,
@@ -255,9 +255,9 @@
       "title": "Audit MP-0056 package config",
       "job_id": 103587043908,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706391442,
@@ -268,9 +268,9 @@
       "title": "Audit MP-0058 list-skills executable",
       "job_id": 103587094314,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706429708,
@@ -281,9 +281,9 @@
       "title": "Audit MP-0060 deprecated bucket",
       "job_id": 103587199827,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706458293,
@@ -294,9 +294,9 @@
       "title": "Audit MP-0063 ask-matt operative router",
       "job_id": 103587275481,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706986936,
@@ -307,9 +307,9 @@
       "title": "Add MP-0071 diagnosing-bugs source note",
       "job_id": 103588711782,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706991986,
@@ -320,9 +320,9 @@
       "title": "Add MP-0072 metadata note",
       "job_id": 103588725015,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34706997261,
@@ -333,9 +333,9 @@
       "title": "Add MP-0073 HITL template note",
       "job_id": 103588739272,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707052602,
@@ -346,9 +346,9 @@
       "title": "Add MP-0076 domain-modeling source note",
       "job_id": 103588887824,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707066433,
@@ -359,9 +359,9 @@
       "title": "Add MP-0078 grill-with-docs source note",
       "job_id": 103588923694,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707080152,
@@ -372,9 +372,9 @@
       "title": "Add MP-0080 implement source note",
       "job_id": 103588961089,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707713735,
@@ -385,9 +385,9 @@
       "title": "Add forensic note MP-0084",
       "job_id": 103590680713,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707737518,
@@ -398,9 +398,9 @@
       "title": "Add forensic note MP-0087",
       "job_id": 103590746100,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707744102,
@@ -411,9 +411,9 @@
       "title": "Add forensic note MP-0088",
       "job_id": 103590763674,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707750888,
@@ -424,9 +424,9 @@
       "title": "Add forensic note MP-0089",
       "job_id": 103590780758,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707805308,
@@ -437,9 +437,9 @@
       "title": "Add forensic note MP-0093",
       "job_id": 103590932539,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707811404,
@@ -450,9 +450,9 @@
       "title": "Add forensic note MP-0094",
       "job_id": 103590948032,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707878140,
@@ -463,9 +463,9 @@
       "title": "Add forensic note MP-0099",
       "job_id": 103591129776,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707885096,
@@ -476,9 +476,9 @@
       "title": "Add forensic note MP-0100",
       "job_id": 103591148747,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707909234,
@@ -489,9 +489,9 @@
       "title": "Add forensic note MP-0102",
       "job_id": 103591210926,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707966134,
@@ -502,9 +502,9 @@
       "title": "Add forensic note MP-0105",
       "job_id": 103591363511,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707972228,
@@ -515,9 +515,9 @@
       "title": "Add forensic note MP-0106",
       "job_id": 103591380728,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707978527,
@@ -528,9 +528,9 @@
       "title": "Add forensic note MP-0107",
       "job_id": 103591399449,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34707989589,
@@ -541,9 +541,9 @@
       "title": "Add forensic note MP-0109",
       "job_id": 103591430860,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708206640,
@@ -554,9 +554,9 @@
       "title": "audit: add MP-0114 file note",
       "job_id": 103592018860,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708262250,
@@ -567,9 +567,9 @@
       "title": "audit: add MP-0118 file note",
       "job_id": 103592172621,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708326236,
@@ -580,9 +580,9 @@
       "title": "audit: add MP-0123 file note",
       "job_id": 103592352442,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708346671,
@@ -593,9 +593,9 @@
       "title": "audit: add MP-0126 file note",
       "job_id": 103592408331,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708396654,
@@ -606,9 +606,9 @@
       "title": "audit: add MP-0129 file note",
       "job_id": 103592548021,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708412632,
@@ -619,9 +619,9 @@
       "title": "audit: add MP-0131 file note",
       "job_id": 103592591749,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708419908,
@@ -632,9 +632,9 @@
       "title": "audit: add MP-0132 file note",
       "job_id": 103592610196,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708427721,
@@ -645,9 +645,9 @@
       "title": "audit: add MP-0133 file note",
       "job_id": 103592628669,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708498021,
@@ -658,9 +658,9 @@
       "title": "audit: add MP-0136 file note",
       "job_id": 103592824356,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708504540,
@@ -671,9 +671,9 @@
       "title": "audit: add MP-0137 file note",
       "job_id": 103592843040,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708512247,
@@ -684,9 +684,9 @@
       "title": "audit: add MP-0138 file note",
       "job_id": 103592864248,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708531576,
@@ -697,9 +697,9 @@
       "title": "audit: add MP-0140 file note",
       "job_id": 103592916736,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708537655,
@@ -710,9 +710,9 @@
       "title": "audit: add MP-0141 file note",
       "job_id": 103592934556,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708543731,
@@ -723,9 +723,9 @@
       "title": "audit: add MP-0142 file note",
       "job_id": 103592953144,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708550632,
@@ -736,9 +736,9 @@
       "title": "audit: add MP-0143 file note",
       "job_id": 103592972989,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708659267,
@@ -749,9 +749,9 @@
       "title": "audit: add MP-0145 file note",
       "job_id": 103593267738,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708666970,
@@ -762,9 +762,9 @@
       "title": "audit: add MP-0146 file note",
       "job_id": 103593284532,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708674341,
@@ -775,9 +775,9 @@
       "title": "audit: add MP-0147 file note",
       "job_id": 103593302614,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708681772,
@@ -788,9 +788,9 @@
       "title": "audit: add MP-0148 file note",
       "job_id": 103593323745,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708686926,
@@ -801,9 +801,9 @@
       "title": "audit: add MP-0149 file note",
       "job_id": 103593339818,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708692023,
@@ -814,9 +814,9 @@
       "title": "audit: add MP-0150 file note",
       "job_id": 103593355573,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708711893,
@@ -827,9 +827,9 @@
       "title": "audit: add MP-0152 file note",
       "job_id": 103593407026,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708726530,
@@ -840,9 +840,9 @@
       "title": "audit: add MP-0154 file note",
       "job_id": 103593443631,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708732780,
@@ -853,9 +853,9 @@
       "title": "audit: add MP-0155 file note",
       "job_id": 103593461134,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708739085,
@@ -866,9 +866,9 @@
       "title": "audit: add MP-0156 file note",
       "job_id": 103593481517,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708751006,
@@ -879,9 +879,9 @@
       "title": "audit: add MP-0158 file note",
       "job_id": 103593514307,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708756800,
@@ -892,9 +892,9 @@
       "title": "audit: add MP-0159 file note",
       "job_id": 103593529516,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708763471,
@@ -905,9 +905,9 @@
       "title": "audit: add MP-0160 file note",
       "job_id": 103593546436,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708771788,
@@ -918,9 +918,9 @@
       "title": "audit: add MP-0161 file note",
       "job_id": 103593565702,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     },
     {
       "run_id": 34708792909,
@@ -931,9 +931,9 @@
       "title": "audit: add MP-0163 file note",
       "job_id": 103593626082,
       "failed_step": "Commit regenerated ledger",
-      "classification": "UNKNOWN_LOG_UNAVAILABLE",
-      "impact": "UNKNOWN",
-      "reason": "Failed step known, log could not be retrieved."
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "Generated output was valid locally but publication lost a race to main."
     }
   ]
 }
