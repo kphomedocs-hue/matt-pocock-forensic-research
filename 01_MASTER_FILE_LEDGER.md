@@ -114,9 +114,9 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0096 | skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md | 100644/blob | 3731 | b258aeb3c44420a2464b72ba228b77b4b3abbaea | skill-support | READ | [MP-0096 note](02_FILE_NOTES/MP-0096.md) |  |  | LOW |  |
 | MP-0097 | skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md | 100644/blob | 3809 | 251035a6d74b4af8d68f066b8d7f1cef90904570 | skill-support | READ | [MP-0097 note](02_FILE_NOTES/MP-0097.md) |  |  | LOW |  |
 | MP-0098 | skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md | 100644/blob | 1810 | 0209a19af92c9c485cf3acc3d9e253171517ea17 | skill-support | READ | [MP-0098 note](02_FILE_NOTES/MP-0098.md) |  |  | LOW |  |
-| MP-0099 | skills/engineering/setup-matt-pocock-skills/triage-labels.md | 100644/blob | 1045 | b716855d485f3865f9dfde2a82141721f065b2e7 | skill-support | UNREAD |  |  |  | LOW |  |
-| MP-0100 | skills/engineering/tdd/SKILL.md | 100644/blob | 3549 | 8fc086710806190ee7c4baa32089cb877a75736a | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0101 | skills/engineering/tdd/agents/openai.yaml | 100644/blob | 87 | 651b838a7663e027b1b8884491e867f26bb9a021 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0099 | skills/engineering/setup-matt-pocock-skills/triage-labels.md | 100644/blob | 1045 | b716855d485f3865f9dfde2a82141721f065b2e7 | skill-support | READ | [MP-0099 note](02_FILE_NOTES/MP-0099.md) |  |  | LOW |  |
+| MP-0100 | skills/engineering/tdd/SKILL.md | 100644/blob | 3549 | 8fc086710806190ee7c4baa32089cb877a75736a | skill | READ | [MP-0100 note](02_FILE_NOTES/MP-0100.md) |  |  | MEDIUM |  |
+| MP-0101 | skills/engineering/tdd/agents/openai.yaml | 100644/blob | 87 | 651b838a7663e027b1b8884491e867f26bb9a021 | codex-metadata | READ | [MP-0101 note](02_FILE_NOTES/MP-0101.md) |  |  | MEDIUM |  |
 | MP-0102 | skills/engineering/tdd/mocking.md | 100644/blob | 1481 | 71cbfee674d93244ce81d1830b930ca9a69200bd | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0103 | skills/engineering/tdd/tests.md | 100644/blob | 2214 | 7ab86479f925a1f9e8ba680af33cb3b12e015381 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0104 | skills/engineering/to-spec/SKILL.md | 100644/blob | 3043 | 3f52599ae2a4347aee5a07432c2707518e691a7f | skill | UNREAD |  |  |  | MEDIUM |  |
