@@ -117,8 +117,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0099 | skills/engineering/setup-matt-pocock-skills/triage-labels.md | 100644/blob | 1045 | b716855d485f3865f9dfde2a82141721f065b2e7 | skill-support | READ | [MP-0099 note](02_FILE_NOTES/MP-0099.md) |  |  | LOW |  |
 | MP-0100 | skills/engineering/tdd/SKILL.md | 100644/blob | 3549 | 8fc086710806190ee7c4baa32089cb877a75736a | skill | READ | [MP-0100 note](02_FILE_NOTES/MP-0100.md) |  |  | MEDIUM |  |
 | MP-0101 | skills/engineering/tdd/agents/openai.yaml | 100644/blob | 87 | 651b838a7663e027b1b8884491e867f26bb9a021 | codex-metadata | READ | [MP-0101 note](02_FILE_NOTES/MP-0101.md) |  |  | MEDIUM |  |
-| MP-0102 | skills/engineering/tdd/mocking.md | 100644/blob | 1481 | 71cbfee674d93244ce81d1830b930ca9a69200bd | skill-support | UNREAD |  |  |  | LOW |  |
-| MP-0103 | skills/engineering/tdd/tests.md | 100644/blob | 2214 | 7ab86479f925a1f9e8ba680af33cb3b12e015381 | skill-support | UNREAD |  |  |  | LOW |  |
+| MP-0102 | skills/engineering/tdd/mocking.md | 100644/blob | 1481 | 71cbfee674d93244ce81d1830b930ca9a69200bd | skill-support | READ | [MP-0102 note](02_FILE_NOTES/MP-0102.md) |  |  | LOW |  |
+| MP-0103 | skills/engineering/tdd/tests.md | 100644/blob | 2214 | 7ab86479f925a1f9e8ba680af33cb3b12e015381 | skill-support | READ | [MP-0103 note](02_FILE_NOTES/MP-0103.md) |  |  | LOW |  |
 | MP-0104 | skills/engineering/to-spec/SKILL.md | 100644/blob | 3043 | 3f52599ae2a4347aee5a07432c2707518e691a7f | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0105 | skills/engineering/to-spec/agents/openai.yaml | 100644/blob | 135 | 549e6f76f020a1b9ba65f52ccda336566ee6222a | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0106 | skills/engineering/to-tickets/SKILL.md | 100644/blob | 5671 | e868c831fcfb1e124e010bcdf84a429ec879160f | skill | UNREAD |  |  |  | MEDIUM |  |

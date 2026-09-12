@@ -1226,8 +1226,8 @@
       "sha": "71cbfee674d93244ce81d1830b930ca9a69200bd",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0102 note](02_FILE_NOTES/MP-0102.md)"
     },
     {
       "mp_id": "MP-0103",
@@ -1238,8 +1238,8 @@
       "sha": "7ab86479f925a1f9e8ba680af33cb3b12e015381",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0103 note](02_FILE_NOTES/MP-0103.md)"
     },
     {
       "mp_id": "MP-0104",
