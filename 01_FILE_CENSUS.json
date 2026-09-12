@@ -110,8 +110,8 @@
       "sha": "8ab6722a781dedf4d52456d6a02f83e358e62f1f",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0009 note](02_FILE_NOTES/MP-0009.md)"
     },
     {
       "mp_id": "MP-0010",
