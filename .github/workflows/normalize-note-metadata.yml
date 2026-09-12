@@ -1,0 +1,47 @@
+name: Normalize note metadata
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/normalize_note_metadata.py'
+      - '.github/workflows/normalize-note-metadata.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-generated-main-writes
+  cancel-in-progress: false
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Sync latest main
+        run: git pull --ff-only origin main
+      - name: Normalize missing canonical metadata only
+        run: python scripts/normalize_note_metadata.py
+      - name: Commit normalized notes
+        run: |
+          if [[ -z "$(git status --porcelain -- 02_FILE_NOTES)" ]]; then
+            echo "No note metadata changes"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 02_FILE_NOTES
+          git commit -m "foundation: normalize durable note metadata"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
