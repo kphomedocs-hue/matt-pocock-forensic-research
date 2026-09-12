@@ -80,7 +80,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0062 | skills/engineering/ask-matt/PHASE-BOUNDARIES.md | 100644/blob | 4249 | fb58ef9febcfd558cdb4517e370f19034869ba26 | skill-support | READ | [MP-0062 note](02_FILE_NOTES/MP-0062.md) |  |  | LOW |  |
 | MP-0063 | skills/engineering/ask-matt/SKILL.md | 100644/blob | 11417 | ae8eb9b211972d9ae584b41d0f1439c644494fc7 | skill | READ | [MP-0063 note](02_FILE_NOTES/MP-0063.md) |  |  | MEDIUM |  |
 | MP-0064 | skills/engineering/ask-matt/agents/openai.yaml | 100644/blob | 137 | 5c60d51b5b1248d7210bff8c6b42a5a06524b8a4 | codex-metadata | READ | [MP-0064 note](02_FILE_NOTES/MP-0064.md) |  |  | MEDIUM |  |
-| MP-0065 | skills/engineering/code-review/SKILL.md | 100644/blob | 6589 | e28d7acbf7b3bb4d7817b7eb5d9c105af03f6ec4 | skill | UNREAD |  |  |  | MEDIUM |  |
+| MP-0065 | skills/engineering/code-review/SKILL.md | 100644/blob | 6589 | e28d7acbf7b3bb4d7817b7eb5d9c105af03f6ec4 | skill | READ | [MP-0065 note](02_FILE_NOTES/MP-0065.md) |  |  | MEDIUM |  |
 | MP-0066 | skills/engineering/code-review/agents/openai.yaml | 100644/blob | 100 | 9076774ba327f49068db9273feceda03bfe940fa | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0067 | skills/engineering/codebase-design/DEEPENING.md | 100644/blob | 2553 | cd94075cfd754d147555c5d747a16431ed4c7dd8 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0068 | skills/engineering/codebase-design/DESIGN-IT-TWICE.md | 100644/blob | 2664 | 7edc861a31b1b219b933af18079f66b564c5de67 | skill-support | UNREAD |  |  |  | LOW |  |
