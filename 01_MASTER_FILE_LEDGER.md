@@ -111,7 +111,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0093 | skills/engineering/setup-matt-pocock-skills/SKILL.md | 100644/blob | 6841 | 7f6f576e2e54e0d287cbb9731ebe0343f54e50cf | skill | READ | [MP-0093 note](02_FILE_NOTES/MP-0093.md) |  |  | MEDIUM |  |
 | MP-0094 | skills/engineering/setup-matt-pocock-skills/agents/openai.yaml | 100644/blob | 152 | 65a0da8128c98051183235e490767a8065310868 | codex-metadata | READ | [MP-0094 note](02_FILE_NOTES/MP-0094.md) |  |  | MEDIUM |  |
 | MP-0095 | skills/engineering/setup-matt-pocock-skills/domain.md | 100644/blob | 2033 | 35249041162b1eed5b873d97fc430fb3e4adb18f | skill-support | READ | [MP-0095 note](02_FILE_NOTES/MP-0095.md) |  |  | LOW |  |
-| MP-0096 | skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md | 100644/blob | 3731 | b258aeb3c44420a2464b72ba228b77b4b3abbaea | skill-support | UNREAD |  |  |  | LOW |  |
+| MP-0096 | skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md | 100644/blob | 3731 | b258aeb3c44420a2464b72ba228b77b4b3abbaea | skill-support | READ | [MP-0096 note](02_FILE_NOTES/MP-0096.md) |  |  | LOW |  |
 | MP-0097 | skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md | 100644/blob | 3809 | 251035a6d74b4af8d68f066b8d7f1cef90904570 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0098 | skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md | 100644/blob | 1810 | 0209a19af92c9c485cf3acc3d9e253171517ea17 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0099 | skills/engineering/setup-matt-pocock-skills/triage-labels.md | 100644/blob | 1045 | b716855d485f3865f9dfde2a82141721f065b2e7 | skill-support | UNREAD |  |  |  | LOW |  |
