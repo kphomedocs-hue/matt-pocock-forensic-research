@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forensic-generated-main-writes
+  group: forensic-rebuild-connection-graph
   cancel-in-progress: false
 
 jobs:
