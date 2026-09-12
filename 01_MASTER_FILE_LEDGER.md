@@ -151,10 +151,10 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0133 | skills/in-progress/writing-shape/SKILL.md | 100644/blob | 5922 | 02f2866d13e72504e010f2ad3458eb9b36b876db | skill | READ | [MP-0133 note](02_FILE_NOTES/MP-0133.md) |  |  | MEDIUM |  |
 | MP-0134 | skills/in-progress/writing-shape/agents/openai.yaml | 100644/blob | 144 | 87e0c736be148002f9db275258cd2f405643ad7b | codex-metadata | READ | [MP-0134 note](02_FILE_NOTES/MP-0134.md) |  |  | MEDIUM |  |
 | MP-0135 | skills/misc/README.md | 100644/blob | 684 | 6b169d22be12c078f1e70763d367fe693de342e2 | bucket-docs | READ | [MP-0135 note](02_FILE_NOTES/MP-0135.md) |  |  | LOW |  |
-| MP-0136 | skills/misc/git-guardrails-claude-code/SKILL.md | 100644/blob | 2313 | 58bcdd875b164093b95f436fa32a65c6cb5eb572 | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0137 | skills/misc/git-guardrails-claude-code/agents/openai.yaml | 100644/blob | 112 | 3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0138 | skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh | 100755/blob | 507 | c40b59cb47880fc9da8fe4179bd742f51f09d17d | skill-executable-config | UNREAD |  |  |  | HIGH |  |
-| MP-0139 | skills/misc/migrate-to-shoehorn/SKILL.md | 100644/blob | 2795 | ae4f965e204fc93cedbc4e2c306e92829d93f800 | skill | UNREAD |  |  |  | MEDIUM |  |
+| MP-0136 | skills/misc/git-guardrails-claude-code/SKILL.md | 100644/blob | 2313 | 58bcdd875b164093b95f436fa32a65c6cb5eb572 | skill | READ | [MP-0136 note](02_FILE_NOTES/MP-0136.md) |  |  | MEDIUM |  |
+| MP-0137 | skills/misc/git-guardrails-claude-code/agents/openai.yaml | 100644/blob | 112 | 3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1 | codex-metadata | READ | [MP-0137 note](02_FILE_NOTES/MP-0137.md) |  |  | MEDIUM |  |
+| MP-0138 | skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh | 100755/blob | 507 | c40b59cb47880fc9da8fe4179bd742f51f09d17d | skill-executable-config | READ | [MP-0138 note](02_FILE_NOTES/MP-0138.md) |  |  | HIGH |  |
+| MP-0139 | skills/misc/migrate-to-shoehorn/SKILL.md | 100644/blob | 2795 | ae4f965e204fc93cedbc4e2c306e92829d93f800 | skill | READ | [MP-0139 note](02_FILE_NOTES/MP-0139.md) |  |  | MEDIUM |  |
 | MP-0140 | skills/misc/migrate-to-shoehorn/agents/openai.yaml | 100644/blob | 110 | 3bd79ee2b502075c6d1fe40e6fe98f4fe3f3c5f5 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0141 | skills/misc/scaffold-exercises/SKILL.md | 100644/blob | 3589 | d87df28e7d8abb4e57ecc6e47d71c274d16054c7 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0142 | skills/misc/scaffold-exercises/agents/openai.yaml | 100644/blob | 108 | 963723a58973effa256cbfe0f23a7bcc03a374b8 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
