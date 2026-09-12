@@ -150,7 +150,7 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0132 | skills/in-progress/writing-fragments/agents/openai.yaml | 100644/blob | 140 | be3713e91e3ddc6c71e04e6b512b6ad6502d7cc8 | codex-metadata | READ | [MP-0132 note](02_FILE_NOTES/MP-0132.md) |  |  | MEDIUM |  |
 | MP-0133 | skills/in-progress/writing-shape/SKILL.md | 100644/blob | 5922 | 02f2866d13e72504e010f2ad3458eb9b36b876db | skill | READ | [MP-0133 note](02_FILE_NOTES/MP-0133.md) |  |  | MEDIUM |  |
 | MP-0134 | skills/in-progress/writing-shape/agents/openai.yaml | 100644/blob | 144 | 87e0c736be148002f9db275258cd2f405643ad7b | codex-metadata | READ | [MP-0134 note](02_FILE_NOTES/MP-0134.md) |  |  | MEDIUM |  |
-| MP-0135 | skills/misc/README.md | 100644/blob | 684 | 6b169d22be12c078f1e70763d367fe693de342e2 | bucket-docs | UNREAD |  |  |  | LOW |  |
+| MP-0135 | skills/misc/README.md | 100644/blob | 684 | 6b169d22be12c078f1e70763d367fe693de342e2 | bucket-docs | READ | [MP-0135 note](02_FILE_NOTES/MP-0135.md) |  |  | LOW |  |
 | MP-0136 | skills/misc/git-guardrails-claude-code/SKILL.md | 100644/blob | 2313 | 58bcdd875b164093b95f436fa32a65c6cb5eb572 | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0137 | skills/misc/git-guardrails-claude-code/agents/openai.yaml | 100644/blob | 112 | 3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
 | MP-0138 | skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh | 100755/blob | 507 | c40b59cb47880fc9da8fe4179bd742f51f09d17d | skill-executable-config | UNREAD |  |  |  | HIGH |  |

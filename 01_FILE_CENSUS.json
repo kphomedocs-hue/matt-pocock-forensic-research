@@ -1622,8 +1622,8 @@
       "sha": "6b169d22be12c078f1e70763d367fe693de342e2",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0135 note](02_FILE_NOTES/MP-0135.md)"
     },
     {
       "mp_id": "MP-0136",
