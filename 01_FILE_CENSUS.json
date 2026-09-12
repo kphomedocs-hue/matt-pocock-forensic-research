@@ -1010,8 +1010,8 @@
       "sha": "706fdca096da5937fe57875a9154017d50668c42",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0084 note](02_FILE_NOTES/MP-0084.md)"
     },
     {
       "mp_id": "MP-0085",
@@ -1022,8 +1022,8 @@
       "sha": "32be86a0a5d9928db84b3988e55f9debe476ab40",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0085 note](02_FILE_NOTES/MP-0085.md)"
     },
     {
       "mp_id": "MP-0086",

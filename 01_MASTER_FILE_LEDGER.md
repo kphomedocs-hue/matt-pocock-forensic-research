@@ -99,8 +99,8 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0081 | skills/engineering/implement/agents/openai.yaml | 100644/blob | 139 | f8794dc153b409052a9167baf10858cf01b36175 | codex-metadata | READ | [MP-0081 note](02_FILE_NOTES/MP-0081.md) |  |  | MEDIUM |  |
 | MP-0082 | skills/engineering/improve-codebase-architecture/HTML-REPORT.md | 100644/blob | 6641 | e39e8255b8797cf8257d014fb6658fb533f3a399 | skill-support | READ | [MP-0082 note](02_FILE_NOTES/MP-0082.md) |  |  | LOW |  |
 | MP-0083 | skills/engineering/improve-codebase-architecture/SKILL.md | 100644/blob | 5993 | a578dd0a34ad0a8886abe7e7642b100106ba86d6 | skill | READ | [MP-0083 note](02_FILE_NOTES/MP-0083.md) |  |  | MEDIUM |  |
-| MP-0084 | skills/engineering/improve-codebase-architecture/agents/openai.yaml | 100644/blob | 166 | 706fdca096da5937fe57875a9154017d50668c42 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0085 | skills/engineering/prototype/LOGIC.md | 100644/blob | 6036 | 32be86a0a5d9928db84b3988e55f9debe476ab40 | skill-support | UNREAD |  |  |  | LOW |  |
+| MP-0084 | skills/engineering/improve-codebase-architecture/agents/openai.yaml | 100644/blob | 166 | 706fdca096da5937fe57875a9154017d50668c42 | codex-metadata | READ | [MP-0084 note](02_FILE_NOTES/MP-0084.md) |  |  | MEDIUM |  |
+| MP-0085 | skills/engineering/prototype/LOGIC.md | 100644/blob | 6036 | 32be86a0a5d9928db84b3988e55f9debe476ab40 | skill-support | READ | [MP-0085 note](02_FILE_NOTES/MP-0085.md) |  |  | LOW |  |
 | MP-0086 | skills/engineering/prototype/SKILL.md | 100644/blob | 2931 | a0044501fe0d385b4d8575b610188ede9b236ccf | skill | UNREAD |  |  |  | MEDIUM |  |
 | MP-0087 | skills/engineering/prototype/UI.md | 100644/blob | 6913 | 3977951663490882c2632b40695d9f59a2fe2408 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0088 | skills/engineering/prototype/agents/openai.yaml | 100644/blob | 100 | 1618b147965bc729b7bf3e8da5f130132067aadc | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
