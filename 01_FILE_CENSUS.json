@@ -13,7 +13,9 @@
       "size": 1154,
       "sha": "56b348d9fea2d7ee2e326fe1838215d0c94c413b",
       "category": "governance",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0002",
@@ -23,7 +25,9 @@
       "size": 5528,
       "sha": "263d10290d60ea15119d2d3c51af5f4f08b5f178",
       "category": "governance",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0003",
@@ -33,7 +37,9 @@
       "size": 2780,
       "sha": "a93751108599407637bec35c08dde6c4eb1afefe",
       "category": "governance",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0004",
@@ -43,7 +49,9 @@
       "size": 3848,
       "sha": "c13b8a5ea97466e14259de602c6b66e72133fef1",
       "category": "governance",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0005",
@@ -53,7 +61,9 @@
       "size": 12688,
       "sha": "68f9216230f2bbafefc985eccf81fcc506c14b3b",
       "category": "governance",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0006",
@@ -63,7 +73,9 @@
       "size": 512,
       "sha": "654c6d4750dca19541bd9803371735943bb3fe4e",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0007",
@@ -73,7 +85,9 @@
       "size": 450,
       "sha": "2128b7d4220ed30503e957fe8c8bbcf9b521931d",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0008",
@@ -83,7 +97,9 @@
       "size": 380,
       "sha": "06c7350518b33bdaedd0eae254f75fd887f16963",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0009",
@@ -93,7 +109,9 @@
       "size": 437,
       "sha": "8ab6722a781dedf4d52456d6a02f83e358e62f1f",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0010",
@@ -103,7 +121,9 @@
       "size": 387,
       "sha": "64f830b202aaef799c5dabe2ba53d0ab05f87efa",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0011",
@@ -113,7 +133,9 @@
       "size": 169,
       "sha": "0fc8ee080d9d5b7ed6709af70a5d66a4b65ca5cb",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0012",
@@ -123,7 +145,9 @@
       "size": 162,
       "sha": "6cd562fb6a8b46afb9db06756deb76a2bd6688aa",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0013",
@@ -133,7 +157,9 @@
       "size": 350,
       "sha": "a3909afb95f471194fe96430127799bb7e7df5b1",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0014",
@@ -143,7 +169,9 @@
       "size": 1006,
       "sha": "153b5564e6ab98f85ddb36988f72a00adfe1a716",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0015",
@@ -153,7 +181,9 @@
       "size": 1565,
       "sha": "18e6a7c38d55a5fb75f3b4bfceb6807e95060032",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0016",
@@ -163,7 +193,9 @@
       "size": 191,
       "sha": "edaa4d6a86c16095fef8e18f8214487627a9cba2",
       "category": "changeset",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0017",
@@ -173,7 +205,9 @@
       "size": 605,
       "sha": "1f868cee17708d691ad71d963e847dad209d0c07",
       "category": "distribution",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0018",
@@ -183,7 +217,9 @@
       "size": 1636,
       "sha": "0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d",
       "category": "distribution",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0019",
@@ -193,7 +229,9 @@
       "size": 780,
       "sha": "b503eff7b073afe8a08d0b25cc31efca78caea02",
       "category": "ci-release",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0020",
@@ -203,7 +241,9 @@
       "size": 21,
       "sha": "98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0021",
@@ -213,7 +253,9 @@
       "size": 1573,
       "sha": "72f09fe5a9cb64bd55a46d45e116cd538d48fe20",
       "category": "negative-memory",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0022",
@@ -223,7 +265,9 @@
       "size": 1259,
       "sha": "5a3a7f677027a48a9e2a08df7c6d601b322f38da",
       "category": "negative-memory",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0023",
@@ -233,7 +277,9 @@
       "size": 1125,
       "sha": "418dba12c17b2cd77e0b3161b107c624b7b2ee97",
       "category": "negative-memory",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0024",
@@ -243,7 +289,9 @@
       "size": 9,
       "sha": "681311eb9cf453d0faddf3aacaec7357e97ba8e9",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0025",
@@ -253,7 +301,9 @@
       "size": 44408,
       "sha": "26d68ffa7cf2f58471abd578042dded7b75675aa",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0026",
@@ -263,7 +313,9 @@
       "size": 3737,
       "sha": "6de72d80dfdfbba9c8ce93d69a85254fdaebf2b6",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0027",
@@ -273,7 +325,9 @@
       "size": 1768,
       "sha": "76ebd23dbb8266dab9491425b39f3c4857fb4a52",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0028",
@@ -283,7 +337,9 @@
       "size": 1068,
       "sha": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0029",
@@ -293,7 +349,9 @@
       "size": 15587,
       "sha": "ff9b797a342d3a64b52f9f5a83d9fc4ce28709dc",
       "category": "root",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0030",
@@ -303,7 +361,9 @@
       "size": 10723,
       "sha": "67d1e46192cc22f2f93f6d463dbd831ce174518e",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0031",
@@ -313,7 +373,9 @@
       "size": 10553,
       "sha": "46353162627210af65296c6dee62e422a3400373",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0032",
@@ -323,7 +385,9 @@
       "size": 12370,
       "sha": "706365ca56fc2c5253fe407a72c494c51cb91c2e",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0033",
@@ -333,7 +397,9 @@
       "size": 10701,
       "sha": "cd6887ac414d40695b52c6a121ba033cb8d5ce98",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0034",
@@ -343,7 +409,9 @@
       "size": 10742,
       "sha": "fb8100db71dca3bb044076f537a2e6ba1ed7c3ef",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0035",
@@ -353,7 +421,9 @@
       "size": 9922,
       "sha": "26ac9de3bbdf49db18c7a1aa0ff508c6bf680cda",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0036",
@@ -363,7 +433,9 @@
       "size": 10259,
       "sha": "25f9980d382ba65d1fa44fc8849412469200d626",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0037",
@@ -373,7 +445,9 @@
       "size": 11814,
       "sha": "076fad04c9d16903334baf8ecee8e14b47fd2d1b",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0038",
@@ -383,7 +457,9 @@
       "size": 9630,
       "sha": "03703cac77b4d361e7b06c9e6ef4366501c12087",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0039",
@@ -393,7 +469,9 @@
       "size": 9674,
       "sha": "a2b2074c426720af9ef50dc1cd697b3064eb8844",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0040",
@@ -403,7 +481,9 @@
       "size": 5326,
       "sha": "ee5e0e2db00c994a1cb5eaf4a49efdc379f93ac7",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0041",
@@ -413,7 +493,9 @@
       "size": 9359,
       "sha": "d7f4933af11e6dfaf2dd307b7a69d3edb2b74dbc",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0042",
@@ -423,7 +505,9 @@
       "size": 10453,
       "sha": "63aae75be887420c21bad0f837c444332ec683c1",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0043",
@@ -433,7 +517,9 @@
       "size": 8790,
       "sha": "e72c71c44c170114d7d83ebbda594a772f955441",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0044",
@@ -443,7 +529,9 @@
       "size": 10724,
       "sha": "6f6f894fe0bfecd2a8b05fb1053b22da74985d90",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0045",
@@ -453,7 +541,9 @@
       "size": 13140,
       "sha": "10ddf79c6fbfb8c27e86f2e03998905fefa90ec1",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0046",
@@ -463,7 +553,9 @@
       "size": 15976,
       "sha": "1efc4b18bd8a1d7733852813873474475abb3a2b",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0047",
@@ -473,7 +565,9 @@
       "size": 9877,
       "sha": "84e047b2481c2afe4e5247231a8600d9721f1b88",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0048",
@@ -483,7 +577,9 @@
       "size": 6489,
       "sha": "d79d4864eca912ed2ed4ea3c13137c384e0868fb",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0049",
@@ -493,7 +589,9 @@
       "size": 10413,
       "sha": "512d76af564bc0899c59c90a5287a442f7846530",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0050",
@@ -503,7 +601,9 @@
       "size": 8746,
       "sha": "72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0051",
@@ -513,7 +613,9 @@
       "size": 13260,
       "sha": "012113bd2379a4318ad3c1c7e4f4e848bbc29990",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0052",
@@ -523,7 +625,9 @@
       "size": 7828,
       "sha": "52f0e437bb241630c9960f02c7e6fd7091a3030f",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0053",
@@ -533,7 +637,9 @@
       "size": 3528,
       "sha": "0b14100932844507dc8b3de6e3b6bc2002d493e1",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0054",
@@ -543,7 +649,9 @@
       "size": 7784,
       "sha": "de12e66714721f305af1ded601f7a570c6331a72",
       "category": "human-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0055",
@@ -553,7 +661,9 @@
       "size": 49290,
       "sha": "db12f086c92da55b5d724f0dd3afecfebd2d793f",
       "category": "dependency-lock",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0056",
@@ -563,7 +673,9 @@
       "size": 597,
       "sha": "2200fefca3d8c1ebac5a823681915eec736dfa07",
       "category": "package-config",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0057",
@@ -573,7 +685,9 @@
       "size": 2240,
       "sha": "558fae823c0e296ad0eff528f827142600a18135",
       "category": "repo-executable",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0058",
@@ -583,7 +697,9 @@
       "size": 168,
       "sha": "f13da41774c8bffea798e64505a4c3adc528ee63",
       "category": "repo-executable",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0059",
@@ -593,7 +709,9 @@
       "size": 1429,
       "sha": "44063fc0d14a78927caf3990882ea3809157bc21",
       "category": "repo-executable",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0060",
@@ -603,7 +721,9 @@
       "size": 160,
       "sha": "aa1242c27b1f5e3f762bd5743affbd966811b5b4",
       "category": "bucket-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0061",
@@ -613,7 +733,9 @@
       "size": 3840,
       "sha": "676977ee31f86172f4a5653ab719f6b5be3072d1",
       "category": "bucket-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0062",
@@ -623,7 +745,9 @@
       "size": 4249,
       "sha": "fb58ef9febcfd558cdb4517e370f19034869ba26",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0063",
@@ -633,7 +757,9 @@
       "size": 11417,
       "sha": "ae8eb9b211972d9ae584b41d0f1439c644494fc7",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0064",
@@ -643,7 +769,9 @@
       "size": 137,
       "sha": "5c60d51b5b1248d7210bff8c6b42a5a06524b8a4",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0065",
@@ -653,7 +781,9 @@
       "size": 6589,
       "sha": "e28d7acbf7b3bb4d7817b7eb5d9c105af03f6ec4",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0066",
@@ -663,7 +793,9 @@
       "size": 100,
       "sha": "9076774ba327f49068db9273feceda03bfe940fa",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0067",
@@ -673,7 +805,9 @@
       "size": 2553,
       "sha": "cd94075cfd754d147555c5d747a16431ed4c7dd8",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0068",
@@ -683,7 +817,9 @@
       "size": 2664,
       "sha": "7edc861a31b1b219b933af18079f66b564c5de67",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0069",
@@ -693,7 +829,9 @@
       "size": 6446,
       "sha": "3f63c8146dd2604b419c929e9876b90c30d410e9",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0070",
@@ -703,7 +841,9 @@
       "size": 102,
       "sha": "3180715edb37f6e96bec42f92f00169faa8886ef",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0071",
@@ -713,7 +853,9 @@
       "size": 8529,
       "sha": "061c25a524acaa93d4534e9e08a793c0a5fe45fd",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0072",
@@ -723,7 +865,9 @@
       "size": 103,
       "sha": "a13a755a77634ce61a649a3a0d905a66d3865b35",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0073",
@@ -733,7 +877,9 @@
       "size": 1316,
       "sha": "243198464a8401a7ba1d63b3708fa43c3d067665",
       "category": "skill-executable-config",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0074",
@@ -743,7 +889,9 @@
       "size": 2733,
       "sha": "d7e61f30a9fd8ca70d9ee68f019c2a9ebf2d13f7",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0075",
@@ -753,7 +901,9 @@
       "size": 2290,
       "sha": "79bbb32f6fda55758b377c980f72a6cb2b8c670e",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0076",
@@ -763,7 +913,9 @@
       "size": 3331,
       "sha": "9b97707e19ef1f590aada356f2b3f6bb881f91be",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0077",
@@ -773,7 +925,9 @@
       "size": 101,
       "sha": "7f1522d2f11506ee205275ab7c282aa52366ecf6",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0078",
@@ -783,7 +937,9 @@
       "size": 247,
       "sha": "62b9efb6f991d1b229adee7506962f13ced0c499",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0079",
@@ -793,7 +949,9 @@
       "size": 145,
       "sha": "5dbe2780a51be3e9b118bd7758a73e54a9384e11",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0080",
@@ -803,7 +961,9 @@
       "size": 433,
       "sha": "7a0b11f5f4fe9505ea5c7983c3083ba1bf754f69",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0081",
@@ -813,7 +973,9 @@
       "size": 139,
       "sha": "f8794dc153b409052a9167baf10858cf01b36175",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0082",
@@ -823,7 +985,9 @@
       "size": 6641,
       "sha": "e39e8255b8797cf8257d014fb6658fb533f3a399",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0083",
@@ -833,7 +997,9 @@
       "size": 5993,
       "sha": "a578dd0a34ad0a8886abe7e7642b100106ba86d6",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0084",
@@ -843,7 +1009,9 @@
       "size": 166,
       "sha": "706fdca096da5937fe57875a9154017d50668c42",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0085",
@@ -853,7 +1021,9 @@
       "size": 6036,
       "sha": "32be86a0a5d9928db84b3988e55f9debe476ab40",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0086",
@@ -863,7 +1033,9 @@
       "size": 2931,
       "sha": "a0044501fe0d385b4d8575b610188ede9b236ccf",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0087",
@@ -873,7 +1045,9 @@
       "size": 6913,
       "sha": "3977951663490882c2632b40695d9f59a2fe2408",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0088",
@@ -883,7 +1057,9 @@
       "size": 100,
       "sha": "1618b147965bc729b7bf3e8da5f130132067aadc",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0089",
@@ -893,7 +1069,9 @@
       "size": 794,
       "sha": "fecee97e9457ba039678d2fcf1b1bc9fca78307d",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0090",
@@ -903,7 +1081,9 @@
       "size": 94,
       "sha": "e18b96ca0ccc1003889d5d6991386207c2454bc2",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0091",
@@ -913,7 +1093,9 @@
       "size": 918,
       "sha": "bfb7e5606e231e6808979f623fce76a9aad4b71c",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0092",
@@ -923,7 +1105,9 @@
       "size": 113,
       "sha": "331ffb9d38937877f51a5f867a66dc61eee259ae",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0093",
@@ -933,7 +1117,9 @@
       "size": 6841,
       "sha": "7f6f576e2e54e0d287cbb9731ebe0343f54e50cf",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0094",
@@ -943,7 +1129,9 @@
       "size": 152,
       "sha": "65a0da8128c98051183235e490767a8065310868",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0095",
@@ -953,7 +1141,9 @@
       "size": 2033,
       "sha": "35249041162b1eed5b873d97fc430fb3e4adb18f",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0096",
@@ -963,7 +1153,9 @@
       "size": 3731,
       "sha": "b258aeb3c44420a2464b72ba228b77b4b3abbaea",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0097",
@@ -973,7 +1165,9 @@
       "size": 3809,
       "sha": "251035a6d74b4af8d68f066b8d7f1cef90904570",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0098",
@@ -983,7 +1177,9 @@
       "size": 1810,
       "sha": "0209a19af92c9c485cf3acc3d9e253171517ea17",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0099",
@@ -993,7 +1189,9 @@
       "size": 1045,
       "sha": "b716855d485f3865f9dfde2a82141721f065b2e7",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0100",
@@ -1003,7 +1201,9 @@
       "size": 3549,
       "sha": "8fc086710806190ee7c4baa32089cb877a75736a",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0101",
@@ -1013,7 +1213,9 @@
       "size": 87,
       "sha": "651b838a7663e027b1b8884491e867f26bb9a021",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0102",
@@ -1023,7 +1225,9 @@
       "size": 1481,
       "sha": "71cbfee674d93244ce81d1830b930ca9a69200bd",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0103",
@@ -1033,7 +1237,9 @@
       "size": 2214,
       "sha": "7ab86479f925a1f9e8ba680af33cb3b12e015381",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0104",
@@ -1043,7 +1249,9 @@
       "size": 3043,
       "sha": "3f52599ae2a4347aee5a07432c2707518e691a7f",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0105",
@@ -1053,7 +1261,9 @@
       "size": 135,
       "sha": "549e6f76f020a1b9ba65f52ccda336566ee6222a",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0106",
@@ -1063,7 +1273,9 @@
       "size": 5671,
       "sha": "e868c831fcfb1e124e010bcdf84a429ec879160f",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0107",
@@ -1073,7 +1285,9 @@
       "size": 146,
       "sha": "24605a5db64e4fc750b999aa94aea126bee814ee",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0108",
@@ -1083,7 +1297,9 @@
       "size": 7942,
       "sha": "1462fcd9e8cc21921158c296149dc05d9be39d20",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0109",
@@ -1093,7 +1309,9 @@
       "size": 4667,
       "sha": "c9fba2f77ee0619975ec8488c0d4861a0c7e3151",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0110",
@@ -1103,7 +1321,9 @@
       "size": 6557,
       "sha": "37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0111",
@@ -1113,7 +1333,9 @@
       "size": 135,
       "sha": "acb366cf0f2527e8925ff1223b77610ac0b1be4c",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0112",
@@ -1123,7 +1345,9 @@
       "size": 11908,
       "sha": "812805b760baf328db0ebdef6f3807e381f97016",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0113",
@@ -1133,7 +1357,9 @@
       "size": 144,
       "sha": "b37544751e0570f9df8de6c02aef238de8c3e1e0",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0114",
@@ -1143,7 +1369,9 @@
       "size": 4123,
       "sha": "c4294ad8298b9b95fc727496b1b802b1f7363fba",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0115",
@@ -1153,7 +1381,9 @@
       "size": 96,
       "sha": "b601bdf3a321e7d32d5714681540b811287d3988",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0116",
@@ -1163,7 +1393,9 @@
       "size": 8567,
       "sha": "1b3cdf40ad4923a9845fd682653d8cc4510f516e",
       "category": "skill-executable-config",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0117",
@@ -1173,7 +1405,9 @@
       "size": 2177,
       "sha": "ee394b7985a8c296ffa068e63e4f5dcf23b8969b",
       "category": "bucket-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0118",
@@ -1183,7 +1417,9 @@
       "size": 1301,
       "sha": "9ab14e312a0d5cffe926eeeab12cef7dc8f84d54",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0119",
@@ -1193,7 +1429,9 @@
       "size": 141,
       "sha": "0a7aa5da50d0e73248fc17fb8fe82409ec071eaf",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0120",
@@ -1203,7 +1441,9 @@
       "size": 2043,
       "sha": "d5097f847fc003935599a7f7bf8f0f7186427910",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0121",
@@ -1213,7 +1453,9 @@
       "size": 143,
       "sha": "043f27f43eed1a8a3c0e3fdbf920f07935faf05d",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0122",
@@ -1223,7 +1465,9 @@
       "size": 2522,
       "sha": "e58a474ca80feffdeb28842bc3bdee37da6510e7",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0123",
@@ -1233,7 +1477,9 @@
       "size": 140,
       "sha": "1a4f4111192ff75b4771e8a248c603994d5eafdc",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0124",
@@ -1243,7 +1489,9 @@
       "size": 3388,
       "sha": "f5fed82c7b8597a852a4fa8d292b00a1d5c8bd16",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0125",
@@ -1253,7 +1501,9 @@
       "size": 146,
       "sha": "a2f0bac3f9cebf29beee2e79960cb876e0adc65d",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0126",
@@ -1263,7 +1513,9 @@
       "size": 7546,
       "sha": "7e30047eaeda175de5d93886596a37baf365bb90",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0127",
@@ -1273,7 +1525,9 @@
       "size": 149,
       "sha": "5d0581bdd4f9337cfb1e13feb7e1e18f43ea9db1",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0128",
@@ -1283,7 +1537,9 @@
       "size": 3712,
       "sha": "54030ede7d36b7f72fc0f645fa414efa9b6f63ed",
       "category": "skill-executable-config",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0129",
@@ -1293,7 +1549,9 @@
       "size": 4855,
       "sha": "3d3b25b605491adc5c62ae5423127717a94b9632",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0130",
@@ -1303,7 +1561,9 @@
       "size": 142,
       "sha": "e8eaa188d4c70b582eed2d1775fe4c4ea3562b25",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0131",
@@ -1313,7 +1573,9 @@
       "size": 3558,
       "sha": "c7c889b880cf9c8d289119dea5ff240641b615ca",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0132",
@@ -1323,7 +1585,9 @@
       "size": 140,
       "sha": "be3713e91e3ddc6c71e04e6b512b6ad6502d7cc8",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0133",
@@ -1333,7 +1597,9 @@
       "size": 5922,
       "sha": "02f2866d13e72504e010f2ad3458eb9b36b876db",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0134",
@@ -1343,7 +1609,9 @@
       "size": 144,
       "sha": "87e0c736be148002f9db275258cd2f405643ad7b",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0135",
@@ -1353,7 +1621,9 @@
       "size": 684,
       "sha": "6b169d22be12c078f1e70763d367fe693de342e2",
       "category": "bucket-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0136",
@@ -1363,7 +1633,9 @@
       "size": 2313,
       "sha": "58bcdd875b164093b95f436fa32a65c6cb5eb572",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0137",
@@ -1373,7 +1645,9 @@
       "size": 112,
       "sha": "3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0138",
@@ -1383,7 +1657,9 @@
       "size": 507,
       "sha": "c40b59cb47880fc9da8fe4179bd742f51f09d17d",
       "category": "skill-executable-config",
-      "runtime_risk": "HIGH"
+      "runtime_risk": "HIGH",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0139",
@@ -1393,7 +1669,9 @@
       "size": 2795,
       "sha": "ae4f965e204fc93cedbc4e2c306e92829d93f800",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0140",
@@ -1403,7 +1681,9 @@
       "size": 110,
       "sha": "3bd79ee2b502075c6d1fe40e6fe98f4fe3f3c5f5",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0141",
@@ -1413,7 +1693,9 @@
       "size": 3589,
       "sha": "d87df28e7d8abb4e57ecc6e47d71c274d16054c7",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0142",
@@ -1423,7 +1705,9 @@
       "size": 108,
       "sha": "963723a58973effa256cbfe0f23a7bcc03a374b8",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0143",
@@ -1433,7 +1717,9 @@
       "size": 2258,
       "sha": "1b9708168263067adb4684d06ebb8f4ccfe9682c",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0144",
@@ -1443,7 +1729,9 @@
       "size": 99,
       "sha": "e5a1c63df9e0703893cdad799bd5e2a6b5e6939d",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0145",
@@ -1453,7 +1741,9 @@
       "size": 1480,
       "sha": "0ac94ab2de3dfa98639c2cc17c12a291f4924f54",
       "category": "bucket-docs",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0146",
@@ -1463,7 +1753,9 @@
       "size": 157,
       "sha": "3947ff9c4ad980d14fc07fccbf659d47c114e81d",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0147",
@@ -1473,7 +1765,9 @@
       "size": 137,
       "sha": "4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0148",
@@ -1483,7 +1777,9 @@
       "size": 1987,
       "sha": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0149",
@@ -1493,7 +1789,9 @@
       "size": 113,
       "sha": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0150",
@@ -1503,7 +1801,9 @@
       "size": 894,
       "sha": "2eb98a51b97bb5bac461a26ad14828eeac827909",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0151",
@@ -1513,7 +1813,9 @@
       "size": 141,
       "sha": "6e1d8da121beceddc2f9ec7fa8714c1d914dd11a",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0152",
@@ -1523,7 +1825,9 @@
       "size": 2122,
       "sha": "fdd7e366ad9760588b28981e42b3d3b561e56aca",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0153",
@@ -1533,7 +1837,9 @@
       "size": 2747,
       "sha": "953c61422776b47612c3c945920358ad7b5daee7",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0154",
@@ -1543,7 +1849,9 @@
       "size": 1540,
       "sha": "45250bb1bad70988bf381625931df64645e10246",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0155",
@@ -1553,7 +1861,9 @@
       "size": 1924,
       "sha": "18b588c8b6f96a50ae2352f264928c643d2782e4",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0156",
@@ -1563,7 +1873,9 @@
       "size": 9506,
       "sha": "c679eeccd48ca720c8196e5d9a9e58223abf213b",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0157",
@@ -1573,7 +1885,9 @@
       "size": 139,
       "sha": "3452a850e3b0c1f0a3d41b2bfd45164d2d38d7f6",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0158",
@@ -1583,7 +1897,9 @@
       "size": 2904,
       "sha": "dadd0c00d6a350acaa15bb9ca1b96b20ead684ca",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0159",
@@ -1593,7 +1909,9 @@
       "size": 166,
       "sha": "a58d14765beb4acb4c9708b516310558e1308a22",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0160",
@@ -1603,7 +1921,9 @@
       "size": 394,
       "sha": "f8854f1b4527bca90378baf5430557172136a1bf",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0161",
@@ -1613,7 +1933,9 @@
       "size": 158,
       "sha": "6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0162",
@@ -1623,7 +1945,9 @@
       "size": 2629,
       "sha": "9cdbdb22aadc438755392216e75ad9a14cc9832e",
       "category": "skill-support",
-      "runtime_risk": "LOW"
+      "runtime_risk": "LOW",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0163",
@@ -1633,7 +1957,9 @@
       "size": 10886,
       "sha": "a37608daf6e835e767deecfb498facecaaba82ba",
       "category": "skill",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     },
     {
       "mp_id": "MP-0164",
@@ -1643,7 +1969,9 @@
       "size": 102,
       "sha": "079c933b75743dec18b5d0c01006def20b6aad26",
       "category": "codex-metadata",
-      "runtime_risk": "MEDIUM"
+      "runtime_risk": "MEDIUM",
+      "status": "UNREAD",
+      "evidence": ""
     }
   ]
 }

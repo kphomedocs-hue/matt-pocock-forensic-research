@@ -4,7 +4,7 @@ Source: frozen recursive tree of `mattpocock/skills` at commit `3cca18b368ae95cd
 
 Physical denominator: **164 blobs/files**.
 
-Generated deterministically by `scripts/build_master_ledger.py`. MP-IDs are assigned in lexicographic path order. Regeneration preserves manually recorded status/evidence fields by path.
+Generated deterministically by `scripts/build_master_ledger.py`. MP-IDs are assigned in lexicographic path order. Durable per-file notes under `02_FILE_NOTES/` are authoritative for READ-or-higher status.
 
 ## Status rules
 
