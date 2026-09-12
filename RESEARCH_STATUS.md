@@ -22,12 +22,12 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 | Phase | Status | Gate state |
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic MP-IDs, paths, mode/type, size, blob SHA, category, runtime-risk class, and conservative status. |
-| 2. Full Physical Read | **IN PROGRESS** | **20 READ / 144 UNREAD**. Next deterministic file: `MP-0021`. |
+| 2. Full Physical Read | **IN PROGRESS** | **30 READ / 134 UNREAD**. Next deterministic file: `MP-0031`. |
 | 3. Connection Mapping | IN PROGRESS / evidence accumulated | Several operative/reference relationships traced; exhaustive graph not complete. |
 | 4. Behavior & Enforcement | IN PROGRESS / evidence accumulated | Multiple enforcement gaps and invariants identified. |
-| 5. History | IN PROGRESS | Root CHANGELOG fully read historically; several high-impact PRs/commits traced. Formal Phase 2 durable reread will occur at its MP-ID. |
-| 6. Contradictions & Orphans | IN PROGRESS | Register initialized with current and historical defects. |
-| 7. Runtime & Distribution | IN PROGRESS | Plugin/Codex/local-link architecture partly reconstructed; MP-0017 through MP-0019 now have durable READ notes. |
+| 5. History | IN PROGRESS | Root CHANGELOG now has a formal Phase 2 durable reread; several high-impact PRs/commits have also been traced. |
+| 6. Contradictions & Orphans | IN PROGRESS | CT-001 and CT-002 are now directly grounded in frozen durable file notes; CT-003 has docs-side evidence and awaits operative router reread. |
+| 7. Runtime & Distribution | IN PROGRESS | Plugin/Codex/local-link architecture partly reconstructed; MP-0017 through MP-0019 have durable READ notes. |
 | 8. Second Pass | NOT STARTED formally | No formal high-impact second-pass gate yet. |
 | 9. Red-Team Verification | NOT STARTED formally | Individual falsification checks exist, but no systematic red-team pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Preliminary synthesis exists but is not final. |
@@ -36,8 +36,8 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 - Physical blobs/files: **164**
 - Ledger rows: **164**
-- Phase 2 READ: **20**
-- Phase 2 UNREAD: **144**
+- Phase 2 READ: **30**
+- Phase 2 UNREAD: **134**
 - CONNECTIONS TRACED: **0** formally in the durable ledger
 - VERIFIED: **0** formally in the durable ledger
 - Current SKILL.md files: **37**
@@ -47,27 +47,27 @@ The Phase 2 queue remains conservative: prior chat reading does not promote stat
 
 ## Most recent durable range
 
-`MP-0001` through `MP-0020` are READ with notes in `02_FILE_NOTES/`.
+`MP-0001` through `MP-0030` are READ with notes in `02_FILE_NOTES/`.
 
-The most recent batch covered:
-- invocation and docs governance;
-- all current active changeset files through `wait-what-context-map`;
-- Claude marketplace/plugin manifests;
-- release workflow;
-- root `.gitignore`.
+The latest range added:
+- all three `.out-of-scope` negative-memory files;
+- `AGENTS.md` symlink blob;
+- complete fixed-window reread of root `CHANGELOG.md`;
+- `CLAUDE.md`, `CONTEXT.md`, `LICENSE`, and complete fixed-window reread of root `README.md`;
+- complete fixed-window reread of `docs/engineering/ask-matt.md`.
 
-Key later-phase candidates surfaced in this range include:
-- official marketplace SHA pin can lag source/main state;
-- plugin and skills.sh install routes are mutually exclusive because dual installation duplicates skills;
-- em-dash prose cleanup caused invalid YAML in six skill frontmatters, and skills.sh silently skipped them;
-- explicit Skill-tool invocation refactor violated the user-invoked-target invariant until the follow-up fix;
-- release workflow has no explicit checks for several repository-wide invariants before version/tagging.
+Durable findings strengthened in this range:
+- CT-001: root README is stale on TDD red-green-refactor after refactor was removed from TDD and moved to review;
+- CT-002: ask-matt docs still say 22 plugin skills / 13 user-invoked while frozen manifest/census shows 25 / 14;
+- CT-003: ask-matt docs require trace evidence of opening target `SKILL.md`; operative enforcement still awaits formal durable router-source reread;
+- negative-memory files are an explicit mechanism for retaining rejected product decisions;
+- `AGENTS.md` is physically a symlink blob containing `CLAUDE.md`.
 
-These remain READ-level observations until their connections/enforcement/history are formally promoted in later phases.
+Research tooling note: the ledger-note parser was fixed to accept both `Status: **READ**` and `- Status: READ`; the rebuild workflow is green again.
 
 ## Immediate next execution steps
 
-1. Continue deterministic reading at `MP-0021`.
+1. Continue deterministic reading at `MP-0031` (`docs/engineering/code-review.md`).
 2. Inspect complete frozen contents; use fixed line windows whenever output truncates.
 3. Store one durable note per file before status promotion.
 4. Continue until `UNREAD = 0`.
