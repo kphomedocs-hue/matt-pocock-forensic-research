@@ -1742,8 +1742,8 @@
       "sha": "0ac94ab2de3dfa98639c2cc17c12a291f4924f54",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0145 note](02_FILE_NOTES/MP-0145.md)"
     },
     {
       "mp_id": "MP-0146",
@@ -1754,8 +1754,8 @@
       "sha": "3947ff9c4ad980d14fc07fccbf659d47c114e81d",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0146 note](02_FILE_NOTES/MP-0146.md)"
     },
     {
       "mp_id": "MP-0147",
@@ -1766,8 +1766,8 @@
       "sha": "4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0147 note](02_FILE_NOTES/MP-0147.md)"
     },
     {
       "mp_id": "MP-0148",
@@ -1778,8 +1778,8 @@
       "sha": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0148 note](02_FILE_NOTES/MP-0148.md)"
     },
     {
       "mp_id": "MP-0149",
@@ -1790,8 +1790,8 @@
       "sha": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0149 note](02_FILE_NOTES/MP-0149.md)"
     },
     {
       "mp_id": "MP-0150",
@@ -1802,8 +1802,8 @@
       "sha": "2eb98a51b97bb5bac461a26ad14828eeac827909",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0150 note](02_FILE_NOTES/MP-0150.md)"
     },
     {
       "mp_id": "MP-0151",
@@ -1814,8 +1814,8 @@
       "sha": "6e1d8da121beceddc2f9ec7fa8714c1d914dd11a",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "UNREAD",
-      "evidence": ""
+      "status": "READ",
+      "evidence": "[MP-0151 note](02_FILE_NOTES/MP-0151.md)"
     },
     {
       "mp_id": "MP-0152",

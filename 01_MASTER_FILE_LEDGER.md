@@ -160,13 +160,13 @@ A status transition requires durable evidence. A conversation summary is not evi
 | MP-0142 | skills/misc/scaffold-exercises/agents/openai.yaml | 100644/blob | 108 | 963723a58973effa256cbfe0f23a7bcc03a374b8 | codex-metadata | READ | [MP-0142 note](02_FILE_NOTES/MP-0142.md) |  |  | MEDIUM |  |
 | MP-0143 | skills/misc/setup-pre-commit/SKILL.md | 100644/blob | 2258 | 1b9708168263067adb4684d06ebb8f4ccfe9682c | skill | READ | [MP-0143 note](02_FILE_NOTES/MP-0143.md) |  |  | MEDIUM |  |
 | MP-0144 | skills/misc/setup-pre-commit/agents/openai.yaml | 100644/blob | 99 | e5a1c63df9e0703893cdad799bd5e2a6b5e6939d | codex-metadata | READ | [MP-0144 note](02_FILE_NOTES/MP-0144.md) |  |  | MEDIUM |  |
-| MP-0145 | skills/productivity/README.md | 100644/blob | 1480 | 0ac94ab2de3dfa98639c2cc17c12a291f4924f54 | bucket-docs | UNREAD |  |  |  | LOW |  |
-| MP-0146 | skills/productivity/grill-me/SKILL.md | 100644/blob | 157 | 3947ff9c4ad980d14fc07fccbf659d47c114e81d | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0147 | skills/productivity/grill-me/agents/openai.yaml | 100644/blob | 137 | 4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0148 | skills/productivity/grilling/SKILL.md | 100644/blob | 1987 | 8ca78c6d8f901aab0c5a1f896034b70e666ff2a3 | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0149 | skills/productivity/grilling/agents/openai.yaml | 100644/blob | 113 | ddbdb96139c0c1dfe6bca698f39d0465674b8a39 | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
-| MP-0150 | skills/productivity/handoff/SKILL.md | 100644/blob | 894 | 2eb98a51b97bb5bac461a26ad14828eeac827909 | skill | UNREAD |  |  |  | MEDIUM |  |
-| MP-0151 | skills/productivity/handoff/agents/openai.yaml | 100644/blob | 141 | 6e1d8da121beceddc2f9ec7fa8714c1d914dd11a | codex-metadata | UNREAD |  |  |  | MEDIUM |  |
+| MP-0145 | skills/productivity/README.md | 100644/blob | 1480 | 0ac94ab2de3dfa98639c2cc17c12a291f4924f54 | bucket-docs | READ | [MP-0145 note](02_FILE_NOTES/MP-0145.md) |  |  | LOW |  |
+| MP-0146 | skills/productivity/grill-me/SKILL.md | 100644/blob | 157 | 3947ff9c4ad980d14fc07fccbf659d47c114e81d | skill | READ | [MP-0146 note](02_FILE_NOTES/MP-0146.md) |  |  | MEDIUM |  |
+| MP-0147 | skills/productivity/grill-me/agents/openai.yaml | 100644/blob | 137 | 4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b | codex-metadata | READ | [MP-0147 note](02_FILE_NOTES/MP-0147.md) |  |  | MEDIUM |  |
+| MP-0148 | skills/productivity/grilling/SKILL.md | 100644/blob | 1987 | 8ca78c6d8f901aab0c5a1f896034b70e666ff2a3 | skill | READ | [MP-0148 note](02_FILE_NOTES/MP-0148.md) |  |  | MEDIUM |  |
+| MP-0149 | skills/productivity/grilling/agents/openai.yaml | 100644/blob | 113 | ddbdb96139c0c1dfe6bca698f39d0465674b8a39 | codex-metadata | READ | [MP-0149 note](02_FILE_NOTES/MP-0149.md) |  |  | MEDIUM |  |
+| MP-0150 | skills/productivity/handoff/SKILL.md | 100644/blob | 894 | 2eb98a51b97bb5bac461a26ad14828eeac827909 | skill | READ | [MP-0150 note](02_FILE_NOTES/MP-0150.md) |  |  | MEDIUM |  |
+| MP-0151 | skills/productivity/handoff/agents/openai.yaml | 100644/blob | 141 | 6e1d8da121beceddc2f9ec7fa8714c1d914dd11a | codex-metadata | READ | [MP-0151 note](02_FILE_NOTES/MP-0151.md) |  |  | MEDIUM |  |
 | MP-0152 | skills/productivity/teach/GLOSSARY-FORMAT.md | 100644/blob | 2122 | fdd7e366ad9760588b28981e42b3d3b561e56aca | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0153 | skills/productivity/teach/LEARNING-RECORD-FORMAT.md | 100644/blob | 2747 | 953c61422776b47612c3c945920358ad7b5daee7 | skill-support | UNREAD |  |  |  | LOW |  |
 | MP-0154 | skills/productivity/teach/MISSION-FORMAT.md | 100644/blob | 1540 | 45250bb1bad70988bf381625931df64645e10246 | skill-support | UNREAD |  |  |  | LOW |  |
