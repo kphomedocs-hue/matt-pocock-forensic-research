@@ -1,0 +1,70 @@
+name: Rebuild ask-matt router matrix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '01_FILE_CENSUS.json'
+      - 'scripts/build_router_matrix.py'
+      - '.github/workflows/rebuild-router-matrix.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-rebuild-router-matrix
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
+      - name: Build router matrix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_router_matrix.py
+      - name: Validate generated outputs
+        run: |
+          test -s 03_ROUTER_MATRIX.json
+          test -s 03_ROUTER_MATRIX.md
+          python - <<'PY'
+          import json
+          d = json.load(open('03_ROUTER_MATRIX.json', encoding='utf-8'))
+          assert d['current_skill_count'] == 37
+          assert d['promoted_skill_count'] == 25
+          assert d['expected_promoted_router_targets'] == 24
+          print('router coverage=', d['promoted_targets_routed'], '/', d['expected_promoted_router_targets'])
+          print('missing=', len(d['missing_promoted_targets']))
+          print('extras=', len(d['extra_nonpromoted_targets']))
+          PY
+      - name: Commit generated router matrix
+        run: |
+          if [[ -z "$(git status --porcelain -- 03_ROUTER_MATRIX.json 03_ROUTER_MATRIX.md)" ]]; then
+            echo "No router-matrix changes"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 03_ROUTER_MATRIX.json 03_ROUTER_MATRIX.md
+          git commit -m "phase3: rebuild ask-matt router matrix"
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish router matrix after 5 attempts" >&2
+          exit 1
