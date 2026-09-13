@@ -64,9 +64,12 @@ Authoritative working artifacts:
 - `04_BEHAVIOR_INTEGRITY.json`
 - `04_BEHAVIOR_COVERAGE.json`
 - `04_BEHAVIOR_COVERAGE.md`
+- `04_RUNTIME_OBSERVATION_QUEUE.json`
+- `04_RUNTIME_OBSERVATION_QUEUE.md`
 - `04_CONTRADICTION_REGISTER.md`
 - `scripts/validate_behavior_matrix.py`
 - `scripts/build_phase4_coverage.py`
+- `scripts/build_phase4_runtime_queue.py`
 - `scripts/apply_phase4_batch.py`
 - `.github/workflows/validate-phase4-behavior.yml`
 - `.github/workflows/apply-phase4-batch.yml`
@@ -75,7 +78,8 @@ Current validated state:
 
 - behavior rows: **65**;
 - hard integrity errors: **0**;
-- runtime observed: **0/65**;
+- runtime observed: **4/65**;
+- runtime/evidence queue classified: **65/65**;
 - current CT coverage: **20/20**;
 - uncovered current CT IDs: **0**;
 - current `SKILL.md` denominator: **37**;
@@ -88,8 +92,8 @@ Current validated state:
 Behavior-matrix state counts:
 
 - `CONFIRMED_DRIFT`: **5**
-- `CONFIRMED_GAP`: **11**
-- `CONFIRMED_MATCH`: **29**
+- `CONFIRMED_GAP`: **10**
+- `CONFIRMED_MATCH`: **30**
 - `CONFIRMED_WEAKNESS`: **3**
 - `RUNTIME_UNKNOWN`: **9**
 - `STATICALLY_ENFORCED`: **8**
@@ -97,8 +101,16 @@ Behavior-matrix state counts:
 Machine-enforcement counts:
 
 - `True`: **8**
-- `PARTIAL`: **6**
-- `False`: **51**
+- `PARTIAL`: **7**
+- `False`: **50**
+
+Evidence-depth queue:
+
+- `EXECUTION_OBSERVATION`: **30 total / 4 observed / 26 pending**
+- `EXTERNAL_DEPENDENCY_VALIDATION`: **7 / 0 / 7**
+- `MACHINE_CONSUMER_VALIDATION`: **4 / 0 / 4**
+- `PROMPT_REDTEAM_LATER`: **24 / 0 / 24**
+- total pending: **61**.
 
 The **37/37 skill** and **71/71 high-risk non-SKILL** results are breadth denominators only. They prove that no current operative skill or behavior-relevant high-risk non-SKILL surface is completely absent from the Phase 4 matrix. They do **not** prove that every behavior is exhausted, that machine-readable policy is honored at runtime, or that any file is VERIFIED.
 
@@ -131,7 +143,7 @@ Latest closed incident ledger before this status sync:
 
 Run `34745903691` was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, the exact run is classified as fixed, and Phase 4 validation/batch workflows are monitored by the incident classifier.
 
-Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 batch application refreshes behavior validation and breadth coverage inside the same atomic workflow before publication.
+Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 batch application refreshes behavior validation, breadth coverage, runtime/evidence queue, and foundation parity inside the same atomic workflow before publication.
 
 The full non-SKILL coverage batch was accepted by `Apply Phase 4 batch` run **34747555653** and published by bot commit `4d09076440c46ccae6efaeee19ba746a7381bee4`.
 
@@ -142,7 +154,7 @@ The full non-SKILL coverage batch was accepted by `Apply Phase 4 batch` run **34
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, and **71/71 high-risk non-SKILL surfaces** represented; runtime observed **0/65**. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, **71/71 high-risk non-SKILL surfaces** represented; evidence queue **65/65 classified**; runtime observed **4/65**. |
 | 5. History | IN PROGRESS | 9 durable H-events; partial lineage remains explicitly partial. |
 | 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
 | 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deeper runtime/end-to-end observation remains. |
@@ -152,8 +164,8 @@ The full non-SKILL coverage batch was accepted by `Apply Phase 4 batch` run **34
 
 ## Immediate next execution steps — Phase 4
 
-1. Replace ad-hoc runtime testing with a deterministic **runtime-observation denominator/queue** derived from the behavior matrix and frozen census.
-2. Prioritize executable and machine-consumed contracts: repository scripts, skill scripts/config, CI/release, distribution metadata, Codex invocation metadata, dependency/package behavior, and the nine `RUNTIME_UNKNOWN` rows.
+1. Work the deterministic **runtime/evidence queue** rather than adding breadth rows: prioritize the 26 pending `EXECUTION_OBSERVATION` contracts, then 4 machine-consumer and 7 external-dependency validations where direct evidence is feasible.
+2. Start with executable and machine-consumed contracts: repository scripts, skill scripts/config, CI/release, distribution metadata, Codex invocation metadata, dependency/package behavior, and the nine `RUNTIME_UNKNOWN` rows.
 3. Distinguish **static contract proved**, **runtime consumer proved**, **end-to-end behavior proved**, and **prompt-only judgment** so static metadata is never mistaken for runtime enforcement.
 4. Trace history for CT-019/CT-020 and remaining partial H-events before any verification promotion.
 5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
@@ -178,7 +190,8 @@ Future sessions must reload this GitHub repository first, beginning with:
 14. `04_BEHAVIOR_MATRIX.json`
 15. `04_BEHAVIOR_INTEGRITY.json`
 16. `04_BEHAVIOR_COVERAGE.json`
-17. `04_CONTRADICTION_REGISTER.md`
-18. `05_HISTORY_LEDGER.md`
+17. `04_RUNTIME_OBSERVATION_QUEUE.json`
+18. `04_CONTRADICTION_REGISTER.md`
+19. `05_HISTORY_LEDGER.md`
 
 Do **not** resume from ChatGPT memory or chat summaries as authoritative state.
