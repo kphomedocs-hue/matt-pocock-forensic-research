@@ -50,16 +50,7 @@ Stored in GitHub:
 - `00_FOUNDATION_INTEGRITY.md/.json`
 - deterministic rebuild/validation tooling under `scripts/` and `.github/workflows/`
 
-Current foundation state proves:
-
-- census rows: **164/164**;
-- durable notes: **164/164**;
-- formal state: **164 CONNECTIONS TRACED**;
-- direct frozen-source provenance on all notes;
-- hard integrity errors: **0**;
-- warnings: **0**.
-
-Therefore physical-read evidence does not depend on chat history.
+Current foundation state proves 164/164 census rows, 164/164 durable notes, 164 `CONNECTIONS TRACED`, direct frozen-source provenance on all notes, 0 hard errors and 0 warnings.
 
 ### Phase 3 — connection mapping
 
@@ -79,28 +70,7 @@ Stored in GitHub:
 - `03_PHASE3_QUALITY.md/.json`
 - `03_PHASE3_BUILD_MANIFEST.md/.json`
 
-Current machine state:
-
-- extraction rules version: **5**;
-- graph edges: **554**;
-- stable edge IDs: **554/554**;
-- literal source-line provenance: **490/554**;
-- `CONFIG_BINDING`: 37;
-- `DISTRIBUTION_ENTRY`: 25;
-- `DOC_LINK`: 104;
-- `OPERATIVE_CALL`: 15;
-- `PASSIVE_REFERENCE`: 123;
-- `SKILL_REFERENCE`: 223;
-- `SUPPORT_BINDING`: 26;
-- `SYMLINK`: 1;
-- invocation-policy mismatches: **0**;
-- illegal operative calls: **0**;
-- weak-only orphan proof count: **0**;
-- unmapped extra-link-syntax count: **0**;
-- support-owner gap count: **0**;
-- history H-001…H-009 parity: **all green**;
-- master-ledger blank Ref-in/Ref-out rows: **0**;
-- Phase 3 quality hard errors/review items/improvements: **0 / 0 / 0**.
+Current machine state: extraction rules v5, 554 edges, 554/554 stable edge IDs, 490/554 literal source-line provenance, 0 invocation-policy mismatches, 0 illegal operative calls, 0 weak-only orphan proofs, 0 unmapped extra-link syntax, 0 support-owner gaps, H-001…H-009 parity all green, 0 blank master-ledger Ref-in/Ref-out rows, and Phase 3 quality hard errors/review items/improvements = 0/0/0.
 
 The Phase 3 build manifest stores SHA-256 fingerprints for authoritative generator/acceptance inputs and generated outputs. Phase 3 can therefore be reconstructed and checked from GitHub without GPT memory.
 
@@ -112,7 +82,13 @@ Stored in GitHub:
 - `05_HISTORY_LEDGER.md`
 - `03_HISTORY_BINDINGS.md/.json`
 
-The current contradiction register contains **CT-001 through CT-014** plus historical **CT-H01 through CT-H03**. CT-014 records the `implement-spec` post-review repair revalidation gap. History definitions are durable and the Phase 3 binding generator derives event definitions from the durable history ledger rather than a duplicate hardcoded table.
+The current contradiction register contains **CT-001 through CT-017** plus historical **CT-H01 through CT-H03**. The newest durable source findings are:
+
+- CT-015: parent spec `ready-for-agent` can be consumed as executable work by AFK polling;
+- CT-016: `to-tickets` does not operatively require acceptance criteria to be falsifiable/red at base;
+- CT-017: `implement` does not close/reconcile completed tickets, so dependency frontiers require manual state repair.
+
+History definitions are durable and the Phase 3 binding generator derives event definitions from the durable history ledger rather than a duplicate hardcoded table.
 
 ### Phase 4 working state
 
@@ -127,22 +103,22 @@ Stored in GitHub:
 
 Current validated working state:
 
-- behavior rows: **29**;
+- behavior rows: **37**;
 - hard integrity errors: **0**;
-- runtime observed: **0/29**;
-- current contradiction IDs represented: **14/14**;
-- latest validator proof: run `34743483922` — **SUCCESS**.
+- runtime observed: **0/37**;
+- current contradiction IDs represented: **17/17**;
+- latest validator proof: run `34743836239` — **SUCCESS**.
 
 State counts:
 
 - `CONFIRMED_DRIFT`: 5
-- `CONFIRMED_GAP`: 5
-- `CONFIRMED_MATCH`: 5
+- `CONFIRMED_GAP`: 8
+- `CONFIRMED_MATCH`: 8
 - `CONFIRMED_WEAKNESS`: 2
-- `RUNTIME_UNKNOWN`: 4
+- `RUNTIME_UNKNOWN`: 6
 - `STATICALLY_ENFORCED`: 8
 
-The newest durable rows include setup confirmation/verification behavior, diagnosing-bugs' red-loop gate, triage invariants and verification order, implement-spec frontier scheduling and post-review revalidation, domain-modeling write discipline, and release version/tag wiring.
+The latest durable rows add `to-spec` parent-routing behavior, `to-tickets` approval and acceptance-criteria quality, `implement` ticket lifecycle/frontier closure, research primary-source discipline, prototype branch isolation/capture, codebase-design vocabulary discipline, and setup label materialization as a runtime-unknown dependency.
 
 Phase 4 remains intentionally in progress; no row is treated as sufficient to promote a file to VERIFIED.
 
@@ -155,15 +131,7 @@ Stored in GitHub:
 - `scripts/classify_failed_workflows.py`
 - `.github/workflows/classify-tooling-failures.yml`
 
-Current closed incident state:
-
-- failed runs: **82**;
-- cancelled runs: **7**;
-- total incidents: **89**;
-- classified: **89/89**;
-- unknown: **0**;
-- unresolved/review-required: **0**;
-- evidence-corruption incidents found: **0**.
+Latest closed incident state remains 89/89 classified with 0 unknown and 0 unresolved/review-required; the latest Phase 4 validations completed successfully and introduced no new failure/cancellation incident.
 
 ### Reproducibility / automation
 
@@ -191,4 +159,4 @@ For this project:
 
 **PASS, with the visibility caveat that the repository is public.**
 
-At the time of this audit, no known important project state required to resume Phases 1–4 exists only in GPT/chat context. The authoritative census, 164 file notes, Phase 3 graph/closure/quality/provenance evidence, CT-001…CT-014 contradiction evidence, history ledger, 29-row Phase 4 working matrix, tooling incident history, scripts, workflows, and current status are all stored in the user's GitHub repository.
+At the time of this audit, no known important project state required to resume Phases 1–4 exists only in GPT/chat context. The authoritative census, 164 file notes, Phase 3 graph/closure/quality/provenance evidence, CT-001…CT-017 contradiction evidence, history ledger, 37-row Phase 4 working matrix, tooling incident history, scripts, workflows, and current status are stored in the user's GitHub repository.
