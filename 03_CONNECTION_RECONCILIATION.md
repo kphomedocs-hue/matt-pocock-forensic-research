@@ -23,7 +23,7 @@ This artifact records semantic review of machine-extracted references and target
 
 ## Batch 02 — exhaustive literal passive-reference expansion
 
-Extraction rules version 2 adds two deterministic scans across all 164 already-frozen blob texts:
+Extraction rules version 2 added two deterministic scans across all 164 already-frozen blob texts:
 
 1. exact repository-relative path mentions;
 2. exact filename mentions only when the basename is globally unique across the 164-file census.
@@ -32,7 +32,6 @@ The weaker `PASSIVE_REFERENCE` edge is not added when the same source→target p
 
 ### Machine result
 
-- Total extracted edges: **327**
 - `PASSIVE_REFERENCE` edges: **123**
 - Exact-path passive mentions: **104**
 - Unique-filename passive mentions: **19**
@@ -41,7 +40,7 @@ The weaker `PASSIVE_REFERENCE` edge is not added when the same source→target p
 
 ### CT-005 / Teach glossary result
 
-`skills/productivity/teach/GLOSSARY-FORMAT.md` (MP-0152) now has **1 incoming reference**, overturning the stronger source-tree-orphan hypothesis.
+`skills/productivity/teach/GLOSSARY-FORMAT.md` (MP-0152) has **1 incoming reference**, overturning the stronger source-tree-orphan hypothesis.
 
 The incoming literal reference is from frozen human documentation `docs/productivity/teach.md` (MP-0051), which explicitly states that the skill ships `GLOSSARY-FORMAT.md` but `SKILL.md` no longer links to it. Frozen operative `skills/productivity/teach/SKILL.md` (MP-0156) still has no reference to that support file.
 
@@ -52,6 +51,28 @@ Therefore:
 - **current classification:** operative linkage gap / documented stale support behavior;
 - **CT-005:** remains OPEN, but its orphan question is resolved.
 
+## Batch 03 — operative-call semantics and invocation-policy join
+
+Extraction rules version 3 corrected an over-broad earlier rule: a line mentioning the `Skill tool` is an `OPERATIVE_CALL` only when it occurs in a current `SKILL.md`. Mentions in governance docs, changesets, human docs, or history are references about behavior, not executable workflow dependencies.
+
+This correction reduced machine-labeled operative calls from **37** to **15** without removing literal/passive evidence.
+
+Every one of the 37 current skills was then joined against both harness policies:
+
+- Claude: `disable-model-invocation: true` means `USER_INVOKED`; omission means `MODEL_INVOKED`.
+- Codex: `policy.allow_implicit_invocation: false` means `USER_INVOKED`; omission means `MODEL_INVOKED`.
+
+### Machine result
+
+- Current skills joined: **37 / 37**
+- Overall invocation split: **22 USER_INVOKED / 15 MODEL_INVOKED**
+- Claude ↔ Codex invocation-policy mismatches: **0**
+- Current `SKILL.md` operative Skill-tool calls: **15**
+- Illegal current operative calls targeting user-invoked skills: **0**
+- Total graph edges after semantic correction: **305**
+
+This is consistent with the repository's invocation governance: only model-invoked skills may be reached through the Skill tool. It also confirms that the historical illegal-cross-call defect represented by CT-H01 is not present in the frozen current workflow graph.
+
 ## Scope caution
 
-The expanded literal scan materially improves incoming-reference coverage but still does **not** prove that every semantic relationship is mapped. Aggregate router relationships, invocation-policy legality, distribution symmetry, and history-reference edges remain separate Phase 3 joins.
+The expanded literal and invocation-policy joins materially improve connection coverage but still do **not** prove that every semantic relationship is mapped. Aggregate router relationships, distribution symmetry, and history-reference edges remain separate Phase 3 joins.
