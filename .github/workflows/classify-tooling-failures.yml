@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/classify_failed_workflows.py'
+      - 'scripts/classify_tooling_failures_entrypoint.py'
       - '.github/workflows/classify-tooling-failures.yml'
   workflow_run:
     workflows:
@@ -48,7 +49,7 @@ jobs:
       - name: Classify failed and cancelled runs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/classify_failed_workflows.py
+        run: python scripts/classify_tooling_failures_entrypoint.py
       - name: Validate tooling incident ledger outputs
         run: |
           test -s 00_TOOLING_FAILURE_LEDGER.json
