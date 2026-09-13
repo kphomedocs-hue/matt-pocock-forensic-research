@@ -61,7 +61,13 @@ Gate: operative calls, passive/path/skill-label references, docs links, distribu
 **Current state: COMPLETE — 164/164 CONNECTIONS TRACED.**
 
 ### Phase 4 — Behavior & Enforcement
-Gate: documented behavior vs operative prompt/config/script/CI behavior reconciled; machine-checkable vs prose-only rules identified.
+Gate: documented behavior vs operative prompt/config/script/CI behavior reconciled; machine-checkable vs prose-only rules identified; runtime dependence remains explicitly separate from static adjudication.
+
+Working authority:
+- `04_BEHAVIOR_MATRIX.json` — structured Phase 4 behavior claims/adjudications;
+- `04_BEHAVIOR_MATRIX.md` — deterministic human-readable view;
+- `04_BEHAVIOR_INTEGRITY.json` — cross-reference/schema integrity result;
+- `scripts/validate_behavior_matrix.py` + `.github/workflows/validate-phase4-behavior.yml` — fail-closed validator/render path.
 
 ### Phase 5 — History
 Gate: high-impact files/subsystems have creation, major semantic changes, regressions, fixes and current-state provenance traced.
@@ -107,6 +113,7 @@ Current controls include:
 - workflow-specific concurrency lanes;
 - no implicit dependence on `GITHUB_TOKEN` workflow-commit chaining;
 - ordered atomic rebuilding for dependent Phase 3 artifacts;
+- fail-closed Phase 4 behavior-matrix cross-reference validation;
 - fetch/rebase/push retry for independent cross-workflow write races;
 - zero-unknown and zero-review-required closure gates for the tooling incident ledger.
 
@@ -131,10 +138,12 @@ At the start of every new session or after major context compression, reload fro
 15. `03_DISTRIBUTION_MATRIX.md`
 16. `03_HISTORY_BINDINGS.md`
 17. `03_PHASE3_CLOSURE_INDEX.md`
-18. `04_CONTRADICTION_REGISTER.md`
-19. `05_HISTORY_LEDGER.md`
+18. `04_BEHAVIOR_MATRIX.md`
+19. `04_BEHAVIOR_INTEGRITY.json`
+20. `04_CONTRADICTION_REGISTER.md`
+21. `05_HISTORY_LEDGER.md`
 
-When exact numerical or per-edge Phase 3 state matters, also load `03_CONNECTION_EDGES.json`, `03_ROUTER_MATRIX.json`, `03_DISTRIBUTION_MATRIX.json`, `03_HISTORY_BINDINGS.json`, and `03_PHASE3_CLOSURE_INDEX.json` rather than relying on prose summaries.
+When exact numerical/per-edge Phase 3 state matters, load the corresponding generated JSON artifacts rather than relying on prose summaries. When exact Phase 4 row state matters, load `04_BEHAVIOR_MATRIX.json` as the structured source.
 
 Never resume from chat memory alone.
 
