@@ -2,9 +2,9 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-This manifest cryptographically binds the authoritative Phase 3 generator inputs to the generated outputs using SHA-256. It intentionally contains no timestamp so unchanged state is reproducible byte-for-byte.
+This manifest cryptographically binds the authoritative Phase 3 generator and acceptance-gate inputs to the generated outputs using SHA-256. It intentionally contains no timestamp so unchanged state is reproducible byte-for-byte.
 
-Inputs fingerprinted: **11**. Outputs fingerprinted: **11**.
+Inputs fingerprinted: **14**. Outputs fingerprinted: **11**.
 
 ## Inputs
 
@@ -20,6 +20,9 @@ Inputs fingerprinted: **11**. Outputs fingerprinted: **11**.
 | `scripts/build_history_bindings.py` | `0d131e92bcaf0e937d3503be5d544081ad514dd591b4d3fde830285149be478c` | 9654 |
 | `scripts/build_phase3_closure_index.py` | `d54c10b1fe8484a0646123df8de6061360d8e633ed32a0d849b2d7e8d170f344` | 13589 |
 | `scripts/enrich_master_ledger_connections.py` | `ba0dcd6d2012aaa7dc950c73ed7ef8523d6954e955a18406dea09bce22150c03` | 2653 |
+| `scripts/build_phase3_manifest.py` | `ea0954d5223270a385dc33c90a6ca0a40798ea79f11be1aa70d993a9e64b4fe7` | 4010 |
+| `scripts/verify_phase3_manifest.py` | `22cc607713b72b89f37525eb953e199b09d805ba42b7b28f53ac892c61a1ba0a` | 1584 |
+| `scripts/validate_phase3_quality.py` | `942f2f3aeb9ab0c135aaef2aeb45d7cd7cba732b819e11b89f604337d5f10f7a` | 14953 |
 | `.github/workflows/rebuild-phase3-state.yml` | `dd4f51732d4b364b31a843edc56f4812ad04126c2faa67715b97ccaa823a876f` | 6073 |
 
 ## Outputs
