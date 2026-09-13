@@ -1,0 +1,72 @@
+name: Validate Phase 3 quality
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '01_FILE_CENSUS.json'
+      - '01_MASTER_FILE_LEDGER.md'
+      - '03_CONNECTION_EDGES.json'
+      - '03_PHASE3_CLOSURE_INDEX.json'
+      - '03_ORPHAN_DISPOSITIONS.json'
+      - '03_HISTORY_BINDINGS.json'
+      - '05_HISTORY_LEDGER.md'
+      - 'scripts/validate_phase3_quality.py'
+      - '.github/workflows/validate-phase3-quality.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-validate-phase3-quality
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main
+        run: git pull --ff-only origin main
+      - name: Run Phase 3 quality recheck
+        id: quality
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_phase3_quality.py
+      - name: Validate diagnostic outputs exist
+        run: |
+          test -s 03_PHASE3_QUALITY.json
+          test -s 03_PHASE3_QUALITY.md
+      - name: Commit quality diagnostics before gate
+        run: |
+          if [[ -z "$(git status --porcelain -- 03_PHASE3_QUALITY.json 03_PHASE3_QUALITY.md)" ]]; then
+            echo "Phase 3 quality diagnostics already current"
+          else
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git add 03_PHASE3_QUALITY.json 03_PHASE3_QUALITY.md
+            git commit -m "phase3: refresh quality recheck"
+            for attempt in 1 2 3 4 5; do
+              if git push; then break; fi
+              git fetch origin main
+              git rebase origin/main
+              sleep 1
+            done
+          fi
+      - name: Enforce Phase 3 quality gate
+        run: |
+          python - <<'PY'
+          import json
+          d = json.load(open('03_PHASE3_QUALITY.json', encoding='utf-8'))
+          assert d['file_count'] == 164
+          assert not d['hard_errors'], d['hard_errors']
+          print('phase3 quality: GREEN')
+          print('improvements=', [x['kind'] for x in d['improvements']])
+          PY
