@@ -59,15 +59,16 @@ A file may be promoted only after all applicable dimensions are closed:
 - explicit outgoing internal references;
 - incoming internal references against the full frozen census;
 - Markdown/internal path links;
+- exact skill-label references where applicable;
 - operative cross-skill calls;
 - config/metadata ownership and bindings;
 - distribution membership;
 - invocation policy of operative-call targets;
 - unresolved/generated/template references reconciled;
-- orphan status evaluated using negative searches, not ranked search alone;
+- orphan status evaluated using exhaustive/negative evidence rather than ranked search alone;
 - graph evidence persisted.
 
-Automated edge extraction by itself does **not** satisfy this gate.
+Automated edge extraction by itself does **not** satisfy this gate. A zero-incoming file may close the orphan dimension only through a mechanically recognized structural role or an explicit durable semantic disposition that preserves the true zero-incoming count.
 
 ### VERIFIED gate
 
@@ -121,7 +122,9 @@ Narrative documents may describe these sets but are not the authority.
 Generated research outputs must:
 
 - use a **workflow-specific concurrency lane** with `cancel-in-progress: false`; distinct research workflows must not share one concurrency group because GitHub may discard older pending runs in a shared lane;
-- handle cross-workflow writes through latest-`main` synchronization plus fetch/rebase/push retry logic rather than cross-workflow cancellation;
+- never depend on an ordinary `GITHUB_TOKEN` workflow commit implicitly triggering another workflow: GitHub suppresses recursive workflow triggering for those pushes, so dependent generated artifacts must be rebuilt in the same ordered workflow/commit or through an explicit supported orchestration mechanism;
+- when several generated artifacts form one dependency graph, prefer a single ordered atomic workflow that computes upstream artifacts first, validates the complete set, and commits the set together;
+- handle independent cross-workflow writes through latest-`main` synchronization plus fetch/rebase/push retry logic rather than cross-workflow cancellation;
 - sync latest `main` before generation;
 - check generated files exist and are non-empty;
 - detect untracked outputs with `git status --porcelain`, not only `git diff`;
@@ -129,6 +132,8 @@ Generated research outputs must:
 - fail closed on provenance/count invariants;
 - persist diagnostic reports before final gate failure where practical;
 - include failed **and cancelled** workflow incidents in tooling-integrity accounting, with zero unknown/review-required incidents required for closure.
+
+For Phase 3, `Rebuild Phase 3 state` is the automatic generated-state authority and rebuilds connection graph, router matrix, distribution matrix, history bindings, and closure index in dependency order. `Promote Phase 3 connections` is a separate gate/action and atomically rebuilds ledger/census/closure/foundation when statuses are promoted.
 
 ## Promotion rule
 
