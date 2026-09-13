@@ -127,7 +127,7 @@ The register contains **20 current IDs** plus **3 historical IDs**.
 Newest source/audit findings:
 
 - **CT-019 — audit false-positive correction:** exact frozen-command reproduction showed that `grep -r " as [A-Z]"` does find the advertised `as unknown as Type` form because the later ` as Type` substring matches. CT-019 is retained as a **RESOLVED audit correction**, not a source defect.
-- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only. This remains OPEN.
+- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only. This remains OPEN. Its introduction lineage is now **RECONCILED** as H-010: the mismatch was present in the file's sole path-history commit and the creation blob is identical to the frozen blob.
 
 Earlier Phase 4 findings CT-014…CT-018 remain durable in the contradiction register and behavior matrix.
 
@@ -161,8 +161,8 @@ The first local runtime evidence workflow run **34749869035** completed successf
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
 | 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, **71/71 high-risk non-SKILL surfaces** represented; evidence queue **65/65 classified**; runtime observed **7/65**. |
-| 5. History | IN PROGRESS | 9 durable H-events; partial lineage remains explicitly partial. |
-| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; CT-019 is a resolved audit correction, CT-020 remains open. |
+| 5. History | IN PROGRESS | **10 durable H-events**; H-010 reconciles CT-020 introduction; H-003/H-004/H-009 and other high-impact lineage remain partial. |
+| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; CT-019 is a resolved audit correction, CT-020 remains open but its introduction lineage is reconciled. |
 | 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deterministic local runtime observation has begun; deeper harness/external/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
 | 9. Red-Team Verification | NOT STARTED formally | No complete systematic falsification pass yet. |
@@ -173,7 +173,7 @@ The first local runtime evidence workflow run **34749869035** completed successf
 1. Continue the deterministic runtime/evidence queue: **23 pending EXECUTION_OBSERVATION** rows remain after the first local-runtime batch.
 2. Prioritize additional safe local executable/config contracts before external services: repository scripts, skill scripts/config, dependency/package behavior, and the remaining `RUNTIME_UNKNOWN` rows that can be isolated without live credentials.
 3. Keep machine-consumer, external-dependency, and prompt-red-team classes separate; do not promote them using evidence from the wrong layer.
-4. Trace history for CT-020 and remaining partial H-events; CT-019 history should preserve that it was an audit false positive, not a source regression.
+4. Continue history reconciliation for high-impact open defects and the remaining partial H-events; CT-020 introduction is now closed historically by H-010.
 5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
 
 ## Resume instruction
