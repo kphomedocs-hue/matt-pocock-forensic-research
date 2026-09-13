@@ -32,7 +32,8 @@ Latest foundation report is GREEN:
 - exact blob-SHA reconciliation;
 - **0 hard integrity errors**;
 - **0 warnings**;
-- current contradiction register recognized through **CT-018** plus CT-H01…CT-H03;
+- current contradiction register recognized through **CT-020** plus CT-H01…CT-H03;
+- current contradiction parity is exact and contiguous;
 - formal `VERIFIED`: **0/164**.
 
 ## Phase 3 — COMPLETE
@@ -61,62 +62,71 @@ Authoritative working artifacts:
 - `04_BEHAVIOR_MATRIX.json`
 - `04_BEHAVIOR_MATRIX.md`
 - `04_BEHAVIOR_INTEGRITY.json`
+- `04_BEHAVIOR_COVERAGE.json`
+- `04_BEHAVIOR_COVERAGE.md`
 - `04_CONTRADICTION_REGISTER.md`
 - `scripts/validate_behavior_matrix.py`
+- `scripts/build_phase4_coverage.py`
+- `scripts/apply_phase4_batch.py`
 - `.github/workflows/validate-phase4-behavior.yml`
+- `.github/workflows/apply-phase4-batch.yml`
 
 Current validated state:
 
-- behavior rows: **38**;
+- behavior rows: **53**;
 - hard integrity errors: **0**;
-- runtime observed: **0/38**;
-- current CT coverage: **18/18**;
-- uncovered current CT IDs: **0**.
+- runtime observed: **0/53**;
+- current CT coverage: **20/20**;
+- uncovered current CT IDs: **0**;
+- current `SKILL.md` denominator: **37**;
+- current skills with at least one behavior contract: **37/37**;
+- uncovered current skills: **0**.
 
 State counts:
 
-- `CONFIRMED_DRIFT`: **5**
-- `CONFIRMED_GAP`: **9**
-- `CONFIRMED_MATCH`: **8**
-- `CONFIRMED_WEAKNESS`: **2**
-- `RUNTIME_UNKNOWN`: **6**
-- `STATICALLY_ENFORCED`: **8**
+- `CONFIRMED_DRIFT`: **7**
+- `CONFIRMED_GAP`: **10**
+- `CONFIRMED_MATCH`: **13**
+- `CONFIRMED_WEAKNESS`: **4**
+- `RUNTIME_UNKNOWN`: **9**
+- `STATICALLY_ENFORCED`: **10**
 
 Machine-enforcement counts:
 
-- `True`: **8**
-- `PARTIAL`: **2**
-- `False`: **28**
+- `True`: **13**
+- `PARTIAL`: **4**
+- `False`: **36**
 
-Latest strengthened validator proof: GitHub Actions run `34744189799` — **SUCCESS**. The validator now fails closed if any current CT is not represented by a behavior row.
+The 37/37 result is a **breadth denominator only**. It proves no current operative skill is completely absent from the Phase 4 matrix; it does not prove all behaviors of those skills are exhausted and does not promote any file to VERIFIED.
 
 ### Current contradiction/enforcement register
 
-The register contains **18 current IDs** plus **3 historical IDs**.
+The register contains **20 current IDs** plus **3 historical IDs**.
 
-Recent findings:
+Newest findings:
 
-- **CT-014 — implement-spec post-review fix closure:** repair changes after the only required `/code-review` are not required to be revalidated before PR readiness.
-- **CT-015 — to-spec parent routing:** parent specs use the same `ready-for-agent` surface as executable tickets; human docs explicitly warn AFK dispatchers can pick the wrong unit.
-- **CT-016 — to-tickets acceptance criteria:** ticket criteria have no operative red-at-base/falsifiability requirement.
-- **CT-017 — implement ticket lifecycle/frontier:** `/implement` does not close/reconcile its ticket, so dependency-frontier progression can require manual tracker repair.
-- **CT-018 — triage agent-brief invariant:** the normal `ready-for-agent` path requires an authoritative Agent Brief, but quick state override can apply the state and leave the brief optional.
+- **CT-019 — migrate-to-shoehorn assertion discovery:** the promised `as unknown as Type` migration case is missed by the literal `grep " as [A-Z]"` discovery pattern because `unknown` begins lowercase.
+- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only.
 
-Additional durable behavior coverage includes setup confirmation/verification and label materialization, diagnosing-bugs red-loop gating, triage normal-path verification, implement-spec frontier scheduling, domain-modeling discipline, release wiring, to-tickets approval, research provenance, prototype branch isolation, and codebase-design vocabulary discipline.
+Earlier Phase 4 findings CT-014…CT-018 remain durable in the contradiction register and behavior matrix.
 
 No Phase 4 row is treated as sufficient for `VERIFIED` by itself.
 
 ## Tooling state
 
-Latest closed incident ledger remains:
+Latest closed incident ledger:
 
-- failed runs: **82**;
+- failed runs: **83**;
 - cancelled runs: **7**;
-- total incidents: **89**;
-- classified: **89/89**;
+- total incidents: **90**;
+- classified: **90/90**;
 - unknown: **0**;
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
+
+The newest tooling incident, run `34745903691`, was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, the exact run is classified as fixed, and Phase 4 validation/batch workflows are monitored by the incident classifier.
+
+Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 batch application now refreshes behavior validation, current-skill coverage, contradiction state, and foundation integrity inside the same atomic workflow before publication.
 
 ## Phase status
 
@@ -125,9 +135,9 @@ Latest closed incident ledger remains:
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **38-row** matrix; **18/18 current CTs covered**; runtime observed **0/38**. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **53-row** matrix; **20/20 current CTs covered**; **37/37 current skills represented**; runtime observed **0/53**. |
 | 5. History | IN PROGRESS | 9 durable H-events; partial lineage remains explicitly partial. |
-| 6. Contradictions & Orphans | IN PROGRESS | **18 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
+| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
 | 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deeper runtime/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
 | 9. Red-Team Verification | NOT STARTED formally | No complete systematic falsification pass yet. |
@@ -135,10 +145,10 @@ Latest closed incident ledger remains:
 
 ## Immediate next execution steps — Phase 4
 
-1. Continue remaining engineering/productivity workflow coverage without duplicating already-adjudicated contracts.
-2. Build targeted runtime-test plans for the six `RUNTIME_UNKNOWN` rows.
-3. Trace history for CT-014…CT-018 and remaining partial H-events before any verification promotion.
-4. Continue separating prompt-level policy from executable/CI guarantees and runtime observations.
+1. Move from current-skill breadth to **high-risk non-SKILL surfaces**: executable scripts, configs, support files, CI/release files, metadata and generated-consumer contracts.
+2. Prioritize the nine `RUNTIME_UNKNOWN` rows and current gaps that can be settled by direct static/runtime evidence, including package-lock consumers, Teach workspace-root behavior, architecture HTML offline portability, code-review visibility, diagnosing-bugs HITL behavior, implement-spec merge/fix validation and scaffold linter semantics.
+3. Build a deterministic Phase 4 non-SKILL/high-risk coverage denominator rather than selecting files ad hoc.
+4. Trace history for new CTs and remaining partial H-events before any verification promotion.
 5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
 
 ## Resume instruction
@@ -160,7 +170,8 @@ Future sessions must reload this GitHub repository first, beginning with:
 13. `03_PHASE3_BUILD_MANIFEST.json`
 14. `04_BEHAVIOR_MATRIX.json`
 15. `04_BEHAVIOR_INTEGRITY.json`
-16. `04_CONTRADICTION_REGISTER.md`
-17. `05_HISTORY_LEDGER.md`
+16. `04_BEHAVIOR_COVERAGE.json`
+17. `04_CONTRADICTION_REGISTER.md`
+18. `05_HISTORY_LEDGER.md`
 
 Do **not** resume from ChatGPT memory or chat summaries as authoritative state.
