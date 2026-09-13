@@ -33,7 +33,7 @@ jobs:
         run: git pull --ff-only origin main
       - name: Validate and render behavior matrix
         run: python scripts/validate_behavior_matrix.py
-      - name: Build current-skill behavior coverage
+      - name: Build Phase 4 behavior coverage
         run: python scripts/build_phase4_coverage.py
       - name: Validate generated outputs
         run: |
@@ -48,14 +48,19 @@ jobs:
           assert d['hard_errors'] == []
           assert d['row_count'] >= 20
           assert d.get('uncovered_current_contradiction_ids', []) == []
+          assert c['schema_version'] == 2
           assert c['hard_errors'] == []
           assert c['skill_denominator'] == 37
           assert c['covered_skills'] + c['uncovered_skills'] == 37
+          assert c['surface_denominator'] > 0
+          assert c['covered_surfaces'] + c['uncovered_surfaces'] == c['surface_denominator']
           print('behavior_rows=', d['row_count'])
           print('states=', d['state_counts'])
           print('runtime_observed=', d['runtime_observed_count'])
           print('skill_coverage=', f"{c['covered_skills']}/{c['skill_denominator']}")
           print('uncovered_skills=', c['uncovered_mp_ids'])
+          print('surface_coverage=', f"{c['covered_surfaces']}/{c['surface_denominator']}")
+          print('uncovered_surfaces=', c['uncovered_surface_mp_ids'])
           PY
       - name: Commit rendered Phase 4 state
         run: |
