@@ -1,0 +1,72 @@
+name: Rebuild Phase 3 closure index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '01_FILE_CENSUS.json'
+      - '03_CONNECTION_EDGES.json'
+      - '03_DISTRIBUTION_MATRIX.json'
+      - '03_ROUTER_MATRIX.json'
+      - '03_HISTORY_BINDINGS.json'
+      - '03_REFERENCE_DISPOSITIONS.json'
+      - 'scripts/build_phase3_closure_index.py'
+      - '.github/workflows/rebuild-phase3-closure-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-rebuild-phase3-closure-index
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
+      - name: Build Phase 3 closure index
+        run: python scripts/build_phase3_closure_index.py
+      - name: Validate generated outputs
+        run: |
+          test -s 03_PHASE3_CLOSURE_INDEX.json
+          test -s 03_PHASE3_CLOSURE_INDEX.md
+          python - <<'PY'
+          import json
+          d = json.load(open('03_PHASE3_CLOSURE_INDEX.json', encoding='utf-8'))
+          assert d['file_count'] == 164
+          assert sum(d['state_counts'].values()) == 164
+          assert d['state_counts'].get('READY_CANDIDATE', 0) + d['state_counts'].get('BLOCKED', 0) == 164
+          print('states=', d['state_counts'])
+          print('blockers=', d['blocker_counts'])
+          PY
+      - name: Commit generated closure index
+        run: |
+          if [[ -z "$(git status --porcelain -- 03_PHASE3_CLOSURE_INDEX.json 03_PHASE3_CLOSURE_INDEX.md)" ]]; then
+            echo "No Phase 3 closure-index changes"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 03_PHASE3_CLOSURE_INDEX.json 03_PHASE3_CLOSURE_INDEX.md
+          git commit -m "phase3: rebuild per-file closure index"
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish Phase 3 closure index after 5 attempts" >&2
+          exit 1
