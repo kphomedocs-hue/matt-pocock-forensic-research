@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 4,
-  "pending_total": 61,
+  "runtime_observed": 7,
+  "pending_total": 58,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 4,
+    "EXECUTION_OBSERVATION": 7,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 26,
+    "EXECUTION_OBSERVATION": 23,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -425,8 +425,8 @@
         "EXECUTABLE_SCRIPT"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0114",
         "MP-0116"
@@ -437,7 +437,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Runtime/end-to-end wizard execution remains a later verification dimension."
+      "next_evidence": "Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only."
     },
     {
       "behavior_id": "B-016",
@@ -498,8 +498,8 @@
         "CI"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0018",
         "MP-0019",
@@ -514,7 +514,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Release-run observation belongs to later runtime/CI verification."
+      "next_evidence": "Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth."
     },
     {
       "behavior_id": "B-019",
@@ -1479,8 +1479,8 @@
         "DOCUMENTATION"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0073"
       ],
@@ -1489,7 +1489,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Run the template with benign inputs and test whether a misuse-resistant guard is warranted; do not use real credentials."
+      "next_evidence": "Red-team secret/PII misuse and shell-input edge cases later; do not use real credentials."
     },
     {
       "behavior_id": "B-057",

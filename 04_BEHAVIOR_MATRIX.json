@@ -347,9 +347,9 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": "PARTIAL",
-      "runtime_observed": false,
-      "adjudication": "Wizard requires bash -n and shellcheck when available, but explicitly does not require an end-to-end agent execution. Static syntax/lint proof is stronger than prose-only but weaker than runtime observation.",
-      "next_evidence": "Runtime/end-to-end wizard execution remains a later verification dimension."
+      "runtime_observed": true,
+      "adjudication": "Wizard requires bash -n and shellcheck when available, but explicitly does not require an end-to-end agent execution. Static syntax/lint proof is stronger than prose-only but weaker than runtime observation. Direct frozen runtime observation: bash syntax passed; the shipped example completed with synthetic values, wrote the expected env entries without echoing the dummy secret, and preserved existing values on rerun.",
+      "next_evidence": "Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only."
     },
     {
       "behavior_id": "B-016",
@@ -428,9 +428,9 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
-      "adjudication": "npm run version invokes sync-plugin-version.mjs and the release workflow uses that command; --check detects drift. This closes plugin/package drift statically while leaving package-lock outside the mechanism (B-004/CT-004).",
-      "next_evidence": "Release-run observation belongs to later runtime/CI verification."
+      "runtime_observed": true,
+      "adjudication": "npm run version invokes sync-plugin-version.mjs and the release workflow uses that command; --check detects drift. This closes plugin/package drift statically while leaving package-lock outside the mechanism (B-004/CT-004). Direct frozen runtime observation: --check passed in sync, failed on synthetic drift, and the executable repaired plugin.json to package.json without package-lock.json present.",
+      "next_evidence": "Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth."
     },
     {
       "behavior_id": "B-019",
@@ -1238,9 +1238,9 @@
       ],
       "state": "CONFIRMED_WEAKNESS",
       "machine_enforced": "PARTIAL",
-      "runtime_observed": false,
-      "adjudication": "The shell functions step() and capture() mechanically block on terminal input and print captured values at the end. The file explicitly warns that capture echoes values back to the terminal and says signing in should remain a step, but nothing in the function prevents a caller from capturing a secret. The safety boundary therefore depends on correct template editing.",
-      "next_evidence": "Run the template with benign inputs and test whether a misuse-resistant guard is warranted; do not use real credentials."
+      "runtime_observed": true,
+      "adjudication": "The shell functions step() and capture() mechanically block on terminal input and print captured values at the end. The file explicitly warns that capture echoes values back to the terminal and says signing in should remain a step, but nothing in the function prevents a caller from capturing a secret. The safety boundary therefore depends on correct template editing. Direct frozen runtime observation: the HITL shell template passed syntax and completed a benign synthetic interaction, emitting captured values exactly as documented.",
+      "next_evidence": "Red-team secret/PII misuse and shell-input edge cases later; do not use real credentials."
     },
     {
       "behavior_id": "B-057",

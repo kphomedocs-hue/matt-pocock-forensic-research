@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **4/65**.
-Pending stronger evidence: **61**.
+Runtime-observed rows: **7/65**.
+Pending stronger evidence: **58**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 4 | 26 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 7 | 23 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -36,10 +36,10 @@ Pending stronger evidence: **61**.
 | B-012 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0126, MP-0128 | setup-ts-deep-modules rule contract | Reconcile prose and config; separately runtime-test dependency-cruiser behavior only if verification beyond static config is required. |
 | B-013 | PROMPT_REDTEAM_LATER | CONFIRMED_WEAKNESS | NO | MP-0112 | Wayfinder planning-only authority | Require/identify an independent override authority or classify self-authored override as accepted design. |
 | B-014 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0126, MP-0128 | setup-ts-deep-modules proof-of-enforcement | Runtime reproduce in a representative consumer TypeScript repo during later runtime verification. |
-| B-015 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0114, MP-0116 | wizard generated-script verification | Runtime/end-to-end wizard execution remains a later verification dimension. |
+| B-015 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0114, MP-0116 | wizard generated-script verification | Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only. |
 | B-016 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0136, MP-0138 | git-guardrails dangerous-command blocking | Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing. |
 | B-017 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0143 | setup-pre-commit hook smoke test | Observe an end-to-end setup in a representative repo before RUNTIME OBSERVED promotion. |
-| B-018 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0018, MP-0019, MP-0056, MP-0059 | plugin version synchronization | Release-run observation belongs to later runtime/CI verification. |
+| B-018 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0018, MP-0019, MP-0056, MP-0059 | plugin version synchronization | Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth. |
 | B-019 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0057 | local skill linking set | Filesystem symlink behavior can be runtime-observed later; static selection semantics are closed. |
 | B-020 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0058 | list-skills enumeration | No separate runtime verification is needed for static selection semantics unless environment-specific find behavior becomes material. |
 | B-021 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0093 | setup confirmation-before-write boundary | Later runtime observation can test whether supported harnesses consistently honor the checkpoint. |
@@ -77,7 +77,7 @@ Pending stronger evidence: **61**.
 | B-053 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0162, MP-0163 | writing-for-agents information-hierarchy discipline | Second-pass/red-team should apply the doctrine back onto the repository itself and record where shipped skills violate their own writing guidance. |
 | B-054 | MACHINE_CONSUMER_VALIDATION | CONFIRMED_MATCH | NO | MP-0064, MP-0066, MP-0070, MP-0072, MP-0077, MP-0079, MP-0081, MP-0084, MP-0088, MP-0090, MP-0092, MP-0094, MP-0101, MP-0105, MP-0107, MP-0111, MP-0113, MP-0115, MP-0119, MP-0121, MP-0123, MP-0125, MP-0127, MP-0130, MP-0132, MP-0134, MP-0137, MP-0140, MP-0142, MP-0144, MP-0147, MP-0149, MP-0151, MP-0157, MP-0159, MP-0161, MP-0164 | Codex per-skill invocation metadata | Runtime-observe representative user-invoked and model-invoked skills in Codex, then sample boundary cases if the harness behavior differs from the static contract. |
 | B-055 | MACHINE_CONSUMER_VALIDATION | CONFIRMED_MATCH | NO | MP-0017 | Claude marketplace distribution descriptor | Exercise marketplace discovery/install against the frozen-compatible distribution path during Phase 7 runtime verification. |
-| B-056 | EXECUTION_OBSERVATION | CONFIRMED_WEAKNESS | NO | MP-0073 | diagnosing-bugs human-in-the-loop shell template | Run the template with benign inputs and test whether a misuse-resistant guard is warranted; do not use real credentials. |
+| B-056 | EXECUTION_OBSERVATION | CONFIRMED_WEAKNESS | YES | MP-0073 | diagnosing-bugs human-in-the-loop shell template | Red-team secret/PII misuse and shell-input edge cases later; do not use real credentials. |
 | B-057 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0062 | ask-matt phase-boundary context routing | Later compare real routing decisions against this ordered tree during red-team verification, especially ambiguous boundaries. |
 | B-058 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0095 | setup skill domain-document consumption | Observe a setup/exploration run in repos with present, absent, and conflicting domain docs. |
 | B-059 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0098 | local Markdown issue-tracker contract | Runtime-test concurrent/duplicate claiming and malformed status files before treating the local tracker as robust coordination machinery. |
