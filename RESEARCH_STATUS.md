@@ -80,26 +80,6 @@ Graph integrity/provenance:
 
 The five raw unresolved internal-looking references remain **5/5 semantically reconciled**, with **0** confirmed broken repository links and **0** semantically unresolved cases.
 
-Router join:
-
-- promoted plugin skills: **25**;
-- expected ask-matt targets other than itself: **24**;
-- covered: **24/24**;
-- missing: **0**;
-- non-promoted extras: **0**.
-
-Distribution symmetry:
-
-- plugin promoted: **25**;
-- maintainer local-linked: **33**;
-- list-skills visible: **37**;
-- root README visibility is checked by exact Markdown link, not name-token presence;
-- bucket README visibility is checked by exact Markdown link;
-- Codex metadata owners: **37**;
-- automated distribution anomalies: **0**.
-
-History bindings derive H-event definitions from durable `05_HISTORY_LEDGER.md`, not a duplicated hardcoded event table. H-001…H-009 state/ref/area parity is **9/9 green** in the Phase 3 quality gate.
-
 Formal Phase 3 closure:
 
 - files: **164**;
@@ -111,11 +91,9 @@ Formal Phase 3 closure:
 - Phase 3 quality review items: **0**;
 - Phase 3 quality remaining improvements: **0**.
 
-The Phase 3 build manifest records SHA-256 fingerprints for the generator/acceptance inputs and authoritative generated outputs so a future session can verify that the committed state belongs together.
-
 ## Phase 4 — Behavior & Enforcement
 
-Structured working evidence is already durable in GitHub:
+Structured working evidence is durable in GitHub:
 
 - `04_BEHAVIOR_MATRIX.json`;
 - `04_BEHAVIOR_MATRIX.md`;
@@ -124,13 +102,40 @@ Structured working evidence is already durable in GitHub:
 - `scripts/validate_behavior_matrix.py`;
 - `.github/workflows/validate-phase4-behavior.yml`.
 
-Current validated matrix contains **20 behavior rows** with **0 hard integrity errors**. Runtime observed remains **0/20**, intentionally preventing static analysis from being overstated as end-to-end proof.
+The current validated matrix contains **29 behavior rows** with **0 hard integrity errors**. Runtime observed remains **0/29**, intentionally preventing static analysis from being overstated as end-to-end proof.
 
-Current contradiction/enforcement register contains **13 current IDs** plus **3 historical IDs**. CT-012 records the setup-ts-deep-modules prose/config rule-count mismatch; CT-013 records Wayfinder's self-authored planning-override authority weakness. Detailed evidence is in the contradiction register and behavior matrix rather than relying on chat prose.
+Current state counts:
+
+- `CONFIRMED_DRIFT`: **5**
+- `CONFIRMED_GAP`: **5**
+- `CONFIRMED_MATCH`: **5**
+- `CONFIRMED_WEAKNESS`: **2**
+- `RUNTIME_UNKNOWN`: **4**
+- `STATICALLY_ENFORCED`: **8**
+
+Machine-enforcement classification:
+
+- `True`: **8**
+- `PARTIAL`: **2**
+- `False`: **19**
+
+The current contradiction/enforcement register contains **14 current IDs** plus **3 historical IDs**. CT-014 records a newly established `implement-spec` workflow gap: after the only required final `/code-review`, all findings are fixed by one implementer subagent and the PR is then marked ready without a required second review, finding-by-finding verification, or equivalent post-fix acceptance gate.
+
+The latest Phase 4 expansion also records:
+
+- setup's explicit draft-before-write human checkpoint;
+- setup's intentionally prompt-driven verify/check design;
+- diagnosing-bugs' strict red-capable feedback-loop gate;
+- triage's prompt-only one-category/one-state invariant and its normal verification-before-grilling sequence;
+- implement-spec frontier scheduling as runtime-dependent rather than mechanically scheduled;
+- domain-modeling's inline CONTEXT/ADR capture discipline;
+- release workflow version/tag wiring as statically enforced.
+
+Validation proof: GitHub Actions run `34743483922` — **SUCCESS** for the 29-row matrix and CT-014 cross-reference set.
 
 ## Tooling state
 
-Current durable incident ledger:
+Current durable incident ledger remains closed:
 
 - failed Actions runs: **82**;
 - cancelled Actions runs: **7**;
@@ -140,7 +145,7 @@ Current durable incident ledger:
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
 
-Phase 3 generation is consolidated into `.github/workflows/rebuild-phase3-state.yml`, which rebuilds dependent state in one ordered atomic pipeline and runs manifest/quality validation before publication. Formal status promotion remains separate and fail-closed.
+The successful Phase 4 expansion introduced no new failed/cancelled incident.
 
 ## Phase status
 
@@ -149,13 +154,22 @@ Phase 3 generation is consolidated into `.github/workflows/rebuild-phase3-state.
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | Full contents of 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality hard errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated 20-row behavior matrix; runtime observed remains 0/20. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **29-row** behavior matrix; **14 current CT IDs**; runtime observed remains **0/29**. |
 | 5. History | IN PROGRESS | 9 durable H-events; remaining partial lineage is kept in `05_HISTORY_LEDGER.md`. |
-| 6. Contradictions & Orphans | IN PROGRESS | 13 current + 3 historical CT IDs; Phase 3 orphan questions closed. |
+| 6. Contradictions & Orphans | IN PROGRESS | **14 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
 | 7. Runtime & Distribution | IN PROGRESS | Static distribution topology reconstructed; deeper runtime/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
 | 9. Red-Team Verification | NOT STARTED formally | No complete systematic absolute/numerical-claim falsification pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Final synthesis waits for verification gates. |
+
+## Immediate next execution steps — Phase 4
+
+1. Continue promoted-workflow coverage through `to-spec`, `to-tickets`, `codebase-design`, `research`, `prototype`, and remaining engineering/productivity workflows.
+2. Test cross-skill setup assumptions, especially whether configured triage-label names are actually materialized/usable on external trackers rather than merely written into mapping docs.
+3. Continue separating prompt-only completion criteria from executable/CI enforcement and from runtime-dependent behavior.
+4. Create targeted runtime-test plans only where static analysis cannot settle the claim; do not manufacture runtime evidence by inference.
+5. Continue Phase 5 separately for H-003/H-004/H-009 and current contradiction lineages.
+6. Keep `VERIFIED = 0` until applicable Phase 4–9 gates are satisfied per file/claim.
 
 ## Resume instruction
 
