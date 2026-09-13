@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Working rows: **53**. Matrix state: **IN_PROGRESS**.
+Working rows: **65**. Matrix state: **IN_PROGRESS**.
 
 This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates documented claims, prompt behavior, static/executable enforcement, runtime dependence, and contradiction state.
 
@@ -74,12 +74,24 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-051 | questionnaire send-focused completeness | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The workflow separates who receives the document from what the user needs back, defines done for each intake step, and closes only when every named need is covered by a question in the written Markdown artifact. The one-idea-per-question rule is explicit. |
 | B-052 | wait-what controlled-language repitch | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | — | The skill is a concise prompt contract with three simultaneous constraints: add context, use ASD-STE100, and load ubiquitous language from CONTEXT.md/CONTEXT-MAP.md. No deterministic checker verifies controlled-language compliance or context-map resolution. |
 | B-053 | writing-for-agents information-hierarchy discipline | CONFIRMED_MATCH | PROMPT | False | False | — | The skill and its mechanics support file present a coherent doctrine around context/cognitive load, information hierarchy, pointer wording, completion-criterion clarity/demand, leading words, positive steering, single-source truth, environment-as-source, pruning, and no-op deletion. |
+| B-054 | Codex per-skill invocation metadata | CONFIRMED_MATCH | STATIC_CONFIG | PARTIAL | False | — | All 37 current skills have agents/openai.yaml metadata. The completed Phase 3 invocation join found 37/37 policies joined and zero Claude-to-Codex invocation mismatches. Frozen user-invoked examples explicitly set policy.allow_implicit_invocation: false; model-invoked examples omit that opt-out. The metadata is machine-readable, but this audit has not yet observed an actual Codex runtime loading and obeying every file. |
+| B-055 | Claude marketplace distribution descriptor | CONFIRMED_MATCH | STATIC_CONFIG | PARTIAL | False | — | The frozen marketplace.json contains a single plugin named mattpocock-skills with source './' and an engineering-skills description. This is machine-readable distribution metadata, but successful marketplace installation has not been runtime-observed in this audit. |
+| B-056 | diagnosing-bugs human-in-the-loop shell template | CONFIRMED_WEAKNESS | EXECUTABLE_SCRIPT, DOCUMENTATION | PARTIAL | False | — | The shell functions step() and capture() mechanically block on terminal input and print captured values at the end. The file explicitly warns that capture echoes values back to the terminal and says signing in should remain a step, but nothing in the function prevents a caller from capturing a secret. The safety boundary therefore depends on correct template editing. |
+| B-057 | ask-matt phase-boundary context routing | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | PHASE-BOUNDARIES.md explicitly defines the five options, states that the first yes wins, places /compact last as the default rather than first reach, and explains the primary-to-secondary information loss. These are judgement/prompt rules, not executable policy. |
+| B-058 | setup skill domain-document consumption | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | domain.md gives explicit before-exploring reads, absence handling, glossary vocabulary rules, and ADR-conflict behavior. No executable checker enforces those obligations. |
+| B-059 | local Markdown issue-tracker contract | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | issue-tracker-local.md defines exact paths, numbering, state fields, frontier scan, claiming, resolution and map update behavior. The contract is procedural; no parser or lock is provided here to enforce atomic claims or valid state transitions. |
+| B-060 | TDD mocking boundary policy | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | mocking.md clearly separates system-boundary mocks from internal collaborators and gives dependency-injection/SDK-style guidance. There is no static test-lint rule in this surface that prevents internal mocking. |
+| B-061 | TDD test-quality policy | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | tests.md defines good integration-style behavior tests and concrete red flags for implementation-detail, external-bypass and tautological tests. These standards are guidance rather than a machine-enforced test-quality gate. |
+| B-062 | triage out-of-scope institutional memory | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | OUT-OF-SCOPE.md defines durable rejection records, semantic deduplication, maintainer confirm/reconsider/disagree branches, and the narrow write condition of rejected enhancement-as-wontfix. Matching and record maintenance are agent judgement, not executable enforcement. |
+| B-063 | Teach learning-record persistence | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | LEARNING-RECORD-FORMAT.md defines lazy creation, sequential numbering, evidence-oriented write conditions, non-qualifying cases, and supersession. No schema validator or numbering lock is supplied by this file. |
+| B-064 | Teach mission steering contract | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | MISSION-FORMAT.md defines the workspace-root artifact, template and rules including one mission per workspace, concrete outcomes, pushback on vagueness, revision on goal shift and brevity. These are prompt-level constraints. |
+| B-065 | Teach curated-resource epistemic contract | CONFIRMED_MATCH | DOCUMENTATION, PROMPT, EXTERNAL_DEPENDENCY | False | False | — | RESOURCES-FORMAT.md explicitly says knowledge should be drawn from the curated file rather than parametric guesses, separates Knowledge and Wisdom, requires annotations, gaps and pruning, and records community preferences. Source quality and community usefulness still depend on external evidence and agent judgement. |
 
 ## Current counts
 
-- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 11, 'CONFIRMED_MATCH': 18, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
-- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 11, 'EXECUTABLE_SCRIPT': 12, 'EXTERNAL_DEPENDENCY': 10, 'NONE': 9, 'PROMPT': 47, 'RUNTIME': 21, 'STATIC_CONFIG': 7}`
-- runtime observed rows: **0 / 53**
+- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 11, 'CONFIRMED_MATCH': 29, 'CONFIRMED_WEAKNESS': 3, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
+- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 21, 'EXECUTABLE_SCRIPT': 13, 'EXTERNAL_DEPENDENCY': 11, 'NONE': 9, 'PROMPT': 56, 'RUNTIME': 21, 'STATIC_CONFIG': 9}`
+- runtime observed rows: **0 / 65**
 - current CT coverage: **20 / 20**
 - integrity hard errors: **0**
 
