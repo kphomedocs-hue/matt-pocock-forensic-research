@@ -120,13 +120,15 @@ Narrative documents may describe these sets but are not the authority.
 
 Generated research outputs must:
 
-- use the shared `forensic-generated-main-writes` concurrency lane;
+- use a **workflow-specific concurrency lane** with `cancel-in-progress: false`; distinct research workflows must not share one concurrency group because GitHub may discard older pending runs in a shared lane;
+- handle cross-workflow writes through latest-`main` synchronization plus fetch/rebase/push retry logic rather than cross-workflow cancellation;
 - sync latest `main` before generation;
 - check generated files exist and are non-empty;
 - detect untracked outputs with `git status --porcelain`, not only `git diff`;
 - retry/rebase on push races;
 - fail closed on provenance/count invariants;
-- persist diagnostic reports before final gate failure where practical.
+- persist diagnostic reports before final gate failure where practical;
+- include failed **and cancelled** workflow incidents in tooling-integrity accounting, with zero unknown/review-required incidents required for closure.
 
 ## Promotion rule
 
