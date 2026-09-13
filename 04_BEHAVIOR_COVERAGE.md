@@ -1,12 +1,14 @@
-# Phase 4 Current-Skill Coverage
+# Phase 4 Behavior Coverage
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
+
+Coverage means a file participates in at least one explicit Phase 4 behavior contract. It does **not** mean the file is VERIFIED or that every behavior has been exhausted.
+
+## Current skills
 
 Current `SKILL.md` denominator: **37**.
 Skills with at least one Phase 4 behavior row: **37/37**.
 Uncovered current skills: **0**.
-
-Coverage means the skill participates in at least one explicit behavior contract. It does **not** mean the skill is VERIFIED or that all of its behaviors have been exhausted.
 
 | MP-ID | Skill | Covered | Behavior rows | States | CTs |
 |---|---|---|---|---|---|
@@ -48,8 +50,140 @@ Coverage means the skill participates in at least one explicit behavior contract
 | MP-0160 | `skills/productivity/wait-what/SKILL.md` | YES | B-052 | RUNTIME_UNKNOWN | — |
 | MP-0163 | `skills/productivity/writing-for-agents/SKILL.md` | YES | B-053 | CONFIRMED_MATCH | — |
 
-## Uncovered queue
+### Uncovered current-skill queue
 
 - None.
+
+## High-risk non-skill surfaces
+
+Included categories: `ci-release`, `codex-metadata`, `dependency-lock`, `distribution`, `package-config`, `repo-executable`, `skill-executable-config`, `skill-support`.
+
+Surface denominator: **71**.
+Surfaces with at least one Phase 4 behavior row: **24/71**.
+Uncovered high-risk surfaces: **47**.
+
+| MP-ID | Category | Surface | Covered | Behavior rows | CTs |
+|---|---|---|---|---|---|
+| MP-0017 | distribution | `.claude-plugin/marketplace.json` | NO | — | — |
+| MP-0018 | distribution | `.claude-plugin/plugin.json` | YES | B-002, B-004, B-018 | CT-002, CT-004 |
+| MP-0019 | ci-release | `.github/workflows/release.yml` | YES | B-004, B-018, B-029 | CT-004 |
+| MP-0055 | dependency-lock | `package-lock.json` | YES | B-004 | CT-004 |
+| MP-0056 | package-config | `package.json` | YES | B-004, B-018, B-029 | CT-004 |
+| MP-0057 | repo-executable | `scripts/link-skills.sh` | YES | B-019 | — |
+| MP-0058 | repo-executable | `scripts/list-skills.sh` | YES | B-020 | — |
+| MP-0059 | repo-executable | `scripts/sync-plugin-version.mjs` | YES | B-004, B-018, B-029 | CT-004 |
+| MP-0062 | skill-support | `skills/engineering/ask-matt/PHASE-BOUNDARIES.md` | NO | — | — |
+| MP-0064 | codex-metadata | `skills/engineering/ask-matt/agents/openai.yaml` | NO | — | — |
+| MP-0066 | codex-metadata | `skills/engineering/code-review/agents/openai.yaml` | NO | — | — |
+| MP-0067 | skill-support | `skills/engineering/codebase-design/DEEPENING.md` | YES | B-036 | — |
+| MP-0068 | skill-support | `skills/engineering/codebase-design/DESIGN-IT-TWICE.md` | YES | B-036 | — |
+| MP-0070 | codex-metadata | `skills/engineering/codebase-design/agents/openai.yaml` | NO | — | — |
+| MP-0072 | codex-metadata | `skills/engineering/diagnosing-bugs/agents/openai.yaml` | NO | — | — |
+| MP-0073 | skill-executable-config | `skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh` | NO | — | — |
+| MP-0074 | skill-support | `skills/engineering/domain-modeling/ADR-FORMAT.md` | YES | B-028 | — |
+| MP-0075 | skill-support | `skills/engineering/domain-modeling/CONTEXT-FORMAT.md` | YES | B-028 | — |
+| MP-0077 | codex-metadata | `skills/engineering/domain-modeling/agents/openai.yaml` | NO | — | — |
+| MP-0079 | codex-metadata | `skills/engineering/grill-with-docs/agents/openai.yaml` | NO | — | — |
+| MP-0081 | codex-metadata | `skills/engineering/implement/agents/openai.yaml` | NO | — | — |
+| MP-0082 | skill-support | `skills/engineering/improve-codebase-architecture/HTML-REPORT.md` | YES | B-008 | CT-008 |
+| MP-0084 | codex-metadata | `skills/engineering/improve-codebase-architecture/agents/openai.yaml` | NO | — | — |
+| MP-0085 | skill-support | `skills/engineering/prototype/LOGIC.md` | YES | B-035 | — |
+| MP-0087 | skill-support | `skills/engineering/prototype/UI.md` | YES | B-035 | — |
+| MP-0088 | codex-metadata | `skills/engineering/prototype/agents/openai.yaml` | NO | — | — |
+| MP-0090 | codex-metadata | `skills/engineering/research/agents/openai.yaml` | NO | — | — |
+| MP-0092 | codex-metadata | `skills/engineering/resolving-merge-conflicts/agents/openai.yaml` | NO | — | — |
+| MP-0094 | codex-metadata | `skills/engineering/setup-matt-pocock-skills/agents/openai.yaml` | NO | — | — |
+| MP-0095 | skill-support | `skills/engineering/setup-matt-pocock-skills/domain.md` | NO | — | — |
+| MP-0096 | skill-support | `skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md` | YES | B-037 | — |
+| MP-0097 | skill-support | `skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md` | YES | B-037 | — |
+| MP-0098 | skill-support | `skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md` | NO | — | — |
+| MP-0099 | skill-support | `skills/engineering/setup-matt-pocock-skills/triage-labels.md` | YES | B-024, B-037 | — |
+| MP-0101 | codex-metadata | `skills/engineering/tdd/agents/openai.yaml` | YES | B-001 | CT-001 |
+| MP-0102 | skill-support | `skills/engineering/tdd/mocking.md` | NO | — | — |
+| MP-0103 | skill-support | `skills/engineering/tdd/tests.md` | NO | — | — |
+| MP-0105 | codex-metadata | `skills/engineering/to-spec/agents/openai.yaml` | NO | — | — |
+| MP-0107 | codex-metadata | `skills/engineering/to-tickets/agents/openai.yaml` | NO | — | — |
+| MP-0108 | skill-support | `skills/engineering/triage/AGENT-BRIEF.md` | YES | B-038 | CT-018 |
+| MP-0109 | skill-support | `skills/engineering/triage/OUT-OF-SCOPE.md` | NO | — | — |
+| MP-0111 | codex-metadata | `skills/engineering/triage/agents/openai.yaml` | NO | — | — |
+| MP-0113 | codex-metadata | `skills/engineering/wayfinder/agents/openai.yaml` | NO | — | — |
+| MP-0115 | codex-metadata | `skills/engineering/wizard/agents/openai.yaml` | NO | — | — |
+| MP-0116 | skill-executable-config | `skills/engineering/wizard/template.sh` | YES | B-015 | — |
+| MP-0119 | codex-metadata | `skills/in-progress/claude-handoff/agents/openai.yaml` | NO | — | — |
+| MP-0121 | codex-metadata | `skills/in-progress/implement-spec/agents/openai.yaml` | NO | — | — |
+| MP-0123 | codex-metadata | `skills/in-progress/loop-me/agents/openai.yaml` | NO | — | — |
+| MP-0125 | codex-metadata | `skills/in-progress/retro/agents/openai.yaml` | NO | — | — |
+| MP-0127 | codex-metadata | `skills/in-progress/setup-ts-deep-modules/agents/openai.yaml` | NO | — | — |
+| MP-0128 | skill-executable-config | `skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs` | YES | B-012, B-014 | CT-012 |
+| MP-0130 | codex-metadata | `skills/in-progress/writing-beats/agents/openai.yaml` | NO | — | — |
+| MP-0132 | codex-metadata | `skills/in-progress/writing-fragments/agents/openai.yaml` | NO | — | — |
+| MP-0134 | codex-metadata | `skills/in-progress/writing-shape/agents/openai.yaml` | NO | — | — |
+| MP-0137 | codex-metadata | `skills/misc/git-guardrails-claude-code/agents/openai.yaml` | NO | — | — |
+| MP-0138 | skill-executable-config | `skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh` | YES | B-016 | — |
+| MP-0140 | codex-metadata | `skills/misc/migrate-to-shoehorn/agents/openai.yaml` | NO | — | — |
+| MP-0142 | codex-metadata | `skills/misc/scaffold-exercises/agents/openai.yaml` | NO | — | — |
+| MP-0144 | codex-metadata | `skills/misc/setup-pre-commit/agents/openai.yaml` | NO | — | — |
+| MP-0147 | codex-metadata | `skills/productivity/grill-me/agents/openai.yaml` | NO | — | — |
+| MP-0149 | codex-metadata | `skills/productivity/grilling/agents/openai.yaml` | NO | — | — |
+| MP-0151 | codex-metadata | `skills/productivity/handoff/agents/openai.yaml` | NO | — | — |
+| MP-0152 | skill-support | `skills/productivity/teach/GLOSSARY-FORMAT.md` | YES | B-005 | CT-005 |
+| MP-0153 | skill-support | `skills/productivity/teach/LEARNING-RECORD-FORMAT.md` | NO | — | — |
+| MP-0154 | skill-support | `skills/productivity/teach/MISSION-FORMAT.md` | NO | — | — |
+| MP-0155 | skill-support | `skills/productivity/teach/RESOURCES-FORMAT.md` | NO | — | — |
+| MP-0157 | codex-metadata | `skills/productivity/teach/agents/openai.yaml` | NO | — | — |
+| MP-0159 | codex-metadata | `skills/productivity/to-questionnaire/agents/openai.yaml` | NO | — | — |
+| MP-0161 | codex-metadata | `skills/productivity/wait-what/agents/openai.yaml` | NO | — | — |
+| MP-0162 | skill-support | `skills/productivity/writing-for-agents/SKILL-MECHANICS.md` | YES | B-053 | — |
+| MP-0164 | codex-metadata | `skills/productivity/writing-for-agents/agents/openai.yaml` | NO | — | — |
+
+### Uncovered high-risk surface queue
+
+- MP-0017 — `.claude-plugin/marketplace.json` (distribution)
+- MP-0062 — `skills/engineering/ask-matt/PHASE-BOUNDARIES.md` (skill-support)
+- MP-0064 — `skills/engineering/ask-matt/agents/openai.yaml` (codex-metadata)
+- MP-0066 — `skills/engineering/code-review/agents/openai.yaml` (codex-metadata)
+- MP-0070 — `skills/engineering/codebase-design/agents/openai.yaml` (codex-metadata)
+- MP-0072 — `skills/engineering/diagnosing-bugs/agents/openai.yaml` (codex-metadata)
+- MP-0073 — `skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh` (skill-executable-config)
+- MP-0077 — `skills/engineering/domain-modeling/agents/openai.yaml` (codex-metadata)
+- MP-0079 — `skills/engineering/grill-with-docs/agents/openai.yaml` (codex-metadata)
+- MP-0081 — `skills/engineering/implement/agents/openai.yaml` (codex-metadata)
+- MP-0084 — `skills/engineering/improve-codebase-architecture/agents/openai.yaml` (codex-metadata)
+- MP-0088 — `skills/engineering/prototype/agents/openai.yaml` (codex-metadata)
+- MP-0090 — `skills/engineering/research/agents/openai.yaml` (codex-metadata)
+- MP-0092 — `skills/engineering/resolving-merge-conflicts/agents/openai.yaml` (codex-metadata)
+- MP-0094 — `skills/engineering/setup-matt-pocock-skills/agents/openai.yaml` (codex-metadata)
+- MP-0095 — `skills/engineering/setup-matt-pocock-skills/domain.md` (skill-support)
+- MP-0098 — `skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md` (skill-support)
+- MP-0102 — `skills/engineering/tdd/mocking.md` (skill-support)
+- MP-0103 — `skills/engineering/tdd/tests.md` (skill-support)
+- MP-0105 — `skills/engineering/to-spec/agents/openai.yaml` (codex-metadata)
+- MP-0107 — `skills/engineering/to-tickets/agents/openai.yaml` (codex-metadata)
+- MP-0109 — `skills/engineering/triage/OUT-OF-SCOPE.md` (skill-support)
+- MP-0111 — `skills/engineering/triage/agents/openai.yaml` (codex-metadata)
+- MP-0113 — `skills/engineering/wayfinder/agents/openai.yaml` (codex-metadata)
+- MP-0115 — `skills/engineering/wizard/agents/openai.yaml` (codex-metadata)
+- MP-0119 — `skills/in-progress/claude-handoff/agents/openai.yaml` (codex-metadata)
+- MP-0121 — `skills/in-progress/implement-spec/agents/openai.yaml` (codex-metadata)
+- MP-0123 — `skills/in-progress/loop-me/agents/openai.yaml` (codex-metadata)
+- MP-0125 — `skills/in-progress/retro/agents/openai.yaml` (codex-metadata)
+- MP-0127 — `skills/in-progress/setup-ts-deep-modules/agents/openai.yaml` (codex-metadata)
+- MP-0130 — `skills/in-progress/writing-beats/agents/openai.yaml` (codex-metadata)
+- MP-0132 — `skills/in-progress/writing-fragments/agents/openai.yaml` (codex-metadata)
+- MP-0134 — `skills/in-progress/writing-shape/agents/openai.yaml` (codex-metadata)
+- MP-0137 — `skills/misc/git-guardrails-claude-code/agents/openai.yaml` (codex-metadata)
+- MP-0140 — `skills/misc/migrate-to-shoehorn/agents/openai.yaml` (codex-metadata)
+- MP-0142 — `skills/misc/scaffold-exercises/agents/openai.yaml` (codex-metadata)
+- MP-0144 — `skills/misc/setup-pre-commit/agents/openai.yaml` (codex-metadata)
+- MP-0147 — `skills/productivity/grill-me/agents/openai.yaml` (codex-metadata)
+- MP-0149 — `skills/productivity/grilling/agents/openai.yaml` (codex-metadata)
+- MP-0151 — `skills/productivity/handoff/agents/openai.yaml` (codex-metadata)
+- MP-0153 — `skills/productivity/teach/LEARNING-RECORD-FORMAT.md` (skill-support)
+- MP-0154 — `skills/productivity/teach/MISSION-FORMAT.md` (skill-support)
+- MP-0155 — `skills/productivity/teach/RESOURCES-FORMAT.md` (skill-support)
+- MP-0157 — `skills/productivity/teach/agents/openai.yaml` (codex-metadata)
+- MP-0159 — `skills/productivity/to-questionnaire/agents/openai.yaml` (codex-metadata)
+- MP-0161 — `skills/productivity/wait-what/agents/openai.yaml` (codex-metadata)
+- MP-0164 — `skills/productivity/writing-for-agents/agents/openai.yaml` (codex-metadata)
 
 Hard errors: **0**.

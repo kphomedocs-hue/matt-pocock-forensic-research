@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "phase": 4,
@@ -8,6 +8,133 @@
   "uncovered_skills": 0,
   "uncovered_mp_ids": [],
   "uncovered_paths": [],
+  "surface_categories": [
+    "ci-release",
+    "codex-metadata",
+    "dependency-lock",
+    "distribution",
+    "package-config",
+    "repo-executable",
+    "skill-executable-config",
+    "skill-support"
+  ],
+  "surface_denominator": 71,
+  "covered_surfaces": 24,
+  "uncovered_surfaces": 47,
+  "uncovered_surface_mp_ids": [
+    "MP-0017",
+    "MP-0062",
+    "MP-0064",
+    "MP-0066",
+    "MP-0070",
+    "MP-0072",
+    "MP-0073",
+    "MP-0077",
+    "MP-0079",
+    "MP-0081",
+    "MP-0084",
+    "MP-0088",
+    "MP-0090",
+    "MP-0092",
+    "MP-0094",
+    "MP-0095",
+    "MP-0098",
+    "MP-0102",
+    "MP-0103",
+    "MP-0105",
+    "MP-0107",
+    "MP-0109",
+    "MP-0111",
+    "MP-0113",
+    "MP-0115",
+    "MP-0119",
+    "MP-0121",
+    "MP-0123",
+    "MP-0125",
+    "MP-0127",
+    "MP-0130",
+    "MP-0132",
+    "MP-0134",
+    "MP-0137",
+    "MP-0140",
+    "MP-0142",
+    "MP-0144",
+    "MP-0147",
+    "MP-0149",
+    "MP-0151",
+    "MP-0153",
+    "MP-0154",
+    "MP-0155",
+    "MP-0157",
+    "MP-0159",
+    "MP-0161",
+    "MP-0164"
+  ],
+  "uncovered_surface_paths": [
+    ".claude-plugin/marketplace.json",
+    "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+    "skills/engineering/ask-matt/agents/openai.yaml",
+    "skills/engineering/code-review/agents/openai.yaml",
+    "skills/engineering/codebase-design/agents/openai.yaml",
+    "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+    "skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh",
+    "skills/engineering/domain-modeling/agents/openai.yaml",
+    "skills/engineering/grill-with-docs/agents/openai.yaml",
+    "skills/engineering/implement/agents/openai.yaml",
+    "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+    "skills/engineering/prototype/agents/openai.yaml",
+    "skills/engineering/research/agents/openai.yaml",
+    "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+    "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+    "skills/engineering/setup-matt-pocock-skills/domain.md",
+    "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+    "skills/engineering/tdd/mocking.md",
+    "skills/engineering/tdd/tests.md",
+    "skills/engineering/to-spec/agents/openai.yaml",
+    "skills/engineering/to-tickets/agents/openai.yaml",
+    "skills/engineering/triage/OUT-OF-SCOPE.md",
+    "skills/engineering/triage/agents/openai.yaml",
+    "skills/engineering/wayfinder/agents/openai.yaml",
+    "skills/engineering/wizard/agents/openai.yaml",
+    "skills/in-progress/claude-handoff/agents/openai.yaml",
+    "skills/in-progress/implement-spec/agents/openai.yaml",
+    "skills/in-progress/loop-me/agents/openai.yaml",
+    "skills/in-progress/retro/agents/openai.yaml",
+    "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+    "skills/in-progress/writing-beats/agents/openai.yaml",
+    "skills/in-progress/writing-fragments/agents/openai.yaml",
+    "skills/in-progress/writing-shape/agents/openai.yaml",
+    "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+    "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+    "skills/misc/scaffold-exercises/agents/openai.yaml",
+    "skills/misc/setup-pre-commit/agents/openai.yaml",
+    "skills/productivity/grill-me/agents/openai.yaml",
+    "skills/productivity/grilling/agents/openai.yaml",
+    "skills/productivity/handoff/agents/openai.yaml",
+    "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+    "skills/productivity/teach/MISSION-FORMAT.md",
+    "skills/productivity/teach/RESOURCES-FORMAT.md",
+    "skills/productivity/teach/agents/openai.yaml",
+    "skills/productivity/to-questionnaire/agents/openai.yaml",
+    "skills/productivity/wait-what/agents/openai.yaml",
+    "skills/productivity/writing-for-agents/agents/openai.yaml"
+  ],
+  "surface_category_counts": {
+    "ci-release": 1,
+    "codex-metadata": 37,
+    "dependency-lock": 1,
+    "distribution": 2,
+    "package-config": 1,
+    "repo-executable": 3,
+    "skill-executable-config": 4,
+    "skill-support": 22
+  },
+  "uncovered_surface_category_counts": {
+    "codex-metadata": 36,
+    "distribution": 1,
+    "skill-executable-config": 1,
+    "skill-support": 9
+  },
   "behavior_row_count": 53,
   "covered_state_occurrences": {
     "CONFIRMED_DRIFT": 5,
@@ -22,6 +149,7 @@
     {
       "mp_id": "MP-0063",
       "path": "skills/engineering/ask-matt/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-003",
@@ -39,6 +167,7 @@
     {
       "mp_id": "MP-0065",
       "path": "skills/engineering/code-review/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-010",
@@ -55,6 +184,7 @@
     {
       "mp_id": "MP-0069",
       "path": "skills/engineering/codebase-design/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-036"
@@ -67,6 +197,7 @@
     {
       "mp_id": "MP-0071",
       "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-007",
@@ -85,6 +216,7 @@
     {
       "mp_id": "MP-0076",
       "path": "skills/engineering/domain-modeling/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-028",
@@ -98,6 +230,7 @@
     {
       "mp_id": "MP-0078",
       "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-039"
@@ -110,6 +243,7 @@
     {
       "mp_id": "MP-0080",
       "path": "skills/engineering/implement/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-010",
@@ -126,6 +260,7 @@
     {
       "mp_id": "MP-0083",
       "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-008"
@@ -140,6 +275,7 @@
     {
       "mp_id": "MP-0086",
       "path": "skills/engineering/prototype/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-035"
@@ -152,6 +288,7 @@
     {
       "mp_id": "MP-0089",
       "path": "skills/engineering/research/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-034"
@@ -164,6 +301,7 @@
     {
       "mp_id": "MP-0091",
       "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-040"
@@ -176,6 +314,7 @@
     {
       "mp_id": "MP-0093",
       "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-021",
@@ -191,6 +330,7 @@
     {
       "mp_id": "MP-0100",
       "path": "skills/engineering/tdd/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-001"
@@ -205,6 +345,7 @@
     {
       "mp_id": "MP-0104",
       "path": "skills/engineering/to-spec/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-030"
@@ -219,6 +360,7 @@
     {
       "mp_id": "MP-0106",
       "path": "skills/engineering/to-tickets/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-030",
@@ -239,6 +381,7 @@
     {
       "mp_id": "MP-0110",
       "path": "skills/engineering/triage/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-024",
@@ -257,6 +400,7 @@
     {
       "mp_id": "MP-0112",
       "path": "skills/engineering/wayfinder/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-013"
@@ -271,6 +415,7 @@
     {
       "mp_id": "MP-0114",
       "path": "skills/engineering/wizard/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-015"
@@ -283,6 +428,7 @@
     {
       "mp_id": "MP-0118",
       "path": "skills/in-progress/claude-handoff/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-041"
@@ -295,6 +441,7 @@
     {
       "mp_id": "MP-0120",
       "path": "skills/in-progress/implement-spec/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-026",
@@ -311,6 +458,7 @@
     {
       "mp_id": "MP-0122",
       "path": "skills/in-progress/loop-me/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-042"
@@ -323,6 +471,7 @@
     {
       "mp_id": "MP-0124",
       "path": "skills/in-progress/retro/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-011"
@@ -337,6 +486,7 @@
     {
       "mp_id": "MP-0126",
       "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-012",
@@ -353,6 +503,7 @@
     {
       "mp_id": "MP-0129",
       "path": "skills/in-progress/writing-beats/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-043"
@@ -365,6 +516,7 @@
     {
       "mp_id": "MP-0131",
       "path": "skills/in-progress/writing-fragments/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-044"
@@ -377,6 +529,7 @@
     {
       "mp_id": "MP-0133",
       "path": "skills/in-progress/writing-shape/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-045"
@@ -389,6 +542,7 @@
     {
       "mp_id": "MP-0136",
       "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-016"
@@ -401,6 +555,7 @@
     {
       "mp_id": "MP-0139",
       "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-046"
@@ -415,6 +570,7 @@
     {
       "mp_id": "MP-0141",
       "path": "skills/misc/scaffold-exercises/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-047"
@@ -429,6 +585,7 @@
     {
       "mp_id": "MP-0143",
       "path": "skills/misc/setup-pre-commit/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-017"
@@ -441,6 +598,7 @@
     {
       "mp_id": "MP-0146",
       "path": "skills/productivity/grill-me/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-048"
@@ -453,6 +611,7 @@
     {
       "mp_id": "MP-0148",
       "path": "skills/productivity/grilling/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-039",
@@ -468,6 +627,7 @@
     {
       "mp_id": "MP-0150",
       "path": "skills/productivity/handoff/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-050"
@@ -480,6 +640,7 @@
     {
       "mp_id": "MP-0156",
       "path": "skills/productivity/teach/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-005",
@@ -497,6 +658,7 @@
     {
       "mp_id": "MP-0158",
       "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-051"
@@ -509,6 +671,7 @@
     {
       "mp_id": "MP-0160",
       "path": "skills/productivity/wait-what/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-052"
@@ -521,6 +684,7 @@
     {
       "mp_id": "MP-0163",
       "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "category": "skill",
       "covered": true,
       "behavior_ids": [
         "B-053"
@@ -528,6 +692,781 @@
       "states": [
         "CONFIRMED_MATCH"
       ],
+      "contradiction_ids": []
+    }
+  ],
+  "surfaces": [
+    {
+      "mp_id": "MP-0017",
+      "path": ".claude-plugin/marketplace.json",
+      "category": "distribution",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0018",
+      "path": ".claude-plugin/plugin.json",
+      "category": "distribution",
+      "covered": true,
+      "behavior_ids": [
+        "B-002",
+        "B-004",
+        "B-018"
+      ],
+      "states": [
+        "CONFIRMED_DRIFT",
+        "RUNTIME_UNKNOWN",
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": [
+        "CT-002",
+        "CT-004"
+      ]
+    },
+    {
+      "mp_id": "MP-0019",
+      "path": ".github/workflows/release.yml",
+      "category": "ci-release",
+      "covered": true,
+      "behavior_ids": [
+        "B-004",
+        "B-018",
+        "B-029"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN",
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": [
+        "CT-004"
+      ]
+    },
+    {
+      "mp_id": "MP-0055",
+      "path": "package-lock.json",
+      "category": "dependency-lock",
+      "covered": true,
+      "behavior_ids": [
+        "B-004"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": [
+        "CT-004"
+      ]
+    },
+    {
+      "mp_id": "MP-0056",
+      "path": "package.json",
+      "category": "package-config",
+      "covered": true,
+      "behavior_ids": [
+        "B-004",
+        "B-018",
+        "B-029"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN",
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": [
+        "CT-004"
+      ]
+    },
+    {
+      "mp_id": "MP-0057",
+      "path": "scripts/link-skills.sh",
+      "category": "repo-executable",
+      "covered": true,
+      "behavior_ids": [
+        "B-019"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0058",
+      "path": "scripts/list-skills.sh",
+      "category": "repo-executable",
+      "covered": true,
+      "behavior_ids": [
+        "B-020"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0059",
+      "path": "scripts/sync-plugin-version.mjs",
+      "category": "repo-executable",
+      "covered": true,
+      "behavior_ids": [
+        "B-004",
+        "B-018",
+        "B-029"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN",
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": [
+        "CT-004"
+      ]
+    },
+    {
+      "mp_id": "MP-0062",
+      "path": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0064",
+      "path": "skills/engineering/ask-matt/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0066",
+      "path": "skills/engineering/code-review/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0067",
+      "path": "skills/engineering/codebase-design/DEEPENING.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-036"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0068",
+      "path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-036"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0070",
+      "path": "skills/engineering/codebase-design/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0072",
+      "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0073",
+      "path": "skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "category": "skill-executable-config",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0074",
+      "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-028"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0075",
+      "path": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-028"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0077",
+      "path": "skills/engineering/domain-modeling/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0079",
+      "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0081",
+      "path": "skills/engineering/implement/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0082",
+      "path": "skills/engineering/improve-codebase-architecture/HTML-REPORT.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-008"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": [
+        "CT-008"
+      ]
+    },
+    {
+      "mp_id": "MP-0084",
+      "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0085",
+      "path": "skills/engineering/prototype/LOGIC.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-035"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0087",
+      "path": "skills/engineering/prototype/UI.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-035"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0088",
+      "path": "skills/engineering/prototype/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0090",
+      "path": "skills/engineering/research/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0092",
+      "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0094",
+      "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0095",
+      "path": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0096",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-037"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0097",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-037"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0098",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0099",
+      "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-024",
+        "B-037"
+      ],
+      "states": [
+        "CONFIRMED_WEAKNESS",
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0101",
+      "path": "skills/engineering/tdd/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": true,
+      "behavior_ids": [
+        "B-001"
+      ],
+      "states": [
+        "CONFIRMED_DRIFT"
+      ],
+      "contradiction_ids": [
+        "CT-001"
+      ]
+    },
+    {
+      "mp_id": "MP-0102",
+      "path": "skills/engineering/tdd/mocking.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0103",
+      "path": "skills/engineering/tdd/tests.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0105",
+      "path": "skills/engineering/to-spec/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0107",
+      "path": "skills/engineering/to-tickets/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0108",
+      "path": "skills/engineering/triage/AGENT-BRIEF.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-038"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-018"
+      ]
+    },
+    {
+      "mp_id": "MP-0109",
+      "path": "skills/engineering/triage/OUT-OF-SCOPE.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0111",
+      "path": "skills/engineering/triage/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0113",
+      "path": "skills/engineering/wayfinder/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0115",
+      "path": "skills/engineering/wizard/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0116",
+      "path": "skills/engineering/wizard/template.sh",
+      "category": "skill-executable-config",
+      "covered": true,
+      "behavior_ids": [
+        "B-015"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0119",
+      "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0121",
+      "path": "skills/in-progress/implement-spec/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0123",
+      "path": "skills/in-progress/loop-me/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0125",
+      "path": "skills/in-progress/retro/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0127",
+      "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0128",
+      "path": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "category": "skill-executable-config",
+      "covered": true,
+      "behavior_ids": [
+        "B-012",
+        "B-014"
+      ],
+      "states": [
+        "CONFIRMED_GAP",
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": [
+        "CT-012"
+      ]
+    },
+    {
+      "mp_id": "MP-0130",
+      "path": "skills/in-progress/writing-beats/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0132",
+      "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0134",
+      "path": "skills/in-progress/writing-shape/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0137",
+      "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0138",
+      "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "category": "skill-executable-config",
+      "covered": true,
+      "behavior_ids": [
+        "B-016"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0140",
+      "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0142",
+      "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0144",
+      "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0147",
+      "path": "skills/productivity/grill-me/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0149",
+      "path": "skills/productivity/grilling/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0151",
+      "path": "skills/productivity/handoff/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0152",
+      "path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-005"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-005"
+      ]
+    },
+    {
+      "mp_id": "MP-0153",
+      "path": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0154",
+      "path": "skills/productivity/teach/MISSION-FORMAT.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0155",
+      "path": "skills/productivity/teach/RESOURCES-FORMAT.md",
+      "category": "skill-support",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0157",
+      "path": "skills/productivity/teach/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0159",
+      "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0161",
+      "path": "skills/productivity/wait-what/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0162",
+      "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "category": "skill-support",
+      "covered": true,
+      "behavior_ids": [
+        "B-053"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0164",
+      "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+      "category": "codex-metadata",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
       "contradiction_ids": []
     }
   ]
