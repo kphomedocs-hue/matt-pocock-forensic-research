@@ -19,7 +19,7 @@ If chat prose and committed machine artifacts disagree, the committed source/pro
 
 Primary phase focus: **Phase 4 — Behavior & Enforcement**.
 
-Phases 1–3 are complete. The project is **not VERIFIED**: Phase 4 runtime/enforcement depth, remaining history lineage, contradiction resolution, runtime/distribution observation, second pass, and red-team verification remain before Phase 10 synthesis.
+Phases 1–3 are complete. The project is **not VERIFIED**: Phase 4 runtime/enforcement depth, remaining contradiction-specific history lineage, contradiction resolution, runtime/distribution observation, second pass, and red-team verification remain before Phase 10 synthesis.
 
 ## Foundation state
 
@@ -82,7 +82,7 @@ Current validated state:
 
 - behavior rows: **65**;
 - hard integrity errors: **0**;
-- runtime observed: **7/65**;
+- runtime observed: **8/65**;
 - runtime/evidence queue classified: **65/65**;
 - current CT coverage: **20/20**;
 - uncovered current CT IDs: **0**;
@@ -110,13 +110,13 @@ Machine-enforcement counts:
 
 Evidence-depth queue:
 
-- `EXECUTION_OBSERVATION`: **30 total / 7 observed / 23 pending**
+- `EXECUTION_OBSERVATION`: **30 total / 8 observed / 22 pending**
 - `EXTERNAL_DEPENDENCY_VALIDATION`: **7 / 0 / 7**
 - `MACHINE_CONSUMER_VALIDATION`: **4 / 0 / 4**
 - `PROMPT_REDTEAM_LATER`: **24 / 0 / 24**
-- total pending: **58**.
+- total pending: **57**.
 
-The first deterministic local-runtime batch directly observed **B-015, B-018, and B-056** against the exact frozen source commit. All acceptance checks passed. The report records only benign synthetic fixtures: wizard template first-run/rerun behavior, plugin-version drift detection/repair, and HITL capture behavior. It does not use real credentials or claim broader prompt/harness verification.
+The deterministic local-runtime harness now directly observes **B-004, B-015, B-018, and B-056** against the exact frozen source commit. The latest accepted workflow run is **34752990655** and all acceptance checks passed. B-004 reproduced the frozen `package.json`/`package-lock.json` version drift, demonstrated that `npm pack --dry-run` takes version `1.2.3` from `package.json`, and demonstrated that offline `npm install --package-lock-only` normalizes both root lockfile version fields to `1.2.3`. The remaining release/CI path is still separate under B-029. The other local observations cover wizard-template first-run/rerun behavior, plugin-version drift detection/repair, and HITL capture behavior. No real credentials are used and none of these observations are generalized into prompt/harness verification.
 
 The **37/37 skill** and **71/71 high-risk non-SKILL** results are breadth denominators only. They prove that no current operative skill or behavior-relevant high-risk non-SKILL surface is completely absent from the Phase 4 matrix. They do **not** prove that every behavior is exhausted, that machine-readable policy is honored at runtime, or that any file is VERIFIED.
 
@@ -127,15 +127,28 @@ The register contains **20 current IDs** plus **3 historical IDs**.
 Newest source/audit findings:
 
 - **CT-019 — audit false-positive correction:** exact frozen-command reproduction showed that `grep -r " as [A-Z]"` does find the advertised `as unknown as Type` form because the later ` as Type` substring matches. CT-019 is retained as a **RESOLVED audit correction**, not a source defect.
-- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only. This remains OPEN. Its introduction lineage is now **RECONCILED** as H-010: the mismatch was present in the file's sole path-history commit and the creation blob is identical to the frozen blob.
+- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only. This remains OPEN. Its introduction lineage is **RECONCILED** as H-010: the mismatch was present in the file's sole path-history commit and the creation blob is identical to the frozen blob.
 
 Earlier Phase 4 findings CT-014…CT-018 remain durable in the contradiction register and behavior matrix.
 
 No Phase 4 row is treated as sufficient for `VERIFIED` by itself.
 
+## Phase 5 — History
+
+All ten currently registered high-impact H-events are now `RECONCILED`; no H-entry remains `PARTIAL`.
+
+Recent closures:
+
+- **H-003 — Claude plugin promoted-set lineage:** reconciled from the original 21-skill native-plugin manifest through the exact member mutations to the frozen 25-skill manifest.
+- **H-004 — Codex metadata lineage:** reconciled the exact owner-count evolution from the initial 39 `agents/openai.yaml` files to the frozen 37/37 owner set: `39 + to-questionnaire + wait-what - six deprecated/personal + implement-spec + retro = 37`. The count-neutral `writing-great-skills` → `writing-for-agents` move is separated from membership changes. The `wizard` model-invocation change and the later `writing-for-agents` stale-Codex-policy regression/fix are also traced explicitly.
+- **H-009 — local-linking policy:** reconciled PR #1025’s exact reason and change from every non-deprecated skill to the frozen engineering + productivity + in-progress 33-skill local-link set, while deliberately excluding misc.
+- **H-010 — CT-020 introduction:** reconciled the scaffold-exercises mismatch to its sole path-history commit.
+
+Phase 5 remains IN PROGRESS because remaining high-impact current contradictions still require introduction/fix/recurrence lineage where materially relevant; closing the registered H-events is not the same as proving every open defect’s history is exhausted.
+
 ## Tooling state
 
-Latest closed incident ledger:
+Latest **published closed** incident ledger still records:
 
 - failed runs: **83**;
 - cancelled runs: **7**;
@@ -145,13 +158,14 @@ Latest closed incident ledger:
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
 
-Run `34745903691` was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, and the exact run is classified as fixed.
+Two post-ledger workflow events are not yet folded into that published 90-incident snapshot, so tooling closure is **temporarily awaiting refresh** rather than being claimed current:
 
-The tooling classifier now monitors Phase 4 validation, batch application, prior runtime smoke, and the deterministic **Phase 4 local runtime checks** workflow. Unknown future runtime-workflow failures will fail the classifier closure gate until adjudicated rather than being silently categorized.
+- run **34752972889**: all four frozen-source runtime checks and every Phase 4 validator passed; the run failed only because the older queued acceptance step still asserted the previous three-ID evidence list. A narrow classifier entrypoint now adjudicates this exact run as `PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION / NO_RESEARCH_DATA_CHANGE_FIXED`. The corrected run **34752990655** passed and published the validated state.
+- classifier refresh run **34753536022** was cancelled before execution while a newer workflow-triggered classifier refresh occupied the serialized classifier lane. Classifier cancellations are already modeled as superseded refreshes; the newer refresh must publish before the closed-ledger counts are advanced.
+
+The tooling classifier uses `scripts/classify_tooling_failures_entrypoint.py` for narrow run-ID adjudications and delegates every other case to the existing historical classifier. Its workflow monitors Phase 4 validation, batch application, prior runtime smoke, and deterministic local runtime checks. Unknown future runtime-workflow failures still fail the closure gate rather than being silently categorized.
 
 Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 mutation workflows refresh behavior validation, breadth coverage, runtime/evidence queue, and foundation parity inside the same atomic workflow before publication.
-
-The first local runtime evidence workflow run **34749869035** completed successfully and published the runtime evidence plus regenerated Phase 4 state.
 
 ## Phase status
 
@@ -160,9 +174,9 @@ The first local runtime evidence workflow run **34749869035** completed successf
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, **71/71 high-risk non-SKILL surfaces** represented; evidence queue **65/65 classified**; runtime observed **7/65**. |
-| 5. History | IN PROGRESS | **10 durable H-events**; H-010 reconciles CT-020 introduction; H-003/H-004/H-009 and other high-impact lineage remain partial. |
-| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; CT-019 is a resolved audit correction, CT-020 remains open but its introduction lineage is reconciled. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, **71/71 high-risk non-SKILL surfaces** represented; evidence queue **65/65 classified**; runtime observed **8/65**. |
+| 5. History | IN PROGRESS | **10/10 registered H-events RECONCILED**; remaining work is contradiction-specific lineage expansion where materially relevant. |
+| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; CT-019 is a resolved audit correction, CT-020 remains open with introduction lineage reconciled. |
 | 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deterministic local runtime observation has begun; deeper harness/external/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
 | 9. Red-Team Verification | NOT STARTED formally | No complete systematic falsification pass yet. |
@@ -170,11 +184,12 @@ The first local runtime evidence workflow run **34749869035** completed successf
 
 ## Immediate next execution steps — Phase 4
 
-1. Continue the deterministic runtime/evidence queue: **23 pending EXECUTION_OBSERVATION** rows remain after the first local-runtime batch.
-2. Prioritize additional safe local executable/config contracts before external services: repository scripts, skill scripts/config, dependency/package behavior, and the remaining `RUNTIME_UNKNOWN` rows that can be isolated without live credentials.
-3. Keep machine-consumer, external-dependency, and prompt-red-team classes separate; do not promote them using evidence from the wrong layer.
-4. Continue history reconciliation for high-impact open defects and the remaining partial H-events; CT-020 introduction is now closed historically by H-010.
-5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
+1. Finish the tooling-ledger refresh so the post-ledger Phase 4 acceptance transition and superseded classifier refresh are durably closed at zero unknown/unresolved.
+2. Continue the evidence queue: **22 pending EXECUTION_OBSERVATION** rows remain after B-004 joined the local-runtime evidence set.
+3. Only promote rows when the evidence exercises the behavior itself. Do not call a prompt-mediated skill runtime-observed merely because an underlying Git/npm/shell operation can be reproduced independently.
+4. Keep machine-consumer, external-dependency, and prompt-red-team classes separate; do not promote them using evidence from the wrong layer.
+5. Continue contradiction-specific history lineage for materially high-impact open defects even though the current H-001…H-010 register is fully reconciled.
+6. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
 
 ## Resume instruction
 
