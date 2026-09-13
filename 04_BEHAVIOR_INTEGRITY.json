@@ -1,0 +1,58 @@
+{
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "row_count": 20,
+  "hard_errors": [],
+  "state_counts": {
+    "CONFIRMED_DRIFT": 5,
+    "CONFIRMED_GAP": 4,
+    "CONFIRMED_WEAKNESS": 1,
+    "RUNTIME_UNKNOWN": 3,
+    "STATICALLY_ENFORCED": 7
+  },
+  "enforcement_layer_counts": {
+    "CI": 2,
+    "DOCUMENTATION": 7,
+    "EXECUTABLE_SCRIPT": 10,
+    "EXTERNAL_DEPENDENCY": 1,
+    "NONE": 2,
+    "PROMPT": 15,
+    "RUNTIME": 6,
+    "STATIC_CONFIG": 6
+  },
+  "machine_enforced_counts": {
+    "False": 11,
+    "PARTIAL": 2,
+    "True": 7
+  },
+  "runtime_observed_count": 0,
+  "current_contradiction_ids": [
+    "CT-001",
+    "CT-002",
+    "CT-003",
+    "CT-004",
+    "CT-005",
+    "CT-006",
+    "CT-007",
+    "CT-008",
+    "CT-009",
+    "CT-010",
+    "CT-011",
+    "CT-012",
+    "CT-013"
+  ],
+  "contradiction_reference_counts": {
+    "CT-001": 1,
+    "CT-002": 1,
+    "CT-003": 1,
+    "CT-004": 1,
+    "CT-005": 1,
+    "CT-006": 1,
+    "CT-007": 1,
+    "CT-008": 1,
+    "CT-009": 1,
+    "CT-010": 1,
+    "CT-011": 1,
+    "CT-012": 1,
+    "CT-013": 1
+  }
+}
