@@ -26,7 +26,7 @@ These are normalization measurements, not Phase 2 failures. Existing evidence is
 
 ## Register cross-checks
 
-- Current contradiction IDs: **13**
+- Current contradiction IDs: **14**
 - Historical contradiction IDs: **3**
 - History entries: **9**
 - Note contradiction refs missing from register: **0**
