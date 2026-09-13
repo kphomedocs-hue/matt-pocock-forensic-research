@@ -2,8 +2,9 @@
 """Validate and render the Phase 4 behavior/enforcement matrix.
 
 The JSON matrix is the structured working source. This validator fails closed on
-unknown MP/CT references, duplicate IDs, invalid enforcement labels, or frozen-
-source drift, then renders a deterministic Markdown view and integrity report.
+unknown MP/CT references, uncovered current CTs, duplicate IDs, invalid enforcement
+labels, or frozen-source drift, then renders a deterministic Markdown view and
+integrity report.
 """
 from __future__ import annotations
 
@@ -97,6 +98,10 @@ def main() -> None:
         machine_counts[str(machine)] += 1
         runtime_observed_count += 1 if runtime is True else 0
 
+    uncovered_ct_ids = sorted(ct_ids - set(ct_refs))
+    if uncovered_ct_ids:
+        errors.append(f"Current contradiction IDs missing behavior coverage: {uncovered_ct_ids}")
+
     integrity = {
         "frozen_commit": FROZEN_COMMIT,
         "row_count": len(rows),
@@ -107,6 +112,7 @@ def main() -> None:
         "runtime_observed_count": runtime_observed_count,
         "current_contradiction_ids": sorted(ct_ids),
         "contradiction_reference_counts": dict(sorted(ct_refs.items())),
+        "uncovered_current_contradiction_ids": uncovered_ct_ids,
     }
     OUT_INTEGRITY.write_text(json.dumps(integrity, indent=2) + "\n", encoding="utf-8")
 
@@ -150,6 +156,7 @@ def main() -> None:
         f"- states: `{dict(sorted(state_counts.items()))}`",
         f"- enforcement layers: `{dict(sorted(layer_counts.items()))}`",
         f"- runtime observed rows: **{runtime_observed_count} / {len(rows)}**",
+        f"- current CT coverage: **{len(ct_ids) - len(uncovered_ct_ids)} / {len(ct_ids)}**",
         f"- integrity hard errors: **{len(errors)}**",
         "",
         "## Phase 4 rule",
@@ -162,7 +169,7 @@ def main() -> None:
         raise SystemExit("Behavior matrix integrity failed:\n- " + "\n- ".join(errors))
     print(
         f"Behavior matrix GREEN: rows={len(rows)}, states={dict(state_counts)}, "
-        f"runtime_observed={runtime_observed_count}"
+        f"runtime_observed={runtime_observed_count}, ct_coverage={len(ct_ids)}/{len(ct_ids)}"
     )
 
 
