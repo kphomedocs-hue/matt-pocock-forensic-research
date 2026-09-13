@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **78**
+Failed workflow runs enumerated: **79**
 
 Cancelled workflow runs enumerated: **7**
 
-Total incident runs: **85**
+Total incident runs: **86**
 
-Incident entries classified: **85**
+Incident entries classified: **86**
 
 Unknown entries: **0**
 
@@ -27,6 +27,7 @@ Unresolved/review-required entries: **0**
 | FOUNDATION_GATE | 1 |
 | FOUNDATION_PROVENANCE_GATE | 1 |
 | FOUNDATION_REGISTER_GATE | 3 |
+| PHASE3_PROMOTION_PROVENANCE_PARSER | 1 |
 | PUSH_RACE | 61 |
 | STATUS_PARSER | 10 |
 
@@ -36,6 +37,7 @@ Unresolved/review-required entries: **0**
 |---|---:|
 | DELAYED_PROMOTION | 10 |
 | DETECTED_AND_BLOCKED | 6 |
+| DETECTED_AND_BLOCKED_FIXED | 1 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 1 |
 | REDUNDANT_REFRESH_DISCARDED | 4 |
@@ -130,6 +132,7 @@ Unresolved/review-required entries: **0**
 | 34712998533 | cancelled | 2026-09-12T19:02:52Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
 | 34713138258 | failure | 2026-09-12T19:05:40Z | Classify tooling failures | Validate failure ledger outputs | CLASSIFIER_SCHEMA_TRANSITION | FIXED_CONFIGURATION_MISMATCH |
 | 34713153565 | failure | 2026-09-12T19:06:00Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34738911437 | failure | 2026-09-13T04:52:20Z | Promote Phase 3 connections | Promote notes with per-file Phase 3 evidence | PHASE3_PROMOTION_PROVENANCE_PARSER | DETECTED_AND_BLOCKED_FIXED |
 
 ## Closure rule
 

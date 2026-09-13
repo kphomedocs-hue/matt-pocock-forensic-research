@@ -1,10 +1,10 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 78,
+  "failed_run_count": 79,
   "cancelled_run_count": 7,
-  "incident_run_count": 85,
-  "incident_entry_count": 85,
+  "incident_run_count": 86,
+  "incident_entry_count": 86,
   "classification_counts": {
     "CLASSIFIER_CLOSURE_GATE": 1,
     "CLASSIFIER_REFRESH_SUPERSEDED": 4,
@@ -13,12 +13,14 @@
     "FOUNDATION_GATE": 1,
     "FOUNDATION_PROVENANCE_GATE": 1,
     "FOUNDATION_REGISTER_GATE": 3,
+    "PHASE3_PROMOTION_PROVENANCE_PARSER": 1,
     "PUSH_RACE": 61,
     "STATUS_PARSER": 10
   },
   "impact_counts": {
     "DELAYED_PROMOTION": 10,
     "DETECTED_AND_BLOCKED": 6,
+    "DETECTED_AND_BLOCKED_FIXED": 1,
     "DISCARDED_EXECUTION_FIXED": 3,
     "FIXED_CONFIGURATION_MISMATCH": 1,
     "REDUNDANT_REFRESH_DISCARDED": 4,
@@ -1216,6 +1218,20 @@
       "classification": "CLASSIFIER_CLOSURE_GATE",
       "impact": "DETECTED_AND_BLOCKED",
       "reason": "The v3 closure gate correctly refused to pass while the preceding schema-transition incident remained unresolved; that root incident is now explicitly reconciled."
+    },
+    {
+      "run_id": 34738911437,
+      "run_conclusion": "failure",
+      "run_number": 1,
+      "workflow": "Promote Phase 3 connections",
+      "created_at": "2026-09-13T04:52:20Z",
+      "head_sha": "822ff6286269e970578a85d58f52060832e3b5d1",
+      "title": "phase3: automate fail-closed status promotion",
+      "job_id": 103675132996,
+      "failed_step": "Promote notes with per-file Phase 3 evidence",
+      "classification": "PHASE3_PROMOTION_PROVENANCE_PARSER",
+      "impact": "DETECTED_AND_BLOCKED_FIXED",
+      "reason": "The first Phase 3 promoter failed closed because it did not recognize the accepted legacy `Frozen blob SHA` note label. No note changes were committed; the parser was aligned with the foundation validator and the next run succeeded."
     }
   ]
 }
