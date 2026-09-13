@@ -1,0 +1,346 @@
+{
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "current_skill_count": 37,
+  "promoted_skill_count": 25,
+  "expected_promoted_router_targets": 24,
+  "router_skill_mentions": 24,
+  "promoted_targets_routed": 24,
+  "missing_promoted_targets": [],
+  "extra_nonpromoted_targets": [],
+  "rows": [
+    {
+      "name": "ask-matt",
+      "path": "skills/engineering/ask-matt/SKILL.md",
+      "mp_id": "MP-0063",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "code-review",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "mp_id": "MP-0065",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "codebase-design",
+      "path": "skills/engineering/codebase-design/SKILL.md",
+      "mp_id": "MP-0069",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "diagnosing-bugs",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "mp_id": "MP-0071",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "domain-modeling",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "mp_id": "MP-0076",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "grill-with-docs",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "mp_id": "MP-0078",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "implement",
+      "path": "skills/engineering/implement/SKILL.md",
+      "mp_id": "MP-0080",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "mp_id": "MP-0083",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "prototype",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "mp_id": "MP-0086",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "research",
+      "path": "skills/engineering/research/SKILL.md",
+      "mp_id": "MP-0089",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "resolving-merge-conflicts",
+      "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "mp_id": "MP-0091",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "mp_id": "MP-0093",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "tdd",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "mp_id": "MP-0100",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "to-spec",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "mp_id": "MP-0104",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "to-tickets",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "mp_id": "MP-0106",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "triage",
+      "path": "skills/engineering/triage/SKILL.md",
+      "mp_id": "MP-0110",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "wayfinder",
+      "path": "skills/engineering/wayfinder/SKILL.md",
+      "mp_id": "MP-0112",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "wizard",
+      "path": "skills/engineering/wizard/SKILL.md",
+      "mp_id": "MP-0114",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "claude-handoff",
+      "path": "skills/in-progress/claude-handoff/SKILL.md",
+      "mp_id": "MP-0118",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "implement-spec",
+      "path": "skills/in-progress/implement-spec/SKILL.md",
+      "mp_id": "MP-0120",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "loop-me",
+      "path": "skills/in-progress/loop-me/SKILL.md",
+      "mp_id": "MP-0122",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "retro",
+      "path": "skills/in-progress/retro/SKILL.md",
+      "mp_id": "MP-0124",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "setup-ts-deep-modules",
+      "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "mp_id": "MP-0126",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "writing-beats",
+      "path": "skills/in-progress/writing-beats/SKILL.md",
+      "mp_id": "MP-0129",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "writing-fragments",
+      "path": "skills/in-progress/writing-fragments/SKILL.md",
+      "mp_id": "MP-0131",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "writing-shape",
+      "path": "skills/in-progress/writing-shape/SKILL.md",
+      "mp_id": "MP-0133",
+      "invocation": "USER_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "git-guardrails-claude-code",
+      "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "mp_id": "MP-0136",
+      "invocation": "MODEL_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "migrate-to-shoehorn",
+      "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "mp_id": "MP-0139",
+      "invocation": "MODEL_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "scaffold-exercises",
+      "path": "skills/misc/scaffold-exercises/SKILL.md",
+      "mp_id": "MP-0141",
+      "invocation": "MODEL_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "setup-pre-commit",
+      "path": "skills/misc/setup-pre-commit/SKILL.md",
+      "mp_id": "MP-0143",
+      "invocation": "MODEL_INVOKED",
+      "promoted": false,
+      "expected_router_target": false,
+      "router_mentions": false
+    },
+    {
+      "name": "grill-me",
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "mp_id": "MP-0146",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "grilling",
+      "path": "skills/productivity/grilling/SKILL.md",
+      "mp_id": "MP-0148",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "handoff",
+      "path": "skills/productivity/handoff/SKILL.md",
+      "mp_id": "MP-0150",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "teach",
+      "path": "skills/productivity/teach/SKILL.md",
+      "mp_id": "MP-0156",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "to-questionnaire",
+      "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "mp_id": "MP-0158",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "wait-what",
+      "path": "skills/productivity/wait-what/SKILL.md",
+      "mp_id": "MP-0160",
+      "invocation": "USER_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    },
+    {
+      "name": "writing-for-agents",
+      "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "mp_id": "MP-0163",
+      "invocation": "MODEL_INVOKED",
+      "promoted": true,
+      "expected_router_target": true,
+      "router_mentions": true
+    }
+  ]
+}
