@@ -24,7 +24,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-001 | TDD loop semantics | CONFIRMED_DRIFT | PROMPT, DOCUMENTATION, STATIC_CONFIG | False | False | CT-001 | Operative SKILL.md plus changelog agree on red->green; README/bucket/Codex descriptions retain red-green-refactor. Prompt behavior is not machine-enforced. |
 | B-002 | ask-matt promoted/invocation counts | CONFIRMED_DRIFT | DOCUMENTATION, STATIC_CONFIG | False | False | CT-002 | Generated frozen distribution truth is 25 promoted with 14 user-invoked/11 model-invoked; ask-matt human docs retain 22/13 wording. |
 | B-003 | ask-matt target-source verification | CONFIRMED_GAP | DOCUMENTATION, PROMPT, NONE | False | False | CT-003 | Human docs demand trace evidence of target-source reading; operative ask-matt has no mandatory target-source-read step. The documented verification criterion is not enforced in the operative prompt. |
-| B-004 | package/plugin/lock version truth | RUNTIME_UNKNOWN | STATIC_CONFIG, EXECUTABLE_SCRIPT, CI | PARTIAL | False | CT-004 | package.json -> plugin.json synchronization is executable/release-wired, but package-lock root metadata remains 0.0.0 and is outside the sync script. |
+| B-004 | package/plugin/lock version truth | RUNTIME_UNKNOWN | STATIC_CONFIG, EXECUTABLE_SCRIPT, CI | PARTIAL | True | CT-004 | package.json -> plugin.json synchronization is executable/release-wired, but package-lock root metadata remains 0.0.0 and is outside the sync script. Direct frozen runtime observation: the stale 0.0.0 lock metadata was reproduced; npm pack selected package.json version 1.2.3, and an offline package-lock-only normalization rewrote both root lock version fields to 1.2.3. |
 | B-005 | Teach glossary format linkage | CONFIRMED_GAP | DOCUMENTATION, PROMPT, NONE | False | False | CT-005 | The support format exists and human docs describe it, but operative Teach does not load/reference it. The file is not a source-tree orphan; the operative linkage is missing. |
 | B-006 | Teach workspace-root resolution | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | CT-006 | Frozen source mixes co-located support references and relative workspace paths; reported issue evidence exists, but source inspection alone cannot settle harness working-directory resolution. |
 | B-007 | diagnosing-bugs redaction | CONFIRMED_DRIFT | PROMPT, DOCUMENTATION | False | False | CT-007 | Operative skill and changelog contain shipped redaction instructions while human docs still call the behavior unimplemented. Enforcement remains prompt-level, not a deterministic sanitizer. |
@@ -91,7 +91,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 
 - states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 10, 'CONFIRMED_MATCH': 30, 'CONFIRMED_WEAKNESS': 3, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
 - enforcement layers: `{'CI': 3, 'DOCUMENTATION': 21, 'EXECUTABLE_SCRIPT': 13, 'EXTERNAL_DEPENDENCY': 11, 'NONE': 9, 'PROMPT': 56, 'RUNTIME': 21, 'STATIC_CONFIG': 9}`
-- runtime observed rows: **7 / 65**
+- runtime observed rows: **8 / 65**
 - current CT coverage: **20 / 20**
 - integrity hard errors: **0**
 

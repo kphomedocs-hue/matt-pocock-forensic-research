@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 7,
-  "pending_total": 58,
+  "runtime_observed": 8,
+  "pending_total": 57,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 7,
+    "EXECUTION_OBSERVATION": 8,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 23,
+    "EXECUTION_OBSERVATION": 22,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -124,8 +124,8 @@
         "CI"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0055",
         "MP-0056",
@@ -144,7 +144,7 @@
         "CT-004"
       ],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Trace actual consumers of lockfile root version and determine practical effect."
+      "next_evidence": "Release-path observation remains separate under B-029; local npm behavior shows the stale root lock version is normalized and does not control npm pack versioning."
     },
     {
       "behavior_id": "B-005",

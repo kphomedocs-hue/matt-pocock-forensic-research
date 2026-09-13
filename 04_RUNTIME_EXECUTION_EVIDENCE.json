@@ -3,8 +3,36 @@
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "observed_source_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "generated_at_utc": "2026-09-13T09:37:52.900725+00:00",
+  "generated_at_utc": "2026-09-13T10:54:54.828003+00:00",
   "tests": [
+    {
+      "behavior_id": "B-004",
+      "passed": true,
+      "summary": "Frozen package/lock drift was reproduced; npm pack used package.json version 1.2.3, and offline package-lock-only normalization rewrote both root lockfile version fields to 1.2.3.",
+      "checks": [
+        {
+          "name": "frozen_fixture_contains_expected_version_drift",
+          "passed": true,
+          "returncode": 0
+        },
+        {
+          "name": "npm_pack_uses_package_json_version",
+          "passed": true,
+          "returncode": 0
+        },
+        {
+          "name": "offline_lockfile_normalization_succeeds",
+          "passed": true,
+          "returncode": 0
+        },
+        {
+          "name": "npm_normalizes_root_lock_versions_to_package_json",
+          "passed": true,
+          "returncode": 0
+        }
+      ],
+      "remaining_scope": "This establishes local npm practical behavior. It does not prove every CI/release consumer ignores the stale frozen lock metadata; release-path observation remains separate under B-029."
+    },
     {
       "behavior_id": "B-015",
       "passed": true,

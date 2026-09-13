@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **7/65**.
-Pending stronger evidence: **58**.
+Runtime-observed rows: **8/65**.
+Pending stronger evidence: **57**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 7 | 23 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 8 | 22 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -25,7 +25,7 @@ Pending stronger evidence: **58**.
 | B-001 | MACHINE_CONSUMER_VALIDATION | CONFIRMED_DRIFT | NO | MP-0025, MP-0100, MP-0029, MP-0061, MP-0101 | TDD loop semantics | Later current-state comparison and runtime adherence belong to later verification gates. |
 | B-002 | MACHINE_CONSUMER_VALIDATION | CONFIRMED_DRIFT | NO | MP-0018, MP-0030 | ask-matt promoted/invocation counts | No runtime reproduction needed to prove frozen numerical drift; later compare post-frozen current docs if relevant. |
 | B-003 | PROMPT_REDTEAM_LATER | CONFIRMED_GAP | NO | MP-0030, MP-0063 | ask-matt target-source verification | Determine whether this is intentional accepted design or should become an operative gate. |
-| B-004 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | NO | MP-0055, MP-0056, MP-0059, MP-0019, MP-0018 | package/plugin/lock version truth | Trace actual consumers of lockfile root version and determine practical effect. |
+| B-004 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | YES | MP-0055, MP-0056, MP-0059, MP-0019, MP-0018 | package/plugin/lock version truth | Release-path observation remains separate under B-029; local npm behavior shows the stale root lock version is normalized and does not control npm pack versioning. |
 | B-005 | PROMPT_REDTEAM_LATER | CONFIRMED_GAP | NO | MP-0051, MP-0152, MP-0156 | Teach glossary format linkage | Classify optional/manual behavior as accepted design or wire/retire the support format. |
 | B-006 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | NO | MP-0156 | Teach workspace-root resolution | Reproduce in a supported harness or obtain equivalent direct runtime evidence. |
 | B-007 | PROMPT_REDTEAM_LATER | CONFIRMED_DRIFT | NO | MP-0025, MP-0033, MP-0071 | diagnosing-bugs redaction | Runtime adherence is a later verification question; frozen docs drift is already established. |

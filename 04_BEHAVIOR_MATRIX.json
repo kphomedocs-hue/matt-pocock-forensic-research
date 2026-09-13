@@ -112,9 +112,9 @@
       ],
       "state": "RUNTIME_UNKNOWN",
       "machine_enforced": "PARTIAL",
-      "runtime_observed": false,
-      "adjudication": "package.json -> plugin.json synchronization is executable/release-wired, but package-lock root metadata remains 0.0.0 and is outside the sync script.",
-      "next_evidence": "Trace actual consumers of lockfile root version and determine practical effect."
+      "runtime_observed": true,
+      "adjudication": "package.json -> plugin.json synchronization is executable/release-wired, but package-lock root metadata remains 0.0.0 and is outside the sync script. Direct frozen runtime observation: the stale 0.0.0 lock metadata was reproduced; npm pack selected package.json version 1.2.3, and an offline package-lock-only normalization rewrote both root lock version fields to 1.2.3.",
+      "next_evidence": "Release-path observation remains separate under B-029; local npm behavior shows the stale root lock version is normalized and does not control npm pack versioning."
     },
     {
       "behavior_id": "B-005",
