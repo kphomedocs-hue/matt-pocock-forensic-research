@@ -73,6 +73,40 @@ Every one of the 37 current skills was then joined against both harness policies
 
 This is consistent with the repository's invocation governance: only model-invoked skills may be reached through the Skill tool. It also confirms that the historical illegal-cross-call defect represented by CT-H01 is not present in the frozen current workflow graph.
 
+## Batch 04 — ask-matt router expansion
+
+`03_ROUTER_MATRIX.md` / `.json` deterministically scan exact `/skill-name` labels in the frozen ask-matt source and compare them with the frozen Claude plugin's promoted set.
+
+### Machine result
+
+- Current skills: **37**
+- Promoted plugin skills: **25**
+- Expected promoted router targets excluding ask-matt itself: **24**
+- Exact promoted targets mentioned by ask-matt: **24 / 24**
+- Missing promoted router targets: **0**
+- Extra non-promoted router targets: **0**
+
+Therefore the historical router-completeness defect CT-H02 is **not recurring in the frozen current router target set**. This does not resolve semantic staleness inside individual routes: CT-009 still shows ask-matt describing a removed diagnosing-bugs → improve-codebase-architecture handoff.
+
+## Batch 05 — distribution symmetry
+
+`03_DISTRIBUTION_MATRIX.md` / `.json` compares every current skill across the frozen distribution and visibility surfaces: Claude plugin, maintainer local linking, list-skills visibility, root README, bucket README, docs page, ask-matt router, and Codex metadata.
+
+### Machine result
+
+- Current skills: **37**
+- Claude plugin promoted: **25**
+- Maintainer local-linked: **33**
+- `list-skills.sh` visible: **37**
+- Root README visible: **25**
+- Bucket README visible: **37**
+- Docs page exists: **25**
+- Ask-matt router visible: **24** (all promoted targets except ask-matt itself)
+- Codex metadata exists: **37**
+- Automated symmetry anomalies: **0**
+
+The 25/33/37 counts therefore represent intentional distribution tiers rather than an unexplained mismatch: promoted engineering/productivity skills are fully surfaced, in-progress skills remain locally linked but not promoted, and misc skills remain discoverable in their bucket/listing without entering the daily-driver local link set.
+
 ## Scope caution
 
-The expanded literal and invocation-policy joins materially improve connection coverage but still do **not** prove that every semantic relationship is mapped. Aggregate router relationships, distribution symmetry, and history-reference edges remain separate Phase 3 joins.
+The literal, invocation, router, and distribution joins materially improve connection coverage but still do **not** prove that every semantic relationship is mapped. History-reference edges and the formal per-file `CONNECTIONS TRACED` promotion gate remain major Phase 3 work.
