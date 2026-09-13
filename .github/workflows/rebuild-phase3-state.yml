@@ -1,0 +1,123 @@
+name: Rebuild Phase 3 state
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '01_FILE_CENSUS.json'
+      - '05_HISTORY_LEDGER.md'
+      - '03_REFERENCE_DISPOSITIONS.json'
+      - '03_ORPHAN_DISPOSITIONS.json'
+      - 'scripts/build_connection_graph.py'
+      - 'scripts/build_router_matrix.py'
+      - 'scripts/build_distribution_matrix.py'
+      - 'scripts/build_history_bindings.py'
+      - 'scripts/build_phase3_closure_index.py'
+      - '.github/workflows/rebuild-phase3-state.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-rebuild-phase3-state
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
+      - name: Rebuild ordered Phase 3 state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/build_connection_graph.py
+          python scripts/build_router_matrix.py
+          python scripts/build_distribution_matrix.py
+          python scripts/build_history_bindings.py
+          python scripts/build_phase3_closure_index.py
+      - name: Validate atomic Phase 3 outputs
+        run: |
+          python - <<'PY'
+          import json
+
+          graph = json.load(open('03_CONNECTION_EDGES.json', encoding='utf-8'))
+          assert graph['file_count'] == 164
+          assert graph['skill_count'] == 37
+          assert graph['extraction_rules_version'] >= 4
+          assert graph['invocation_policy_mismatch_count'] == 0
+          assert graph['illegal_operative_call_count'] == 0
+
+          router = json.load(open('03_ROUTER_MATRIX.json', encoding='utf-8'))
+          assert router['current_skill_count'] == 37
+          assert router['promoted_skill_count'] == 25
+          assert router['promoted_targets_routed'] == 24
+          assert not router['missing_promoted_targets']
+          assert not router['extra_nonpromoted_targets']
+
+          dist = json.load(open('03_DISTRIBUTION_MATRIX.json', encoding='utf-8'))
+          assert dist['skill_count'] == 37
+          assert dist['dimension_counts']['plugin_promoted'] == 25
+          assert dist['dimension_counts']['local_linked'] == 33
+          assert dist['dimension_counts']['list_skills_visible'] == 37
+          assert dist['dimension_counts']['codex_metadata_exists'] == 37
+          assert dist['anomaly_count'] == 0
+
+          hist = json.load(open('03_HISTORY_BINDINGS.json', encoding='utf-8'))
+          assert hist['file_count'] == 164
+          assert hist['history_event_count'] == 9
+          assert {e['history_id'] for e in hist['events']} == {f'H-{i:03d}' for i in range(1, 10)}
+
+          closure = json.load(open('03_PHASE3_CLOSURE_INDEX.json', encoding='utf-8'))
+          assert closure['file_count'] == 164
+          assert closure['state_counts'] == {'READY_CANDIDATE': 164}
+          assert closure['blocker_counts'] == {}
+          assert closure['semantic_orphan_disposition_count'] == 5
+
+          print('phase3 atomic rebuild: GREEN')
+          print('edges=', graph['edge_count'])
+          print('history_bindings=', hist['binding_count'])
+          print('closure=', closure['state_counts'])
+          PY
+      - name: Commit atomic Phase 3 generated state
+        run: |
+          paths=(
+            03_CONNECTION_EDGES.json
+            03_CONNECTION_INDEX.md
+            03_ROUTER_MATRIX.json
+            03_ROUTER_MATRIX.md
+            03_DISTRIBUTION_MATRIX.json
+            03_DISTRIBUTION_MATRIX.md
+            03_HISTORY_BINDINGS.json
+            03_HISTORY_BINDINGS.md
+            03_PHASE3_CLOSURE_INDEX.json
+            03_PHASE3_CLOSURE_INDEX.md
+          )
+          if [[ -z "$(git status --porcelain -- "${paths[@]}")" ]]; then
+            echo "No Phase 3 generated-state changes"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add "${paths[@]}"
+          git commit -m "phase3: rebuild atomic generated state"
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish atomic Phase 3 generated state after 5 attempts" >&2
+          exit 1
