@@ -1,0 +1,88 @@
+name: Phase 4 local runtime checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/run_phase4_local_runtime_checks.py'
+      - '.github/workflows/phase4-local-runtime-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-phase4-local-runtime-checks
+  cancel-in-progress: false
+
+jobs:
+  runtime-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout research repository
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Checkout frozen mattpocock/skills source
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: mattpocock/skills
+          ref: 3cca18b368ae95cdbdebbff572ccafa662551015
+          path: source
+          fetch-depth: 1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest research main
+        run: git pull --ff-only origin main
+      - name: Run benign frozen-source runtime checks
+        run: python scripts/run_phase4_local_runtime_checks.py --source source --apply
+      - name: Validate behavior matrix
+        run: python scripts/validate_behavior_matrix.py
+      - name: Rebuild Phase 4 coverage
+        run: python scripts/build_phase4_coverage.py
+      - name: Rebuild Phase 4 evidence-depth queue
+        run: python scripts/build_phase4_runtime_queue.py
+      - name: Refresh foundation parity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_foundation.py
+      - name: Enforce runtime-evidence acceptance gate
+        run: |
+          python - <<'PY'
+          import json
+          evidence = json.load(open('04_RUNTIME_EXECUTION_EVIDENCE.json', encoding='utf-8'))
+          matrix = json.load(open('04_BEHAVIOR_MATRIX.json', encoding='utf-8'))
+          integrity = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
+          queue = json.load(open('04_RUNTIME_OBSERVATION_QUEUE.json', encoding='utf-8'))
+          rows = {r['behavior_id']: r for r in matrix['rows']}
+          assert evidence['frozen_commit'] == '3cca18b368ae95cdbdebbff572ccafa662551015'
+          assert evidence['observed_source_head'] == evidence['frozen_commit']
+          assert evidence['all_passed'] is True
+          assert [t['behavior_id'] for t in evidence['tests']] == ['B-015', 'B-018', 'B-056']
+          assert all(rows[bid]['runtime_observed'] is True for bid in ('B-015', 'B-018', 'B-056'))
+          assert integrity['hard_errors'] == []
+          assert queue['hard_errors'] == []
+          assert queue['runtime_observed'] == integrity['runtime_observed_count']
+          print('runtime_observed=', integrity['runtime_observed_count'])
+          print('pending=', queue['pending_total'])
+          PY
+      - name: Commit runtime evidence and regenerated Phase 4 state
+        run: |
+          paths=(04_RUNTIME_EXECUTION_EVIDENCE.json 04_RUNTIME_EXECUTION_EVIDENCE.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo "Runtime evidence already current"
+            exit 0
+          fi
+          git commit -m "phase4: record local frozen-source runtime evidence"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish runtime evidence after retries" >&2
+          exit 1
