@@ -39,6 +39,14 @@ FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {
     34713153565,  # v3 closure gate correctly blocked on the transition run above
 }
 
+# Exact Phase 3 promotion incident: the first promoter recognized `Blob SHA`
+# but not the already-accepted legacy alias `Frozen blob SHA`. It failed before
+# writing notes; the parser was aligned with validate_foundation.py and the next
+# promotion run succeeded. Future promotion failures are not auto-excused.
+FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS = {
+    34738911437,
+}
+
 
 def request(url: str, accept: str = "application/vnd.github+json") -> bytes:
     headers = {
@@ -110,6 +118,12 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
             "CLASSIFIER_CLOSURE_GATE",
             "DETECTED_AND_BLOCKED",
             "The v3 closure gate correctly refused to pass while the preceding schema-transition incident remained unresolved; that root incident is now explicitly reconciled.",
+        )
+    if run_id in FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS:
+        return (
+            "PHASE3_PROMOTION_PROVENANCE_PARSER",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The first Phase 3 promoter failed closed because it did not recognize the accepted legacy `Frozen blob SHA` note label. No note changes were committed; the parser was aligned with the foundation validator and the next run succeeded.",
         )
 
     s = failed_step.lower()
