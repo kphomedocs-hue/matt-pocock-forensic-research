@@ -1,0 +1,105 @@
+{
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "file_count": 164,
+  "graph_edge_count": 530,
+  "weak_backtick_skill_reference_count": 129,
+  "weak_only_orphan_proof_count": 0,
+  "unmapped_extra_link_syntax_count": 0,
+  "support_owner_gap_count": 1,
+  "history_parity": [
+    {
+      "history_id": "H-001",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": true
+    },
+    {
+      "history_id": "H-002",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-003",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-004",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-005",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-006",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-007",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-008",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    },
+    {
+      "history_id": "H-009",
+      "state_ok": true,
+      "refs_ok": true,
+      "area_ok": false
+    }
+  ],
+  "master_ledger_blank_ref_row_count": 164,
+  "hard_errors": [
+    "History binding definition drift for H-002: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-003: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-004: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-005: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-006: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-007: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-008: state_ok=True refs_ok=True area_ok=False",
+    "History binding definition drift for H-009: state_ok=True refs_ok=True area_ok=False"
+  ],
+  "review_items": [],
+  "improvements": [
+    {
+      "kind": "SUPPORT_OWNERSHIP_GAPS",
+      "count": 1,
+      "severity": "MEDIUM",
+      "note": "Physical co-location proves ownership structurally but the graph does not encode it; add SUPPORT_BINDING edges or explicit dispositions.",
+      "items": [
+        {
+          "mp_id": "MP-0152",
+          "path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
+          "owner": "skills/productivity/teach/SKILL.md"
+        }
+      ]
+    },
+    {
+      "kind": "MASTER_LEDGER_CONNECTION_COLUMNS_BLANK",
+      "count": 164,
+      "severity": "MEDIUM",
+      "note": "Ref-in/Ref-out columns are preserved from old rows rather than derived from the current graph."
+    },
+    {
+      "kind": "NO_PHASE3_BUILD_FINGERPRINT_MANIFEST",
+      "count": 1,
+      "severity": "HIGH",
+      "note": "Atomic workflow reduces drift, but generated artifacts do not yet carry SHA-256 fingerprints of generator inputs and outputs."
+    }
+  ]
+}
