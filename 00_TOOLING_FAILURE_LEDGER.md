@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **82**
+Failed workflow runs enumerated: **83**
 
 Cancelled workflow runs enumerated: **7**
 
-Total incident runs: **89**
+Total incident runs: **90**
 
-Incident entries classified: **89**
+Incident entries classified: **90**
 
 Unknown entries: **0**
 
@@ -29,6 +29,7 @@ Unresolved/review-required entries: **0**
 | FOUNDATION_REGISTER_GATE | 3 |
 | PHASE3_PROMOTION_PROVENANCE_PARSER | 1 |
 | PHASE3_QUALITY_RECHECK_GATE | 1 |
+| PHASE4_BATCH_BOOTSTRAP_TRIGGER | 1 |
 | PUSH_RACE | 61 |
 | STATUS_PARSER | 10 |
 
@@ -41,6 +42,7 @@ Unresolved/review-required entries: **0**
 | DETECTED_AND_BLOCKED_FIXED | 2 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 1 |
+| NO_DATA_CHANGE_FIXED | 1 |
 | REDUNDANT_REFRESH_DISCARDED | 4 |
 | TEMPORARILY_STALE | 61 |
 
@@ -137,6 +139,7 @@ Unresolved/review-required entries: **0**
 | 34740170053 | failure | 2026-09-13T05:23:12Z | Validate Phase 3 quality | Enforce Phase 3 quality gate | PHASE3_QUALITY_RECHECK_GATE | DETECTED_AND_BLOCKED_FIXED |
 | 34740488271 | failure | 2026-09-13T05:30:57Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 34740614575 | failure | 2026-09-13T05:34:01Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34745903691 | failure | 2026-09-13T07:42:42Z | Apply Phase 4 batch | Apply pending Phase 4 batch | PHASE4_BATCH_BOOTSTRAP_TRIGGER | NO_DATA_CHANGE_FIXED |
 
 ## Closure rule
 

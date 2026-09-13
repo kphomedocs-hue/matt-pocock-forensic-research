@@ -1,10 +1,10 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 82,
+  "failed_run_count": 83,
   "cancelled_run_count": 7,
-  "incident_run_count": 89,
-  "incident_entry_count": 89,
+  "incident_run_count": 90,
+  "incident_entry_count": 90,
   "classification_counts": {
     "CLASSIFIER_CLOSURE_GATE": 3,
     "CLASSIFIER_REFRESH_SUPERSEDED": 4,
@@ -15,6 +15,7 @@
     "FOUNDATION_REGISTER_GATE": 3,
     "PHASE3_PROMOTION_PROVENANCE_PARSER": 1,
     "PHASE3_QUALITY_RECHECK_GATE": 1,
+    "PHASE4_BATCH_BOOTSTRAP_TRIGGER": 1,
     "PUSH_RACE": 61,
     "STATUS_PARSER": 10
   },
@@ -24,6 +25,7 @@
     "DETECTED_AND_BLOCKED_FIXED": 2,
     "DISCARDED_EXECUTION_FIXED": 3,
     "FIXED_CONFIGURATION_MISMATCH": 1,
+    "NO_DATA_CHANGE_FIXED": 1,
     "REDUNDANT_REFRESH_DISCARDED": 4,
     "TEMPORARILY_STALE": 61
   },
@@ -1275,6 +1277,20 @@
       "classification": "CLASSIFIER_CLOSURE_GATE",
       "impact": "DETECTED_AND_BLOCKED",
       "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
+    },
+    {
+      "run_id": 34745903691,
+      "run_conclusion": "failure",
+      "run_number": 1,
+      "workflow": "Apply Phase 4 batch",
+      "created_at": "2026-09-13T07:42:42Z",
+      "head_sha": "a5be1eddf79981fd08f1c4fb30b6ed3b6adc25e5",
+      "title": "phase4: add atomic batch application workflow",
+      "job_id": 103693684416,
+      "failed_step": "Apply pending Phase 4 batch",
+      "classification": "PHASE4_BATCH_BOOTSTRAP_TRIGGER",
+      "impact": "NO_DATA_CHANGE_FIXED",
+      "reason": "Creating the Phase 4 batch workflow matched its own bootstrap path filter, so the importer ran before any `04_PHASE4_BATCH.json` existed and failed closed. No research artifact was changed. The automatic trigger was narrowed to batch-file pushes only."
     }
   ]
 }
