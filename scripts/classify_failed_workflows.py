@@ -31,6 +31,7 @@ FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS = {34713138258}
 FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {34713153565}
 FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS = {34738911437}
 FIXED_PHASE3_QUALITY_RECHECK_IDS = {34740170053}
+FIXED_PHASE4_BATCH_BOOTSTRAP_TRIGGER_IDS = {34745903691}
 
 
 def request(url: str, accept: str = "application/vnd.github+json") -> bytes:
@@ -113,6 +114,12 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
             "PHASE3_QUALITY_RECHECK_GATE",
             "DETECTED_AND_BLOCKED_FIXED",
             "The first second-order Phase 3 quality gate deliberately failed closed after exposing duplicated history-definition truth and additional Phase 3 quality debt. History definitions were moved to the durable ledger, master-ledger connection counts and cryptographic build fingerprints were added, and the strengthened atomic Phase 3 rebuild subsequently passed.",
+        )
+    if run_id in FIXED_PHASE4_BATCH_BOOTSTRAP_TRIGGER_IDS:
+        return (
+            "PHASE4_BATCH_BOOTSTRAP_TRIGGER",
+            "NO_DATA_CHANGE_FIXED",
+            "Creating the Phase 4 batch workflow matched its own bootstrap path filter, so the importer ran before any `04_PHASE4_BATCH.json` existed and failed closed. No research artifact was changed. The automatic trigger was narrowed to batch-file pushes only.",
         )
 
     s = failed_step.lower()
@@ -223,9 +230,6 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
         )
 
     if "validate failure ledger outputs" in s or "validate tooling incident ledger outputs" in s:
-        # If classification itself completed and the only subsequent failure is the
-        # zero-unknown/zero-unresolved assertion, the control worked as designed.
-        # The root incident(s) remain separately listed in that generated ledger.
         match = re.search(
             r"classified\s+\d+\s+incident entries.*?unknown=(\d+);\s*unresolved=(\d+)",
             l,
