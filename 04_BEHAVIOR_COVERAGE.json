@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "phase": 4,
+  "skill_denominator": 37,
+  "covered_skills": 22,
+  "uncovered_skills": 15,
+  "uncovered_mp_ids": [
+    "MP-0078",
+    "MP-0091",
+    "MP-0118",
+    "MP-0122",
+    "MP-0129",
+    "MP-0131",
+    "MP-0133",
+    "MP-0139",
+    "MP-0141",
+    "MP-0146",
+    "MP-0148",
+    "MP-0150",
+    "MP-0158",
+    "MP-0160",
+    "MP-0163"
+  ],
+  "uncovered_paths": [
+    "skills/engineering/grill-with-docs/SKILL.md",
+    "skills/engineering/resolving-merge-conflicts/SKILL.md",
+    "skills/in-progress/claude-handoff/SKILL.md",
+    "skills/in-progress/loop-me/SKILL.md",
+    "skills/in-progress/writing-beats/SKILL.md",
+    "skills/in-progress/writing-fragments/SKILL.md",
+    "skills/in-progress/writing-shape/SKILL.md",
+    "skills/misc/migrate-to-shoehorn/SKILL.md",
+    "skills/misc/scaffold-exercises/SKILL.md",
+    "skills/productivity/grill-me/SKILL.md",
+    "skills/productivity/grilling/SKILL.md",
+    "skills/productivity/handoff/SKILL.md",
+    "skills/productivity/to-questionnaire/SKILL.md",
+    "skills/productivity/wait-what/SKILL.md",
+    "skills/productivity/writing-for-agents/SKILL.md"
+  ],
+  "behavior_row_count": 38,
+  "covered_state_occurrences": {
+    "CONFIRMED_DRIFT": 5,
+    "CONFIRMED_GAP": 13,
+    "CONFIRMED_MATCH": 8,
+    "CONFIRMED_WEAKNESS": 2,
+    "RUNTIME_UNKNOWN": 5,
+    "STATICALLY_ENFORCED": 4
+  },
+  "hard_errors": [],
+  "skills": [
+    {
+      "mp_id": "MP-0063",
+      "path": "skills/engineering/ask-matt/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-003",
+        "B-009"
+      ],
+      "states": [
+        "CONFIRMED_DRIFT",
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-003",
+        "CT-009"
+      ]
+    },
+    {
+      "mp_id": "MP-0065",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-010",
+        "B-027"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-010",
+        "CT-014"
+      ]
+    },
+    {
+      "mp_id": "MP-0069",
+      "path": "skills/engineering/codebase-design/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-036"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0071",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-007",
+        "B-009",
+        "B-023"
+      ],
+      "states": [
+        "CONFIRMED_DRIFT",
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": [
+        "CT-007",
+        "CT-009"
+      ]
+    },
+    {
+      "mp_id": "MP-0076",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-028"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0078",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0080",
+      "path": "skills/engineering/implement/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-010",
+        "B-033"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-010",
+        "CT-017"
+      ]
+    },
+    {
+      "mp_id": "MP-0083",
+      "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-008"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": [
+        "CT-008"
+      ]
+    },
+    {
+      "mp_id": "MP-0086",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-035"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0089",
+      "path": "skills/engineering/research/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-034"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0091",
+      "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0093",
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-021",
+        "B-022",
+        "B-037"
+      ],
+      "states": [
+        "CONFIRMED_MATCH",
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0100",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-001"
+      ],
+      "states": [
+        "CONFIRMED_DRIFT"
+      ],
+      "contradiction_ids": [
+        "CT-001"
+      ]
+    },
+    {
+      "mp_id": "MP-0104",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-030"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-015"
+      ]
+    },
+    {
+      "mp_id": "MP-0106",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-030",
+        "B-031",
+        "B-032",
+        "B-033"
+      ],
+      "states": [
+        "CONFIRMED_GAP",
+        "CONFIRMED_MATCH"
+      ],
+      "contradiction_ids": [
+        "CT-015",
+        "CT-016",
+        "CT-017"
+      ]
+    },
+    {
+      "mp_id": "MP-0110",
+      "path": "skills/engineering/triage/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-024",
+        "B-025",
+        "B-038"
+      ],
+      "states": [
+        "CONFIRMED_GAP",
+        "CONFIRMED_MATCH",
+        "CONFIRMED_WEAKNESS"
+      ],
+      "contradiction_ids": [
+        "CT-018"
+      ]
+    },
+    {
+      "mp_id": "MP-0112",
+      "path": "skills/engineering/wayfinder/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-013"
+      ],
+      "states": [
+        "CONFIRMED_WEAKNESS"
+      ],
+      "contradiction_ids": [
+        "CT-013"
+      ]
+    },
+    {
+      "mp_id": "MP-0114",
+      "path": "skills/engineering/wizard/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-015"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0118",
+      "path": "skills/in-progress/claude-handoff/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0120",
+      "path": "skills/in-progress/implement-spec/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-026",
+        "B-027"
+      ],
+      "states": [
+        "CONFIRMED_GAP",
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": [
+        "CT-014"
+      ]
+    },
+    {
+      "mp_id": "MP-0122",
+      "path": "skills/in-progress/loop-me/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0124",
+      "path": "skills/in-progress/retro/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-011"
+      ],
+      "states": [
+        "CONFIRMED_DRIFT"
+      ],
+      "contradiction_ids": [
+        "CT-011"
+      ]
+    },
+    {
+      "mp_id": "MP-0126",
+      "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-012",
+        "B-014"
+      ],
+      "states": [
+        "CONFIRMED_GAP",
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": [
+        "CT-012"
+      ]
+    },
+    {
+      "mp_id": "MP-0129",
+      "path": "skills/in-progress/writing-beats/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0131",
+      "path": "skills/in-progress/writing-fragments/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0133",
+      "path": "skills/in-progress/writing-shape/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0136",
+      "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-016"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0139",
+      "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0141",
+      "path": "skills/misc/scaffold-exercises/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0143",
+      "path": "skills/misc/setup-pre-commit/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-017"
+      ],
+      "states": [
+        "STATICALLY_ENFORCED"
+      ],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0146",
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0148",
+      "path": "skills/productivity/grilling/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0150",
+      "path": "skills/productivity/handoff/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0156",
+      "path": "skills/productivity/teach/SKILL.md",
+      "covered": true,
+      "behavior_ids": [
+        "B-005",
+        "B-006"
+      ],
+      "states": [
+        "CONFIRMED_GAP",
+        "RUNTIME_UNKNOWN"
+      ],
+      "contradiction_ids": [
+        "CT-005",
+        "CT-006"
+      ]
+    },
+    {
+      "mp_id": "MP-0158",
+      "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0160",
+      "path": "skills/productivity/wait-what/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    },
+    {
+      "mp_id": "MP-0163",
+      "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "covered": false,
+      "behavior_ids": [],
+      "states": [],
+      "contradiction_ids": []
+    }
+  ]
+}
