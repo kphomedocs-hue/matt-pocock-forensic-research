@@ -16,9 +16,7 @@ No project phase may depend on information that exists only in GPT/chat context.
 - Owner: `kphomedocs-hue`
 - Default branch: `main`
 - Connected account has admin/maintain/push permissions.
-- Repository visibility at the time of this audit: **PUBLIC**.
-
-The repository being public is a GitHub visibility choice, not a storage-integrity defect. If the research should not be publicly readable, change the repository to private in GitHub settings.
+- Repository visibility at this audit: **PUBLIC**.
 
 ## Frozen source identity
 
@@ -29,70 +27,41 @@ The repository being public is a GitHub visibility choice, not a storage-integri
 
 ## Durable coverage confirmed
 
-### Project control / resume state
+### Control and resume state
 
-Stored in GitHub:
+Stored in GitHub: `00_RESEARCH_MANIFEST.md`, `00_RESEARCH_SCHEMA.md`, `RESEARCH_STATUS.md`, and this file. These define the hard rule, gates, current phase state, resume procedure, and the rule that chat memory is not authoritative.
 
-- `00_RESEARCH_MANIFEST.md`
-- `00_RESEARCH_SCHEMA.md`
-- `RESEARCH_STATUS.md`
-- `00_STORAGE_INTEGRITY_AUDIT.md`
+### Phase 1–2
 
-These define the hard rule, gates, current phase state, resume procedure, and the rule that chat memory is not authoritative.
+GitHub stores `01_FILE_CENSUS.json`, `01_MASTER_FILE_LEDGER.md`, all `02_FILE_NOTES/MP-0001.md` through `MP-0164.md`, foundation reports, scripts and workflows.
 
-### Phase 1–2 — census and physical evidence
+Current foundation state proves **164/164** census rows, **164/164** durable notes, **164 CONNECTIONS TRACED**, direct frozen-source provenance on all notes, **0 hard errors** and **0 warnings**.
 
-Stored in GitHub:
+### Phase 3
 
-- `01_FILE_CENSUS.json`
-- `01_MASTER_FILE_LEDGER.md`
-- `02_FILE_NOTES/MP-0001.md` through `MP-0164.md`
-- `00_FOUNDATION_INTEGRITY.md/.json`
-- deterministic rebuild/validation tooling under `scripts/` and `.github/workflows/`
+GitHub stores the graph/index, reference/orphan dispositions, router/distribution/history matrices, closure index, Phase 3 quality report and SHA-256 build manifest.
 
-Current foundation state proves 164/164 census rows, 164/164 durable notes, 164 `CONNECTIONS TRACED`, direct frozen-source provenance on all notes, 0 hard errors and 0 warnings.
+Current machine state: extraction rules v5, **554 edges**, **554/554** stable edge IDs, **490/554** literal source-line provenance, 0 invocation-policy mismatches, 0 illegal operative calls, 0 weak-only orphan proofs, 0 unmapped extra-link syntax, 0 support-owner gaps, H-001…H-009 parity green, 0 blank master-ledger connection rows, and Phase 3 quality hard errors/review items/improvements = **0/0/0**.
 
-### Phase 3 — connection mapping
-
-Stored in GitHub:
-
-- `03_CONNECTION_GRAPH.md`
-- `03_CONNECTION_EDGES.json`
-- `03_CONNECTION_INDEX.md`
-- `03_CONNECTION_RECONCILIATION.md`
-- `03_REFERENCE_DISPOSITIONS.json`
-- `03_ORPHAN_RECONCILIATION.md`
-- `03_ORPHAN_DISPOSITIONS.json`
-- `03_ROUTER_MATRIX.md/.json`
-- `03_DISTRIBUTION_MATRIX.md/.json`
-- `03_HISTORY_BINDINGS.md/.json`
-- `03_PHASE3_CLOSURE_INDEX.md/.json`
-- `03_PHASE3_QUALITY.md/.json`
-- `03_PHASE3_BUILD_MANIFEST.md/.json`
-
-Current machine state: extraction rules v5, 554 edges, 554/554 stable edge IDs, 490/554 literal source-line provenance, 0 invocation-policy mismatches, 0 illegal operative calls, 0 weak-only orphan proofs, 0 unmapped extra-link syntax, 0 support-owner gaps, H-001…H-009 parity all green, 0 blank master-ledger Ref-in/Ref-out rows, and Phase 3 quality hard errors/review items/improvements = 0/0/0.
-
-The Phase 3 build manifest stores SHA-256 fingerprints for authoritative generator/acceptance inputs and generated outputs. Phase 3 can therefore be reconstructed and checked from GitHub without GPT memory.
+Phase 3 can be reconstructed and checked from GitHub without GPT memory.
 
 ### Contradictions and history
 
-Stored in GitHub:
+GitHub stores `04_CONTRADICTION_REGISTER.md`, `05_HISTORY_LEDGER.md`, and `03_HISTORY_BINDINGS.md/.json`.
 
-- `04_CONTRADICTION_REGISTER.md`
-- `05_HISTORY_LEDGER.md`
-- `03_HISTORY_BINDINGS.md/.json`
+The current contradiction register contains **CT-001 through CT-018** plus historical **CT-H01 through CT-H03**. Recent findings include:
 
-The current contradiction register contains **CT-001 through CT-017** plus historical **CT-H01 through CT-H03**. The newest durable source findings are:
+- CT-014: implement-spec post-review repair changes lack a mandatory post-fix acceptance pass;
+- CT-015: parent spec `ready-for-agent` routing can be consumed as executable AFK work;
+- CT-016: to-tickets has no operative falsifiability/red-at-base acceptance-criteria gate;
+- CT-017: implement does not publish ticket completion needed for dependency-frontier progression;
+- CT-018: triage quick override can apply `ready-for-agent` without the authoritative Agent Brief required by the normal state contract.
 
-- CT-015: parent spec `ready-for-agent` can be consumed as executable work by AFK polling;
-- CT-016: `to-tickets` does not operatively require acceptance criteria to be falsifiable/red at base;
-- CT-017: `implement` does not close/reconcile completed tickets, so dependency frontiers require manual state repair.
-
-History definitions are durable and the Phase 3 binding generator derives event definitions from the durable history ledger rather than a duplicate hardcoded table.
+History definitions remain durable and machine-linked.
 
 ### Phase 4 working state
 
-Stored in GitHub:
+GitHub stores:
 
 - `04_BEHAVIOR_MATRIX.json`
 - `04_BEHAVIOR_MATRIX.md`
@@ -101,62 +70,43 @@ Stored in GitHub:
 - `scripts/validate_behavior_matrix.py`
 - `.github/workflows/validate-phase4-behavior.yml`
 
-Current validated working state:
+Current validated state:
 
-- behavior rows: **37**;
+- behavior rows: **38**;
 - hard integrity errors: **0**;
-- runtime observed: **0/37**;
-- current contradiction IDs represented: **17/17**;
-- latest validator proof: run `34743836239` — **SUCCESS**.
+- runtime observed: **0/38**;
+- current CT coverage: **18/18**;
+- uncovered current CT IDs: **0**;
+- strengthened validator proof: run `34744189799` — **SUCCESS**.
 
-State counts:
+State counts: `CONFIRMED_DRIFT` 5, `CONFIRMED_GAP` 9, `CONFIRMED_MATCH` 8, `CONFIRMED_WEAKNESS` 2, `RUNTIME_UNKNOWN` 6, `STATICALLY_ENFORCED` 8.
 
-- `CONFIRMED_DRIFT`: 5
-- `CONFIRMED_GAP`: 8
-- `CONFIRMED_MATCH`: 8
-- `CONFIRMED_WEAKNESS`: 2
-- `RUNTIME_UNKNOWN`: 6
-- `STATICALLY_ENFORCED`: 8
+The Phase 4 validator now fails closed if any current contradiction ID lacks a behavior row. Phase 4 remains in progress and no row alone promotes a file to VERIFIED.
 
-The latest durable rows add `to-spec` parent-routing behavior, `to-tickets` approval and acceptance-criteria quality, `implement` ticket lifecycle/frontier closure, research primary-source discipline, prototype branch isolation/capture, codebase-design vocabulary discipline, and setup label materialization as a runtime-unknown dependency.
+### Tooling integrity / incidents
 
-Phase 4 remains intentionally in progress; no row is treated as sufficient to promote a file to VERIFIED.
+GitHub stores `00_TOOLING_INTEGRITY_AUDIT.md`, `00_TOOLING_FAILURE_LEDGER.md/.json`, classifier tooling and workflow configuration.
 
-### Tooling integrity / incident history
-
-Stored in GitHub:
-
-- `00_TOOLING_INTEGRITY_AUDIT.md`
-- `00_TOOLING_FAILURE_LEDGER.md/.json`
-- `scripts/classify_failed_workflows.py`
-- `.github/workflows/classify-tooling-failures.yml`
-
-Latest closed incident state remains 89/89 classified with 0 unknown and 0 unresolved/review-required; the latest Phase 4 validations completed successfully and introduced no new failure/cancellation incident.
-
-### Reproducibility / automation
-
-GitHub contains the scripts and workflows required to rebuild or validate census/ledger state, Phase 3 graph/router/distribution/history/closure/provenance/quality state, Phase 3 promotion, Phase 4 behavior validation, note normalization, foundation validation, and tooling-incident classification.
+Latest closed incident state remains **89/89 classified**, with **0 unknown**, **0 unresolved/review-required**, and no evidence-corruption incident found.
 
 ## GPT/chat storage rule
 
-ChatGPT may temporarily contain copies, explanations, or summaries of project information as part of a live conversation. This audit does **not** claim that the ChatGPT service stores zero conversational data internally.
+ChatGPT may temporarily contain copies, explanations, or summaries of project information during a live conversation. This audit does **not** claim that the ChatGPT service stores zero conversational data internally.
 
 The enforceable project rule is:
 
 > **No important or useful project datum may exist only in GPT/chat context.**
 
-For this project:
+1. All authoritative facts needed to resume work must be committed to GitHub.
+2. New material findings, contradictions, statuses, tooling defects and verification results must be made durable in GitHub in the same working session when feasible.
+3. Chat summaries are secondary conveniences only.
+4. Future sessions must reload GitHub before continuing.
+5. No READ / CONNECTIONS TRACED / VERIFIED / phase-complete claim may be promoted from conversational memory.
+6. When chat and GitHub disagree, committed source/provenance artifacts control and stale human summaries must be repaired.
+7. Useful analysis produced only in chat is **NOT DURABLE** and must not be relied upon after the session.
 
-1. all authoritative facts required to resume work must be committed to GitHub;
-2. any new material finding, contradiction, status change, graph change, tooling defect, or verification result must be written to GitHub in the same working session when feasible;
-3. chat summaries are secondary conveniences only;
-4. a future session must reload GitHub before continuing;
-5. no READ / CONNECTIONS TRACED / VERIFIED / phase-complete claim may be promoted from conversational memory;
-6. when chat and GitHub disagree, GitHub source/provenance artifacts control and stale human summaries must be repaired;
-7. useful analysis produced in chat but not committed is **NOT DURABLE** and must not be relied upon after the session.
-
-## Current storage-integrity conclusion
+## Current conclusion
 
 **PASS, with the visibility caveat that the repository is public.**
 
-At the time of this audit, no known important project state required to resume Phases 1–4 exists only in GPT/chat context. The authoritative census, 164 file notes, Phase 3 graph/closure/quality/provenance evidence, CT-001…CT-017 contradiction evidence, history ledger, 37-row Phase 4 working matrix, tooling incident history, scripts, workflows, and current status are stored in the user's GitHub repository.
+No known important state required to resume Phases 1–4 exists only in GPT/chat context. The census, 164 file notes, Phase 3 graph/closure/quality/provenance evidence, CT-001…CT-018, history, the 38-row Phase 4 matrix, tooling incident history, scripts, workflows, and current status are stored in the user's GitHub repository.
