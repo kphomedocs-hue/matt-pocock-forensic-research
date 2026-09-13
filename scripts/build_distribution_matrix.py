@@ -6,6 +6,7 @@ import base64
 import json
 import os
 import pathlib
+import posixpath
 import re
 import urllib.request
 from collections import Counter
@@ -49,10 +50,6 @@ def invocation_class(text: str) -> str:
     ) else "MODEL_INVOKED"
 
 
-def token_pattern(name: str) -> re.Pattern[str]:
-    return re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(name)}(?![A-Za-z0-9_-])")
-
-
 def slash_pattern(name: str) -> re.Pattern[str]:
     return re.compile(rf"(?<![A-Za-z0-9_-])/{re.escape(name)}(?![A-Za-z0-9_-])")
 
@@ -62,6 +59,31 @@ def bucket_for(path: str) -> str:
     if len(parts) < 4 or parts[0] != "skills":
         raise ValueError(path)
     return parts[1]
+
+
+def normalize_link(source_path: str, raw: str) -> str | None:
+    raw = raw.strip()
+    if not raw or raw.startswith(("http://", "https://", "mailto:", "#")):
+        return None
+    raw = raw.split("#", 1)[0].split("?", 1)[0]
+    if not raw:
+        return None
+    if raw.startswith("/"):
+        return raw.lstrip("/")
+    return posixpath.normpath(posixpath.join(posixpath.dirname(source_path), raw)).removeprefix("./")
+
+
+def markdown_internal_targets(source_path: str, text: str) -> set[str]:
+    targets: set[str] = set()
+    for raw in re.findall(r"\[[^\]]*\]\(([^)]+)\)", text):
+        target = normalize_link(source_path, raw)
+        if target:
+            targets.add(target)
+    for a, b in re.findall(r"^\s*\[[^\]]+\]:\s*(?:<([^>]+)>|(\S+))", text, re.MULTILINE):
+        target = normalize_link(source_path, a or b)
+        if target:
+            targets.add(target)
+    return targets
 
 
 def main() -> None:
@@ -129,9 +151,11 @@ def main() -> None:
         raise SystemExit("list-skills semantics changed; review parser")
     list_visible_set = {row["path"] for row in skills}
 
-    root_readme = text("README.md")
-    bucket_readmes = {
-        bucket: text(f"skills/{bucket}/README.md")
+    root_targets = markdown_internal_targets("README.md", text("README.md"))
+    bucket_targets = {
+        bucket: markdown_internal_targets(
+            f"skills/{bucket}/README.md", text(f"skills/{bucket}/README.md")
+        )
         for bucket in {row["bucket"] for row in skills}
     }
     ask_text = text("skills/engineering/ask-matt/SKILL.md")
@@ -148,8 +172,8 @@ def main() -> None:
             "plugin_promoted": path in plugin_set,
             "local_linked": path in local_link_set,
             "list_skills_visible": path in list_visible_set,
-            "root_readme_visible": bool(token_pattern(name).search(root_readme)),
-            "bucket_readme_visible": bool(token_pattern(name).search(bucket_readmes[bucket])),
+            "root_readme_visible": path in root_targets,
+            "bucket_readme_visible": path in bucket_targets[bucket],
             "docs_page_exists": docs_path in by_path,
             "ask_matt_router_visible": bool(slash_pattern(name).search(ask_text)),
             "codex_metadata_exists": metadata_path in by_path,
@@ -189,6 +213,7 @@ def main() -> None:
     payload = {
         "source_repo": SOURCE_REPO,
         "frozen_commit": FROZEN_COMMIT,
+        "visibility_evidence": "README visibility is resolved from explicit Markdown links to exact SKILL.md paths, not name-token presence.",
         "skill_count": len(rows),
         "bucket_counts": dict(sorted(bucket_counts.items())),
         "dimension_counts": counts,
@@ -204,6 +229,8 @@ def main() -> None:
         f"Frozen source: `{SOURCE_REPO}` @ `{FROZEN_COMMIT}`.",
         "",
         f"Current skills: **{len(rows)}**. Automated symmetry anomalies: **{anomaly_count}**.",
+        "",
+        "README visibility is based on explicit Markdown links resolving to the exact `SKILL.md` path; bare name-token presence does not count.",
         "",
         "Dimension counts:",
         "",
@@ -233,7 +260,7 @@ def main() -> None:
         lines.append("")
 
     OUT_MD.write_text("\n".join(lines), encoding="utf-8")
-    print(f"distribution counts={counts}; anomalies={anomaly_count}")
+    print(f"distribution counts={counts}; anomalies={anomaly_count}; readme_evidence=exact-links")
 
 
 if __name__ == "__main__":
