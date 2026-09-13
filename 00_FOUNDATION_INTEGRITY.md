@@ -28,7 +28,7 @@ These are normalization measurements, not Phase 2 failures. Existing evidence is
 
 - Current contradiction IDs: **20**
 - Historical contradiction IDs: **3**
-- History entries: **9**
+- History entries: **10**
 - Note contradiction refs missing from register: **0**
 - Note history refs missing from ledger: **0**
 
