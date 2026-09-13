@@ -10,9 +10,10 @@ on:
   workflow_run:
     workflows:
       - 'Rebuild master ledger'
-      - 'Rebuild connection graph'
       - 'Validate forensic foundation'
       - 'Normalize note metadata'
+      - 'Rebuild Phase 3 state'
+      - 'Promote Phase 3 connections'
     types: [completed]
 
 permissions:
