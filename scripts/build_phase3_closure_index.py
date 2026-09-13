@@ -20,6 +20,7 @@ DISTRIBUTION = pathlib.Path("03_DISTRIBUTION_MATRIX.json")
 ROUTER = pathlib.Path("03_ROUTER_MATRIX.json")
 HISTORY = pathlib.Path("03_HISTORY_BINDINGS.json")
 DISPOSITIONS = pathlib.Path("03_REFERENCE_DISPOSITIONS.json")
+ORPHAN_DISPOSITIONS = pathlib.Path("03_ORPHAN_DISPOSITIONS.json")
 OUT_JSON = pathlib.Path("03_PHASE3_CLOSURE_INDEX.json")
 OUT_MD = pathlib.Path("03_PHASE3_CLOSURE_INDEX.md")
 
@@ -70,6 +71,7 @@ def main() -> None:
     router = load(ROUTER)
     history = load(HISTORY)
     dispositions = load(DISPOSITIONS)
+    orphan_dispositions = load(ORPHAN_DISPOSITIONS)
 
     for label, obj in [
         ("census", census),
@@ -78,6 +80,7 @@ def main() -> None:
         ("router", router),
         ("history", history),
         ("dispositions", dispositions),
+        ("orphan_dispositions", orphan_dispositions),
     ]:
         if obj.get("frozen_commit") != FROZEN_COMMIT:
             raise SystemExit(f"{label} frozen commit mismatch")
@@ -116,6 +119,24 @@ def main() -> None:
     if undisposed:
         raise SystemExit(f"Raw unresolved references lack dispositions: {undisposed}")
 
+    orphan_by_path: dict[str, dict] = {}
+    for item in orphan_dispositions.get("dispositions", []):
+        path = item.get("path")
+        if not path or path in orphan_by_path:
+            raise SystemExit(f"Invalid or duplicate orphan disposition path: {path}")
+        census_row = by_path.get(path)
+        if census_row is None:
+            raise SystemExit(f"Orphan disposition path not in frozen census: {path}")
+        if item.get("mp_id") != census_row.get("mp_id"):
+            raise SystemExit(f"Orphan disposition MP-ID mismatch for {path}")
+        if item.get("resolved") is not True or not item.get("classification"):
+            raise SystemExit(f"Orphan disposition is not explicitly resolved/classified: {path}")
+        if incoming.get(path):
+            raise SystemExit(
+                f"Stale orphan disposition: {path} now has {len(incoming[path])} incoming graph edge(s)"
+            )
+        orphan_by_path[path] = item
+
     dist_by_skill = {row["path"]: row for row in dist["rows"]}
     router_by_skill = {row["path"]: row for row in router["rows"]}
     history_by_path = {row["path"]: row for row in history["file_rows"]}
@@ -141,11 +162,15 @@ def main() -> None:
             blockers.append("UNRESOLVED_REFERENCE_DISPOSITION")
 
         structural_role = structural_orphan_role(path, dist_by_skill)
+        orphan_disposition = orphan_by_path.get(path)
         if in_edges:
             orphan_state = "NON_ORPHAN_BY_INCOMING_EDGE"
             orphan_closed = True
         elif structural_role:
             orphan_state = f"NON_ORPHAN_BY_STRUCTURAL_ROLE:{structural_role}"
+            orphan_closed = True
+        elif orphan_disposition:
+            orphan_state = f"ZERO_INCOMING_DISPOSITION:{orphan_disposition['classification']}"
             orphan_closed = True
         else:
             orphan_state = "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW"
@@ -229,6 +254,7 @@ def main() -> None:
         "state_counts": dict(sorted(state_counts.items())),
         "blocker_counts": dict(sorted(blocker_counts.items())),
         "zero_incoming_count": len(zero_incoming),
+        "semantic_orphan_disposition_count": len(orphan_by_path),
         "rows": rows,
     }
     OUT_JSON.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
@@ -242,7 +268,9 @@ def main() -> None:
         "",
         f"Files: **{len(rows)}**. READY_CANDIDATE: **{state_counts.get('READY_CANDIDATE', 0)}**. BLOCKED: **{state_counts.get('BLOCKED', 0)}**.",
         "",
-        f"Files with zero incoming graph edges: **{len(zero_incoming)}**. Zero incoming is not treated as proof of orphan; conventional structural roles close some cases, and the rest require semantic orphan review.",
+        f"Files with zero incoming graph edges: **{len(zero_incoming)}**. Zero incoming is not treated as proof of orphan; conventional structural roles or explicit semantic dispositions close applicable cases.",
+        "",
+        f"Explicit semantic zero-incoming dispositions consumed: **{len(orphan_by_path)}**.",
         "",
         "## Blocker summary",
         "",
@@ -273,7 +301,8 @@ def main() -> None:
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(
         f"phase3 closure: ready={state_counts.get('READY_CANDIDATE',0)} "
-        f"blocked={state_counts.get('BLOCKED',0)} blockers={dict(blocker_counts)}"
+        f"blocked={state_counts.get('BLOCKED',0)} blockers={dict(blocker_counts)} "
+        f"orphan_dispositions={len(orphan_by_path)}"
     )
 
 
