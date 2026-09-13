@@ -1,0 +1,41 @@
+{
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "dispositions": [
+    {
+      "mp_id": "MP-0001",
+      "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "classification": "INTENTIONAL_STANDALONE_ADR",
+      "resolved": true,
+      "reason": "Zero incoming source-tree references are real. The file is a retained architecture decision record under .agents/adr and is evaluated as an intentional standalone decision record rather than an operative dependency. Content staleness or naming drift remains a separate behavior/history question and is not erased by this disposition."
+    },
+    {
+      "mp_id": "MP-0021",
+      "path": ".out-of-scope/mainstream-issue-trackers-only.md",
+      "classification": "INTENTIONAL_STANDALONE_POLICY_RECORD",
+      "resolved": true,
+      "reason": "Zero incoming source-tree references are real. The file records an explicit rejected-feature/out-of-scope policy and prior request context; it is intentionally archival/maintainer-facing rather than an operative dependency."
+    },
+    {
+      "mp_id": "MP-0022",
+      "path": ".out-of-scope/question-limits.md",
+      "classification": "INTENTIONAL_STANDALONE_POLICY_RECORD",
+      "resolved": true,
+      "reason": "Zero incoming source-tree references are real. The file records an explicit rejected-feature/out-of-scope policy and prior request context; it is intentionally archival/maintainer-facing rather than an operative dependency."
+    },
+    {
+      "mp_id": "MP-0023",
+      "path": ".out-of-scope/setup-skill-verify-mode.md",
+      "classification": "INTENTIONAL_STANDALONE_POLICY_RECORD",
+      "resolved": true,
+      "reason": "Zero incoming source-tree references are real. The file records an explicit rejected-feature/out-of-scope policy and prior request context; it is intentionally archival/maintainer-facing rather than an operative dependency."
+    },
+    {
+      "mp_id": "MP-0058",
+      "path": "scripts/list-skills.sh",
+      "classification": "STANDALONE_MAINTAINER_ENTRYPOINT",
+      "resolved": true,
+      "reason": "Zero incoming source-tree references are real. This executable is itself a maintainer CLI entrypoint: it enumerates all SKILL.md files when invoked directly, so no internal caller is required for its repository role."
+    }
+  ]
+}
