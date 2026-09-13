@@ -8,6 +8,14 @@ Frozen commit: `3cca18b368ae95cdbdebbff572ccafa662551015`
 Frozen tree: `6e84c093fda2026396cea9fad6a924a6da0e1452`
 Physical blob/file denominator: **164**
 
+## Durable-storage authority
+
+The authoritative project state lives in this GitHub repository: `kphomedocs-hue/matt-pocock-forensic-research`.
+
+`00_STORAGE_INTEGRITY_AUDIT.md` records the current durability audit and storage controls.
+
+ChatGPT conversation history, model memory, summaries, scratchpads, hidden reasoning, and transient tool output are **not authoritative storage**. No project phase may depend on information that exists only there.
+
 ## Non-negotiable hard rule
 
 Every physical file in the frozen repository must be accounted for, every relevant line read, every meaningful internal connection traced, and every major behavioral claim reconciled against implementation/config/distribution/history where applicable.
@@ -56,7 +64,7 @@ Gate: all 164 blobs receive an MP-ID, path, SHA, mode/type, size/category and co
 Gate: UNREAD = 0. Large files must be read in complete fixed/ranged windows if connector output truncates.
 
 ### Phase 3 — Connection Mapping
-Gate: operative calls, passive/path/skill-label references, docs links, distribution entries, config bindings, history bindings and symlinks are mapped; unresolved/generated targets are explicitly reconciled; zero-incoming/orphan claims use exhaustive evidence or explicit semantic dispositions; per-file gate evidence is durable.
+Gate: operative calls, passive/path/skill-label references, docs links, distribution entries, config bindings, support ownership, history bindings and symlinks are mapped; unresolved/generated targets are explicitly reconciled; zero-incoming/orphan claims use exhaustive evidence or explicit semantic dispositions; per-file gate evidence is durable; second-order quality checks and build provenance pass.
 
 **Current state: COMPLETE — 164/164 CONNECTIONS TRACED.**
 
@@ -96,8 +104,22 @@ Phase 3 automated state is rebuilt in dependency order by `.github/workflows/reb
 3. `scripts/build_distribution_matrix.py`
 4. `scripts/build_history_bindings.py`
 5. `scripts/build_phase3_closure_index.py`
+6. `scripts/enrich_master_ledger_connections.py`
+7. `scripts/build_phase3_manifest.py`
+8. `scripts/verify_phase3_manifest.py`
+9. `scripts/validate_phase3_quality.py`
 
-The workflow validates the complete set and commits it atomically. Do not rely on chained workflow commits to trigger downstream rebuilds.
+The workflow validates the complete generated set and commits it atomically. Do not rely on chained workflow commits to trigger downstream rebuilds.
+
+Authoritative Phase 3 machine artifacts include:
+
+- `03_CONNECTION_EDGES.json`
+- `03_ROUTER_MATRIX.json`
+- `03_DISTRIBUTION_MATRIX.json`
+- `03_HISTORY_BINDINGS.json`
+- `03_PHASE3_CLOSURE_INDEX.json`
+- `03_PHASE3_QUALITY.json`
+- `03_PHASE3_BUILD_MANIFEST.json`
 
 Formal status promotion is separate: `scripts/promote_phase3_connections.py` plus `.github/workflows/promote-phase3-connections.yml` fail closed and atomically rebuild ledger/census/closure/foundation around the promoted note state.
 
@@ -110,6 +132,8 @@ Current controls include:
 - `00_FOUNDATION_INTEGRITY.md` / `.json` for frozen-source and durable-note invariants;
 - `00_TOOLING_INTEGRITY_AUDIT.md` for automation defect analysis and fixes;
 - `00_TOOLING_FAILURE_LEDGER.md` / `.json` for failed and cancelled workflow incidents;
+- `03_PHASE3_BUILD_MANIFEST.md` / `.json` for SHA-256 build provenance;
+- `03_PHASE3_QUALITY.md` / `.json` for second-order Phase 3 quality checks;
 - workflow-specific concurrency lanes;
 - no implicit dependence on `GITHUB_TOKEN` workflow-commit chaining;
 - ordered atomic rebuilding for dependent Phase 3 artifacts;
@@ -123,27 +147,31 @@ At the start of every new session or after major context compression, reload fro
 
 1. `00_RESEARCH_MANIFEST.md`
 2. `00_RESEARCH_SCHEMA.md`
-3. `RESEARCH_STATUS.md`
-4. `00_FOUNDATION_INTEGRITY.md`
-5. `00_TOOLING_INTEGRITY_AUDIT.md`
-6. `00_TOOLING_FAILURE_LEDGER.md`
-7. `01_MASTER_FILE_LEDGER.md`
-8. `01_FILE_CENSUS.json`
-9. `03_CLAIM_REGISTER.md`
-10. `03_CONNECTION_GRAPH.md`
-11. `03_CONNECTION_RECONCILIATION.md`
-12. `03_REFERENCE_DISPOSITIONS.json`
-13. `03_ORPHAN_RECONCILIATION.md`
-14. `03_ROUTER_MATRIX.md`
-15. `03_DISTRIBUTION_MATRIX.md`
-16. `03_HISTORY_BINDINGS.md`
-17. `03_PHASE3_CLOSURE_INDEX.md`
-18. `04_BEHAVIOR_MATRIX.md`
-19. `04_BEHAVIOR_INTEGRITY.json`
-20. `04_CONTRADICTION_REGISTER.md`
-21. `05_HISTORY_LEDGER.md`
+3. `00_STORAGE_INTEGRITY_AUDIT.md`
+4. `RESEARCH_STATUS.md`
+5. `00_FOUNDATION_INTEGRITY.md`
+6. `00_TOOLING_INTEGRITY_AUDIT.md`
+7. `00_TOOLING_FAILURE_LEDGER.json`
+8. `01_MASTER_FILE_LEDGER.md`
+9. `01_FILE_CENSUS.json`
+10. `03_CLAIM_REGISTER.md`
+11. `03_CONNECTION_GRAPH.md`
+12. `03_CONNECTION_EDGES.json`
+13. `03_CONNECTION_RECONCILIATION.md`
+14. `03_REFERENCE_DISPOSITIONS.json`
+15. `03_ORPHAN_RECONCILIATION.md`
+16. `03_ROUTER_MATRIX.json`
+17. `03_DISTRIBUTION_MATRIX.json`
+18. `03_HISTORY_BINDINGS.json`
+19. `03_PHASE3_CLOSURE_INDEX.json`
+20. `03_PHASE3_QUALITY.json`
+21. `03_PHASE3_BUILD_MANIFEST.json`
+22. `04_BEHAVIOR_MATRIX.json`
+23. `04_BEHAVIOR_INTEGRITY.json`
+24. `04_CONTRADICTION_REGISTER.md`
+25. `05_HISTORY_LEDGER.md`
 
-When exact numerical/per-edge Phase 3 state matters, load the corresponding generated JSON artifacts rather than relying on prose summaries. When exact Phase 4 row state matters, load `04_BEHAVIOR_MATRIX.json` as the structured source.
+When exact numerical/per-edge Phase 3 state matters, load the generated JSON artifacts rather than relying on prose summaries. When exact Phase 4 row state matters, load `04_BEHAVIOR_MATRIX.json` as the structured source.
 
 Never resume from chat memory alone.
 
@@ -161,4 +189,6 @@ Issues/PRs are evidence reports, not automatic truth. Classify issue evidence as
 
 ## ChatGPT limitation control
 
-ChatGPT conversation/context is not authoritative storage. Summaries are secondary sources. Durable facts, statuses, contradictions, claims and phase progress must be committed here.
+ChatGPT conversation/context is not authoritative storage. Summaries are secondary sources. Durable facts, statuses, contradictions, claims, graph changes, tooling incidents, phase progress, and verification results must be committed here.
+
+If useful analysis appears in chat but has not yet been committed, it is **NOT DURABLE** and must not be relied upon after the session.
