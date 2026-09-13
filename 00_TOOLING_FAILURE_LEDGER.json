@@ -1,12 +1,12 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 79,
+  "failed_run_count": 82,
   "cancelled_run_count": 7,
-  "incident_run_count": 86,
-  "incident_entry_count": 86,
+  "incident_run_count": 89,
+  "incident_entry_count": 89,
   "classification_counts": {
-    "CLASSIFIER_CLOSURE_GATE": 1,
+    "CLASSIFIER_CLOSURE_GATE": 3,
     "CLASSIFIER_REFRESH_SUPERSEDED": 4,
     "CLASSIFIER_SCHEMA_TRANSITION": 1,
     "CROSS_WORKFLOW_CONCURRENCY_CANCEL": 3,
@@ -14,13 +14,14 @@
     "FOUNDATION_PROVENANCE_GATE": 1,
     "FOUNDATION_REGISTER_GATE": 3,
     "PHASE3_PROMOTION_PROVENANCE_PARSER": 1,
+    "PHASE3_QUALITY_RECHECK_GATE": 1,
     "PUSH_RACE": 61,
     "STATUS_PARSER": 10
   },
   "impact_counts": {
     "DELAYED_PROMOTION": 10,
-    "DETECTED_AND_BLOCKED": 6,
-    "DETECTED_AND_BLOCKED_FIXED": 1,
+    "DETECTED_AND_BLOCKED": 8,
+    "DETECTED_AND_BLOCKED_FIXED": 2,
     "DISCARDED_EXECUTION_FIXED": 3,
     "FIXED_CONFIGURATION_MISMATCH": 1,
     "REDUNDANT_REFRESH_DISCARDED": 4,
@@ -1232,6 +1233,48 @@
       "classification": "PHASE3_PROMOTION_PROVENANCE_PARSER",
       "impact": "DETECTED_AND_BLOCKED_FIXED",
       "reason": "The first Phase 3 promoter failed closed because it did not recognize the accepted legacy `Frozen blob SHA` note label. No note changes were committed; the parser was aligned with the foundation validator and the next run succeeded."
+    },
+    {
+      "run_id": 34740170053,
+      "run_conclusion": "failure",
+      "run_number": 1,
+      "workflow": "Validate Phase 3 quality",
+      "created_at": "2026-09-13T05:23:12Z",
+      "head_sha": "2e1d9d8bb0ded582c55f4d68b8c3584841655702",
+      "title": "phase3: automate quality recheck",
+      "job_id": 103678429216,
+      "failed_step": "Enforce Phase 3 quality gate",
+      "classification": "PHASE3_QUALITY_RECHECK_GATE",
+      "impact": "DETECTED_AND_BLOCKED_FIXED",
+      "reason": "The first second-order Phase 3 quality gate deliberately failed closed after exposing duplicated history-definition truth and additional Phase 3 quality debt. History definitions were moved to the durable ledger, master-ledger connection counts and cryptographic build fingerprints were added, and the strengthened atomic Phase 3 rebuild subsequently passed."
+    },
+    {
+      "run_id": 34740488271,
+      "run_conclusion": "failure",
+      "run_number": 29,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-13T05:30:57Z",
+      "head_sha": "90b1ab47e7c7165d6345dc09a7e397f78d9dd040",
+      "title": "tooling: monitor Phase 3 quality workflow incidents",
+      "job_id": 103679245596,
+      "failed_step": "Validate tooling incident ledger outputs",
+      "classification": "CLASSIFIER_CLOSURE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
+    },
+    {
+      "run_id": 34740614575,
+      "run_conclusion": "failure",
+      "run_number": 32,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-13T05:34:01Z",
+      "head_sha": "6c394fe690668166a2ca099de0fad2db407631df",
+      "title": "tooling: classify Phase 3 quality and atomic rebuild failures",
+      "job_id": 103679573808,
+      "failed_step": "Validate tooling incident ledger outputs",
+      "classification": "CLASSIFIER_CLOSURE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
     }
   ]
 }
