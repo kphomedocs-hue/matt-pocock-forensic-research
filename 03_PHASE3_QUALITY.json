@@ -18,62 +18,53 @@
       "history_id": "H-002",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-003",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-004",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-005",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-006",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-007",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-008",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     },
     {
       "history_id": "H-009",
       "state_ok": true,
       "refs_ok": true,
-      "area_ok": false
+      "area_ok": true
     }
   ],
-  "master_ledger_blank_ref_row_count": 164,
-  "hard_errors": [
-    "History binding definition drift for H-002: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-003: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-004: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-005: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-006: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-007: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-008: state_ok=True refs_ok=True area_ok=False",
-    "History binding definition drift for H-009: state_ok=True refs_ok=True area_ok=False"
-  ],
+  "master_ledger_blank_ref_row_count": 0,
+  "hard_errors": [],
   "review_items": [],
   "improvements": [
     {
@@ -88,18 +79,6 @@
           "owner": "skills/productivity/teach/SKILL.md"
         }
       ]
-    },
-    {
-      "kind": "MASTER_LEDGER_CONNECTION_COLUMNS_BLANK",
-      "count": 164,
-      "severity": "MEDIUM",
-      "note": "Ref-in/Ref-out columns are preserved from old rows rather than derived from the current graph."
-    },
-    {
-      "kind": "NO_PHASE3_BUILD_FINGERPRINT_MANIFEST",
-      "count": 1,
-      "severity": "HIGH",
-      "note": "Atomic workflow reduces drift, but generated artifacts do not yet carry SHA-256 fingerprints of generator inputs and outputs."
     }
   ]
 }
