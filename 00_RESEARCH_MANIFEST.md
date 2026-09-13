@@ -27,10 +27,12 @@ Never mix these classes.
 
 - UNREAD: full contents not fetched/inspected.
 - READ: full contents inspected.
-- CONNECTIONS TRACED: meaningful outgoing/incoming references checked and recorded.
-- VERIFIED: current file + connected implementation/config/distribution + relevant history reconciled.
+- CONNECTIONS TRACED: meaningful outgoing/incoming/config/distribution/invocation/orphan relationships reconciled under the canonical Phase 3 gate.
+- VERIFIED: current file + connected implementation/config/distribution + relevant behavior/history/contradictions/runtime/second-pass/red-team evidence reconciled as applicable.
 
-Status transitions require evidence and must satisfy the canonical gates in `00_RESEARCH_SCHEMA.md`.
+Status transitions require durable evidence and must satisfy `00_RESEARCH_SCHEMA.md`.
+
+Current formal file state: **164/164 CONNECTIONS TRACED; 0 VERIFIED**.
 
 ## Verification dimensions
 
@@ -54,7 +56,9 @@ Gate: all 164 blobs receive an MP-ID, path, SHA, mode/type, size/category and co
 Gate: UNREAD = 0. Large files must be read in complete fixed/ranged windows if connector output truncates.
 
 ### Phase 3 — Connection Mapping
-Gate: operative calls, passive references, docs links, distribution entries, config bindings, history references and symlinks are mapped; inbound-reference claims use exhaustive scanning, not ranked search alone.
+Gate: operative calls, passive/path/skill-label references, docs links, distribution entries, config bindings, history bindings and symlinks are mapped; unresolved/generated targets are explicitly reconciled; zero-incoming/orphan claims use exhaustive evidence or explicit semantic dispositions; per-file gate evidence is durable.
+
+**Current state: COMPLETE — 164/164 CONNECTIONS TRACED.**
 
 ### Phase 4 — Behavior & Enforcement
 Gate: documented behavior vs operative prompt/config/script/CI behavior reconciled; machine-checkable vs prose-only rules identified.
@@ -77,17 +81,33 @@ Gate: counterexamples actively searched for all `all / never / always / exactly`
 ### Phase 10 — System Reconstruction & KP Comparison
 Gate: only after source-audit gates are satisfied; synthesize architecture/workflows and then derive KP interpretations/recommendations.
 
+## Phase 3 generated-state authority
+
+Phase 3 automated state is rebuilt in dependency order by `.github/workflows/rebuild-phase3-state.yml`:
+
+1. `scripts/build_connection_graph.py`
+2. `scripts/build_router_matrix.py`
+3. `scripts/build_distribution_matrix.py`
+4. `scripts/build_history_bindings.py`
+5. `scripts/build_phase3_closure_index.py`
+
+The workflow validates the complete set and commits it atomically. Do not rely on chained workflow commits to trigger downstream rebuilds.
+
+Formal status promotion is separate: `scripts/promote_phase3_connections.py` plus `.github/workflows/promote-phase3-connections.yml` fail closed and atomically rebuild ledger/census/closure/foundation around the promoted note state.
+
 ## Tooling-integrity rule
 
 Research automation is part of the audit surface. A green workflow alone is not authoritative proof. Generated state must retain explicit source provenance and invariants, and tooling incidents must remain durably classified.
 
-Current tooling controls include:
+Current controls include:
 
 - `00_FOUNDATION_INTEGRITY.md` / `.json` for frozen-source and durable-note invariants;
 - `00_TOOLING_INTEGRITY_AUDIT.md` for automation defect analysis and fixes;
 - `00_TOOLING_FAILURE_LEDGER.md` / `.json` for failed and cancelled workflow incidents;
-- per-workflow concurrency lanes so distinct workflows cannot discard one another while pending;
-- fetch/rebase/push retry for cross-workflow write races;
+- workflow-specific concurrency lanes;
+- no implicit dependence on `GITHUB_TOKEN` workflow-commit chaining;
+- ordered atomic rebuilding for dependent Phase 3 artifacts;
+- fetch/rebase/push retry for independent cross-workflow write races;
 - zero-unknown and zero-review-required closure gates for the tooling incident ledger.
 
 ## Resume rule
@@ -105,10 +125,16 @@ At the start of every new session or after major context compression, reload fro
 9. `03_CLAIM_REGISTER.md`
 10. `03_CONNECTION_GRAPH.md`
 11. `03_CONNECTION_RECONCILIATION.md`
-12. `04_CONTRADICTION_REGISTER.md`
-13. `05_HISTORY_LEDGER.md`
+12. `03_REFERENCE_DISPOSITIONS.json`
+13. `03_ORPHAN_RECONCILIATION.md`
+14. `03_ROUTER_MATRIX.md`
+15. `03_DISTRIBUTION_MATRIX.md`
+16. `03_HISTORY_BINDINGS.md`
+17. `03_PHASE3_CLOSURE_INDEX.md`
+18. `04_CONTRADICTION_REGISTER.md`
+19. `05_HISTORY_LEDGER.md`
 
-When Phase 3 numerical state matters, also load generated `03_CONNECTION_EDGES.json` and `03_CONNECTION_INDEX.md` rather than relying on prose summaries.
+When exact numerical or per-edge Phase 3 state matters, also load `03_CONNECTION_EDGES.json`, `03_ROUTER_MATRIX.json`, `03_DISTRIBUTION_MATRIX.json`, `03_HISTORY_BINDINGS.json`, and `03_PHASE3_CLOSURE_INDEX.json` rather than relying on prose summaries.
 
 Never resume from chat memory alone.
 
