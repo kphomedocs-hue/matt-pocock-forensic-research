@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - '01_FILE_CENSUS.json'
+      - '01_MASTER_FILE_LEDGER.md'
       - '05_HISTORY_LEDGER.md'
       - '03_REFERENCE_DISPOSITIONS.json'
       - '03_ORPHAN_DISPOSITIONS.json'
@@ -14,6 +15,10 @@ on:
       - 'scripts/build_distribution_matrix.py'
       - 'scripts/build_history_bindings.py'
       - 'scripts/build_phase3_closure_index.py'
+      - 'scripts/enrich_master_ledger_connections.py'
+      - 'scripts/build_phase3_manifest.py'
+      - 'scripts/verify_phase3_manifest.py'
+      - 'scripts/validate_phase3_quality.py'
       - '.github/workflows/rebuild-phase3-state.yml'
 
 permissions:
@@ -44,6 +49,10 @@ jobs:
           python scripts/build_distribution_matrix.py
           python scripts/build_history_bindings.py
           python scripts/build_phase3_closure_index.py
+          python scripts/enrich_master_ledger_connections.py
+          python scripts/build_phase3_manifest.py
+          python scripts/verify_phase3_manifest.py
+          python scripts/validate_phase3_quality.py
       - name: Validate atomic Phase 3 outputs
         run: |
           python - <<'PY'
@@ -74,6 +83,7 @@ jobs:
           hist = json.load(open('03_HISTORY_BINDINGS.json', encoding='utf-8'))
           assert hist['file_count'] == 164
           assert hist['history_event_count'] == 9
+          assert hist['history_definition_source'] == '05_HISTORY_LEDGER.md'
           assert {e['history_id'] for e in hist['events']} == {f'H-{i:03d}' for i in range(1, 10)}
 
           closure = json.load(open('03_PHASE3_CLOSURE_INDEX.json', encoding='utf-8'))
@@ -82,14 +92,28 @@ jobs:
           assert closure['blocker_counts'] == {}
           assert closure['semantic_orphan_disposition_count'] == 5
 
-          print('phase3 atomic rebuild: GREEN')
+          quality = json.load(open('03_PHASE3_QUALITY.json', encoding='utf-8'))
+          assert quality['file_count'] == 164
+          assert quality['hard_errors'] == [], quality['hard_errors']
+          assert quality['weak_only_orphan_proof_count'] == 0
+          assert quality['unmapped_extra_link_syntax_count'] == 0
+          assert quality['master_ledger_blank_ref_row_count'] == 0
+
+          manifest = json.load(open('03_PHASE3_BUILD_MANIFEST.json', encoding='utf-8'))
+          assert manifest['schema_version'] == 1
+          assert manifest['physical_file_count'] == 164
+
+          print('phase3 atomic rebuild + quality: GREEN')
           print('edges=', graph['edge_count'])
           print('history_bindings=', hist['binding_count'])
           print('closure=', closure['state_counts'])
+          print('quality_improvements=', [x['kind'] for x in quality['improvements']])
           PY
+          python scripts/verify_phase3_manifest.py
       - name: Commit atomic Phase 3 generated state
         run: |
           paths=(
+            01_MASTER_FILE_LEDGER.md
             03_CONNECTION_EDGES.json
             03_CONNECTION_INDEX.md
             03_ROUTER_MATRIX.json
@@ -100,6 +124,10 @@ jobs:
             03_HISTORY_BINDINGS.md
             03_PHASE3_CLOSURE_INDEX.json
             03_PHASE3_CLOSURE_INDEX.md
+            03_PHASE3_BUILD_MANIFEST.json
+            03_PHASE3_BUILD_MANIFEST.md
+            03_PHASE3_QUALITY.json
+            03_PHASE3_QUALITY.md
           )
           if [[ -z "$(git status --porcelain -- "${paths[@]}")" ]]; then
             echo "No Phase 3 generated-state changes"
@@ -108,7 +136,7 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add "${paths[@]}"
-          git commit -m "phase3: rebuild atomic generated state"
+          git commit -m "phase3: rebuild strengthened atomic state"
 
           for attempt in 1 2 3 4 5; do
             if git push; then
@@ -119,5 +147,5 @@ jobs:
             git rebase origin/main
             sleep 1
           done
-          echo "Failed to publish atomic Phase 3 generated state after 5 attempts" >&2
+          echo "Failed to publish strengthened Phase 3 state after 5 attempts" >&2
           exit 1
