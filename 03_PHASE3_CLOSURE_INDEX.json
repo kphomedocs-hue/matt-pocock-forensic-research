@@ -1,0 +1,3365 @@
+{
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "file_count": 164,
+  "gate_semantics": "READY_CANDIDATE is not automatic status promotion; per-file durable note promotion remains a separate write step.",
+  "state_counts": {
+    "BLOCKED": 5,
+    "READY_CANDIDATE": 159
+  },
+  "blocker_counts": {
+    "SEMANTIC_ORPHAN_REVIEW": 5
+  },
+  "zero_incoming_count": 77,
+  "rows": [
+    {
+      "mp_id": "MP-0001",
+      "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "category": "governance",
+      "current_status": "READ",
+      "phase3_gate_state": "BLOCKED",
+      "blockers": [
+        "SEMANTIC_ORPHAN_REVIEW"
+      ],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
+        "orphan_closed": false,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0002",
+      "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "category": "governance",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 6,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0003",
+      "path": ".agents/install-block.md",
+      "category": "governance",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0004",
+      "path": ".agents/invocation.md",
+      "category": "governance",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 3,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0005",
+      "path": ".agents/writing-docs.md",
+      "category": "governance",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 4,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0006",
+      "path": ".changeset/README.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0007",
+      "path": ".changeset/add-implement-spec-skill.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0008",
+      "path": ".changeset/config.json",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_CONFIG",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0009",
+      "path": ".changeset/domain-modeling-trigger-context-adr.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0010",
+      "path": ".changeset/fix-yaml-frontmatter-colons.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0011",
+      "path": ".changeset/grilling-add-hr-between-questions.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0012",
+      "path": ".changeset/grilling-remove-em-dashes.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0013",
+      "path": ".changeset/remove-em-dashes-repo-wide.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0014",
+      "path": ".changeset/skill-tool-invocation-terminology.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0015",
+      "path": ".changeset/user-invoked-skill-invocation.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0016",
+      "path": ".changeset/wait-what-context-map.md",
+      "category": "changeset",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0017",
+      "path": ".claude-plugin/marketplace.json",
+      "category": "distribution",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0018",
+      "path": ".claude-plugin/plugin.json",
+      "category": "distribution",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 25,
+        "incoming_edge_count": 5,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "distribution_entry_count": 25,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0019",
+      "path": ".github/workflows/release.yml",
+      "category": "ci-release",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:GITHUB_ACTIONS_ENTRYPOINT",
+        "orphan_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0020",
+      "path": ".gitignore",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:GIT_CONFIGURATION",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0021",
+      "path": ".out-of-scope/mainstream-issue-trackers-only.md",
+      "category": "negative-memory",
+      "current_status": "READ",
+      "phase3_gate_state": "BLOCKED",
+      "blockers": [
+        "SEMANTIC_ORPHAN_REVIEW"
+      ],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
+        "orphan_closed": false,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0022",
+      "path": ".out-of-scope/question-limits.md",
+      "category": "negative-memory",
+      "current_status": "READ",
+      "phase3_gate_state": "BLOCKED",
+      "blockers": [
+        "SEMANTIC_ORPHAN_REVIEW"
+      ],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
+        "orphan_closed": false,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0023",
+      "path": ".out-of-scope/setup-skill-verify-mode.md",
+      "category": "negative-memory",
+      "current_status": "READ",
+      "phase3_gate_state": "BLOCKED",
+      "blockers": [
+        "SEMANTIC_ORPHAN_REVIEW"
+      ],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
+        "orphan_closed": false,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0024",
+      "path": "AGENTS.md",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 14,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "symlink_target_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0025",
+      "path": "CHANGELOG.md",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 23,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0026",
+      "path": "CLAUDE.md",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 10,
+        "incoming_edge_count": 19,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 4,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0027",
+      "path": "CONTEXT.md",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 30,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0028",
+      "path": "LICENSE",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0029",
+      "path": "README.md",
+      "category": "root",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 29,
+        "incoming_edge_count": 6,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0030",
+      "path": "docs/engineering/ask-matt.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0031",
+      "path": "docs/engineering/code-review.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0032",
+      "path": "docs/engineering/codebase-design.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0033",
+      "path": "docs/engineering/diagnosing-bugs.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0034",
+      "path": "docs/engineering/domain-modeling.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0035",
+      "path": "docs/engineering/grill-with-docs.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0036",
+      "path": "docs/engineering/implement.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0037",
+      "path": "docs/engineering/improve-codebase-architecture.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0038",
+      "path": "docs/engineering/prototype.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0039",
+      "path": "docs/engineering/research.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0040",
+      "path": "docs/engineering/resolving-merge-conflicts.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0041",
+      "path": "docs/engineering/setup-matt-pocock-skills.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 5,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0042",
+      "path": "docs/engineering/tdd.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0043",
+      "path": "docs/engineering/to-spec.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0044",
+      "path": "docs/engineering/to-tickets.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0045",
+      "path": "docs/engineering/triage.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0046",
+      "path": "docs/engineering/wayfinder.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0047",
+      "path": "docs/engineering/wizard.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0048",
+      "path": "docs/productivity/grill-me.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0049",
+      "path": "docs/productivity/grilling.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0050",
+      "path": "docs/productivity/handoff.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0051",
+      "path": "docs/productivity/teach.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0052",
+      "path": "docs/productivity/to-questionnaire.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0053",
+      "path": "docs/productivity/wait-what.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0054",
+      "path": "docs/productivity/writing-for-agents.md",
+      "category": "human-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 4,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0055",
+      "path": "package-lock.json",
+      "category": "dependency-lock",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0056",
+      "path": "package.json",
+      "category": "package-config",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 6,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0057",
+      "path": "scripts/link-skills.sh",
+      "category": "repo-executable",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0058",
+      "path": "scripts/list-skills.sh",
+      "category": "repo-executable",
+      "current_status": "READ",
+      "phase3_gate_state": "BLOCKED",
+      "blockers": [
+        "SEMANTIC_ORPHAN_REVIEW"
+      ],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
+        "orphan_closed": false,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0059",
+      "path": "scripts/sync-plugin-version.mjs",
+      "category": "repo-executable",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0060",
+      "path": "skills/deprecated/README.md",
+      "category": "bucket-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0061",
+      "path": "skills/engineering/README.md",
+      "category": "bucket-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 19,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
+        "orphan_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0062",
+      "path": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0063",
+      "path": "skills/engineering/ask-matt/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 5,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0064",
+      "path": "skills/engineering/ask-matt/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0065",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0066",
+      "path": "skills/engineering/code-review/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0067",
+      "path": "skills/engineering/codebase-design/DEEPENING.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0068",
+      "path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0069",
+      "path": "skills/engineering/codebase-design/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 9,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0070",
+      "path": "skills/engineering/codebase-design/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0071",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0072",
+      "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0073",
+      "path": "skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "category": "skill-executable-config",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0074",
+      "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0075",
+      "path": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 3,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0076",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 8,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0077",
+      "path": "skills/engineering/domain-modeling/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0078",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 2,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0079",
+      "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0080",
+      "path": "skills/engineering/implement/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0081",
+      "path": "skills/engineering/implement/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0082",
+      "path": "skills/engineering/improve-codebase-architecture/HTML-REPORT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0083",
+      "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 5,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 3,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0084",
+      "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0085",
+      "path": "skills/engineering/prototype/LOGIC.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0086",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 7,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0087",
+      "path": "skills/engineering/prototype/UI.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0088",
+      "path": "skills/engineering/prototype/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0089",
+      "path": "skills/engineering/research/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 5,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0090",
+      "path": "skills/engineering/research/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0091",
+      "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0092",
+      "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0093",
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 9,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0094",
+      "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0095",
+      "path": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0096",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0097",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0098",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0099",
+      "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 6,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0100",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 4,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 1,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 3,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0101",
+      "path": "skills/engineering/tdd/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0102",
+      "path": "skills/engineering/tdd/mocking.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0103",
+      "path": "skills/engineering/tdd/tests.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0104",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0105",
+      "path": "skills/engineering/to-spec/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0106",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0107",
+      "path": "skills/engineering/to-tickets/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0108",
+      "path": "skills/engineering/triage/AGENT-BRIEF.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0109",
+      "path": "skills/engineering/triage/OUT-OF-SCOPE.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0110",
+      "path": "skills/engineering/triage/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 5,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 2,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0111",
+      "path": "skills/engineering/triage/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0112",
+      "path": "skills/engineering/wayfinder/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 4,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 1,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 4,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0113",
+      "path": "skills/engineering/wayfinder/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0114",
+      "path": "skills/engineering/wizard/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0115",
+      "path": "skills/engineering/wizard/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0116",
+      "path": "skills/engineering/wizard/template.sh",
+      "category": "skill-executable-config",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0117",
+      "path": "skills/in-progress/README.md",
+      "category": "bucket-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 8,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0118",
+      "path": "skills/in-progress/claude-handoff/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0119",
+      "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0120",
+      "path": "skills/in-progress/implement-spec/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0121",
+      "path": "skills/in-progress/implement-spec/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0122",
+      "path": "skills/in-progress/loop-me/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0123",
+      "path": "skills/in-progress/loop-me/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0124",
+      "path": "skills/in-progress/retro/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 1,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0125",
+      "path": "skills/in-progress/retro/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0126",
+      "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 5,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 1,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 1,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0127",
+      "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0128",
+      "path": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "category": "skill-executable-config",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0129",
+      "path": "skills/in-progress/writing-beats/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0130",
+      "path": "skills/in-progress/writing-beats/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0131",
+      "path": "skills/in-progress/writing-fragments/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0132",
+      "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0133",
+      "path": "skills/in-progress/writing-shape/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0134",
+      "path": "skills/in-progress/writing-shape/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0135",
+      "path": "skills/misc/README.md",
+      "category": "bucket-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 4,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0136",
+      "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0137",
+      "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0138",
+      "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "category": "skill-executable-config",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0139",
+      "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0140",
+      "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0141",
+      "path": "skills/misc/scaffold-exercises/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0142",
+      "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0143",
+      "path": "skills/misc/setup-pre-commit/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0144",
+      "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0145",
+      "path": "skills/productivity/README.md",
+      "category": "bucket-docs",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 10,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 2,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0146",
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 1,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0147",
+      "path": "skills/productivity/grill-me/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0148",
+      "path": "skills/productivity/grilling/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 9,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0149",
+      "path": "skills/productivity/grilling/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0150",
+      "path": "skills/productivity/handoff/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 1,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0151",
+      "path": "skills/productivity/handoff/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0152",
+      "path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0153",
+      "path": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0154",
+      "path": "skills/productivity/teach/MISSION-FORMAT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 2,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0155",
+      "path": "skills/productivity/teach/RESOURCES-FORMAT.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 1,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0156",
+      "path": "skills/productivity/teach/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 3,
+        "incoming_edge_count": 5,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0157",
+      "path": "skills/productivity/teach/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 1,
+        "history_has_partial": true
+      }
+    },
+    {
+      "mp_id": "MP-0158",
+      "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 0,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0159",
+      "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0160",
+      "path": "skills/productivity/wait-what/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 4,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0161",
+      "path": "skills/productivity/wait-what/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0162",
+      "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "category": "skill-support",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 3,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0163",
+      "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "category": "skill",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 4,
+        "incoming_edge_count": 6,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
+        "orphan_closed": true,
+        "skill_distribution_row": true,
+        "skill_invocation_policy_row": true,
+        "outgoing_operative_calls": 0,
+        "illegal_outgoing_operative_calls": 0,
+        "promoted_router_obligation_closed": true,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    },
+    {
+      "mp_id": "MP-0164",
+      "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+      "category": "codex-metadata",
+      "current_status": "READ",
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
+      "dimensions": {
+        "graph_persisted": true,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 0,
+        "raw_unresolved_count": 0,
+        "raw_unresolved_reconciled": true,
+        "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
+        "orphan_closed": true,
+        "config_binding_count": 1,
+        "history_binding_count": 0,
+        "history_has_partial": false
+      }
+    }
+  ]
+}
