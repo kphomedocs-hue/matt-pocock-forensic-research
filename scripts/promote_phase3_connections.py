@@ -28,7 +28,10 @@ STATUS_RE = re.compile(
     re.MULTILINE,
 )
 COMMIT_RE = re.compile(r"^(?:-\s*)?Frozen commit:\s*`([0-9a-f]{40})`\s*$", re.MULTILINE)
-BLOB_RE = re.compile(r"^(?:-\s*)?Blob SHA:\s*`([0-9a-f]{40})`\s*$", re.MULTILINE)
+BLOB_RE = re.compile(
+    r"^(?:-\s*)?(?:Frozen\s+)?Blob SHA:\s*`?([0-9a-f]{40})`?\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
 
 
 def load(path: pathlib.Path):
