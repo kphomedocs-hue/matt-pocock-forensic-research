@@ -18,6 +18,7 @@ on:
       - 'Validate Phase 4 behavior matrix'
       - 'Apply Phase 4 batch'
       - 'Phase 4 runtime smoke'
+      - 'Phase 4 local runtime checks'
     types: [completed]
 
 permissions:
