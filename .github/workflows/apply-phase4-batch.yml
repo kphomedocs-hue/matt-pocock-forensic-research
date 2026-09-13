@@ -31,26 +31,34 @@ jobs:
         run: python scripts/validate_behavior_matrix.py
       - name: Rebuild current-skill coverage
         run: python scripts/build_phase4_coverage.py
+      - name: Refresh foundation report against merged contradictions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_foundation.py
       - name: Validate merged state
         run: |
           python - <<'PY'
           import json
           d = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
           c = json.load(open('04_BEHAVIOR_COVERAGE.json', encoding='utf-8'))
+          f = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
           assert d['hard_errors'] == []
           assert d.get('uncovered_current_contradiction_ids', []) == []
           assert c['hard_errors'] == []
           assert c['skill_denominator'] == 37
           assert c['covered_skills'] + c['uncovered_skills'] == 37
+          assert f['hard_errors'] == []
+          assert f['contradiction_ids_current'] == d['current_contradiction_ids']
           assert not __import__('pathlib').Path('04_PHASE4_BATCH.json').exists()
           print('behavior_rows=', d['row_count'])
           print('current_cts=', len(d['current_contradiction_ids']))
           print('skill_coverage=', f"{c['covered_skills']}/{c['skill_denominator']}")
+          print('foundation_current_cts=', len(f['contradiction_ids_current']))
           print('uncovered=', c['uncovered_mp_ids'])
           PY
       - name: Commit atomic Phase 4 batch result
         run: |
-          paths=(04_PHASE4_BATCH.json 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_CONTRADICTION_REGISTER.md)
+          paths=(04_PHASE4_BATCH.json 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_CONTRADICTION_REGISTER.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A -- "${paths[@]}"
