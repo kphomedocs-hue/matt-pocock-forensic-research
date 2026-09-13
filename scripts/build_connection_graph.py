@@ -8,6 +8,7 @@ It does not use ranked search to prove absence.
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import os
 import pathlib
@@ -23,7 +24,7 @@ EXPECTED_SKILLS = 37
 CENSUS = pathlib.Path("01_FILE_CENSUS.json")
 EDGES_JSON = pathlib.Path("03_CONNECTION_EDGES.json")
 INDEX_MD = pathlib.Path("03_CONNECTION_INDEX.md")
-EXTRACTION_RULES_VERSION = 4
+EXTRACTION_RULES_VERSION = 5
 
 
 def github_json(url: str):
@@ -60,18 +61,40 @@ def normalize_link(source_path: str, target: str) -> str | None:
     return resolved.removeprefix("./")
 
 
-def add_edge(edges, seen, source, edge_type, target, evidence, inferred=False):
+def line_for_offset(text: str, offset: int) -> int:
+    return text.count("\n", 0, max(offset, 0)) + 1
+
+
+def stable_edge_id(source: str, edge_type: str, target: str, evidence: str, inferred: bool) -> str:
+    raw = "\x1f".join([source, edge_type, target, evidence, "1" if inferred else "0"])
+    return "EG-" + hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16].upper()
+
+
+def add_edge(
+    edges,
+    seen,
+    source,
+    edge_type,
+    target,
+    evidence,
+    inferred=False,
+    source_line: int | None = None,
+):
     key = (source, edge_type, target, evidence, inferred)
     if key in seen:
         return
     seen.add(key)
-    edges.append({
+    edge = {
         "from": source,
         "type": edge_type,
         "to": target,
         "evidence": evidence,
         "inferred": inferred,
-    })
+        "stable_edge_id": stable_edge_id(source, edge_type, target, evidence, inferred),
+    }
+    if source_line is not None:
+        edge["source_line"] = source_line
+    edges.append(edge)
 
 
 def has_source_target_edge(edges, source: str, target: str) -> bool:
@@ -182,30 +205,68 @@ def main() -> None:
                 unresolved_internal.append({"from": path, "raw": text.strip(), "kind": "symlink"})
 
         if path.endswith((".md", ".MD")):
-            for raw in md_link_re.findall(text):
+            for match in md_link_re.finditer(text):
+                raw = match.group(1)
                 target = normalize_link(path, raw)
                 if target is None:
                     continue
                 if target in by_path:
-                    add_edge(edges, seen, path, "DOC_LINK", target, f"markdown link: {raw}")
+                    add_edge(
+                        edges,
+                        seen,
+                        path,
+                        "DOC_LINK",
+                        target,
+                        f"markdown link: {raw}",
+                        source_line=line_for_offset(text, match.start()),
+                    )
                 else:
-                    unresolved_internal.append({"from": path, "raw": raw, "resolved": target, "kind": "markdown-link"})
+                    unresolved_internal.append({
+                        "from": path,
+                        "raw": raw,
+                        "resolved": target,
+                        "kind": "markdown-link",
+                        "source_line": line_for_offset(text, match.start()),
+                    })
 
         # Only current skill workflow sources can create operative dependencies.
-        # Governance docs, changesets and human docs that mention the Skill tool are
-        # evidence about invocation, not executable calls themselves.
         if path.endswith("/SKILL.md"):
-            for line in text.splitlines():
+            for line_no, line in enumerate(text.splitlines(), start=1):
                 if "Skill tool" not in line:
                     continue
                 names = [n for n in quoted_skill_re.findall(line) if n in skill_by_name]
                 for name in names:
-                    add_edge(edges, seen, path, "OPERATIVE_CALL", skill_by_name[name], f"Skill tool call: {name}")
+                    add_edge(
+                        edges,
+                        seen,
+                        path,
+                        "OPERATIVE_CALL",
+                        skill_by_name[name],
+                        f"Skill tool call: {name}",
+                        source_line=line_no,
+                    )
 
         if path.endswith("/agents/openai.yaml"):
             owner = path.removesuffix("/agents/openai.yaml") + "/SKILL.md"
             if owner in by_path:
                 add_edge(edges, seen, path, "CONFIG_BINDING", owner, "agents/openai.yaml ownership")
+
+        # Physical support-file ownership is structural and deliberately distinct
+        # from operative consumption. This records co-location without claiming
+        # that the owning SKILL.md reads or invokes the support artifact.
+        if path.startswith("skills/") and not path.endswith("/SKILL.md") and not path.endswith("/agents/openai.yaml"):
+            parts = path.split("/")
+            if len(parts) >= 4:
+                owner = "/".join(parts[:3]) + "/SKILL.md"
+                if owner in by_path:
+                    add_edge(
+                        edges,
+                        seen,
+                        path,
+                        "SUPPORT_BINDING",
+                        owner,
+                        "physical skill-directory ownership; not operative consumption",
+                    )
 
     plugin_path = ".claude-plugin/plugin.json"
     if plugin_path in texts:
@@ -214,7 +275,16 @@ def main() -> None:
             for raw in plugin.get("skills", []):
                 target = raw.removeprefix("./").rstrip("/") + "/SKILL.md"
                 if target in by_path:
-                    add_edge(edges, seen, plugin_path, "DISTRIBUTION_ENTRY", target, f"plugin skills entry: {raw}")
+                    offset = texts[plugin_path].find(raw)
+                    add_edge(
+                        edges,
+                        seen,
+                        plugin_path,
+                        "DISTRIBUTION_ENTRY",
+                        target,
+                        f"plugin skills entry: {raw}",
+                        source_line=line_for_offset(texts[plugin_path], offset) if offset >= 0 else None,
+                    )
                 else:
                     unresolved_internal.append({"from": plugin_path, "raw": raw, "resolved": target, "kind": "plugin-entry"})
         except json.JSONDecodeError as e:
@@ -238,7 +308,8 @@ def main() -> None:
         for target_path in by_path:
             if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
                 continue
-            if target_path in text:
+            offset = text.find(target_path)
+            if offset >= 0:
                 add_edge(
                     edges,
                     seen,
@@ -246,13 +317,15 @@ def main() -> None:
                     "PASSIVE_REFERENCE",
                     target_path,
                     f"exact repository path mention: {target_path}",
+                    source_line=line_for_offset(text, offset),
                 )
                 passive_path_mentions += 1
 
         for basename, target_path in unique_basenames.items():
             if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
                 continue
-            if basename_patterns[basename].search(text):
+            match = basename_patterns[basename].search(text)
+            if match:
                 add_edge(
                     edges,
                     seen,
@@ -260,13 +333,12 @@ def main() -> None:
                     "PASSIVE_REFERENCE",
                     target_path,
                     f"unique filename mention: {basename}",
+                    source_line=line_for_offset(text, match.start()),
                 )
                 passive_basename_mentions += 1
 
         # Exact skill labels are passive relationships, not operative calls.
-        # Supported forms are /name (Claude-style), $name (Codex-style), and
-        # an exact backticked skill name. External URL bodies are removed first
-        # so path segments such as https://.../research do not become skill edges.
+        # Backticked names remain contextual/weak for the quality gate.
         label_text = text_without_urls(text)
         for name, target_path in skill_by_name.items():
             if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
@@ -280,10 +352,10 @@ def main() -> None:
                     "SKILL_REFERENCE",
                     target_path,
                     f"exact skill label: {match.group(0)}",
+                    source_line=line_for_offset(label_text, match.start()),
                 )
                 passive_skill_label_mentions += 1
 
-    # Join current operative calls against both harness invocation policies.
     illegal_operative_calls = []
     for edge in edges:
         if edge["type"] != "OPERATIVE_CALL":
@@ -297,34 +369,34 @@ def main() -> None:
         edge["target_invocation"] = target_policy["effective_class"]
         edge["invocation_legal"] = target_policy["effective_class"] == "MODEL_INVOKED"
         if not edge["invocation_legal"]:
-            illegal_operative_calls.append(
-                {
-                    **edge,
-                    "reason": (
-                        "operative Skill-tool calls may target only model-invoked skills; "
-                        f"target is {target_policy['effective_class']}"
-                    ),
-                }
-            )
+            illegal_operative_calls.append({
+                **edge,
+                "reason": (
+                    "operative Skill-tool calls may target only model-invoked skills; "
+                    f"target is {target_policy['effective_class']}"
+                ),
+            })
 
     sorted_edges = sorted(edges, key=lambda e: (e["from"], e["type"], e["to"], e["evidence"]))
     outgoing = defaultdict(list)
     incoming = defaultdict(list)
     operative_incoming = defaultdict(list)
+    stable_ids = set()
     for i, edge in enumerate(sorted_edges, start=1):
-        edge["edge_id"] = f"EG-A{i:04d}"
+        edge["edge_id"] = f"EG-A{i:04d}"  # display/order identifier only
+        sid = edge["stable_edge_id"]
+        if sid in stable_ids:
+            raise SystemExit(f"Stable edge-ID collision: {sid}")
+        stable_ids.add(sid)
         outgoing[edge["from"]].append(edge)
         incoming[edge["to"]].append(edge)
         if edge["type"] == "OPERATIVE_CALL":
             operative_incoming[edge["to"]].append(edge)
 
     edge_type_counts = Counter(edge["type"] for edge in sorted_edges)
-    effective_policy_counts = Counter(
-        policy["effective_class"] for policy in invocation_policies.values()
-    )
-    policy_mismatches = [
-        policy for policy in invocation_policies.values() if not policy["consistent"]
-    ]
+    effective_policy_counts = Counter(policy["effective_class"] for policy in invocation_policies.values())
+    policy_mismatches = [policy for policy in invocation_policies.values() if not policy["consistent"]]
+    line_provenance_count = sum(1 for edge in sorted_edges if "source_line" in edge)
 
     payload = {
         "source_repo": SOURCE_REPO,
@@ -334,6 +406,8 @@ def main() -> None:
         "extraction_rules_version": EXTRACTION_RULES_VERSION,
         "edge_count": len(sorted_edges),
         "edge_type_counts": dict(sorted(edge_type_counts.items())),
+        "stable_edge_id_count": len(stable_ids),
+        "line_provenance_edge_count": line_provenance_count,
         "passive_path_mention_count": passive_path_mentions,
         "passive_unique_basename_mention_count": passive_basename_mentions,
         "passive_skill_label_mention_count": passive_skill_label_mentions,
@@ -350,9 +424,7 @@ def main() -> None:
     EDGES_JSON.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
     type_summary = ", ".join(f"{name}={count}" for name, count in sorted(edge_type_counts.items()))
-    policy_summary = ", ".join(
-        f"{name}={count}" for name, count in sorted(effective_policy_counts.items())
-    )
+    policy_summary = ", ".join(f"{name}={count}" for name, count in sorted(effective_policy_counts.items()))
     lines = [
         "# Connection Index",
         "",
@@ -364,9 +436,13 @@ def main() -> None:
         "",
         f"Edge types: {type_summary}.",
         "",
+        f"Every edge has a stable content-derived `stable_edge_id`; **{line_provenance_count}** edges also carry literal source-line provenance. Sequential `edge_id` is display order only.",
+        "",
         f"Passive-reference scan: **{passive_path_mentions}** exact-path mentions + **{passive_basename_mentions}** unique-filename mentions + **{passive_skill_label_mentions}** exact skill-label mentions; **{len(unique_basenames)}** globally unique basenames were eligible.",
         "",
         f"Invocation-policy join: **{len(invocation_policies)}** skills; {policy_summary}; policy mismatches **{len(policy_mismatches)}**; illegal current operative calls **{len(illegal_operative_calls)}**.",
+        "",
+        "`SUPPORT_BINDING` means physical ownership/co-location inside a skill directory; it does not mean the owning skill reads or executes the support file.",
         "",
         "Generated by `scripts/build_connection_graph.py`. This is an extraction layer, not final semantic verification.",
         "",
@@ -391,16 +467,18 @@ def main() -> None:
     lines += ["", "### Illegal current operative calls", ""]
     if illegal_operative_calls:
         for item in illegal_operative_calls:
-            lines.append(
-                f"- `{item['from']}` → `{item['to']}` — {item['reason']} ({item['evidence']})"
-            )
+            lines.append(f"- `{item['from']}` → `{item['to']}` — {item['reason']} ({item['evidence']})")
     else:
         lines.append("None detected among current `SKILL.md` Skill-tool calls.")
 
     lines += ["", "## Unresolved internal-looking references", ""]
     if unresolved_internal:
         for item in unresolved_internal:
-            lines.append(f"- `{item['from']}` → `{item.get('raw','')}` (resolved candidate `{item.get('resolved','')}`; {item['kind']})")
+            line = f"; line {item['source_line']}" if item.get("source_line") else ""
+            lines.append(
+                f"- `{item['from']}` → `{item.get('raw','')}` "
+                f"(resolved candidate `{item.get('resolved','')}`; {item['kind']}{line})"
+            )
     else:
         lines.append("None from the extraction rules above.")
 
@@ -409,6 +487,7 @@ def main() -> None:
         f"Wrote {EDGES_JSON} and {INDEX_MD}: {len(sorted_edges)} edges, "
         f"{len(unresolved_internal)} unresolved, "
         f"passive={passive_path_mentions + passive_basename_mentions + passive_skill_label_mentions}, "
+        f"stable_ids={len(stable_ids)}, line_provenance={line_provenance_count}, "
         f"policy_mismatches={len(policy_mismatches)}, illegal_calls={len(illegal_operative_calls)}"
     )
 
