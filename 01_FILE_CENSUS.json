@@ -14,7 +14,7 @@
       "sha": "56b348d9fea2d7ee2e326fe1838215d0c94c413b",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0001 note](02_FILE_NOTES/MP-0001.md)"
     },
     {
@@ -26,7 +26,7 @@
       "sha": "263d10290d60ea15119d2d3c51af5f4f08b5f178",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0002 note](02_FILE_NOTES/MP-0002.md)"
     },
     {
@@ -38,7 +38,7 @@
       "sha": "a93751108599407637bec35c08dde6c4eb1afefe",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0003 note](02_FILE_NOTES/MP-0003.md)"
     },
     {
@@ -50,7 +50,7 @@
       "sha": "c13b8a5ea97466e14259de602c6b66e72133fef1",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0004 note](02_FILE_NOTES/MP-0004.md)"
     },
     {
@@ -62,7 +62,7 @@
       "sha": "68f9216230f2bbafefc985eccf81fcc506c14b3b",
       "category": "governance",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0005 note](02_FILE_NOTES/MP-0005.md)"
     },
     {
@@ -74,7 +74,7 @@
       "sha": "654c6d4750dca19541bd9803371735943bb3fe4e",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0006 note](02_FILE_NOTES/MP-0006.md)"
     },
     {
@@ -86,7 +86,7 @@
       "sha": "2128b7d4220ed30503e957fe8c8bbcf9b521931d",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0007 note](02_FILE_NOTES/MP-0007.md)"
     },
     {
@@ -98,7 +98,7 @@
       "sha": "06c7350518b33bdaedd0eae254f75fd887f16963",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0008 note](02_FILE_NOTES/MP-0008.md)"
     },
     {
@@ -110,7 +110,7 @@
       "sha": "8ab6722a781dedf4d52456d6a02f83e358e62f1f",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0009 note](02_FILE_NOTES/MP-0009.md)"
     },
     {
@@ -122,7 +122,7 @@
       "sha": "64f830b202aaef799c5dabe2ba53d0ab05f87efa",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0010 note](02_FILE_NOTES/MP-0010.md)"
     },
     {
@@ -134,7 +134,7 @@
       "sha": "0fc8ee080d9d5b7ed6709af70a5d66a4b65ca5cb",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0011 note](02_FILE_NOTES/MP-0011.md)"
     },
     {
@@ -146,7 +146,7 @@
       "sha": "6cd562fb6a8b46afb9db06756deb76a2bd6688aa",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0012 note](02_FILE_NOTES/MP-0012.md)"
     },
     {
@@ -158,7 +158,7 @@
       "sha": "a3909afb95f471194fe96430127799bb7e7df5b1",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0013 note](02_FILE_NOTES/MP-0013.md)"
     },
     {
@@ -170,7 +170,7 @@
       "sha": "153b5564e6ab98f85ddb36988f72a00adfe1a716",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0014 note](02_FILE_NOTES/MP-0014.md)"
     },
     {
@@ -182,7 +182,7 @@
       "sha": "18e6a7c38d55a5fb75f3b4bfceb6807e95060032",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0015 note](02_FILE_NOTES/MP-0015.md)"
     },
     {
@@ -194,7 +194,7 @@
       "sha": "edaa4d6a86c16095fef8e18f8214487627a9cba2",
       "category": "changeset",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0016 note](02_FILE_NOTES/MP-0016.md)"
     },
     {
@@ -206,7 +206,7 @@
       "sha": "1f868cee17708d691ad71d963e847dad209d0c07",
       "category": "distribution",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0017 note](02_FILE_NOTES/MP-0017.md)"
     },
     {
@@ -218,7 +218,7 @@
       "sha": "0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d",
       "category": "distribution",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0018 note](02_FILE_NOTES/MP-0018.md)"
     },
     {
@@ -230,7 +230,7 @@
       "sha": "b503eff7b073afe8a08d0b25cc31efca78caea02",
       "category": "ci-release",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0019 note](02_FILE_NOTES/MP-0019.md)"
     },
     {
@@ -242,7 +242,7 @@
       "sha": "98dd2d8dd55043ee7a28c5ecbf08cc6a18afacaf",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0020 note](02_FILE_NOTES/MP-0020.md)"
     },
     {
@@ -254,7 +254,7 @@
       "sha": "72f09fe5a9cb64bd55a46d45e116cd538d48fe20",
       "category": "negative-memory",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0021 note](02_FILE_NOTES/MP-0021.md)"
     },
     {
@@ -266,7 +266,7 @@
       "sha": "5a3a7f677027a48a9e2a08df7c6d601b322f38da",
       "category": "negative-memory",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0022 note](02_FILE_NOTES/MP-0022.md)"
     },
     {
@@ -278,7 +278,7 @@
       "sha": "418dba12c17b2cd77e0b3161b107c624b7b2ee97",
       "category": "negative-memory",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0023 note](02_FILE_NOTES/MP-0023.md)"
     },
     {
@@ -290,7 +290,7 @@
       "sha": "681311eb9cf453d0faddf3aacaec7357e97ba8e9",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0024 note](02_FILE_NOTES/MP-0024.md)"
     },
     {
@@ -302,7 +302,7 @@
       "sha": "26d68ffa7cf2f58471abd578042dded7b75675aa",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0025 note](02_FILE_NOTES/MP-0025.md)"
     },
     {
@@ -314,7 +314,7 @@
       "sha": "6de72d80dfdfbba9c8ce93d69a85254fdaebf2b6",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0026 note](02_FILE_NOTES/MP-0026.md)"
     },
     {
@@ -326,7 +326,7 @@
       "sha": "76ebd23dbb8266dab9491425b39f3c4857fb4a52",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0027 note](02_FILE_NOTES/MP-0027.md)"
     },
     {
@@ -338,7 +338,7 @@
       "sha": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0028 note](02_FILE_NOTES/MP-0028.md)"
     },
     {
@@ -350,7 +350,7 @@
       "sha": "ff9b797a342d3a64b52f9f5a83d9fc4ce28709dc",
       "category": "root",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0029 note](02_FILE_NOTES/MP-0029.md)"
     },
     {
@@ -362,7 +362,7 @@
       "sha": "67d1e46192cc22f2f93f6d463dbd831ce174518e",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0030 note](02_FILE_NOTES/MP-0030.md)"
     },
     {
@@ -374,7 +374,7 @@
       "sha": "46353162627210af65296c6dee62e422a3400373",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0031 note](02_FILE_NOTES/MP-0031.md)"
     },
     {
@@ -386,7 +386,7 @@
       "sha": "706365ca56fc2c5253fe407a72c494c51cb91c2e",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0032 note](02_FILE_NOTES/MP-0032.md)"
     },
     {
@@ -398,7 +398,7 @@
       "sha": "cd6887ac414d40695b52c6a121ba033cb8d5ce98",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0033 note](02_FILE_NOTES/MP-0033.md)"
     },
     {
@@ -410,7 +410,7 @@
       "sha": "fb8100db71dca3bb044076f537a2e6ba1ed7c3ef",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0034 note](02_FILE_NOTES/MP-0034.md)"
     },
     {
@@ -422,7 +422,7 @@
       "sha": "26ac9de3bbdf49db18c7a1aa0ff508c6bf680cda",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0035 note](02_FILE_NOTES/MP-0035.md)"
     },
     {
@@ -434,7 +434,7 @@
       "sha": "25f9980d382ba65d1fa44fc8849412469200d626",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0036 note](02_FILE_NOTES/MP-0036.md)"
     },
     {
@@ -446,7 +446,7 @@
       "sha": "076fad04c9d16903334baf8ecee8e14b47fd2d1b",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0037 note](02_FILE_NOTES/MP-0037.md)"
     },
     {
@@ -458,7 +458,7 @@
       "sha": "03703cac77b4d361e7b06c9e6ef4366501c12087",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0038 note](02_FILE_NOTES/MP-0038.md)"
     },
     {
@@ -470,7 +470,7 @@
       "sha": "a2b2074c426720af9ef50dc1cd697b3064eb8844",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0039 note](02_FILE_NOTES/MP-0039.md)"
     },
     {
@@ -482,7 +482,7 @@
       "sha": "ee5e0e2db00c994a1cb5eaf4a49efdc379f93ac7",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0040 note](02_FILE_NOTES/MP-0040.md)"
     },
     {
@@ -494,7 +494,7 @@
       "sha": "d7f4933af11e6dfaf2dd307b7a69d3edb2b74dbc",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0041 note](02_FILE_NOTES/MP-0041.md)"
     },
     {
@@ -506,7 +506,7 @@
       "sha": "63aae75be887420c21bad0f837c444332ec683c1",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0042 note](02_FILE_NOTES/MP-0042.md)"
     },
     {
@@ -518,7 +518,7 @@
       "sha": "e72c71c44c170114d7d83ebbda594a772f955441",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0043 note](02_FILE_NOTES/MP-0043.md)"
     },
     {
@@ -530,7 +530,7 @@
       "sha": "6f6f894fe0bfecd2a8b05fb1053b22da74985d90",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0044 note](02_FILE_NOTES/MP-0044.md)"
     },
     {
@@ -542,7 +542,7 @@
       "sha": "10ddf79c6fbfb8c27e86f2e03998905fefa90ec1",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0045 note](02_FILE_NOTES/MP-0045.md)"
     },
     {
@@ -554,7 +554,7 @@
       "sha": "1efc4b18bd8a1d7733852813873474475abb3a2b",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0046 note](02_FILE_NOTES/MP-0046.md)"
     },
     {
@@ -566,7 +566,7 @@
       "sha": "84e047b2481c2afe4e5247231a8600d9721f1b88",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0047 note](02_FILE_NOTES/MP-0047.md)"
     },
     {
@@ -578,7 +578,7 @@
       "sha": "d79d4864eca912ed2ed4ea3c13137c384e0868fb",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0048 note](02_FILE_NOTES/MP-0048.md)"
     },
     {
@@ -590,7 +590,7 @@
       "sha": "512d76af564bc0899c59c90a5287a442f7846530",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0049 note](02_FILE_NOTES/MP-0049.md)"
     },
     {
@@ -602,7 +602,7 @@
       "sha": "72aa2f0d292a2b6f22c12ac54e9e0c9afa42f672",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0050 note](02_FILE_NOTES/MP-0050.md)"
     },
     {
@@ -614,7 +614,7 @@
       "sha": "012113bd2379a4318ad3c1c7e4f4e848bbc29990",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0051 note](02_FILE_NOTES/MP-0051.md)"
     },
     {
@@ -626,7 +626,7 @@
       "sha": "52f0e437bb241630c9960f02c7e6fd7091a3030f",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0052 note](02_FILE_NOTES/MP-0052.md)"
     },
     {
@@ -638,7 +638,7 @@
       "sha": "0b14100932844507dc8b3de6e3b6bc2002d493e1",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0053 note](02_FILE_NOTES/MP-0053.md)"
     },
     {
@@ -650,7 +650,7 @@
       "sha": "de12e66714721f305af1ded601f7a570c6331a72",
       "category": "human-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0054 note](02_FILE_NOTES/MP-0054.md)"
     },
     {
@@ -662,7 +662,7 @@
       "sha": "db12f086c92da55b5d724f0dd3afecfebd2d793f",
       "category": "dependency-lock",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0055 note](02_FILE_NOTES/MP-0055.md)"
     },
     {
@@ -674,7 +674,7 @@
       "sha": "2200fefca3d8c1ebac5a823681915eec736dfa07",
       "category": "package-config",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0056 note](02_FILE_NOTES/MP-0056.md)"
     },
     {
@@ -686,7 +686,7 @@
       "sha": "558fae823c0e296ad0eff528f827142600a18135",
       "category": "repo-executable",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0057 note](02_FILE_NOTES/MP-0057.md)"
     },
     {
@@ -698,7 +698,7 @@
       "sha": "f13da41774c8bffea798e64505a4c3adc528ee63",
       "category": "repo-executable",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0058 note](02_FILE_NOTES/MP-0058.md)"
     },
     {
@@ -710,7 +710,7 @@
       "sha": "44063fc0d14a78927caf3990882ea3809157bc21",
       "category": "repo-executable",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0059 note](02_FILE_NOTES/MP-0059.md)"
     },
     {
@@ -722,7 +722,7 @@
       "sha": "aa1242c27b1f5e3f762bd5743affbd966811b5b4",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0060 note](02_FILE_NOTES/MP-0060.md)"
     },
     {
@@ -734,7 +734,7 @@
       "sha": "676977ee31f86172f4a5653ab719f6b5be3072d1",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0061 note](02_FILE_NOTES/MP-0061.md)"
     },
     {
@@ -746,7 +746,7 @@
       "sha": "fb58ef9febcfd558cdb4517e370f19034869ba26",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0062 note](02_FILE_NOTES/MP-0062.md)"
     },
     {
@@ -758,7 +758,7 @@
       "sha": "ae8eb9b211972d9ae584b41d0f1439c644494fc7",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0063 note](02_FILE_NOTES/MP-0063.md)"
     },
     {
@@ -770,7 +770,7 @@
       "sha": "5c60d51b5b1248d7210bff8c6b42a5a06524b8a4",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0064 note](02_FILE_NOTES/MP-0064.md)"
     },
     {
@@ -782,7 +782,7 @@
       "sha": "e28d7acbf7b3bb4d7817b7eb5d9c105af03f6ec4",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0065 note](02_FILE_NOTES/MP-0065.md)"
     },
     {
@@ -794,7 +794,7 @@
       "sha": "9076774ba327f49068db9273feceda03bfe940fa",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0066 note](02_FILE_NOTES/MP-0066.md)"
     },
     {
@@ -806,7 +806,7 @@
       "sha": "cd94075cfd754d147555c5d747a16431ed4c7dd8",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0067 note](02_FILE_NOTES/MP-0067.md)"
     },
     {
@@ -818,7 +818,7 @@
       "sha": "7edc861a31b1b219b933af18079f66b564c5de67",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0068 note](02_FILE_NOTES/MP-0068.md)"
     },
     {
@@ -830,7 +830,7 @@
       "sha": "3f63c8146dd2604b419c929e9876b90c30d410e9",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0069 note](02_FILE_NOTES/MP-0069.md)"
     },
     {
@@ -842,7 +842,7 @@
       "sha": "3180715edb37f6e96bec42f92f00169faa8886ef",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0070 note](02_FILE_NOTES/MP-0070.md)"
     },
     {
@@ -854,7 +854,7 @@
       "sha": "061c25a524acaa93d4534e9e08a793c0a5fe45fd",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0071 note](02_FILE_NOTES/MP-0071.md)"
     },
     {
@@ -866,7 +866,7 @@
       "sha": "a13a755a77634ce61a649a3a0d905a66d3865b35",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0072 note](02_FILE_NOTES/MP-0072.md)"
     },
     {
@@ -878,7 +878,7 @@
       "sha": "243198464a8401a7ba1d63b3708fa43c3d067665",
       "category": "skill-executable-config",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0073 note](02_FILE_NOTES/MP-0073.md)"
     },
     {
@@ -890,7 +890,7 @@
       "sha": "d7e61f30a9fd8ca70d9ee68f019c2a9ebf2d13f7",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0074 note](02_FILE_NOTES/MP-0074.md)"
     },
     {
@@ -902,7 +902,7 @@
       "sha": "79bbb32f6fda55758b377c980f72a6cb2b8c670e",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0075 note](02_FILE_NOTES/MP-0075.md)"
     },
     {
@@ -914,7 +914,7 @@
       "sha": "9b97707e19ef1f590aada356f2b3f6bb881f91be",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0076 note](02_FILE_NOTES/MP-0076.md)"
     },
     {
@@ -926,7 +926,7 @@
       "sha": "7f1522d2f11506ee205275ab7c282aa52366ecf6",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0077 note](02_FILE_NOTES/MP-0077.md)"
     },
     {
@@ -938,7 +938,7 @@
       "sha": "62b9efb6f991d1b229adee7506962f13ced0c499",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0078 note](02_FILE_NOTES/MP-0078.md)"
     },
     {
@@ -950,7 +950,7 @@
       "sha": "5dbe2780a51be3e9b118bd7758a73e54a9384e11",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0079 note](02_FILE_NOTES/MP-0079.md)"
     },
     {
@@ -962,7 +962,7 @@
       "sha": "7a0b11f5f4fe9505ea5c7983c3083ba1bf754f69",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0080 note](02_FILE_NOTES/MP-0080.md)"
     },
     {
@@ -974,7 +974,7 @@
       "sha": "f8794dc153b409052a9167baf10858cf01b36175",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0081 note](02_FILE_NOTES/MP-0081.md)"
     },
     {
@@ -986,7 +986,7 @@
       "sha": "e39e8255b8797cf8257d014fb6658fb533f3a399",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0082 note](02_FILE_NOTES/MP-0082.md)"
     },
     {
@@ -998,7 +998,7 @@
       "sha": "a578dd0a34ad0a8886abe7e7642b100106ba86d6",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0083 note](02_FILE_NOTES/MP-0083.md)"
     },
     {
@@ -1010,7 +1010,7 @@
       "sha": "706fdca096da5937fe57875a9154017d50668c42",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0084 note](02_FILE_NOTES/MP-0084.md)"
     },
     {
@@ -1022,7 +1022,7 @@
       "sha": "32be86a0a5d9928db84b3988e55f9debe476ab40",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0085 note](02_FILE_NOTES/MP-0085.md)"
     },
     {
@@ -1034,7 +1034,7 @@
       "sha": "a0044501fe0d385b4d8575b610188ede9b236ccf",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0086 note](02_FILE_NOTES/MP-0086.md)"
     },
     {
@@ -1046,7 +1046,7 @@
       "sha": "3977951663490882c2632b40695d9f59a2fe2408",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0087 note](02_FILE_NOTES/MP-0087.md)"
     },
     {
@@ -1058,7 +1058,7 @@
       "sha": "1618b147965bc729b7bf3e8da5f130132067aadc",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0088 note](02_FILE_NOTES/MP-0088.md)"
     },
     {
@@ -1070,7 +1070,7 @@
       "sha": "fecee97e9457ba039678d2fcf1b1bc9fca78307d",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0089 note](02_FILE_NOTES/MP-0089.md)"
     },
     {
@@ -1082,7 +1082,7 @@
       "sha": "e18b96ca0ccc1003889d5d6991386207c2454bc2",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0090 note](02_FILE_NOTES/MP-0090.md)"
     },
     {
@@ -1094,7 +1094,7 @@
       "sha": "bfb7e5606e231e6808979f623fce76a9aad4b71c",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0091 note](02_FILE_NOTES/MP-0091.md)"
     },
     {
@@ -1106,7 +1106,7 @@
       "sha": "331ffb9d38937877f51a5f867a66dc61eee259ae",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0092 note](02_FILE_NOTES/MP-0092.md)"
     },
     {
@@ -1118,7 +1118,7 @@
       "sha": "7f6f576e2e54e0d287cbb9731ebe0343f54e50cf",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0093 note](02_FILE_NOTES/MP-0093.md)"
     },
     {
@@ -1130,7 +1130,7 @@
       "sha": "65a0da8128c98051183235e490767a8065310868",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0094 note](02_FILE_NOTES/MP-0094.md)"
     },
     {
@@ -1142,7 +1142,7 @@
       "sha": "35249041162b1eed5b873d97fc430fb3e4adb18f",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0095 note](02_FILE_NOTES/MP-0095.md)"
     },
     {
@@ -1154,7 +1154,7 @@
       "sha": "b258aeb3c44420a2464b72ba228b77b4b3abbaea",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0096 note](02_FILE_NOTES/MP-0096.md)"
     },
     {
@@ -1166,7 +1166,7 @@
       "sha": "251035a6d74b4af8d68f066b8d7f1cef90904570",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0097 note](02_FILE_NOTES/MP-0097.md)"
     },
     {
@@ -1178,7 +1178,7 @@
       "sha": "0209a19af92c9c485cf3acc3d9e253171517ea17",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0098 note](02_FILE_NOTES/MP-0098.md)"
     },
     {
@@ -1190,7 +1190,7 @@
       "sha": "b716855d485f3865f9dfde2a82141721f065b2e7",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0099 note](02_FILE_NOTES/MP-0099.md)"
     },
     {
@@ -1202,7 +1202,7 @@
       "sha": "8fc086710806190ee7c4baa32089cb877a75736a",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0100 note](02_FILE_NOTES/MP-0100.md)"
     },
     {
@@ -1214,7 +1214,7 @@
       "sha": "651b838a7663e027b1b8884491e867f26bb9a021",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0101 note](02_FILE_NOTES/MP-0101.md)"
     },
     {
@@ -1226,7 +1226,7 @@
       "sha": "71cbfee674d93244ce81d1830b930ca9a69200bd",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0102 note](02_FILE_NOTES/MP-0102.md)"
     },
     {
@@ -1238,7 +1238,7 @@
       "sha": "7ab86479f925a1f9e8ba680af33cb3b12e015381",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0103 note](02_FILE_NOTES/MP-0103.md)"
     },
     {
@@ -1250,7 +1250,7 @@
       "sha": "3f52599ae2a4347aee5a07432c2707518e691a7f",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0104 note](02_FILE_NOTES/MP-0104.md)"
     },
     {
@@ -1262,7 +1262,7 @@
       "sha": "549e6f76f020a1b9ba65f52ccda336566ee6222a",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0105 note](02_FILE_NOTES/MP-0105.md)"
     },
     {
@@ -1274,7 +1274,7 @@
       "sha": "e868c831fcfb1e124e010bcdf84a429ec879160f",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0106 note](02_FILE_NOTES/MP-0106.md)"
     },
     {
@@ -1286,7 +1286,7 @@
       "sha": "24605a5db64e4fc750b999aa94aea126bee814ee",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0107 note](02_FILE_NOTES/MP-0107.md)"
     },
     {
@@ -1298,7 +1298,7 @@
       "sha": "1462fcd9e8cc21921158c296149dc05d9be39d20",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0108 note](02_FILE_NOTES/MP-0108.md)"
     },
     {
@@ -1310,7 +1310,7 @@
       "sha": "c9fba2f77ee0619975ec8488c0d4861a0c7e3151",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0109 note](02_FILE_NOTES/MP-0109.md)"
     },
     {
@@ -1322,7 +1322,7 @@
       "sha": "37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0110 note](02_FILE_NOTES/MP-0110.md)"
     },
     {
@@ -1334,7 +1334,7 @@
       "sha": "acb366cf0f2527e8925ff1223b77610ac0b1be4c",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0111 note](02_FILE_NOTES/MP-0111.md)"
     },
     {
@@ -1346,7 +1346,7 @@
       "sha": "812805b760baf328db0ebdef6f3807e381f97016",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0112 note](02_FILE_NOTES/MP-0112.md)"
     },
     {
@@ -1358,7 +1358,7 @@
       "sha": "b37544751e0570f9df8de6c02aef238de8c3e1e0",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0113 note](02_FILE_NOTES/MP-0113.md)"
     },
     {
@@ -1370,7 +1370,7 @@
       "sha": "c4294ad8298b9b95fc727496b1b802b1f7363fba",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0114 note](02_FILE_NOTES/MP-0114.md)"
     },
     {
@@ -1382,7 +1382,7 @@
       "sha": "b601bdf3a321e7d32d5714681540b811287d3988",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0115 note](02_FILE_NOTES/MP-0115.md)"
     },
     {
@@ -1394,7 +1394,7 @@
       "sha": "1b3cdf40ad4923a9845fd682653d8cc4510f516e",
       "category": "skill-executable-config",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0116 note](02_FILE_NOTES/MP-0116.md)"
     },
     {
@@ -1406,7 +1406,7 @@
       "sha": "ee394b7985a8c296ffa068e63e4f5dcf23b8969b",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0117 note](02_FILE_NOTES/MP-0117.md)"
     },
     {
@@ -1418,7 +1418,7 @@
       "sha": "9ab14e312a0d5cffe926eeeab12cef7dc8f84d54",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0118 note](02_FILE_NOTES/MP-0118.md)"
     },
     {
@@ -1430,7 +1430,7 @@
       "sha": "0a7aa5da50d0e73248fc17fb8fe82409ec071eaf",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0119 note](02_FILE_NOTES/MP-0119.md)"
     },
     {
@@ -1442,7 +1442,7 @@
       "sha": "d5097f847fc003935599a7f7bf8f0f7186427910",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0120 note](02_FILE_NOTES/MP-0120.md)"
     },
     {
@@ -1454,7 +1454,7 @@
       "sha": "043f27f43eed1a8a3c0e3fdbf920f07935faf05d",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0121 note](02_FILE_NOTES/MP-0121.md)"
     },
     {
@@ -1466,7 +1466,7 @@
       "sha": "e58a474ca80feffdeb28842bc3bdee37da6510e7",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0122 note](02_FILE_NOTES/MP-0122.md)"
     },
     {
@@ -1478,7 +1478,7 @@
       "sha": "1a4f4111192ff75b4771e8a248c603994d5eafdc",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0123 note](02_FILE_NOTES/MP-0123.md)"
     },
     {
@@ -1490,7 +1490,7 @@
       "sha": "f5fed82c7b8597a852a4fa8d292b00a1d5c8bd16",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0124 note](02_FILE_NOTES/MP-0124.md)"
     },
     {
@@ -1502,7 +1502,7 @@
       "sha": "a2f0bac3f9cebf29beee2e79960cb876e0adc65d",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0125 note](02_FILE_NOTES/MP-0125.md)"
     },
     {
@@ -1514,7 +1514,7 @@
       "sha": "7e30047eaeda175de5d93886596a37baf365bb90",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0126 note](02_FILE_NOTES/MP-0126.md)"
     },
     {
@@ -1526,7 +1526,7 @@
       "sha": "5d0581bdd4f9337cfb1e13feb7e1e18f43ea9db1",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0127 note](02_FILE_NOTES/MP-0127.md)"
     },
     {
@@ -1538,7 +1538,7 @@
       "sha": "54030ede7d36b7f72fc0f645fa414efa9b6f63ed",
       "category": "skill-executable-config",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0128 note](02_FILE_NOTES/MP-0128.md)"
     },
     {
@@ -1550,7 +1550,7 @@
       "sha": "3d3b25b605491adc5c62ae5423127717a94b9632",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0129 note](02_FILE_NOTES/MP-0129.md)"
     },
     {
@@ -1562,7 +1562,7 @@
       "sha": "e8eaa188d4c70b582eed2d1775fe4c4ea3562b25",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0130 note](02_FILE_NOTES/MP-0130.md)"
     },
     {
@@ -1574,7 +1574,7 @@
       "sha": "c7c889b880cf9c8d289119dea5ff240641b615ca",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0131 note](02_FILE_NOTES/MP-0131.md)"
     },
     {
@@ -1586,7 +1586,7 @@
       "sha": "be3713e91e3ddc6c71e04e6b512b6ad6502d7cc8",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0132 note](02_FILE_NOTES/MP-0132.md)"
     },
     {
@@ -1598,7 +1598,7 @@
       "sha": "02f2866d13e72504e010f2ad3458eb9b36b876db",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0133 note](02_FILE_NOTES/MP-0133.md)"
     },
     {
@@ -1610,7 +1610,7 @@
       "sha": "87e0c736be148002f9db275258cd2f405643ad7b",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0134 note](02_FILE_NOTES/MP-0134.md)"
     },
     {
@@ -1622,7 +1622,7 @@
       "sha": "6b169d22be12c078f1e70763d367fe693de342e2",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0135 note](02_FILE_NOTES/MP-0135.md)"
     },
     {
@@ -1634,7 +1634,7 @@
       "sha": "58bcdd875b164093b95f436fa32a65c6cb5eb572",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0136 note](02_FILE_NOTES/MP-0136.md)"
     },
     {
@@ -1646,7 +1646,7 @@
       "sha": "3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0137 note](02_FILE_NOTES/MP-0137.md)"
     },
     {
@@ -1658,7 +1658,7 @@
       "sha": "c40b59cb47880fc9da8fe4179bd742f51f09d17d",
       "category": "skill-executable-config",
       "runtime_risk": "HIGH",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0138 note](02_FILE_NOTES/MP-0138.md)"
     },
     {
@@ -1670,7 +1670,7 @@
       "sha": "ae4f965e204fc93cedbc4e2c306e92829d93f800",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0139 note](02_FILE_NOTES/MP-0139.md)"
     },
     {
@@ -1682,7 +1682,7 @@
       "sha": "3bd79ee2b502075c6d1fe40e6fe98f4fe3f3c5f5",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0140 note](02_FILE_NOTES/MP-0140.md)"
     },
     {
@@ -1694,7 +1694,7 @@
       "sha": "d87df28e7d8abb4e57ecc6e47d71c274d16054c7",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0141 note](02_FILE_NOTES/MP-0141.md)"
     },
     {
@@ -1706,7 +1706,7 @@
       "sha": "963723a58973effa256cbfe0f23a7bcc03a374b8",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0142 note](02_FILE_NOTES/MP-0142.md)"
     },
     {
@@ -1718,7 +1718,7 @@
       "sha": "1b9708168263067adb4684d06ebb8f4ccfe9682c",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0143 note](02_FILE_NOTES/MP-0143.md)"
     },
     {
@@ -1730,7 +1730,7 @@
       "sha": "e5a1c63df9e0703893cdad799bd5e2a6b5e6939d",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0144 note](02_FILE_NOTES/MP-0144.md)"
     },
     {
@@ -1742,7 +1742,7 @@
       "sha": "0ac94ab2de3dfa98639c2cc17c12a291f4924f54",
       "category": "bucket-docs",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0145 note](02_FILE_NOTES/MP-0145.md)"
     },
     {
@@ -1754,7 +1754,7 @@
       "sha": "3947ff9c4ad980d14fc07fccbf659d47c114e81d",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0146 note](02_FILE_NOTES/MP-0146.md)"
     },
     {
@@ -1766,7 +1766,7 @@
       "sha": "4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0147 note](02_FILE_NOTES/MP-0147.md)"
     },
     {
@@ -1778,7 +1778,7 @@
       "sha": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0148 note](02_FILE_NOTES/MP-0148.md)"
     },
     {
@@ -1790,7 +1790,7 @@
       "sha": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0149 note](02_FILE_NOTES/MP-0149.md)"
     },
     {
@@ -1802,7 +1802,7 @@
       "sha": "2eb98a51b97bb5bac461a26ad14828eeac827909",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0150 note](02_FILE_NOTES/MP-0150.md)"
     },
     {
@@ -1814,7 +1814,7 @@
       "sha": "6e1d8da121beceddc2f9ec7fa8714c1d914dd11a",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0151 note](02_FILE_NOTES/MP-0151.md)"
     },
     {
@@ -1826,7 +1826,7 @@
       "sha": "fdd7e366ad9760588b28981e42b3d3b561e56aca",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0152 note](02_FILE_NOTES/MP-0152.md)"
     },
     {
@@ -1838,7 +1838,7 @@
       "sha": "953c61422776b47612c3c945920358ad7b5daee7",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0153 note](02_FILE_NOTES/MP-0153.md)"
     },
     {
@@ -1850,7 +1850,7 @@
       "sha": "45250bb1bad70988bf381625931df64645e10246",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0154 note](02_FILE_NOTES/MP-0154.md)"
     },
     {
@@ -1862,7 +1862,7 @@
       "sha": "18b588c8b6f96a50ae2352f264928c643d2782e4",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0155 note](02_FILE_NOTES/MP-0155.md)"
     },
     {
@@ -1874,7 +1874,7 @@
       "sha": "c679eeccd48ca720c8196e5d9a9e58223abf213b",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0156 note](02_FILE_NOTES/MP-0156.md)"
     },
     {
@@ -1886,7 +1886,7 @@
       "sha": "3452a850e3b0c1f0a3d41b2bfd45164d2d38d7f6",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0157 note](02_FILE_NOTES/MP-0157.md)"
     },
     {
@@ -1898,7 +1898,7 @@
       "sha": "dadd0c00d6a350acaa15bb9ca1b96b20ead684ca",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0158 note](02_FILE_NOTES/MP-0158.md)"
     },
     {
@@ -1910,7 +1910,7 @@
       "sha": "a58d14765beb4acb4c9708b516310558e1308a22",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0159 note](02_FILE_NOTES/MP-0159.md)"
     },
     {
@@ -1922,7 +1922,7 @@
       "sha": "f8854f1b4527bca90378baf5430557172136a1bf",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0160 note](02_FILE_NOTES/MP-0160.md)"
     },
     {
@@ -1934,7 +1934,7 @@
       "sha": "6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0161 note](02_FILE_NOTES/MP-0161.md)"
     },
     {
@@ -1946,7 +1946,7 @@
       "sha": "9cdbdb22aadc438755392216e75ad9a14cc9832e",
       "category": "skill-support",
       "runtime_risk": "LOW",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0162 note](02_FILE_NOTES/MP-0162.md)"
     },
     {
@@ -1958,7 +1958,7 @@
       "sha": "a37608daf6e835e767deecfb498facecaaba82ba",
       "category": "skill",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0163 note](02_FILE_NOTES/MP-0163.md)"
     },
     {
@@ -1970,7 +1970,7 @@
       "sha": "079c933b75743dec18b5d0c01006def20b6aad26",
       "category": "codex-metadata",
       "runtime_risk": "MEDIUM",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "evidence": "[MP-0164 note](02_FILE_NOTES/MP-0164.md)"
     }
   ]

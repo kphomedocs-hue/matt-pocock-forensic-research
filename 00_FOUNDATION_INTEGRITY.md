@@ -10,7 +10,7 @@ Warnings / normalization gaps: **0**
 
 - Census rows: **164 / 164**
 - Durable notes found: **164 / 164**
-- Status counts: `{'READ': 164}`
+- Status counts: `{'CONNECTIONS TRACED': 164}`
 - Provenance syntax styles accepted: `{'direct': 164}`
 
 ## Note-schema coverage

@@ -7,7 +7,7 @@
   "hard_errors": [],
   "warnings": [],
   "note_status_counts": {
-    "READ": 164
+    "CONNECTIONS TRACED": 164
   },
   "note_provenance_styles": {
     "direct": 164
@@ -332,7 +332,7 @@
     {
       "mp_id": "MP-0001",
       "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -344,7 +344,7 @@
     {
       "mp_id": "MP-0002",
       "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -356,7 +356,7 @@
     {
       "mp_id": "MP-0003",
       "path": ".agents/install-block.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -368,7 +368,7 @@
     {
       "mp_id": "MP-0004",
       "path": ".agents/invocation.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -380,7 +380,7 @@
     {
       "mp_id": "MP-0005",
       "path": ".agents/writing-docs.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -392,7 +392,7 @@
     {
       "mp_id": "MP-0006",
       "path": ".changeset/README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -404,7 +404,7 @@
     {
       "mp_id": "MP-0007",
       "path": ".changeset/add-implement-spec-skill.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -416,7 +416,7 @@
     {
       "mp_id": "MP-0008",
       "path": ".changeset/config.json",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -428,7 +428,7 @@
     {
       "mp_id": "MP-0009",
       "path": ".changeset/domain-modeling-trigger-context-adr.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -440,7 +440,7 @@
     {
       "mp_id": "MP-0010",
       "path": ".changeset/fix-yaml-frontmatter-colons.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -452,7 +452,7 @@
     {
       "mp_id": "MP-0011",
       "path": ".changeset/grilling-add-hr-between-questions.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -464,7 +464,7 @@
     {
       "mp_id": "MP-0012",
       "path": ".changeset/grilling-remove-em-dashes.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -476,7 +476,7 @@
     {
       "mp_id": "MP-0013",
       "path": ".changeset/remove-em-dashes-repo-wide.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -488,7 +488,7 @@
     {
       "mp_id": "MP-0014",
       "path": ".changeset/skill-tool-invocation-terminology.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -500,7 +500,7 @@
     {
       "mp_id": "MP-0015",
       "path": ".changeset/user-invoked-skill-invocation.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -512,7 +512,7 @@
     {
       "mp_id": "MP-0016",
       "path": ".changeset/wait-what-context-map.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -524,7 +524,7 @@
     {
       "mp_id": "MP-0017",
       "path": ".claude-plugin/marketplace.json",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -536,7 +536,7 @@
     {
       "mp_id": "MP-0018",
       "path": ".claude-plugin/plugin.json",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -548,7 +548,7 @@
     {
       "mp_id": "MP-0019",
       "path": ".github/workflows/release.yml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -560,7 +560,7 @@
     {
       "mp_id": "MP-0020",
       "path": ".gitignore",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -572,7 +572,7 @@
     {
       "mp_id": "MP-0021",
       "path": ".out-of-scope/mainstream-issue-trackers-only.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -584,7 +584,7 @@
     {
       "mp_id": "MP-0022",
       "path": ".out-of-scope/question-limits.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -596,7 +596,7 @@
     {
       "mp_id": "MP-0023",
       "path": ".out-of-scope/setup-skill-verify-mode.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -608,7 +608,7 @@
     {
       "mp_id": "MP-0024",
       "path": "AGENTS.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": false,
@@ -620,7 +620,7 @@
     {
       "mp_id": "MP-0025",
       "path": "CHANGELOG.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -632,7 +632,7 @@
     {
       "mp_id": "MP-0026",
       "path": "CLAUDE.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -644,7 +644,7 @@
     {
       "mp_id": "MP-0027",
       "path": "CONTEXT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -656,7 +656,7 @@
     {
       "mp_id": "MP-0028",
       "path": "LICENSE",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": false,
@@ -668,7 +668,7 @@
     {
       "mp_id": "MP-0029",
       "path": "README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -680,7 +680,7 @@
     {
       "mp_id": "MP-0030",
       "path": "docs/engineering/ask-matt.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -692,7 +692,7 @@
     {
       "mp_id": "MP-0031",
       "path": "docs/engineering/code-review.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -704,7 +704,7 @@
     {
       "mp_id": "MP-0032",
       "path": "docs/engineering/codebase-design.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -716,7 +716,7 @@
     {
       "mp_id": "MP-0033",
       "path": "docs/engineering/diagnosing-bugs.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -728,7 +728,7 @@
     {
       "mp_id": "MP-0034",
       "path": "docs/engineering/domain-modeling.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -740,7 +740,7 @@
     {
       "mp_id": "MP-0035",
       "path": "docs/engineering/grill-with-docs.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -752,7 +752,7 @@
     {
       "mp_id": "MP-0036",
       "path": "docs/engineering/implement.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -764,7 +764,7 @@
     {
       "mp_id": "MP-0037",
       "path": "docs/engineering/improve-codebase-architecture.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -776,7 +776,7 @@
     {
       "mp_id": "MP-0038",
       "path": "docs/engineering/prototype.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -788,7 +788,7 @@
     {
       "mp_id": "MP-0039",
       "path": "docs/engineering/research.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -800,7 +800,7 @@
     {
       "mp_id": "MP-0040",
       "path": "docs/engineering/resolving-merge-conflicts.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": false,
         "source_facts": true,
@@ -812,7 +812,7 @@
     {
       "mp_id": "MP-0041",
       "path": "docs/engineering/setup-matt-pocock-skills.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -824,7 +824,7 @@
     {
       "mp_id": "MP-0042",
       "path": "docs/engineering/tdd.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -836,7 +836,7 @@
     {
       "mp_id": "MP-0043",
       "path": "docs/engineering/to-spec.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -848,7 +848,7 @@
     {
       "mp_id": "MP-0044",
       "path": "docs/engineering/to-tickets.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -860,7 +860,7 @@
     {
       "mp_id": "MP-0045",
       "path": "docs/engineering/triage.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -872,7 +872,7 @@
     {
       "mp_id": "MP-0046",
       "path": "docs/engineering/wayfinder.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -884,7 +884,7 @@
     {
       "mp_id": "MP-0047",
       "path": "docs/engineering/wizard.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -896,7 +896,7 @@
     {
       "mp_id": "MP-0048",
       "path": "docs/productivity/grill-me.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -908,7 +908,7 @@
     {
       "mp_id": "MP-0049",
       "path": "docs/productivity/grilling.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -920,7 +920,7 @@
     {
       "mp_id": "MP-0050",
       "path": "docs/productivity/handoff.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -932,7 +932,7 @@
     {
       "mp_id": "MP-0051",
       "path": "docs/productivity/teach.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -944,7 +944,7 @@
     {
       "mp_id": "MP-0052",
       "path": "docs/productivity/to-questionnaire.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -956,7 +956,7 @@
     {
       "mp_id": "MP-0053",
       "path": "docs/productivity/wait-what.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -968,7 +968,7 @@
     {
       "mp_id": "MP-0054",
       "path": "docs/productivity/writing-for-agents.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -980,7 +980,7 @@
     {
       "mp_id": "MP-0055",
       "path": "package-lock.json",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -992,7 +992,7 @@
     {
       "mp_id": "MP-0056",
       "path": "package.json",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1004,7 +1004,7 @@
     {
       "mp_id": "MP-0057",
       "path": "scripts/link-skills.sh",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1016,7 +1016,7 @@
     {
       "mp_id": "MP-0058",
       "path": "scripts/list-skills.sh",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1028,7 +1028,7 @@
     {
       "mp_id": "MP-0059",
       "path": "scripts/sync-plugin-version.mjs",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1040,7 +1040,7 @@
     {
       "mp_id": "MP-0060",
       "path": "skills/deprecated/README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1052,7 +1052,7 @@
     {
       "mp_id": "MP-0061",
       "path": "skills/engineering/README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1064,7 +1064,7 @@
     {
       "mp_id": "MP-0062",
       "path": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1076,7 +1076,7 @@
     {
       "mp_id": "MP-0063",
       "path": "skills/engineering/ask-matt/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1088,7 +1088,7 @@
     {
       "mp_id": "MP-0064",
       "path": "skills/engineering/ask-matt/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1100,7 +1100,7 @@
     {
       "mp_id": "MP-0065",
       "path": "skills/engineering/code-review/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1112,7 +1112,7 @@
     {
       "mp_id": "MP-0066",
       "path": "skills/engineering/code-review/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1124,7 +1124,7 @@
     {
       "mp_id": "MP-0067",
       "path": "skills/engineering/codebase-design/DEEPENING.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1136,7 +1136,7 @@
     {
       "mp_id": "MP-0068",
       "path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1148,7 +1148,7 @@
     {
       "mp_id": "MP-0069",
       "path": "skills/engineering/codebase-design/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1160,7 +1160,7 @@
     {
       "mp_id": "MP-0070",
       "path": "skills/engineering/codebase-design/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1172,7 +1172,7 @@
     {
       "mp_id": "MP-0071",
       "path": "skills/engineering/diagnosing-bugs/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1184,7 +1184,7 @@
     {
       "mp_id": "MP-0072",
       "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1196,7 +1196,7 @@
     {
       "mp_id": "MP-0073",
       "path": "skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1208,7 +1208,7 @@
     {
       "mp_id": "MP-0074",
       "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1220,7 +1220,7 @@
     {
       "mp_id": "MP-0075",
       "path": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1232,7 +1232,7 @@
     {
       "mp_id": "MP-0076",
       "path": "skills/engineering/domain-modeling/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1244,7 +1244,7 @@
     {
       "mp_id": "MP-0077",
       "path": "skills/engineering/domain-modeling/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1256,7 +1256,7 @@
     {
       "mp_id": "MP-0078",
       "path": "skills/engineering/grill-with-docs/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1268,7 +1268,7 @@
     {
       "mp_id": "MP-0079",
       "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1280,7 +1280,7 @@
     {
       "mp_id": "MP-0080",
       "path": "skills/engineering/implement/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1292,7 +1292,7 @@
     {
       "mp_id": "MP-0081",
       "path": "skills/engineering/implement/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1304,7 +1304,7 @@
     {
       "mp_id": "MP-0082",
       "path": "skills/engineering/improve-codebase-architecture/HTML-REPORT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1316,7 +1316,7 @@
     {
       "mp_id": "MP-0083",
       "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1328,7 +1328,7 @@
     {
       "mp_id": "MP-0084",
       "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1340,7 +1340,7 @@
     {
       "mp_id": "MP-0085",
       "path": "skills/engineering/prototype/LOGIC.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1352,7 +1352,7 @@
     {
       "mp_id": "MP-0086",
       "path": "skills/engineering/prototype/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1364,7 +1364,7 @@
     {
       "mp_id": "MP-0087",
       "path": "skills/engineering/prototype/UI.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1376,7 +1376,7 @@
     {
       "mp_id": "MP-0088",
       "path": "skills/engineering/prototype/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1388,7 +1388,7 @@
     {
       "mp_id": "MP-0089",
       "path": "skills/engineering/research/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1400,7 +1400,7 @@
     {
       "mp_id": "MP-0090",
       "path": "skills/engineering/research/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1412,7 +1412,7 @@
     {
       "mp_id": "MP-0091",
       "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1424,7 +1424,7 @@
     {
       "mp_id": "MP-0092",
       "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1436,7 +1436,7 @@
     {
       "mp_id": "MP-0093",
       "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1448,7 +1448,7 @@
     {
       "mp_id": "MP-0094",
       "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1460,7 +1460,7 @@
     {
       "mp_id": "MP-0095",
       "path": "skills/engineering/setup-matt-pocock-skills/domain.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1472,7 +1472,7 @@
     {
       "mp_id": "MP-0096",
       "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1484,7 +1484,7 @@
     {
       "mp_id": "MP-0097",
       "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1496,7 +1496,7 @@
     {
       "mp_id": "MP-0098",
       "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1508,7 +1508,7 @@
     {
       "mp_id": "MP-0099",
       "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1520,7 +1520,7 @@
     {
       "mp_id": "MP-0100",
       "path": "skills/engineering/tdd/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1532,7 +1532,7 @@
     {
       "mp_id": "MP-0101",
       "path": "skills/engineering/tdd/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1544,7 +1544,7 @@
     {
       "mp_id": "MP-0102",
       "path": "skills/engineering/tdd/mocking.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1556,7 +1556,7 @@
     {
       "mp_id": "MP-0103",
       "path": "skills/engineering/tdd/tests.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1568,7 +1568,7 @@
     {
       "mp_id": "MP-0104",
       "path": "skills/engineering/to-spec/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1580,7 +1580,7 @@
     {
       "mp_id": "MP-0105",
       "path": "skills/engineering/to-spec/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1592,7 +1592,7 @@
     {
       "mp_id": "MP-0106",
       "path": "skills/engineering/to-tickets/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1604,7 +1604,7 @@
     {
       "mp_id": "MP-0107",
       "path": "skills/engineering/to-tickets/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1616,7 +1616,7 @@
     {
       "mp_id": "MP-0108",
       "path": "skills/engineering/triage/AGENT-BRIEF.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1628,7 +1628,7 @@
     {
       "mp_id": "MP-0109",
       "path": "skills/engineering/triage/OUT-OF-SCOPE.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1640,7 +1640,7 @@
     {
       "mp_id": "MP-0110",
       "path": "skills/engineering/triage/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1652,7 +1652,7 @@
     {
       "mp_id": "MP-0111",
       "path": "skills/engineering/triage/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1664,7 +1664,7 @@
     {
       "mp_id": "MP-0112",
       "path": "skills/engineering/wayfinder/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1676,7 +1676,7 @@
     {
       "mp_id": "MP-0113",
       "path": "skills/engineering/wayfinder/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1688,7 +1688,7 @@
     {
       "mp_id": "MP-0114",
       "path": "skills/engineering/wizard/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1700,7 +1700,7 @@
     {
       "mp_id": "MP-0115",
       "path": "skills/engineering/wizard/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1712,7 +1712,7 @@
     {
       "mp_id": "MP-0116",
       "path": "skills/engineering/wizard/template.sh",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1724,7 +1724,7 @@
     {
       "mp_id": "MP-0117",
       "path": "skills/in-progress/README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1736,7 +1736,7 @@
     {
       "mp_id": "MP-0118",
       "path": "skills/in-progress/claude-handoff/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1748,7 +1748,7 @@
     {
       "mp_id": "MP-0119",
       "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1760,7 +1760,7 @@
     {
       "mp_id": "MP-0120",
       "path": "skills/in-progress/implement-spec/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1772,7 +1772,7 @@
     {
       "mp_id": "MP-0121",
       "path": "skills/in-progress/implement-spec/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1784,7 +1784,7 @@
     {
       "mp_id": "MP-0122",
       "path": "skills/in-progress/loop-me/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1796,7 +1796,7 @@
     {
       "mp_id": "MP-0123",
       "path": "skills/in-progress/loop-me/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1808,7 +1808,7 @@
     {
       "mp_id": "MP-0124",
       "path": "skills/in-progress/retro/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1820,7 +1820,7 @@
     {
       "mp_id": "MP-0125",
       "path": "skills/in-progress/retro/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1832,7 +1832,7 @@
     {
       "mp_id": "MP-0126",
       "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1844,7 +1844,7 @@
     {
       "mp_id": "MP-0127",
       "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1856,7 +1856,7 @@
     {
       "mp_id": "MP-0128",
       "path": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1868,7 +1868,7 @@
     {
       "mp_id": "MP-0129",
       "path": "skills/in-progress/writing-beats/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1880,7 +1880,7 @@
     {
       "mp_id": "MP-0130",
       "path": "skills/in-progress/writing-beats/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1892,7 +1892,7 @@
     {
       "mp_id": "MP-0131",
       "path": "skills/in-progress/writing-fragments/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1904,7 +1904,7 @@
     {
       "mp_id": "MP-0132",
       "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1916,7 +1916,7 @@
     {
       "mp_id": "MP-0133",
       "path": "skills/in-progress/writing-shape/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1928,7 +1928,7 @@
     {
       "mp_id": "MP-0134",
       "path": "skills/in-progress/writing-shape/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1940,7 +1940,7 @@
     {
       "mp_id": "MP-0135",
       "path": "skills/misc/README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1952,7 +1952,7 @@
     {
       "mp_id": "MP-0136",
       "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1964,7 +1964,7 @@
     {
       "mp_id": "MP-0137",
       "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1976,7 +1976,7 @@
     {
       "mp_id": "MP-0138",
       "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -1988,7 +1988,7 @@
     {
       "mp_id": "MP-0139",
       "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2000,7 +2000,7 @@
     {
       "mp_id": "MP-0140",
       "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2012,7 +2012,7 @@
     {
       "mp_id": "MP-0141",
       "path": "skills/misc/scaffold-exercises/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2024,7 +2024,7 @@
     {
       "mp_id": "MP-0142",
       "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2036,7 +2036,7 @@
     {
       "mp_id": "MP-0143",
       "path": "skills/misc/setup-pre-commit/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2048,7 +2048,7 @@
     {
       "mp_id": "MP-0144",
       "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2060,7 +2060,7 @@
     {
       "mp_id": "MP-0145",
       "path": "skills/productivity/README.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2072,7 +2072,7 @@
     {
       "mp_id": "MP-0146",
       "path": "skills/productivity/grill-me/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2084,7 +2084,7 @@
     {
       "mp_id": "MP-0147",
       "path": "skills/productivity/grill-me/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2096,7 +2096,7 @@
     {
       "mp_id": "MP-0148",
       "path": "skills/productivity/grilling/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2108,7 +2108,7 @@
     {
       "mp_id": "MP-0149",
       "path": "skills/productivity/grilling/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2120,7 +2120,7 @@
     {
       "mp_id": "MP-0150",
       "path": "skills/productivity/handoff/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2132,7 +2132,7 @@
     {
       "mp_id": "MP-0151",
       "path": "skills/productivity/handoff/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2144,7 +2144,7 @@
     {
       "mp_id": "MP-0152",
       "path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2156,7 +2156,7 @@
     {
       "mp_id": "MP-0153",
       "path": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2168,7 +2168,7 @@
     {
       "mp_id": "MP-0154",
       "path": "skills/productivity/teach/MISSION-FORMAT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2180,7 +2180,7 @@
     {
       "mp_id": "MP-0155",
       "path": "skills/productivity/teach/RESOURCES-FORMAT.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2192,7 +2192,7 @@
     {
       "mp_id": "MP-0156",
       "path": "skills/productivity/teach/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2204,7 +2204,7 @@
     {
       "mp_id": "MP-0157",
       "path": "skills/productivity/teach/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2216,7 +2216,7 @@
     {
       "mp_id": "MP-0158",
       "path": "skills/productivity/to-questionnaire/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2228,7 +2228,7 @@
     {
       "mp_id": "MP-0159",
       "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2240,7 +2240,7 @@
     {
       "mp_id": "MP-0160",
       "path": "skills/productivity/wait-what/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2252,7 +2252,7 @@
     {
       "mp_id": "MP-0161",
       "path": "skills/productivity/wait-what/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2264,7 +2264,7 @@
     {
       "mp_id": "MP-0162",
       "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2276,7 +2276,7 @@
     {
       "mp_id": "MP-0163",
       "path": "skills/productivity/writing-for-agents/SKILL.md",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
@@ -2288,7 +2288,7 @@
     {
       "mp_id": "MP-0164",
       "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
-      "status": "READ",
+      "status": "CONNECTIONS TRACED",
       "sections": {
         "read_evidence": true,
         "source_facts": true,
