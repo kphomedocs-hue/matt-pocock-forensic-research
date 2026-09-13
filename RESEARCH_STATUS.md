@@ -30,15 +30,15 @@ The latest foundation report is GREEN:
 
 `00_RESEARCH_SCHEMA.md` remains the canonical status/gate definition. Chat history is not authoritative state.
 
-## Phase 3 — completed connection state
+## Phase 3 — COMPLETE
 
-Phase 3 now has both semantic and deterministic evidence:
+Phase 3 has both semantic and deterministic evidence:
 
 - curated semantic graph: `03_CONNECTION_GRAPH.md`;
 - deterministic extraction: `scripts/build_connection_graph.py`;
 - machine graph/index: `03_CONNECTION_EDGES.json`, `03_CONNECTION_INDEX.md`;
-- semantic unresolved-reference reconciliation: `03_CONNECTION_RECONCILIATION.md`, `03_REFERENCE_DISPOSITIONS.json`;
-- semantic zero-incoming/orphan reconciliation: `03_ORPHAN_RECONCILIATION.md`, `03_ORPHAN_DISPOSITIONS.json`;
+- unresolved-reference reconciliation: `03_CONNECTION_RECONCILIATION.md`, `03_REFERENCE_DISPOSITIONS.json`;
+- zero-incoming/orphan reconciliation: `03_ORPHAN_RECONCILIATION.md`, `03_ORPHAN_DISPOSITIONS.json`;
 - ask-matt target matrix: `03_ROUTER_MATRIX.md/.json`;
 - distribution symmetry matrix: `03_DISTRIBUTION_MATRIX.md/.json`;
 - current-file history bindings: `03_HISTORY_BINDINGS.md/.json`;
@@ -56,107 +56,95 @@ Extraction rules version **4** reads all 164 frozen blobs by exact census blob S
 - `SKILL_REFERENCE`: **225**
 - `SYMLINK`: **1**
 
-The passive layer includes **104 exact repository-path mentions + 19 globally unique-filename mentions**. The v4 skill-reference layer adds **225** exact `/skill`, `$skill`, or backticked-skill references while stripping external URL bodies before slash-label scanning.
+The passive layer includes **104 exact repository-path mentions + 19 globally unique-filename mentions**. The skill-reference layer adds **225** exact `/skill`, `$skill`, or backticked-skill references while stripping external URL bodies before slash-label scanning.
 
-### Raw unresolved references
+The five raw unresolved internal-looking references are **5/5 semantically reconciled**, with **0** confirmed broken repository links and **0** semantically unresolved cases.
 
-The extractor still preserves **5** internal-looking raw unresolved references for auditability. They are **5/5 semantically reconciled**:
+Invocation-policy join:
+- **37/37** current skills joined;
+- **22 USER_INVOKED / 15 MODEL_INVOKED** overall;
+- **0** Claude↔Codex policy mismatches;
+- **15** current operative Skill-tool calls;
+- **0** illegal operative calls to user-invoked targets.
 
-- three domain-modeling consumer-repo CONTEXT example paths;
-- Wayfinder's literal `(link)` template placeholder;
-- setup-ts-deep-modules' generated consumer `./src/packages/README.md` target.
+Router join:
+- promoted plugin skills: **25**;
+- expected ask-matt targets other than itself: **24**;
+- covered: **24/24**;
+- missing: **0**;
+- non-promoted extras: **0**.
 
-Confirmed broken repository links from this queue: **0**. Semantically unresolved from this queue: **0**.
+Distribution symmetry:
+- plugin promoted: **25**;
+- maintainer local-linked: **33**;
+- list-skills visible: **37**;
+- root README visible: **25**;
+- bucket README visible: **37**;
+- human docs pages: **25**;
+- ask-matt targets: **24**;
+- Codex metadata owners: **37**;
+- automated anomalies: **0**.
 
-### Invocation-policy join
+History bindings map nine durable H-events onto **69** current files with **88** current-file bindings. H-001/H-002/H-005/H-006/H-007/H-008 are RECONCILED; H-003/H-004/H-009 remain PARTIAL.
 
-- current skills joined: **37/37**;
-- overall invocation split: **22 USER_INVOKED / 15 MODEL_INVOKED**;
-- Claude ↔ Codex policy mismatches: **0**;
-- current operative Skill-tool calls: **15**;
-- illegal current operative calls to user-invoked targets: **0**.
+Five true zero-incoming files required semantic disposition and are durably classified as intentional standalone ADR/policy/maintainer entrypoint roles without fabricating incoming edges.
 
-Historical illegal-cross-call defect CT-H01 is therefore not recurring in the frozen current graph.
-
-### Router join
-
-Against the **25 promoted plugin skills**, ask-matt is expected to route to the other **24**:
-
-- promoted targets covered: **24/24**;
-- missing promoted targets: **0**;
-- extra non-promoted targets: **0**.
-
-Historical router-completeness defect CT-H02 is not recurring as a target-set omission, although route semantics can still be stale under current contradictions such as CT-009.
-
-### Distribution symmetry
-
-Automated anomalies: **0**.
-
-Dimension counts:
-
-- plugin promoted: **25**
-- maintainer local-linked: **33**
-- list-skills visible: **37**
-- root README visible: **25**
-- bucket README visible: **37**
-- human docs pages: **25**
-- ask-matt targets: **24**
-- Codex metadata owners: **37**
-
-The 25/33/37 sets are therefore intentional distribution tiers in the frozen source, not unexplained drift.
-
-### Teach glossary / CT-005
-
-MP-0152 `skills/productivity/teach/GLOSSARY-FORMAT.md` is **not** a source-tree orphan. The exhaustive literal scan found one incoming reference from MP-0051 `docs/productivity/teach.md`, whose text explicitly states that Teach ships the support file but `SKILL.md` no longer links it.
-
-CT-005 remains OPEN as an **operative linkage gap**, not an orphan claim.
-
-### History bindings relevant to Phase 3
-
-`03_HISTORY_BINDINGS` maps all nine durable H-events onto the frozen current tree:
-
-- current files with one or more bindings: **69**;
-- current-file bindings: **88**;
-- H-001: RECONCILED
-- H-002: RECONCILED
-- H-003: PARTIAL
-- H-004: PARTIAL
-- H-005: RECONCILED
-- H-006: RECONCILED
-- H-007: RECONCILED
-- H-008: RECONCILED
-- H-009: PARTIAL
-
-H-002 is now exact: `e81f97660af0bebfdbf2e23db6a71f7dfcb9a659` reshaped TDD into a reference-only/pre-agreed-seam form, followed by `80e9dcc6857f16cc08b8e5b190393ee7591517e0`, which explicitly removed the refactor stage and moved refactoring to review.
-
-History binding means an event changed a current file; it does not upgrade PARTIAL lineage to reconciled and does not satisfy Phase 5 by itself.
-
-### Zero-incoming / orphan closure
-
-After structural-role evaluation, five files still required explicit semantic disposition:
-
-- MP-0001 — intentional standalone ADR;
-- MP-0021 — intentional standalone out-of-scope policy record;
-- MP-0022 — intentional standalone out-of-scope policy record;
-- MP-0023 — intentional standalone out-of-scope policy record;
-- MP-0058 — standalone maintainer `list-skills.sh` entrypoint.
-
-All five preserve their true zero-incoming graph state. The dispositions close the Phase 3 orphan question without inventing edges or claiming the files are actively consumed.
-
-### Formal Phase 3 closure
-
-`03_PHASE3_CLOSURE_INDEX.json` now reports:
-
+Formal Phase 3 closure:
 - files: **164**;
 - READY_CANDIDATE: **164**;
 - blockers: **0**;
-- explicit semantic zero-incoming dispositions consumed: **5**.
+- explicit semantic zero-incoming dispositions consumed: **5**;
+- formal `CONNECTIONS TRACED`: **164/164**;
+- formal `VERIFIED`: **0/164**.
 
-Formal promotion then passed the separate fail-closed gate. All 164 notes now contain a standardized Phase 3 evidence block and are durably `CONNECTIONS TRACED`. `01_MASTER_FILE_LEDGER.md`, `01_FILE_CENSUS.json`, the closure index, and foundation report were rebuilt and validated atomically around the promoted state.
+## Phase 4 — Behavior & Enforcement
 
-**CONNECTIONS TRACED: 164 / 164.**
+Phase 4 now has a structured working evidence layer:
 
-**VERIFIED: 0 / 164.**
+- structured source: `04_BEHAVIOR_MATRIX.json`;
+- rendered view: `04_BEHAVIOR_MATRIX.md`;
+- integrity result: `04_BEHAVIOR_INTEGRITY.json`;
+- validator: `scripts/validate_behavior_matrix.py`;
+- CI gate: `.github/workflows/validate-phase4-behavior.yml`.
+
+The first validated matrix contains **20 behavior rows** with **0 hard integrity errors**. Current state counts:
+
+- `CONFIRMED_DRIFT`: **5**
+- `CONFIRMED_GAP`: **4**
+- `CONFIRMED_WEAKNESS`: **1**
+- `RUNTIME_UNKNOWN`: **3**
+- `STATICALLY_ENFORCED`: **7**
+
+Enforcement-layer coverage currently includes documentation, prompt, static config, executable scripts, CI, runtime dependencies, external dependencies, and explicitly absent enforcement. **Runtime observed: 0/20**, intentionally preventing static analysis from being overstated as end-to-end proof.
+
+### New Phase 4 adjudication — CT-012
+
+`setup-ts-deep-modules/SKILL.md` says **“Four rules, all error”**, describes intra-package freedom as a package's own files importing one another freely, says existing configs should merge “the four rules,” and says the config step is done when “the four forbidden rules are present.”
+
+The shipped `dependency-cruiser.config.cjs` contains **five** separate `forbidden` rules with `severity: "error"`. The fifth, `tests-folder-is-private`, blocks any non-test importer from a package's `tests/` folder, including same-package implementation files. This is therefore not merely a harmless split of one conceptual rule: it adds a separately named enforcement rule and an exception to the prose's unconditional intra-package-freedom claim.
+
+CT-012 is OPEN as `OPERATIVE / CONFIG CONTRACT MISMATCH`.
+
+### New Phase 4 adjudication — CT-013
+
+Wayfinder says planning is the default and absent an override it should produce decisions, not deliverables. It explicitly allows an effort to override that default in map `Notes`, carrying execution into the map. The same charting workflow instructs the agent to create the map with `Destination and Notes filled in`, but contains no independent rule requiring an execution-carrying Notes override to be supplied or confirmed by the human.
+
+This is not a direct contradiction because the override is documented. It is an enforcement-authority weakness: the same agent subject to the planning guard can author the field that relaxes it.
+
+CT-013 is OPEN as `PROMPT ENFORCEMENT WEAKNESS / SELF-AUTHORED OVERRIDE`.
+
+### Initial non-defect enforcement rows
+
+The Phase 4 matrix also records strong or partial controls so the audit does not become defect-only. Initial examples include:
+
+- setup-ts-deep-modules' required pass → deliberate fail → revert → pass boundary proof;
+- wizard's `bash -n` / shellcheck static verification, distinguished from end-to-end execution;
+- git-guardrails' executable exit-2 blocking, classified as heuristic regex enforcement rather than semantic shell parsing;
+- setup-pre-commit's real-commit hook smoke test requirement;
+- plugin version synchronization through `sync-plugin-version.mjs` and the release path;
+- local-link and list-skills executable selection semantics.
+
+These rows remain below VERIFIED until later applicable runtime/history/red-team gates are satisfied.
 
 ## Tooling state
 
@@ -170,14 +158,12 @@ Current durable incident ledger:
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
 
-The latest added incident is the first Phase 3 promotion run, which failed closed because its provenance parser did not recognize the already-valid legacy `Frozen blob SHA` label. No note changes were committed; the parser was aligned with the foundation validator and later promotion succeeded.
-
-A deeper workflow architecture issue was also corrected: Actions commits made with the workflow's ordinary `GITHUB_TOKEN` cannot be relied upon to trigger downstream workflows. Phase 3 generation is therefore consolidated into `.github/workflows/rebuild-phase3-state.yml`, which rebuilds graph → router → distribution → history bindings → closure in one ordered atomic pipeline. The five superseded partial Phase 3 rebuild workflows were removed. Formal promotion uses its own atomic rebuild of notes + ledger/census + closure + foundation.
+Phase 3 generation is consolidated into `.github/workflows/rebuild-phase3-state.yml`, which rebuilds graph → router → distribution → history bindings → closure in one ordered atomic pipeline. Formal promotion uses its own atomic rebuild of notes + ledger/census + closure + foundation. This avoids relying on ordinary `GITHUB_TOKEN` workflow commits to retrigger downstream workflows.
 
 Successful proof runs include:
-
 - Phase 3 promotion / atomic status proof: `34739027703` — SUCCESS;
-- consolidated Phase 3 generated-state proof: `34739079695` — SUCCESS.
+- consolidated Phase 3 generated-state proof: `34739079695` — SUCCESS;
+- initial Phase 4 behavior-matrix validation: `34739624908` — SUCCESS.
 
 ## Phase status
 
@@ -186,9 +172,9 @@ Successful proof runs include:
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | Full contents of 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 530-edge v4 graph; raw unresolved 5/5 reconciled; router 24/24; distribution anomalies 0; closure blockers 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Existing evidence includes multiple current enforcement gaps; systematic documented-vs-operative-vs-machine-enforced matrix now required. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated 20-row behavior matrix; 13 current contradiction/enforcement IDs represented; systematic coverage is expanding. Runtime observed remains 0. |
 | 5. History | IN PROGRESS | 9 durable H-events; H-003/H-004/H-009 remain PARTIAL. |
-| 6. Contradictions & Orphans | IN PROGRESS | 11 current + 3 historical CT IDs; Phase 3 orphan questions closed, but current contradictions remain for behavior/runtime adjudication. |
+| 6. Contradictions & Orphans | IN PROGRESS | **13 current + 3 historical CT IDs**; Phase 3 orphan questions closed; behavior/runtime contradictions remain. |
 | 7. Runtime & Distribution | IN PROGRESS | Static distribution topology is reconstructed; deeper runtime/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
 | 9. Red-Team Verification | NOT STARTED formally | No systematic absolute/numerical-claim falsification pass yet. |
@@ -220,19 +206,23 @@ Successful proof runs include:
 - local-linked skills: **33**
 - list-skills visible skills: **37**
 - Codex metadata owners: **37**
+- Phase 4 behavior rows: **20**
+- Phase 4 behavior-matrix hard errors: **0**
+- Phase 4 runtime-observed rows: **0/20**
+- current contradiction/enforcement IDs: **13**
+- historical contradiction IDs: **3**
 - tooling incidents classified: **86/86**
 - tooling incidents unknown: **0**
 - tooling incidents unresolved/review-required: **0**
 
 ## Immediate next execution steps — Phase 4
 
-1. Build a durable **behavior/enforcement matrix** that separates documented claims, operative `SKILL.md` instructions, executable/config enforcement, static verification, runtime dependence, and known contradiction IDs.
-2. Start with high-impact current contradiction areas rather than re-reading the entire tree blindly: TDD, implement/code-review, setup, diagnosing-bugs, Teach, Wayfinder, wizard, setup-ts-deep-modules, distribution/release scripts.
-3. Adjudicate the setup-ts-deep-modules **“Four rules” vs five error-level config rules** question as either genuine source contradiction or defensible grouping, with exact source evidence.
-4. Adjudicate the Wayfinder `Notes` execution-override concern: determine whether planning-only behavior is actually enforceable or self-overridable by the same agent.
-5. For every behavior claim, record enforcement class such as `PROSE_ONLY`, `PROMPT_GATED`, `STATIC_CONFIG`, `EXECUTABLE_CHECK`, `RUNTIME_DEPENDENT`, or `NOT_ENFORCED` rather than saying simply “works.”
-6. Continue Phase 5 separately for H-003/H-004/H-009 and current contradiction lineages.
-7. Keep `VERIFIED = 0` until applicable Phase 4–9 gates are satisfied per file/claim.
+1. Expand the matrix beyond current contradictions into the remaining high-impact behavioral contracts: setup, implement-spec, triage/Wayfinder ticket state transitions, diagnosing-bugs HITL loop, domain-modeling writes, and release/distribution enforcement.
+2. For each row, distinguish `DOCUMENTATION`, `PROMPT`, `STATIC_CONFIG`, `EXECUTABLE_SCRIPT`, `CI`, `RUNTIME`, `EXTERNAL_DEPENDENCY`, or `NONE` rather than saying simply “works.”
+3. Identify where completion criteria are actually executable/fail-closed versus merely prose requests.
+4. Create targeted runtime-test plans only for rows whose truth cannot be resolved statically; do not manufacture runtime evidence by inference.
+5. Continue Phase 5 separately for H-003/H-004/H-009 and current contradiction lineages.
+6. Keep `VERIFIED = 0` until applicable Phase 4–9 gates are satisfied per file/claim.
 
 ## Resume instruction
 
