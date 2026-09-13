@@ -2,14 +2,15 @@
 """Run benign deterministic runtime checks against the exact frozen source tree.
 
 This harness never uses real credentials or external accounts. It exercises only
-local shell/Node behavior with synthetic fixtures, writes durable evidence, and
-optionally promotes named behavior rows to runtime_observed only when all checks
-for that row pass.
+local shell/Node/npm behavior with synthetic fixtures, writes durable evidence,
+and optionally promotes named behavior rows to runtime_observed only when all
+checks for that row pass.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -45,6 +46,83 @@ def check_source(source: pathlib.Path):
     head = r["stdout"].strip()
     if r["returncode"] != 0 or head != FROZEN:
         raise SystemExit(f"Frozen source mismatch: expected {FROZEN}, got {head!r}")
+
+
+def npm_env():
+    env = os.environ.copy()
+    env.update({
+        "npm_config_audit": "false",
+        "npm_config_fund": "false",
+        "npm_config_update_notifier": "false",
+    })
+    return env
+
+
+def test_b004(source: pathlib.Path):
+    """Observe practical npm treatment of the frozen package/lock version drift."""
+    with tempfile.TemporaryDirectory() as td:
+        root = pathlib.Path(td)
+        shutil.copy2(source / "package.json", root / "package.json")
+        shutil.copy2(source / "package-lock.json", root / "package-lock.json")
+
+        package = json.loads((root / "package.json").read_text(encoding="utf-8"))
+        lock_before = json.loads((root / "package-lock.json").read_text(encoding="utf-8"))
+        package_version = package["version"]
+        lock_top_before = lock_before["version"]
+        lock_root_before = lock_before["packages"][""]["version"]
+
+        pack = run(
+            ["npm", "pack", "--dry-run", "--json", "--ignore-scripts"],
+            cwd=root,
+            env=npm_env(),
+        )
+        try:
+            pack_json = json.loads(pack["stdout"])
+            packed_version = pack_json[0]["version"]
+            packed_filename = pack_json[0]["filename"]
+        except Exception:
+            packed_version = None
+            packed_filename = None
+
+        normalize = run(
+            ["npm", "install", "--package-lock-only", "--ignore-scripts", "--offline"],
+            cwd=root,
+            env=npm_env(),
+        )
+        lock_after = json.loads((root / "package-lock.json").read_text(encoding="utf-8"))
+        lock_top_after = lock_after["version"]
+        lock_root_after = lock_after["packages"][""]["version"]
+
+        checks = [
+            {
+                "name": "frozen_fixture_contains_expected_version_drift",
+                "passed": package_version == "1.2.3" and lock_top_before == "0.0.0" and lock_root_before == "0.0.0",
+                "returncode": 0,
+            },
+            {
+                "name": "npm_pack_uses_package_json_version",
+                "passed": pack["returncode"] == 0 and packed_version == package_version and package_version in (packed_filename or ""),
+                "returncode": pack["returncode"],
+            },
+            {
+                "name": "offline_lockfile_normalization_succeeds",
+                "passed": normalize["returncode"] == 0,
+                "returncode": normalize["returncode"],
+            },
+            {
+                "name": "npm_normalizes_root_lock_versions_to_package_json",
+                "passed": lock_top_after == package_version and lock_root_after == package_version,
+                "returncode": normalize["returncode"],
+            },
+        ]
+        passed = all(c["passed"] for c in checks)
+        return {
+            "behavior_id": "B-004",
+            "passed": passed,
+            "summary": "Frozen package/lock drift was reproduced; npm pack used package.json version 1.2.3, and offline package-lock-only normalization rewrote both root lockfile version fields to 1.2.3.",
+            "checks": checks,
+            "remaining_scope": "This establishes local npm practical behavior. It does not prove every CI/release consumer ignores the stale frozen lock metadata; release-path observation remains separate under B-029.",
+        }
 
 
 def test_b015(source: pathlib.Path):
@@ -164,11 +242,13 @@ def apply_results(results):
     matrix = json.loads(MATRIX.read_text(encoding="utf-8"))
     by_id = {r["behavior_id"]: r for r in matrix["rows"]}
     notes = {
+        "B-004": "Direct frozen runtime observation: the stale 0.0.0 lock metadata was reproduced; npm pack selected package.json version 1.2.3, and an offline package-lock-only normalization rewrote both root lock version fields to 1.2.3.",
         "B-015": "Direct frozen runtime observation: bash syntax passed; the shipped example completed with synthetic values, wrote the expected env entries without echoing the dummy secret, and preserved existing values on rerun.",
         "B-018": "Direct frozen runtime observation: --check passed in sync, failed on synthetic drift, and the executable repaired plugin.json to package.json without package-lock.json present.",
         "B-056": "Direct frozen runtime observation: the HITL shell template passed syntax and completed a benign synthetic interaction, emitting captured values exactly as documented.",
     }
     nexts = {
+        "B-004": "Release-path observation remains separate under B-029; local npm behavior shows the stale root lock version is normalized and does not control npm pack versioning.",
         "B-015": "Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only.",
         "B-018": "Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth.",
         "B-056": "Red-team secret/PII misuse and shell-input edge cases later; do not use real credentials.",
@@ -222,7 +302,7 @@ def main():
     check_source(source)
     source_head = run(["git", "rev-parse", "HEAD"], cwd=source)["stdout"].strip()
 
-    results = [test_b015(source), test_b018(source), test_b056(source)]
+    results = [test_b004(source), test_b015(source), test_b018(source), test_b056(source)]
     report = render(results, source_head)
     if not report["all_passed"]:
         failed = [r["behavior_id"] for r in results if not r["passed"]]
