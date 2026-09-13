@@ -66,19 +66,23 @@ Authoritative working artifacts:
 - `04_BEHAVIOR_COVERAGE.md`
 - `04_RUNTIME_OBSERVATION_QUEUE.json`
 - `04_RUNTIME_OBSERVATION_QUEUE.md`
+- `04_RUNTIME_EXECUTION_EVIDENCE.json`
+- `04_RUNTIME_EXECUTION_EVIDENCE.md`
 - `04_CONTRADICTION_REGISTER.md`
 - `scripts/validate_behavior_matrix.py`
 - `scripts/build_phase4_coverage.py`
 - `scripts/build_phase4_runtime_queue.py`
+- `scripts/run_phase4_local_runtime_checks.py`
 - `scripts/apply_phase4_batch.py`
 - `.github/workflows/validate-phase4-behavior.yml`
 - `.github/workflows/apply-phase4-batch.yml`
+- `.github/workflows/phase4-local-runtime-checks.yml`
 
 Current validated state:
 
 - behavior rows: **65**;
 - hard integrity errors: **0**;
-- runtime observed: **4/65**;
+- runtime observed: **7/65**;
 - runtime/evidence queue classified: **65/65**;
 - current CT coverage: **20/20**;
 - uncovered current CT IDs: **0**;
@@ -106,11 +110,13 @@ Machine-enforcement counts:
 
 Evidence-depth queue:
 
-- `EXECUTION_OBSERVATION`: **30 total / 4 observed / 26 pending**
+- `EXECUTION_OBSERVATION`: **30 total / 7 observed / 23 pending**
 - `EXTERNAL_DEPENDENCY_VALIDATION`: **7 / 0 / 7**
 - `MACHINE_CONSUMER_VALIDATION`: **4 / 0 / 4**
 - `PROMPT_REDTEAM_LATER`: **24 / 0 / 24**
-- total pending: **61**.
+- total pending: **58**.
+
+The first deterministic local-runtime batch directly observed **B-015, B-018, and B-056** against the exact frozen source commit. All acceptance checks passed. The report records only benign synthetic fixtures: wizard template first-run/rerun behavior, plugin-version drift detection/repair, and HITL capture behavior. It does not use real credentials or claim broader prompt/harness verification.
 
 The **37/37 skill** and **71/71 high-risk non-SKILL** results are breadth denominators only. They prove that no current operative skill or behavior-relevant high-risk non-SKILL surface is completely absent from the Phase 4 matrix. They do **not** prove that every behavior is exhausted, that machine-readable policy is honored at runtime, or that any file is VERIFIED.
 
@@ -118,20 +124,18 @@ The **37/37 skill** and **71/71 high-risk non-SKILL** results are breadth denomi
 
 The register contains **20 current IDs** plus **3 historical IDs**.
 
-Newest source findings:
+Newest source/audit findings:
 
-- **CT-019 — migrate-to-shoehorn assertion discovery:** the promised `as unknown as Type` migration case is missed by the literal `grep " as [A-Z]"` discovery pattern because `unknown` begins lowercase.
-- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only.
+- **CT-019 — audit false-positive correction:** exact frozen-command reproduction showed that `grep -r " as [A-Z]"` does find the advertised `as unknown as Type` form because the later ` as Type` substring matches. CT-019 is retained as a **RESOLVED audit correction**, not a source defect.
+- **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only. This remains OPEN.
 
 Earlier Phase 4 findings CT-014…CT-018 remain durable in the contradiction register and behavior matrix.
-
-The latest breadth batch added explicit contracts for all remaining Codex per-skill metadata, Claude marketplace distribution metadata, the diagnosing-bugs HITL template, ask-matt phase-boundary routing, setup support contracts, TDD support contracts, triage out-of-scope memory, and Teach mission/learning/resource formats. No new contradiction was created merely to close coverage.
 
 No Phase 4 row is treated as sufficient for `VERIFIED` by itself.
 
 ## Tooling state
 
-Latest closed incident ledger before this status sync:
+Latest closed incident ledger:
 
 - failed runs: **83**;
 - cancelled runs: **7**;
@@ -141,11 +145,13 @@ Latest closed incident ledger before this status sync:
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
 
-Run `34745903691` was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, the exact run is classified as fixed, and Phase 4 validation/batch workflows are monitored by the incident classifier.
+Run `34745903691` was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, and the exact run is classified as fixed.
 
-Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 batch application refreshes behavior validation, breadth coverage, runtime/evidence queue, and foundation parity inside the same atomic workflow before publication.
+The tooling classifier now monitors Phase 4 validation, batch application, prior runtime smoke, and the deterministic **Phase 4 local runtime checks** workflow. Unknown future runtime-workflow failures will fail the classifier closure gate until adjudicated rather than being silently categorized.
 
-The full non-SKILL coverage batch was accepted by `Apply Phase 4 batch` run **34747555653** and published by bot commit `4d09076440c46ccae6efaeee19ba746a7381bee4`.
+Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 mutation workflows refresh behavior validation, breadth coverage, runtime/evidence queue, and foundation parity inside the same atomic workflow before publication.
+
+The first local runtime evidence workflow run **34749869035** completed successfully and published the runtime evidence plus regenerated Phase 4 state.
 
 ## Phase status
 
@@ -154,20 +160,20 @@ The full non-SKILL coverage batch was accepted by `Apply Phase 4 batch` run **34
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, **71/71 high-risk non-SKILL surfaces** represented; evidence queue **65/65 classified**; runtime observed **4/65**. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, **71/71 high-risk non-SKILL surfaces** represented; evidence queue **65/65 classified**; runtime observed **7/65**. |
 | 5. History | IN PROGRESS | 9 durable H-events; partial lineage remains explicitly partial. |
-| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
-| 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deeper runtime/end-to-end observation remains. |
+| 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; CT-019 is a resolved audit correction, CT-020 remains open. |
+| 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deterministic local runtime observation has begun; deeper harness/external/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
 | 9. Red-Team Verification | NOT STARTED formally | No complete systematic falsification pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Final synthesis waits for verification gates. |
 
 ## Immediate next execution steps — Phase 4
 
-1. Work the deterministic **runtime/evidence queue** rather than adding breadth rows: prioritize the 26 pending `EXECUTION_OBSERVATION` contracts, then 4 machine-consumer and 7 external-dependency validations where direct evidence is feasible.
-2. Start with executable and machine-consumed contracts: repository scripts, skill scripts/config, CI/release, distribution metadata, Codex invocation metadata, dependency/package behavior, and the nine `RUNTIME_UNKNOWN` rows.
-3. Distinguish **static contract proved**, **runtime consumer proved**, **end-to-end behavior proved**, and **prompt-only judgment** so static metadata is never mistaken for runtime enforcement.
-4. Trace history for CT-019/CT-020 and remaining partial H-events before any verification promotion.
+1. Continue the deterministic runtime/evidence queue: **23 pending EXECUTION_OBSERVATION** rows remain after the first local-runtime batch.
+2. Prioritize additional safe local executable/config contracts before external services: repository scripts, skill scripts/config, dependency/package behavior, and the remaining `RUNTIME_UNKNOWN` rows that can be isolated without live credentials.
+3. Keep machine-consumer, external-dependency, and prompt-red-team classes separate; do not promote them using evidence from the wrong layer.
+4. Trace history for CT-020 and remaining partial H-events; CT-019 history should preserve that it was an audit false positive, not a source regression.
 5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
 
 ## Resume instruction
@@ -191,7 +197,8 @@ Future sessions must reload this GitHub repository first, beginning with:
 15. `04_BEHAVIOR_INTEGRITY.json`
 16. `04_BEHAVIOR_COVERAGE.json`
 17. `04_RUNTIME_OBSERVATION_QUEUE.json`
-18. `04_CONTRADICTION_REGISTER.md`
-19. `05_HISTORY_LEDGER.md`
+18. `04_RUNTIME_EXECUTION_EVIDENCE.json`
+19. `04_CONTRADICTION_REGISTER.md`
+20. `05_HISTORY_LEDGER.md`
 
 Do **not** resume from ChatGPT memory or chat summaries as authoritative state.
