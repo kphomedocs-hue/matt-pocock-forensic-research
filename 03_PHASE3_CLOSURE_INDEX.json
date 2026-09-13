@@ -3,31 +3,27 @@
   "file_count": 164,
   "gate_semantics": "READY_CANDIDATE is not automatic status promotion; per-file durable note promotion remains a separate write step.",
   "state_counts": {
-    "BLOCKED": 5,
-    "READY_CANDIDATE": 159
+    "READY_CANDIDATE": 164
   },
-  "blocker_counts": {
-    "SEMANTIC_ORPHAN_REVIEW": 5
-  },
+  "blocker_counts": {},
   "zero_incoming_count": 77,
+  "semantic_orphan_disposition_count": 5,
   "rows": [
     {
       "mp_id": "MP-0001",
       "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
       "category": "governance",
       "current_status": "READ",
-      "phase3_gate_state": "BLOCKED",
-      "blockers": [
-        "SEMANTIC_ORPHAN_REVIEW"
-      ],
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 6,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
-        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
-        "orphan_closed": false,
+        "orphan_state": "ZERO_INCOMING_DISPOSITION:INTENTIONAL_STANDALONE_ADR",
+        "orphan_closed": true,
         "history_binding_count": 0,
         "history_has_partial": false
       }
@@ -60,7 +56,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 3,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 3,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -79,7 +75,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 4,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -98,7 +94,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 4,
+        "outgoing_edge_count": 15,
         "incoming_edge_count": 2,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -136,7 +132,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 2,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -193,7 +189,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 6,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -269,7 +265,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 13,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -288,7 +284,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 9,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -399,18 +395,16 @@
       "path": ".out-of-scope/mainstream-issue-trackers-only.md",
       "category": "negative-memory",
       "current_status": "READ",
-      "phase3_gate_state": "BLOCKED",
-      "blockers": [
-        "SEMANTIC_ORPHAN_REVIEW"
-      ],
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
-        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
-        "orphan_closed": false,
+        "orphan_state": "ZERO_INCOMING_DISPOSITION:INTENTIONAL_STANDALONE_POLICY_RECORD",
+        "orphan_closed": true,
         "history_binding_count": 0,
         "history_has_partial": false
       }
@@ -420,18 +414,16 @@
       "path": ".out-of-scope/question-limits.md",
       "category": "negative-memory",
       "current_status": "READ",
-      "phase3_gate_state": "BLOCKED",
-      "blockers": [
-        "SEMANTIC_ORPHAN_REVIEW"
-      ],
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
-        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
-        "orphan_closed": false,
+        "orphan_state": "ZERO_INCOMING_DISPOSITION:INTENTIONAL_STANDALONE_POLICY_RECORD",
+        "orphan_closed": true,
         "history_binding_count": 0,
         "history_has_partial": false
       }
@@ -441,18 +433,16 @@
       "path": ".out-of-scope/setup-skill-verify-mode.md",
       "category": "negative-memory",
       "current_status": "READ",
-      "phase3_gate_state": "BLOCKED",
-      "blockers": [
-        "SEMANTIC_ORPHAN_REVIEW"
-      ],
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
-        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
-        "orphan_closed": false,
+        "orphan_state": "ZERO_INCOMING_DISPOSITION:INTENTIONAL_STANDALONE_POLICY_RECORD",
+        "orphan_closed": true,
         "history_binding_count": 0,
         "history_has_partial": false
       }
@@ -486,7 +476,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 23,
+        "outgoing_edge_count": 48,
         "incoming_edge_count": 2,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -524,7 +514,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 6,
         "incoming_edge_count": 30,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -581,7 +571,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 3,
+        "outgoing_edge_count": 11,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -600,7 +590,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 2,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -619,7 +609,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 7,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -638,7 +628,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -657,7 +647,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 6,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -676,7 +666,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -695,7 +685,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -714,7 +704,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -733,7 +723,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 2,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -752,7 +742,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -771,7 +761,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -790,7 +780,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 5,
+        "outgoing_edge_count": 8,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -809,7 +799,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -828,7 +818,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -847,7 +837,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 3,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -866,7 +856,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 8,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -885,7 +875,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 9,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -904,7 +894,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -923,7 +913,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 3,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -942,7 +932,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 3,
+        "outgoing_edge_count": 9,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -961,7 +951,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 2,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -980,7 +970,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -999,7 +989,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 2,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1018,7 +1008,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 2,
+        "outgoing_edge_count": 3,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1037,7 +1027,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 4,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1109,18 +1099,16 @@
       "path": "scripts/list-skills.sh",
       "category": "repo-executable",
       "current_status": "READ",
-      "phase3_gate_state": "BLOCKED",
-      "blockers": [
-        "SEMANTIC_ORPHAN_REVIEW"
-      ],
+      "phase3_gate_state": "READY_CANDIDATE",
+      "blockers": [],
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
         "incoming_edge_count": 0,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
-        "orphan_state": "ZERO_INCOMING_REQUIRES_SEMANTIC_ORPHAN_REVIEW",
-        "orphan_closed": false,
+        "orphan_state": "ZERO_INCOMING_DISPOSITION:STANDALONE_MAINTAINER_ENTRYPOINT",
+        "orphan_closed": true,
         "history_binding_count": 0,
         "history_has_partial": false
       }
@@ -1191,7 +1179,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 2,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1210,8 +1198,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 3,
-        "incoming_edge_count": 5,
+        "outgoing_edge_count": 27,
+        "incoming_edge_count": 9,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1254,8 +1242,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 16,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1337,7 +1325,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 2,
-        "incoming_edge_count": 9,
+        "incoming_edge_count": 14,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1381,7 +1369,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 2,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 11,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1482,7 +1470,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 3,
-        "incoming_edge_count": 8,
+        "incoming_edge_count": 16,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1526,7 +1514,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 2,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 16,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1569,8 +1557,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 2,
+        "incoming_edge_count": 14,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1613,7 +1601,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1633,7 +1621,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 5,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 14,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1696,7 +1684,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 2,
-        "incoming_edge_count": 7,
+        "incoming_edge_count": 15,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1759,7 +1747,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 5,
+        "incoming_edge_count": 12,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1803,7 +1791,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 8,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1846,8 +1834,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 9,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 12,
+        "incoming_edge_count": 22,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -1890,7 +1878,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 4,
         "incoming_edge_count": 3,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1909,7 +1897,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1928,7 +1916,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1947,7 +1935,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 1,
+        "outgoing_edge_count": 5,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -1985,8 +1973,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 4,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 5,
+        "incoming_edge_count": 13,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2067,8 +2055,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 22,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2111,8 +2099,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 20,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2155,7 +2143,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 1,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -2193,8 +2181,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 5,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 6,
+        "incoming_edge_count": 20,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2237,8 +2225,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 4,
-        "incoming_edge_count": 4,
+        "outgoing_edge_count": 5,
+        "incoming_edge_count": 17,
         "raw_unresolved_count": 1,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2282,7 +2270,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 1,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 8,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2325,7 +2313,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 4,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -2407,8 +2395,8 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
-        "incoming_edge_count": 2,
+        "outgoing_edge_count": 1,
+        "incoming_edge_count": 3,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2451,7 +2439,7 @@
       "blockers": [],
       "dimensions": {
         "graph_persisted": true,
-        "outgoing_edge_count": 0,
+        "outgoing_edge_count": 1,
         "incoming_edge_count": 2,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
@@ -2540,7 +2528,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 5,
-        "incoming_edge_count": 2,
+        "incoming_edge_count": 3,
         "raw_unresolved_count": 1,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2647,7 +2635,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 2,
+        "incoming_edge_count": 3,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2691,7 +2679,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 2,
+        "incoming_edge_count": 3,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -2968,7 +2956,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 1,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 11,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -3012,7 +3000,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 9,
+        "incoming_edge_count": 21,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -3056,7 +3044,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 11,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -3176,7 +3164,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 3,
-        "incoming_edge_count": 5,
+        "incoming_edge_count": 9,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -3220,7 +3208,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 0,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 7,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -3264,7 +3252,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 1,
-        "incoming_edge_count": 4,
+        "incoming_edge_count": 8,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
@@ -3327,7 +3315,7 @@
       "dimensions": {
         "graph_persisted": true,
         "outgoing_edge_count": 4,
-        "incoming_edge_count": 6,
+        "incoming_edge_count": 9,
         "raw_unresolved_count": 0,
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
