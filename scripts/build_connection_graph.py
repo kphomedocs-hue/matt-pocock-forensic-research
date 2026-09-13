@@ -2,7 +2,7 @@
 """Build a deterministic internal connection graph for the frozen mattpocock/skills tree.
 
 This script uses the already-frozen 164-file census as the denominator, fetches each
-blob by SHA, and derives only source-explicit or structurally deterministic edges.
+blob by SHA, and derives source-explicit or structurally deterministic edges.
 It does not use ranked search to prove absence.
 """
 from __future__ import annotations
@@ -14,7 +14,7 @@ import pathlib
 import posixpath
 import re
 import urllib.request
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 SOURCE_REPO = "mattpocock/skills"
 FROZEN_COMMIT = "3cca18b368ae95cdbdebbff572ccafa662551015"
@@ -22,6 +22,7 @@ EXPECTED_FILES = 164
 CENSUS = pathlib.Path("01_FILE_CENSUS.json")
 EDGES_JSON = pathlib.Path("03_CONNECTION_EDGES.json")
 INDEX_MD = pathlib.Path("03_CONNECTION_INDEX.md")
+EXTRACTION_RULES_VERSION = 2
 
 
 def github_json(url: str):
@@ -72,6 +73,16 @@ def add_edge(edges, seen, source, edge_type, target, evidence, inferred=False):
     })
 
 
+def has_source_target_edge(edges, source: str, target: str) -> bool:
+    """Return True when any stronger/earlier edge already connects this pair."""
+    return any(edge["from"] == source and edge["to"] == target for edge in edges)
+
+
+def unique_basename_regex(name: str) -> re.Pattern[str]:
+    """Match an exact filename token without matching a longer filename token."""
+    return re.compile(rf"(?<![A-Za-z0-9_.-]){re.escape(name)}(?![A-Za-z0-9_.-])")
+
+
 def main() -> None:
     census = json.loads(CENSUS.read_text(encoding="utf-8"))
     if census.get("frozen_commit") != FROZEN_COMMIT or census.get("blob_count") != EXPECTED_FILES:
@@ -95,7 +106,6 @@ def main() -> None:
     unresolved_internal = []
 
     md_link_re = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
-    skill_call_re = re.compile(r"(?:Call|call) the Skill tool(?: twice,)?(?: with)?[^\n]*?[\"'`](?:/)?([a-z0-9][a-z0-9-]+)[\"'`]", re.IGNORECASE)
     quoted_skill_re = re.compile(r"[\"'`]([a-z0-9][a-z0-9-]+)[\"'`]")
 
     for f in files:
@@ -149,30 +159,92 @@ def main() -> None:
         except json.JSONDecodeError as e:
             raise SystemExit(f"Invalid frozen plugin.json: {e}")
 
+    # Passive internal references. First search for exact repository-relative paths.
+    # Then search exact basenames only when that basename occurs exactly once in the
+    # 164-file census. This gives exhaustive literal-reference coverage without
+    # pretending ambiguous names such as README.md or SKILL.md identify one target.
+    basename_to_paths = defaultdict(list)
+    for path in by_path:
+        basename_to_paths[posixpath.basename(path)].append(path)
+    unique_basenames = {
+        name: paths[0]
+        for name, paths in basename_to_paths.items()
+        if len(paths) == 1 and name
+    }
+    basename_patterns = {
+        name: unique_basename_regex(name)
+        for name in unique_basenames
+    }
+
+    passive_path_mentions = 0
+    passive_basename_mentions = 0
+    for source_path, text in texts.items():
+        for target_path in by_path:
+            if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
+                continue
+            if target_path in text:
+                add_edge(
+                    edges,
+                    seen,
+                    source_path,
+                    "PASSIVE_REFERENCE",
+                    target_path,
+                    f"exact repository path mention: {target_path}",
+                )
+                passive_path_mentions += 1
+
+        for basename, target_path in unique_basenames.items():
+            if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
+                continue
+            if basename_patterns[basename].search(text):
+                add_edge(
+                    edges,
+                    seen,
+                    source_path,
+                    "PASSIVE_REFERENCE",
+                    target_path,
+                    f"unique filename mention: {basename}",
+                )
+                passive_basename_mentions += 1
+
+    sorted_edges = sorted(edges, key=lambda e: (e["from"], e["type"], e["to"], e["evidence"]))
     outgoing = defaultdict(list)
     incoming = defaultdict(list)
-    for i, edge in enumerate(sorted(edges, key=lambda e: (e["from"], e["type"], e["to"], e["evidence"])), start=1):
+    for i, edge in enumerate(sorted_edges, start=1):
         edge["edge_id"] = f"EG-A{i:04d}"
         outgoing[edge["from"]].append(edge)
         incoming[edge["to"]].append(edge)
 
+    edge_type_counts = Counter(edge["type"] for edge in sorted_edges)
     payload = {
         "source_repo": SOURCE_REPO,
         "frozen_commit": FROZEN_COMMIT,
         "file_count": len(files),
-        "edge_count": len(edges),
+        "extraction_rules_version": EXTRACTION_RULES_VERSION,
+        "edge_count": len(sorted_edges),
+        "edge_type_counts": dict(sorted(edge_type_counts.items())),
+        "passive_path_mention_count": passive_path_mentions,
+        "passive_unique_basename_mention_count": passive_basename_mentions,
+        "unique_basename_count": len(unique_basenames),
         "unresolved_internal_count": len(unresolved_internal),
-        "edges": sorted(edges, key=lambda e: e["edge_id"]),
+        "edges": sorted_edges,
         "unresolved_internal": unresolved_internal,
     }
     EDGES_JSON.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
+    type_summary = ", ".join(f"{name}={count}" for name, count in sorted(edge_type_counts.items()))
     lines = [
         "# Connection Index",
         "",
         f"Frozen source: `{SOURCE_REPO}` @ `{FROZEN_COMMIT}`.",
         "",
-        f"Files in denominator: **{len(files)}**. Extracted explicit/structural edges: **{len(edges)}**. Unresolved internal-looking references: **{len(unresolved_internal)}**.",
+        f"Extraction rules version: **{EXTRACTION_RULES_VERSION}**.",
+        "",
+        f"Files in denominator: **{len(files)}**. Extracted explicit/structural/passive edges: **{len(sorted_edges)}**. Unresolved internal-looking references: **{len(unresolved_internal)}**.",
+        "",
+        f"Edge types: {type_summary}.",
+        "",
+        f"Passive-reference scan: **{passive_path_mentions}** exact-path mentions + **{passive_basename_mentions}** unique-filename mentions; **{len(unique_basenames)}** globally unique basenames were eligible.",
         "",
         "Generated by `scripts/build_connection_graph.py`. This is an extraction layer, not final semantic verification.",
         "",
@@ -191,7 +263,11 @@ def main() -> None:
         lines.append("None from the extraction rules above.")
 
     INDEX_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Wrote {EDGES_JSON} and {INDEX_MD}: {len(edges)} edges, {len(unresolved_internal)} unresolved")
+    print(
+        f"Wrote {EDGES_JSON} and {INDEX_MD}: {len(sorted_edges)} edges, "
+        f"{len(unresolved_internal)} unresolved, "
+        f"passive={passive_path_mentions + passive_basename_mentions}"
+    )
 
 
 if __name__ == "__main__":
