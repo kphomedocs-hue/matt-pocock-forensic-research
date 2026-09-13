@@ -1,0 +1,71 @@
+name: Promote Phase 3 connections
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/promote_phase3_connections.py'
+      - '.github/workflows/promote-phase3-connections.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-promote-phase3-connections
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before promotion
+        run: git pull --ff-only origin main
+      - name: Promote notes with per-file Phase 3 evidence
+        run: python scripts/promote_phase3_connections.py
+      - name: Validate promoted note statuses
+        run: |
+          python - <<'PY'
+          import pathlib, re
+          notes = sorted(pathlib.Path('02_FILE_NOTES').glob('MP-*.md'))
+          assert len(notes) == 164, len(notes)
+          promoted = 0
+          marker = '<!-- PHASE3_CONNECTIONS_TRACED_START -->'
+          for note in notes:
+              text = note.read_text(encoding='utf-8')
+              m = re.search(r'^(?:-\s*)?Status:\s*(?:\*\*)?(.+?)(?:\*\*)?\s*$', text, re.MULTILINE)
+              assert m, note
+              assert m.group(1).strip() == 'CONNECTIONS TRACED', (note, m.group(1))
+              assert text.count(marker) == 1, note
+              promoted += 1
+          assert promoted == 164
+          print('connections_traced=', promoted)
+          PY
+      - name: Commit promoted notes
+        run: |
+          if [[ -z "$(git status --porcelain -- 02_FILE_NOTES)" ]]; then
+            echo "No note promotion changes"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 02_FILE_NOTES
+          git commit -m "phase3: promote 164 notes to connections traced"
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish Phase 3 promotion after 5 attempts" >&2
+          exit 1
