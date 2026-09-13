@@ -24,27 +24,31 @@ CLASSIFICATION_VERSION = 3
 # Distinct-workflow executions proven to have been discarded by the former
 # shared concurrency group. Per-workflow lanes now replace that design.
 FIXED_CROSS_WORKFLOW_CANCEL_IDS = {
-    34712776661,  # Rebuild connection graph
-    34712784616,  # Validate forensic foundation
-    34712792316,  # Normalize note metadata
+    34712776661,
+    34712784616,
+    34712792316,
 }
 
-# These are deliberately exact run IDs, not broad error signatures. They were
-# created while hardening this classifier itself and have been manually traced.
-# Future classifier validation failures remain review-required by default.
+# Exact classifier-hardening incidents. Future classifier failures remain review-required.
 FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS = {
-    34713138258,  # v3 script ran under workflow assertion still expecting v2
+    34713138258,
 }
 FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {
-    34713153565,  # v3 closure gate correctly blocked on the transition run above
+    34713153565,
 }
 
-# Exact Phase 3 promotion incident: the first promoter recognized `Blob SHA`
-# but not the already-accepted legacy alias `Frozen blob SHA`. It failed before
-# writing notes; the parser was aligned with validate_foundation.py and the next
-# promotion run succeeded. Future promotion failures are not auto-excused.
+# Exact Phase 3 promotion compatibility incident. Future promotion failures are not excused.
 FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS = {
     34738911437,
+}
+
+# The first second-order Phase 3 quality run intentionally failed closed and exposed
+# duplicated history definitions plus incomplete quality architecture. The defects
+# were subsequently removed and the strengthened atomic Phase 3 rebuild passed.
+# This exact-ID exception prevents any future Phase 3 quality failure from being
+# silently treated as fixed.
+FIXED_PHASE3_QUALITY_RECHECK_IDS = {
+    34740170053,
 }
 
 
@@ -105,8 +109,8 @@ def fetch_job_log(job_id: int) -> str:
 
 
 def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str, str]:
-    # Exact, manually reconciled classifier-hardening incidents. Keeping these
-    # ID-scoped prevents a future classifier failure from being auto-excused.
+    # Exact, manually reconciled hardening incidents. Keeping these ID-scoped
+    # prevents a future failure in the same workflow from being auto-excused.
     if run_id in FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS:
         return (
             "CLASSIFIER_SCHEMA_TRANSITION",
@@ -124,6 +128,12 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
             "PHASE3_PROMOTION_PROVENANCE_PARSER",
             "DETECTED_AND_BLOCKED_FIXED",
             "The first Phase 3 promoter failed closed because it did not recognize the accepted legacy `Frozen blob SHA` note label. No note changes were committed; the parser was aligned with the foundation validator and the next run succeeded.",
+        )
+    if run_id in FIXED_PHASE3_QUALITY_RECHECK_IDS:
+        return (
+            "PHASE3_QUALITY_RECHECK_GATE",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The first second-order Phase 3 quality gate deliberately failed closed after exposing duplicated history-definition truth and additional Phase 3 quality debt. History definitions were moved to the durable ledger, master-ledger connection counts and cryptographic build fingerprints were added, and the strengthened atomic Phase 3 rebuild subsequently passed.",
         )
 
     s = failed_step.lower()
@@ -165,6 +175,20 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
 
     if "build graph" in s:
         return "GRAPH_BUILD", "REQUIRES_REVIEW", "Connection graph generation failed."
+
+    if "run phase 3 quality recheck" in s or "enforce phase 3 quality gate" in s:
+        return (
+            "PHASE3_QUALITY_GATE",
+            "REQUIRES_REVIEW",
+            "Phase 3 second-order quality validation failed; no future quality failure is considered resolved without explicit adjudication.",
+        )
+
+    if "rebuild ordered phase 3 state" in s or "validate atomic phase 3 outputs" in s:
+        return (
+            "PHASE3_ATOMIC_REBUILD",
+            "REQUIRES_REVIEW",
+            "The authoritative ordered Phase 3 rebuild or its acceptance gate failed.",
+        )
 
     if "validate generated outputs" in s:
         return (
