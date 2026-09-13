@@ -4,49 +4,17 @@
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "phase": 4,
   "skill_denominator": 37,
-  "covered_skills": 22,
-  "uncovered_skills": 15,
-  "uncovered_mp_ids": [
-    "MP-0078",
-    "MP-0091",
-    "MP-0118",
-    "MP-0122",
-    "MP-0129",
-    "MP-0131",
-    "MP-0133",
-    "MP-0139",
-    "MP-0141",
-    "MP-0146",
-    "MP-0148",
-    "MP-0150",
-    "MP-0158",
-    "MP-0160",
-    "MP-0163"
-  ],
-  "uncovered_paths": [
-    "skills/engineering/grill-with-docs/SKILL.md",
-    "skills/engineering/resolving-merge-conflicts/SKILL.md",
-    "skills/in-progress/claude-handoff/SKILL.md",
-    "skills/in-progress/loop-me/SKILL.md",
-    "skills/in-progress/writing-beats/SKILL.md",
-    "skills/in-progress/writing-fragments/SKILL.md",
-    "skills/in-progress/writing-shape/SKILL.md",
-    "skills/misc/migrate-to-shoehorn/SKILL.md",
-    "skills/misc/scaffold-exercises/SKILL.md",
-    "skills/productivity/grill-me/SKILL.md",
-    "skills/productivity/grilling/SKILL.md",
-    "skills/productivity/handoff/SKILL.md",
-    "skills/productivity/to-questionnaire/SKILL.md",
-    "skills/productivity/wait-what/SKILL.md",
-    "skills/productivity/writing-for-agents/SKILL.md"
-  ],
-  "behavior_row_count": 38,
+  "covered_skills": 37,
+  "uncovered_skills": 0,
+  "uncovered_mp_ids": [],
+  "uncovered_paths": [],
+  "behavior_row_count": 53,
   "covered_state_occurrences": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 13,
-    "CONFIRMED_MATCH": 8,
+    "CONFIRMED_GAP": 15,
+    "CONFIRMED_MATCH": 22,
     "CONFIRMED_WEAKNESS": 2,
-    "RUNTIME_UNKNOWN": 5,
+    "RUNTIME_UNKNOWN": 8,
     "STATICALLY_ENFORCED": 4
   },
   "hard_errors": [],
@@ -119,7 +87,8 @@
       "path": "skills/engineering/domain-modeling/SKILL.md",
       "covered": true,
       "behavior_ids": [
-        "B-028"
+        "B-028",
+        "B-039"
       ],
       "states": [
         "CONFIRMED_MATCH"
@@ -129,9 +98,13 @@
     {
       "mp_id": "MP-0078",
       "path": "skills/engineering/grill-with-docs/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-039"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
@@ -191,9 +164,13 @@
     {
       "mp_id": "MP-0091",
       "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-040"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
@@ -306,9 +283,13 @@
     {
       "mp_id": "MP-0118",
       "path": "skills/in-progress/claude-handoff/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-041"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
       "contradiction_ids": []
     },
     {
@@ -330,9 +311,13 @@
     {
       "mp_id": "MP-0122",
       "path": "skills/in-progress/loop-me/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-042"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
@@ -368,25 +353,37 @@
     {
       "mp_id": "MP-0129",
       "path": "skills/in-progress/writing-beats/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-043"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
       "mp_id": "MP-0131",
       "path": "skills/in-progress/writing-fragments/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-044"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
       "mp_id": "MP-0133",
       "path": "skills/in-progress/writing-shape/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-045"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
@@ -404,18 +401,30 @@
     {
       "mp_id": "MP-0139",
       "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
-      "contradiction_ids": []
+      "covered": true,
+      "behavior_ids": [
+        "B-046"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-019"
+      ]
     },
     {
       "mp_id": "MP-0141",
       "path": "skills/misc/scaffold-exercises/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
-      "contradiction_ids": []
+      "covered": true,
+      "behavior_ids": [
+        "B-047"
+      ],
+      "states": [
+        "CONFIRMED_GAP"
+      ],
+      "contradiction_ids": [
+        "CT-020"
+      ]
     },
     {
       "mp_id": "MP-0143",
@@ -432,25 +441,40 @@
     {
       "mp_id": "MP-0146",
       "path": "skills/productivity/grill-me/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-048"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
       "mp_id": "MP-0148",
       "path": "skills/productivity/grilling/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-039",
+        "B-042",
+        "B-048",
+        "B-049"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
       "mp_id": "MP-0150",
       "path": "skills/productivity/handoff/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-050"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
       "contradiction_ids": []
     },
     {
@@ -473,25 +497,37 @@
     {
       "mp_id": "MP-0158",
       "path": "skills/productivity/to-questionnaire/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-051"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     },
     {
       "mp_id": "MP-0160",
       "path": "skills/productivity/wait-what/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-052"
+      ],
+      "states": [
+        "RUNTIME_UNKNOWN"
+      ],
       "contradiction_ids": []
     },
     {
       "mp_id": "MP-0163",
       "path": "skills/productivity/writing-for-agents/SKILL.md",
-      "covered": false,
-      "behavior_ids": [],
-      "states": [],
+      "covered": true,
+      "behavior_ids": [
+        "B-053"
+      ],
+      "states": [
+        "CONFIRMED_MATCH"
+      ],
       "contradiction_ids": []
     }
   ]

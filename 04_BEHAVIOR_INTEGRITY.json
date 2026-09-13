@@ -1,28 +1,28 @@
 {
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "row_count": 38,
+  "row_count": 53,
   "hard_errors": [],
   "state_counts": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 9,
-    "CONFIRMED_MATCH": 8,
+    "CONFIRMED_GAP": 11,
+    "CONFIRMED_MATCH": 18,
     "CONFIRMED_WEAKNESS": 2,
-    "RUNTIME_UNKNOWN": 6,
+    "RUNTIME_UNKNOWN": 9,
     "STATICALLY_ENFORCED": 8
   },
   "enforcement_layer_counts": {
     "CI": 3,
     "DOCUMENTATION": 11,
-    "EXECUTABLE_SCRIPT": 11,
-    "EXTERNAL_DEPENDENCY": 8,
+    "EXECUTABLE_SCRIPT": 12,
+    "EXTERNAL_DEPENDENCY": 10,
     "NONE": 9,
-    "PROMPT": 32,
-    "RUNTIME": 12,
+    "PROMPT": 47,
+    "RUNTIME": 21,
     "STATIC_CONFIG": 7
   },
   "machine_enforced_counts": {
-    "False": 28,
-    "PARTIAL": 2,
+    "False": 42,
+    "PARTIAL": 3,
     "True": 8
   },
   "runtime_observed_count": 0,
@@ -44,7 +44,9 @@
     "CT-015",
     "CT-016",
     "CT-017",
-    "CT-018"
+    "CT-018",
+    "CT-019",
+    "CT-020"
   ],
   "contradiction_reference_counts": {
     "CT-001": 1,
@@ -64,7 +66,9 @@
     "CT-015": 1,
     "CT-016": 1,
     "CT-017": 1,
-    "CT-018": 1
+    "CT-018": 1,
+    "CT-019": 1,
+    "CT-020": 1
   },
   "uncovered_current_contradiction_ids": []
 }

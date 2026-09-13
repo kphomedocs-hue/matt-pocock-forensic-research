@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Working rows: **38**. Matrix state: **IN_PROGRESS**.
+Working rows: **53**. Matrix state: **IN_PROGRESS**.
 
 This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates documented claims, prompt behavior, static/executable enforcement, runtime dependence, and contradiction state.
 
@@ -59,13 +59,28 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-036 | codebase-design vocabulary discipline | CONFIRMED_MATCH | PROMPT | False | False | — | The operative skill defines and explicitly requires exact terminology, including rejected alternatives such as component/service/API/boundary in the relevant meanings. This is internally coherent but entirely prompt-enforced. |
 | B-037 | setup triage-label materialization | RUNTIME_UNKNOWN | PROMPT, EXTERNAL_DEPENDENCY, NONE | False | False | — | Setup writes the role-to-label mapping and tracker templates document label operations, but the operative setup flow contains no explicit create-or-verify-label step. Static source alone does not establish whether pre-existing labels are guaranteed or how each supported tracker behaves when a configured label is absent. |
 | B-038 | triage ready-for-agent brief invariant | CONFIRMED_GAP | PROMPT, EXTERNAL_DEPENDENCY, NONE | False | False | CT-018 | AGENT-BRIEF.md defines the brief as the authoritative contract posted when an item moves to ready-for-agent, and the normal triage outcome requires it. The quick override applies ready-for-agent directly and only asks afterward whether the maintainer wants a brief, making the contract optional on that path. |
+| B-039 | grill-with-docs aggregate delegation | CONFIRMED_MATCH | PROMPT | False | False | — | The operative wrapper contains only two Skill-tool calls, one to `grilling` and one to `domain-modeling`. Phase 3 invocation joining found no illegal current operative call, so the composition is statically coherent and intentionally delegates behavior to the two target skills. |
+| B-040 | resolving-merge-conflicts intent-preservation workflow | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The skill has a coherent five-step contract: inspect state, trace primary-source intent, preserve both intents where possible without inventing behavior, run discovered checks, then stage/commit or continue rebase. `Never --abort` is an explicit design rule rather than an implicit fallback. |
+| B-041 | claude-handoff background-agent privacy and launch | RUNTIME_UNKNOWN | PROMPT, RUNTIME, EXTERNAL_DEPENDENCY | False | False | — | The source explicitly requires redaction, pointer-over-duplication, suggested skills, a descriptive `--name`, and direct `claude --bg` launch. None of those privacy/completeness properties is enforced by a deterministic sanitizer or launcher owned by this repository, and successful behavior depends on the external Claude CLI/runtime. |
+| B-042 | loop-me workflow-spec completion | CONFIRMED_MATCH | PROMPT | False | False | — | The skill explicitly separates loop vocabulary from mandatory structure, declares workflow files authoritative, and gives a demanding completion criterion: nothing is done while an implementation question remains. The stateful grilling dependency is prompt-mediated, not mechanically checked. |
+| B-043 | writing-beats grounded incremental authorship | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The operative workflow establishes prerequisites, restricts candidates to already-grounded concepts, requires the user to choose, writes one beat only, re-reads from disk, and repeats. User edits are explicitly preserved and may change subsequent routing. |
+| B-044 | writing-fragments explore-only append discipline | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The skill explicitly separates explore from exploit, bans outlines/phases, defines a minimal fragment file format, captures from the initial prompt, and requires re-reading before writes. It permits targeted edits only on user request rather than blind overwrite. |
+| B-045 | writing-shape raw-input immutability | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The source requires a full initial read, a separate output path, explicit opening choice, grounded paragraph/block progression, immediate append after agreement, and re-read-before-write behavior while declaring the raw pile read-only. |
+| B-046 | migrate-to-shoehorn assertion discovery coverage | CONFIRMED_GAP | PROMPT, EXECUTABLE_SCRIPT | False | False | CT-019 | The documented grep looks only for ` as ` followed immediately by an uppercase letter. The skill's own double-assertion example contains lowercase `unknown` after the first `as`, so literal workflow execution can skip that advertised migration case. |
+| B-047 | scaffold-exercises variant/linter contract | CONFIRMED_GAP | PROMPT, EXTERNAL_DEPENDENCY | PARTIAL | False | CT-020 | The skill says any one of problem/solution/explainer is enough, but its own lint summary requires at least one of problem/explainer/explainer.1. The external linter is a real completion gate, so the prose can direct a scaffold into a state the mandated checker rejects. |
+| B-048 | grill-me delegation wrapper | CONFIRMED_MATCH | PROMPT | False | False | — | The entire operative body is a single call to `grilling`; this avoids duplicated interviewing logic and keeps grilling semantics in one source. Phase 3 invocation-policy joining found this current call legal. |
+| B-049 | grilling frontier and authority discipline | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The design-tree/frontier model explicitly delays dependent questions, asks the whole current frontier in rounds, delegates fact-finding rather than asking the user, and keeps actual decisions with the user. Completion requires both an empty frontier and user confirmation. |
+| B-050 | handoff temporary-storage and redaction contract | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | — | The skill explicitly requires OS-temp placement, sensitive-data redaction, suggested skills, and references instead of duplicating existing artifacts. It contains no deterministic redactor or temp-path resolver, so actual placement and redaction completeness remain runtime behaviors. |
+| B-051 | questionnaire send-focused completeness | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The workflow separates who receives the document from what the user needs back, defines done for each intake step, and closes only when every named need is covered by a question in the written Markdown artifact. The one-idea-per-question rule is explicit. |
+| B-052 | wait-what controlled-language repitch | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | — | The skill is a concise prompt contract with three simultaneous constraints: add context, use ASD-STE100, and load ubiquitous language from CONTEXT.md/CONTEXT-MAP.md. No deterministic checker verifies controlled-language compliance or context-map resolution. |
+| B-053 | writing-for-agents information-hierarchy discipline | CONFIRMED_MATCH | PROMPT | False | False | — | The skill and its mechanics support file present a coherent doctrine around context/cognitive load, information hierarchy, pointer wording, completion-criterion clarity/demand, leading words, positive steering, single-source truth, environment-as-source, pruning, and no-op deletion. |
 
 ## Current counts
 
-- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 9, 'CONFIRMED_MATCH': 8, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 6, 'STATICALLY_ENFORCED': 8}`
-- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 11, 'EXECUTABLE_SCRIPT': 11, 'EXTERNAL_DEPENDENCY': 8, 'NONE': 9, 'PROMPT': 32, 'RUNTIME': 12, 'STATIC_CONFIG': 7}`
-- runtime observed rows: **0 / 38**
-- current CT coverage: **18 / 18**
+- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 11, 'CONFIRMED_MATCH': 18, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
+- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 11, 'EXECUTABLE_SCRIPT': 12, 'EXTERNAL_DEPENDENCY': 10, 'NONE': 9, 'PROMPT': 47, 'RUNTIME': 21, 'STATIC_CONFIG': 7}`
+- runtime observed rows: **0 / 53**
+- current CT coverage: **20 / 20**
 - integrity hard errors: **0**
 
 ## Phase 4 rule
