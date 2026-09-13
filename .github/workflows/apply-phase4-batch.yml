@@ -31,6 +31,8 @@ jobs:
         run: python scripts/validate_behavior_matrix.py
       - name: Rebuild Phase 4 coverage
         run: python scripts/build_phase4_coverage.py
+      - name: Rebuild Phase 4 evidence-depth queue
+        run: python scripts/build_phase4_runtime_queue.py
       - name: Refresh foundation report against merged contradictions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,15 +43,24 @@ jobs:
           import json
           d = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
           c = json.load(open('04_BEHAVIOR_COVERAGE.json', encoding='utf-8'))
+          r = json.load(open('04_RUNTIME_OBSERVATION_QUEUE.json', encoding='utf-8'))
           f = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
           assert d['hard_errors'] == []
           assert d.get('uncovered_current_contradiction_ids', []) == []
           assert c['schema_version'] == 2
           assert c['hard_errors'] == []
           assert c['skill_denominator'] == 37
-          assert c['covered_skills'] + c['uncovered_skills'] == 37
-          assert c['surface_denominator'] > 0
-          assert c['covered_surfaces'] + c['uncovered_surfaces'] == c['surface_denominator']
+          assert c['covered_skills'] == 37
+          assert c['uncovered_skills'] == 0
+          assert c['surface_denominator'] == 71
+          assert c['covered_surfaces'] == 71
+          assert c['uncovered_surfaces'] == 0
+          assert r['schema_version'] == 1
+          assert r['hard_errors'] == []
+          assert r['behavior_denominator'] == d['row_count']
+          assert r['classified_behaviors'] == d['row_count']
+          assert r['runtime_observed'] == d['runtime_observed_count']
+          assert r['pending_total'] + r['runtime_observed'] == d['row_count']
           assert f['hard_errors'] == []
           assert f['contradiction_ids_current'] == d['current_contradiction_ids']
           assert not __import__('pathlib').Path('04_PHASE4_BATCH.json').exists()
@@ -57,13 +68,13 @@ jobs:
           print('current_cts=', len(d['current_contradiction_ids']))
           print('skill_coverage=', f"{c['covered_skills']}/{c['skill_denominator']}")
           print('surface_coverage=', f"{c['covered_surfaces']}/{c['surface_denominator']}")
+          print('evidence_classes=', r['evidence_class_counts'])
+          print('pending_by_class=', r['pending_by_class'])
           print('foundation_current_cts=', len(f['contradiction_ids_current']))
-          print('uncovered_skills=', c['uncovered_mp_ids'])
-          print('uncovered_surfaces=', c['uncovered_surface_mp_ids'])
           PY
       - name: Commit atomic Phase 4 batch result
         run: |
-          paths=(04_PHASE4_BATCH.json 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_CONTRADICTION_REGISTER.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
+          paths=(04_PHASE4_BATCH.json 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 04_CONTRADICTION_REGISTER.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A -- "${paths[@]}"
