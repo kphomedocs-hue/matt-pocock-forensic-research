@@ -19,7 +19,7 @@ If chat prose and committed machine artifacts disagree, the committed source/pro
 
 Primary phase focus: **Phase 4 — Behavior & Enforcement**.
 
-Phases 1–3 are complete. The project is **not VERIFIED**: Phase 4 behavior/enforcement, remaining history lineage, contradiction resolution, runtime observation, second pass, and red-team verification remain before Phase 10 synthesis.
+Phases 1–3 are complete. The project is **not VERIFIED**: Phase 4 runtime/enforcement depth, remaining history lineage, contradiction resolution, runtime/distribution observation, second pass, and red-team verification remain before Phase 10 synthesis.
 
 ## Foundation state
 
@@ -73,48 +73,53 @@ Authoritative working artifacts:
 
 Current validated state:
 
-- behavior rows: **53**;
+- behavior rows: **65**;
 - hard integrity errors: **0**;
-- runtime observed: **0/53**;
+- runtime observed: **0/65**;
 - current CT coverage: **20/20**;
 - uncovered current CT IDs: **0**;
 - current `SKILL.md` denominator: **37**;
 - current skills with at least one behavior contract: **37/37**;
-- uncovered current skills: **0**.
+- uncovered current skills: **0**;
+- high-risk non-SKILL denominator: **71**;
+- high-risk non-SKILL surfaces with at least one behavior contract: **71/71**;
+- uncovered high-risk non-SKILL surfaces: **0**.
 
-State counts:
+Behavior-matrix state counts:
 
-- `CONFIRMED_DRIFT`: **7**
-- `CONFIRMED_GAP`: **10**
-- `CONFIRMED_MATCH`: **13**
-- `CONFIRMED_WEAKNESS`: **4**
+- `CONFIRMED_DRIFT`: **5**
+- `CONFIRMED_GAP`: **11**
+- `CONFIRMED_MATCH`: **29**
+- `CONFIRMED_WEAKNESS`: **3**
 - `RUNTIME_UNKNOWN`: **9**
-- `STATICALLY_ENFORCED`: **10**
+- `STATICALLY_ENFORCED`: **8**
 
 Machine-enforcement counts:
 
-- `True`: **13**
-- `PARTIAL`: **4**
-- `False`: **36**
+- `True`: **8**
+- `PARTIAL`: **6**
+- `False`: **51**
 
-The 37/37 result is a **breadth denominator only**. It proves no current operative skill is completely absent from the Phase 4 matrix; it does not prove all behaviors of those skills are exhausted and does not promote any file to VERIFIED.
+The **37/37 skill** and **71/71 high-risk non-SKILL** results are breadth denominators only. They prove that no current operative skill or behavior-relevant high-risk non-SKILL surface is completely absent from the Phase 4 matrix. They do **not** prove that every behavior is exhausted, that machine-readable policy is honored at runtime, or that any file is VERIFIED.
 
 ### Current contradiction/enforcement register
 
 The register contains **20 current IDs** plus **3 historical IDs**.
 
-Newest findings:
+Newest source findings:
 
 - **CT-019 — migrate-to-shoehorn assertion discovery:** the promised `as unknown as Type` migration case is missed by the literal `grep " as [A-Z]"` discovery pattern because `unknown` begins lowercase.
 - **CT-020 — scaffold-exercises variant/linter contract:** prose permits a solution-only exercise while the same source's linter summary requires a primary variant from problem/explainer/explainer.1, excluding solution-only.
 
 Earlier Phase 4 findings CT-014…CT-018 remain durable in the contradiction register and behavior matrix.
 
+The latest breadth batch added explicit contracts for all remaining Codex per-skill metadata, Claude marketplace distribution metadata, the diagnosing-bugs HITL template, ask-matt phase-boundary routing, setup support contracts, TDD support contracts, triage out-of-scope memory, and Teach mission/learning/resource formats. No new contradiction was created merely to close coverage.
+
 No Phase 4 row is treated as sufficient for `VERIFIED` by itself.
 
 ## Tooling state
 
-Latest closed incident ledger:
+Latest closed incident ledger before this status sync:
 
 - failed runs: **83**;
 - cancelled runs: **7**;
@@ -124,9 +129,11 @@ Latest closed incident ledger:
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
 
-The newest tooling incident, run `34745903691`, was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, the exact run is classified as fixed, and Phase 4 validation/batch workflows are monitored by the incident classifier.
+Run `34745903691` was the first Phase 4 batch-importer bootstrap run. It failed closed because the workflow initially triggered on its own creation before a batch file existed. No research data changed. Automatic importer execution is now limited to actual `04_PHASE4_BATCH.json` pushes, the exact run is classified as fixed, and Phase 4 validation/batch workflows are monitored by the incident classifier.
 
-Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 batch application now refreshes behavior validation, current-skill coverage, contradiction state, and foundation integrity inside the same atomic workflow before publication.
+Because bot commits cannot be relied upon to retrigger downstream Actions, Phase 4 batch application refreshes behavior validation and breadth coverage inside the same atomic workflow before publication.
+
+The full non-SKILL coverage batch was accepted by `Apply Phase 4 batch` run **34747555653** and published by bot commit `4d09076440c46ccae6efaeee19ba746a7381bee4`.
 
 ## Phase status
 
@@ -135,7 +142,7 @@ Because bot commits cannot be relied upon to retrigger downstream Actions, Phase
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
 | 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **53-row** matrix; **20/20 current CTs covered**; **37/37 current skills represented**; runtime observed **0/53**. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **65-row** matrix; **20/20 current CTs**, **37/37 current skills**, and **71/71 high-risk non-SKILL surfaces** represented; runtime observed **0/65**. |
 | 5. History | IN PROGRESS | 9 durable H-events; partial lineage remains explicitly partial. |
 | 6. Contradictions & Orphans | IN PROGRESS | **20 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
 | 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deeper runtime/end-to-end observation remains. |
@@ -145,10 +152,10 @@ Because bot commits cannot be relied upon to retrigger downstream Actions, Phase
 
 ## Immediate next execution steps — Phase 4
 
-1. Move from current-skill breadth to **high-risk non-SKILL surfaces**: executable scripts, configs, support files, CI/release files, metadata and generated-consumer contracts.
-2. Prioritize the nine `RUNTIME_UNKNOWN` rows and current gaps that can be settled by direct static/runtime evidence, including package-lock consumers, Teach workspace-root behavior, architecture HTML offline portability, code-review visibility, diagnosing-bugs HITL behavior, implement-spec merge/fix validation and scaffold linter semantics.
-3. Build a deterministic Phase 4 non-SKILL/high-risk coverage denominator rather than selecting files ad hoc.
-4. Trace history for new CTs and remaining partial H-events before any verification promotion.
+1. Replace ad-hoc runtime testing with a deterministic **runtime-observation denominator/queue** derived from the behavior matrix and frozen census.
+2. Prioritize executable and machine-consumed contracts: repository scripts, skill scripts/config, CI/release, distribution metadata, Codex invocation metadata, dependency/package behavior, and the nine `RUNTIME_UNKNOWN` rows.
+3. Distinguish **static contract proved**, **runtime consumer proved**, **end-to-end behavior proved**, and **prompt-only judgment** so static metadata is never mistaken for runtime enforcement.
+4. Trace history for CT-019/CT-020 and remaining partial H-events before any verification promotion.
 5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
 
 ## Resume instruction
