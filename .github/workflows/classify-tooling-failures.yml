@@ -17,6 +17,7 @@ on:
       - 'Validate Phase 3 quality'
       - 'Validate Phase 4 behavior matrix'
       - 'Apply Phase 4 batch'
+      - 'Phase 4 runtime smoke'
     types: [completed]
 
 permissions:
