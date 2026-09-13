@@ -1,0 +1,71 @@
+name: Rebuild distribution symmetry matrix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '01_FILE_CENSUS.json'
+      - 'scripts/build_distribution_matrix.py'
+      - '.github/workflows/rebuild-distribution-matrix.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-rebuild-distribution-matrix
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main before generation
+        run: git pull --ff-only origin main
+      - name: Build distribution matrix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_distribution_matrix.py
+      - name: Validate generated outputs
+        run: |
+          test -s 03_DISTRIBUTION_MATRIX.json
+          test -s 03_DISTRIBUTION_MATRIX.md
+          python - <<'PY'
+          import json
+          d = json.load(open('03_DISTRIBUTION_MATRIX.json', encoding='utf-8'))
+          assert d['skill_count'] == 37
+          assert d['dimension_counts']['plugin_promoted'] == 25
+          assert d['dimension_counts']['local_linked'] == 33
+          assert d['dimension_counts']['list_skills_visible'] == 37
+          assert d['dimension_counts']['codex_metadata_exists'] == 37
+          print('dimensions=', d['dimension_counts'])
+          print('anomalies=', d['anomaly_count'])
+          PY
+      - name: Commit generated distribution matrix
+        run: |
+          if [[ -z "$(git status --porcelain -- 03_DISTRIBUTION_MATRIX.json 03_DISTRIBUTION_MATRIX.md)" ]]; then
+            echo "No distribution-matrix changes"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 03_DISTRIBUTION_MATRIX.json 03_DISTRIBUTION_MATRIX.md
+          git commit -m "phase3: rebuild distribution symmetry matrix"
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish distribution matrix after 5 attempts" >&2
+          exit 1
