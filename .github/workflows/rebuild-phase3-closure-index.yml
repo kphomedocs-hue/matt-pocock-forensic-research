@@ -10,6 +10,7 @@ on:
       - '03_ROUTER_MATRIX.json'
       - '03_HISTORY_BINDINGS.json'
       - '03_REFERENCE_DISPOSITIONS.json'
+      - '03_ORPHAN_DISPOSITIONS.json'
       - 'scripts/build_phase3_closure_index.py'
       - '.github/workflows/rebuild-phase3-closure-index.yml'
   workflow_dispatch:
@@ -47,6 +48,7 @@ jobs:
           assert d['state_counts'].get('READY_CANDIDATE', 0) + d['state_counts'].get('BLOCKED', 0) == 164
           print('states=', d['state_counts'])
           print('blockers=', d['blocker_counts'])
+          print('orphan_dispositions=', d.get('semantic_orphan_disposition_count'))
           PY
       - name: Commit generated closure index
         run: |
