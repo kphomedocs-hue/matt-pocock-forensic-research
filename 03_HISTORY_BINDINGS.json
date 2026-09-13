@@ -1,13 +1,17 @@
 {
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "history_definition_source": "05_HISTORY_LEDGER.md",
   "file_count": 164,
   "history_event_count": 9,
   "events": [
     {
       "history_id": "H-001",
+      "date": "2026-06-17",
       "lineage_state": "RECONCILED",
       "area": "Changesets / package metadata",
+      "event": "Initial Changesets setup created `package.json` and `package-lock.json` at version `0.0.0`.",
+      "current_significance": "Establishes bootstrap origin of lockfile 0.0.0.",
       "refs": [
         {
           "type": "commit",
@@ -72,18 +76,21 @@
     },
     {
       "history_id": "H-002",
+      "date": "2026-06-30",
       "lineage_state": "RECONCILED",
-      "area": "TDD red-green lineage",
+      "area": "TDD",
+      "event": "TDD was first reshaped into a compact reference-only workflow with pre-agreed seams, then five minutes later the refactor stage was explicitly removed so TDD became red \u2192 green and refactoring moved to review.",
+      "current_significance": "Establishes exact lineage for current red \u2192 green semantics and confirms red-green-refactor wording on secondary surfaces is stale rather than ambiguous.",
       "refs": [
-        {
-          "type": "commit",
-          "ref": "e81f97660af0bebfdbf2e23db6a71f7dfcb9a659",
-          "changed_file_count": 2
-        },
         {
           "type": "commit",
           "ref": "80e9dcc6857f16cc08b8e5b190393ee7591517e0",
           "changed_file_count": 3
+        },
+        {
+          "type": "commit",
+          "ref": "e81f97660af0bebfdbf2e23db6a71f7dfcb9a659",
+          "changed_file_count": 2
         }
       ],
       "changed_paths_total": 3,
@@ -91,7 +98,7 @@
         {
           "history_id": "H-002",
           "lineage_state": "RECONCILED",
-          "area": "TDD red-green lineage",
+          "area": "TDD",
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -104,8 +111,11 @@
     },
     {
       "history_id": "H-003",
+      "date": "2026-07-13",
       "lineage_state": "PARTIAL",
-      "area": "Claude plugin creation",
+      "area": "Claude plugin",
+      "event": "Native Claude Code plugin added with curated promoted skill list.",
+      "current_significance": "Establishes promoted distribution path.",
       "refs": [
         {
           "type": "commit",
@@ -118,7 +128,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0002",
           "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -126,7 +136,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0017",
           "path": ".claude-plugin/marketplace.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -134,7 +144,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0018",
           "path": ".claude-plugin/plugin.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -142,7 +152,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -150,7 +160,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0029",
           "path": "README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -162,8 +172,11 @@
     },
     {
       "history_id": "H-004",
+      "date": "2026-07-13",
       "lineage_state": "PARTIAL",
-      "area": "Codex metadata introduction",
+      "area": "Codex metadata",
+      "event": "`agents/openai.yaml` added beside every then-current SKILL; AGENTS symlink added; user/model invocation mirrored across harnesses.",
+      "current_significance": "Establishes dual-harness invocation architecture; later skill additions/removals still need lineage reconciliation against the current 37-owner set.",
       "refs": [
         {
           "type": "commit",
@@ -176,7 +189,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -184,7 +197,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0024",
           "path": "AGENTS.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -192,7 +205,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -200,7 +213,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -208,7 +221,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -216,7 +229,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0064",
           "path": "skills/engineering/ask-matt/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -224,7 +237,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0066",
           "path": "skills/engineering/code-review/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -232,7 +245,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0070",
           "path": "skills/engineering/codebase-design/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -240,7 +253,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0072",
           "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -248,7 +261,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0077",
           "path": "skills/engineering/domain-modeling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -256,7 +269,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0079",
           "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -264,7 +277,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0081",
           "path": "skills/engineering/implement/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -272,7 +285,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0084",
           "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -280,7 +293,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0088",
           "path": "skills/engineering/prototype/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -288,7 +301,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0090",
           "path": "skills/engineering/research/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -296,7 +309,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0092",
           "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -304,7 +317,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0094",
           "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -312,7 +325,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0101",
           "path": "skills/engineering/tdd/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -320,7 +333,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0105",
           "path": "skills/engineering/to-spec/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -328,7 +341,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0107",
           "path": "skills/engineering/to-tickets/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -336,7 +349,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0111",
           "path": "skills/engineering/triage/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -344,7 +357,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0113",
           "path": "skills/engineering/wayfinder/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -352,7 +365,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0119",
           "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -360,7 +373,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0123",
           "path": "skills/in-progress/loop-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -368,7 +381,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0127",
           "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -376,7 +389,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0130",
           "path": "skills/in-progress/writing-beats/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -384,7 +397,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0132",
           "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -392,7 +405,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0134",
           "path": "skills/in-progress/writing-shape/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -400,7 +413,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0137",
           "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -408,7 +421,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0140",
           "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -416,7 +429,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0142",
           "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -424,7 +437,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0144",
           "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -432,7 +445,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -440,7 +453,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0147",
           "path": "skills/productivity/grill-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -448,7 +461,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0149",
           "path": "skills/productivity/grilling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -456,7 +469,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0151",
           "path": "skills/productivity/handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -464,7 +477,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0157",
           "path": "skills/productivity/teach/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -484,8 +497,11 @@
     },
     {
       "history_id": "H-005",
+      "date": "2026-08-05",
       "lineage_state": "RECONCILED",
-      "area": "Router/docs coherence pass",
+      "area": "Router/docs coherence",
+      "event": "Coherence pass fixed missing ask-matt routes, missing TDD\u2192codebase-design pointer, and stale README/docs claims.",
+      "current_significance": "Evidence of recurring sync drift.",
       "refs": [
         {
           "type": "commit",
@@ -498,7 +514,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0029",
           "path": "README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -506,7 +522,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0032",
           "path": "docs/engineering/codebase-design.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -514,7 +530,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0035",
           "path": "docs/engineering/grill-with-docs.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -522,7 +538,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0036",
           "path": "docs/engineering/implement.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -530,7 +546,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0042",
           "path": "docs/engineering/tdd.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -538,7 +554,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0049",
           "path": "docs/productivity/grilling.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -546,7 +562,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -554,7 +570,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0063",
           "path": "skills/engineering/ask-matt/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -562,7 +578,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -570,7 +586,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -580,8 +596,11 @@
     },
     {
       "history_id": "H-006",
+      "date": "2026-08-05",
       "lineage_state": "RECONCILED",
-      "area": "Release version synchronization",
+      "area": "Release versioning",
+      "event": "Added `sync-plugin-version.mjs`; package.json made effective authority for plugin version; release action switched to `npm run version`.",
+      "current_significance": "Fixes plugin/package drift; lockfile remains outside sync mechanism.",
       "refs": [
         {
           "type": "commit",
@@ -594,7 +613,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0019",
           "path": ".github/workflows/release.yml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -602,7 +621,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -610,7 +629,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0056",
           "path": "package.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -618,7 +637,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0059",
           "path": "scripts/sync-plugin-version.mjs",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -628,8 +647,11 @@
     },
     {
       "history_id": "H-007",
+      "date": "2026-08-15",
       "lineage_state": "RECONCILED",
-      "area": "Cross-skill invocation standardization",
+      "area": "Cross-skill invocation",
+      "event": "PR #878 standardized operative cross-skill calls on explicit Skill-tool phrasing.",
+      "current_significance": "Solved unreliable bare `/skill` prose but introduced semantic regression.",
       "refs": [
         {
           "type": "pr",
@@ -642,7 +664,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -650,7 +672,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0014",
           "path": ".changeset/skill-tool-invocation-terminology.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -658,7 +680,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0065",
           "path": "skills/engineering/code-review/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -666,7 +688,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0071",
           "path": "skills/engineering/diagnosing-bugs/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -674,7 +696,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0078",
           "path": "skills/engineering/grill-with-docs/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -682,7 +704,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0083",
           "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -690,7 +712,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -698,7 +720,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0104",
           "path": "skills/engineering/to-spec/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -706,7 +728,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0106",
           "path": "skills/engineering/to-tickets/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -714,7 +736,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0110",
           "path": "skills/engineering/triage/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -722,7 +744,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0112",
           "path": "skills/engineering/wayfinder/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -730,7 +752,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0118",
           "path": "skills/in-progress/claude-handoff/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -738,7 +760,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0126",
           "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -746,7 +768,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0146",
           "path": "skills/productivity/grill-me/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -754,7 +776,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0150",
           "path": "skills/productivity/handoff/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -764,8 +786,11 @@
     },
     {
       "history_id": "H-008",
+      "date": "2026-08-15",
       "lineage_state": "RECONCILED",
-      "area": "Cross-skill invocation regression fix",
+      "area": "Cross-skill invocation regression",
+      "event": "PR #880 fixed calls to user-invoked targets and added target-invocation-type carve-out to policy.",
+      "current_significance": "Canonical example of syntax-correct rewrite violating higher-level invariant.",
       "refs": [
         {
           "type": "pr",
@@ -778,7 +803,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -786,7 +811,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0015",
           "path": ".changeset/user-invoked-skill-invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -794,7 +819,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0065",
           "path": "skills/engineering/code-review/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -802,7 +827,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0071",
           "path": "skills/engineering/diagnosing-bugs/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -810,7 +835,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0104",
           "path": "skills/engineering/to-spec/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -818,7 +843,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0106",
           "path": "skills/engineering/to-tickets/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -826,7 +851,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0110",
           "path": "skills/engineering/triage/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -834,7 +859,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0112",
           "path": "skills/engineering/wayfinder/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -844,8 +869,11 @@
     },
     {
       "history_id": "H-009",
+      "date": "2026-09-04",
       "lineage_state": "PARTIAL",
-      "area": "Local-link misc exclusion",
+      "area": "Local linking",
+      "event": "Frozen baseline merge PR #1025: `link-skills` stopped linking misc/ into local skill directories.",
+      "current_significance": "Current local link set = engineering + productivity + in-progress; misc excluded.",
       "refs": [
         {
           "type": "pr",
@@ -858,7 +886,7 @@
         {
           "history_id": "H-009",
           "lineage_state": "PARTIAL",
-          "area": "Local-link misc exclusion",
+          "area": "Local linking",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -866,7 +894,7 @@
         {
           "history_id": "H-009",
           "lineage_state": "PARTIAL",
-          "area": "Local-link misc exclusion",
+          "area": "Local linking",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -892,7 +920,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0002",
           "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -915,7 +943,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -923,7 +951,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -931,7 +959,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1028,7 +1056,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0014",
           "path": ".changeset/skill-tool-invocation-terminology.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1044,7 +1072,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0015",
           "path": ".changeset/user-invoked-skill-invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1067,7 +1095,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0017",
           "path": ".claude-plugin/marketplace.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1083,7 +1111,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0018",
           "path": ".claude-plugin/plugin.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1107,7 +1135,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0019",
           "path": ".github/workflows/release.yml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1160,7 +1188,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0024",
           "path": "AGENTS.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1183,7 +1211,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1191,7 +1219,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1199,7 +1227,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1207,7 +1235,7 @@
         {
           "history_id": "H-009",
           "lineage_state": "PARTIAL",
-          "area": "Local-link misc exclusion",
+          "area": "Local linking",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1237,7 +1265,7 @@
         {
           "history_id": "H-003",
           "lineage_state": "PARTIAL",
-          "area": "Claude plugin creation",
+          "area": "Claude plugin",
           "mp_id": "MP-0029",
           "path": "README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1245,7 +1273,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0029",
           "path": "README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1275,7 +1303,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0032",
           "path": "docs/engineering/codebase-design.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1305,7 +1333,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0035",
           "path": "docs/engineering/grill-with-docs.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1321,7 +1349,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0036",
           "path": "docs/engineering/implement.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1372,7 +1400,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0042",
           "path": "docs/engineering/tdd.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1430,7 +1458,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0049",
           "path": "docs/productivity/grilling.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1505,7 +1533,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0056",
           "path": "package.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1521,7 +1549,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1529,7 +1557,7 @@
         {
           "history_id": "H-009",
           "lineage_state": "PARTIAL",
-          "area": "Local-link misc exclusion",
+          "area": "Local linking",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1552,7 +1580,7 @@
         {
           "history_id": "H-006",
           "lineage_state": "RECONCILED",
-          "area": "Release version synchronization",
+          "area": "Release versioning",
           "mp_id": "MP-0059",
           "path": "scripts/sync-plugin-version.mjs",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1575,7 +1603,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1583,7 +1611,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1606,7 +1634,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0063",
           "path": "skills/engineering/ask-matt/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1622,7 +1650,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0064",
           "path": "skills/engineering/ask-matt/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1638,7 +1666,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0065",
           "path": "skills/engineering/code-review/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1646,7 +1674,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0065",
           "path": "skills/engineering/code-review/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1662,7 +1690,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0066",
           "path": "skills/engineering/code-review/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1699,7 +1727,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0070",
           "path": "skills/engineering/codebase-design/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1715,7 +1743,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0071",
           "path": "skills/engineering/diagnosing-bugs/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1723,7 +1751,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0071",
           "path": "skills/engineering/diagnosing-bugs/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1739,7 +1767,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0072",
           "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1783,7 +1811,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0077",
           "path": "skills/engineering/domain-modeling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1799,7 +1827,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0078",
           "path": "skills/engineering/grill-with-docs/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1815,7 +1843,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0079",
           "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1838,7 +1866,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0081",
           "path": "skills/engineering/implement/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1861,7 +1889,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0083",
           "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1877,7 +1905,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0084",
           "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1914,7 +1942,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0088",
           "path": "skills/engineering/prototype/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1937,7 +1965,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0090",
           "path": "skills/engineering/research/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1960,7 +1988,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0092",
           "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1983,7 +2011,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0094",
           "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2034,7 +2062,7 @@
         {
           "history_id": "H-002",
           "lineage_state": "RECONCILED",
-          "area": "TDD red-green lineage",
+          "area": "TDD",
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2042,7 +2070,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2050,7 +2078,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2066,7 +2094,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0101",
           "path": "skills/engineering/tdd/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2096,7 +2124,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0104",
           "path": "skills/engineering/to-spec/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2104,7 +2132,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0104",
           "path": "skills/engineering/to-spec/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2120,7 +2148,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0105",
           "path": "skills/engineering/to-spec/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2136,7 +2164,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0106",
           "path": "skills/engineering/to-tickets/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2144,7 +2172,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0106",
           "path": "skills/engineering/to-tickets/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2160,7 +2188,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0107",
           "path": "skills/engineering/to-tickets/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2190,7 +2218,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0110",
           "path": "skills/engineering/triage/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2198,7 +2226,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0110",
           "path": "skills/engineering/triage/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2214,7 +2242,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0111",
           "path": "skills/engineering/triage/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2230,7 +2258,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0112",
           "path": "skills/engineering/wayfinder/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2238,7 +2266,7 @@
         {
           "history_id": "H-008",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation regression fix",
+          "area": "Cross-skill invocation regression",
           "mp_id": "MP-0112",
           "path": "skills/engineering/wayfinder/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2254,7 +2282,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0113",
           "path": "skills/engineering/wayfinder/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2298,7 +2326,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0118",
           "path": "skills/in-progress/claude-handoff/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2314,7 +2342,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0119",
           "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2351,7 +2379,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0123",
           "path": "skills/in-progress/loop-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2381,7 +2409,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0126",
           "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2397,7 +2425,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0127",
           "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2427,7 +2455,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0130",
           "path": "skills/in-progress/writing-beats/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2450,7 +2478,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0132",
           "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2473,7 +2501,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0134",
           "path": "skills/in-progress/writing-shape/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2503,7 +2531,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0137",
           "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2533,7 +2561,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0140",
           "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2556,7 +2584,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0142",
           "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2579,7 +2607,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0144",
           "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2595,7 +2623,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2603,7 +2631,7 @@
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
-          "area": "Router/docs coherence pass",
+          "area": "Router/docs coherence",
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2619,7 +2647,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0146",
           "path": "skills/productivity/grill-me/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2635,7 +2663,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0147",
           "path": "skills/productivity/grill-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2658,7 +2686,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0149",
           "path": "skills/productivity/grilling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2674,7 +2702,7 @@
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
-          "area": "Cross-skill invocation standardization",
+          "area": "Cross-skill invocation",
           "mp_id": "MP-0150",
           "path": "skills/productivity/handoff/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2690,7 +2718,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0151",
           "path": "skills/productivity/handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2741,7 +2769,7 @@
         {
           "history_id": "H-004",
           "lineage_state": "PARTIAL",
-          "area": "Codex metadata introduction",
+          "area": "Codex metadata",
           "mp_id": "MP-0157",
           "path": "skills/productivity/teach/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
