@@ -1,0 +1,46 @@
+{
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "dispositions": [
+    {
+      "from": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "raw": "./src/ordering/CONTEXT.md",
+      "kind": "markdown-link",
+      "classification": "GENERATED_TEMPLATE_TARGET_NOT_BROKEN",
+      "resolved": true,
+      "reason": "Consumer-repository example path inside the CONTEXT template, not an internal mattpocock/skills file target."
+    },
+    {
+      "from": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "raw": "./src/billing/CONTEXT.md",
+      "kind": "markdown-link",
+      "classification": "GENERATED_TEMPLATE_TARGET_NOT_BROKEN",
+      "resolved": true,
+      "reason": "Consumer-repository example path inside the CONTEXT template, not an internal mattpocock/skills file target."
+    },
+    {
+      "from": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "raw": "./src/fulfillment/CONTEXT.md",
+      "kind": "markdown-link",
+      "classification": "GENERATED_TEMPLATE_TARGET_NOT_BROKEN",
+      "resolved": true,
+      "reason": "Consumer-repository example path inside the CONTEXT template, not an internal mattpocock/skills file target."
+    },
+    {
+      "from": "skills/engineering/wayfinder/SKILL.md",
+      "raw": "link",
+      "kind": "markdown-link",
+      "classification": "TEMPLATE_PLACEHOLDER_NOT_BROKEN",
+      "resolved": true,
+      "reason": "Literal placeholder in the generated decision-map Markdown template, not a repository path."
+    },
+    {
+      "from": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "raw": "./src/packages/README.md",
+      "kind": "markdown-link",
+      "classification": "GENERATED_CONSUMER_TARGET_NOT_BROKEN",
+      "resolved": true,
+      "reason": "Consumer-repository path the skill instructs the agent to create, not a file expected inside mattpocock/skills."
+    }
+  ]
+}
