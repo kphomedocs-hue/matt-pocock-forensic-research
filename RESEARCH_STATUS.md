@@ -13,7 +13,7 @@ Physical denominator: **164 blobs/files**
 
 This GitHub repository is the authoritative project state. ChatGPT conversation history, memory, summaries, scratchpads, or transient tool output are **not authoritative storage** and must never be required to resume the audit.
 
-Any fact needed to continue the project must be recoverable from committed GitHub artifacts. If chat prose and committed machine artifacts disagree, the committed source/provenance artifacts win and the human summary must be repaired.
+If chat prose and committed machine artifacts disagree, the committed source/provenance artifacts win and the human summary must be repaired.
 
 ## Current phase position
 
@@ -28,34 +28,31 @@ Latest foundation report is GREEN:
 - **164/164** census rows;
 - **164/164** durable per-file notes;
 - **164/164 CONNECTIONS TRACED**;
-- direct frozen-commit metadata on all 164 notes;
+- direct frozen-commit metadata on all notes;
 - exact blob-SHA reconciliation;
 - **0 hard integrity errors**;
 - **0 warnings**;
-- no missing contradiction/history references;
+- current contradiction register recognized through **CT-018** plus CT-H01…CT-H03;
 - formal `VERIFIED`: **0/164**.
-
-`00_RESEARCH_SCHEMA.md` is the canonical status/gate definition.
 
 ## Phase 3 — COMPLETE
 
-Phase 3 authority is durable in the generated graph, router/distribution/history matrices, closure index, second-order quality report and SHA-256 build manifest.
-
-Current graph state:
+Current durable Phase 3 state:
 
 - extraction rules: **v5**;
-- edges: **554**;
-- stable content-derived edge IDs: **554/554**;
+- graph edges: **554**;
+- stable edge IDs: **554/554**;
 - literal source-line provenance: **490/554**;
 - invocation policies joined: **37/37**;
-- Claude↔Codex policy mismatches: **0**;
+- Claude↔Codex mismatches: **0**;
 - illegal operative calls: **0**;
 - weak-only orphan proofs: **0**;
 - unmapped extra-link syntax: **0**;
 - support-owner gaps: **0**;
 - Phase 3 quality hard errors/review items/improvements: **0 / 0 / 0**;
-- formal `CONNECTIONS TRACED`: **164/164**;
-- formal `VERIFIED`: **0/164**.
+- formal `CONNECTIONS TRACED`: **164/164**.
+
+Authoritative generated artifacts are the graph/index, router/distribution/history matrices, closure index, Phase 3 quality report, and SHA-256 build manifest.
 
 ## Phase 4 — Behavior & Enforcement
 
@@ -70,15 +67,16 @@ Authoritative working artifacts:
 
 Current validated state:
 
-- behavior rows: **37**;
+- behavior rows: **38**;
 - hard integrity errors: **0**;
-- runtime observed: **0/37**;
-- current CT IDs represented: **17/17**.
+- runtime observed: **0/38**;
+- current CT coverage: **18/18**;
+- uncovered current CT IDs: **0**.
 
 State counts:
 
 - `CONFIRMED_DRIFT`: **5**
-- `CONFIRMED_GAP`: **8**
+- `CONFIRMED_GAP`: **9**
 - `CONFIRMED_MATCH`: **8**
 - `CONFIRMED_WEAKNESS`: **2**
 - `RUNTIME_UNKNOWN`: **6**
@@ -88,34 +86,25 @@ Machine-enforcement counts:
 
 - `True`: **8**
 - `PARTIAL`: **2**
-- `False`: **27**
+- `False`: **28**
 
-Latest validator proof: GitHub Actions run `34743836239` — **SUCCESS**.
+Latest strengthened validator proof: GitHub Actions run `34744189799` — **SUCCESS**. The validator now fails closed if any current CT is not represented by a behavior row.
 
 ### Current contradiction/enforcement register
 
-The register now contains **17 current IDs** plus **3 historical IDs**.
+The register contains **18 current IDs** plus **3 historical IDs**.
 
-Newest current findings:
+Recent findings:
 
-- **CT-014 — implement-spec post-review fix closure:** the repair delta after the only required `/code-review` is not required to be reviewed/verified again before PR readiness.
-- **CT-015 — to-spec parent routing:** the parent spec is automatically labelled `ready-for-agent`; human docs explicitly warn AFK workers can misread that as executable work, while downstream `to-tickets` is told not to modify the parent.
-- **CT-016 — to-tickets acceptance criteria:** the operative template requires checkboxes but no falsifiability/red-at-base proof; human docs explicitly identify this as a recurring weakness.
-- **CT-017 — implement ticket lifecycle/frontier:** `to-tickets` models progress through blocker completion/closure, but `implement` ends at commit and does not close/reconcile the ticket, so dependency-frontier progression requires manual tracker repair.
+- **CT-014 — implement-spec post-review fix closure:** repair changes after the only required `/code-review` are not required to be revalidated before PR readiness.
+- **CT-015 — to-spec parent routing:** parent specs use the same `ready-for-agent` surface as executable tickets; human docs explicitly warn AFK dispatchers can pick the wrong unit.
+- **CT-016 — to-tickets acceptance criteria:** ticket criteria have no operative red-at-base/falsifiability requirement.
+- **CT-017 — implement ticket lifecycle/frontier:** `/implement` does not close/reconcile its ticket, so dependency-frontier progression can require manual tracker repair.
+- **CT-018 — triage agent-brief invariant:** the normal `ready-for-agent` path requires an authoritative Agent Brief, but quick state override can apply the state and leave the brief optional.
 
-Additional durable behavior coverage now includes:
+Additional durable behavior coverage includes setup confirmation/verification and label materialization, diagnosing-bugs red-loop gating, triage normal-path verification, implement-spec frontier scheduling, domain-modeling discipline, release wiring, to-tickets approval, research provenance, prototype branch isolation, and codebase-design vocabulary discipline.
 
-- setup confirmation-before-write and intentionally prompt-driven verification;
-- diagnosing-bugs red-loop gating;
-- triage state-role exclusivity and verification-before-grilling;
-- implement-spec task-frontier scheduling;
-- domain-modeling inline CONTEXT/ADR capture discipline;
-- release version/tag path;
-- to-tickets pre-publication approval;
-- research primary-source/citation discipline;
-- prototype throwaway-branch isolation/capture;
-- codebase-design vocabulary discipline;
-- setup triage-label materialization kept `RUNTIME_UNKNOWN` until tested against a fresh tracker.
+No Phase 4 row is treated as sufficient for `VERIFIED` by itself.
 
 ## Tooling state
 
@@ -123,13 +112,11 @@ Latest closed incident ledger remains:
 
 - failed runs: **82**;
 - cancelled runs: **7**;
-- incidents: **89**;
+- total incidents: **89**;
 - classified: **89/89**;
 - unknown: **0**;
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
-
-The 29-row and 37-row Phase 4 expansion validations both succeeded and introduced no new failure/cancellation incident.
 
 ## Phase status
 
@@ -137,20 +124,20 @@ The 29-row and 37-row Phase 4 expansion validations both succeeded and introduce
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | 164/164 physical blobs inspected; UNREAD = 0. |
-| 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality hard errors/review items/improvements = 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **37-row** behavior matrix; **17 current CT IDs**; runtime observed **0/37**. |
+| 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality errors/review items/improvements = 0. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated **38-row** matrix; **18/18 current CTs covered**; runtime observed **0/38**. |
 | 5. History | IN PROGRESS | 9 durable H-events; partial lineage remains explicitly partial. |
-| 6. Contradictions & Orphans | IN PROGRESS | **17 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
-| 7. Runtime & Distribution | IN PROGRESS | Static distribution topology reconstructed; deeper runtime/end-to-end observation remains. |
+| 6. Contradictions & Orphans | IN PROGRESS | **18 current + 3 historical CT IDs**; Phase 3 orphan questions closed. |
+| 7. Runtime & Distribution | IN PROGRESS | Static topology reconstructed; deeper runtime/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
-| 9. Red-Team Verification | NOT STARTED formally | No complete systematic absolute/numerical-claim falsification pass yet. |
+| 9. Red-Team Verification | NOT STARTED formally | No complete systematic falsification pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Final synthesis waits for verification gates. |
 
 ## Immediate next execution steps — Phase 4
 
-1. Continue remaining promoted and productivity workflow coverage without duplicating already-adjudicated contracts.
-2. Build targeted runtime-test plans for the six `RUNTIME_UNKNOWN` rows, especially setup label materialization, implement-spec frontier legality, Teach workspace-root behavior, prototype branch isolation, package-lock practical effect, and architecture-report offline behavior.
-3. Trace history for CT-014…CT-017 and remaining partial H-events before any verification promotion.
+1. Continue remaining engineering/productivity workflow coverage without duplicating already-adjudicated contracts.
+2. Build targeted runtime-test plans for the six `RUNTIME_UNKNOWN` rows.
+3. Trace history for CT-014…CT-018 and remaining partial H-events before any verification promotion.
 4. Continue separating prompt-level policy from executable/CI guarantees and runtime observations.
 5. Keep `VERIFIED = 0` until applicable Phase 4–9 gates close per file/claim.
 
@@ -162,7 +149,7 @@ Future sessions must reload this GitHub repository first, beginning with:
 2. `00_RESEARCH_SCHEMA.md`
 3. `00_STORAGE_INTEGRITY_AUDIT.md`
 4. `RESEARCH_STATUS.md`
-5. `00_FOUNDATION_INTEGRITY.md`
+5. `00_FOUNDATION_INTEGRITY.json`
 6. `00_TOOLING_INTEGRITY_AUDIT.md`
 7. `00_TOOLING_FAILURE_LEDGER.json`
 8. `01_FILE_CENSUS.json`
