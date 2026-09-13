@@ -58,14 +58,15 @@
     },
     {
       "history_id": "H-009",
-      "state_ok": true,
+      "state_ok": false,
       "refs_ok": true,
       "area_ok": true
     }
   ],
   "master_ledger_blank_ref_row_count": 0,
   "hard_errors": [
-    "History ID set drift: ledger=['H-001', 'H-002', 'H-003', 'H-004', 'H-005', 'H-006', 'H-007', 'H-008', 'H-009', 'H-010'] generated=['H-001', 'H-002', 'H-003', 'H-004', 'H-005', 'H-006', 'H-007', 'H-008', 'H-009']"
+    "History ID set drift: ledger=['H-001', 'H-002', 'H-003', 'H-004', 'H-005', 'H-006', 'H-007', 'H-008', 'H-009', 'H-010'] generated=['H-001', 'H-002', 'H-003', 'H-004', 'H-005', 'H-006', 'H-007', 'H-008', 'H-009']",
+    "History binding definition drift for H-009: state_ok=False refs_ok=True area_ok=True"
   ],
   "review_items": [],
   "improvements": []
