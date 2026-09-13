@@ -23,7 +23,7 @@ EXPECTED_SKILLS = 37
 CENSUS = pathlib.Path("01_FILE_CENSUS.json")
 EDGES_JSON = pathlib.Path("03_CONNECTION_EDGES.json")
 INDEX_MD = pathlib.Path("03_CONNECTION_INDEX.md")
-EXTRACTION_RULES_VERSION = 3
+EXTRACTION_RULES_VERSION = 4
 
 
 def github_json(url: str):
@@ -80,6 +80,18 @@ def has_source_target_edge(edges, source: str, target: str) -> bool:
 
 def unique_basename_regex(name: str) -> re.Pattern[str]:
     return re.compile(rf"(?<![A-Za-z0-9_.-]){re.escape(name)}(?![A-Za-z0-9_.-])")
+
+
+def skill_label_regex(name: str) -> re.Pattern[str]:
+    escaped = re.escape(name)
+    return re.compile(
+        rf"(?<![A-Za-z0-9_-])(?:/{escaped}|\${escaped}|`{escaped}`)(?![A-Za-z0-9_-])"
+    )
+
+
+def text_without_urls(text: str) -> str:
+    """Remove external URL bodies before /skill scanning to avoid path-segment false positives."""
+    return re.sub(r"https?://[^\s)>\]\"']+", "", text)
 
 
 def frontmatter(text: str) -> str:
@@ -217,9 +229,11 @@ def main() -> None:
         if len(paths) == 1 and name
     }
     basename_patterns = {name: unique_basename_regex(name) for name in unique_basenames}
+    skill_label_patterns = {name: skill_label_regex(name) for name in skill_by_name}
 
     passive_path_mentions = 0
     passive_basename_mentions = 0
+    passive_skill_label_mentions = 0
     for source_path, text in texts.items():
         for target_path in by_path:
             if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
@@ -248,6 +262,26 @@ def main() -> None:
                     f"unique filename mention: {basename}",
                 )
                 passive_basename_mentions += 1
+
+        # Exact skill labels are passive relationships, not operative calls.
+        # Supported forms are /name (Claude-style), $name (Codex-style), and
+        # an exact backticked skill name. External URL bodies are removed first
+        # so path segments such as https://.../research do not become skill edges.
+        label_text = text_without_urls(text)
+        for name, target_path in skill_by_name.items():
+            if target_path == source_path or has_source_target_edge(edges, source_path, target_path):
+                continue
+            match = skill_label_patterns[name].search(label_text)
+            if match:
+                add_edge(
+                    edges,
+                    seen,
+                    source_path,
+                    "SKILL_REFERENCE",
+                    target_path,
+                    f"exact skill label: {match.group(0)}",
+                )
+                passive_skill_label_mentions += 1
 
     # Join current operative calls against both harness invocation policies.
     illegal_operative_calls = []
@@ -302,6 +336,7 @@ def main() -> None:
         "edge_type_counts": dict(sorted(edge_type_counts.items())),
         "passive_path_mention_count": passive_path_mentions,
         "passive_unique_basename_mention_count": passive_basename_mentions,
+        "passive_skill_label_mention_count": passive_skill_label_mentions,
         "unique_basename_count": len(unique_basenames),
         "invocation_policy_counts": dict(sorted(effective_policy_counts.items())),
         "invocation_policy_mismatch_count": len(policy_mismatches),
@@ -329,7 +364,7 @@ def main() -> None:
         "",
         f"Edge types: {type_summary}.",
         "",
-        f"Passive-reference scan: **{passive_path_mentions}** exact-path mentions + **{passive_basename_mentions}** unique-filename mentions; **{len(unique_basenames)}** globally unique basenames were eligible.",
+        f"Passive-reference scan: **{passive_path_mentions}** exact-path mentions + **{passive_basename_mentions}** unique-filename mentions + **{passive_skill_label_mentions}** exact skill-label mentions; **{len(unique_basenames)}** globally unique basenames were eligible.",
         "",
         f"Invocation-policy join: **{len(invocation_policies)}** skills; {policy_summary}; policy mismatches **{len(policy_mismatches)}**; illegal current operative calls **{len(illegal_operative_calls)}**.",
         "",
@@ -372,7 +407,8 @@ def main() -> None:
     INDEX_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(
         f"Wrote {EDGES_JSON} and {INDEX_MD}: {len(sorted_edges)} edges, "
-        f"{len(unresolved_internal)} unresolved, passive={passive_path_mentions + passive_basename_mentions}, "
+        f"{len(unresolved_internal)} unresolved, "
+        f"passive={passive_path_mentions + passive_basename_mentions + passive_skill_label_mentions}, "
         f"policy_mismatches={len(policy_mismatches)}, illegal_calls={len(illegal_operative_calls)}"
     )
 
