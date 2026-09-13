@@ -65,6 +65,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 - states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 9, 'CONFIRMED_MATCH': 8, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 6, 'STATICALLY_ENFORCED': 8}`
 - enforcement layers: `{'CI': 3, 'DOCUMENTATION': 11, 'EXECUTABLE_SCRIPT': 11, 'EXTERNAL_DEPENDENCY': 8, 'NONE': 9, 'PROMPT': 32, 'RUNTIME': 12, 'STATIC_CONFIG': 7}`
 - runtime observed rows: **0 / 38**
+- current CT coverage: **18 / 18**
 - integrity hard errors: **0**
 
 ## Phase 4 rule

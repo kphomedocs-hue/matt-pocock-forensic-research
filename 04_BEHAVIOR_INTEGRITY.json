@@ -65,5 +65,6 @@
     "CT-016": 1,
     "CT-017": 1,
     "CT-018": 1
-  }
+  },
+  "uncovered_current_contradiction_ids": []
 }
