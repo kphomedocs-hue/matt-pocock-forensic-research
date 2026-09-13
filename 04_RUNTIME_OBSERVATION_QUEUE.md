@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **0/65**.
-Pending stronger evidence: **65**.
+Runtime-observed rows: **3/65**.
+Pending stronger evidence: **62**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 0 | 30 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 3 | 27 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -37,11 +37,11 @@ Pending stronger evidence: **65**.
 | B-013 | PROMPT_REDTEAM_LATER | CONFIRMED_WEAKNESS | NO | MP-0112 | Wayfinder planning-only authority | Require/identify an independent override authority or classify self-authored override as accepted design. |
 | B-014 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0126, MP-0128 | setup-ts-deep-modules proof-of-enforcement | Runtime reproduce in a representative consumer TypeScript repo during later runtime verification. |
 | B-015 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0114, MP-0116 | wizard generated-script verification | Runtime/end-to-end wizard execution remains a later verification dimension. |
-| B-016 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0136, MP-0138 | git-guardrails dangerous-command blocking | Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing. |
+| B-016 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0136, MP-0138 | git-guardrails dangerous-command blocking | Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing. |
 | B-017 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0143 | setup-pre-commit hook smoke test | Observe an end-to-end setup in a representative repo before RUNTIME OBSERVED promotion. |
 | B-018 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0018, MP-0019, MP-0056, MP-0059 | plugin version synchronization | Release-run observation belongs to later runtime/CI verification. |
-| B-019 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0057 | local skill linking set | Filesystem symlink behavior can be runtime-observed later; static selection semantics are closed. |
-| B-020 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0058 | list-skills enumeration | No separate runtime verification is needed for static selection semantics unless environment-specific find behavior becomes material. |
+| B-019 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0057 | local skill linking set | Filesystem symlink behavior can be runtime-observed later; static selection semantics are closed. |
+| B-020 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0058 | list-skills enumeration | No separate runtime verification is needed for static selection semantics unless environment-specific find behavior becomes material. |
 | B-021 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0093 | setup confirmation-before-write boundary | Later runtime observation can test whether supported harnesses consistently honor the checkpoint. |
 | B-022 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0023, MP-0093 | setup verification mode | A later runtime pass can test verification quality, but static design intent is reconciled. |
 | B-023 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0071 | diagnosing-bugs red-loop gate | Runtime/red-team testing should attempt to induce premature hypothesis generation and measure adherence. |

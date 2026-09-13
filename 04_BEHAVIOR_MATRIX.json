@@ -367,9 +367,20 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
+      "runtime_observed": true,
       "adjudication": "The hook exits 2 on its regex-matched command patterns and setup requires a synthetic blocked-command test. Enforcement is executable but heuristic string matching, not parsed shell/Git semantics.",
-      "next_evidence": "Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing."
+      "next_evidence": "Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-005"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748024195",
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-017",
@@ -425,9 +436,20 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
+      "runtime_observed": true,
       "adjudication": "The executable find expression explicitly excludes deprecated and misc and otherwise discovers SKILL.md under skills/, yielding the generated 33-skill local-link set.",
-      "next_evidence": "Filesystem symlink behavior can be runtime-observed later; static selection semantics are closed."
+      "next_evidence": "Filesystem symlink behavior can be runtime-observed later; static selection semantics are closed.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-002"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748024195",
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-020",
@@ -442,9 +464,20 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
+      "runtime_observed": true,
       "adjudication": "The script runs find from the repository root for SKILL.md, excluding only node_modules, and sorts the result; frozen generated distribution truth therefore treats all 37 current skills as list-visible.",
-      "next_evidence": "No separate runtime verification is needed for static selection semantics unless environment-specific find behavior becomes material."
+      "next_evidence": "No separate runtime verification is needed for static selection semantics unless environment-specific find behavior becomes material.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-001"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748024195",
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-021",

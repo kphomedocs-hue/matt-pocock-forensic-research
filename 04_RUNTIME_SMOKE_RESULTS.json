@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "workflow_run_id": "34748024195",
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "test_count": 6,
+  "pass_count": 6,
+  "fail_count": 0,
+  "runtime_closure_behavior_ids": [
+    "B-016",
+    "B-019",
+    "B-020"
+  ],
+  "supporting_only_behavior_ids": [
+    "B-018",
+    "B-056"
+  ],
+  "hard_errors": [],
+  "tests": [
+    {
+      "test_id": "RT-001",
+      "title": "list-skills exact frozen census enumeration",
+      "behavior_ids": [
+        "B-020"
+      ],
+      "runtime_closure_behavior_ids": [
+        "B-020"
+      ],
+      "status": "PASS",
+      "assertions": [
+        "exit 0",
+        "output exactly equals the 37 current SKILL.md census paths in sorted order"
+      ],
+      "errors": [],
+      "evidence": {
+        "observed_count": 37,
+        "expected_count": 37,
+        "command": {
+          "command": [
+            "bash",
+            "scripts/list-skills.sh"
+          ],
+          "returncode": 0,
+          "stdout": "skills/engineering/ask-matt/SKILL.md\nskills/engineering/code-review/SKILL.md\nskills/engineering/codebase-design/SKILL.md\nskills/engineering/diagnosing-bugs/SKILL.md\nskills/engineering/domain-modeling/SKILL.md\nskills/engineering/grill-with-docs/SKILL.md\nskills/engineering/implement/SKILL.md\nskills/engineering/improve-codebase-architecture/SKILL.md\nskills/engineering/prototype/SKILL.md\nskills/engineering/research/SKILL.md\nskills/engineering/resolving-merge-conflicts/SKILL.md\nskills/engineering/setup-matt-pocock-skills/SKILL.md\nskills/engineering/tdd/SKILL.md\nskills/engineering/to-spec/SKILL.md\nskills/engineering/to-tickets/SKILL.md\nskills/engineering/triage/SKILL.md\nskills/engineering/wayfinder/SKILL.md\nskills/engineering/wizard/SKILL.md\nskills/in-progress/claude-handoff/SKILL.md\nskills/in-progress/implement-spec/SKILL.md\nskills/in-progress/loop-me/SKILL.md\nskills/in-progress/retro/SKILL.md\nskills/in-progress/setup-ts-deep-modules/SKILL.md\nskills/in-progress/writing-beats/SKILL.md\nskills/in-progress/writing-fragments/SKILL.md\nskills/in-progress/writing-shape/SKILL.md\nskills/misc/git-guardrails-claude-code/SKILL.md\nskills/misc/migrate-to-shoehorn/SKILL.md\nskills/misc/scaffold-exercises/SKILL.md\nskills/misc/setup-pre-commit/SKILL.md\nskills/productivity/grill-me/SKILL.md\nskills/productivity/grilling/SKILL.md\nskills/productivity/handoff/SKILL.md\nskills/productivity/teach/SKILL.md\nskills/productivity/to-questionnaire/SKILL.md\nskills/productivity/wait-what/SKILL.md\nskills/productivity/writing-for-agents/SKILL.md\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "test_id": "RT-002",
+      "title": "link-skills exact set, targets and idempotence",
+      "behavior_ids": [
+        "B-019"
+      ],
+      "runtime_closure_behavior_ids": [
+        "B-019"
+      ],
+      "status": "PASS",
+      "assertions": [
+        "33 expected skills",
+        "both harness destinations contain exact same symlink set",
+        "all symlinks resolve into frozen checkout",
+        "second run remains successful and exact"
+      ],
+      "errors": [],
+      "evidence": {
+        "expected_count": 33,
+        "destinations": {
+          ".claude/skills": {
+            "count": 33,
+            "names": [
+              "ask-matt",
+              "claude-handoff",
+              "code-review",
+              "codebase-design",
+              "diagnosing-bugs",
+              "domain-modeling",
+              "grill-me",
+              "grill-with-docs",
+              "grilling",
+              "handoff",
+              "implement",
+              "implement-spec",
+              "improve-codebase-architecture",
+              "loop-me",
+              "prototype",
+              "research",
+              "resolving-merge-conflicts",
+              "retro",
+              "setup-matt-pocock-skills",
+              "setup-ts-deep-modules",
+              "tdd",
+              "teach",
+              "to-questionnaire",
+              "to-spec",
+              "to-tickets",
+              "triage",
+              "wait-what",
+              "wayfinder",
+              "wizard",
+              "writing-beats",
+              "writing-for-agents",
+              "writing-fragments",
+              "writing-shape"
+            ],
+            "wrong_links": []
+          },
+          ".agents/skills": {
+            "count": 33,
+            "names": [
+              "ask-matt",
+              "claude-handoff",
+              "code-review",
+              "codebase-design",
+              "diagnosing-bugs",
+              "domain-modeling",
+              "grill-me",
+              "grill-with-docs",
+              "grilling",
+              "handoff",
+              "implement",
+              "implement-spec",
+              "improve-codebase-architecture",
+              "loop-me",
+              "prototype",
+              "research",
+              "resolving-merge-conflicts",
+              "retro",
+              "setup-matt-pocock-skills",
+              "setup-ts-deep-modules",
+              "tdd",
+              "teach",
+              "to-questionnaire",
+              "to-spec",
+              "to-tickets",
+              "triage",
+              "wait-what",
+              "wayfinder",
+              "wizard",
+              "writing-beats",
+              "writing-for-agents",
+              "writing-fragments",
+              "writing-shape"
+            ],
+            "wrong_links": []
+          }
+        },
+        "first_run": {
+          "command": [
+            "bash",
+            "scripts/link-skills.sh"
+          ],
+          "returncode": 0,
+          "stdout": "-design (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked code-review -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/code-review (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked to-spec -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/to-spec (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked prototype -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/prototype (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked tdd -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/tdd (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked research -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/research (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked resolving-merge-conflicts -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/resolving-merge-conflicts (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked domain-modeling -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/domain-modeling (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked setup-matt-pocock-skills -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/setup-matt-pocock-skills (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked implement -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/implement (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked improve-codebase-architecture -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/improve-codebase-architecture (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked ask-matt -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/ask-matt (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked to-tickets -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/to-tickets (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked writing-shape -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/writing-shape (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked claude-handoff -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/claude-handoff (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked loop-me -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/loop-me (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked setup-ts-deep-modules -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/setup-ts-deep-modules (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked implement-spec -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/implement-spec (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked retro -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/retro (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked writing-beats -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/writing-beats (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked writing-fragments -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/writing-fragments (/tmp/phase4-link-home-fcf194pk/.agents/skills)\n",
+          "stderr": ""
+        },
+        "second_run": {
+          "command": [
+            "bash",
+            "scripts/link-skills.sh"
+          ],
+          "returncode": 0,
+          "stdout": "-design (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked code-review -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/code-review (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked to-spec -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/to-spec (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked prototype -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/prototype (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked tdd -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/tdd (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked research -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/research (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked resolving-merge-conflicts -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/resolving-merge-conflicts (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked domain-modeling -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/domain-modeling (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked setup-matt-pocock-skills -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/setup-matt-pocock-skills (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked implement -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/implement (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked improve-codebase-architecture -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/improve-codebase-architecture (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked ask-matt -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/ask-matt (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked to-tickets -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/to-tickets (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked writing-shape -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/writing-shape (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked claude-handoff -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/claude-handoff (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked loop-me -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/loop-me (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked setup-ts-deep-modules -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/setup-ts-deep-modules (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked implement-spec -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/implement-spec (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked retro -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/retro (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked writing-beats -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/writing-beats (/tmp/phase4-link-home-fcf194pk/.agents/skills)\nlinked writing-fragments -> /home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/in-progress/writing-fragments (/tmp/phase4-link-home-fcf194pk/.agents/skills)\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "test_id": "RT-003",
+      "title": "link-skills self-link pollution guard",
+      "behavior_ids": [
+        "B-019"
+      ],
+      "runtime_closure_behavior_ids": [],
+      "status": "PASS",
+      "assertions": [
+        "destination symlink into frozen repo exits 1",
+        "diagnostic identifies symlink-into-repo condition"
+      ],
+      "errors": [],
+      "evidence": {
+        "command": {
+          "command": [
+            "bash",
+            "scripts/link-skills.sh"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "error: /tmp/phase4-link-guard-2assfn3r/.claude/skills is a symlink into this repo (/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills).\nRemove it (rm \"/tmp/phase4-link-guard-2assfn3r/.claude/skills\") and re-run; the script will recreate it as a real dir.\n"
+        }
+      }
+    },
+    {
+      "test_id": "RT-004",
+      "title": "plugin-version executable sync/check mechanism",
+      "behavior_ids": [
+        "B-018"
+      ],
+      "runtime_closure_behavior_ids": [],
+      "status": "PASS",
+      "assertions": [
+        "clean frozen pair passes --check",
+        "synthetic mismatch fails --check without mutation",
+        "normal sync repairs mismatch",
+        "repaired pair passes --check"
+      ],
+      "errors": [],
+      "evidence": {
+        "package_version": "1.2.3",
+        "initial": {
+          "command": [
+            "node",
+            "scripts/sync-plugin-version.mjs",
+            "--check"
+          ],
+          "returncode": 0,
+          "stdout": "plugin.json version is 1.2.3 (already in sync)\n",
+          "stderr": ""
+        },
+        "mismatch": {
+          "command": [
+            "node",
+            "scripts/sync-plugin-version.mjs",
+            "--check"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "plugin.json version is 0.0.0-runtime-smoke, package.json is 1.2.3. Run `node scripts/sync-plugin-version.mjs`.\n"
+        },
+        "fix": {
+          "command": [
+            "node",
+            "scripts/sync-plugin-version.mjs"
+          ],
+          "returncode": 0,
+          "stdout": "plugin.json version 0.0.0-runtime-smoke -> 1.2.3\n",
+          "stderr": ""
+        },
+        "final_check": {
+          "command": [
+            "node",
+            "scripts/sync-plugin-version.mjs",
+            "--check"
+          ],
+          "returncode": 0,
+          "stdout": "plugin.json version is 1.2.3 (already in sync)\n",
+          "stderr": ""
+        },
+        "row_closure_withheld_reason": "B-018 also claims release/CI path behavior; local script execution alone is supporting evidence, not full row closure."
+      }
+    },
+    {
+      "test_id": "RT-005",
+      "title": "git guardrail listed-string blocking",
+      "behavior_ids": [
+        "B-016"
+      ],
+      "runtime_closure_behavior_ids": [
+        "B-016"
+      ],
+      "status": "PASS",
+      "assertions": [
+        "all nine configured dangerous regex patterns are exercised with synthetic strings and exit 2",
+        "git status exits 0"
+      ],
+      "errors": [],
+      "evidence": {
+        "cases": [
+          {
+            "input_command": "git push origin main",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git push origin main' matches dangerous pattern 'git push'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "git reset --hard HEAD",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git reset --hard HEAD' matches dangerous pattern 'git reset --hard'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "git clean -fd",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git clean -fd' matches dangerous pattern 'git clean -fd'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "git clean -f",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git clean -f' matches dangerous pattern 'git clean -f'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "git branch -D topic",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git branch -D topic' matches dangerous pattern 'git branch -D'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "git checkout .",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git checkout .' matches dangerous pattern 'git checkout \\.'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "git restore .",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'git restore .' matches dangerous pattern 'git restore \\.'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "echo push --force",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'echo push --force' matches dangerous pattern 'push --force'. The user has prevented you from doing this.\n"
+          },
+          {
+            "input_command": "echo reset --hard",
+            "returncode": 2,
+            "stderr": "BLOCKED: 'echo reset --hard' matches dangerous pattern 'reset --hard'. The user has prevented you from doing this.\n"
+          }
+        ],
+        "safe": {
+          "command": [
+            "bash",
+            "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "non_gating_diagnostics": {
+          "literal_in_non_git_context": {
+            "command": [
+              "bash",
+              "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh"
+            ],
+            "returncode": 2,
+            "stdout": "",
+            "stderr": "BLOCKED: 'printf 'git push'' matches dangerous pattern 'git push'. The user has prevented you from doing this.\n"
+          },
+          "wrapped_git_equivalent": {
+            "command": [
+              "bash",
+              "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh"
+            ],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": ""
+          }
+        }
+      }
+    },
+    {
+      "test_id": "RT-006",
+      "title": "diagnosing-bugs HITL pause/capture mechanics",
+      "behavior_ids": [
+        "B-056"
+      ],
+      "runtime_closure_behavior_ids": [],
+      "status": "PASS",
+      "assertions": [
+        "synthetic Enter/y/error input completes",
+        "captured observation values are printed in final KEY=VALUE block"
+      ],
+      "errors": [],
+      "evidence": {
+        "command": {
+          "command": [
+            "bash",
+            "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/frozen-source/skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh"
+          ],
+          "returncode": 0,
+          "stdout": "\n>>> Open the app at http://localhost:3000 and sign in.\n\n>>> Click the 'Export' button. Did it throw an error? (y/n)\n\n>>> Paste the error message (or 'none'):\n\n--- Captured ---\nERRORED=y\nERROR_MSG=synthetic error only\n",
+          "stderr": ""
+        },
+        "row_closure_withheld_reason": "This run proves pause/capture mechanics only. B-056 also records that secret-safety is advisory rather than technically enforced; no real or synthetic credential misuse is needed for this smoke pass."
+      }
+    }
+  ]
+}

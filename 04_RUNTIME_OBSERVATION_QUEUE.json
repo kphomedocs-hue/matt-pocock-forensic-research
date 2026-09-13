@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 0,
-  "pending_total": 65,
+  "runtime_observed": 3,
+  "pending_total": 62,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 0,
+    "EXECUTION_OBSERVATION": 3,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 30,
+    "EXECUTION_OBSERVATION": 27,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -450,8 +450,8 @@
         "RUNTIME"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0136",
         "MP-0138"
@@ -525,8 +525,8 @@
         "EXECUTABLE_SCRIPT"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0057"
       ],
@@ -546,8 +546,8 @@
         "EXECUTABLE_SCRIPT"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0058"
       ],
