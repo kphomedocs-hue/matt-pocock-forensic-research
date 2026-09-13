@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Working rows: **20**. Matrix state: **IN_PROGRESS**.
+Working rows: **29**. Matrix state: **IN_PROGRESS**.
 
 This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates documented claims, prompt behavior, static/executable enforcement, runtime dependence, and contradiction state.
 
@@ -41,12 +41,21 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-018 | plugin version synchronization | STATICALLY_ENFORCED | STATIC_CONFIG, EXECUTABLE_SCRIPT, CI | True | False | — | npm run version invokes sync-plugin-version.mjs and the release workflow uses that command; --check detects drift. This closes plugin/package drift statically while leaving package-lock outside the mechanism (B-004/CT-004). |
 | B-019 | local skill linking set | STATICALLY_ENFORCED | EXECUTABLE_SCRIPT | True | False | — | The executable find expression explicitly excludes deprecated and misc and otherwise discovers SKILL.md under skills/, yielding the generated 33-skill local-link set. |
 | B-020 | list-skills enumeration | STATICALLY_ENFORCED | EXECUTABLE_SCRIPT | True | False | — | The script runs find from the repository root for SKILL.md, excluding only node_modules, and sorts the result; frozen generated distribution truth therefore treats all 37 current skills as list-visible. |
+| B-021 | setup confirmation-before-write boundary | CONFIRMED_MATCH | PROMPT | False | False | — | The operative setup workflow explicitly requires showing the Agent skills block plus docs/agents drafts and letting the user edit them before the write step. This is a clear human checkpoint, but it is prompt-level rather than mechanically enforced. |
+| B-022 | setup verification mode | CONFIRMED_MATCH | PROMPT, NONE | False | False | — | The negative-memory policy explicitly rejects a separate verify/check mode and says maintainers should invoke setup with a natural-language verification request. The operative skill is explicitly prompt-driven, so this is intentional design rather than a missing implementation accidentally presented as deterministic validation. |
+| B-023 | diagnosing-bugs red-loop gate | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The operative skill repeatedly states no red-capable command means no Phase 2, requires one command already run with output, and instructs the agent to stop if it starts theorizing first. This is unusually strong prompt gating, but there is no external machine state preventing a model from skipping it. |
+| B-024 | triage exclusive state/category invariant | CONFIRMED_WEAKNESS | PROMPT, EXTERNAL_DEPENDENCY | False | False | — | Triage explicitly states the one-category/one-state invariant and tells the agent to stop on pre-existing state-role conflicts. However, ordinary issue trackers permit multiple labels, and the quick state-override path says to apply the requested role directly without an explicit remove-other-state-label step. The invariant therefore depends on prompt adherence rather than tracker-level exclusivity. |
+| B-025 | triage verification-before-grilling | CONFIRMED_MATCH | PROMPT, RUNTIME, EXTERNAL_DEPENDENCY | False | False | — | The operative sequence is gather context -> recommend/wait -> verify claim -> grill if needed -> apply outcome. Bugs should be reproduced; PRs should be checked out and tested. A separately documented maintainer quick override intentionally bypasses grilling and normal verification, so this row applies to the normal triage path only. |
+| B-026 | implement-spec frontier scheduling | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | — | The skill explicitly defines tickets as a blocking task graph, dispatches implementer subagents from the frontier, and asks for more dispatch when merges change that frontier. There is no executable scheduler or machine check of dependency legality; correctness depends on agent interpretation of ticket relationships at runtime. |
+| B-027 | implement-spec post-review fix revalidation | CONFIRMED_GAP | PROMPT, RUNTIME, NONE | False | False | CT-014 | Implement-spec requires one final /code-review, then delegates all review fixes to a single implementer subagent and immediately advances to marking the PR ready. No second review, finding-by-finding check, test gate, or equivalent post-fix acceptance step is required for the changed branch. |
+| B-028 | domain-modeling inline capture discipline | CONFIRMED_MATCH | PROMPT | False | False | — | The operative skill distinguishes active model changes from passive vocabulary reading, requires immediate CONTEXT.md updates when a term is resolved, constrains CONTEXT.md to glossary content, and offers ADRs only when all three stated criteria are met. All of these controls are prompt-level. |
+| B-029 | release version/tag path | STATICALLY_ENFORCED | CI, EXECUTABLE_SCRIPT, STATIC_CONFIG | True | False | — | The release workflow runs on main pushes, invokes changesets/action with version: npm run version and publish: npx changeset tag, while package.json's version command runs changeset version followed by sync-plugin-version.mjs. This gives a concrete static/CI path for package/plugin version propagation and tag creation, distinct from the stale package-lock issue. |
 
 ## Current counts
 
-- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 4, 'CONFIRMED_WEAKNESS': 1, 'RUNTIME_UNKNOWN': 3, 'STATICALLY_ENFORCED': 7}`
-- enforcement layers: `{'CI': 2, 'DOCUMENTATION': 7, 'EXECUTABLE_SCRIPT': 10, 'EXTERNAL_DEPENDENCY': 1, 'NONE': 2, 'PROMPT': 15, 'RUNTIME': 6, 'STATIC_CONFIG': 6}`
-- runtime observed rows: **0 / 20**
+- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 5, 'CONFIRMED_MATCH': 5, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 4, 'STATICALLY_ENFORCED': 8}`
+- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 7, 'EXECUTABLE_SCRIPT': 11, 'EXTERNAL_DEPENDENCY': 3, 'NONE': 4, 'PROMPT': 23, 'RUNTIME': 10, 'STATIC_CONFIG': 7}`
+- runtime observed rows: **0 / 29**
 - integrity hard errors: **0**
 
 ## Phase 4 rule

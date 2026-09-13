@@ -1,28 +1,29 @@
 {
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "row_count": 20,
+  "row_count": 29,
   "hard_errors": [],
   "state_counts": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 4,
-    "CONFIRMED_WEAKNESS": 1,
-    "RUNTIME_UNKNOWN": 3,
-    "STATICALLY_ENFORCED": 7
+    "CONFIRMED_GAP": 5,
+    "CONFIRMED_MATCH": 5,
+    "CONFIRMED_WEAKNESS": 2,
+    "RUNTIME_UNKNOWN": 4,
+    "STATICALLY_ENFORCED": 8
   },
   "enforcement_layer_counts": {
-    "CI": 2,
+    "CI": 3,
     "DOCUMENTATION": 7,
-    "EXECUTABLE_SCRIPT": 10,
-    "EXTERNAL_DEPENDENCY": 1,
-    "NONE": 2,
-    "PROMPT": 15,
-    "RUNTIME": 6,
-    "STATIC_CONFIG": 6
+    "EXECUTABLE_SCRIPT": 11,
+    "EXTERNAL_DEPENDENCY": 3,
+    "NONE": 4,
+    "PROMPT": 23,
+    "RUNTIME": 10,
+    "STATIC_CONFIG": 7
   },
   "machine_enforced_counts": {
-    "False": 11,
+    "False": 19,
     "PARTIAL": 2,
-    "True": 7
+    "True": 8
   },
   "runtime_observed_count": 0,
   "current_contradiction_ids": [
@@ -54,6 +55,7 @@
     "CT-010": 1,
     "CT-011": 1,
     "CT-012": 1,
-    "CT-013": 1
+    "CT-013": 1,
+    "CT-014": 1
   }
 }
