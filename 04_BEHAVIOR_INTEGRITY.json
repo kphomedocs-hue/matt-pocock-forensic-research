@@ -1,27 +1,27 @@
 {
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "row_count": 29,
+  "row_count": 37,
   "hard_errors": [],
   "state_counts": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 5,
-    "CONFIRMED_MATCH": 5,
+    "CONFIRMED_GAP": 8,
+    "CONFIRMED_MATCH": 8,
     "CONFIRMED_WEAKNESS": 2,
-    "RUNTIME_UNKNOWN": 4,
+    "RUNTIME_UNKNOWN": 6,
     "STATICALLY_ENFORCED": 8
   },
   "enforcement_layer_counts": {
     "CI": 3,
-    "DOCUMENTATION": 7,
+    "DOCUMENTATION": 11,
     "EXECUTABLE_SCRIPT": 11,
-    "EXTERNAL_DEPENDENCY": 3,
-    "NONE": 4,
-    "PROMPT": 23,
-    "RUNTIME": 10,
+    "EXTERNAL_DEPENDENCY": 7,
+    "NONE": 8,
+    "PROMPT": 31,
+    "RUNTIME": 12,
     "STATIC_CONFIG": 7
   },
   "machine_enforced_counts": {
-    "False": 19,
+    "False": 27,
     "PARTIAL": 2,
     "True": 8
   },
@@ -40,7 +40,10 @@
     "CT-011",
     "CT-012",
     "CT-013",
-    "CT-014"
+    "CT-014",
+    "CT-015",
+    "CT-016",
+    "CT-017"
   ],
   "contradiction_reference_counts": {
     "CT-001": 1,
@@ -56,6 +59,9 @@
     "CT-011": 1,
     "CT-012": 1,
     "CT-013": 1,
-    "CT-014": 1
+    "CT-014": 1,
+    "CT-015": 1,
+    "CT-016": 1,
+    "CT-017": 1
   }
 }

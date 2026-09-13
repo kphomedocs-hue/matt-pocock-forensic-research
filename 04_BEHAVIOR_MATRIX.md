@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Working rows: **29**. Matrix state: **IN_PROGRESS**.
+Working rows: **37**. Matrix state: **IN_PROGRESS**.
 
 This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates documented claims, prompt behavior, static/executable enforcement, runtime dependence, and contradiction state.
 
@@ -50,12 +50,20 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-027 | implement-spec post-review fix revalidation | CONFIRMED_GAP | PROMPT, RUNTIME, NONE | False | False | CT-014 | Implement-spec requires one final /code-review, then delegates all review fixes to a single implementer subagent and immediately advances to marking the PR ready. No second review, finding-by-finding check, test gate, or equivalent post-fix acceptance step is required for the changed branch. |
 | B-028 | domain-modeling inline capture discipline | CONFIRMED_MATCH | PROMPT | False | False | — | The operative skill distinguishes active model changes from passive vocabulary reading, requires immediate CONTEXT.md updates when a term is resolved, constrains CONTEXT.md to glossary content, and offers ADRs only when all three stated criteria are met. All of these controls are prompt-level. |
 | B-029 | release version/tag path | STATICALLY_ENFORCED | CI, EXECUTABLE_SCRIPT, STATIC_CONFIG | True | False | — | The release workflow runs on main pushes, invokes changesets/action with version: npm run version and publish: npx changeset tag, while package.json's version command runs changeset version followed by sync-plugin-version.mjs. This gives a concrete static/CI path for package/plugin version propagation and tag creation, distinct from the stale package-lock issue. |
+| B-030 | to-spec parent ready-for-agent routing | CONFIRMED_GAP | DOCUMENTATION, PROMPT, EXTERNAL_DEPENDENCY, NONE | False | False | CT-015 | to-spec automatically applies ready-for-agent to the parent spec. Its own human docs explicitly state that AFK pollers cannot see the intended input-vs-work distinction and may build the whole spec; to-tickets is instructed not to modify the parent, so the chain contains no operative cleanup/disambiguation step. |
+| B-031 | to-tickets pre-publication approval | CONFIRMED_MATCH | DOCUMENTATION, PROMPT | False | False | — | Both the operative skill and human docs require the numbered ticket breakdown, blocker review, merge/split feedback, and user approval before tracker publication. This is a clear human checkpoint but remains prompt-enforced. |
+| B-032 | to-tickets acceptance-criteria falsifiability | CONFIRMED_GAP | DOCUMENTATION, PROMPT, NONE | False | False | CT-016 | The operative ticket templates require checkboxes but no red-at-base/falsifiability proof. Human docs explicitly identify criteria already true at base, dependent on other tickets, or merely restating the request, and recommend a manual falsifying-observation check that is absent from SKILL.md. |
+| B-033 | implement ticket lifecycle and frontier closure | CONFIRMED_GAP | DOCUMENTATION, PROMPT, EXTERNAL_DEPENDENCY, NONE | False | False | CT-017 | to-tickets models execution as blocker completion/closure, but implement ends at commit and has no work-item close/check-off step. Human implement docs explicitly warn that dependency chains therefore do not visibly unblock without manual state repair. |
+| B-034 | research primary-source discipline | CONFIRMED_MATCH | PROMPT, EXTERNAL_DEPENDENCY, RUNTIME | False | False | — | The research skill explicitly requires first-party primary sources, tracing every claim to the owning source, and writing one cited Markdown file using the repository's existing notes convention. The requirements are prompt-level and depend on actual source access/runtime behavior. |
+| B-035 | prototype throwaway isolation and capture | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | — | The operative prototype skill clearly requires throwaway naming, minimal polish/persistence, folding the validated decision into real code, then committing the prototype to a throwaway branch out of main and leaving a pointer on the implementation issue. Whether those repository operations occur correctly cannot be settled statically. |
+| B-036 | codebase-design vocabulary discipline | CONFIRMED_MATCH | PROMPT | False | False | — | The operative skill defines and explicitly requires exact terminology, including rejected alternatives such as component/service/API/boundary in the relevant meanings. This is internally coherent but entirely prompt-enforced. |
+| B-037 | setup triage-label materialization | RUNTIME_UNKNOWN | PROMPT, EXTERNAL_DEPENDENCY, NONE | False | False | — | Setup writes the role-to-label mapping and the GitHub tracker template documents add/remove label operations, but the operative setup flow contains no explicit create-or-verify-label step. Static source alone does not establish whether pre-existing labels are guaranteed or how each supported tracker behaves when a configured label is absent. |
 
 ## Current counts
 
-- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 5, 'CONFIRMED_MATCH': 5, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 4, 'STATICALLY_ENFORCED': 8}`
-- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 7, 'EXECUTABLE_SCRIPT': 11, 'EXTERNAL_DEPENDENCY': 3, 'NONE': 4, 'PROMPT': 23, 'RUNTIME': 10, 'STATIC_CONFIG': 7}`
-- runtime observed rows: **0 / 29**
+- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 8, 'CONFIRMED_MATCH': 8, 'CONFIRMED_WEAKNESS': 2, 'RUNTIME_UNKNOWN': 6, 'STATICALLY_ENFORCED': 8}`
+- enforcement layers: `{'CI': 3, 'DOCUMENTATION': 11, 'EXECUTABLE_SCRIPT': 11, 'EXTERNAL_DEPENDENCY': 7, 'NONE': 8, 'PROMPT': 31, 'RUNTIME': 12, 'STATIC_CONFIG': 7}`
+- runtime observed rows: **0 / 37**
 - integrity hard errors: **0**
 
 ## Phase 4 rule
