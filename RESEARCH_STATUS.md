@@ -9,6 +9,12 @@ Frozen commit: `3cca18b368ae95cdbdebbff572ccafa662551015`
 Frozen tree: `6e84c093fda2026396cea9fad6a924a6da0e1452`
 Physical denominator: **164 blobs/files**
 
+## Storage authority
+
+This GitHub repository is the authoritative project state. ChatGPT conversation history, memory, summaries, scratchpads, or transient tool output are **not authoritative storage** and must never be required to resume the audit.
+
+Any fact needed to continue the project must be recoverable from committed GitHub artifacts. If chat prose and committed machine artifacts disagree, the committed source/provenance artifacts win and the human summary must be repaired.
+
 ## Current phase position
 
 Primary phase focus: **Phase 4 — Behavior & Enforcement**.
@@ -17,57 +23,65 @@ Phases 1–3 are complete. The project is **not VERIFIED**: Phase 4 behavior/enf
 
 ## Foundation state
 
-The latest foundation report is GREEN:
+Latest foundation report is GREEN:
 
 - **164/164** census rows;
-- **164/164** durable notes;
-- **164 CONNECTIONS TRACED**;
+- **164/164** durable per-file notes;
+- **164/164 CONNECTIONS TRACED**;
 - direct frozen-commit metadata on all 164 notes;
 - exact blob-SHA reconciliation;
 - **0 hard integrity errors**;
 - **0 warnings**;
-- no missing contradiction/history references.
+- no missing contradiction/history references;
+- formal `VERIFIED`: **0/164**.
 
-`00_RESEARCH_SCHEMA.md` remains the canonical status/gate definition. Chat history is not authoritative state.
+`00_RESEARCH_SCHEMA.md` is the canonical status/gate definition.
 
 ## Phase 3 — COMPLETE
 
-Phase 3 has both semantic and deterministic evidence:
+Authoritative generated state:
 
-- curated semantic graph: `03_CONNECTION_GRAPH.md`;
-- deterministic extraction: `scripts/build_connection_graph.py`;
+- semantic supplement: `03_CONNECTION_GRAPH.md`;
+- deterministic extractor: `scripts/build_connection_graph.py`;
 - machine graph/index: `03_CONNECTION_EDGES.json`, `03_CONNECTION_INDEX.md`;
-- unresolved-reference reconciliation: `03_CONNECTION_RECONCILIATION.md`, `03_REFERENCE_DISPOSITIONS.json`;
-- zero-incoming/orphan reconciliation: `03_ORPHAN_RECONCILIATION.md`, `03_ORPHAN_DISPOSITIONS.json`;
-- ask-matt target matrix: `03_ROUTER_MATRIX.md/.json`;
-- distribution symmetry matrix: `03_DISTRIBUTION_MATRIX.md/.json`;
-- current-file history bindings: `03_HISTORY_BINDINGS.md/.json`;
-- per-file closure gate: `03_PHASE3_CLOSURE_INDEX.md/.json`.
+- reference reconciliation: `03_CONNECTION_RECONCILIATION.md`, `03_REFERENCE_DISPOSITIONS.json`;
+- orphan/zero-incoming reconciliation: `03_ORPHAN_RECONCILIATION.md`, `03_ORPHAN_DISPOSITIONS.json`;
+- router matrix: `03_ROUTER_MATRIX.md/.json`;
+- distribution matrix: `03_DISTRIBUTION_MATRIX.md/.json`;
+- history bindings: `03_HISTORY_BINDINGS.md/.json`;
+- per-file closure gate: `03_PHASE3_CLOSURE_INDEX.md/.json`;
+- second-order quality report: `03_PHASE3_QUALITY.md/.json`;
+- cryptographic build provenance: `03_PHASE3_BUILD_MANIFEST.md/.json`.
 
-### Connection graph v4
+### Connection graph v5
 
-Extraction rules version **4** reads all 164 frozen blobs by exact census blob SHA and produces **530** current edges:
+Extraction rules version **5** reads all 164 frozen blobs by exact census blob SHA and currently produces **554 edges**:
 
 - `CONFIG_BINDING`: **37**
 - `DISTRIBUTION_ENTRY`: **25**
 - `DOC_LINK`: **104**
 - `OPERATIVE_CALL`: **15**
 - `PASSIVE_REFERENCE`: **123**
-- `SKILL_REFERENCE`: **225**
+- `SKILL_REFERENCE`: **223**
+- `SUPPORT_BINDING`: **26**
 - `SYMLINK`: **1**
 
-The passive layer includes **104 exact repository-path mentions + 19 globally unique-filename mentions**. The skill-reference layer adds **225** exact `/skill`, `$skill`, or backticked-skill references while stripping external URL bodies before slash-label scanning.
+Graph integrity/provenance:
 
-The five raw unresolved internal-looking references are **5/5 semantically reconciled**, with **0** confirmed broken repository links and **0** semantically unresolved cases.
+- stable content-derived edge IDs: **554/554**;
+- edges with literal source-line provenance: **490/554**;
+- invocation policies joined: **37/37**;
+- Claude↔Codex policy mismatches: **0**;
+- illegal operative calls to user-invoked targets: **0**;
+- weak backtick-only skill references tracked separately: **129**;
+- files relying only on weak backtick references as orphan proof: **0**;
+- extra Markdown/HTML/autolink syntax producing unmapped internal links: **0**;
+- support-owner gaps: **0**.
 
-Invocation-policy join:
-- **37/37** current skills joined;
-- **22 USER_INVOKED / 15 MODEL_INVOKED** overall;
-- **0** Claude↔Codex policy mismatches;
-- **15** current operative Skill-tool calls;
-- **0** illegal operative calls to user-invoked targets.
+The five raw unresolved internal-looking references remain **5/5 semantically reconciled**, with **0** confirmed broken repository links and **0** semantically unresolved cases.
 
 Router join:
+
 - promoted plugin skills: **25**;
 - expected ask-matt targets other than itself: **24**;
 - covered: **24/24**;
@@ -75,95 +89,58 @@ Router join:
 - non-promoted extras: **0**.
 
 Distribution symmetry:
+
 - plugin promoted: **25**;
 - maintainer local-linked: **33**;
 - list-skills visible: **37**;
-- root README visible: **25**;
-- bucket README visible: **37**;
-- human docs pages: **25**;
-- ask-matt targets: **24**;
+- root README visibility is checked by exact Markdown link, not name-token presence;
+- bucket README visibility is checked by exact Markdown link;
 - Codex metadata owners: **37**;
-- automated anomalies: **0**.
+- automated distribution anomalies: **0**.
 
-History bindings map nine durable H-events onto **69** current files with **88** current-file bindings. H-001/H-002/H-005/H-006/H-007/H-008 are RECONCILED; H-003/H-004/H-009 remain PARTIAL.
-
-Five true zero-incoming files required semantic disposition and are durably classified as intentional standalone ADR/policy/maintainer entrypoint roles without fabricating incoming edges.
+History bindings derive H-event definitions from durable `05_HISTORY_LEDGER.md`, not a duplicated hardcoded event table. H-001…H-009 state/ref/area parity is **9/9 green** in the Phase 3 quality gate.
 
 Formal Phase 3 closure:
+
 - files: **164**;
 - READY_CANDIDATE: **164**;
 - blockers: **0**;
-- explicit semantic zero-incoming dispositions consumed: **5**;
 - formal `CONNECTIONS TRACED`: **164/164**;
-- formal `VERIFIED`: **0/164**.
+- formal `VERIFIED`: **0/164**;
+- Phase 3 quality hard errors: **0**;
+- Phase 3 quality review items: **0**;
+- Phase 3 quality remaining improvements: **0**.
+
+The Phase 3 build manifest records SHA-256 fingerprints for the generator/acceptance inputs and authoritative generated outputs so a future session can verify that the committed state belongs together.
 
 ## Phase 4 — Behavior & Enforcement
 
-Phase 4 now has a structured working evidence layer:
+Structured working evidence is already durable in GitHub:
 
-- structured source: `04_BEHAVIOR_MATRIX.json`;
-- rendered view: `04_BEHAVIOR_MATRIX.md`;
-- integrity result: `04_BEHAVIOR_INTEGRITY.json`;
-- validator: `scripts/validate_behavior_matrix.py`;
-- CI gate: `.github/workflows/validate-phase4-behavior.yml`.
+- `04_BEHAVIOR_MATRIX.json`;
+- `04_BEHAVIOR_MATRIX.md`;
+- `04_BEHAVIOR_INTEGRITY.json`;
+- `04_CONTRADICTION_REGISTER.md`;
+- `scripts/validate_behavior_matrix.py`;
+- `.github/workflows/validate-phase4-behavior.yml`.
 
-The first validated matrix contains **20 behavior rows** with **0 hard integrity errors**. Current state counts:
+Current validated matrix contains **20 behavior rows** with **0 hard integrity errors**. Runtime observed remains **0/20**, intentionally preventing static analysis from being overstated as end-to-end proof.
 
-- `CONFIRMED_DRIFT`: **5**
-- `CONFIRMED_GAP`: **4**
-- `CONFIRMED_WEAKNESS`: **1**
-- `RUNTIME_UNKNOWN`: **3**
-- `STATICALLY_ENFORCED`: **7**
-
-Enforcement-layer coverage currently includes documentation, prompt, static config, executable scripts, CI, runtime dependencies, external dependencies, and explicitly absent enforcement. **Runtime observed: 0/20**, intentionally preventing static analysis from being overstated as end-to-end proof.
-
-### New Phase 4 adjudication — CT-012
-
-`setup-ts-deep-modules/SKILL.md` says **“Four rules, all error”**, describes intra-package freedom as a package's own files importing one another freely, says existing configs should merge “the four rules,” and says the config step is done when “the four forbidden rules are present.”
-
-The shipped `dependency-cruiser.config.cjs` contains **five** separate `forbidden` rules with `severity: "error"`. The fifth, `tests-folder-is-private`, blocks any non-test importer from a package's `tests/` folder, including same-package implementation files. This is therefore not merely a harmless split of one conceptual rule: it adds a separately named enforcement rule and an exception to the prose's unconditional intra-package-freedom claim.
-
-CT-012 is OPEN as `OPERATIVE / CONFIG CONTRACT MISMATCH`.
-
-### New Phase 4 adjudication — CT-013
-
-Wayfinder says planning is the default and absent an override it should produce decisions, not deliverables. It explicitly allows an effort to override that default in map `Notes`, carrying execution into the map. The same charting workflow instructs the agent to create the map with `Destination and Notes filled in`, but contains no independent rule requiring an execution-carrying Notes override to be supplied or confirmed by the human.
-
-This is not a direct contradiction because the override is documented. It is an enforcement-authority weakness: the same agent subject to the planning guard can author the field that relaxes it.
-
-CT-013 is OPEN as `PROMPT ENFORCEMENT WEAKNESS / SELF-AUTHORED OVERRIDE`.
-
-### Initial non-defect enforcement rows
-
-The Phase 4 matrix also records strong or partial controls so the audit does not become defect-only. Initial examples include:
-
-- setup-ts-deep-modules' required pass → deliberate fail → revert → pass boundary proof;
-- wizard's `bash -n` / shellcheck static verification, distinguished from end-to-end execution;
-- git-guardrails' executable exit-2 blocking, classified as heuristic regex enforcement rather than semantic shell parsing;
-- setup-pre-commit's real-commit hook smoke test requirement;
-- plugin version synchronization through `sync-plugin-version.mjs` and the release path;
-- local-link and list-skills executable selection semantics.
-
-These rows remain below VERIFIED until later applicable runtime/history/red-team gates are satisfied.
+Current contradiction/enforcement register contains **13 current IDs** plus **3 historical IDs**. CT-012 records the setup-ts-deep-modules prose/config rule-count mismatch; CT-013 records Wayfinder's self-authored planning-override authority weakness. Detailed evidence is in the contradiction register and behavior matrix rather than relying on chat prose.
 
 ## Tooling state
 
 Current durable incident ledger:
 
-- failed Actions runs: **79**;
+- failed Actions runs: **82**;
 - cancelled Actions runs: **7**;
-- total incident runs: **86**;
-- classified: **86/86**;
+- total incident runs: **89**;
+- classified: **89/89**;
 - unknown: **0**;
 - unresolved/review-required: **0**;
 - evidence-corruption incidents found: **0**.
 
-Phase 3 generation is consolidated into `.github/workflows/rebuild-phase3-state.yml`, which rebuilds graph → router → distribution → history bindings → closure in one ordered atomic pipeline. Formal promotion uses its own atomic rebuild of notes + ledger/census + closure + foundation. This avoids relying on ordinary `GITHUB_TOKEN` workflow commits to retrigger downstream workflows.
-
-Successful proof runs include:
-- Phase 3 promotion / atomic status proof: `34739027703` — SUCCESS;
-- consolidated Phase 3 generated-state proof: `34739079695` — SUCCESS;
-- initial Phase 4 behavior-matrix validation: `34739624908` — SUCCESS.
+Phase 3 generation is consolidated into `.github/workflows/rebuild-phase3-state.yml`, which rebuilds dependent state in one ordered atomic pipeline and runs manifest/quality validation before publication. Formal status promotion remains separate and fail-closed.
 
 ## Phase status
 
@@ -171,59 +148,35 @@ Successful proof runs include:
 |---|---|---|
 | 1. Census & Ledger | **COMPLETE** | 164/164 frozen blobs have deterministic IDs/provenance and durable ledger rows. |
 | 2. Full Physical Read | **COMPLETE** | Full contents of 164/164 physical blobs inspected; UNREAD = 0. |
-| 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 530-edge v4 graph; raw unresolved 5/5 reconciled; router 24/24; distribution anomalies 0; closure blockers 0. |
-| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated 20-row behavior matrix; 13 current contradiction/enforcement IDs represented; systematic coverage is expanding. Runtime observed remains 0. |
-| 5. History | IN PROGRESS | 9 durable H-events; H-003/H-004/H-009 remain PARTIAL. |
-| 6. Contradictions & Orphans | IN PROGRESS | **13 current + 3 historical CT IDs**; Phase 3 orphan questions closed; behavior/runtime contradictions remain. |
-| 7. Runtime & Distribution | IN PROGRESS | Static distribution topology is reconstructed; deeper runtime/end-to-end observation remains. |
+| 3. Connection Mapping | **COMPLETE** | **164/164 CONNECTIONS TRACED**; 554-edge v5 graph; quality hard errors/review items/improvements = 0. |
+| 4. Behavior & Enforcement | **IN PROGRESS — PRIMARY FOCUS** | Validated 20-row behavior matrix; runtime observed remains 0/20. |
+| 5. History | IN PROGRESS | 9 durable H-events; remaining partial lineage is kept in `05_HISTORY_LEDGER.md`. |
+| 6. Contradictions & Orphans | IN PROGRESS | 13 current + 3 historical CT IDs; Phase 3 orphan questions closed. |
+| 7. Runtime & Distribution | IN PROGRESS | Static distribution topology reconstructed; deeper runtime/end-to-end observation remains. |
 | 8. Second Pass | NOT STARTED formally | High-impact second-pass gate not yet executed systematically. |
-| 9. Red-Team Verification | NOT STARTED formally | No systematic absolute/numerical-claim falsification pass yet. |
+| 9. Red-Team Verification | NOT STARTED formally | No complete systematic absolute/numerical-claim falsification pass yet. |
 | 10. System Reconstruction & KP Comparison | BLOCKED by prior gates | Final synthesis waits for verification gates. |
-
-## Authoritative counts
-
-- Physical blobs/files: **164**
-- Ledger rows: **164**
-- Formal `CONNECTIONS TRACED`: **164**
-- Formal `VERIFIED`: **0**
-- Foundation hard errors: **0**
-- Foundation warnings: **0**
-- Phase 3 graph edges: **530**
-- `SKILL_REFERENCE` edges: **225**
-- `PASSIVE_REFERENCE` edges: **123**
-- current `OPERATIVE_CALL` edges: **15**
-- invocation policies joined: **37/37**
-- invocation-policy mismatches: **0**
-- illegal current operative calls: **0**
-- raw unresolved internal-looking references: **5**
-- semantically reconciled raw unresolved: **5/5**
-- Phase 3 closure blockers: **0**
-- router promoted coverage: **24/24**
-- distribution symmetry anomalies: **0**
-- history current-file bindings: **88 across 69 files**
-- current SKILL.md files: **37**
-- promoted skills: **25**
-- local-linked skills: **33**
-- list-skills visible skills: **37**
-- Codex metadata owners: **37**
-- Phase 4 behavior rows: **20**
-- Phase 4 behavior-matrix hard errors: **0**
-- Phase 4 runtime-observed rows: **0/20**
-- current contradiction/enforcement IDs: **13**
-- historical contradiction IDs: **3**
-- tooling incidents classified: **86/86**
-- tooling incidents unknown: **0**
-- tooling incidents unresolved/review-required: **0**
-
-## Immediate next execution steps — Phase 4
-
-1. Expand the matrix beyond current contradictions into the remaining high-impact behavioral contracts: setup, implement-spec, triage/Wayfinder ticket state transitions, diagnosing-bugs HITL loop, domain-modeling writes, and release/distribution enforcement.
-2. For each row, distinguish `DOCUMENTATION`, `PROMPT`, `STATIC_CONFIG`, `EXECUTABLE_SCRIPT`, `CI`, `RUNTIME`, `EXTERNAL_DEPENDENCY`, or `NONE` rather than saying simply “works.”
-3. Identify where completion criteria are actually executable/fail-closed versus merely prose requests.
-4. Create targeted runtime-test plans only for rows whose truth cannot be resolved statically; do not manufacture runtime evidence by inference.
-5. Continue Phase 5 separately for H-003/H-004/H-009 and current contradiction lineages.
-6. Keep `VERIFIED = 0` until applicable Phase 4–9 gates are satisfied per file/claim.
 
 ## Resume instruction
 
-Future sessions must load this GitHub repository first, beginning with `00_RESEARCH_MANIFEST.md`, `00_RESEARCH_SCHEMA.md`, and this status file. Do not use ChatGPT memory or chat summaries as authoritative audit state.
+Future sessions must reload this GitHub repository first. Minimum starting set:
+
+1. `00_RESEARCH_MANIFEST.md`
+2. `00_RESEARCH_SCHEMA.md`
+3. `00_STORAGE_INTEGRITY_AUDIT.md`
+4. `RESEARCH_STATUS.md`
+5. `00_FOUNDATION_INTEGRITY.md`
+6. `00_TOOLING_INTEGRITY_AUDIT.md`
+7. `00_TOOLING_FAILURE_LEDGER.json`
+8. `01_FILE_CENSUS.json`
+9. `01_MASTER_FILE_LEDGER.md`
+10. `03_CONNECTION_EDGES.json`
+11. `03_PHASE3_CLOSURE_INDEX.json`
+12. `03_PHASE3_QUALITY.json`
+13. `03_PHASE3_BUILD_MANIFEST.json`
+14. `04_BEHAVIOR_MATRIX.json`
+15. `04_BEHAVIOR_INTEGRITY.json`
+16. `04_CONTRADICTION_REGISTER.md`
+17. `05_HISTORY_LEDGER.md`
+
+Do **not** resume from ChatGPT memory or chat summaries as authoritative state.
