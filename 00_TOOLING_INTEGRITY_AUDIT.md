@@ -12,10 +12,10 @@ This audit checks whether our own automation could silently lose, stale, cancel,
 
 The durable incident ledger (`00_TOOLING_FAILURE_LEDGER.md` / `.json`, classifier version 3) covers failed and cancelled Actions runs.
 
-- Failed runs enumerated: **79**
+- Failed runs enumerated: **82**
 - Cancelled runs enumerated: **7**
-- Total incident runs: **86**
-- Incident entries classified: **86**
+- Total incident runs: **89**
+- Incident entries classified: **89**
 - Unknown entries: **0**
 - Unresolved / review-required entries: **0**
 - Evidence-corruption failures found: **0**
@@ -32,8 +32,9 @@ Current classification totals:
 | `CROSS_WORKFLOW_CONCURRENCY_CANCEL` | 3 |
 | `CLASSIFIER_REFRESH_SUPERSEDED` | 4 |
 | `CLASSIFIER_SCHEMA_TRANSITION` | 1 |
-| `CLASSIFIER_CLOSURE_GATE` | 1 |
+| `CLASSIFIER_CLOSURE_GATE` | 3 |
 | `PHASE3_PROMOTION_PROVENANCE_PARSER` | 1 |
+| `PHASE3_QUALITY_RECHECK_GATE` | 1 |
 
 ## Confirmed tooling defects and fixes
 
@@ -117,12 +118,9 @@ Older action majors emitted runtime-deprecation warnings.
 
 **State:** FIXED / RECONCILED
 
-Two classifier runs failed while its own closure model was being strengthened:
+The classifier produced several self-referential fail-closed incidents while its own closure model was being strengthened. These include the schema-transition incident and later runs where classification succeeded but the zero-unresolved validation step correctly blocked publication until an earlier incident was reconciled.
 
-- `34713138258`: schema v3 output under a workflow still asserting v2;
-- `34713153565`: the new closure gate correctly blocked while the first incident remained unresolved.
-
-They are reconciled by exact run ID so future classifier failures are not auto-excused.
+**Fix:** exact known schema-transition history is retained, and the classifier now recognizes the specific successful-classification-followed-by-closure-assertion signature as `CLASSIFIER_CLOSURE_GATE`. Actual classifier execution defects remain review-required. Current count: **3 closure-gate incidents**, all reconciled.
 
 ### TI-010 — Workflow-to-workflow chaining assumed `GITHUB_TOKEN` pushes would retrigger Actions
 
@@ -134,7 +132,7 @@ The defect became visible during formal Phase 3 promotion: all 164 notes were su
 
 **Impact:** internally valid artifacts could disagree in freshness even though no source evidence was corrupted.
 
-**Fix:** dependent Phase 3 generation is now one ordered atomic authority, `.github/workflows/rebuild-phase3-state.yml`, which executes connection graph → router → distribution → history bindings → closure index, validates the complete set, and commits it together. The five superseded partial Phase 3 workflows were removed. Formal status promotion remains separate but atomically rebuilds ledger/census/closure/foundation before publishing the promoted state.
+**Fix:** dependent Phase 3 generation is now one ordered atomic authority, `.github/workflows/rebuild-phase3-state.yml`. Formal status promotion remains separate but atomically rebuilds ledger/census/closure/foundation before publishing promoted note state.
 
 ### TI-011 — First Phase 3 promoter rejected an accepted legacy provenance label
 
@@ -142,24 +140,56 @@ The defect became visible during formal Phase 3 promotion: all 164 notes were su
 
 Run `34738911437` failed closed because `scripts/promote_phase3_connections.py` recognized `Blob SHA` but not the already-valid legacy alias `Frozen blob SHA` used by MP-0021 and accepted by the foundation validator.
 
-**Impact:** none to durable evidence; the run stopped before committing any note changes.
+**Impact:** none to durable evidence; the run stopped before committing note changes.
 
-**Fix:** the promoter's blob-provenance regex now mirrors the established validator. Promotion run `34738969932` then succeeded, and atomic proof run `34739027703` rebuilt and validated notes, ledger/census, Phase 3 closure, and foundation together. The historical incident is classified by exact run ID as `PHASE3_PROMOTION_PROVENANCE_PARSER`.
+**Fix:** the promoter's blob-provenance regex mirrors the established validator. The historical incident is classified by exact run ID as `PHASE3_PROMOTION_PROVENANCE_PARSER`.
 
-## Current workflow proof
+### TI-012 — Phase 3 completion lacked a second-order quality gate
 
-Key post-fix proof runs:
+**State:** FIXED / RECONCILED
 
-| Workflow | Proof run | Result |
-|---|---:|---|
-| Rebuild master ledger | `34712959458` | SUCCESS |
-| Validate forensic foundation | `34712981139` | SUCCESS |
-| Normalize note metadata | `34712989578` | SUCCESS |
-| Classify tooling failures/cancellations | later classifier rebuild | SUCCESS / 86 incidents closed |
-| Promote Phase 3 connections | `34739027703` | SUCCESS |
-| Rebuild Phase 3 state | `34739079695` | SUCCESS |
+A deliberate Phase 3 recheck exposed several proof-architecture weaknesses even though the underlying source evidence was intact: the master ledger did not consume graph Ref-in/Ref-out counts; history event definitions were duplicated inside the generator; human Phase 3 prose was stale; contextual backtick skill references needed weaker-confidence treatment; support-file ownership needed structural representation; and generated state lacked a cryptographic build fingerprint.
 
-The Phase 3 promotion proof run succeeded through note promotion, ledger/census rebuild, closure rebuild, foundation validation, state validation, and atomic commit. The consolidated Phase 3 generator also completed its full ordered rebuild successfully.
+The first second-order quality run failed closed and is retained as `PHASE3_QUALITY_RECHECK_GATE`.
+
+**Fix:** Phase 3 now includes:
+
+- `03_PHASE3_QUALITY.md/.json`;
+- `03_PHASE3_BUILD_MANIFEST.md/.json` with SHA-256 input/output fingerprints;
+- history definitions derived from durable `05_HISTORY_LEDGER.md`;
+- graph-derived Ref-in/Ref-out master-ledger enrichment;
+- stable content-derived graph edge IDs;
+- literal source-line provenance where applicable;
+- weak-reference/orphan checks;
+- extra Markdown/HTML/autolink scanning;
+- exact-link README distribution checks;
+- structural `SUPPORT_BINDING` edges that do not falsely imply operative consumption.
+
+Current quality gate: **0 hard errors, 0 review items, 0 remaining improvements**.
+
+### TI-013 — Human resume summaries could lag machine truth
+
+**State:** FIXED / CONTROL ADDED
+
+During the storage-integrity audit, `RESEARCH_STATUS.md` still described the older Phase 3 v4 / 530-edge state while `03_CONNECTION_EDGES.json` and `03_PHASE3_QUALITY.json` already held the newer v5 state. This did not lose research data, but it could mislead a future session that resumed from prose alone.
+
+**Fix:** `RESEARCH_STATUS.md` was synchronized to v5 / 554 edges, `00_STORAGE_INTEGRITY_AUDIT.md` was added, and the manifest now requires future sessions to load machine JSON artifacts for exact numerical state.
+
+## Current workflow proof and generated-state controls
+
+Key durable controls now include:
+
+- frozen source identity and 164-file denominator;
+- 164 durable per-file notes;
+- foundation integrity validation;
+- atomic Phase 3 rebuild;
+- Phase 3 second-order quality validation;
+- SHA-256 Phase 3 build manifest and verifier;
+- formal Phase 3 promotion gate;
+- Phase 4 behavior-matrix validation;
+- historical failure/cancellation classifier with zero-unknown and zero-unresolved closure.
+
+Current Phase 3 machine state is extraction rules v5 with **554 edges**, **554 stable edge IDs**, **490 literal source-line provenance edges**, **0 invocation-policy mismatches**, **0 illegal operative calls**, and a green second-order quality report.
 
 ## Current durable integrity state
 
@@ -170,6 +200,8 @@ The Phase 3 promotion proof run succeeded through note promotion, ledger/census 
 - foundation hard errors: **0**;
 - foundation warnings: **0**;
 - Phase 3 closure: **164/164 READY_CANDIDATE, 0 blockers**;
+- Phase 3 quality: **0 hard errors, 0 review items, 0 remaining improvements**;
+- tooling incidents: **89/89 classified, 0 unknown, 0 unresolved**;
 - VERIFIED: **0**.
 
 ## What these incidents did not invalidate
@@ -178,4 +210,6 @@ No classified tooling incident changed the frozen source commit, changed source 
 
 ## Integrity conclusion
 
-The audit infrastructure has had real defects, including silent untracked-output handling, publication races, parser incompatibilities, cancellation-prone orchestration, stale incident accounting, and an invalid assumption about Actions workflow chaining. Each discovered class is now durably recorded and either mechanically prevented or made fail-closed. Current incident history is **86/86 classified, 0 unknown, 0 unresolved/review-required**, with no evidence-corruption incident found.
+The audit infrastructure has had real defects, including silent untracked-output handling, publication races, parser incompatibilities, cancellation-prone orchestration, stale incident accounting, invalid workflow-chaining assumptions, insufficient second-order Phase 3 proof, and stale human summaries. Each discovered class is now durably recorded and either mechanically prevented or made fail-closed.
+
+Current incident history is **89/89 classified, 0 unknown, 0 unresolved/review-required**, with no evidence-corruption incident found. GitHub remains the authoritative durable state; chat/GPT summaries are secondary only.
