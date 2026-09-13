@@ -4,6 +4,8 @@ Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
 Current skills: **37**. Automated symmetry anomalies: **0**.
 
+README visibility is based on explicit Markdown links resolving to the exact `SKILL.md` path; bare name-token presence does not count.
+
 Dimension counts:
 
 - `plugin_promoted`: **25**

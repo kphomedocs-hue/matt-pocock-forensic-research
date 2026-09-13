@@ -16,7 +16,7 @@ Inputs fingerprinted: **14**. Outputs fingerprinted: **11**.
 | `03_ORPHAN_DISPOSITIONS.json` | `d5fccf73d72ff577277ddd513b0375a65953c2b67f5d18d44db06af14a3dd73c` | 2362 |
 | `scripts/build_connection_graph.py` | `8637654ee7a93f6ecd075f9ceb599c60cb441cd3c94e6d10eda1447c8c40e7b3` | 17173 |
 | `scripts/build_router_matrix.py` | `f37a809162fafeceacffa2bdedc2c46f1925c81ab7801ac78e189a21fdcf8eea` | 6719 |
-| `scripts/build_distribution_matrix.py` | `b6f29eebf9f9d1731184bd6958c324bc97a6bbc00f7cd3fecc71add2acad8b68` | 9102 |
+| `scripts/build_distribution_matrix.py` | `378525c18c1e19e4f10772ee521f53c7d6efa6d0b3e4ead706c9031546af8925` | 10290 |
 | `scripts/build_history_bindings.py` | `0d131e92bcaf0e937d3503be5d544081ad514dd591b4d3fde830285149be478c` | 9654 |
 | `scripts/build_phase3_closure_index.py` | `d54c10b1fe8484a0646123df8de6061360d8e633ed32a0d849b2d7e8d170f344` | 13589 |
 | `scripts/enrich_master_ledger_connections.py` | `ba0dcd6d2012aaa7dc950c73ed7ef8523d6954e955a18406dea09bce22150c03` | 2653 |
@@ -34,8 +34,8 @@ Inputs fingerprinted: **14**. Outputs fingerprinted: **11**.
 | `03_CONNECTION_INDEX.md` | `8c72981ee3555dd1dc4a81e7febecf8568ce460bec57ebf5080925f7fb68990e` | 18003 |
 | `03_ROUTER_MATRIX.json` | `ef8c1b111793f33cf6c13d45f7c87b17bff49a8a2b39ae9bef28eecced3e87f3` | 9889 |
 | `03_ROUTER_MATRIX.md` | `cec01fdcbf6e27041a68098ee80438a1ad613b0e4d1638372d1def6f33ada63d` | 3006 |
-| `03_DISTRIBUTION_MATRIX.json` | `2a787d594b09b03f7df9271b8130ede0d978b706b1578cb12b60992226ec85d6` | 18333 |
-| `03_DISTRIBUTION_MATRIX.md` | `d95ec336af7182311a4f091ab5c2fbc665cc39394b6f72a22921bc7c9aa8b26a` | 3979 |
+| `03_DISTRIBUTION_MATRIX.json` | `6585cfcde43c0061b2332857cf3a77d8d710e44e234104c4b274c32326ffa5ed` | 18470 |
+| `03_DISTRIBUTION_MATRIX.md` | `0a881421e29296fb8084a38bd50786f7bb7ce5558464723682f3fb8b91ae5f69` | 4115 |
 | `03_HISTORY_BINDINGS.json` | `e93a9f6049cabdb275fd3d97b16b5976202fe7c28985aaaf5c43e1ba11513d42` | 90948 |
 | `03_HISTORY_BINDINGS.md` | `1f7fbe0b51fb6592a2c875dbf55a8e73ba09e4ba16b6fec6a3c67dab4ad66264` | 7516 |
 | `03_PHASE3_CLOSURE_INDEX.json` | `5508d3ecbec5c99b74f6bfed9823883ba05f2b9558dcdadda26ac908fb09ec79` | 112378 |
