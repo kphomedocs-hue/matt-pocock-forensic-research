@@ -59,10 +59,10 @@ jobs:
               fi
             done
           fi
-      - name: Enforce hard-integrity gate
+      - name: Enforce hard-integrity and contradiction-parity gate
         run: |
           python - <<'PY'
-          import json
+          import json, re
           data = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
           errors = data.get('hard_errors', [])
           print(f"Hard integrity errors: {len(errors)}")
@@ -70,4 +70,15 @@ jobs:
               print(f"- {error}")
           if errors:
               raise SystemExit(1)
+
+          text = open('04_CONTRADICTION_REGISTER.md', encoding='utf-8').read()
+          register_ids = re.findall(r'^\| (CT-\d{3}) \|', text, re.MULTILINE)
+          reported_ids = data.get('contradiction_ids_current', [])
+          if register_ids != reported_ids:
+              raise SystemExit(f"Foundation contradiction parity failed: register={register_ids}, report={reported_ids}")
+          nums = [int(x.split('-')[1]) for x in register_ids]
+          expected = list(range(1, len(nums) + 1))
+          if nums != expected:
+              raise SystemExit(f"Current contradiction IDs are not contiguous: {register_ids}")
+          print(f"Current contradiction parity: {len(register_ids)} IDs, contiguous and exact")
           PY
