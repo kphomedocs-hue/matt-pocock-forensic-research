@@ -24,9 +24,12 @@ The generated graph recognizes these relationship classes:
 - `DOC_LINK` — explicit internal Markdown link;
 - `DISTRIBUTION_ENTRY` — manifest/distribution exposure;
 - `CONFIG_BINDING` — Codex metadata ownership/binding;
+- `SUPPORT_BINDING` — physical support-file co-location under a skill directory; this proves structural ownership only, **not** that the owning skill reads or executes that support file;
 - `SYMLINK` — physical Git symlink target.
 
 History-to-current-file relationships are generated separately in `03_HISTORY_BINDINGS.json/.md` from the durable `05_HISTORY_LEDGER.md`.
+
+Every graph edge has a content-derived `stable_edge_id`. Sequential `edge_id` is display/order only. Literal relationships carry source-line provenance where the extractor can point to an exact occurrence; structural relationships such as ownership/config binding may have no literal source line.
 
 ## Semantic adjudications
 
@@ -54,11 +57,13 @@ The five explicit zero-incoming dispositions are recorded in `03_ORPHAN_DISPOSIT
 
 ### Teach glossary
 
-`skills/productivity/teach/GLOSSARY-FORMAT.md` is **not** a source-tree orphan: human Teach documentation references it. The operative Teach `SKILL.md` does not wire it into the workflow, so CT-005 remains an operative linkage gap rather than an orphan finding.
+`skills/productivity/teach/GLOSSARY-FORMAT.md` is **not** a source-tree orphan: human Teach documentation references it. Its `SUPPORT_BINDING` records that it physically belongs to Teach, while the operative Teach `SKILL.md` still does not wire it into the workflow. CT-005 therefore remains an operative linkage gap rather than an orphan finding.
 
 ### Router and distribution
 
 Ask-matt router coverage is generated independently in `03_ROUTER_MATRIX.json/.md`. Distribution/visibility symmetry across plugin promotion, local linking, list-skills, root/bucket READMEs, docs pages, ask-matt and Codex metadata is generated in `03_DISTRIBUTION_MATRIX.json/.md`.
+
+README visibility is accepted only from explicit Markdown links resolving to the exact `SKILL.md` target; bare name-token presence does not count.
 
 The differing 25/33/37 universes are intentional distribution tiers, not one expected set:
 
@@ -68,7 +73,7 @@ The differing 25/33/37 universes are intentional distribution tiers, not one exp
 
 ## Phase 3 closure rule
 
-A file reaches `CONNECTIONS TRACED` only after applicable outgoing/incoming references, internal links, cross-skill calls, config/distribution bindings, invocation policy, unresolved/generated targets and orphan state are closed in the generated closure index.
+A file reaches `CONNECTIONS TRACED` only after applicable outgoing/incoming references, internal links, cross-skill calls, structural support ownership, config/distribution bindings, invocation policy, unresolved/generated targets and orphan state are closed in the generated closure index/quality layer.
 
 `CONNECTIONS TRACED` does **not** mean behavior, history, runtime or end-to-end behavior is verified. Those remain later phases.
 
