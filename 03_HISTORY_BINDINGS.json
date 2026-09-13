@@ -1,0 +1,2803 @@
+{
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "file_count": 164,
+  "history_event_count": 9,
+  "events": [
+    {
+      "history_id": "H-001",
+      "lineage_state": "RECONCILED",
+      "area": "Changesets / package metadata",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "a0324014864317489b5958bf632d7ec8dbccbdcd",
+          "changed_file_count": 7
+        }
+      ],
+      "changed_paths_total": 7,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0006",
+          "path": ".changeset/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0008",
+          "path": ".changeset/config.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0019",
+          "path": ".github/workflows/release.yml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0020",
+          "path": ".gitignore",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0055",
+          "path": "package-lock.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0056",
+          "path": "package.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": [
+        ".changeset/initial-skill-updates.md"
+      ]
+    },
+    {
+      "history_id": "H-002",
+      "lineage_state": "RECONCILED",
+      "area": "TDD red-green lineage",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "e81f97660af0bebfdbf2e23db6a71f7dfcb9a659",
+          "changed_file_count": 2
+        },
+        {
+          "type": "commit",
+          "ref": "80e9dcc6857f16cc08b8e5b190393ee7591517e0",
+          "changed_file_count": 3
+        }
+      ],
+      "changed_paths_total": 3,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-002",
+          "lineage_state": "RECONCILED",
+          "area": "TDD red-green lineage",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": [
+        ".changeset/tdd-reference-only-seams.md",
+        "skills/engineering/tdd/refactoring.md"
+      ]
+    },
+    {
+      "history_id": "H-003",
+      "lineage_state": "PARTIAL",
+      "area": "Claude plugin creation",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "42a5b70fcacc7baff1977b13f3919fb2f63af14e",
+          "changed_file_count": 6
+        }
+      ],
+      "changed_paths_total": 6,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0002",
+          "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0017",
+          "path": ".claude-plugin/marketplace.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0018",
+          "path": ".claude-plugin/plugin.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": [
+        ".changeset/ship-as-claude-plugin.md"
+      ]
+    },
+    {
+      "history_id": "H-004",
+      "lineage_state": "PARTIAL",
+      "area": "Codex metadata introduction",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+          "changed_file_count": 46
+        }
+      ],
+      "changed_paths_total": 46,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0004",
+          "path": ".agents/invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0024",
+          "path": "AGENTS.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0057",
+          "path": "scripts/link-skills.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0064",
+          "path": "skills/engineering/ask-matt/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0066",
+          "path": "skills/engineering/code-review/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0070",
+          "path": "skills/engineering/codebase-design/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0072",
+          "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0077",
+          "path": "skills/engineering/domain-modeling/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0079",
+          "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0081",
+          "path": "skills/engineering/implement/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0084",
+          "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0088",
+          "path": "skills/engineering/prototype/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0090",
+          "path": "skills/engineering/research/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0092",
+          "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0094",
+          "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0101",
+          "path": "skills/engineering/tdd/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0105",
+          "path": "skills/engineering/to-spec/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0107",
+          "path": "skills/engineering/to-tickets/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0111",
+          "path": "skills/engineering/triage/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0113",
+          "path": "skills/engineering/wayfinder/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0119",
+          "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0123",
+          "path": "skills/in-progress/loop-me/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0127",
+          "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0130",
+          "path": "skills/in-progress/writing-beats/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0132",
+          "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0134",
+          "path": "skills/in-progress/writing-shape/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0137",
+          "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0140",
+          "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0142",
+          "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0144",
+          "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0147",
+          "path": "skills/productivity/grill-me/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0149",
+          "path": "skills/productivity/grilling/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0151",
+          "path": "skills/productivity/handoff/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0157",
+          "path": "skills/productivity/teach/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": [
+        ".changeset/codex-skill-metadata.md",
+        "skills/deprecated/design-an-interface/agents/openai.yaml",
+        "skills/deprecated/qa/agents/openai.yaml",
+        "skills/deprecated/request-refactor-plan/agents/openai.yaml",
+        "skills/deprecated/ubiquitous-language/agents/openai.yaml",
+        "skills/in-progress/wizard/agents/openai.yaml",
+        "skills/personal/edit-article/agents/openai.yaml",
+        "skills/personal/obsidian-vault/agents/openai.yaml",
+        "skills/productivity/writing-great-skills/agents/openai.yaml"
+      ]
+    },
+    {
+      "history_id": "H-005",
+      "lineage_state": "RECONCILED",
+      "area": "Router/docs coherence pass",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "8a475c438d90a2f1d7d3710c12658b60dc701a13",
+          "changed_file_count": 10
+        }
+      ],
+      "changed_paths_total": 10,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0032",
+          "path": "docs/engineering/codebase-design.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0035",
+          "path": "docs/engineering/grill-with-docs.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0036",
+          "path": "docs/engineering/implement.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0042",
+          "path": "docs/engineering/tdd.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0049",
+          "path": "docs/productivity/grilling.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0063",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": []
+    },
+    {
+      "history_id": "H-006",
+      "lineage_state": "RECONCILED",
+      "area": "Release version synchronization",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "f3554acafee0f1549d3f8f7881eca0634fd446d0",
+          "changed_file_count": 4
+        }
+      ],
+      "changed_paths_total": 4,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0019",
+          "path": ".github/workflows/release.yml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0056",
+          "path": "package.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0059",
+          "path": "scripts/sync-plugin-version.mjs",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": []
+    },
+    {
+      "history_id": "H-007",
+      "lineage_state": "RECONCILED",
+      "area": "Cross-skill invocation standardization",
+      "refs": [
+        {
+          "type": "pr",
+          "ref": "878",
+          "changed_file_count": 15
+        }
+      ],
+      "changed_paths_total": 15,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0004",
+          "path": ".agents/invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0014",
+          "path": ".changeset/skill-tool-invocation-terminology.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0065",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0071",
+          "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0078",
+          "path": "skills/engineering/grill-with-docs/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0083",
+          "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0104",
+          "path": "skills/engineering/to-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0106",
+          "path": "skills/engineering/to-tickets/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0110",
+          "path": "skills/engineering/triage/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0112",
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0118",
+          "path": "skills/in-progress/claude-handoff/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0126",
+          "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0146",
+          "path": "skills/productivity/grill-me/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0150",
+          "path": "skills/productivity/handoff/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": []
+    },
+    {
+      "history_id": "H-008",
+      "lineage_state": "RECONCILED",
+      "area": "Cross-skill invocation regression fix",
+      "refs": [
+        {
+          "type": "pr",
+          "ref": "880",
+          "changed_file_count": 8
+        }
+      ],
+      "changed_paths_total": 8,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0004",
+          "path": ".agents/invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0015",
+          "path": ".changeset/user-invoked-skill-invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0065",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0071",
+          "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0104",
+          "path": "skills/engineering/to-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0106",
+          "path": "skills/engineering/to-tickets/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0110",
+          "path": "skills/engineering/triage/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0112",
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": []
+    },
+    {
+      "history_id": "H-009",
+      "lineage_state": "PARTIAL",
+      "area": "Local-link misc exclusion",
+      "refs": [
+        {
+          "type": "pr",
+          "ref": "1025",
+          "changed_file_count": 2
+        }
+      ],
+      "changed_paths_total": 2,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-009",
+          "lineage_state": "PARTIAL",
+          "area": "Local-link misc exclusion",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-009",
+          "lineage_state": "PARTIAL",
+          "area": "Local-link misc exclusion",
+          "mp_id": "MP-0057",
+          "path": "scripts/link-skills.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": []
+    }
+  ],
+  "files_with_history_bindings": 69,
+  "binding_count": 88,
+  "file_rows": [
+    {
+      "mp_id": "MP-0001",
+      "path": ".agents/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0002",
+      "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0002",
+          "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0003",
+      "path": ".agents/install-block.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0004",
+      "path": ".agents/invocation.md",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0004",
+          "path": ".agents/invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0004",
+          "path": ".agents/invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0004",
+          "path": ".agents/invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 3,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0005",
+      "path": ".agents/writing-docs.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0006",
+      "path": ".changeset/README.md",
+      "history_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0006",
+          "path": ".changeset/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0007",
+      "path": ".changeset/add-implement-spec-skill.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0008",
+      "path": ".changeset/config.json",
+      "history_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0008",
+          "path": ".changeset/config.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0009",
+      "path": ".changeset/domain-modeling-trigger-context-adr.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0010",
+      "path": ".changeset/fix-yaml-frontmatter-colons.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0011",
+      "path": ".changeset/grilling-add-hr-between-questions.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0012",
+      "path": ".changeset/grilling-remove-em-dashes.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0013",
+      "path": ".changeset/remove-em-dashes-repo-wide.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0014",
+      "path": ".changeset/skill-tool-invocation-terminology.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0014",
+          "path": ".changeset/skill-tool-invocation-terminology.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0015",
+      "path": ".changeset/user-invoked-skill-invocation.md",
+      "history_bindings": [
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0015",
+          "path": ".changeset/user-invoked-skill-invocation.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0016",
+      "path": ".changeset/wait-what-context-map.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0017",
+      "path": ".claude-plugin/marketplace.json",
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0017",
+          "path": ".claude-plugin/marketplace.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0018",
+      "path": ".claude-plugin/plugin.json",
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0018",
+          "path": ".claude-plugin/plugin.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0019",
+      "path": ".github/workflows/release.yml",
+      "history_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0019",
+          "path": ".github/workflows/release.yml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0019",
+          "path": ".github/workflows/release.yml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0020",
+      "path": ".gitignore",
+      "history_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0020",
+          "path": ".gitignore",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0021",
+      "path": ".out-of-scope/mainstream-issue-trackers-only.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0022",
+      "path": ".out-of-scope/question-limits.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0023",
+      "path": ".out-of-scope/setup-skill-verify-mode.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0024",
+      "path": "AGENTS.md",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0024",
+          "path": "AGENTS.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0025",
+      "path": "CHANGELOG.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0026",
+      "path": "CLAUDE.md",
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-009",
+          "lineage_state": "PARTIAL",
+          "area": "Local-link misc exclusion",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 4,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0027",
+      "path": "CONTEXT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0028",
+      "path": "LICENSE",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0029",
+      "path": "README.md",
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "PARTIAL",
+          "area": "Claude plugin creation",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0030",
+      "path": "docs/engineering/ask-matt.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0031",
+      "path": "docs/engineering/code-review.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0032",
+      "path": "docs/engineering/codebase-design.md",
+      "history_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0032",
+          "path": "docs/engineering/codebase-design.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0033",
+      "path": "docs/engineering/diagnosing-bugs.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0034",
+      "path": "docs/engineering/domain-modeling.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0035",
+      "path": "docs/engineering/grill-with-docs.md",
+      "history_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0035",
+          "path": "docs/engineering/grill-with-docs.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0036",
+      "path": "docs/engineering/implement.md",
+      "history_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0036",
+          "path": "docs/engineering/implement.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0037",
+      "path": "docs/engineering/improve-codebase-architecture.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0038",
+      "path": "docs/engineering/prototype.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0039",
+      "path": "docs/engineering/research.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0040",
+      "path": "docs/engineering/resolving-merge-conflicts.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0041",
+      "path": "docs/engineering/setup-matt-pocock-skills.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0042",
+      "path": "docs/engineering/tdd.md",
+      "history_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0042",
+          "path": "docs/engineering/tdd.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0043",
+      "path": "docs/engineering/to-spec.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0044",
+      "path": "docs/engineering/to-tickets.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0045",
+      "path": "docs/engineering/triage.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0046",
+      "path": "docs/engineering/wayfinder.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0047",
+      "path": "docs/engineering/wizard.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0048",
+      "path": "docs/productivity/grill-me.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0049",
+      "path": "docs/productivity/grilling.md",
+      "history_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0049",
+          "path": "docs/productivity/grilling.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0050",
+      "path": "docs/productivity/handoff.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0051",
+      "path": "docs/productivity/teach.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0052",
+      "path": "docs/productivity/to-questionnaire.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0053",
+      "path": "docs/productivity/wait-what.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0054",
+      "path": "docs/productivity/writing-for-agents.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0055",
+      "path": "package-lock.json",
+      "history_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0055",
+          "path": "package-lock.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0056",
+      "path": "package.json",
+      "history_bindings": [
+        {
+          "history_id": "H-001",
+          "lineage_state": "RECONCILED",
+          "area": "Changesets / package metadata",
+          "mp_id": "MP-0056",
+          "path": "package.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0056",
+          "path": "package.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0057",
+      "path": "scripts/link-skills.sh",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0057",
+          "path": "scripts/link-skills.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-009",
+          "lineage_state": "PARTIAL",
+          "area": "Local-link misc exclusion",
+          "mp_id": "MP-0057",
+          "path": "scripts/link-skills.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0058",
+      "path": "scripts/list-skills.sh",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0059",
+      "path": "scripts/sync-plugin-version.mjs",
+      "history_bindings": [
+        {
+          "history_id": "H-006",
+          "lineage_state": "RECONCILED",
+          "area": "Release version synchronization",
+          "mp_id": "MP-0059",
+          "path": "scripts/sync-plugin-version.mjs",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0060",
+      "path": "skills/deprecated/README.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0061",
+      "path": "skills/engineering/README.md",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0062",
+      "path": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0063",
+      "path": "skills/engineering/ask-matt/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0063",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0064",
+      "path": "skills/engineering/ask-matt/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0064",
+          "path": "skills/engineering/ask-matt/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0065",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0065",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0065",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0066",
+      "path": "skills/engineering/code-review/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0066",
+          "path": "skills/engineering/code-review/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0067",
+      "path": "skills/engineering/codebase-design/DEEPENING.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0068",
+      "path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0069",
+      "path": "skills/engineering/codebase-design/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0070",
+      "path": "skills/engineering/codebase-design/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0070",
+          "path": "skills/engineering/codebase-design/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0071",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0071",
+          "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0071",
+          "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0072",
+      "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0072",
+          "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0073",
+      "path": "skills/engineering/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0074",
+      "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0075",
+      "path": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0076",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0077",
+      "path": "skills/engineering/domain-modeling/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0077",
+          "path": "skills/engineering/domain-modeling/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0078",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0078",
+          "path": "skills/engineering/grill-with-docs/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0079",
+      "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0079",
+          "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0080",
+      "path": "skills/engineering/implement/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0081",
+      "path": "skills/engineering/implement/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0081",
+          "path": "skills/engineering/implement/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0082",
+      "path": "skills/engineering/improve-codebase-architecture/HTML-REPORT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0083",
+      "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0083",
+          "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0084",
+      "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0084",
+          "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0085",
+      "path": "skills/engineering/prototype/LOGIC.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0086",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0087",
+      "path": "skills/engineering/prototype/UI.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0088",
+      "path": "skills/engineering/prototype/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0088",
+          "path": "skills/engineering/prototype/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0089",
+      "path": "skills/engineering/research/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0090",
+      "path": "skills/engineering/research/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0090",
+          "path": "skills/engineering/research/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0091",
+      "path": "skills/engineering/resolving-merge-conflicts/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0092",
+      "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0092",
+          "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0093",
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0094",
+      "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0094",
+          "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0095",
+      "path": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0096",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0097",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0098",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0099",
+      "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0100",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-002",
+          "lineage_state": "RECONCILED",
+          "area": "TDD red-green lineage",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 3,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0101",
+      "path": "skills/engineering/tdd/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0101",
+          "path": "skills/engineering/tdd/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0102",
+      "path": "skills/engineering/tdd/mocking.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0103",
+      "path": "skills/engineering/tdd/tests.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0104",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0104",
+          "path": "skills/engineering/to-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0104",
+          "path": "skills/engineering/to-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0105",
+      "path": "skills/engineering/to-spec/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0105",
+          "path": "skills/engineering/to-spec/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0106",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0106",
+          "path": "skills/engineering/to-tickets/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0106",
+          "path": "skills/engineering/to-tickets/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0107",
+      "path": "skills/engineering/to-tickets/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0107",
+          "path": "skills/engineering/to-tickets/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0108",
+      "path": "skills/engineering/triage/AGENT-BRIEF.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0109",
+      "path": "skills/engineering/triage/OUT-OF-SCOPE.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0110",
+      "path": "skills/engineering/triage/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0110",
+          "path": "skills/engineering/triage/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0110",
+          "path": "skills/engineering/triage/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0111",
+      "path": "skills/engineering/triage/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0111",
+          "path": "skills/engineering/triage/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0112",
+      "path": "skills/engineering/wayfinder/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0112",
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-008",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation regression fix",
+          "mp_id": "MP-0112",
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0113",
+      "path": "skills/engineering/wayfinder/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0113",
+          "path": "skills/engineering/wayfinder/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0114",
+      "path": "skills/engineering/wizard/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0115",
+      "path": "skills/engineering/wizard/agents/openai.yaml",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0116",
+      "path": "skills/engineering/wizard/template.sh",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0117",
+      "path": "skills/in-progress/README.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0118",
+      "path": "skills/in-progress/claude-handoff/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0118",
+          "path": "skills/in-progress/claude-handoff/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0119",
+      "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0119",
+          "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0120",
+      "path": "skills/in-progress/implement-spec/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0121",
+      "path": "skills/in-progress/implement-spec/agents/openai.yaml",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0122",
+      "path": "skills/in-progress/loop-me/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0123",
+      "path": "skills/in-progress/loop-me/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0123",
+          "path": "skills/in-progress/loop-me/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0124",
+      "path": "skills/in-progress/retro/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0125",
+      "path": "skills/in-progress/retro/agents/openai.yaml",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0126",
+      "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0126",
+          "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0127",
+      "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0127",
+          "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0128",
+      "path": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0129",
+      "path": "skills/in-progress/writing-beats/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0130",
+      "path": "skills/in-progress/writing-beats/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0130",
+          "path": "skills/in-progress/writing-beats/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0131",
+      "path": "skills/in-progress/writing-fragments/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0132",
+      "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0132",
+          "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0133",
+      "path": "skills/in-progress/writing-shape/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0134",
+      "path": "skills/in-progress/writing-shape/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0134",
+          "path": "skills/in-progress/writing-shape/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0135",
+      "path": "skills/misc/README.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0136",
+      "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0137",
+      "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0137",
+          "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0138",
+      "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0139",
+      "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0140",
+      "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0140",
+          "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0141",
+      "path": "skills/misc/scaffold-exercises/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0142",
+      "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0142",
+          "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0143",
+      "path": "skills/misc/setup-pre-commit/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0144",
+      "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0144",
+          "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0145",
+      "path": "skills/productivity/README.md",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-005",
+          "lineage_state": "RECONCILED",
+          "area": "Router/docs coherence pass",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0146",
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0146",
+          "path": "skills/productivity/grill-me/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0147",
+      "path": "skills/productivity/grill-me/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0147",
+          "path": "skills/productivity/grill-me/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0148",
+      "path": "skills/productivity/grilling/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0149",
+      "path": "skills/productivity/grilling/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0149",
+          "path": "skills/productivity/grilling/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0150",
+      "path": "skills/productivity/handoff/SKILL.md",
+      "history_bindings": [
+        {
+          "history_id": "H-007",
+          "lineage_state": "RECONCILED",
+          "area": "Cross-skill invocation standardization",
+          "mp_id": "MP-0150",
+          "path": "skills/productivity/handoff/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0151",
+      "path": "skills/productivity/handoff/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0151",
+          "path": "skills/productivity/handoff/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0152",
+      "path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0153",
+      "path": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0154",
+      "path": "skills/productivity/teach/MISSION-FORMAT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0155",
+      "path": "skills/productivity/teach/RESOURCES-FORMAT.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0156",
+      "path": "skills/productivity/teach/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0157",
+      "path": "skills/productivity/teach/agents/openai.yaml",
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "PARTIAL",
+          "area": "Codex metadata introduction",
+          "mp_id": "MP-0157",
+          "path": "skills/productivity/teach/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
+      "has_partial_history_binding": true
+    },
+    {
+      "mp_id": "MP-0158",
+      "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0159",
+      "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0160",
+      "path": "skills/productivity/wait-what/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0161",
+      "path": "skills/productivity/wait-what/agents/openai.yaml",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0162",
+      "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0163",
+      "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    },
+    {
+      "mp_id": "MP-0164",
+      "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+      "history_bindings": [],
+      "history_binding_count": 0,
+      "has_partial_history_binding": false
+    }
+  ]
+}
