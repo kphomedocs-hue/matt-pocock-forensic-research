@@ -17,6 +17,7 @@ Lineage states: `RECONCILED / PARTIAL / NOT MATERIAL`.
 | H-007 | 2026-08-15 | Cross-skill invocation | PR #878 standardized operative cross-skill calls on explicit Skill-tool phrasing. | PR #878, merge `bb1c760...`. | Solved unreliable bare `/skill` prose but introduced semantic regression. | RECONCILED |
 | H-008 | 2026-08-15 | Cross-skill invocation regression | PR #880 fixed calls to user-invoked targets and added target-invocation-type carve-out to policy. | PR #880, merge `068b6e0...`; commit `1dab982...`. | Canonical example of syntax-correct rewrite violating higher-level invariant. | RECONCILED |
 | H-009 | 2026-09-04 | Local linking | Frozen baseline merge PR #1025: `link-skills` stopped linking misc/ into local skill directories. | Frozen commit `3cca18b368ae95cdbdebbff572ccafa662551015`; PR #1025 changes exactly `CLAUDE.md` and `scripts/link-skills.sh`. | Current local link set = engineering + productivity + in-progress; misc excluded. | PARTIAL |
+| H-010 | 2026-04-28 | scaffold-exercises variant contract / CT-020 | `skills/misc/scaffold-exercises/SKILL.md` was introduced already containing both the broad “at least one of problem/solution/explainer” rule and the narrower linter summary requiring problem/explainer/explainer.1. The file has one path-history commit, and its creation blob SHA `d87df28e7d8abb4e57ecc6e47d71c274d16054c7` is identical to the frozen-baseline blob SHA. | Commit `62f43a18177be6ec82da242e59ffbc490a4c22ea`; GitHub path history returns only that commit; creation and frozen fetches return the same blob SHA. | CT-020 is an introduction-time internal contract mismatch that remained byte-for-byte unchanged through the frozen baseline, not a later regression. | RECONCILED |
 
 ## Coverage policy
 
@@ -29,5 +30,5 @@ A high-impact item may leave Phase 5 only when its lineage is explicitly `RECONC
 - Trace plugin creation → subsequent promoted-set changes → current 25-skill manifest and move H-003 to RECONCILED.
 - Trace Codex metadata count evolution and invocation-mode corrections after the initial 39-skill metadata commit, then move H-004 to RECONCILED.
 - Trace the pre-#1025 local-link behavior and PR rationale in detail, then move H-009 to RECONCILED.
-- Trace current open defects that materially affect runtime behavior.
+- Trace remaining current open defects that materially affect runtime behavior. CT-020 introduction lineage is now reconciled by H-010.
 - For every high-impact current contradiction, identify introduction/fix/recurrence lineage where possible.
