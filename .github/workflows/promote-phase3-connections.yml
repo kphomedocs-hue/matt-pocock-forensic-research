@@ -29,34 +29,62 @@ jobs:
         run: git pull --ff-only origin main
       - name: Promote notes with per-file Phase 3 evidence
         run: python scripts/promote_phase3_connections.py
-      - name: Validate promoted note statuses
+      - name: Rebuild master ledger and census from promoted notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_master_ledger.py
+      - name: Rebuild Phase 3 closure index against promoted census
+        run: python scripts/build_phase3_closure_index.py
+      - name: Revalidate forensic foundation after promotion
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_foundation.py
+      - name: Validate promoted state
         run: |
           python - <<'PY'
-          import pathlib, re
+          import json, pathlib, re
           notes = sorted(pathlib.Path('02_FILE_NOTES').glob('MP-*.md'))
           assert len(notes) == 164, len(notes)
-          promoted = 0
           marker = '<!-- PHASE3_CONNECTIONS_TRACED_START -->'
           for note in notes:
               text = note.read_text(encoding='utf-8')
               m = re.search(r'^(?:-\s*)?Status:\s*(?:\*\*)?(.+?)(?:\*\*)?\s*$', text, re.MULTILINE)
-              assert m, note
-              assert m.group(1).strip() == 'CONNECTIONS TRACED', (note, m.group(1))
+              assert m and m.group(1).strip() == 'CONNECTIONS TRACED', (note, m.group(1) if m else None)
               assert text.count(marker) == 1, note
-              promoted += 1
-          assert promoted == 164
-          print('connections_traced=', promoted)
+
+          census = json.load(open('01_FILE_CENSUS.json', encoding='utf-8'))
+          assert len(census['files']) == 164
+          assert {r['status'] for r in census['files']} == {'CONNECTIONS TRACED'}
+
+          closure = json.load(open('03_PHASE3_CLOSURE_INDEX.json', encoding='utf-8'))
+          assert closure['state_counts'] == {'READY_CANDIDATE': 164}
+          assert not closure['blocker_counts']
+          assert {r['current_status'] for r in closure['rows']} == {'CONNECTIONS TRACED'}
+
+          foundation = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
+          assert foundation['hard_errors'] == []
+          assert foundation['warnings'] == []
+          print('connections_traced=164; closure_ready=164; foundation=GREEN')
           PY
-      - name: Commit promoted notes
+      - name: Commit atomic promoted state
         run: |
-          if [[ -z "$(git status --porcelain -- 02_FILE_NOTES)" ]]; then
-            echo "No note promotion changes"
+          paths=(
+            02_FILE_NOTES
+            01_MASTER_FILE_LEDGER.md
+            01_FILE_CENSUS.json
+            03_PHASE3_CLOSURE_INDEX.json
+            03_PHASE3_CLOSURE_INDEX.md
+            00_FOUNDATION_INTEGRITY.json
+            00_FOUNDATION_INTEGRITY.md
+          )
+          if [[ -z "$(git status --porcelain -- "${paths[@]}")" ]]; then
+            echo "No Phase 3 promotion-state changes"
             exit 0
           fi
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add 02_FILE_NOTES
-          git commit -m "phase3: promote 164 notes to connections traced"
+          git add "${paths[@]}"
+          git commit -m "phase3: publish atomic connections-traced state"
 
           for attempt in 1 2 3 4 5; do
             if git push; then
@@ -67,5 +95,5 @@ jobs:
             git rebase origin/main
             sleep 1
           done
-          echo "Failed to publish Phase 3 promotion after 5 attempts" >&2
+          echo "Failed to publish atomic Phase 3 state after 5 attempts" >&2
           exit 1
