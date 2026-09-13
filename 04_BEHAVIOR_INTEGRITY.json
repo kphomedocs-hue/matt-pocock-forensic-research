@@ -1,10 +1,10 @@
 {
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "row_count": 37,
+  "row_count": 38,
   "hard_errors": [],
   "state_counts": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 8,
+    "CONFIRMED_GAP": 9,
     "CONFIRMED_MATCH": 8,
     "CONFIRMED_WEAKNESS": 2,
     "RUNTIME_UNKNOWN": 6,
@@ -14,14 +14,14 @@
     "CI": 3,
     "DOCUMENTATION": 11,
     "EXECUTABLE_SCRIPT": 11,
-    "EXTERNAL_DEPENDENCY": 7,
-    "NONE": 8,
-    "PROMPT": 31,
+    "EXTERNAL_DEPENDENCY": 8,
+    "NONE": 9,
+    "PROMPT": 32,
     "RUNTIME": 12,
     "STATIC_CONFIG": 7
   },
   "machine_enforced_counts": {
-    "False": 27,
+    "False": 28,
     "PARTIAL": 2,
     "True": 8
   },
@@ -63,6 +63,7 @@
     "CT-014": 1,
     "CT-015": 1,
     "CT-016": 1,
-    "CT-017": 1
+    "CT-017": 1,
+    "CT-018": 1
   }
 }
