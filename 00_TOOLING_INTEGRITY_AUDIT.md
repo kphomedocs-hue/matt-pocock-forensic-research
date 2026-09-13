@@ -12,10 +12,10 @@ This audit checks whether our own automation could silently lose, stale, cancel,
 
 The durable incident ledger (`00_TOOLING_FAILURE_LEDGER.md` / `.json`, classifier version 3) covers failed and cancelled Actions runs.
 
-- Failed runs enumerated: **82**
+- Failed runs enumerated: **83**
 - Cancelled runs enumerated: **7**
-- Total incident runs: **89**
-- Incident entries classified: **89**
+- Total incident runs: **90**
+- Incident entries classified: **90**
 - Unknown entries: **0**
 - Unresolved / review-required entries: **0**
 - Evidence-corruption failures found: **0**
@@ -35,6 +35,7 @@ Current classification totals:
 | `CLASSIFIER_CLOSURE_GATE` | 3 |
 | `PHASE3_PROMOTION_PROVENANCE_PARSER` | 1 |
 | `PHASE3_QUALITY_RECHECK_GATE` | 1 |
+| `PHASE4_BATCH_BOOTSTRAP_TRIGGER` | 1 |
 
 ## Confirmed tooling defects and fixes
 
@@ -173,7 +174,19 @@ Current quality gate: **0 hard errors, 0 review items, 0 remaining improvements*
 
 During the storage-integrity audit, `RESEARCH_STATUS.md` still described the older Phase 3 v4 / 530-edge state while `03_CONNECTION_EDGES.json` and `03_PHASE3_QUALITY.json` already held the newer v5 state. This did not lose research data, but it could mislead a future session that resumed from prose alone.
 
-**Fix:** `RESEARCH_STATUS.md` was synchronized to v5 / 554 edges, `00_STORAGE_INTEGRITY_AUDIT.md` was added, and the manifest now requires future sessions to load machine JSON artifacts for exact numerical state.
+**Fix:** `RESEARCH_STATUS.md` was synchronized to v5 / 554 edges, `00_STORAGE_INTEGRITY_AUDIT.md` was added, and the manifest requires future sessions to load machine JSON artifacts for exact numerical state.
+
+### TI-014 — Phase 4 batch importer triggered on its own bootstrap commit
+
+**State:** FIXED / RECONCILED
+
+Run `34745903691` was the first `Apply Phase 4 batch` execution. Creating the workflow matched the workflow's initial path filters (`scripts/apply_phase4_batch.py` and the workflow YAML itself), even though no `04_PHASE4_BATCH.json` existed. The importer failed closed at `Apply pending Phase 4 batch` with `Missing 04_PHASE4_BATCH.json`.
+
+**Impact:** none to research data. No Phase 4 matrix, contradiction register, or generated artifact was modified by the failed run.
+
+**Fix:** automatic execution now triggers only when `04_PHASE4_BATCH.json` is pushed. The exact historical run is classified as `PHASE4_BATCH_BOOTSTRAP_TRIGGER`; future importer failures remain review-required. The incident monitor now watches both `Validate Phase 4 behavior matrix` and `Apply Phase 4 batch`.
+
+A second propagation issue was fixed at the same time: successful bot commits from the batch importer cannot be relied upon to trigger `Validate forensic foundation`, so the batch workflow now regenerates and validates foundation state inside the same atomic application before publishing.
 
 ## Current workflow proof and generated-state controls
 
@@ -181,12 +194,14 @@ Key durable controls now include:
 
 - frozen source identity and 164-file denominator;
 - 164 durable per-file notes;
-- foundation integrity validation;
+- foundation integrity validation with current-contradiction parity checking;
 - atomic Phase 3 rebuild;
 - Phase 3 second-order quality validation;
 - SHA-256 Phase 3 build manifest and verifier;
 - formal Phase 3 promotion gate;
 - Phase 4 behavior-matrix validation;
+- Phase 4 37-current-skill coverage index;
+- atomic Phase 4 batch application with same-run behavior, coverage, contradiction, and foundation reconciliation;
 - historical failure/cancellation classifier with zero-unknown and zero-unresolved closure.
 
 Current Phase 3 machine state is extraction rules v5 with **554 edges**, **554 stable edge IDs**, **490 literal source-line provenance edges**, **0 invocation-policy mismatches**, **0 illegal operative calls**, and a green second-order quality report.
@@ -199,9 +214,10 @@ Current Phase 3 machine state is extraction rules v5 with **554 edges**, **554 s
 - formal note/ledger status: **164 CONNECTIONS TRACED**;
 - foundation hard errors: **0**;
 - foundation warnings: **0**;
+- current contradiction parity: **CT-001…CT-020**;
 - Phase 3 closure: **164/164 READY_CANDIDATE, 0 blockers**;
 - Phase 3 quality: **0 hard errors, 0 review items, 0 remaining improvements**;
-- tooling incidents: **89/89 classified, 0 unknown, 0 unresolved**;
+- tooling incidents: **90/90 classified, 0 unknown, 0 unresolved**;
 - VERIFIED: **0**.
 
 ## What these incidents did not invalidate
@@ -210,6 +226,6 @@ No classified tooling incident changed the frozen source commit, changed source 
 
 ## Integrity conclusion
 
-The audit infrastructure has had real defects, including silent untracked-output handling, publication races, parser incompatibilities, cancellation-prone orchestration, stale incident accounting, invalid workflow-chaining assumptions, insufficient second-order Phase 3 proof, and stale human summaries. Each discovered class is now durably recorded and either mechanically prevented or made fail-closed.
+The audit infrastructure has had real defects, including silent untracked-output handling, publication races, parser incompatibilities, cancellation-prone orchestration, stale incident accounting, invalid workflow-chaining assumptions, insufficient second-order Phase 3 proof, stale human summaries, and an overbroad Phase 4 importer bootstrap trigger. Each discovered class is now durably recorded and either mechanically prevented or made fail-closed.
 
-Current incident history is **89/89 classified, 0 unknown, 0 unresolved/review-required**, with no evidence-corruption incident found. GitHub remains the authoritative durable state; chat/GPT summaries are secondary only.
+Current incident history is **90/90 classified, 0 unknown, 0 unresolved/review-required**, with no evidence-corruption incident found. GitHub remains the authoritative durable state; chat/GPT summaries are secondary only.
