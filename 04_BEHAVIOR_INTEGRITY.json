@@ -43,7 +43,8 @@
     "CT-014",
     "CT-015",
     "CT-016",
-    "CT-017"
+    "CT-017",
+    "CT-018"
   ],
   "contradiction_reference_counts": {
     "CT-001": 1,
