@@ -2,8 +2,8 @@
 """Create a deterministic SHA-256 manifest for authoritative Phase 3 state.
 
 The manifest fingerprints all local inputs that define the Phase 3 generated-state
-pipeline and the resulting authoritative artifacts. It contains no timestamp so an
-unchanged build is byte-for-byte reproducible.
+pipeline and acceptance gate, plus the resulting authoritative artifacts. It contains
+no timestamp so an unchanged build is byte-for-byte reproducible.
 """
 from __future__ import annotations
 
@@ -28,6 +28,9 @@ INPUTS = [
     "scripts/build_history_bindings.py",
     "scripts/build_phase3_closure_index.py",
     "scripts/enrich_master_ledger_connections.py",
+    "scripts/build_phase3_manifest.py",
+    "scripts/verify_phase3_manifest.py",
+    "scripts/validate_phase3_quality.py",
     ".github/workflows/rebuild-phase3-state.yml",
 ]
 
@@ -85,7 +88,7 @@ def main() -> None:
         "",
         f"Frozen source: `mattpocock/skills` @ `{FROZEN_COMMIT}`.",
         "",
-        "This manifest cryptographically binds the authoritative Phase 3 generator inputs to the generated outputs using SHA-256. It intentionally contains no timestamp so unchanged state is reproducible byte-for-byte.",
+        "This manifest cryptographically binds the authoritative Phase 3 generator and acceptance-gate inputs to the generated outputs using SHA-256. It intentionally contains no timestamp so unchanged state is reproducible byte-for-byte.",
         "",
         f"Inputs fingerprinted: **{len(INPUTS)}**. Outputs fingerprinted: **{len(OUTPUTS)}**.",
         "",
