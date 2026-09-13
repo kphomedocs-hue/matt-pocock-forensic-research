@@ -15,6 +15,8 @@ on:
       - 'Rebuild Phase 3 state'
       - 'Promote Phase 3 connections'
       - 'Validate Phase 3 quality'
+      - 'Validate Phase 4 behavior matrix'
+      - 'Apply Phase 4 batch'
     types: [completed]
 
 permissions:
