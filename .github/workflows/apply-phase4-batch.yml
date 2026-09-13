@@ -29,7 +29,7 @@ jobs:
         run: python scripts/apply_phase4_batch.py
       - name: Validate behavior matrix
         run: python scripts/validate_behavior_matrix.py
-      - name: Rebuild current-skill coverage
+      - name: Rebuild Phase 4 coverage
         run: python scripts/build_phase4_coverage.py
       - name: Refresh foundation report against merged contradictions
         env:
@@ -44,17 +44,22 @@ jobs:
           f = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
           assert d['hard_errors'] == []
           assert d.get('uncovered_current_contradiction_ids', []) == []
+          assert c['schema_version'] == 2
           assert c['hard_errors'] == []
           assert c['skill_denominator'] == 37
           assert c['covered_skills'] + c['uncovered_skills'] == 37
+          assert c['surface_denominator'] > 0
+          assert c['covered_surfaces'] + c['uncovered_surfaces'] == c['surface_denominator']
           assert f['hard_errors'] == []
           assert f['contradiction_ids_current'] == d['current_contradiction_ids']
           assert not __import__('pathlib').Path('04_PHASE4_BATCH.json').exists()
           print('behavior_rows=', d['row_count'])
           print('current_cts=', len(d['current_contradiction_ids']))
           print('skill_coverage=', f"{c['covered_skills']}/{c['skill_denominator']}")
+          print('surface_coverage=', f"{c['covered_surfaces']}/{c['surface_denominator']}")
           print('foundation_current_cts=', len(f['contradiction_ids_current']))
-          print('uncovered=', c['uncovered_mp_ids'])
+          print('uncovered_skills=', c['uncovered_mp_ids'])
+          print('uncovered_surfaces=', c['uncovered_surface_mp_ids'])
           PY
       - name: Commit atomic Phase 4 batch result
         run: |
