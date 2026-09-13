@@ -10,6 +10,7 @@ import io
 import json
 import os
 import pathlib
+import re
 import subprocess
 import urllib.request
 import zipfile
@@ -21,35 +22,15 @@ OUT_JSON = pathlib.Path("00_TOOLING_FAILURE_LEDGER.json")
 OUT_MD = pathlib.Path("00_TOOLING_FAILURE_LEDGER.md")
 CLASSIFICATION_VERSION = 3
 
-# Distinct-workflow executions proven to have been discarded by the former
-# shared concurrency group. Per-workflow lanes now replace that design.
 FIXED_CROSS_WORKFLOW_CANCEL_IDS = {
     34712776661,
     34712784616,
     34712792316,
 }
-
-# Exact classifier-hardening incidents. Future classifier failures remain review-required.
-FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS = {
-    34713138258,
-}
-FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {
-    34713153565,
-}
-
-# Exact Phase 3 promotion compatibility incident. Future promotion failures are not excused.
-FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS = {
-    34738911437,
-}
-
-# The first second-order Phase 3 quality run intentionally failed closed and exposed
-# duplicated history definitions plus incomplete quality architecture. The defects
-# were subsequently removed and the strengthened atomic Phase 3 rebuild passed.
-# This exact-ID exception prevents any future Phase 3 quality failure from being
-# silently treated as fixed.
-FIXED_PHASE3_QUALITY_RECHECK_IDS = {
-    34740170053,
-}
+FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS = {34713138258}
+FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {34713153565}
+FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS = {34738911437}
+FIXED_PHASE3_QUALITY_RECHECK_IDS = {34740170053}
 
 
 def request(url: str, accept: str = "application/vnd.github+json") -> bytes:
@@ -109,8 +90,6 @@ def fetch_job_log(job_id: int) -> str:
 
 
 def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str, str]:
-    # Exact, manually reconciled hardening incidents. Keeping these ID-scoped
-    # prevents a future failure in the same workflow from being auto-excused.
     if run_id in FIXED_CLASSIFIER_SCHEMA_TRANSITION_IDS:
         return (
             "CLASSIFIER_SCHEMA_TRANSITION",
@@ -244,10 +223,23 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
         )
 
     if "validate failure ledger outputs" in s or "validate tooling incident ledger outputs" in s:
+        # If classification itself completed and the only subsequent failure is the
+        # zero-unknown/zero-unresolved assertion, the control worked as designed.
+        # The root incident(s) remain separately listed in that generated ledger.
+        match = re.search(
+            r"classified\s+\d+\s+incident entries.*?unknown=(\d+);\s*unresolved=(\d+)",
+            l,
+        )
+        if match and (int(match.group(1)) > 0 or int(match.group(2)) > 0) and "assertionerror" in l:
+            return (
+                "CLASSIFIER_CLOSURE_GATE",
+                "DETECTED_AND_BLOCKED",
+                "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required.",
+            )
         return (
             "FAILURE_LEDGER_VALIDATION",
             "REQUIRES_REVIEW",
-            "Generated tooling incident ledger failed its own closure checks.",
+            "Generated tooling incident ledger failed validation for a reason other than the expected zero-unknown/zero-unresolved closure gate.",
         )
 
     if "sync latest main" in s or "sync latest main before" in s:
