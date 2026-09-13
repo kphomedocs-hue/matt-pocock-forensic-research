@@ -14,6 +14,7 @@ on:
       - 'Normalize note metadata'
       - 'Rebuild Phase 3 state'
       - 'Promote Phase 3 connections'
+      - 'Validate Phase 3 quality'
     types: [completed]
 
 permissions:
