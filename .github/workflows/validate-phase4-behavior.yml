@@ -1,0 +1,68 @@
+name: Validate Phase 4 behavior matrix
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '04_BEHAVIOR_MATRIX.json'
+      - '04_CONTRADICTION_REGISTER.md'
+      - '01_FILE_CENSUS.json'
+      - 'scripts/validate_behavior_matrix.py'
+      - '.github/workflows/validate-phase4-behavior.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-validate-phase4-behavior
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main
+        run: git pull --ff-only origin main
+      - name: Validate and render behavior matrix
+        run: python scripts/validate_behavior_matrix.py
+      - name: Validate generated outputs
+        run: |
+          test -s 04_BEHAVIOR_MATRIX.md
+          test -s 04_BEHAVIOR_INTEGRITY.json
+          python - <<'PY'
+          import json
+          d = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
+          assert d['hard_errors'] == []
+          assert d['row_count'] >= 20
+          assert 'CT-012' in d['current_contradiction_ids']
+          assert 'CT-013' in d['current_contradiction_ids']
+          print('behavior_rows=', d['row_count'])
+          print('states=', d['state_counts'])
+          print('runtime_observed=', d['runtime_observed_count'])
+          PY
+      - name: Commit rendered behavior state
+        run: |
+          paths=(04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json)
+          if [[ -z "$(git status --porcelain -- "${paths[@]}")" ]]; then
+            echo "Behavior matrix outputs already current"
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add "${paths[@]}"
+          git commit -m "phase4: render validated behavior matrix"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish behavior matrix outputs" >&2
+          exit 1
