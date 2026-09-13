@@ -1,83 +1,31 @@
 #!/usr/bin/env python3
-"""Bind durable history IDs to current frozen files by exact commit/PR changed paths.
+"""Bind durable history-ledger events to current frozen files.
 
-This is a connection-mapping join, not a claim that every changed file's full
-history is reconciled. Each binding inherits the durable H-entry lineage state.
+The Markdown history ledger is the human-authored source of truth for H-ID, area,
+lineage state, and exact commit/PR evidence. This builder parses those fields rather
+than duplicating them in Python, then intersects each exact event's changed-file set
+with the current 164-file frozen census.
+
+A binding means a current file was changed by that event. It does not upgrade a
+PARTIAL lineage entry to RECONCILED and does not prove complete history for a file.
 """
 from __future__ import annotations
 
 import json
 import os
 import pathlib
+import re
 import urllib.request
 from collections import defaultdict
 
 SOURCE_REPO = "mattpocock/skills"
 FROZEN_COMMIT = "3cca18b368ae95cdbdebbff572ccafa662551015"
 EXPECTED_FILES = 164
+EXPECTED_HISTORY_EVENTS = 9
 CENSUS = pathlib.Path("01_FILE_CENSUS.json")
+HISTORY_LEDGER = pathlib.Path("05_HISTORY_LEDGER.md")
 OUT_JSON = pathlib.Path("03_HISTORY_BINDINGS.json")
 OUT_MD = pathlib.Path("03_HISTORY_BINDINGS.md")
-
-EVENTS = [
-    {
-        "id": "H-001",
-        "state": "RECONCILED",
-        "area": "Changesets / package metadata",
-        "refs": [("commit", "a0324014864317489b5958bf632d7ec8dbccbdcd")],
-    },
-    {
-        "id": "H-002",
-        "state": "RECONCILED",
-        "area": "TDD red-green lineage",
-        "refs": [
-            ("commit", "e81f97660af0bebfdbf2e23db6a71f7dfcb9a659"),
-            ("commit", "80e9dcc6857f16cc08b8e5b190393ee7591517e0"),
-        ],
-    },
-    {
-        "id": "H-003",
-        "state": "PARTIAL",
-        "area": "Claude plugin creation",
-        "refs": [("commit", "42a5b70fcacc7baff1977b13f3919fb2f63af14e")],
-    },
-    {
-        "id": "H-004",
-        "state": "PARTIAL",
-        "area": "Codex metadata introduction",
-        "refs": [("commit", "697d4ce9742da558fd1ba6697c8e9775e2e302dd")],
-    },
-    {
-        "id": "H-005",
-        "state": "RECONCILED",
-        "area": "Router/docs coherence pass",
-        "refs": [("commit", "8a475c438d90a2f1d7d3710c12658b60dc701a13")],
-    },
-    {
-        "id": "H-006",
-        "state": "RECONCILED",
-        "area": "Release version synchronization",
-        "refs": [("commit", "f3554acafee0f1549d3f8f7881eca0634fd446d0")],
-    },
-    {
-        "id": "H-007",
-        "state": "RECONCILED",
-        "area": "Cross-skill invocation standardization",
-        "refs": [("pr", "878")],
-    },
-    {
-        "id": "H-008",
-        "state": "RECONCILED",
-        "area": "Cross-skill invocation regression fix",
-        "refs": [("pr", "880")],
-    },
-    {
-        "id": "H-009",
-        "state": "PARTIAL",
-        "area": "Local-link misc exclusion",
-        "refs": [("pr", "1025")],
-    },
-]
 
 
 def request_json(url: str):
@@ -113,16 +61,69 @@ def pr_files(number: str) -> list[str]:
     return paths
 
 
+def parse_history_ledger() -> list[dict]:
+    if not HISTORY_LEDGER.exists():
+        raise SystemExit(f"Missing durable history ledger: {HISTORY_LEDGER}")
+
+    events: list[dict] = []
+    seen: set[str] = set()
+    for line in HISTORY_LEDGER.read_text(encoding="utf-8").splitlines():
+        if not re.match(r"^\| H-\d{3} \|", line):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) != 7:
+            raise SystemExit(f"Cannot parse history ledger row: {line}")
+        history_id, date, area, event_text, evidence, significance, state = cells
+        if history_id in seen:
+            raise SystemExit(f"Duplicate history ID in ledger: {history_id}")
+        seen.add(history_id)
+        if state not in {"RECONCILED", "PARTIAL", "NOT MATERIAL"}:
+            raise SystemExit(f"Invalid history lineage state for {history_id}: {state}")
+
+        prs = sorted(set(re.findall(r"PR\s+#(\d+)", evidence, flags=re.IGNORECASE)))
+        commits = sorted(set(re.findall(r"\b[0-9a-f]{40}\b", evidence)))
+
+        # When a PR is named, use the PR changed-file set as the event boundary.
+        # Merge/commit SHAs in the same evidence cell are supporting provenance,
+        # not a second event whose changed paths should be unioned again.
+        if prs:
+            refs = [("pr", number) for number in prs]
+        else:
+            refs = [("commit", sha) for sha in commits]
+        if not refs:
+            raise SystemExit(f"History row {history_id} has no exact PR or 40-char commit evidence")
+
+        events.append({
+            "id": history_id,
+            "date": date,
+            "state": state,
+            "area": area,
+            "event": event_text,
+            "significance": significance,
+            "refs": refs,
+        })
+
+    if len(events) != EXPECTED_HISTORY_EVENTS:
+        raise SystemExit(
+            f"Expected {EXPECTED_HISTORY_EVENTS} durable history events, parsed {len(events)}"
+        )
+    expected_ids = {f"H-{i:03d}" for i in range(1, EXPECTED_HISTORY_EVENTS + 1)}
+    if {event["id"] for event in events} != expected_ids:
+        raise SystemExit("Durable history ID set is not the expected contiguous H-001..H-009 set")
+    return events
+
+
 def main() -> None:
     census = json.loads(CENSUS.read_text(encoding="utf-8"))
     if census.get("frozen_commit") != FROZEN_COMMIT or census.get("blob_count") != EXPECTED_FILES:
         raise SystemExit("Frozen census mismatch; refusing history binding build")
 
+    events = parse_history_ledger()
     current = {item["path"]: item for item in census["files"]}
     by_file: dict[str, list[dict]] = defaultdict(list)
     event_rows = []
 
-    for event in EVENTS:
+    for event in events:
         changed: set[str] = set()
         refs = []
         for ref_type, ref in event["refs"]:
@@ -147,8 +148,11 @@ def main() -> None:
 
         event_rows.append({
             "history_id": event["id"],
+            "date": event["date"],
             "lineage_state": event["state"],
             "area": event["area"],
+            "event": event["event"],
+            "current_significance": event["significance"],
             "refs": refs,
             "changed_paths_total": len(changed),
             "current_frozen_bindings": bindings,
@@ -169,8 +173,9 @@ def main() -> None:
     payload = {
         "source_repo": SOURCE_REPO,
         "frozen_commit": FROZEN_COMMIT,
+        "history_definition_source": str(HISTORY_LEDGER),
         "file_count": len(current),
-        "history_event_count": len(EVENTS),
+        "history_event_count": len(events),
         "events": event_rows,
         "files_with_history_bindings": sum(1 for row in file_rows if row["history_binding_count"]),
         "binding_count": sum(row["history_binding_count"] for row in file_rows),
@@ -183,11 +188,13 @@ def main() -> None:
         "",
         f"Frozen source: `{SOURCE_REPO}` @ `{FROZEN_COMMIT}`.",
         "",
-        "Bindings are generated by intersecting the exact changed-file set of each durable H-entry's commit/PR evidence with the current 164-file frozen census.",
+        f"History definitions are parsed directly from `{HISTORY_LEDGER}`; H-ID, area, lineage state, and exact PR/commit evidence are not duplicated in this builder.",
+        "",
+        "Bindings are generated by intersecting the exact changed-file set of each durable H-entry's event evidence with the current 164-file frozen census.",
         "",
         "A binding means **this current file was changed by that historical event**. It does not upgrade a `PARTIAL` history entry to reconciled and does not by itself prove complete lineage for the file.",
         "",
-        f"History entries bound: **{len(EVENTS)}**. Current files with one or more history bindings: **{payload['files_with_history_bindings']}**. Total current-file bindings: **{payload['binding_count']}**.",
+        f"History entries bound: **{len(events)}**. Current files with one or more history bindings: **{payload['files_with_history_bindings']}**. Total current-file bindings: **{payload['binding_count']}**.",
         "",
         "## Event summary",
         "",
@@ -218,8 +225,8 @@ def main() -> None:
 
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(
-        f"history events={len(EVENTS)} files_with_bindings={payload['files_with_history_bindings']} "
-        f"bindings={payload['binding_count']}"
+        f"history events={len(events)} files_with_bindings={payload['files_with_history_bindings']} "
+        f"bindings={payload['binding_count']} source={HISTORY_LEDGER}"
     )
 
 
