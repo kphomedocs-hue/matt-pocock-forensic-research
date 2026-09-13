@@ -23,8 +23,8 @@
       "sha256": "30b2106e9966591f0950f74f9ed68ed576865d3fd372fb9cba21965de7b3ec48"
     },
     "scripts/build_connection_graph.py": {
-      "bytes": 17173,
-      "sha256": "8637654ee7a93f6ecd075f9ceb599c60cb441cd3c94e6d10eda1447c8c40e7b3"
+      "bytes": 20440,
+      "sha256": "0fd9a0fd04a10d9ab34b3870035cbbfd126bd4e1ad57bb03a438edf67fe8443d"
     },
     "scripts/build_distribution_matrix.py": {
       "bytes": 10290,
@@ -61,16 +61,16 @@
   },
   "output_fingerprints": {
     "01_MASTER_FILE_LEDGER.md": {
-      "bytes": 36228,
-      "sha256": "04ea5006569d91ceead4a2acb366e76428849fa21e7af5ff87bcad29781ce490"
+      "bytes": 36231,
+      "sha256": "21d3c0f162c65d260714c25bf7551546fa9c897fd3f8271ed7a94f89452ba923"
     },
     "03_CONNECTION_EDGES.json": {
-      "bytes": 153578,
-      "sha256": "5cd78ec0dc3d5c584b63745763e834c455976c9c7e4482e02f840381a427c4a7"
+      "bytes": 199540,
+      "sha256": "5fa2bbca08b6b47334c212a006a593f8365ad5c5966fecf79035dcc31a38fc1b"
     },
     "03_CONNECTION_INDEX.md": {
-      "bytes": 18003,
-      "sha256": "8c72981ee3555dd1dc4a81e7febecf8568ce460bec57ebf5080925f7fb68990e"
+      "bytes": 18383,
+      "sha256": "893a8c674c5c8eb83eacae14d621d424094de013e4f1b7d0b6879eaf392a3c8f"
     },
     "03_DISTRIBUTION_MATRIX.json": {
       "bytes": 18470,
@@ -89,12 +89,12 @@
       "sha256": "1f7fbe0b51fb6592a2c875dbf55a8e73ba09e4ba16b6fec6a3c67dab4ad66264"
     },
     "03_PHASE3_CLOSURE_INDEX.json": {
-      "bytes": 112378,
-      "sha256": "5508d3ecbec5c99b74f6bfed9823883ba05f2b9558dcdadda26ac908fb09ec79"
+      "bytes": 112381,
+      "sha256": "650c2df4a2f046580dc86b18bdf3059172c7799e07814e9683221ea0e755f7a2"
     },
     "03_PHASE3_CLOSURE_INDEX.md": {
-      "bytes": 22521,
-      "sha256": "e652f32817b02d18d5c01d264ebb33ad9ed9c17838f9c93a08ebf1e9ecee0cc9"
+      "bytes": 22524,
+      "sha256": "8b1eb3eca806cfdc5d5b27508eab85bb7af1578c97369e4d1c44a98cc9007767"
     },
     "03_ROUTER_MATRIX.json": {
       "bytes": 9889,

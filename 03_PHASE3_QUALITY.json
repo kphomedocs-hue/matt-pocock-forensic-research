@@ -2,11 +2,11 @@
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "file_count": 164,
-  "graph_edge_count": 530,
+  "graph_edge_count": 554,
   "weak_backtick_skill_reference_count": 129,
   "weak_only_orphan_proof_count": 0,
   "unmapped_extra_link_syntax_count": 0,
-  "support_owner_gap_count": 1,
+  "support_owner_gap_count": 0,
   "history_parity": [
     {
       "history_id": "H-001",
@@ -66,19 +66,5 @@
   "master_ledger_blank_ref_row_count": 0,
   "hard_errors": [],
   "review_items": [],
-  "improvements": [
-    {
-      "kind": "SUPPORT_OWNERSHIP_GAPS",
-      "count": 1,
-      "severity": "MEDIUM",
-      "note": "Physical co-location proves ownership structurally but the graph does not encode it; add SUPPORT_BINDING edges or explicit dispositions.",
-      "items": [
-        {
-          "mp_id": "MP-0152",
-          "path": "skills/productivity/teach/GLOSSARY-FORMAT.md",
-          "owner": "skills/productivity/teach/SKILL.md"
-        }
-      ]
-    }
-  ]
+  "improvements": []
 }
