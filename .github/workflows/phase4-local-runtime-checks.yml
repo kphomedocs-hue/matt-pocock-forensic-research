@@ -56,11 +56,12 @@ jobs:
           integrity = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
           queue = json.load(open('04_RUNTIME_OBSERVATION_QUEUE.json', encoding='utf-8'))
           rows = {r['behavior_id']: r for r in matrix['rows']}
+          expected = ['B-004', 'B-015', 'B-018', 'B-056']
           assert evidence['frozen_commit'] == '3cca18b368ae95cdbdebbff572ccafa662551015'
           assert evidence['observed_source_head'] == evidence['frozen_commit']
           assert evidence['all_passed'] is True
-          assert [t['behavior_id'] for t in evidence['tests']] == ['B-015', 'B-018', 'B-056']
-          assert all(rows[bid]['runtime_observed'] is True for bid in ('B-015', 'B-018', 'B-056'))
+          assert [t['behavior_id'] for t in evidence['tests']] == expected
+          assert all(rows[bid]['runtime_observed'] is True for bid in expected)
           assert integrity['hard_errors'] == []
           assert queue['hard_errors'] == []
           assert queue['runtime_observed'] == integrity['runtime_observed_count']
