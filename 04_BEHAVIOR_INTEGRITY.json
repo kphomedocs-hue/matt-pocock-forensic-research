@@ -4,8 +4,8 @@
   "hard_errors": [],
   "state_counts": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 11,
-    "CONFIRMED_MATCH": 29,
+    "CONFIRMED_GAP": 10,
+    "CONFIRMED_MATCH": 30,
     "CONFIRMED_WEAKNESS": 3,
     "RUNTIME_UNKNOWN": 9,
     "STATICALLY_ENFORCED": 8
@@ -21,11 +21,11 @@
     "STATIC_CONFIG": 9
   },
   "machine_enforced_counts": {
-    "False": 51,
-    "PARTIAL": 6,
+    "False": 50,
+    "PARTIAL": 7,
     "True": 8
   },
-  "runtime_observed_count": 3,
+  "runtime_observed_count": 4,
   "current_contradiction_ids": [
     "CT-001",
     "CT-002",

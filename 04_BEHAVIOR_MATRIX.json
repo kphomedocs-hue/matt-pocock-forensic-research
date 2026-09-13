@@ -379,6 +379,15 @@
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": "34748024195",
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        },
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-005"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748243021",
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
     },
@@ -448,6 +457,15 @@
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": "34748024195",
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        },
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-002"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748243021",
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
     },
@@ -475,6 +493,15 @@
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": "34748024195",
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        },
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-001"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748243021",
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
@@ -984,11 +1011,20 @@
         "PROMPT",
         "EXECUTABLE_SCRIPT"
       ],
-      "state": "CONFIRMED_GAP",
-      "machine_enforced": false,
-      "runtime_observed": false,
-      "adjudication": "The documented grep looks only for ` as ` followed immediately by an uppercase letter. The skill's own double-assertion example contains lowercase `unknown` after the first `as`, so literal workflow execution can skip that advertised migration case.",
-      "next_evidence": "Replace or augment discovery and prove a fixture containing the documented double assertion is found and migrated."
+      "state": "CONFIRMED_MATCH",
+      "machine_enforced": "PARTIAL",
+      "runtime_observed": true,
+      "adjudication": "Exact frozen-command reproduction disproved the earlier discovery-gap hypothesis. The grep searches each whole line; a documented `as unknown as Request` fixture is returned because its second ` as Request` substring satisfies ` as [A-Z]`. A lowercase-target control (`as request`) did not match. The discovery command therefore covers both advertised assertion forms, although the subsequent migration edits remain prompt-driven rather than mechanically guaranteed.",
+      "next_evidence": "If deeper verification is needed, test the actual edit/import/type-check migration on representative single- and double-assertion files; discovery coverage itself is closed.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "EXACT_COMMAND_REPRODUCTION",
+          "test_id": "CT019-R1",
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": "34748243021",
+          "result_file": "04_CT019_REPRODUCTION.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-047",

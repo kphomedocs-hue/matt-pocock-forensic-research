@@ -37,8 +37,8 @@
   "behavior_row_count": 65,
   "covered_state_occurrences": {
     "CONFIRMED_DRIFT": 5,
-    "CONFIRMED_GAP": 15,
-    "CONFIRMED_MATCH": 22,
+    "CONFIRMED_GAP": 14,
+    "CONFIRMED_MATCH": 23,
     "CONFIRMED_WEAKNESS": 2,
     "RUNTIME_UNKNOWN": 8,
     "STATICALLY_ENFORCED": 4
@@ -460,7 +460,7 @@
         "B-046"
       ],
       "states": [
-        "CONFIRMED_GAP"
+        "CONFIRMED_MATCH"
       ],
       "contradiction_ids": [
         "CT-019"

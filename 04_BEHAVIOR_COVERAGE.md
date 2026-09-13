@@ -39,7 +39,7 @@ Uncovered current skills: **0**.
 | MP-0131 | `skills/in-progress/writing-fragments/SKILL.md` | YES | B-044 | CONFIRMED_MATCH | — |
 | MP-0133 | `skills/in-progress/writing-shape/SKILL.md` | YES | B-045 | CONFIRMED_MATCH | — |
 | MP-0136 | `skills/misc/git-guardrails-claude-code/SKILL.md` | YES | B-016 | STATICALLY_ENFORCED | — |
-| MP-0139 | `skills/misc/migrate-to-shoehorn/SKILL.md` | YES | B-046 | CONFIRMED_GAP | CT-019 |
+| MP-0139 | `skills/misc/migrate-to-shoehorn/SKILL.md` | YES | B-046 | CONFIRMED_MATCH | CT-019 |
 | MP-0141 | `skills/misc/scaffold-exercises/SKILL.md` | YES | B-047 | CONFIRMED_GAP | CT-020 |
 | MP-0143 | `skills/misc/setup-pre-commit/SKILL.md` | YES | B-017 | STATICALLY_ENFORCED | — |
 | MP-0146 | `skills/productivity/grill-me/SKILL.md` | YES | B-048 | CONFIRMED_MATCH | — |

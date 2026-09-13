@@ -66,7 +66,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-043 | writing-beats grounded incremental authorship | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The operative workflow establishes prerequisites, restricts candidates to already-grounded concepts, requires the user to choose, writes one beat only, re-reads from disk, and repeats. User edits are explicitly preserved and may change subsequent routing. |
 | B-044 | writing-fragments explore-only append discipline | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The skill explicitly separates explore from exploit, bans outlines/phases, defines a minimal fragment file format, captures from the initial prompt, and requires re-reading before writes. It permits targeted edits only on user request rather than blind overwrite. |
 | B-045 | writing-shape raw-input immutability | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The source requires a full initial read, a separate output path, explicit opening choice, grounded paragraph/block progression, immediate append after agreement, and re-read-before-write behavior while declaring the raw pile read-only. |
-| B-046 | migrate-to-shoehorn assertion discovery coverage | CONFIRMED_GAP | PROMPT, EXECUTABLE_SCRIPT | False | False | CT-019 | The documented grep looks only for ` as ` followed immediately by an uppercase letter. The skill's own double-assertion example contains lowercase `unknown` after the first `as`, so literal workflow execution can skip that advertised migration case. |
+| B-046 | migrate-to-shoehorn assertion discovery coverage | CONFIRMED_MATCH | PROMPT, EXECUTABLE_SCRIPT | PARTIAL | True | CT-019 | Exact frozen-command reproduction disproved the earlier discovery-gap hypothesis. The grep searches each whole line; a documented `as unknown as Request` fixture is returned because its second ` as Request` substring satisfies ` as [A-Z]`. A lowercase-target control (`as request`) did not match. The discovery command therefore covers both advertised assertion forms, although the subsequent migration edits remain prompt-driven rather than mechanically guaranteed. |
 | B-047 | scaffold-exercises variant/linter contract | CONFIRMED_GAP | PROMPT, EXTERNAL_DEPENDENCY | PARTIAL | False | CT-020 | The skill says any one of problem/solution/explainer is enough, but its own lint summary requires at least one of problem/explainer/explainer.1. The external linter is a real completion gate, so the prose can direct a scaffold into a state the mandated checker rejects. |
 | B-048 | grill-me delegation wrapper | CONFIRMED_MATCH | PROMPT | False | False | — | The entire operative body is a single call to `grilling`; this avoids duplicated interviewing logic and keeps grilling semantics in one source. Phase 3 invocation-policy joining found this current call legal. |
 | B-049 | grilling frontier and authority discipline | CONFIRMED_MATCH | PROMPT, RUNTIME | False | False | — | The design-tree/frontier model explicitly delays dependent questions, asks the whole current frontier in rounds, delegates fact-finding rather than asking the user, and keeps actual decisions with the user. Completion requires both an empty frontier and user confirmation. |
@@ -89,9 +89,9 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 
 ## Current counts
 
-- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 11, 'CONFIRMED_MATCH': 29, 'CONFIRMED_WEAKNESS': 3, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
+- states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 10, 'CONFIRMED_MATCH': 30, 'CONFIRMED_WEAKNESS': 3, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
 - enforcement layers: `{'CI': 3, 'DOCUMENTATION': 21, 'EXECUTABLE_SCRIPT': 13, 'EXTERNAL_DEPENDENCY': 11, 'NONE': 9, 'PROMPT': 56, 'RUNTIME': 21, 'STATIC_CONFIG': 9}`
-- runtime observed rows: **3 / 65**
+- runtime observed rows: **4 / 65**
 - current CT coverage: **20 / 20**
 - integrity hard errors: **0**
 

@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **3/65**.
-Pending stronger evidence: **62**.
+Runtime-observed rows: **4/65**.
+Pending stronger evidence: **61**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 3 | 27 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 4 | 26 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -67,7 +67,7 @@ Pending stronger evidence: **62**.
 | B-043 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0129 | writing-beats grounded incremental authorship | Runtime-test an attempted ungrounded beat and an external edit between turns; verify the candidate is blocked or grounded first and the edit is preserved. |
 | B-044 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0131 | writing-fragments explore-only append discipline | Runtime-test whether the agent resists outlining pressure and preserves reordered/deleted fragments made outside the conversation. |
 | B-045 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0133 | writing-shape raw-input immutability | Runtime-test with external edits to both raw and output files and verify the raw source is never modified while article edits are preserved. |
-| B-046 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0139 | migrate-to-shoehorn assertion discovery coverage | Replace or augment discovery and prove a fixture containing the documented double assertion is found and migrated. |
+| B-046 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | YES | MP-0139 | migrate-to-shoehorn assertion discovery coverage | If deeper verification is needed, test the actual edit/import/type-check migration on representative single- and double-assertion files; discovery coverage itself is closed. |
 | B-047 | EXTERNAL_DEPENDENCY_VALIDATION | CONFIRMED_GAP | NO | MP-0141 | scaffold-exercises variant/linter contract | Run a solution-only fixture against the actual linter and then align the operative variant rule to the observed acceptance set. |
 | B-048 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0146, MP-0148 | grill-me delegation wrapper | Runtime observation only needs to confirm the alias actually delegates rather than diverging in the host harness. |
 | B-049 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0148 | grilling frontier and authority discipline | Red-team with dependent questions and unavailable facts; verify downstream questions wait while unrelated frontier questions continue. |

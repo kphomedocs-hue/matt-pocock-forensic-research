@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "workflow_run_id": "34748243021",
+  "ct_id": "CT-019",
+  "behavior_id": "B-046",
+  "documented_command": "grep -r \" as [A-Z]\" --include=\"*.test.ts\" --include=\"*.spec.ts\"",
+  "fixture": "// SIMPLE_ASSERTION\nconst simple = {} as Request;\n// DOUBLE_ASSERTION\nconst doubled = {} as unknown as Request;\n// LOWERCASE_TARGET_CONTROL\nconst lower = {} as request;\n",
+  "returncode": 0,
+  "stdout": "fixture.test.ts:const simple = {} as Request;\nfixture.test.ts:const doubled = {} as unknown as Request;\n",
+  "stderr": "",
+  "simple_assertion_found": true,
+  "double_assertion_found": true,
+  "lowercase_target_control_found": false,
+  "conclusion": "CT-019 original discovery-gap hypothesis is false: grep scans the whole line, and the second `as Request` substring in `as unknown as Request` satisfies ` as [A-Z]`.",
+  "hard_errors": []
+}

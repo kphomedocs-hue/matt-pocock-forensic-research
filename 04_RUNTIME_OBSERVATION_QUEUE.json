@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 3,
-  "pending_total": 62,
+  "runtime_observed": 4,
+  "pending_total": 61,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 3,
+    "EXECUTION_OBSERVATION": 4,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 27,
+    "EXECUTION_OBSERVATION": 26,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -1176,15 +1176,15 @@
     {
       "behavior_id": "B-046",
       "area": "migrate-to-shoehorn assertion discovery coverage",
-      "state": "CONFIRMED_GAP",
-      "machine_enforced": false,
+      "state": "CONFIRMED_MATCH",
+      "machine_enforced": "PARTIAL",
       "enforcement_layers": [
         "PROMPT",
         "EXECUTABLE_SCRIPT"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0139"
       ],
@@ -1195,7 +1195,7 @@
         "CT-019"
       ],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Replace or augment discovery and prove a fixture containing the documented double assertion is found and migrated."
+      "next_evidence": "If deeper verification is needed, test the actual edit/import/type-check migration on representative single- and double-assertion files; discovery coverage itself is closed."
     },
     {
       "behavior_id": "B-047",
