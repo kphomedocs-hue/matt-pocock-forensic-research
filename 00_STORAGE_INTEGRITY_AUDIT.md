@@ -49,13 +49,10 @@ Phase 3 can be reconstructed and checked from GitHub without GPT memory.
 
 GitHub stores `04_CONTRADICTION_REGISTER.md`, `05_HISTORY_LEDGER.md`, and `03_HISTORY_BINDINGS.md/.json`.
 
-The current contradiction register contains **CT-001 through CT-018** plus historical **CT-H01 through CT-H03**. Recent findings include:
+The current contradiction register contains **CT-001 through CT-020** plus historical **CT-H01 through CT-H03**. The newest frozen-source findings include:
 
-- CT-014: implement-spec post-review repair changes lack a mandatory post-fix acceptance pass;
-- CT-015: parent spec `ready-for-agent` routing can be consumed as executable AFK work;
-- CT-016: to-tickets has no operative falsifiability/red-at-base acceptance-criteria gate;
-- CT-017: implement does not publish ticket completion needed for dependency-frontier progression;
-- CT-018: triage quick override can apply `ready-for-agent` without the authoritative Agent Brief required by the normal state contract.
+- CT-019: migrate-to-shoehorn's literal discovery grep misses the documented `as unknown as Type` double-assertion form;
+- CT-020: scaffold-exercises says a solution-only exercise is an allowed variant while its own linter summary excludes solution-only from the required primary-variant set.
 
 History definitions remain durable and machine-linked.
 
@@ -66,28 +63,36 @@ GitHub stores:
 - `04_BEHAVIOR_MATRIX.json`
 - `04_BEHAVIOR_MATRIX.md`
 - `04_BEHAVIOR_INTEGRITY.json`
+- `04_BEHAVIOR_COVERAGE.json`
+- `04_BEHAVIOR_COVERAGE.md`
 - `04_CONTRADICTION_REGISTER.md`
 - `scripts/validate_behavior_matrix.py`
+- `scripts/build_phase4_coverage.py`
+- `scripts/apply_phase4_batch.py`
 - `.github/workflows/validate-phase4-behavior.yml`
+- `.github/workflows/apply-phase4-batch.yml`
 
 Current validated state:
 
-- behavior rows: **38**;
+- behavior rows: **53**;
 - hard integrity errors: **0**;
-- runtime observed: **0/38**;
-- current CT coverage: **18/18**;
+- runtime observed: **0/53**;
+- current CT coverage: **20/20**;
 - uncovered current CT IDs: **0**;
-- strengthened validator proof: run `34744189799` — **SUCCESS**.
+- current `SKILL.md` coverage: **37/37**;
+- uncovered current skills: **0**.
 
-State counts: `CONFIRMED_DRIFT` 5, `CONFIRMED_GAP` 9, `CONFIRMED_MATCH` 8, `CONFIRMED_WEAKNESS` 2, `RUNTIME_UNKNOWN` 6, `STATICALLY_ENFORCED` 8.
+State counts: `CONFIRMED_DRIFT` 7, `CONFIRMED_GAP` 10, `CONFIRMED_MATCH` 13, `CONFIRMED_WEAKNESS` 4, `RUNTIME_UNKNOWN` 9, `STATICALLY_ENFORCED` 10.
 
-The Phase 4 validator now fails closed if any current contradiction ID lacks a behavior row. Phase 4 remains in progress and no row alone promotes a file to VERIFIED.
+The Phase 4 validator fails closed if any current contradiction ID lacks a behavior row. The coverage generator makes all 37 current skills explicit. The ephemeral batch importer applies behavior/CT batches atomically, deletes the batch file after success, refreshes behavior/coverage/foundation state in the same workflow, and therefore does not require GPT/chat or downstream bot-trigger chaining to carry state forward.
+
+Phase 4 remains in progress and no row or 37/37 breadth result alone promotes a file to VERIFIED.
 
 ### Tooling integrity / incidents
 
 GitHub stores `00_TOOLING_INTEGRITY_AUDIT.md`, `00_TOOLING_FAILURE_LEDGER.md/.json`, classifier tooling and workflow configuration.
 
-Latest closed incident state remains **89/89 classified**, with **0 unknown**, **0 unresolved/review-required**, and no evidence-corruption incident found.
+Current closed incident state is **90/90 classified**, with **0 unknown**, **0 unresolved/review-required**, and no evidence-corruption incident found. The 90th incident is the exact first-run Phase 4 batch-importer bootstrap failure; it changed no research data and is fixed by limiting automatic importer execution to actual `04_PHASE4_BATCH.json` pushes.
 
 ## GPT/chat storage rule
 
@@ -109,4 +114,4 @@ The enforceable project rule is:
 
 **PASS, with the visibility caveat that the repository is public.**
 
-No known important state required to resume Phases 1–4 exists only in GPT/chat context. The census, 164 file notes, Phase 3 graph/closure/quality/provenance evidence, CT-001…CT-018, history, the 38-row Phase 4 matrix, tooling incident history, scripts, workflows, and current status are stored in the user's GitHub repository.
+No known important state required to resume Phases 1–4 exists only in GPT/chat context. The census, 164 file notes, Phase 3 graph/closure/quality/provenance evidence, CT-001…CT-020, history, the 53-row Phase 4 matrix, 37/37 current-skill coverage, tooling incident history, scripts, workflows, and current status are stored in the user's GitHub repository.
