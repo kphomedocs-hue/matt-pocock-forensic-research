@@ -1,0 +1,72 @@
+name: Apply Phase 4 batch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '04_PHASE4_BATCH.json'
+      - 'scripts/apply_phase4_batch.py'
+      - '.github/workflows/apply-phase4-batch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-apply-phase4-batch
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main
+        run: git pull --ff-only origin main
+      - name: Apply pending Phase 4 batch
+        run: python scripts/apply_phase4_batch.py
+      - name: Validate behavior matrix
+        run: python scripts/validate_behavior_matrix.py
+      - name: Rebuild current-skill coverage
+        run: python scripts/build_phase4_coverage.py
+      - name: Validate merged state
+        run: |
+          python - <<'PY'
+          import json
+          d = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
+          c = json.load(open('04_BEHAVIOR_COVERAGE.json', encoding='utf-8'))
+          assert d['hard_errors'] == []
+          assert d.get('uncovered_current_contradiction_ids', []) == []
+          assert c['hard_errors'] == []
+          assert c['skill_denominator'] == 37
+          assert c['covered_skills'] + c['uncovered_skills'] == 37
+          assert not __import__('pathlib').Path('04_PHASE4_BATCH.json').exists()
+          print('behavior_rows=', d['row_count'])
+          print('current_cts=', len(d['current_contradiction_ids']))
+          print('skill_coverage=', f"{c['covered_skills']}/{c['skill_denominator']}")
+          print('uncovered=', c['uncovered_mp_ids'])
+          PY
+      - name: Commit atomic Phase 4 batch result
+        run: |
+          paths=(04_PHASE4_BATCH.json 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_CONTRADICTION_REGISTER.md)
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo "No Phase 4 batch changes"
+            exit 0
+          fi
+          git commit -m "phase4: apply validated behavior batch"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish Phase 4 batch result" >&2
+          exit 1
