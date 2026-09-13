@@ -75,7 +75,11 @@ Working authority:
 - `04_BEHAVIOR_MATRIX.json` — structured Phase 4 behavior claims/adjudications;
 - `04_BEHAVIOR_MATRIX.md` — deterministic human-readable view;
 - `04_BEHAVIOR_INTEGRITY.json` — cross-reference/schema integrity result;
-- `scripts/validate_behavior_matrix.py` + `.github/workflows/validate-phase4-behavior.yml` — fail-closed validator/render path.
+- `04_BEHAVIOR_COVERAGE.json` / `.md` — deterministic denominator across all 37 current `SKILL.md` files;
+- `scripts/validate_behavior_matrix.py` + `scripts/build_phase4_coverage.py` + `.github/workflows/validate-phase4-behavior.yml` — fail-closed validator/render/coverage path;
+- `scripts/apply_phase4_batch.py` + `.github/workflows/apply-phase4-batch.yml` — atomic importer for ephemeral `04_PHASE4_BATCH.json`; the batch file is deleted after a successful validated merge so it never becomes a second source of truth.
+
+Current breadth state: **37/37 current skills have at least one explicit behavior contract.** This is a coverage denominator only, not Phase 4 completion and not VERIFIED status.
 
 ### Phase 5 — History
 Gate: high-impact files/subsystems have creation, major semantic changes, regressions, fixes and current-state provenance traced.
@@ -134,10 +138,13 @@ Current controls include:
 - `00_TOOLING_FAILURE_LEDGER.md` / `.json` for failed and cancelled workflow incidents;
 - `03_PHASE3_BUILD_MANIFEST.md` / `.json` for SHA-256 build provenance;
 - `03_PHASE3_QUALITY.md` / `.json` for second-order Phase 3 quality checks;
+- `04_BEHAVIOR_INTEGRITY.json` for Phase 4 matrix/CT integrity;
+- `04_BEHAVIOR_COVERAGE.json` for the 37-current-skill breadth denominator;
 - workflow-specific concurrency lanes;
 - no implicit dependence on `GITHUB_TOKEN` workflow-commit chaining;
 - ordered atomic rebuilding for dependent Phase 3 artifacts;
-- fail-closed Phase 4 behavior-matrix cross-reference validation;
+- fail-closed Phase 4 behavior/coverage validation;
+- Phase 4 batch application refreshes foundation state in the same atomic workflow because bot commits cannot be relied upon to trigger downstream workflows;
 - fetch/rebase/push retry for independent cross-workflow write races;
 - zero-unknown and zero-review-required closure gates for the tooling incident ledger.
 
@@ -168,10 +175,11 @@ At the start of every new session or after major context compression, reload fro
 21. `03_PHASE3_BUILD_MANIFEST.json`
 22. `04_BEHAVIOR_MATRIX.json`
 23. `04_BEHAVIOR_INTEGRITY.json`
-24. `04_CONTRADICTION_REGISTER.md`
-25. `05_HISTORY_LEDGER.md`
+24. `04_BEHAVIOR_COVERAGE.json`
+25. `04_CONTRADICTION_REGISTER.md`
+26. `05_HISTORY_LEDGER.md`
 
-When exact numerical/per-edge Phase 3 state matters, load the generated JSON artifacts rather than relying on prose summaries. When exact Phase 4 row state matters, load `04_BEHAVIOR_MATRIX.json` as the structured source.
+When exact numerical/per-edge Phase 3 state matters, load the generated JSON artifacts rather than relying on prose summaries. When exact Phase 4 row state matters, load `04_BEHAVIOR_MATRIX.json`; when exact Phase 4 breadth matters, load `04_BEHAVIOR_COVERAGE.json`.
 
 Never resume from chat memory alone.
 
