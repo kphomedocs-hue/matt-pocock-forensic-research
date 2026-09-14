@@ -17,6 +17,24 @@ def load(path: pathlib.Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_named_tests(bid: str, evidence: dict, data: dict, result_file: str, errors: list[str]) -> None:
+    test_ids = set(evidence.get("test_ids", []))
+    if not test_ids:
+        errors.append(f"{bid}: {result_file} evidence missing test_ids")
+        return
+    tests = {t.get("test_id"): t for t in data.get("tests", [])}
+    for test_id in sorted(test_ids):
+        test = tests.get(test_id)
+        if not test:
+            errors.append(f"{bid}: test id {test_id} not found in {result_file}")
+            continue
+        if test.get("passed") is not True:
+            errors.append(f"{bid}: test id {test_id} is not passing in {result_file}")
+        behavior_ids = set(test.get("behavior_ids", []))
+        if bid not in behavior_ids:
+            errors.append(f"{bid}: test id {test_id} does not bind this behavior in {result_file}")
+
+
 def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
     result_file = evidence.get("result_file")
     if not result_file:
@@ -48,6 +66,12 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
         for test_id in test_ids:
             if test_id not in serialized:
                 errors.append(f"{bid}: smoke test id {test_id} not found in {result_file}")
+    elif result_file == "04_DEEP_MODULE_RUNTIME_RESULTS.json":
+        if data.get("hard_errors") not in ([], None):
+            errors.append(f"{bid}: deep-module runtime result contains hard errors")
+        if data.get("synthetic_inputs_only") is not True or data.get("user_or_live_repo_touched") is not False:
+            errors.append(f"{bid}: deep-module runtime isolation flags are not safe")
+        validate_named_tests(bid, evidence, data, result_file, errors)
 
 
 def main() -> None:
