@@ -464,9 +464,20 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
-      "adjudication": "The skill's completion path includes a real commit through Husky/lint-staged hooks, which is stronger than config existence alone. This audit has not executed that consumer-repo smoke test.",
-      "next_evidence": "Observe an end-to-end setup in a representative repo before RUNTIME OBSERVED promotion."
+      "runtime_observed": true,
+      "adjudication": "The frozen setup-pre-commit workflow is directly runtime-observed in a disposable npm/git repository. Husky initialization created prepare=husky and executable Git-hook shim plumbing; manual lint-staged formatted a staged file; then an actual commit using the documented message ran lint-staged, typecheck, and tests, formatted and re-staged a hook-only target, and completed cleanly. One frozen verification predicate is stale against the resolved Husky version: the generated .husky/pre-commit user file is not executable, while the executable .husky/_/pre-commit shim invokes it through sh -e. Functional hook execution still succeeds.",
+      "next_evidence": "Representative npm end-to-end smoke is closed. Preserve the executable-bit predicate mismatch as toolchain drift; package-manager variants and future upstream Husky/lint-staged compatibility remain separate generalization/current-state questions.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "SYNTHETIC_CONSUMER_RUNTIME",
+          "test_ids": [
+            "PC-001"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34869643879,
+          "result_file": "04_PRECOMMIT_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-018",

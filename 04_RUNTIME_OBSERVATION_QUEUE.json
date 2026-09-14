@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 10,
-  "pending_total": 55,
+  "runtime_observed": 11,
+  "pending_total": 54,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 10,
+    "EXECUTION_OBSERVATION": 11,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 20,
+    "EXECUTION_OBSERVATION": 19,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -475,8 +475,8 @@
         "RUNTIME"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0143"
       ],
@@ -485,7 +485,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Observe an end-to-end setup in a representative repo before RUNTIME OBSERVED promotion."
+      "next_evidence": "Representative npm end-to-end smoke is closed. Preserve the executable-bit predicate mismatch as toolchain drift; package-manager variants and future upstream Husky/lint-staged compatibility remain separate generalization/current-state questions."
     },
     {
       "behavior_id": "B-018",

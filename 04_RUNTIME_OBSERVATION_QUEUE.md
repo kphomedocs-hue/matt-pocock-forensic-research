@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **10/65**.
-Pending stronger evidence: **55**.
+Runtime-observed rows: **11/65**.
+Pending stronger evidence: **54**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 10 | 20 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 11 | 19 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -38,7 +38,7 @@ Pending stronger evidence: **55**.
 | B-014 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0126, MP-0128 | setup-ts-deep-modules proof-of-enforcement | Representative runtime completion semantics are closed. Broader compatibility across package managers and unusual repository layouts remains a separate generalization question. |
 | B-015 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0114, MP-0116 | wizard generated-script verification | Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only. |
 | B-016 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0136, MP-0138 | git-guardrails dangerous-command blocking | Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing. |
-| B-017 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0143 | setup-pre-commit hook smoke test | Observe an end-to-end setup in a representative repo before RUNTIME OBSERVED promotion. |
+| B-017 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0143 | setup-pre-commit hook smoke test | Representative npm end-to-end smoke is closed. Preserve the executable-bit predicate mismatch as toolchain drift; package-manager variants and future upstream Husky/lint-staged compatibility remain separate generalization/current-state questions. |
 | B-018 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0018, MP-0019, MP-0056, MP-0059 | plugin version synchronization | Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth. |
 | B-019 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0057 | local skill linking set | Filesystem symlink behavior can be runtime-observed later; static selection semantics are closed. |
 | B-020 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0058 | list-skills enumeration | No separate runtime verification is needed for static selection semantics unless environment-specific find behavior becomes material. |
