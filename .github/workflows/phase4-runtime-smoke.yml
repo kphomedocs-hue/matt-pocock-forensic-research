@@ -59,6 +59,7 @@ jobs:
           python scripts/validate_behavior_matrix.py
           python scripts/build_phase4_coverage.py
           python scripts/build_phase4_runtime_queue.py
+          python scripts/validate_phase4_runtime_provenance.py
       - name: Refresh foundation after contradiction adjudication
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -101,8 +102,8 @@ jobs:
           assert f['hard_errors'] == []
           observed = {x['behavior_id'] for x in q['items'] if x['runtime_observed']}
           assert {'B-016', 'B-019', 'B-020', 'B-046'} <= observed
-          assert 'B-018' not in observed
-          assert 'B-056' not in observed
+          # B-018/B-056 are supporting-only in this smoke suite but may be globally
+          # runtime-observed by the separate deterministic local-runtime suite.
           b46 = next(x for x in q['items'] if x['behavior_id'] == 'B-046')
           assert b46['state'] == 'CONFIRMED_MATCH'
           register = open('04_CONTRADICTION_REGISTER.md', encoding='utf-8').read()
