@@ -40,6 +40,8 @@ PHASE4_CT019_ROW_ANCHOR_TRANSITION_IDS = {
     34850571686,
     34851582989,
 }
+PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION_IDS = {34867570179}
+PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION_IDS = {34867918904}
 
 _original_classify_failure = base.classify_failure
 
@@ -86,6 +88,18 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE4_CT019_ROW_ANCHOR_TRANSITION",
             "NO_RESEARCH_DATA_CHANGE_FIXED",
             "The six-test Phase 4 runtime smoke itself passed, then the CT-019 adjudication helper failed because it searched for obsolete full-row wording after CT-019 had already been rewritten as an audit correction. The helper now matches the stable CT-019 row IDs; run 34866017975 passed the full smoke/adjudication workflow with that idempotent repair.",
+        )
+    if run_id in PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION_IDS:
+        return (
+            "PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION",
+            "NO_RESEARCH_DATA_CHANGE_FIXED",
+            "The first isolated B-012/B-014 consumer harness failed closed before any runtime promotion while its synthetic TypeScript environment was still being made source-faithful. No behavior row was changed by the failed run. The harness was corrected and pinned to a dependency-cruiser-compatible TypeScript line; run 34868071587 then passed the exact frozen pass/fail/pass and fifth-rule observations and published the evidence.",
+        )
+    if run_id in PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION_IDS:
+        return (
+            "PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION",
+            "NO_RESEARCH_DATA_CHANGE_FIXED",
+            "The second isolated B-012/B-014 harness installed dependency-cruiser 18.3.0 alongside TypeScript 7. Dependency-cruiser explicitly reported support only for TypeScript <7 and therefore cruised 0 modules/0 dependencies, so the fail-closed run produced no valid behavior observation and no promotion. Pinning the synthetic fixture to TypeScript 6 fixed the environment; run 34868071587 passed and published the durable evidence.",
         )
     return _original_classify_failure(run_id, failed_step, log)
 
