@@ -114,7 +114,21 @@
       "machine_enforced": "PARTIAL",
       "runtime_observed": true,
       "adjudication": "package.json -> plugin.json synchronization is executable/release-wired, but package-lock root metadata remains 0.0.0 and is outside the sync script. Direct frozen runtime observation: the stale 0.0.0 lock metadata was reproduced; npm pack selected package.json version 1.2.3, and an offline package-lock-only normalization rewrote both root lock version fields to 1.2.3.",
-      "next_evidence": "Release-path observation remains separate under B-029; local npm behavior shows the stale root lock version is normalized and does not control npm pack versioning."
+      "next_evidence": "Release-path observation remains separate under B-029; local npm behavior shows the stale root lock version is normalized and does not control npm pack versioning.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "DETERMINISTIC_LOCAL_RUNTIME",
+          "test_ids": [
+            "frozen_fixture_contains_expected_version_drift",
+            "npm_pack_uses_package_json_version",
+            "offline_lockfile_normalization_succeeds",
+            "npm_normalizes_root_lock_versions_to_package_json"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34752990655,
+          "result_file": "04_RUNTIME_EXECUTION_EVIDENCE.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-005",
@@ -349,7 +363,20 @@
       "machine_enforced": "PARTIAL",
       "runtime_observed": true,
       "adjudication": "Wizard requires bash -n and shellcheck when available, but explicitly does not require an end-to-end agent execution. Static syntax/lint proof is stronger than prose-only but weaker than runtime observation. Direct frozen runtime observation: bash syntax passed; the shipped example completed with synthetic values, wrote the expected env entries without echoing the dummy secret, and preserved existing values on rerun.",
-      "next_evidence": "Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only."
+      "next_evidence": "Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "DETERMINISTIC_LOCAL_RUNTIME",
+          "test_ids": [
+            "bash_n",
+            "first_run_writes_dummy_values_without_echoing_secret",
+            "rerun_preserves_existing_values_idempotently"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34752990655,
+          "result_file": "04_RUNTIME_EXECUTION_EVIDENCE.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-016",
@@ -377,7 +404,7 @@
             "RT-005"
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748024195",
+          "workflow_run_id": 34748024195,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         },
         {
@@ -386,7 +413,7 @@
             "RT-005"
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748243021",
+          "workflow_run_id": 34748243021,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
@@ -430,7 +457,21 @@
       "machine_enforced": true,
       "runtime_observed": true,
       "adjudication": "npm run version invokes sync-plugin-version.mjs and the release workflow uses that command; --check detects drift. This closes plugin/package drift statically while leaving package-lock outside the mechanism (B-004/CT-004). Direct frozen runtime observation: --check passed in sync, failed on synthetic drift, and the executable repaired plugin.json to package.json without package-lock.json present.",
-      "next_evidence": "Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth."
+      "next_evidence": "Observe a live Changesets release/version-PR path later; B-004 separately tracks package-lock version truth.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "DETERMINISTIC_LOCAL_RUNTIME",
+          "test_ids": [
+            "in_sync_check_passes",
+            "drift_check_fails",
+            "repair_restores_package_version",
+            "script_operates_without_package_lock_present"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34752990655,
+          "result_file": "04_RUNTIME_EXECUTION_EVIDENCE.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-019",
@@ -455,7 +496,7 @@
             "RT-002"
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748024195",
+          "workflow_run_id": 34748024195,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         },
         {
@@ -464,7 +505,7 @@
             "RT-002"
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748243021",
+          "workflow_run_id": 34748243021,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
@@ -492,7 +533,7 @@
             "RT-001"
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748024195",
+          "workflow_run_id": 34748024195,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         },
         {
@@ -501,7 +542,7 @@
             "RT-001"
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748243021",
+          "workflow_run_id": 34748243021,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
@@ -1021,7 +1062,7 @@
           "evidence_type": "EXACT_COMMAND_REPRODUCTION",
           "test_id": "CT019-R1",
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
-          "workflow_run_id": "34748243021",
+          "workflow_run_id": 34748243021,
           "result_file": "04_CT019_REPRODUCTION.json"
         }
       ]
@@ -1240,7 +1281,20 @@
       "machine_enforced": "PARTIAL",
       "runtime_observed": true,
       "adjudication": "The shell functions step() and capture() mechanically block on terminal input and print captured values at the end. The file explicitly warns that capture echoes values back to the terminal and says signing in should remain a step, but nothing in the function prevents a caller from capturing a secret. The safety boundary therefore depends on correct template editing. Direct frozen runtime observation: the HITL shell template passed syntax and completed a benign synthetic interaction, emitting captured values exactly as documented.",
-      "next_evidence": "Red-team secret/PII misuse and shell-input edge cases later; do not use real credentials."
+      "next_evidence": "Red-team secret/PII misuse and shell-input edge cases later; do not use real credentials.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "DETERMINISTIC_LOCAL_RUNTIME",
+          "test_ids": [
+            "bash_n",
+            "benign_flow_completes",
+            "captured_values_are_printed_for_agent"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34752990655,
+          "result_file": "04_RUNTIME_EXECUTION_EVIDENCE.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-057",
