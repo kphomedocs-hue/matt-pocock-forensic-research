@@ -1,0 +1,118 @@
+name: Repair Phase 4 recheck findings
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/repair_phase4_recheck.py'
+      - '.github/workflows/repair-phase4-recheck.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-repair-phase4-recheck
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest main
+        run: git pull --ff-only origin main
+      - name: Apply narrow Phase 4 repairs
+        run: python scripts/repair_phase4_recheck.py
+      - name: Make provenance denominator future-safe
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/validate_phase4_runtime_provenance.py')
+          text = p.read_text(encoding='utf-8')
+          old = '''    if len(observed) != 8:\n        errors.append(f"expected current runtime-observed denominator 8, found {len(observed)}")\n\n'''
+          new = '''    integrity = load(pathlib.Path("04_BEHAVIOR_INTEGRITY.json"))\n    queue = load(pathlib.Path("04_RUNTIME_OBSERVATION_QUEUE.json"))\n    if integrity.get("runtime_observed_count") != len(observed):\n        errors.append("behavior integrity runtime-observed count disagrees with matrix")\n    if queue.get("runtime_observed") != len(observed):\n        errors.append("runtime queue observed count disagrees with matrix")\n\n'''
+          if old not in text:
+              raise SystemExit('future-safe provenance denominator anchor missing')
+          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+      - name: Regenerate and validate Phase 4 state
+        run: |
+          python scripts/validate_behavior_matrix.py
+          python scripts/build_phase4_coverage.py
+          python scripts/build_phase4_runtime_queue.py
+          python scripts/validate_phase4_runtime_provenance.py
+      - name: Refresh foundation parity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_foundation.py
+      - name: Verify repaired invariants
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          matrix = json.load(open('04_BEHAVIOR_MATRIX.json', encoding='utf-8'))
+          integ = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
+          queue = json.load(open('04_RUNTIME_OBSERVATION_QUEUE.json', encoding='utf-8'))
+          rows = {r['behavior_id']: r for r in matrix['rows']}
+          observed = [r for r in matrix['rows'] if r.get('runtime_observed') is True]
+          assert integ['hard_errors'] == []
+          assert queue['hard_errors'] == []
+          assert len(observed) == integ['runtime_observed_count'] == queue['runtime_observed']
+          assert all(r.get('runtime_evidence') for r in observed)
+          for bid in ['B-004', 'B-015', 'B-018', 'B-056']:
+              ev = rows[bid]['runtime_evidence']
+              assert any(x.get('workflow_run_id') == 34752990655 for x in ev)
+              assert any(x.get('result_file') == '04_RUNTIME_EXECUTION_EVIDENCE.json' for x in ev)
+          register = open('04_CONTRADICTION_REGISTER.md', encoding='utf-8').read()
+          ct4 = next(line for line in register.splitlines() if line.startswith('| CT-004 |'))
+          cells = [c.strip() for c in ct4.strip().strip('|').split('|')]
+          assert cells[5] == 'OPEN'
+          assert 'runtime effect still UNKNOWN' not in ct4
+          assert 'live release/CI consumer behavior remains open under B-029' in ct4
+          assert 'scripts/validate_phase4_runtime_provenance.py' in open('.github/workflows/validate-phase4-behavior.yml', encoding='utf-8').read()
+          assert 'Validate Phase 4 runtime provenance' in open('.github/workflows/phase4-local-runtime-checks.yml', encoding='utf-8').read()
+          assert 'Validate Phase 4 runtime provenance' in open('.github/workflows/phase4-runtime-smoke.yml', encoding='utf-8').read()
+          assert open('.github/workflows/phase4-main-guard.yml', encoding='utf-8').read().strip()
+          print('Phase 4 recheck invariants GREEN')
+          PY
+      - name: Commit repaired Phase 4 control layer
+        run: |
+          paths=(
+            04_CONTRADICTION_REGISTER.md
+            04_BEHAVIOR_MATRIX.json
+            04_BEHAVIOR_MATRIX.md
+            04_BEHAVIOR_INTEGRITY.json
+            04_BEHAVIOR_COVERAGE.json
+            04_BEHAVIOR_COVERAGE.md
+            04_RUNTIME_OBSERVATION_QUEUE.json
+            04_RUNTIME_OBSERVATION_QUEUE.md
+            00_FOUNDATION_INTEGRITY.json
+            00_FOUNDATION_INTEGRITY.md
+            scripts/validate_phase4_runtime_provenance.py
+            .github/workflows/validate-phase4-behavior.yml
+            .github/workflows/phase4-local-runtime-checks.yml
+            .github/workflows/phase4-runtime-smoke.yml
+            .github/workflows/phase4-main-guard.yml
+          )
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo 'Phase 4 recheck repairs already applied'
+            exit 0
+          fi
+          git commit -m 'phase4: close recheck control-layer gaps'
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo 'Failed to publish Phase 4 recheck repairs' >&2
+          exit 1
