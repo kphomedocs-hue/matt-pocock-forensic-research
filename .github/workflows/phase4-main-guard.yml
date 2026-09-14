@@ -1,0 +1,40 @@
+name: Phase 4 main guard
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: forensic-phase4-main-guard
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Validate Phase 4 matrix
+        run: python scripts/validate_behavior_matrix.py
+      - name: Validate Phase 4 breadth
+        run: python scripts/build_phase4_coverage.py
+      - name: Validate Phase 4 evidence queue
+        run: python scripts/build_phase4_runtime_queue.py
+      - name: Validate Phase 4 runtime provenance
+        run: python scripts/validate_phase4_runtime_provenance.py
+      - name: Ensure validators are non-mutating on committed main
+        run: |
+          if [[ -n "$(git status --porcelain -- 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md)" ]]; then
+            echo "Committed Phase 4 generated state is stale" >&2
+            git status --short
+            exit 1
+          fi
+          echo "Phase 4 main guard GREEN"
