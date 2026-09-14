@@ -415,6 +415,15 @@
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": 34748243021,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        },
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-005"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34866017975,
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
     },
@@ -507,6 +516,15 @@
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": 34748243021,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        },
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-002"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34866017975,
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
     },
@@ -543,6 +561,15 @@
           ],
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": 34748243021,
+          "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
+        },
+        {
+          "evidence_type": "ISOLATED_RUNTIME_SMOKE",
+          "test_ids": [
+            "RT-001"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34866017975,
           "result_file": "04_RUNTIME_SMOKE_RESULTS.json"
         }
       ]
@@ -1063,6 +1090,13 @@
           "test_id": "CT019-R1",
           "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
           "workflow_run_id": 34748243021,
+          "result_file": "04_CT019_REPRODUCTION.json"
+        },
+        {
+          "evidence_type": "EXACT_COMMAND_REPRODUCTION",
+          "test_id": "CT019-R1",
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34866017975,
           "result_file": "04_CT019_REPRODUCTION.json"
         }
       ]
