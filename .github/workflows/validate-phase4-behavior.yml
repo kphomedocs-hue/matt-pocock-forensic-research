@@ -7,8 +7,12 @@ on:
     paths:
       - '04_BEHAVIOR_MATRIX.json'
       - '04_CONTRADICTION_REGISTER.md'
+      - '04_RUNTIME_EXECUTION_EVIDENCE.json'
+      - '04_RUNTIME_SMOKE_RESULTS.json'
+      - '04_CT019_REPRODUCTION.json'
       - '01_FILE_CENSUS.json'
       - 'scripts/validate_behavior_matrix.py'
+      - 'scripts/validate_phase4_runtime_provenance.py'
       - 'scripts/build_phase4_coverage.py'
       - 'scripts/build_phase4_runtime_queue.py'
       - '.github/workflows/validate-phase4-behavior.yml'
@@ -38,6 +42,8 @@ jobs:
         run: python scripts/build_phase4_coverage.py
       - name: Build Phase 4 evidence-depth queue
         run: python scripts/build_phase4_runtime_queue.py
+      - name: Validate Phase 4 runtime provenance
+        run: python scripts/validate_phase4_runtime_provenance.py
       - name: Validate generated outputs
         run: |
           test -s 04_BEHAVIOR_MATRIX.md
