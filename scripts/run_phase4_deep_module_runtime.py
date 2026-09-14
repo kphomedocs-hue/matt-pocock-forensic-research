@@ -197,7 +197,7 @@ def main() -> None:
         (root / ".dependency-cruiser.cjs").write_text(config_text, encoding="utf-8")
 
         install = run(
-            ["npm", "install", "--save-dev", "--no-audit", "--no-fund", "dependency-cruiser", "typescript"],
+            ["npm", "install", "--save-dev", "--no-audit", "--no-fund", "dependency-cruiser", "typescript@^6"],
             cwd=root,
             timeout=240,
         )
