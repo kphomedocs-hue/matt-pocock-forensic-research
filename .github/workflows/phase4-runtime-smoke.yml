@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/run_phase4_runtime_smoke.py'
       - 'scripts/reproduce_ct019.py'
+      - 'scripts/normalize_phase4_runtime_evidence.py'
       - '.github/workflows/phase4-runtime-smoke.yml'
 
 permissions:
@@ -54,6 +55,8 @@ jobs:
         env:
           GITHUB_RUN_ID: ${{ github.run_id }}
         run: python scripts/reproduce_ct019.py --source frozen-source
+      - name: Canonicalize runtime evidence run IDs
+        run: python scripts/normalize_phase4_runtime_evidence.py
       - name: Rebuild Phase 4 state after runtime evidence
         run: |
           python scripts/validate_behavior_matrix.py
