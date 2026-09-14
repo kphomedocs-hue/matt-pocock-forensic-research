@@ -1,0 +1,111 @@
+name: Phase 4 setup-pre-commit runtime
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/run_phase4_precommit_runtime.py'
+      - 'scripts/validate_phase4_runtime_provenance.py'
+      - '.github/workflows/phase4-precommit-runtime.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-phase4-precommit-runtime
+  cancel-in-progress: false
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout research state
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Checkout exact frozen source
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: mattpocock/skills
+          ref: 3cca18b368ae95cdbdebbff572ccafa662551015
+          path: frozen-source
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Sync latest research main
+        run: git pull --ff-only origin main
+      - name: Validate runner prerequisites
+        run: |
+          command -v git
+          command -v python
+          command -v node
+          command -v npm
+          test "$(git -C frozen-source rev-parse HEAD)" = "3cca18b368ae95cdbdebbff572ccafa662551015"
+      - name: Run isolated setup-pre-commit runtime harness
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: python scripts/run_phase4_precommit_runtime.py --source frozen-source
+      - name: Rebuild Phase 4 state after pre-commit evidence
+        run: |
+          python scripts/validate_behavior_matrix.py
+          python scripts/build_phase4_coverage.py
+          python scripts/build_phase4_runtime_queue.py
+      - name: Refresh foundation after runtime promotion
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/validate_foundation.py
+      - name: Validate runtime provenance and promotion gate
+        run: |
+          python scripts/validate_phase4_runtime_provenance.py
+          python - <<'PY'
+          import json
+          r = json.load(open('04_PRECOMMIT_RUNTIME_RESULTS.json', encoding='utf-8'))
+          m = json.load(open('04_BEHAVIOR_MATRIX.json', encoding='utf-8'))
+          i = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
+          q = json.load(open('04_RUNTIME_OBSERVATION_QUEUE.json', encoding='utf-8'))
+          f = json.load(open('00_FOUNDATION_INTEGRITY.json', encoding='utf-8'))
+          assert r['frozen_commit'] == '3cca18b368ae95cdbdebbff572ccafa662551015'
+          assert r['source_checkout_head'] == r['frozen_commit']
+          assert r['synthetic_inputs_only'] is True
+          assert r['user_or_live_repo_touched'] is False
+          assert r['hard_errors'] == []
+          assert r['runtime_closure_behavior_ids'] == ['B-017']
+          assert set(r['package_versions']) == {'husky', 'lint-staged', 'prettier'}
+          test = next(x for x in r['tests'] if x['test_id'] == 'PC-001')
+          assert test['passed'] is True
+          rows = {x['behavior_id']: x for x in m['rows']}
+          assert rows['B-017']['runtime_observed'] is True
+          assert rows['B-017']['state'] == 'STATICALLY_ENFORCED'
+          assert i['hard_errors'] == []
+          assert i['runtime_observed_count'] >= 11
+          assert q['hard_errors'] == []
+          assert q['runtime_observed'] == i['runtime_observed_count']
+          assert f['hard_errors'] == []
+          print('precommit_runtime=', r['runtime_closure_behavior_ids'])
+          print('package_versions=', r['package_versions'])
+          print('runtime_observed_total=', i['runtime_observed_count'])
+          print('pending_total=', q['pending_total'])
+          PY
+      - name: Commit setup-pre-commit runtime evidence
+        run: |
+          paths=(04_PRECOMMIT_RUNTIME_RESULTS.json 04_PRECOMMIT_RUNTIME_RESULTS.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo "Setup-pre-commit runtime evidence already current"
+            exit 0
+          fi
+          git commit -m "phase4: record setup-pre-commit runtime evidence"
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish setup-pre-commit runtime evidence" >&2
+          exit 1

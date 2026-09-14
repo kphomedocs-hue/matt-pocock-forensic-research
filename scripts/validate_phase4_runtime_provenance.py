@@ -35,6 +35,14 @@ def validate_named_tests(bid: str, evidence: dict, data: dict, result_file: str,
             errors.append(f"{bid}: test id {test_id} does not bind this behavior in {result_file}")
 
 
+def validate_isolated_named_result(bid: str, evidence: dict, data: dict, result_file: str, errors: list[str]) -> None:
+    if data.get("hard_errors") not in ([], None):
+        errors.append(f"{bid}: {result_file} contains hard errors")
+    if data.get("synthetic_inputs_only") is not True or data.get("user_or_live_repo_touched") is not False:
+        errors.append(f"{bid}: {result_file} isolation flags are not safe")
+    validate_named_tests(bid, evidence, data, result_file, errors)
+
+
 def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
     result_file = evidence.get("result_file")
     if not result_file:
@@ -67,11 +75,12 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
             if test_id not in serialized:
                 errors.append(f"{bid}: smoke test id {test_id} not found in {result_file}")
     elif result_file == "04_DEEP_MODULE_RUNTIME_RESULTS.json":
-        if data.get("hard_errors") not in ([], None):
-            errors.append(f"{bid}: deep-module runtime result contains hard errors")
-        if data.get("synthetic_inputs_only") is not True or data.get("user_or_live_repo_touched") is not False:
-            errors.append(f"{bid}: deep-module runtime isolation flags are not safe")
-        validate_named_tests(bid, evidence, data, result_file, errors)
+        validate_isolated_named_result(bid, evidence, data, result_file, errors)
+    elif result_file == "04_PRECOMMIT_RUNTIME_RESULTS.json":
+        validate_isolated_named_result(bid, evidence, data, result_file, errors)
+        versions = data.get("package_versions", {})
+        if set(versions) != {"husky", "lint-staged", "prettier"} or any(not versions.get(x) for x in versions):
+            errors.append(f"{bid}: pre-commit evidence lacks resolved Husky/lint-staged/Prettier versions")
 
 
 def main() -> None:
@@ -89,9 +98,6 @@ def main() -> None:
     else:
         allowed_statuses = {x.strip() for x in status_header.group(1).split("/")}
 
-    rows = re.findall(r"^\| (CT-\d{3}) \|.*?\| ([A-Z][A-Z ]*(?:DESIGN)?) \| ([A-Z][A-Z ]*(?:DESIGN)?) \|.*?\|$", register_text, re.MULTILINE)
-    # Regex above is intentionally conservative; independently parse current CT table rows
-    # so status checks do not silently disappear when classification wording contains punctuation.
     for line in register_text.splitlines():
         if not re.match(r"^\| CT-\d{3} \|", line):
             continue
