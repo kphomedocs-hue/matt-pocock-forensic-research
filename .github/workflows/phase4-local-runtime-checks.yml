@@ -43,6 +43,8 @@ jobs:
         run: python scripts/build_phase4_coverage.py
       - name: Rebuild Phase 4 evidence-depth queue
         run: python scripts/build_phase4_runtime_queue.py
+      - name: Validate Phase 4 runtime provenance
+        run: python scripts/validate_phase4_runtime_provenance.py
       - name: Refresh foundation parity
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,6 +64,7 @@ jobs:
           assert evidence['all_passed'] is True
           assert [t['behavior_id'] for t in evidence['tests']] == expected
           assert all(rows[bid]['runtime_observed'] is True for bid in expected)
+          assert all(rows[bid].get('runtime_evidence') for bid in expected)
           assert integrity['hard_errors'] == []
           assert queue['hard_errors'] == []
           assert queue['runtime_observed'] == integrity['runtime_observed_count']
