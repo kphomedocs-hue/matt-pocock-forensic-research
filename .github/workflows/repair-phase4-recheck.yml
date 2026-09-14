@@ -98,7 +98,7 @@ jobs:
           assert open('.github/workflows/phase4-main-guard.yml', encoding='utf-8').read().strip()
           print('Phase 4 recheck invariants GREEN')
           PY
-      - name: Commit repaired Phase 4 control layer
+      - name: Commit repaired Phase 4 research state
         run: |
           paths=(
             04_CONTRADICTION_REGISTER.md
@@ -112,24 +112,20 @@ jobs:
             00_FOUNDATION_INTEGRITY.json
             00_FOUNDATION_INTEGRITY.md
             scripts/validate_phase4_runtime_provenance.py
-            .github/workflows/validate-phase4-behavior.yml
-            .github/workflows/phase4-local-runtime-checks.yml
-            .github/workflows/phase4-runtime-smoke.yml
-            .github/workflows/phase4-main-guard.yml
           )
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -- "${paths[@]}"
           if git diff --cached --quiet; then
-            echo 'Phase 4 recheck repairs already applied'
+            echo 'Phase 4 research-state repairs already applied'
             exit 0
           fi
-          git commit -m 'phase4: close recheck control-layer gaps'
+          git commit -m 'phase4: close recheck research-state gaps'
           for attempt in 1 2 3 4 5; do
             if git push; then exit 0; fi
             git fetch origin main
             git rebase origin/main
             sleep 1
           done
-          echo 'Failed to publish Phase 4 recheck repairs' >&2
+          echo 'Failed to publish Phase 4 research-state repairs' >&2
           exit 1
