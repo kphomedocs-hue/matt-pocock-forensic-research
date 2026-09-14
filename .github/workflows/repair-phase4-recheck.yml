@@ -93,8 +93,8 @@ jobs:
           assert 'runtime effect still UNKNOWN' not in ct4
           assert 'live release/CI consumer behavior remains open under B-029' in ct4
           assert 'scripts/validate_phase4_runtime_provenance.py' in open('.github/workflows/validate-phase4-behavior.yml', encoding='utf-8').read()
-          assert 'Validate Phase 4 runtime provenance' in open('.github/workflows/phase4-local-runtime-checks.yml', encoding='utf-8').read()
-          assert 'Validate Phase 4 runtime provenance' in open('.github/workflows/phase4-runtime-smoke.yml', encoding='utf-8').read()
+          assert 'scripts/validate_phase4_runtime_provenance.py' in open('.github/workflows/phase4-local-runtime-checks.yml', encoding='utf-8').read()
+          assert 'scripts/validate_phase4_runtime_provenance.py' in open('.github/workflows/phase4-runtime-smoke.yml', encoding='utf-8').read()
           assert open('.github/workflows/phase4-main-guard.yml', encoding='utf-8').read().strip()
           print('Phase 4 recheck invariants GREEN')
           PY
