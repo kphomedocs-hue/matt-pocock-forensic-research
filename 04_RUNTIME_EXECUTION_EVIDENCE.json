@@ -3,7 +3,7 @@
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "observed_source_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "generated_at_utc": "2026-09-13T10:54:54.828003+00:00",
+  "generated_at_utc": "2026-09-14T13:39:01.728575+00:00",
   "tests": [
     {
       "behavior_id": "B-004",
