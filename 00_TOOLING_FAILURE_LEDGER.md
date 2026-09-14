@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **83**
+Failed workflow runs enumerated: **109**
 
-Cancelled workflow runs enumerated: **7**
+Cancelled workflow runs enumerated: **10**
 
-Total incident runs: **90**
+Total incident runs: **119**
 
-Incident entries classified: **90**
+Incident entries classified: **119**
 
 Unknown entries: **0**
 
@@ -20,17 +20,24 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 3 |
-| CLASSIFIER_REFRESH_SUPERSEDED | 4 |
+| CLASSIFIER_CLOSURE_GATE | 15 |
+| CLASSIFIER_REFRESH_SUPERSEDED | 7 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
 | FOUNDATION_GATE | 1 |
 | FOUNDATION_PROVENANCE_GATE | 1 |
 | FOUNDATION_REGISTER_GATE | 3 |
+| PHASE3_HISTORY_DEFINITION_RECONCILIATION | 4 |
+| PHASE3_HISTORY_EVENT_COUNT_TRANSITION | 2 |
+| PHASE3_HISTORY_EXACT_EVIDENCE_GATE | 2 |
 | PHASE3_PROMOTION_PROVENANCE_PARSER | 1 |
 | PHASE3_QUALITY_RECHECK_GATE | 1 |
 | PHASE4_BATCH_BOOTSTRAP_TRIGGER | 1 |
-| PUSH_RACE | 61 |
+| PHASE4_CT019_ROW_ANCHOR_TRANSITION | 2 |
+| PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | 1 |
+| PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION | 1 |
+| PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | 1 |
+| PUSH_RACE | 62 |
 | STATUS_PARSER | 10 |
 
 ## Impact summary
@@ -38,13 +45,14 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 8 |
-| DETECTED_AND_BLOCKED_FIXED | 2 |
+| DETECTED_AND_BLOCKED | 20 |
+| DETECTED_AND_BLOCKED_FIXED | 10 |
 | DISCARDED_EXECUTION_FIXED | 3 |
-| FIXED_CONFIGURATION_MISMATCH | 1 |
+| FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
-| REDUNDANT_REFRESH_DISCARDED | 4 |
-| TEMPORARILY_STALE | 61 |
+| NO_RESEARCH_DATA_CHANGE_FIXED | 3 |
+| REDUNDANT_REFRESH_DISCARDED | 7 |
+| TEMPORARILY_STALE | 62 |
 
 ## Incident ledger
 
@@ -140,6 +148,35 @@ Unresolved/review-required entries: **0**
 | 34740488271 | failure | 2026-09-13T05:30:57Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 34740614575 | failure | 2026-09-13T05:34:01Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 34745903691 | failure | 2026-09-13T07:42:42Z | Apply Phase 4 batch | Apply pending Phase 4 batch | PHASE4_BATCH_BOOTSTRAP_TRIGGER | NO_DATA_CHANGE_FIXED |
+| 34750032928 | failure | 2026-09-13T09:41:47Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_EVENT_COUNT_TRANSITION | DETECTED_AND_BLOCKED_FIXED |
+| 34750032982 | failure | 2026-09-13T09:41:47Z | Validate Phase 3 quality | Enforce Phase 3 quality gate | PHASE3_HISTORY_DEFINITION_RECONCILIATION | DETECTED_AND_BLOCKED_FIXED |
+| 34750058890 | failure | 2026-09-13T09:42:27Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34750079498 | failure | 2026-09-13T09:43:00Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34752972889 | failure | 2026-09-13T10:52:25Z | Phase 4 local runtime checks | Enforce runtime-evidence acceptance gate | PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
+| 34753069061 | failure | 2026-09-13T10:54:48Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34753078094 | cancelled | 2026-09-13T10:55:00Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 34753085869 | failure | 2026-09-13T10:55:10Z | Validate Phase 3 quality | Enforce Phase 3 quality gate | PHASE3_HISTORY_DEFINITION_RECONCILIATION | DETECTED_AND_BLOCKED_FIXED |
+| 34753085943 | failure | 2026-09-13T10:55:10Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_EVENT_COUNT_TRANSITION | DETECTED_AND_BLOCKED_FIXED |
+| 34753122920 | failure | 2026-09-13T10:56:04Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34753128364 | failure | 2026-09-13T10:56:13Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34753173840 | failure | 2026-09-13T10:57:19Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_EXACT_EVIDENCE_GATE | DETECTED_AND_BLOCKED_FIXED |
+| 34753173848 | failure | 2026-09-13T10:57:19Z | Validate Phase 3 quality | Enforce Phase 3 quality gate | PHASE3_HISTORY_DEFINITION_RECONCILIATION | DETECTED_AND_BLOCKED_FIXED |
+| 34753181972 | cancelled | 2026-09-13T10:57:32Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 34753197749 | failure | 2026-09-13T10:57:57Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34753231819 | failure | 2026-09-13T10:58:49Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34753493374 | failure | 2026-09-13T11:04:42Z | Validate Phase 3 quality | Enforce Phase 3 quality gate | PHASE3_HISTORY_DEFINITION_RECONCILIATION | DETECTED_AND_BLOCKED_FIXED |
+| 34753493482 | failure | 2026-09-13T11:04:42Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_EXACT_EVIDENCE_GATE | DETECTED_AND_BLOCKED_FIXED |
+| 34753534524 | failure | 2026-09-13T11:05:34Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34753536022 | cancelled | 2026-09-13T11:05:36Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 34753546267 | failure | 2026-09-13T11:05:53Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34849974317 | failure | 2026-09-14T13:33:29Z | Repair Phase 4 recheck findings | Regenerate and validate Phase 4 state | PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION | FIXED_CONFIGURATION_MISMATCH |
+| 34850175820 | failure | 2026-09-14T13:35:26Z | Repair Phase 4 recheck findings | Verify repaired invariants | PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | FIXED_CONFIGURATION_MISMATCH |
+| 34850257070 | failure | 2026-09-14T13:36:11Z | Repair Phase 4 recheck findings | Commit repaired Phase 4 control layer | PUSH_RACE | TEMPORARILY_STALE |
+| 34850571686 | failure | 2026-09-14T13:39:16Z | Phase 4 runtime smoke | Reproduce and adjudicate CT-019 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
+| 34850593696 | failure | 2026-09-14T13:39:29Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34851582989 | failure | 2026-09-14T13:48:55Z | Phase 4 runtime smoke | Reproduce and adjudicate CT-019 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
+| 34851605530 | failure | 2026-09-14T13:49:08Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34860744756 | failure | 2026-09-14T15:13:28Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 
