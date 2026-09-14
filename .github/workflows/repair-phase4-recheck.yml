@@ -29,6 +29,23 @@ jobs:
         run: git pull --ff-only origin main
       - name: Apply narrow Phase 4 repairs
         run: python scripts/repair_phase4_recheck.py
+      - name: Normalize runtime evidence run IDs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('04_BEHAVIOR_MATRIX.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          changed = 0
+          for row in data.get('rows', []):
+              for ev in row.get('runtime_evidence', []) or []:
+                  value = ev.get('workflow_run_id')
+                  if isinstance(value, str) and value.isdigit():
+                      ev['workflow_run_id'] = int(value)
+                      changed += 1
+          p.write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
+          print('normalized_workflow_run_ids=', changed)
+          PY
       - name: Make provenance denominator future-safe
         run: |
           python - <<'PY'
@@ -55,7 +72,6 @@ jobs:
         run: |
           python - <<'PY'
           import json
-          import re
           matrix = json.load(open('04_BEHAVIOR_MATRIX.json', encoding='utf-8'))
           integ = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
           queue = json.load(open('04_RUNTIME_OBSERVATION_QUEUE.json', encoding='utf-8'))
@@ -65,6 +81,7 @@ jobs:
           assert queue['hard_errors'] == []
           assert len(observed) == integ['runtime_observed_count'] == queue['runtime_observed']
           assert all(r.get('runtime_evidence') for r in observed)
+          assert all(isinstance(ev.get('workflow_run_id'), int) for r in observed for ev in r.get('runtime_evidence', []))
           for bid in ['B-004', 'B-015', 'B-018', 'B-056']:
               ev = rows[bid]['runtime_evidence']
               assert any(x.get('workflow_run_id') == 34752990655 for x in ev)
