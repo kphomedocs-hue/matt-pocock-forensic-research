@@ -1,10 +1,10 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 109,
+  "failed_run_count": 111,
   "cancelled_run_count": 10,
-  "incident_run_count": 119,
-  "incident_entry_count": 119,
+  "incident_run_count": 121,
+  "incident_entry_count": 121,
   "classification_counts": {
     "CLASSIFIER_CLOSURE_GATE": 15,
     "CLASSIFIER_REFRESH_SUPERSEDED": 7,
@@ -20,6 +20,8 @@
     "PHASE3_QUALITY_RECHECK_GATE": 1,
     "PHASE4_BATCH_BOOTSTRAP_TRIGGER": 1,
     "PHASE4_CT019_ROW_ANCHOR_TRANSITION": 2,
+    "PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION": 1,
+    "PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION": 1,
     "PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION": 1,
     "PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION": 1,
     "PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION": 1,
@@ -33,7 +35,7 @@
     "DISCARDED_EXECUTION_FIXED": 3,
     "FIXED_CONFIGURATION_MISMATCH": 3,
     "NO_DATA_CHANGE_FIXED": 1,
-    "NO_RESEARCH_DATA_CHANGE_FIXED": 3,
+    "NO_RESEARCH_DATA_CHANGE_FIXED": 5,
     "REDUNDANT_REFRESH_DISCARDED": 7,
     "TEMPORARILY_STALE": 62
   },
@@ -1705,6 +1707,34 @@
       "classification": "CLASSIFIER_CLOSURE_GATE",
       "impact": "DETECTED_AND_BLOCKED",
       "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
+    },
+    {
+      "run_id": 34867570179,
+      "run_conclusion": "failure",
+      "run_number": 1,
+      "workflow": "Phase 4 deep-module runtime",
+      "created_at": "2026-09-14T16:16:31Z",
+      "head_sha": "d77a5dbf605be2013a0e9be47da48ea72f63c44f",
+      "title": "phase4: run deep-module synthetic runtime evidence",
+      "job_id": 104055147068,
+      "failed_step": "Run isolated deep-module runtime harness",
+      "classification": "PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION",
+      "impact": "NO_RESEARCH_DATA_CHANGE_FIXED",
+      "reason": "The first isolated B-012/B-014 consumer harness failed closed before any runtime promotion while its synthetic TypeScript environment was still being made source-faithful. No behavior row was changed by the failed run. The harness was corrected and pinned to a dependency-cruiser-compatible TypeScript line; run 34868071587 then passed the exact frozen pass/fail/pass and fifth-rule observations and published the evidence."
+    },
+    {
+      "run_id": 34867918904,
+      "run_conclusion": "failure",
+      "run_number": 2,
+      "workflow": "Phase 4 deep-module runtime",
+      "created_at": "2026-09-14T16:19:51Z",
+      "head_sha": "76b61aa0d7b47f652a4a88f1a8a2ac5ec18d999f",
+      "title": "phase4: make deep-module fixture resolve extensionless imports",
+      "job_id": 104056319761,
+      "failed_step": "Run isolated deep-module runtime harness",
+      "classification": "PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION",
+      "impact": "NO_RESEARCH_DATA_CHANGE_FIXED",
+      "reason": "The second isolated B-012/B-014 harness installed dependency-cruiser 18.3.0 alongside TypeScript 7. Dependency-cruiser explicitly reported support only for TypeScript <7 and therefore cruised 0 modules/0 dependencies, so the fail-closed run produced no valid behavior observation and no promotion. Pinning the synthetic fixture to TypeScript 6 fixed the environment; run 34868071587 passed and published the durable evidence."
     }
   ]
 }

@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **109**
+Failed workflow runs enumerated: **111**
 
 Cancelled workflow runs enumerated: **10**
 
-Total incident runs: **119**
+Total incident runs: **121**
 
-Incident entries classified: **119**
+Incident entries classified: **121**
 
 Unknown entries: **0**
 
@@ -34,6 +34,8 @@ Unresolved/review-required entries: **0**
 | PHASE3_QUALITY_RECHECK_GATE | 1 |
 | PHASE4_BATCH_BOOTSTRAP_TRIGGER | 1 |
 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | 2 |
+| PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION | 1 |
+| PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | 1 |
 | PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | 1 |
@@ -50,7 +52,7 @@ Unresolved/review-required entries: **0**
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
-| NO_RESEARCH_DATA_CHANGE_FIXED | 3 |
+| NO_RESEARCH_DATA_CHANGE_FIXED | 5 |
 | REDUNDANT_REFRESH_DISCARDED | 7 |
 | TEMPORARILY_STALE | 62 |
 
@@ -177,6 +179,8 @@ Unresolved/review-required entries: **0**
 | 34851582989 | failure | 2026-09-14T13:48:55Z | Phase 4 runtime smoke | Reproduce and adjudicate CT-019 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 | 34851605530 | failure | 2026-09-14T13:49:08Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 34860744756 | failure | 2026-09-14T15:13:28Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34867570179 | failure | 2026-09-14T16:16:31Z | Phase 4 deep-module runtime | Run isolated deep-module runtime harness | PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
+| 34867918904 | failure | 2026-09-14T16:19:51Z | Phase 4 deep-module runtime | Run isolated deep-module runtime harness | PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 
 ## Closure rule
 
