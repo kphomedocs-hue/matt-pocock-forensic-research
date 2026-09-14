@@ -21,7 +21,9 @@ REGISTER = pathlib.Path("04_CONTRADICTION_REGISTER.md")
 OUT_JSON = pathlib.Path("04_CT019_REPRODUCTION.json")
 OUT_MD = pathlib.Path("04_CT019_REPRODUCTION.md")
 
-PRIMARY_OLD_PREFIX = "| CT-019 | migrate-to-shoehorn assertion discovery |"
+# Match the stable contradiction IDs rather than a mutable historical row title.
+# This keeps reruns idempotent after CT-019 has already been adjudicated.
+PRIMARY_OLD_PREFIX = "| CT-019 |"
 OVERLAY_OLD_PREFIX = "| ↳ CT-019 |"
 
 
