@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "workflow_run_id": 34868071587,
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "dependency_cruiser_version": "18.3.0",
+  "runtime_closure_behavior_ids": [
+    "B-012",
+    "B-014"
+  ],
+  "tests": [
+    {
+      "test_id": "DM-001",
+      "behavior_ids": [
+        "B-014"
+      ],
+      "title": "required pass/fail/pass proof with the exact frozen config",
+      "assertions": [
+        "clean example passes the skill's exact lint:boundaries command",
+        "temporary tests/example.test.ts -> ../lib/impl deep import fails",
+        "both auto-config and explicit-config runs name tests-through-entrypoints",
+        "reverting the deep import restores a clean pass"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "clean_before": {
+          "command": [
+            "npm",
+            "run",
+            "lint:boundaries"
+          ],
+          "returncode": 0,
+          "stdout": "\n> phase4-deep-module-runtime-fixture@0.0.0 lint:boundaries\n> depcruise src/packages\n\n\n\u2714 no dependency violations found (4 modules, 2 dependencies cruised)\n\n",
+          "stderr": ""
+        },
+        "exact_skill_violation": {
+          "command": [
+            "npm",
+            "run",
+            "lint:boundaries"
+          ],
+          "returncode": 1,
+          "stdout": "\n> phase4-deep-module-runtime-fixture@0.0.0 lint:boundaries\n> depcruise src/packages\n\n\n  error tests-through-entrypoints: src/packages/example/tests/example.test.ts \u2192 src/packages/example/lib/impl.ts\n\nx 1 dependency violations (1 errors, 0 warnings). 4 modules, 3 dependencies cruised.\n\n",
+          "stderr": ""
+        },
+        "explicit_config_violation": {
+          "command": [
+            "npx",
+            "--no-install",
+            "depcruise",
+            "--config",
+            ".dependency-cruiser.cjs",
+            "--output-type",
+            "err-long",
+            "src/packages"
+          ],
+          "returncode": 1,
+          "stdout": "\n  error tests-through-entrypoints: src/packages/example/tests/example.test.ts \u2192 src/packages/example/lib/impl.ts\n    A package's tests exercise it through its entry points like everyone else:\n    they may import any package's entry points and their own tests/ fixtures,\n    but never any package's internals, not even their own.\n\n\nx 1 dependency violations (1 errors, 0 warnings). 4 modules, 3 dependencies cruised.\n\n",
+          "stderr": ""
+        },
+        "clean_after": {
+          "command": [
+            "npm",
+            "run",
+            "lint:boundaries"
+          ],
+          "returncode": 0,
+          "stdout": "\n> phase4-deep-module-runtime-fixture@0.0.0 lint:boundaries\n> depcruise src/packages\n\n\n\u2714 no dependency violations found (4 modules, 2 dependencies cruised)\n\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "test_id": "DM-002",
+      "behavior_ids": [
+        "B-012"
+      ],
+      "title": "fifth shipped rule constrains claimed intra-package freedom",
+      "assertions": [
+        "exact frozen config exposes five forbidden rules, all severity=error",
+        "tests-folder-is-private is the separately named fifth rule",
+        "same-package non-test code importing its own tests/ fixture fails",
+        "both auto-config and explicit-config runs name tests-folder-is-private",
+        "removing the violating file restores a clean pass"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "config_rules": [
+          {
+            "name": "entrypoint-boundary-from-app",
+            "severity": "error"
+          },
+          {
+            "name": "entrypoint-boundary-across-packages",
+            "severity": "error"
+          },
+          {
+            "name": "tests-through-entrypoints",
+            "severity": "error"
+          },
+          {
+            "name": "tests-folder-is-private",
+            "severity": "error"
+          },
+          {
+            "name": "no-circular",
+            "severity": "error"
+          }
+        ],
+        "config_probe": {
+          "command": [
+            "node",
+            "-e",
+            "const c=require('./.dependency-cruiser.cjs'); console.log(JSON.stringify(c.forbidden.map(r=>({name:r.name,severity:r.severity}))));"
+          ],
+          "returncode": 0,
+          "stdout": "[{\"name\":\"entrypoint-boundary-from-app\",\"severity\":\"error\"},{\"name\":\"entrypoint-boundary-across-packages\",\"severity\":\"error\"},{\"name\":\"tests-through-entrypoints\",\"severity\":\"error\"},{\"name\":\"tests-folder-is-private\",\"severity\":\"error\"},{\"name\":\"no-circular\",\"severity\":\"error\"}]\n",
+          "stderr": ""
+        },
+        "exact_skill_violation": {
+          "command": [
+            "npm",
+            "run",
+            "lint:boundaries"
+          ],
+          "returncode": 1,
+          "stdout": "\n> phase4-deep-module-runtime-fixture@0.0.0 lint:boundaries\n> depcruise src/packages\n\n\n  error tests-folder-is-private: src/packages/example/lib/import-test-fixture.ts \u2192 src/packages/example/tests/fixture.ts\n\nx 1 dependency violations (1 errors, 0 warnings). 5 modules, 3 dependencies cruised.\n\n",
+          "stderr": ""
+        },
+        "explicit_config_violation": {
+          "command": [
+            "npx",
+            "--no-install",
+            "depcruise",
+            "--config",
+            ".dependency-cruiser.cjs",
+            "--output-type",
+            "err-long",
+            "src/packages"
+          ],
+          "returncode": 1,
+          "stdout": "\n  error tests-folder-is-private: src/packages/example/lib/import-test-fixture.ts \u2192 src/packages/example/tests/fixture.ts\n    A package's tests/ folder is reachable only from tests: nothing else may\n    import fixtures.\n\n\nx 1 dependency violations (1 errors, 0 warnings). 5 modules, 3 dependencies cruised.\n\n",
+          "stderr": ""
+        },
+        "clean_after": {
+          "command": [
+            "npm",
+            "run",
+            "lint:boundaries"
+          ],
+          "returncode": 0,
+          "stdout": "\n> phase4-deep-module-runtime-fixture@0.0.0 lint:boundaries\n> depcruise src/packages\n\n\n\u2714 no dependency violations found (4 modules, 2 dependencies cruised)\n\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "hard_errors": []
+}

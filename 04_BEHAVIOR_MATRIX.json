@@ -302,9 +302,20 @@
       ],
       "state": "CONFIRMED_GAP",
       "machine_enforced": true,
-      "runtime_observed": false,
-      "adjudication": "SKILL.md says four error rules, unconditional intra-package freedom, and four forbidden rules at completion. The shipped config has five error-level forbidden entries; tests-folder-is-private separately blocks non-test files from importing tests/, including within the same package.",
-      "next_evidence": "Reconcile prose and config; separately runtime-test dependency-cruiser behavior only if verification beyond static config is required."
+      "runtime_observed": true,
+      "adjudication": "Static inspection established that SKILL.md says four error rules and unconditional intra-package freedom while the shipped config contains five. Synthetic-consumer runtime now confirms the extra tests-folder-is-private rule bites: same-package non-test code importing its own tests/ fixture fails under that fifth rule. The prose/config mismatch is both static and operational; CT-012 remains open.",
+      "next_evidence": "Source-side correction remains: document five rules plus the tests/ exception, or change the config/prose so the four-rule model is exact. Frozen runtime behavior is now observed.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "SYNTHETIC_CONSUMER_RUNTIME",
+          "test_ids": [
+            "DM-002"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34868071587,
+          "result_file": "04_DEEP_MODULE_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-013",
@@ -342,9 +353,20 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
-      "adjudication": "The workflow explicitly requires pass -> deliberate violating deep import -> fail with tests-through-entrypoints -> revert -> pass. This is a strong runtime completion criterion encoded in prompt instructions around an executable checker, although this audit has not run it in a consumer repo.",
-      "next_evidence": "Runtime reproduce in a representative consumer TypeScript repo during later runtime verification."
+      "runtime_observed": true,
+      "adjudication": "The skill's proof-of-enforcement completion criterion is directly runtime-observed in a disposable synthetic TypeScript consumer using the exact frozen config: clean pass, temporary tests/example.test.ts -> ../lib/impl failure specifically under tests-through-entrypoints, then clean pass after revert.",
+      "next_evidence": "Representative runtime completion semantics are closed. Broader compatibility across package managers and unusual repository layouts remains a separate generalization question.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "SYNTHETIC_CONSUMER_RUNTIME",
+          "test_ids": [
+            "DM-001"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34868071587,
+          "result_file": "04_DEEP_MODULE_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-015",

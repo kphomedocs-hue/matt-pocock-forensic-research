@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **8/65**.
-Pending stronger evidence: **57**.
+Runtime-observed rows: **10/65**.
+Pending stronger evidence: **55**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 8 | 22 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 10 | 20 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -33,9 +33,9 @@ Pending stronger evidence: **57**.
 | B-009 | PROMPT_REDTEAM_LATER | CONFIRMED_DRIFT | NO | MP-0015, MP-0033, MP-0063, MP-0071 | diagnosing-bugs architecture handoff | Secondary surfaces should be aligned or explicitly historical. |
 | B-010 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0065, MP-0080 | implement -> code-review visibility | Runtime reproduction can quantify occurrence; static operative contract mismatch is already established. |
 | B-011 | PROMPT_REDTEAM_LATER | CONFIRMED_DRIFT | NO | MP-0117, MP-0124 | retro maturity | Align maturity description; end-to-end quality remains a separate runtime question. |
-| B-012 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0126, MP-0128 | setup-ts-deep-modules rule contract | Reconcile prose and config; separately runtime-test dependency-cruiser behavior only if verification beyond static config is required. |
+| B-012 | EXECUTION_OBSERVATION | CONFIRMED_GAP | YES | MP-0126, MP-0128 | setup-ts-deep-modules rule contract | Source-side correction remains: document five rules plus the tests/ exception, or change the config/prose so the four-rule model is exact. Frozen runtime behavior is now observed. |
 | B-013 | PROMPT_REDTEAM_LATER | CONFIRMED_WEAKNESS | NO | MP-0112 | Wayfinder planning-only authority | Require/identify an independent override authority or classify self-authored override as accepted design. |
-| B-014 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0126, MP-0128 | setup-ts-deep-modules proof-of-enforcement | Runtime reproduce in a representative consumer TypeScript repo during later runtime verification. |
+| B-014 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0126, MP-0128 | setup-ts-deep-modules proof-of-enforcement | Representative runtime completion semantics are closed. Broader compatibility across package managers and unusual repository layouts remains a separate generalization question. |
 | B-015 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0114, MP-0116 | wizard generated-script verification | Red-team generated wizard variants and browser-step accuracy later; this runtime observation covers the shipped template library/example only. |
 | B-016 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0136, MP-0138 | git-guardrails dangerous-command blocking | Red-team equivalent/wrapped commands and false-positive strings in Phase 9/runtime testing. |
 | B-017 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0143 | setup-pre-commit hook smoke test | Observe an end-to-end setup in a representative repo before RUNTIME OBSERVED promotion. |

@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 8,
-  "pending_total": 57,
+  "runtime_observed": 10,
+  "pending_total": 55,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 8,
+    "EXECUTION_OBSERVATION": 10,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 22,
+    "EXECUTION_OBSERVATION": 20,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -350,8 +350,8 @@
         "EXECUTABLE_SCRIPT"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0126",
         "MP-0128"
@@ -364,7 +364,7 @@
         "CT-012"
       ],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Reconcile prose and config; separately runtime-test dependency-cruiser behavior only if verification beyond static config is required."
+      "next_evidence": "Source-side correction remains: document five rules plus the tests/ exception, or change the config/prose so the four-rule model is exact. Frozen runtime behavior is now observed."
     },
     {
       "behavior_id": "B-013",
@@ -401,8 +401,8 @@
         "RUNTIME"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0126",
         "MP-0128"
@@ -413,7 +413,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Runtime reproduce in a representative consumer TypeScript repo during later runtime verification."
+      "next_evidence": "Representative runtime completion semantics are closed. Broader compatibility across package managers and unusual repository layouts remains a separate generalization question."
     },
     {
       "behavior_id": "B-015",
