@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Workflow run: `34866017975`.
+Workflow run: `34926350919`.
 Synthetic inputs only: **YES**. User/live repository touched: **NO**.
 
 Tests: **6/6 PASS**; failures: **0**.
