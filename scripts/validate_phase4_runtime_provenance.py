@@ -85,6 +85,18 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
         validate_isolated_named_result(bid, evidence, data, result_file, errors)
     elif result_file == "04_IMPLEMENT_REVIEW_VISIBILITY_RESULTS.json":
         validate_isolated_named_result(bid, evidence, data, result_file, errors)
+    elif result_file == "04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json":
+        validate_isolated_named_result(bid, evidence, data, result_file, errors)
+        linter = data.get("external_linter", {})
+        course_lock = data.get("external_course_lock", {})
+        if linter.get("repo") != "mattpocock/ai-hero-cli" or linter.get("commit") != "5071b7d2d0e0514e134dadd26d9bed23c7c54365":
+            errors.append(f"{bid}: scaffold-exercises evidence has wrong external linter provenance")
+        if linter.get("package_version") != "0.2.8" or linter.get("entrypoint") != "dist/bin.cjs":
+            errors.append(f"{bid}: scaffold-exercises evidence lacks pinned ai-hero-cli v0.2.8 details")
+        if course_lock.get("repo") != "ai-hero-dev/cohort-002-skill-building" or course_lock.get("commit") != "73969f1a1ec65b390f0532bb8ae6c693376fca9e":
+            errors.append(f"{bid}: scaffold-exercises evidence has wrong course lock provenance")
+        if course_lock.get("exact_lock_entry") != "ai-hero-cli@0.2.8:":
+            errors.append(f"{bid}: scaffold-exercises evidence lacks exact course lock entry")
 
 
 def main() -> None:
