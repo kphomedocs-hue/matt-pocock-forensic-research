@@ -45,6 +45,12 @@ PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION_IDS = {34867570179}
 PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION_IDS = {34867918904}
 PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY_IDS = {34868912572}
 PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION_IDS = {34925982246}
+PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT_IDS = {34928147482}
+PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION_IDS = {
+    34928190384,
+    34928232337,
+    34928290191,
+}
 
 
 def _is_closed(row: dict) -> bool:
@@ -151,6 +157,18 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY",
             "DETECTED_AND_BLOCKED_FIXED",
             "The first isolated B-017 run failed closed before promotion because it enforced the frozen setup-pre-commit verification predicate that .husky/pre-commit itself must be executable. Direct runtime plus Husky 9.1.7 source inspection showed the generated user hook is non-executable while Git is wired to an executable .husky/_/pre-commit shim that invokes the user hook through sh -e. The finding was retained as frozen-contract/current-toolchain drift rather than hidden with chmod. Follow-up run 34869643879 completed the actual commit smoke, preserved the executable-bit mismatch in durable evidence, and promoted B-017. No invalid B-017 evidence was published from the failed run.",
+        )
+    if run_id in PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT_IDS:
+        return (
+            "PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT",
+            "NO_RESEARCH_DATA_CHANGE_FIXED",
+            "The newly added workflow ran on its own creation commit before the harness script existed in that commit. It failed closed before any evidence or matrix change. The harness was published in the next connector commit.",
+        )
+    if run_id in PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION_IDS:
+        return (
+            "PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION",
+            "NO_RESEARCH_DATA_CHANGE_FIXED",
+            "Connector publication converted two intended Python newline escapes into literal newlines inside string literals, causing three isolated B-008 harness runs to fail at Python parse time before execution or evidence promotion. The affected lines were corrected, and run 34928358966 passed the isolated test and published B-008 evidence.",
         )
     if run_id in PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION_IDS:
         return (
