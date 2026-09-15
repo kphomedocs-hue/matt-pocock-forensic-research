@@ -271,9 +271,21 @@
       ],
       "state": "CONFIRMED_GAP",
       "machine_enforced": false,
-      "runtime_observed": false,
-      "adjudication": "Implement orders code-review before commit, while code-review scopes its comparison to fixed-point...HEAD and fails on an empty committed diff. Without interim commits, the cross-skill contract can hide working-tree implementation changes from review.",
-      "next_evidence": "Runtime reproduction can quantify occurrence; static operative contract mismatch is already established."
+      "runtime_observed": true,
+      "adjudication": "Direct synthetic git-runtime observation confirms the pre-commit gap: Implement orders code-review before commit, while code-review's fixed-point...HEAD precondition is empty until the implementation is committed. The working-tree change exists but is outside the mandated review diff.",
+      "next_evidence": "Frozen behavior is runtime-observed. A source correction would require committing before review or teaching code-review an explicit working-tree review mode.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_GIT_RUNTIME",
+          "test_ids": [
+            "IR-001",
+            "IR-002"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34929107528,
+          "result_file": "04_IMPLEMENT_REVIEW_VISIBILITY_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-011",

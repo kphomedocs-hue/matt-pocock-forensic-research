@@ -30,7 +30,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-007 | diagnosing-bugs redaction | CONFIRMED_DRIFT | PROMPT, DOCUMENTATION | False | False | CT-007 | Operative skill and changelog contain shipped redaction instructions while human docs still call the behavior unimplemented. Enforcement remains prompt-level, not a deterministic sanitizer. |
 | B-008 | architecture HTML report portability | RUNTIME_UNKNOWN | PROMPT, EXTERNAL_DEPENDENCY, RUNTIME | False | True | CT-008 | Direct isolated runtime observation confirms the report is a single HTML file but not dependency-independent: the frozen Tailwind and Mermaid external requests are required and both fail in a controlled offline fixture. |
 | B-009 | diagnosing-bugs architecture handoff | CONFIRMED_DRIFT | DOCUMENTATION, PROMPT | False | False | CT-009 | The autonomous handoff was deliberately removed and is absent from diagnosing-bugs, but human docs and ask-matt retain it. |
-| B-010 | implement -> code-review visibility | CONFIRMED_GAP | PROMPT, EXECUTABLE_SCRIPT, RUNTIME | False | False | CT-010 | Implement orders code-review before commit, while code-review scopes its comparison to fixed-point...HEAD and fails on an empty committed diff. Without interim commits, the cross-skill contract can hide working-tree implementation changes from review. |
+| B-010 | implement -> code-review visibility | CONFIRMED_GAP | PROMPT, EXECUTABLE_SCRIPT, RUNTIME | False | True | CT-010 | Direct synthetic git-runtime observation confirms the pre-commit gap: Implement orders code-review before commit, while code-review's fixed-point...HEAD precondition is empty until the implementation is committed. The working-tree change exists but is outside the mandated review diff. |
 | B-011 | retro maturity | CONFIRMED_DRIFT | DOCUMENTATION, PROMPT | False | False | CT-011 | Bucket README says STUB/nonfunctional; operative retro source contains a substantial multi-step workflow and cross-skill call. |
 | B-012 | setup-ts-deep-modules rule contract | CONFIRMED_GAP | PROMPT, STATIC_CONFIG, EXECUTABLE_SCRIPT | True | True | CT-012 | Static inspection established that SKILL.md says four error rules and unconditional intra-package freedom while the shipped config contains five. Synthetic-consumer runtime now confirms the extra tests-folder-is-private rule bites: same-package non-test code importing its own tests/ fixture fails under that fifth rule. The prose/config mismatch is both static and operational; CT-012 remains open. |
 | B-013 | Wayfinder planning-only authority | CONFIRMED_WEAKNESS | PROMPT | False | False | CT-013 | The planning default explicitly permits an execution-carrying Notes override, while charting instructs the same agent to create the map with Notes filled in. No independent user-confirmation/authority check is specified for that override. |
@@ -91,7 +91,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 
 - states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 10, 'CONFIRMED_MATCH': 30, 'CONFIRMED_WEAKNESS': 3, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
 - enforcement layers: `{'CI': 3, 'DOCUMENTATION': 21, 'EXECUTABLE_SCRIPT': 13, 'EXTERNAL_DEPENDENCY': 11, 'NONE': 9, 'PROMPT': 56, 'RUNTIME': 21, 'STATIC_CONFIG': 9}`
-- runtime observed rows: **12 / 65**
+- runtime observed rows: **13 / 65**
 - current CT coverage: **20 / 20**
 - integrity hard errors: **0**
 

@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **12/65**.
-Pending stronger evidence: **53**.
+Runtime-observed rows: **13/65**.
+Pending stronger evidence: **52**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 12 | 18 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 13 | 17 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -31,7 +31,7 @@ Pending stronger evidence: **53**.
 | B-007 | PROMPT_REDTEAM_LATER | CONFIRMED_DRIFT | NO | MP-0025, MP-0033, MP-0071 | diagnosing-bugs redaction | Runtime adherence is a later verification question; frozen docs drift is already established. |
 | B-008 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | YES | MP-0037, MP-0082, MP-0083 | architecture HTML report portability | Runtime closure covers the frozen CDN dependency boundary only. Define whether the product intends packaging self-containment or offline/locked-down portability; a real-browser rendering check can broaden compatibility evidence later. |
 | B-009 | PROMPT_REDTEAM_LATER | CONFIRMED_DRIFT | NO | MP-0015, MP-0033, MP-0063, MP-0071 | diagnosing-bugs architecture handoff | Secondary surfaces should be aligned or explicitly historical. |
-| B-010 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0065, MP-0080 | implement -> code-review visibility | Runtime reproduction can quantify occurrence; static operative contract mismatch is already established. |
+| B-010 | EXECUTION_OBSERVATION | CONFIRMED_GAP | YES | MP-0065, MP-0080 | implement -> code-review visibility | Frozen behavior is runtime-observed. A source correction would require committing before review or teaching code-review an explicit working-tree review mode. |
 | B-011 | PROMPT_REDTEAM_LATER | CONFIRMED_DRIFT | NO | MP-0117, MP-0124 | retro maturity | Align maturity description; end-to-end quality remains a separate runtime question. |
 | B-012 | EXECUTION_OBSERVATION | CONFIRMED_GAP | YES | MP-0126, MP-0128 | setup-ts-deep-modules rule contract | Source-side correction remains: document five rules plus the tests/ exception, or change the config/prose so the four-rule model is exact. Frozen runtime behavior is now observed. |
 | B-013 | PROMPT_REDTEAM_LATER | CONFIRMED_WEAKNESS | NO | MP-0112 | Wayfinder planning-only authority | Require/identify an independent override authority or classify self-authored override as accepted design. |

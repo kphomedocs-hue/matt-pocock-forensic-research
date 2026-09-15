@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 12,
-  "pending_total": 53,
+  "runtime_observed": 13,
+  "pending_total": 52,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 12,
+    "EXECUTION_OBSERVATION": 13,
     "EXTERNAL_DEPENDENCY_VALIDATION": 0,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 18,
+    "EXECUTION_OBSERVATION": 17,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -297,8 +297,8 @@
         "RUNTIME"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0065",
         "MP-0080"
@@ -311,7 +311,7 @@
         "CT-010"
       ],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Runtime reproduction can quantify occurrence; static operative contract mismatch is already established."
+      "next_evidence": "Frozen behavior is runtime-observed. A source correction would require committing before review or teaching code-review an explicit working-tree review mode."
     },
     {
       "behavior_id": "B-011",

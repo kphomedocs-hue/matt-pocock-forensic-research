@@ -1,0 +1,82 @@
+{
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "workflow_run_id": 34929107528,
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "test_count": 2,
+  "pass_count": 2,
+  "fail_count": 0,
+  "tests": [
+    {
+      "test_id": "IR-001",
+      "behavior_ids": [
+        "B-010"
+      ],
+      "title": "frozen cross-skill ordering and diff precondition",
+      "assertions": [
+        "implement requires code-review before commit",
+        "code-review requires a non-empty fixed-point...HEAD diff before review"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "implement_blob": "7a0b11f5f4fe9505ea5c7983c3083ba1bf754f69",
+        "review_blob": "e28d7acbf7b3bb4d7817b7eb5d9c105af03f6ec4"
+      }
+    },
+    {
+      "test_id": "IR-002",
+      "behavior_ids": [
+        "B-010"
+      ],
+      "title": "pre-commit fixed-point review visibility",
+      "assertions": [
+        "required code-review diff is empty before commit despite a real working-tree change",
+        "the same change is visible through fixed-point...HEAD only after a commit"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "base_commit": "7f0c4d7ffdfae7644b9f46009ec5e737aac83c9f",
+        "before_commit_required_diff": {
+          "command": [
+            "git",
+            "diff",
+            "7f0c4d7ffdfae7644b9f46009ec5e737aac83c9f...HEAD"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "before_commit_worktree_diff": {
+          "command": [
+            "git",
+            "diff"
+          ],
+          "returncode": 0,
+          "stdout": "diff --git a/feature.txt b/feature.txt\nindex df967b9..c4fe462 100644\n--- a/feature.txt\n+++ b/feature.txt\n@@ -1 +1 @@\n-base\n+implemented but not committed\n",
+          "stderr": ""
+        },
+        "after_commit_required_diff": {
+          "command": [
+            "git",
+            "diff",
+            "7f0c4d7ffdfae7644b9f46009ec5e737aac83c9f...HEAD"
+          ],
+          "returncode": 0,
+          "stdout": "diff --git a/feature.txt b/feature.txt\nindex df967b9..c4fe462 100644\n--- a/feature.txt\n+++ b/feature.txt\n@@ -1 +1 @@\n-base\n+implemented but not committed\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "hard_errors": [],
+  "runtime_closure_behavior_ids": [
+    "B-010"
+  ],
+  "tool_versions": {
+    "git": "git version 2.55.0",
+    "python": "Python 3.12.14"
+  }
+}
