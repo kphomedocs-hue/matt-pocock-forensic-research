@@ -2,9 +2,9 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Workflow run: `34868912265`.
+Workflow run: `34926363799`.
 
-Installed dependency-cruiser version: `18.3.0`.
+Installed dependency-cruiser version: `18.3.1`.
 
 Only a disposable synthetic TypeScript consumer was used; the frozen source and user/live repositories were not modified.
 

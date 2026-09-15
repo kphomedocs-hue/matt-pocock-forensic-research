@@ -3,10 +3,10 @@
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "workflow_run_id": 34868912265,
+  "workflow_run_id": 34926363799,
   "synthetic_inputs_only": true,
   "user_or_live_repo_touched": false,
-  "dependency_cruiser_version": "18.3.0",
+  "dependency_cruiser_version": "18.3.1",
   "runtime_closure_behavior_ids": [
     "B-012",
     "B-014"
