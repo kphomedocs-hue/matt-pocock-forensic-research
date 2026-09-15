@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **113**
+Failed workflow runs enumerated: **115**
 
-Cancelled workflow runs enumerated: **10**
+Cancelled workflow runs enumerated: **12**
 
-Total incident runs: **123**
+Total incident runs: **127**
 
-Incident entries classified: **123**
+Incident entries classified: **127**
 
 Unknown entries: **0**
 
@@ -20,8 +20,8 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 16 |
-| CLASSIFIER_REFRESH_SUPERSEDED | 7 |
+| CLASSIFIER_CLOSURE_GATE | 17 |
+| CLASSIFIER_REFRESH_SUPERSEDED | 9 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
 | FOUNDATION_GATE | 1 |
@@ -40,6 +40,7 @@ Unresolved/review-required entries: **0**
 | PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | 1 |
+| PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION | 1 |
 | PUSH_RACE | 62 |
 | STATUS_PARSER | 10 |
 
@@ -48,13 +49,13 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 21 |
+| DETECTED_AND_BLOCKED | 22 |
 | DETECTED_AND_BLOCKED_FIXED | 11 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
-| NO_RESEARCH_DATA_CHANGE_FIXED | 5 |
-| REDUNDANT_REFRESH_DISCARDED | 7 |
+| NO_RESEARCH_DATA_CHANGE_FIXED | 6 |
+| REDUNDANT_REFRESH_DISCARDED | 9 |
 | TEMPORARILY_STALE | 62 |
 
 ## Incident ledger
@@ -184,6 +185,10 @@ Unresolved/review-required entries: **0**
 | 34867918904 | failure | 2026-09-14T16:19:51Z | Phase 4 deep-module runtime | Run isolated deep-module runtime harness | PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 | 34868912572 | failure | 2026-09-14T16:29:17Z | Phase 4 setup-pre-commit runtime | Run isolated setup-pre-commit runtime harness | PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY | DETECTED_AND_BLOCKED_FIXED |
 | 34869764952 | failure | 2026-09-14T16:37:28Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 34925863951 | cancelled | 2026-09-15T03:40:10Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 34925899850 | cancelled | 2026-09-15T03:40:42Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 34925982246 | failure | 2026-09-15T03:42:03Z | Phase 4 main guard | Ensure validators are non-mutating on committed main | PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
+| 34926001960 | failure | 2026-09-15T03:42:21Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 
