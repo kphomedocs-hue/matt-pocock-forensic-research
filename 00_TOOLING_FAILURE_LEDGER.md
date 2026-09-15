@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **111**
+Failed workflow runs enumerated: **113**
 
 Cancelled workflow runs enumerated: **10**
 
-Total incident runs: **121**
+Total incident runs: **123**
 
-Incident entries classified: **121**
+Incident entries classified: **123**
 
 Unknown entries: **0**
 
@@ -20,7 +20,7 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 15 |
+| CLASSIFIER_CLOSURE_GATE | 16 |
 | CLASSIFIER_REFRESH_SUPERSEDED | 7 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
@@ -36,6 +36,7 @@ Unresolved/review-required entries: **0**
 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | 2 |
 | PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION | 1 |
 | PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | 1 |
+| PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY | 1 |
 | PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | 1 |
@@ -47,8 +48,8 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 20 |
-| DETECTED_AND_BLOCKED_FIXED | 10 |
+| DETECTED_AND_BLOCKED | 21 |
+| DETECTED_AND_BLOCKED_FIXED | 11 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
@@ -181,6 +182,8 @@ Unresolved/review-required entries: **0**
 | 34860744756 | failure | 2026-09-14T15:13:28Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 34867570179 | failure | 2026-09-14T16:16:31Z | Phase 4 deep-module runtime | Run isolated deep-module runtime harness | PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 | 34867918904 | failure | 2026-09-14T16:19:51Z | Phase 4 deep-module runtime | Run isolated deep-module runtime harness | PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
+| 34868912572 | failure | 2026-09-14T16:29:17Z | Phase 4 setup-pre-commit runtime | Run isolated setup-pre-commit runtime harness | PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY | DETECTED_AND_BLOCKED_FIXED |
+| 34869764952 | failure | 2026-09-14T16:37:28Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 
