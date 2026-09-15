@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/classify_failed_workflows.py'
       - 'scripts/classify_tooling_failures_entrypoint.py'
+      - 'scripts/build_research_status.py'
       - '.github/workflows/classify-tooling-failures.yml'
   workflow_run:
     workflows:
@@ -73,16 +74,19 @@ jobs:
           print('unknown_entries=', d['unknown_entries'])
           print('unresolved_entries=', d['unresolved_entries'])
           PY
-      - name: Commit tooling incident ledger
+      - name: Rebuild research checkpoint from refreshed tooling ledger
+        run: python scripts/build_research_status.py
+      - name: Commit tooling incident ledger and checkpoint
         run: |
-          if [[ -z "$(git status --porcelain -- 00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md)" ]]; then
-            echo "Tooling incident ledger already current"
+          paths=(00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md RESEARCH_STATUS.md)
+          if [[ -z "$(git status --porcelain -- "${paths[@]}")" ]]; then
+            echo "Tooling incident ledger and research checkpoint already current"
             exit 0
           fi
           git config user.name forensic-tooling-bot
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add 00_TOOLING_FAILURE_LEDGER.json 00_TOOLING_FAILURE_LEDGER.md
-          git commit -m "tooling: rebuild historical failure and cancellation ledger"
+          git add "${paths[@]}"
+          git commit -m "tooling: rebuild failure ledger and research checkpoint"
           for attempt in 1 2 3 4 5; do
             if git push; then exit 0; fi
             echo "Push race on attempt $attempt; rebasing onto latest main"
