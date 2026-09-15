@@ -56,4 +56,12 @@ jobs:
           git add -- "${paths[@]}"
           git diff --cached --quiet && exit 0
           git commit -m "phase4: record architecture-report runtime evidence"
-          git push
+          for attempt in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "Push race on attempt $attempt; rebasing onto latest main"
+            git fetch origin main
+            git rebase origin/main
+            sleep 1
+          done
+          echo "Failed to publish architecture-report runtime evidence after retries" >&2
+          exit 1
