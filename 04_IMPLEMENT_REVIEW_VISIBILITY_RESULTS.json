@@ -1,7 +1,7 @@
 {
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "workflow_run_id": 34929107528,
+  "workflow_run_id": 34929956398,
   "synthetic_inputs_only": true,
   "user_or_live_repo_touched": false,
   "test_count": 2,
@@ -38,12 +38,12 @@
       "passed": true,
       "errors": [],
       "evidence": {
-        "base_commit": "7f0c4d7ffdfae7644b9f46009ec5e737aac83c9f",
+        "base_commit": "d7c5b550f9f3b427d60784b989dc17ef36112bfa",
         "before_commit_required_diff": {
           "command": [
             "git",
             "diff",
-            "7f0c4d7ffdfae7644b9f46009ec5e737aac83c9f...HEAD"
+            "d7c5b550f9f3b427d60784b989dc17ef36112bfa...HEAD"
           ],
           "returncode": 0,
           "stdout": "",
@@ -62,7 +62,7 @@
           "command": [
             "git",
             "diff",
-            "7f0c4d7ffdfae7644b9f46009ec5e737aac83c9f...HEAD"
+            "d7c5b550f9f3b427d60784b989dc17ef36112bfa...HEAD"
           ],
           "returncode": 0,
           "stdout": "diff --git a/feature.txt b/feature.txt\nindex df967b9..c4fe462 100644\n--- a/feature.txt\n+++ b/feature.txt\n@@ -1 +1 @@\n-base\n+implemented but not committed\n",
