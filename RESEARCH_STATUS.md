@@ -32,8 +32,8 @@ The durable Phase 3 graph/closure artifacts remain authoritative. Current known 
 ## Phase 4 — Behavior & Enforcement
 
 - behavior rows: **65**;
-- runtime observed: **11/65**;
-- total pending stronger evidence: **54**;
+- runtime observed: **12/65**;
+- total pending stronger evidence: **53**;
 - current contradiction coverage: **20/20**;
 - skill breadth coverage: **37/37**;
 - high-risk non-SKILL surface coverage: **71/71**;
@@ -41,7 +41,7 @@ The durable Phase 3 graph/closure artifacts remain authoritative. Current known 
 
 ### Evidence-depth queue
 
-- `EXECUTION_OBSERVATION`: **11 observed / 19 pending**;
+- `EXECUTION_OBSERVATION`: **12 observed / 18 pending**;
 - `EXTERNAL_DEPENDENCY_VALIDATION`: **0 observed / 7 pending**;
 - `MACHINE_CONSUMER_VALIDATION`: **0 observed / 4 pending**;
 - `PROMPT_REDTEAM_LATER`: **0 observed / 24 pending**.
@@ -83,7 +83,7 @@ The classifier preserves a previously published closed classification for the id
 
 ## Immediate next execution
 
-1. Continue the **19 pending execution observations** in small deterministic batches.
+1. Continue the **18 pending execution observations** in small deterministic batches.
 2. Keep execution, machine-consumer, external-dependency, and prompt/red-team evidence classes separate.
 3. Preserve exact frozen-source provenance for every promoted runtime observation.
 4. Do not advance `VERIFIED` until all applicable Phase 4–9 gates close for the relevant claim/file.

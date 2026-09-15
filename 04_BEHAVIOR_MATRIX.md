@@ -28,7 +28,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 | B-005 | Teach glossary format linkage | CONFIRMED_GAP | DOCUMENTATION, PROMPT, NONE | False | False | CT-005 | The support format exists and human docs describe it, but operative Teach does not load/reference it. The file is not a source-tree orphan; the operative linkage is missing. |
 | B-006 | Teach workspace-root resolution | RUNTIME_UNKNOWN | PROMPT, RUNTIME | False | False | CT-006 | Frozen source mixes co-located support references and relative workspace paths; reported issue evidence exists, but source inspection alone cannot settle harness working-directory resolution. |
 | B-007 | diagnosing-bugs redaction | CONFIRMED_DRIFT | PROMPT, DOCUMENTATION | False | False | CT-007 | Operative skill and changelog contain shipped redaction instructions while human docs still call the behavior unimplemented. Enforcement remains prompt-level, not a deterministic sanitizer. |
-| B-008 | architecture HTML report portability | RUNTIME_UNKNOWN | PROMPT, EXTERNAL_DEPENDENCY, RUNTIME | False | False | CT-008 | The artifact is a single HTML file but loads Tailwind/Mermaid from CDNs. Packaging self-containment is statically true; dependency independence is not. |
+| B-008 | architecture HTML report portability | RUNTIME_UNKNOWN | PROMPT, EXTERNAL_DEPENDENCY, RUNTIME | False | True | CT-008 | Direct isolated runtime observation confirms the report is a single HTML file but not dependency-independent: the frozen Tailwind and Mermaid external requests are required and both fail in a controlled offline fixture. |
 | B-009 | diagnosing-bugs architecture handoff | CONFIRMED_DRIFT | DOCUMENTATION, PROMPT | False | False | CT-009 | The autonomous handoff was deliberately removed and is absent from diagnosing-bugs, but human docs and ask-matt retain it. |
 | B-010 | implement -> code-review visibility | CONFIRMED_GAP | PROMPT, EXECUTABLE_SCRIPT, RUNTIME | False | False | CT-010 | Implement orders code-review before commit, while code-review scopes its comparison to fixed-point...HEAD and fails on an empty committed diff. Without interim commits, the cross-skill contract can hide working-tree implementation changes from review. |
 | B-011 | retro maturity | CONFIRMED_DRIFT | DOCUMENTATION, PROMPT | False | False | CT-011 | Bucket README says STUB/nonfunctional; operative retro source contains a substantial multi-step workflow and cross-skill call. |
@@ -91,7 +91,7 @@ This is a Phase 4 working artifact, not a VERIFIED-status ledger. It separates d
 
 - states: `{'CONFIRMED_DRIFT': 5, 'CONFIRMED_GAP': 10, 'CONFIRMED_MATCH': 30, 'CONFIRMED_WEAKNESS': 3, 'RUNTIME_UNKNOWN': 9, 'STATICALLY_ENFORCED': 8}`
 - enforcement layers: `{'CI': 3, 'DOCUMENTATION': 21, 'EXECUTABLE_SCRIPT': 13, 'EXTERNAL_DEPENDENCY': 11, 'NONE': 9, 'PROMPT': 56, 'RUNTIME': 21, 'STATIC_CONFIG': 9}`
-- runtime observed rows: **11 / 65**
+- runtime observed rows: **12 / 65**
 - current CT coverage: **20 / 20**
 - integrity hard errors: **0**
 

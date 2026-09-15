@@ -214,9 +214,21 @@
       ],
       "state": "RUNTIME_UNKNOWN",
       "machine_enforced": false,
-      "runtime_observed": false,
-      "adjudication": "The artifact is a single HTML file but loads Tailwind/Mermaid from CDNs. Packaging self-containment is statically true; dependency independence is not.",
-      "next_evidence": "Test offline/locked-down rendering and define which self-contained meaning is intended."
+      "runtime_observed": true,
+      "adjudication": "Direct isolated runtime observation confirms the report is a single HTML file but not dependency-independent: the frozen Tailwind and Mermaid external requests are required and both fail in a controlled offline fixture.",
+      "next_evidence": "Runtime closure covers the frozen CDN dependency boundary only. Define whether the product intends packaging self-containment or offline/locked-down portability; a real-browser rendering check can broaden compatibility evidence later.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_OFFLINE_ASSET_RUNTIME",
+          "test_ids": [
+            "AR-001",
+            "AR-002"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34928358966,
+          "result_file": "04_ARCHITECTURE_REPORT_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-009",

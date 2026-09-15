@@ -1,0 +1,86 @@
+{
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "workflow_run_id": 34928358966,
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "test_count": 2,
+  "pass_count": 2,
+  "fail_count": 0,
+  "tests": [
+    {
+      "test_id": "AR-001",
+      "behavior_ids": [
+        "B-008"
+      ],
+      "title": "architecture report portability",
+      "assertions": [
+        "frozen format calls the report single self-contained",
+        "frozen format and operative skill name Tailwind and Mermaid CDN dependencies"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "html_report_blob": "e39e8255b8797cf8257d014fb6658fb533f3a399",
+        "skill_blob": "a578dd0a34ad0a8886abe7e7642b100106ba86d6",
+        "urls": [
+          "https://cdn.tailwindcss.com",
+          "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"
+        ]
+      }
+    },
+    {
+      "test_id": "AR-002",
+      "behavior_ids": [
+        "B-008"
+      ],
+      "title": "architecture report portability",
+      "assertions": [
+        "both frozen scaffold dependencies are requested by a source-derived report fixture",
+        "when unavailable, both external dependencies return 503; no bundled fallback is present"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "offline_server": "127.0.0.1",
+        "request_paths": [
+          "/tailwind",
+          "/mermaid"
+        ],
+        "probe": {
+          "command": [
+            "node",
+            "/tmp/phase4-architecture-report-f9r_9j6h/probe.mjs"
+          ],
+          "returncode": 0,
+          "stdout": "{\"urls\":[\"http://127.0.0.1:45837/tailwind\",\"http://127.0.0.1:45837/mermaid\"],\"results\":[[\"http://127.0.0.1:45837/tailwind\",503],[\"http://127.0.0.1:45837/mermaid\",503]]}\n",
+          "stderr": ""
+        },
+        "probe_payload": {
+          "urls": [
+            "http://127.0.0.1:45837/tailwind",
+            "http://127.0.0.1:45837/mermaid"
+          ],
+          "results": [
+            [
+              "http://127.0.0.1:45837/tailwind",
+              503
+            ],
+            [
+              "http://127.0.0.1:45837/mermaid",
+              503
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "hard_errors": [],
+  "runtime_closure_behavior_ids": [
+    "B-008"
+  ],
+  "tool_versions": {
+    "node": "v22.23.2",
+    "python": "Python 3.12.14"
+  }
+}
