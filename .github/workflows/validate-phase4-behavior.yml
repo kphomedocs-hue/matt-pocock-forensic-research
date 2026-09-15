@@ -12,11 +12,13 @@ on:
       - '04_CT019_REPRODUCTION.json'
       - '04_DEEP_MODULE_RUNTIME_RESULTS.json'
       - '04_PRECOMMIT_RUNTIME_RESULTS.json'
+      - '00_TOOLING_FAILURE_LEDGER.json'
       - '01_FILE_CENSUS.json'
       - 'scripts/validate_behavior_matrix.py'
       - 'scripts/validate_phase4_runtime_provenance.py'
       - 'scripts/build_phase4_coverage.py'
       - 'scripts/build_phase4_runtime_queue.py'
+      - 'scripts/build_research_status.py'
       - '.github/workflows/validate-phase4-behavior.yml'
 
 permissions:
@@ -46,6 +48,8 @@ jobs:
         run: python scripts/build_phase4_runtime_queue.py
       - name: Validate Phase 4 runtime provenance
         run: python scripts/validate_phase4_runtime_provenance.py
+      - name: Build human research checkpoint from machine state
+        run: python scripts/build_research_status.py
       - name: Validate generated outputs
         run: |
           test -s 04_BEHAVIOR_MATRIX.md
@@ -54,6 +58,7 @@ jobs:
           test -s 04_BEHAVIOR_COVERAGE.json
           test -s 04_RUNTIME_OBSERVATION_QUEUE.md
           test -s 04_RUNTIME_OBSERVATION_QUEUE.json
+          test -s RESEARCH_STATUS.md
           python - <<'PY'
           import json
           d = json.load(open('04_BEHAVIOR_INTEGRITY.json', encoding='utf-8'))
@@ -85,22 +90,22 @@ jobs:
           print('evidence_classes=', r['evidence_class_counts'])
           print('pending_by_class=', r['pending_by_class'])
           PY
-      - name: Commit rendered Phase 4 state
+      - name: Commit rendered Phase 4 state and status checkpoint
         run: |
-          paths=(04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.md 04_BEHAVIOR_COVERAGE.json 04_RUNTIME_OBSERVATION_QUEUE.md 04_RUNTIME_OBSERVATION_QUEUE.json)
+          paths=(04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.md 04_BEHAVIOR_COVERAGE.json 04_RUNTIME_OBSERVATION_QUEUE.md 04_RUNTIME_OBSERVATION_QUEUE.json RESEARCH_STATUS.md)
           if [[ -z "$(git status --porcelain -- "${paths[@]}")" ]]; then
-            echo "Phase 4 outputs already current"
+            echo "Phase 4 outputs and research status already current"
             exit 0
           fi
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add "${paths[@]}"
-          git commit -m "phase4: render validated behavior and evidence-depth state"
+          git commit -m "status: render validated Phase 4 checkpoint"
           for attempt in 1 2 3 4 5; do
             if git push; then exit 0; fi
             git fetch origin main
             git rebase origin/main
             sleep 1
           done
-          echo "Failed to publish Phase 4 outputs" >&2
+          echo "Failed to publish Phase 4 outputs/status" >&2
           exit 1
