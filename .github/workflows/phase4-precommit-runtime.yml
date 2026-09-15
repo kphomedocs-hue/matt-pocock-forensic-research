@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/run_phase4_precommit_runtime.py'
+      - 'scripts/run_phase4_precommit-runtime.py'
       - 'scripts/validate_phase4_runtime_provenance.py'
       - '.github/workflows/phase4-precommit-runtime.yml'
 
@@ -33,7 +33,7 @@ jobs:
           path: frozen-source
           fetch-depth: 1
           persist-credentials: false
-      - uses: actions/setup-python@v7.0.1
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.12'
       - name: Sync latest research main
