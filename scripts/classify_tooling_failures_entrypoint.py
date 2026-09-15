@@ -57,6 +57,7 @@ PHASE4_STATUS_STALE_GUARD_TRANSITION_IDS = {
     34926329873,
 }
 TOOLING_CLASSIFIER_BACKLOG_CLOSURE_IDS = {34928459181}
+PHASE4_ARCHITECTURE_REPORT_PUBLISH_RACE_IDS = {34929956423}
 
 
 def _is_closed(row: dict) -> bool:
@@ -169,6 +170,12 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE4_STATUS_STALE_GUARD_TRANSITION",
             "DETECTED_AND_BLOCKED_FIXED",
             "The main guard correctly detected a generated RESEARCH_STATUS.md stale after an earlier Phase 4 state transition. No invalid research state was accepted; the current generated checkpoint is synchronized and later main-guard runs pass.",
+        )
+    if run_id in PHASE4_ARCHITECTURE_REPORT_PUBLISH_RACE_IDS:
+        return (
+            "PUSH_RACE",
+            "TEMPORARILY_STALE",
+            "The B-008 architecture-report harness and every rebuild validator passed, but its generated-evidence commit lost a non-fast-forward race to concurrent main updates. No stale or invalid evidence was published from the rejected push; the later B-008 durable result remained green.",
         )
     if run_id in TOOLING_CLASSIFIER_BACKLOG_CLOSURE_IDS:
         return (
