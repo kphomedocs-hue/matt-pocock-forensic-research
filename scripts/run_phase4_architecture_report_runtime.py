@@ -109,8 +109,7 @@ console.log(JSON.stringify({{urls, results}}));
     tests = [static, offline]
     hard = [f"{x['test_id']}: {x['errors']}" for x in tests if not x["passed"]]
     result = {"frozen_commit": FROZEN, "source_checkout_head": head, "workflow_run_id": run_id, "synthetic_inputs_only": True, "user_or_live_repo_touched": False, "test_count": len(tests), "pass_count": sum(x["passed"] for x in tests), "fail_count": sum(not x["passed"] for x in tests), "tests": tests, "hard_errors": hard, "runtime_closure_behavior_ids": ["B-008"] if not hard else [], "tool_versions": {"node": run(["node", "--version"], source)["stdout"].strip(), "python": run(["python", "--version"], source)["stdout"].strip()}}
-    OUT.write_text(json.dumps(result, indent=2) + "
-", encoding="utf-8")
+    OUT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     if hard:
         raise SystemExit("Architecture report runtime failed: " + "; ".join(hard))
     row = rows["B-008"]
