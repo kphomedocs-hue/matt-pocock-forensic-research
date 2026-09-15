@@ -83,6 +83,8 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
             errors.append(f"{bid}: pre-commit evidence lacks resolved Husky/lint-staged/Prettier versions")
     elif result_file == "04_ARCHITECTURE_REPORT_RUNTIME_RESULTS.json":
         validate_isolated_named_result(bid, evidence, data, result_file, errors)
+    elif result_file == "04_IMPLEMENT_REVIEW_VISIBILITY_RESULTS.json":
+        validate_isolated_named_result(bid, evidence, data, result_file, errors)
 
 
 def main() -> None:
