@@ -118,8 +118,7 @@ console.log(JSON.stringify({{urls, results}}));
     row["next_evidence"] = "Runtime closure covers the frozen CDN dependency boundary only. Define whether the product intends packaging self-containment or offline/locked-down portability; a real-browser rendering check can broaden compatibility evidence later."
     evidence = {"evidence_type": "ISOLATED_OFFLINE_ASSET_RUNTIME", "test_ids": ["AR-001", "AR-002"], "frozen_commit": FROZEN, "workflow_run_id": run_id, "result_file": str(OUT)}
     row["runtime_evidence"] = [x for x in row.get("runtime_evidence", []) if x.get("result_file") != str(OUT)] + [evidence]
-    MATRIX.write_text(json.dumps(matrix, indent=2) + "
-", encoding="utf-8")
+    MATRIX.write_text(json.dumps(matrix, indent=2) + "\n", encoding="utf-8")
     print("Architecture report runtime GREEN: B-008")
 
 
