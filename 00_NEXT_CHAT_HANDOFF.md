@@ -33,17 +33,17 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Phase 3: COMPLETE.
 - Phase 3 graph edges: 554.
 - Phase 4 behavior rows: 65.
-- Phase 4 runtime observed: 11/65.
-- Phase 4 pending stronger evidence: 54.
+- Phase 4 runtime observed: 14/65.
+- Phase 4 pending stronger evidence: 51.
 - Pending EXECUTION_OBSERVATION rows: 19.
-- Pending EXTERNAL_DEPENDENCY_VALIDATION rows: 7.
+- Pending EXTERNAL_DEPENDENCY_VALIDATION rows: 6.
 - Pending MACHINE_CONSUMER_VALIDATION rows: 4.
 - Pending PROMPT_REDTEAM_LATER rows: 24.
 - Current contradiction coverage: 20/20.
 - Skill breadth coverage: 37/37.
 - High-risk non-SKILL surface coverage: 71/71.
 - Phase 4 hard errors: 0.
-- Tooling incident ledger: 127 entries from 115 failed + 12 cancelled runs.
+- Tooling incident ledger: 150 entries from 126 failed + 24 cancelled runs.
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 
@@ -84,13 +84,17 @@ Runtime-observed rows include:
 - B-020 list-skills enumeration.
 - B-046 migrate-to-shoehorn assertion discovery / CT-019 correction.
 - B-056 diagnosing-bugs HITL capture helper.
+- B-008 architecture-report self-containment / external-dependency observation.
+- B-010 implement-review pre-commit visibility observation.
+- B-047 scaffold-exercises solution-only linter observation (CT-020 remains open).
 
 ### Important contradiction/runtime findings
 
 - CT-019 is RESOLVED as an audit correction: the frozen grep behavior did catch the later ` as Type` substring; B-046 is runtime observed.
-- CT-020 remains OPEN: scaffold-exercises prose permits a solution-only exercise, but its linter rejects that shape.
+- CT-020 remains OPEN: scaffold-exercises prose permits a solution-only exercise, but the pinned external ai-hero-cli v0.2.8 linter rejects that shape in a synthetic fixture while an explainer-only control passes.
 - CT-012 remains OPEN: the deep-module skill prose says four rules and allows own-package files to import freely, while the shipped config has five error rules including `tests-folder-is-private`.
 - B-017 preserved a real Husky 9.1.7 drift: `.husky/pre-commit` itself is not executable, while the executable `.husky/_/pre-commit` shim runs it through `sh -e`. Functional commit-hook behavior was successfully observed; the stale frozen executable-bit predicate was not hidden with chmod.
+- B-008 was republished by successful GitHub Action 34930416829 after its workflow gained retry-on-push-race publication handling. B-010 was durably observed by Action 34929107528. B-047 was durably observed by Action 34930009546; its result records frozen source provenance, the exact external linter commit/version, named tests, and the public course lock evidence.
 
 ## Persistence/control repairs completed before this handoff
 
@@ -144,7 +148,7 @@ Fallback only if the new chat cannot access GitHub: upload the minimum resume fi
 ## Immediate next execution
 
 1. Re-read current `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
-2. Continue the 19 pending `EXECUTION_OBSERVATION` rows in small deterministic batches.
+2. Continue the 17 pending `EXECUTION_OBSERVATION` rows in small deterministic batches. Do not manufacture execution evidence when a supported agent runtime is unavailable; move only to independently runnable evidence classes.
 3. Prefer isolated local/synthetic tests with no live-user repository side effects.
 4. Keep execution observations separate from machine-consumer, external-dependency, and prompt-red-team evidence classes.
 5. For each promoted row, record exact frozen source provenance, package/tool versions where applicable, named tests, workflow run ID, and durable result file.
