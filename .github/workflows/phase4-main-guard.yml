@@ -30,10 +30,12 @@ jobs:
         run: python scripts/build_phase4_runtime_queue.py
       - name: Validate Phase 4 runtime provenance
         run: python scripts/validate_phase4_runtime_provenance.py
+      - name: Rebuild human research checkpoint
+        run: python scripts/build_research_status.py
       - name: Ensure validators are non-mutating on committed main
         run: |
-          if [[ -n "$(git status --porcelain -- 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md)" ]]; then
-            echo "Committed Phase 4 generated state is stale" >&2
+          if [[ -n "$(git status --porcelain -- 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md RESEARCH_STATUS.md)" ]]; then
+            echo "Committed Phase 4/status generated state is stale" >&2
             git status --short
             exit 1
           fi
