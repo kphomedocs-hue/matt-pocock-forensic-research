@@ -1,7 +1,7 @@
 {
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "workflow_run_id": 34928358966,
+  "workflow_run_id": 34929043781,
   "synthetic_inputs_only": true,
   "user_or_live_repo_touched": false,
   "test_count": 2,
@@ -50,24 +50,24 @@
         "probe": {
           "command": [
             "node",
-            "/tmp/phase4-architecture-report-f9r_9j6h/probe.mjs"
+            "/tmp/phase4-architecture-report-nf5w_n4p/probe.mjs"
           ],
           "returncode": 0,
-          "stdout": "{\"urls\":[\"http://127.0.0.1:45837/tailwind\",\"http://127.0.0.1:45837/mermaid\"],\"results\":[[\"http://127.0.0.1:45837/tailwind\",503],[\"http://127.0.0.1:45837/mermaid\",503]]}\n",
+          "stdout": "{\"urls\":[\"http://127.0.0.1:38369/tailwind\",\"http://127.0.0.1:38369/mermaid\"],\"results\":[[\"http://127.0.0.1:38369/tailwind\",503],[\"http://127.0.0.1:38369/mermaid\",503]]}\n",
           "stderr": ""
         },
         "probe_payload": {
           "urls": [
-            "http://127.0.0.1:45837/tailwind",
-            "http://127.0.0.1:45837/mermaid"
+            "http://127.0.0.1:38369/tailwind",
+            "http://127.0.0.1:38369/mermaid"
           ],
           "results": [
             [
-              "http://127.0.0.1:45837/tailwind",
+              "http://127.0.0.1:38369/tailwind",
               503
             ],
             [
-              "http://127.0.0.1:45837/mermaid",
+              "http://127.0.0.1:38369/mermaid",
               503
             ]
           ]
