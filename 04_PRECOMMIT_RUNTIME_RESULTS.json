@@ -3,7 +3,7 @@
   "source_repo": "mattpocock/skills",
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
-  "workflow_run_id": 34926418255,
+  "workflow_run_id": 34928232331,
   "synthetic_inputs_only": true,
   "user_or_live_repo_touched": false,
   "package_versions": {
@@ -44,7 +44,7 @@
             "prettier"
           ],
           "returncode": 0,
-          "stdout": "\nadded 7 packages in 3s\n",
+          "stdout": "\nadded 7 packages in 1s\n",
           "stderr": ""
         },
         "husky_init": {
@@ -93,7 +93,7 @@
             "Add pre-commit hooks (husky + lint-staged + prettier)"
           ],
           "returncode": 0,
-          "stdout": "[main (root-commit) 9dbaa50] Add pre-commit hooks (husky + lint-staged + prettier)\n 8 files changed, 156 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 .husky/pre-commit\n create mode 100644 .lintstagedrc\n create mode 100644 .prettierrc\n create mode 100644 package-lock.json\n create mode 100644 package.json\n create mode 100644 src/hook-target.js\n create mode 100644 src/manual-target.js\n",
+          "stdout": "[main (root-commit) 7f2e1d7] Add pre-commit hooks (husky + lint-staged + prettier)\n 8 files changed, 156 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 .husky/pre-commit\n create mode 100644 .lintstagedrc\n create mode 100644 .prettierrc\n create mode 100644 package-lock.json\n create mode 100644 package.json\n create mode 100644 src/hook-target.js\n create mode 100644 src/manual-target.js\n",
           "stderr": "\u26a0 Skipping backup because there\u2019s no initial commit yet. This might result in data loss.\n\n\u22ef Preparing lint-staged\u2026\n\u2714 Done preparing lint-staged!\n\u22ef Running tasks for staged files\u2026\n    * \u2014 8 files\n      \u22ef prettier --ignore-unknown --write\n\n\u2714 prettier --ignore-unknown --write\n\n\u2714 Done running tasks for staged files!\n\u22ef Staging changes from tasks\u2026\n\u2714 Done staging changes from tasks!\n\n> phase4-precommit-runtime-fixture@0.0.0 typecheck\n> node -e \"console.log('TYPECHECK_HOOK_OK')\"\n\nTYPECHECK_HOOK_OK\n\n> phase4-precommit-runtime-fixture@0.0.0 test\n> node -e \"console.log('TEST_HOOK_OK')\"\n\nTEST_HOOK_OK\n"
         },
         "commit_subject": {
