@@ -44,6 +44,7 @@ PHASE4_CT019_ROW_ANCHOR_TRANSITION_IDS = {
 PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION_IDS = {34867570179}
 PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION_IDS = {34867918904}
 PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY_IDS = {34868912572}
+PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION_IDS = {34925982246}
 
 
 def _is_closed(row: dict) -> bool:
@@ -150,6 +151,12 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY",
             "DETECTED_AND_BLOCKED_FIXED",
             "The first isolated B-017 run failed closed before promotion because it enforced the frozen setup-pre-commit verification predicate that .husky/pre-commit itself must be executable. Direct runtime plus Husky 9.1.7 source inspection showed the generated user hook is non-executable while Git is wired to an executable .husky/_/pre-commit shim that invokes the user hook through sh -e. The finding was retained as frozen-contract/current-toolchain drift rather than hidden with chmod. Follow-up run 34869643879 completed the actual commit smoke, preserved the executable-bit mismatch in durable evidence, and promoted B-017. No invalid B-017 evidence was published from the failed run.",
+        )
+    if run_id in PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION_IDS:
+        return (
+            "PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION",
+            "NO_RESEARCH_DATA_CHANGE_FIXED",
+            "All Phase 4 validators and runtime-provenance checks passed. The newly strengthened main guard then intentionally failed because RESEARCH_STATUS.md still contained the pre-generator checkpoint at that exact transition commit. The validation workflow generated and published the synchronized checkpoint immediately afterward as commit c198584d164e7f6ba6221df6eb36ee9f37205dfe; the failure exposed no research-data defect.",
         )
 
     # A transient GitHub log outage must not regress a previously adjudicated,
