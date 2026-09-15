@@ -1,0 +1,129 @@
+name: Phase 4 scaffold-exercises linter runtime
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/run_phase4_scaffold_exercises_linter_runtime.py'
+      - 'scripts/validate_phase4_runtime_provenance.py'
+      - '.github/workflows/phase4-scaffold-exercises-linter-runtime.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-phase4-scaffold-exercises-linter
+  cancel-in-progress: false
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout research state
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Checkout exact frozen skills source
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: mattpocock/skills
+          ref: 3cca18b368ae95cdbdebbff572ccafa662551015
+          path: frozen-source
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Checkout pinned external linter source
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: mattpocock/ai-hero-cli
+          ref: 5071b7d2d0e0514e134dadd26d9bed23c7c54365
+          path: external-ai-hero-cli
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Checkout public course lockfile evidence
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: ai-hero-dev/cohort-002-skill-building
+          ref: 73969f1a1ec65b390f0532bb8ae6c693376fca9e
+          path: external-course-lock
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Validate runner prerequisites
+        run: |
+          command -v git
+          command -v node
+          command -v npm
+          command -v python
+          test "$(git -C frozen-source rev-parse HEAD)" = "3cca18b368ae95cdbdebbff572ccafa662551015"
+          test "$(git -C external-ai-hero-cli rev-parse HEAD)" = "5071b7d2d0e0514e134dadd26d9bed23c7c54365"
+          test "$(git -C external-course-lock rev-parse HEAD)" = "73969f1a1ec65b390f0532bb8ae6c693376fca9e"
+      - name: Build exact external linter
+        run: |
+          npm install --global pnpm@10.15.0
+          pnpm --dir external-ai-hero-cli install --frozen-lockfile
+          pnpm --dir external-ai-hero-cli build
+      - name: Run isolated solution-only linter fixture
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: |
+          python scripts/run_phase4_scaffold_exercises_linter_runtime.py \
+            --source frozen-source \
+            --linter-source external-ai-hero-cli \
+            --course-source external-course-lock
+      - name: Rebuild and validate durable research state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/validate_behavior_matrix.py
+          python scripts/build_phase4_coverage.py
+          python scripts/build_phase4_runtime_queue.py
+          python scripts/validate_foundation.py
+          python scripts/validate_phase4_runtime_provenance.py
+          python scripts/build_research_status.py
+      - name: Enforce B-047 promotion gate
+        run: |
+          python - <<'PY'
+          import json
+          result = json.load(open("04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json", encoding="utf-8"))
+          matrix = json.load(open("04_BEHAVIOR_MATRIX.json", encoding="utf-8"))
+          integrity = json.load(open("04_BEHAVIOR_INTEGRITY.json", encoding="utf-8"))
+          queue = json.load(open("04_RUNTIME_OBSERVATION_QUEUE.json", encoding="utf-8"))
+          foundation = json.load(open("00_FOUNDATION_INTEGRITY.json", encoding="utf-8"))
+          tests = {item["test_id"]: item for item in result["tests"]}
+          rows = {item["behavior_id"]: item for item in matrix["rows"]}
+          assert result["frozen_commit"] == "3cca18b368ae95cdbdebbff572ccafa662551015"
+          assert result["source_checkout_head"] == result["frozen_commit"]
+          assert result["synthetic_inputs_only"] is True
+          assert result["user_or_live_repo_touched"] is False
+          assert result["external_linter"]["commit"] == "5071b7d2d0e0514e134dadd26d9bed23c7c54365"
+          assert result["external_linter"]["package_version"] == "0.2.8"
+          assert result["external_course_lock"]["exact_lock_entry"] == "ai-hero-cli@0.2.8:"
+          assert result["hard_errors"] == []
+          assert result["runtime_closure_behavior_ids"] == ["B-047"]
+          assert tests["SE-001"]["passed"] is True
+          assert tests["SE-002"]["passed"] is True
+          assert tests["SE-003"]["passed"] is True
+          assert rows["B-047"]["runtime_observed"] is True
+          assert rows["B-047"]["state"] == "CONFIRMED_GAP"
+          assert integrity["hard_errors"] == []
+          assert queue["hard_errors"] == []
+          assert queue["runtime_observed"] == integrity["runtime_observed_count"]
+          assert foundation["hard_errors"] == []
+          print("B-047 runtime observed; CT-020 remains open")
+          PY
+      - name: Commit runtime evidence atomically
+        run: |
+          paths=(04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json 04_SCAFFOLD_EXERCISES_LINTER_RESULTS.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md RESEARCH_STATUS.md)
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo "Scaffold-exercises runtime evidence already current"
+            exit 0
+          fi
+          git commit -m "phase4: record scaffold-exercises linter runtime evidence"
+          git push
