@@ -10,6 +10,8 @@ on:
       - '04_RUNTIME_EXECUTION_EVIDENCE.json'
       - '04_RUNTIME_SMOKE_RESULTS.json'
       - '04_CT019_REPRODUCTION.json'
+      - '04_DEEP_MODULE_RUNTIME_RESULTS.json'
+      - '04_PRECOMMIT_RUNTIME_RESULTS.json'
       - '01_FILE_CENSUS.json'
       - 'scripts/validate_behavior_matrix.py'
       - 'scripts/validate_phase4_runtime_provenance.py'
