@@ -2,7 +2,7 @@
 
 Frozen source: `mattpocock/skills` @ `3cca18b368ae95cdbdebbff572ccafa662551015`.
 
-Workflow run: `34928232331`.
+Workflow run: `34929043768`.
 
 Resolved packages: `{"husky": "9.1.7", "lint-staged": "17.5.1", "prettier": "3.9.6"}`.
 
