@@ -1,0 +1,59 @@
+name: Phase 4 implement-review visibility runtime
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/run_phase4_implement_review_visibility.py'
+      - 'scripts/validate_phase4_runtime_provenance.py'
+      - '.github/workflows/phase4-implement-review-visibility.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forensic-phase4-implement-review-visibility
+  cancel-in-progress: false
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: mattpocock/skills
+          ref: 3cca18b368ae95cdbdebbff572ccafa662551015
+          path: frozen-source
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Run isolated implement-review visibility harness
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: python scripts/run_phase4_implement_review_visibility.py --source frozen-source
+      - name: Rebuild and validate durable state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/validate_behavior_matrix.py
+          python scripts/build_phase4_coverage.py
+          python scripts/build_phase4_runtime_queue.py
+          python scripts/validate_foundation.py
+          python scripts/validate_phase4_runtime_provenance.py
+          python scripts/build_research_status.py
+      - name: Commit runtime evidence atomically
+        run: |
+          paths=(04_IMPLEMENT_REVIEW_VISIBILITY_RESULTS.json 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md RESEARCH_STATUS.md)
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- "${paths[@]}"
+          git diff --cached --quiet && exit 0
+          git commit -m "phase4: record implement-review visibility runtime evidence"
+          git push
