@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/run_phase4_precommit-runtime.py'
+      - 'scripts/run_phase4_precommit_runtime.py'
       - 'scripts/validate_phase4_runtime_provenance.py'
       - '.github/workflows/phase4-precommit-runtime.yml'
 
