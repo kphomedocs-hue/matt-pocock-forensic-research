@@ -3,8 +3,9 @@
 
 Keeps one-off, fully adjudicated run-ID reconciliations outside the large base
 classifier so a narrow audit correction cannot accidentally rewrite historical
-classification logic. Also prints only the rows that keep the closure gate
-open, so a failed-closed run is directly diagnosable from its job log.
+classification logic. Also preserves a previously closed historical
+classification when GitHub temporarily cannot return that same run's job log.
+New or previously open incidents still fail closed.
 """
 from __future__ import annotations
 
@@ -44,6 +45,48 @@ PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION_IDS = {34867570179}
 PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION_IDS = {34867918904}
 PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY_IDS = {34868912572}
 
+
+def _is_closed(row: dict) -> bool:
+    classification = str(row.get("classification") or "")
+    impact = str(row.get("impact") or "")
+    return (
+        bool(classification)
+        and not classification.startswith("UNKNOWN")
+        and impact != "UNKNOWN"
+        and "REQUIRES_REVIEW" not in classification
+        and "REQUIRES_REVIEW" not in impact
+    )
+
+
+def _load_prior_closed() -> dict[tuple[int, str], tuple[str, str, str]]:
+    """Load durable closed classifications before base.main overwrites the ledger.
+
+    The failed-step name is part of the key so a later failure on the same run ID
+    cannot accidentally inherit an unrelated adjudication.
+    """
+    if not base.OUT_JSON.exists():
+        return {}
+    try:
+        data = json.loads(base.OUT_JSON.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    prior: dict[tuple[int, str], tuple[str, str, str]] = {}
+    for row in data.get("entries", []):
+        if not _is_closed(row):
+            continue
+        run_id = row.get("run_id")
+        failed_step = row.get("failed_step")
+        if isinstance(run_id, int) and isinstance(failed_step, str) and failed_step:
+            prior[(run_id, failed_step)] = (
+                str(row["classification"]),
+                str(row["impact"]),
+                "Preserved from the previously published closed tooling ledger because the current refresh could not retrieve this historical job log. Prior durable reason: "
+                + str(row.get("reason") or "closed historical adjudication"),
+            )
+    return prior
+
+
+PRIOR_CLOSED = _load_prior_closed()
 _original_classify_failure = base.classify_failure
 
 
@@ -108,6 +151,15 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "DETECTED_AND_BLOCKED_FIXED",
             "The first isolated B-017 run failed closed before promotion because it enforced the frozen setup-pre-commit verification predicate that .husky/pre-commit itself must be executable. Direct runtime plus Husky 9.1.7 source inspection showed the generated user hook is non-executable while Git is wired to an executable .husky/_/pre-commit shim that invokes the user hook through sh -e. The finding was retained as frozen-contract/current-toolchain drift rather than hidden with chmod. Follow-up run 34869643879 completed the actual commit smoke, preserved the executable-bit mismatch in durable evidence, and promoted B-017. No invalid B-017 evidence was published from the failed run.",
         )
+
+    # A transient GitHub log outage must not regress a previously adjudicated,
+    # closed historical row back to UNKNOWN. Only the identical run + failed
+    # step may inherit; genuinely new/open incidents continue to fail closed.
+    if "<LOG_FETCH_ERROR" in log:
+        prior = PRIOR_CLOSED.get((run_id, failed_step))
+        if prior:
+            return prior
+
     return _original_classify_failure(run_id, failed_step, log)
 
 
