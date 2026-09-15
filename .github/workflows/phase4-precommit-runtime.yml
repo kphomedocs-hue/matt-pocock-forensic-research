@@ -33,7 +33,7 @@ jobs:
           path: frozen-source
           fetch-depth: 1
           persist-credentials: false
-      - uses: actions/setup-python@v7.0.0
+      - uses: actions/setup-python@v7.0.1
         with:
           python-version: '3.12'
       - name: Sync latest research main
@@ -90,14 +90,16 @@ jobs:
           print('runtime_observed_total=', i['runtime_observed_count'])
           print('pending_total=', q['pending_total'])
           PY
+      - name: Rebuild research checkpoint
+        run: python scripts/build_research_status.py
       - name: Commit setup-pre-commit runtime evidence
         run: |
-          paths=(04_PRECOMMIT_RUNTIME_RESULTS.json 04_PRECOMMIT_RUNTIME_RESULTS.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
+          paths=(04_PRECOMMIT_RUNTIME_RESULTS.json 04_PRECOMMIT_RUNTIME_RESULTS.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md RESEARCH_STATUS.md)
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -- "${paths[@]}"
           if git diff --cached --quiet; then
-            echo "Setup-pre-commit runtime evidence already current"
+            echo "Setup-pre-commit runtime evidence and research checkpoint already current"
             exit 0
           fi
           git commit -m "phase4: record setup-pre-commit runtime evidence"
