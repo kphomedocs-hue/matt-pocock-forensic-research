@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 13,
-  "pending_total": 52,
+  "runtime_observed": 14,
+  "pending_total": 51,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -15,13 +15,13 @@
   },
   "observed_by_class": {
     "EXECUTION_OBSERVATION": 13,
-    "EXTERNAL_DEPENDENCY_VALIDATION": 0,
+    "EXTERNAL_DEPENDENCY_VALIDATION": 1,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
     "EXECUTION_OBSERVATION": 17,
-    "EXTERNAL_DEPENDENCY_VALIDATION": 7,
+    "EXTERNAL_DEPENDENCY_VALIDATION": 6,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
   },
@@ -1207,8 +1207,8 @@
         "EXTERNAL_DEPENDENCY"
       ],
       "evidence_class": "EXTERNAL_DEPENDENCY_VALIDATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0141"
       ],
@@ -1219,7 +1219,7 @@
         "CT-020"
       ],
       "rationale": "Contract depends on behavior outside the frozen repository; validate the dependency/portability assumption separately from source truth.",
-      "next_evidence": "Run a solution-only fixture against the actual linter and then align the operative variant rule to the observed acceptance set."
+      "next_evidence": "Frozen behavior is runtime-observed. Source-side correction must make the allowed-variant prose and mandatory linter acceptance set identical, then rerun solution-only and explainer-only fixtures."
     },
     {
       "behavior_id": "B-048",

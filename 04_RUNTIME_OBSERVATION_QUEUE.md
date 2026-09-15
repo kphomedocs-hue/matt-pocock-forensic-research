@@ -6,15 +6,15 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **13/65**.
-Pending stronger evidence: **52**.
+Runtime-observed rows: **14/65**.
+Pending stronger evidence: **51**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
 | EXECUTION_OBSERVATION | 30 | 13 | 17 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
-| EXTERNAL_DEPENDENCY_VALIDATION | 7 | 0 | 7 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
+| EXTERNAL_DEPENDENCY_VALIDATION | 7 | 1 | 6 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
 
@@ -68,7 +68,7 @@ Pending stronger evidence: **52**.
 | B-044 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0131 | writing-fragments explore-only append discipline | Runtime-test whether the agent resists outlining pressure and preserves reordered/deleted fragments made outside the conversation. |
 | B-045 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0133 | writing-shape raw-input immutability | Runtime-test with external edits to both raw and output files and verify the raw source is never modified while article edits are preserved. |
 | B-046 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | YES | MP-0139 | migrate-to-shoehorn assertion discovery coverage | If deeper verification is needed, test the actual edit/import/type-check migration on representative single- and double-assertion files; discovery coverage itself is closed. |
-| B-047 | EXTERNAL_DEPENDENCY_VALIDATION | CONFIRMED_GAP | NO | MP-0141 | scaffold-exercises variant/linter contract | Run a solution-only fixture against the actual linter and then align the operative variant rule to the observed acceptance set. |
+| B-047 | EXTERNAL_DEPENDENCY_VALIDATION | CONFIRMED_GAP | YES | MP-0141 | scaffold-exercises variant/linter contract | Frozen behavior is runtime-observed. Source-side correction must make the allowed-variant prose and mandatory linter acceptance set identical, then rerun solution-only and explainer-only fixtures. |
 | B-048 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0146, MP-0148 | grill-me delegation wrapper | Runtime observation only needs to confirm the alias actually delegates rather than diverging in the host harness. |
 | B-049 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0148 | grilling frontier and authority discipline | Red-team with dependent questions and unavailable facts; verify downstream questions wait while unrelated frontier questions continue. |
 | B-050 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | NO | MP-0150 | handoff temporary-storage and redaction contract | Runtime-test platform-specific temp resolution plus seeded secrets/PII and verify the workspace remains untouched. |

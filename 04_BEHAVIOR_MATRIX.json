@@ -1208,9 +1208,22 @@
       ],
       "state": "CONFIRMED_GAP",
       "machine_enforced": "PARTIAL",
-      "runtime_observed": false,
-      "adjudication": "The skill says any one of problem/solution/explainer is enough, but its own lint summary requires at least one of problem/explainer/explainer.1. The external linter is a real completion gate, so the prose can direct a scaffold into a state the mandated checker rejects.",
-      "next_evidence": "Run a solution-only fixture against the actual linter and then align the operative variant rule to the observed acceptance set."
+      "runtime_observed": true,
+      "adjudication": "Frozen scaffold-exercises permits a solution-only exercise, but isolated execution of the exact external ai-hero-cli v0.2.8 linter selected by the public course lock rejects a solution-only readme fixture with the stated missing-primary-variant error. An explainer-only control passes. The prompt/linter mismatch is operational; CT-020 remains open.",
+      "next_evidence": "Frozen behavior is runtime-observed. Source-side correction must make the allowed-variant prose and mandatory linter acceptance set identical, then rerun solution-only and explainer-only fixtures.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "EXTERNAL_LINTER_SYNTHETIC_RUNTIME",
+          "test_ids": [
+            "SE-001",
+            "SE-002",
+            "SE-003"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 34930009546,
+          "result_file": "04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-048",

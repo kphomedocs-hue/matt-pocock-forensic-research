@@ -32,8 +32,8 @@ The durable Phase 3 graph/closure artifacts remain authoritative. Current known 
 ## Phase 4 — Behavior & Enforcement
 
 - behavior rows: **65**;
-- runtime observed: **13/65**;
-- total pending stronger evidence: **52**;
+- runtime observed: **14/65**;
+- total pending stronger evidence: **51**;
 - current contradiction coverage: **20/20**;
 - skill breadth coverage: **37/37**;
 - high-risk non-SKILL surface coverage: **71/71**;
@@ -42,7 +42,7 @@ The durable Phase 3 graph/closure artifacts remain authoritative. Current known 
 ### Evidence-depth queue
 
 - `EXECUTION_OBSERVATION`: **13 observed / 17 pending**;
-- `EXTERNAL_DEPENDENCY_VALIDATION`: **0 observed / 7 pending**;
+- `EXTERNAL_DEPENDENCY_VALIDATION`: **1 observed / 6 pending**;
 - `MACHINE_CONSUMER_VALIDATION`: **0 observed / 4 pending**;
 - `PROMPT_REDTEAM_LATER`: **0 observed / 24 pending**.
 

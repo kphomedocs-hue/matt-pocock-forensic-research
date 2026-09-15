@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "source_checkout_head": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "workflow_run_id": 34930009546,
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "external_linter": {
+    "repo": "mattpocock/ai-hero-cli",
+    "commit": "5071b7d2d0e0514e134dadd26d9bed23c7c54365",
+    "tag": "v0.2.8",
+    "package_version": "0.2.8",
+    "entrypoint": "dist/bin.cjs"
+  },
+  "external_course_lock": {
+    "repo": "ai-hero-dev/cohort-002-skill-building",
+    "commit": "73969f1a1ec65b390f0532bb8ae6c693376fca9e",
+    "declared_range": "^0.2.8",
+    "exact_lock_entry": "ai-hero-cli@0.2.8:"
+  },
+  "tool_versions": {
+    "git": "git version 2.55.0",
+    "python": "Python 3.12.14",
+    "node": "v22.23.2",
+    "npm": "10.9.8",
+    "pnpm": ""
+  },
+  "test_count": 3,
+  "pass_count": 3,
+  "fail_count": 0,
+  "tests": [
+    {
+      "test_id": "SE-001",
+      "behavior_ids": [
+        "B-047"
+      ],
+      "title": "frozen scaffold contract and pinned external linter provenance",
+      "assertions": [
+        "frozen skill permits a solution-only exercise in its variant rule",
+        "the same frozen skill mandates the ai-hero-cli linter and describes a primary set excluding solution",
+        "the tagged external linter implements that primary-set rejection",
+        "the public course lock resolves ai-hero-cli@0.2.8, and the built package reports that exact version"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "frozen_skill_blob": "d87df28e7d8abb4e57ecc6e47d71c274d16054c7",
+        "external_linter_commit": "5071b7d2d0e0514e134dadd26d9bed23c7c54365",
+        "external_linter_dist_package": {
+          "version": "0.2.8",
+          "bin": "bin.cjs"
+        },
+        "public_course_lock": {
+          "repo": "ai-hero-dev/cohort-002-skill-building",
+          "commit": "73969f1a1ec65b390f0532bb8ae6c693376fca9e",
+          "declared_range": "^0.2.8",
+          "contains_exact_lock_entry": true
+        }
+      }
+    },
+    {
+      "test_id": "SE-002",
+      "behavior_ids": [
+        "B-047"
+      ],
+      "title": "solution-only scaffold is rejected by the actual external linter",
+      "assertions": [
+        "fixture contains exactly one solution/readme.md variant with real content",
+        "no problem, explainer, or explainer.1 directory exists",
+        "the tagged external linter exits non-zero and names the missing primary-variant rule"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "fixture": "solution-only",
+        "linter_run": {
+          "command": [
+            "node",
+            "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/external-ai-hero-cli/dist/bin.cjs",
+            "internal",
+            "lint",
+            "--root",
+            "/tmp/phase4-scaffold-exercises-x_wrpuc5/solution-only/exercises",
+            "--cwd",
+            "/tmp/phase4-scaffold-exercises-x_wrpuc5/solution-only"
+          ],
+          "returncode": 1,
+          "stdout": "01-contracts\n  01.01-solution-only\n    No problem, explainer, or explainer.1 folder found in the exercise.\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "test_id": "SE-003",
+      "behavior_ids": [
+        "B-047"
+      ],
+      "title": "explainer-only control remains accepted",
+      "assertions": [
+        "fixture contains exactly one explainer/readme.md variant with real content",
+        "the same tagged external linter accepts that primary variant"
+      ],
+      "passed": true,
+      "errors": [],
+      "evidence": {
+        "fixture": "explainer-only",
+        "linter_run": {
+          "command": [
+            "node",
+            "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/external-ai-hero-cli/dist/bin.cjs",
+            "internal",
+            "lint",
+            "--root",
+            "/tmp/phase4-scaffold-exercises-x_wrpuc5/explainer-only/exercises",
+            "--cwd",
+            "/tmp/phase4-scaffold-exercises-x_wrpuc5/explainer-only"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "hard_errors": [],
+  "runtime_closure_behavior_ids": [
+    "B-047"
+  ]
+}
