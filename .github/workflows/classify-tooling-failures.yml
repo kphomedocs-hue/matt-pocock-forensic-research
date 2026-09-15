@@ -20,6 +20,9 @@ on:
       - 'Apply Phase 4 batch'
       - 'Phase 4 runtime smoke'
       - 'Phase 4 local runtime checks'
+      - 'Phase 4 deep-module runtime'
+      - 'Phase 4 setup-pre-commit runtime'
+      - 'Phase 4 main guard'
     types: [completed]
 
 permissions:
