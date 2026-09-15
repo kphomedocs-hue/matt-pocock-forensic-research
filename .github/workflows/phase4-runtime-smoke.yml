@@ -67,12 +67,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/validate_foundation.py
+      - name: Rebuild research checkpoint
+        run: python scripts/build_research_status.py
       - name: Validate runtime evidence and promotion gate
         run: |
           test -s 04_RUNTIME_SMOKE_RESULTS.json
           test -s 04_RUNTIME_SMOKE_RESULTS.md
           test -s 04_CT019_REPRODUCTION.json
           test -s 04_CT019_REPRODUCTION.md
+          test -s RESEARCH_STATUS.md
           python - <<'PY'
           import json
           s = json.load(open('04_RUNTIME_SMOKE_RESULTS.json', encoding='utf-8'))
@@ -105,8 +108,6 @@ jobs:
           assert f['hard_errors'] == []
           observed = {x['behavior_id'] for x in q['items'] if x['runtime_observed']}
           assert {'B-016', 'B-019', 'B-020', 'B-046'} <= observed
-          # B-018/B-056 are supporting-only in this smoke suite but may be globally
-          # runtime-observed by the separate deterministic local-runtime suite.
           b46 = next(x for x in q['items'] if x['behavior_id'] == 'B-046')
           assert b46['state'] == 'CONFIRMED_MATCH'
           register = open('04_CONTRADICTION_REGISTER.md', encoding='utf-8').read()
@@ -120,12 +121,12 @@ jobs:
           PY
       - name: Commit runtime evidence and Phase 4 promotion
         run: |
-          paths=(04_RUNTIME_SMOKE_RESULTS.json 04_RUNTIME_SMOKE_RESULTS.md 04_CT019_REPRODUCTION.json 04_CT019_REPRODUCTION.md 04_CONTRADICTION_REGISTER.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
+          paths=(04_RUNTIME_SMOKE_RESULTS.json 04_RUNTIME_SMOKE_RESULTS.md 04_CT019_REPRODUCTION.json 04_CT019_REPRODUCTION.md 04_CONTRADICTION_REGISTER.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md RESEARCH_STATUS.md)
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -- "${paths[@]}"
           if git diff --cached --quiet; then
-            echo "Runtime smoke evidence already current"
+            echo "Runtime smoke evidence and research checkpoint already current"
             exit 0
           fi
           git commit -m "phase4: record runtime evidence and correct CT-019"
