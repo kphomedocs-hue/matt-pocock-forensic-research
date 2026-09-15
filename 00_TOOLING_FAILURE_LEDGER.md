@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **125**
+Failed workflow runs enumerated: **126**
 
 Cancelled workflow runs enumerated: **24**
 
-Total incident runs: **149**
+Total incident runs: **150**
 
-Incident entries classified: **149**
+Incident entries classified: **150**
 
 Unknown entries: **0**
 
@@ -45,7 +45,7 @@ Unresolved/review-required entries: **0**
 | PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | 1 |
 | PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION | 1 |
 | PHASE4_STATUS_STALE_GUARD_TRANSITION | 3 |
-| PUSH_RACE | 62 |
+| PUSH_RACE | 63 |
 | STATUS_PARSER | 10 |
 | TOOLING_CLASSIFIER_BACKLOG_CLOSURE | 1 |
 
@@ -61,7 +61,7 @@ Unresolved/review-required entries: **0**
 | NO_DATA_CHANGE_FIXED | 1 |
 | NO_RESEARCH_DATA_CHANGE_FIXED | 10 |
 | REDUNDANT_REFRESH_DISCARDED | 21 |
-| TEMPORARILY_STALE | 62 |
+| TEMPORARILY_STALE | 63 |
 | TRANSIENT_OR_INFRA | 1 |
 
 ## Incident ledger
@@ -217,6 +217,7 @@ Unresolved/review-required entries: **0**
 | 34928232337 | failure | 2026-09-15T04:17:03Z | Phase 4 architecture-report runtime | Run isolated offline dependency harness | PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 | 34928290191 | failure | 2026-09-15T04:17:59Z | Phase 4 architecture-report runtime | Run isolated offline dependency harness | PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 | 34928459181 | failure | 2026-09-15T04:20:39Z | Classify tooling failures | Validate tooling incident ledger outputs | TOOLING_CLASSIFIER_BACKLOG_CLOSURE | DETECTED_AND_BLOCKED_FIXED |
+| 34929956423 | failure | 2026-09-15T04:44:00Z | Phase 4 architecture-report runtime | Commit runtime evidence atomically | PUSH_RACE | TEMPORARILY_STALE |
 
 ## Closure rule
 

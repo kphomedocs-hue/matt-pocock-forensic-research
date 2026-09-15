@@ -1,10 +1,10 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 125,
+  "failed_run_count": 126,
   "cancelled_run_count": 24,
-  "incident_run_count": 149,
-  "incident_entry_count": 149,
+  "incident_run_count": 150,
+  "incident_entry_count": 150,
   "classification_counts": {
     "CLASSIFIER_CLOSURE_GATE": 18,
     "CLASSIFIER_REFRESH_SUPERSEDED": 21,
@@ -31,7 +31,7 @@
     "PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION": 1,
     "PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION": 1,
     "PHASE4_STATUS_STALE_GUARD_TRANSITION": 3,
-    "PUSH_RACE": 62,
+    "PUSH_RACE": 63,
     "STATUS_PARSER": 10,
     "TOOLING_CLASSIFIER_BACKLOG_CLOSURE": 1
   },
@@ -44,7 +44,7 @@
     "NO_DATA_CHANGE_FIXED": 1,
     "NO_RESEARCH_DATA_CHANGE_FIXED": 10,
     "REDUNDANT_REFRESH_DISCARDED": 21,
-    "TEMPORARILY_STALE": 62,
+    "TEMPORARILY_STALE": 63,
     "TRANSIENT_OR_INFRA": 1
   },
   "unknown_entries": 0,
@@ -2135,6 +2135,20 @@
       "classification": "TOOLING_CLASSIFIER_BACKLOG_CLOSURE",
       "impact": "DETECTED_AND_BLOCKED_FIXED",
       "reason": "The tooling-ledger classifier correctly failed closed because three older stale-status main-guard runs had never been classified. Their exact logs were inspected and mappings were added before the next classifier run."
+    },
+    {
+      "run_id": 34929956423,
+      "run_conclusion": "failure",
+      "run_number": 7,
+      "workflow": "Phase 4 architecture-report runtime",
+      "created_at": "2026-09-15T04:44:00Z",
+      "head_sha": "3b1d37fd074872287dad8700018887d8a65c1944",
+      "title": "phase4: validate scaffold-exercises linter runtime provenance",
+      "job_id": 104255934931,
+      "failed_step": "Commit runtime evidence atomically",
+      "classification": "PUSH_RACE",
+      "impact": "TEMPORARILY_STALE",
+      "reason": "The B-008 architecture-report harness and every rebuild validator passed, but its generated-evidence commit lost a non-fast-forward race to concurrent main updates. No stale or invalid evidence was published from the rejected push; the later B-008 durable result remained green."
     }
   ]
 }
