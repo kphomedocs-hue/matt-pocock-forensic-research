@@ -51,6 +51,12 @@ PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION_IDS = {
     34928232337,
     34928290191,
 }
+PHASE4_STATUS_STALE_GUARD_TRANSITION_IDS = {
+    34926294022,
+    34926308847,
+    34926329873,
+}
+TOOLING_CLASSIFIER_BACKLOG_CLOSURE_IDS = {34928459181}
 
 
 def _is_closed(row: dict) -> bool:
@@ -157,6 +163,18 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY",
             "DETECTED_AND_BLOCKED_FIXED",
             "The first isolated B-017 run failed closed before promotion because it enforced the frozen setup-pre-commit verification predicate that .husky/pre-commit itself must be executable. Direct runtime plus Husky 9.1.7 source inspection showed the generated user hook is non-executable while Git is wired to an executable .husky/_/pre-commit shim that invokes the user hook through sh -e. The finding was retained as frozen-contract/current-toolchain drift rather than hidden with chmod. Follow-up run 34869643879 completed the actual commit smoke, preserved the executable-bit mismatch in durable evidence, and promoted B-017. No invalid B-017 evidence was published from the failed run.",
+        )
+    if run_id in PHASE4_STATUS_STALE_GUARD_TRANSITION_IDS:
+        return (
+            "PHASE4_STATUS_STALE_GUARD_TRANSITION",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The main guard correctly detected a generated RESEARCH_STATUS.md stale after an earlier Phase 4 state transition. No invalid research state was accepted; the current generated checkpoint is synchronized and later main-guard runs pass.",
+        )
+    if run_id in TOOLING_CLASSIFIER_BACKLOG_CLOSURE_IDS:
+        return (
+            "TOOLING_CLASSIFIER_BACKLOG_CLOSURE",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The tooling-ledger classifier correctly failed closed because three older stale-status main-guard runs had never been classified. Their exact logs were inspected and mappings were added before the next classifier run.",
         )
     if run_id in PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT_IDS:
         return (
