@@ -49,6 +49,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/validate_foundation.py
+      - name: Rebuild research checkpoint
+        run: python scripts/build_research_status.py
       - name: Enforce runtime-evidence acceptance gate
         run: |
           python - <<'PY'
@@ -73,12 +75,12 @@ jobs:
           PY
       - name: Commit runtime evidence and regenerated Phase 4 state
         run: |
-          paths=(04_RUNTIME_EXECUTION_EVIDENCE.json 04_RUNTIME_EXECUTION_EVIDENCE.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md)
+          paths=(04_RUNTIME_EXECUTION_EVIDENCE.json 04_RUNTIME_EXECUTION_EVIDENCE.md 04_BEHAVIOR_MATRIX.json 04_BEHAVIOR_MATRIX.md 04_BEHAVIOR_INTEGRITY.json 04_BEHAVIOR_COVERAGE.json 04_BEHAVIOR_COVERAGE.md 04_RUNTIME_OBSERVATION_QUEUE.json 04_RUNTIME_OBSERVATION_QUEUE.md 00_FOUNDATION_INTEGRITY.json 00_FOUNDATION_INTEGRITY.md RESEARCH_STATUS.md)
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -- "${paths[@]}"
           if git diff --cached --quiet; then
-            echo "Runtime evidence already current"
+            echo "Runtime evidence and research checkpoint already current"
             exit 0
           fi
           git commit -m "phase4: record local frozen-source runtime evidence"
