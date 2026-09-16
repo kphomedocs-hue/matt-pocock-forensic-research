@@ -33,9 +33,9 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Phase 3: COMPLETE.
 - Phase 3 graph edges: 554.
 - Phase 4 behavior rows: 65.
-- Phase 4 runtime observed: 14/65.
-- Phase 4 pending stronger evidence: 51.
-- Pending EXECUTION_OBSERVATION rows: 19.
+- Phase 4 runtime observed: 15/65.
+- Phase 4 pending stronger evidence: 50.
+- Pending EXECUTION_OBSERVATION rows: 16.
 - Pending EXTERNAL_DEPENDENCY_VALIDATION rows: 6.
 - Pending MACHINE_CONSUMER_VALIDATION rows: 4.
 - Pending PROMPT_REDTEAM_LATER rows: 24.
@@ -43,7 +43,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Skill breadth coverage: 37/37.
 - High-risk non-SKILL surface coverage: 71/71.
 - Phase 4 hard errors: 0.
-- Tooling incident ledger: 150 entries from 126 failed + 24 cancelled runs.
+- Tooling incident ledger: 171 entries from 139 failed + 32 cancelled runs.
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 
@@ -87,6 +87,7 @@ Runtime-observed rows include:
 - B-008 architecture-report self-containment / external-dependency observation.
 - B-010 implement-review pre-commit visibility observation.
 - B-047 scaffold-exercises solution-only linter observation (CT-020 remains open).
+- B-029 release version/tag workflow execution observation.
 
 ### Important contradiction/runtime findings
 
@@ -95,6 +96,7 @@ Runtime-observed rows include:
 - CT-012 remains OPEN: the deep-module skill prose says four rules and allows own-package files to import freely, while the shipped config has five error rules including `tests-folder-is-private`.
 - B-017 preserved a real Husky 9.1.7 drift: `.husky/pre-commit` itself is not executable, while the executable `.husky/_/pre-commit` shim runs it through `sh -e`. Functional commit-hook behavior was successfully observed; the stale frozen executable-bit predicate was not hidden with chmod.
 - B-008 was republished by successful GitHub Action 34930416829 after its workflow gained retry-on-push-race publication handling. B-010 was durably observed by Action 34929107528. B-047 was durably observed by Action 34930009546; its result records frozen source provenance, the exact external linter commit/version, named tests, and the public course lock evidence.
+- B-029 is durably recorded from upstream Release workflow run 33854812658 at the exact frozen source commit. The Version job, including the configured Create Version Pull Request step, succeeded. This establishes execution of the configured route, not confirmed tag publication; the retained job metadata has no action output proving a pending changeset, created PR, or tag.
 
 ## Persistence/control repairs completed before this handoff
 
@@ -107,7 +109,7 @@ The GitHub research pipeline was hardened so project state does not depend on ch
 - Runtime smoke, local runtime, deep-module, pre-commit, Phase 4 batch, and related producers no longer rely on a second workflow being triggered by a bot commit.
 - The tooling classifier preserves a previously closed historical classification when GitHub temporarily cannot return an old log, but genuinely new incidents still fail closed.
 - Deep-module and pre-commit result files are part of Phase 4 validation trigger coverage.
-- The tooling classifier watches active Phase 4 workflows.
+- The tooling classifier watches active Phase 4 workflows. Push-triggered and workflow-triggered classifier refreshes use separate concurrency lanes so a successful main-guard completion cannot cancel a required direct reconciliation refresh.
 - Current branch protection remains disabled; the main guard detects bad state but is not GitHub administrative prevention.
 
 ## Required first reads in the new chat
@@ -148,7 +150,7 @@ Fallback only if the new chat cannot access GitHub: upload the minimum resume fi
 ## Immediate next execution
 
 1. Re-read current `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
-2. Continue the 17 pending `EXECUTION_OBSERVATION` rows in small deterministic batches. Do not manufacture execution evidence when a supported agent runtime is unavailable; move only to independently runnable evidence classes.
+2. Continue the 16 pending `EXECUTION_OBSERVATION` rows in small deterministic batches. Do not manufacture execution evidence when a supported agent runtime is unavailable; move only to independently runnable evidence classes.
 3. Prefer isolated local/synthetic tests with no live-user repository side effects.
 4. Keep execution observations separate from machine-consumer, external-dependency, and prompt-red-team evidence classes.
 5. For each promoted row, record exact frozen source provenance, package/tool versions where applicable, named tests, workflow run ID, and durable result file.
