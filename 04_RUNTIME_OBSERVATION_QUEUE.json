@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 14,
-  "pending_total": 51,
+  "runtime_observed": 15,
+  "pending_total": 50,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -14,13 +14,13 @@
     "PROMPT_REDTEAM_LATER": 24
   },
   "observed_by_class": {
-    "EXECUTION_OBSERVATION": 13,
+    "EXECUTION_OBSERVATION": 14,
     "EXTERNAL_DEPENDENCY_VALIDATION": 1,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
-    "EXECUTION_OBSERVATION": 17,
+    "EXECUTION_OBSERVATION": 16,
     "EXTERNAL_DEPENDENCY_VALIDATION": 6,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
@@ -757,8 +757,8 @@
         "STATIC_CONFIG"
       ],
       "evidence_class": "EXECUTION_OBSERVATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0019",
         "MP-0056",
@@ -771,7 +771,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract names executable/runtime/CI behavior; direct isolated execution or equivalent runtime evidence is required before runtime closure.",
-      "next_evidence": "Observe an actual release/version-PR run later; static wiring is closed."
+      "next_evidence": "Frozen Release workflow execution is observed. If needed, obtain an upstream action log or output that proves a pending-changeset run created a version PR and/or emitted a tag; that broader branch evidence is not inferred here."
     },
     {
       "behavior_id": "B-030",

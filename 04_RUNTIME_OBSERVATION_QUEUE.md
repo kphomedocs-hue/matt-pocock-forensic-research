@@ -6,14 +6,14 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **14/65**.
-Pending stronger evidence: **51**.
+Runtime-observed rows: **15/65**.
+Pending stronger evidence: **50**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
-| EXECUTION_OBSERVATION | 30 | 13 | 17 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
+| EXECUTION_OBSERVATION | 30 | 14 | 16 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
 | EXTERNAL_DEPENDENCY_VALIDATION | 7 | 1 | 6 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
@@ -50,7 +50,7 @@ Pending stronger evidence: **51**.
 | B-026 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | NO | MP-0120 | implement-spec frontier scheduling | Run a representative dependency graph with at least one blocked branch and verify that no blocked ticket starts early. |
 | B-027 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0065, MP-0120 | implement-spec post-review fix revalidation | Add or identify a post-fix acceptance gate; runtime reproduction can demonstrate whether review-fix regressions can reach the ready state. |
 | B-028 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0074, MP-0075, MP-0076 | domain-modeling inline capture discipline | Second-pass/runtime testing should look for implementation-detail leakage into CONTEXT.md and over-eager ADR creation. |
-| B-029 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | NO | MP-0019, MP-0056, MP-0059 | release version/tag path | Observe an actual release/version-PR run later; static wiring is closed. |
+| B-029 | EXECUTION_OBSERVATION | STATICALLY_ENFORCED | YES | MP-0019, MP-0056, MP-0059 | release version/tag path | Frozen Release workflow execution is observed. If needed, obtain an upstream action log or output that proves a pending-changeset run created a version PR and/or emitted a tag; that broader branch evidence is not inferred here. |
 | B-030 | EXTERNAL_DEPENDENCY_VALIDATION | CONFIRMED_GAP | NO | MP-0043, MP-0104, MP-0106 | to-spec parent ready-for-agent routing | Use a distinct parent/spec state, strip ready-for-agent during ticketization, or make dispatchers mechanically distinguish parent specs from executable tickets. |
 | B-031 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0044, MP-0106 | to-tickets pre-publication approval | Runtime-test whether ambiguous or AFK prompts can cause publication before explicit approval. |
 | B-032 | PROMPT_REDTEAM_LATER | CONFIRMED_GAP | NO | MP-0044, MP-0106 | to-tickets acceptance-criteria falsifiability | Require every criterion to name a falsifying observation and verify it is false at base unless explicitly justified. |
