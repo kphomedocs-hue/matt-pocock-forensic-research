@@ -3,8 +3,8 @@
   "frozen_tree": "6e84c093fda2026396cea9fad6a924a6da0e1452",
   "input_fingerprints": {
     ".github/workflows/rebuild-phase3-state.yml": {
-      "bytes": 6073,
-      "sha256": "dd4f51732d4b364b31a843edc56f4812ad04126c2faa67715b97ccaa823a876f"
+      "bytes": 6074,
+      "sha256": "7c2dea37a3aff27da0fa6dc4c35c773a92d529c85a0ad9495b7da43ff0a9f775"
     },
     "01_FILE_CENSUS.json": {
       "bytes": 62852,
@@ -19,8 +19,8 @@
       "sha256": "fd73861af35577456935bf864f9542f72fe38f5ac921ddf50adf8fbd231f5f5b"
     },
     "05_HISTORY_LEDGER.md": {
-      "bytes": 4388,
-      "sha256": "30b2106e9966591f0950f74f9ed68ed576865d3fd372fb9cba21965de7b3ec48"
+      "bytes": 9711,
+      "sha256": "68d87d6bd97619be1e9d1e80fcdc1ed14b705fa1989ee3fcc00bd9f0f12f5346"
     },
     "scripts/build_connection_graph.py": {
       "bytes": 20440,
@@ -31,8 +31,8 @@
       "sha256": "378525c18c1e19e4f10772ee521f53c7d6efa6d0b3e4ead706c9031546af8925"
     },
     "scripts/build_history_bindings.py": {
-      "bytes": 9654,
-      "sha256": "0d131e92bcaf0e937d3503be5d544081ad514dd591b4d3fde830285149be478c"
+      "bytes": 10185,
+      "sha256": "ac7002f89dbc95b443f3388116b0ab927c9b4de493793d14f69119df7439812a"
     },
     "scripts/build_phase3_closure_index.py": {
       "bytes": 13589,
@@ -51,8 +51,8 @@
       "sha256": "ba0dcd6d2012aaa7dc950c73ed7ef8523d6954e955a18406dea09bce22150c03"
     },
     "scripts/validate_phase3_quality.py": {
-      "bytes": 14953,
-      "sha256": "942f2f3aeb9ab0c135aaef2aeb45d7cd7cba732b819e11b89f604337d5f10f7a"
+      "bytes": 15172,
+      "sha256": "9ea4acac42a449d89acc97acb5e5091241c75d5cd8f7abec191a2cb78b24be4a"
     },
     "scripts/verify_phase3_manifest.py": {
       "bytes": 1584,
@@ -81,16 +81,16 @@
       "sha256": "0a881421e29296fb8084a38bd50786f7bb7ce5558464723682f3fb8b91ae5f69"
     },
     "03_HISTORY_BINDINGS.json": {
-      "bytes": 90948,
-      "sha256": "e93a9f6049cabdb275fd3d97b16b5976202fe7c28985aaaf5c43e1ba11513d42"
+      "bytes": 150281,
+      "sha256": "259f23f980840f1443322e1bb87aaf36299fecae3e3acd366a9aa3a03e24c52f"
     },
     "03_HISTORY_BINDINGS.md": {
-      "bytes": 7516,
-      "sha256": "1f7fbe0b51fb6592a2c875dbf55a8e73ba09e4ba16b6fec6a3c67dab4ad66264"
+      "bytes": 11353,
+      "sha256": "7cbfd0518c7e494e647b5f2d5353c550b2a2a6e1c9876642ebe0f13f939582b6"
     },
     "03_PHASE3_CLOSURE_INDEX.json": {
-      "bytes": 112381,
-      "sha256": "650c2df4a2f046580dc86b18bdf3059172c7799e07814e9683221ea0e755f7a2"
+      "bytes": 112422,
+      "sha256": "ee091ad1a15a282722f73faaad580db1984608abf287b4c5be9027413bb579bf"
     },
     "03_PHASE3_CLOSURE_INDEX.md": {
       "bytes": 22524,

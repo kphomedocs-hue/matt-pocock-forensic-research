@@ -3,7 +3,7 @@
   "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
   "history_definition_source": "05_HISTORY_LEDGER.md",
   "file_count": 164,
-  "history_event_count": 9,
+  "history_event_count": 10,
   "events": [
     {
       "history_id": "H-001",
@@ -111,387 +111,960 @@
     },
     {
       "history_id": "H-003",
-      "date": "2026-07-13",
-      "lineage_state": "PARTIAL",
-      "area": "Claude plugin",
-      "event": "Native Claude Code plugin added with curated promoted skill list.",
-      "current_significance": "Establishes promoted distribution path.",
+      "date": "2026-07-13 \u2192 2026-08",
+      "lineage_state": "RECONCILED",
+      "area": "Claude plugin promoted-set lineage",
+      "event": "PR #536 / commit `42a5b70fcacc7baff1977b13f3919fb2f63af14e` created the native Claude Code plugin with an explicit curated 21-skill manifest at v1.2.0. That PR itself documented one pre-existing promoted-bucket gap: `resolving-merge-conflicts` was in Engineering with docs but absent from both `plugin.json` and top-level README. PR #539 / commit `d3275456a453ae93260abb9c945af60c259cdc6d` fixed that invariant and audited the rest of the promoted set. Subsequent promoted-set mutations are individually traceable: PR #593 / commit `0f2bdbdb06220d2df3718b8f0483157c6c8a8600` graduated `to-questionnaire`; PR #680 / commit `b3376f8d39848dd08572ec2667da4739a67c8c04` graduated `wizard`; PR #751 / commit `355fa7420b418af838998f7ec4365ceda1c8dfcc` added `wait-what`; PR #650 / merge `fa3b2a6b355cf77ee0f2fb8c347f62ec42bbf022` renamed `writing-great-skills` to `writing-for-agents` with no alias and updated `plugin.json`.",
+      "current_significance": "Reconciles the full curated Claude-plugin membership evolution to the frozen 25-skill set. The promoted plugin set is an explicit maintained subset, not a recursive bucket discovery rule.",
       "refs": [
         {
-          "type": "commit",
-          "ref": "42a5b70fcacc7baff1977b13f3919fb2f63af14e",
+          "type": "pr",
+          "ref": "536",
           "changed_file_count": 6
+        },
+        {
+          "type": "pr",
+          "ref": "539",
+          "changed_file_count": 3
+        },
+        {
+          "type": "pr",
+          "ref": "593",
+          "changed_file_count": 46
+        },
+        {
+          "type": "pr",
+          "ref": "650",
+          "changed_file_count": 12
+        },
+        {
+          "type": "pr",
+          "ref": "680",
+          "changed_file_count": 10
+        },
+        {
+          "type": "pr",
+          "ref": "751",
+          "changed_file_count": 8
         }
       ],
-      "changed_paths_total": 6,
+      "changed_paths_total": 59,
       "current_frozen_bindings": [
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0002",
           "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0017",
           "path": ".claude-plugin/marketplace.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0018",
           "path": ".claude-plugin/plugin.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0029",
           "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0035",
+          "path": "docs/engineering/grill-with-docs.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0038",
+          "path": "docs/engineering/prototype.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0039",
+          "path": "docs/engineering/research.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0043",
+          "path": "docs/engineering/to-spec.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0045",
+          "path": "docs/engineering/triage.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0047",
+          "path": "docs/engineering/wizard.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0048",
+          "path": "docs/productivity/grill-me.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0049",
+          "path": "docs/productivity/grilling.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0052",
+          "path": "docs/productivity/to-questionnaire.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0053",
+          "path": "docs/productivity/wait-what.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0054",
+          "path": "docs/productivity/writing-for-agents.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0063",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0065",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0085",
+          "path": "skills/engineering/prototype/LOGIC.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0086",
+          "path": "skills/engineering/prototype/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0096",
+          "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0097",
+          "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0098",
+          "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0104",
+          "path": "skills/engineering/to-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0110",
+          "path": "skills/engineering/triage/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0112",
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0114",
+          "path": "skills/engineering/wizard/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0115",
+          "path": "skills/engineering/wizard/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0116",
+          "path": "skills/engineering/wizard/template.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0117",
+          "path": "skills/in-progress/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0118",
+          "path": "skills/in-progress/claude-handoff/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0122",
+          "path": "skills/in-progress/loop-me/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0148",
+          "path": "skills/productivity/grilling/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0149",
+          "path": "skills/productivity/grilling/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0158",
+          "path": "skills/productivity/to-questionnaire/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0159",
+          "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0160",
+          "path": "skills/productivity/wait-what/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0161",
+          "path": "skills/productivity/wait-what/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0162",
+          "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0163",
+          "path": "skills/productivity/writing-for-agents/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0164",
+          "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "historical_only_paths": [
-        ".changeset/ship-as-claude-plugin.md"
+        ".changeset/graduate-to-questionnaire.md",
+        ".changeset/graduate-wizard.md",
+        ".changeset/grilling-question-format.md",
+        ".changeset/grilling-round-by-round.md",
+        ".changeset/grilling-rounds-docs-sync.md",
+        ".changeset/prototype-logic-shareable-html.md",
+        ".changeset/ship-as-claude-plugin.md",
+        ".changeset/spec-not-prd.md",
+        ".changeset/wait-what.md",
+        ".changeset/writing-for-agents-environment-cache.md",
+        ".changeset/writing-for-agents-rename.md",
+        "docs/productivity/writing-great-skills.md",
+        "skills/in-progress/batch-grill-me/SKILL.md",
+        "skills/in-progress/batch-grill-me/agents/openai.yaml",
+        "skills/productivity/writing-great-skills/GLOSSARY.md",
+        "skills/productivity/writing-great-skills/SKILL.md"
       ]
     },
     {
       "history_id": "H-004",
-      "date": "2026-07-13",
-      "lineage_state": "PARTIAL",
-      "area": "Codex metadata",
-      "event": "`agents/openai.yaml` added beside every then-current SKILL; AGENTS symlink added; user/model invocation mirrored across harnesses.",
-      "current_significance": "Establishes dual-harness invocation architecture; later skill additions/removals still need lineage reconciliation against the current 37-owner set.",
+      "date": "2026-07-13 \u2192 2026-08-24",
+      "lineage_state": "RECONCILED",
+      "area": "Codex metadata owner-set and invocation lineage",
+      "event": "PR #551 / commit `697d4ce9742da558fd1ba6697c8e9775e2e302dd` introduced `agents/openai.yaml` beside every then-current `SKILL.md`: exactly 39 owner files, with 22 user-invoked skills carrying `policy.allow_implicit_invocation: false`, plus the shared `AGENTS.md` symlink/invocation documentation. The owner-set evolution to the frozen 37 is exactly accountible: PR #572 / merge `e9fcdf95b402d360f90f1db8d776d5dd450f9234` added `to-questionnaire` with its sidecar (+1); PR #751 / merge `c64fa7ecf658dc2a507a9192c7c6da61dc4d5960` added `wait-what` with its sidecar (+1); PR #752 / commit `c66bdeeee002d81e3f8b21403c07f9a0d7bea6da` removed four deprecated skills and two personal skills, each present in the original 39 (-6); PR #926 / merge `163b780f98079010cfaff187cfcb9cb24f31998f` added `implement-spec` with its sidecar (+1); commits `8fa188659c5f102894807854bed9d2eee4a711f4` and `3ec8e2399438cd5603324df8263acf3b64cf69b8` introduced and then refined `retro` with its OpenAI sidecar (+1). The `writing-great-skills` \u2192 `writing-for-agents` move in PR #650 is count-neutral. Therefore 39 + 1 + 1 - 6 + 1 + 1 = 37, matching the frozen foundation validator\u2019s 37 current skills / 37 Codex metadata owners. Invocation-mode corrections are also traced: PR #762 / head `61accb0e66652cfe71da1266d49f1cbd129e3ae1` deliberately made `wizard` model-invoked by removing both Claude\u2019s `disable-model-invocation` and Codex\u2019s `allow_implicit_invocation: false`; PR #650 intended `writing-for-agents` to become model-invoked but moved a stale sidecar, and PR #766 / commit `4aaccb58d40559d7e3c59a029b2290ae5ba538de` fixed that Codex regression by removing the stale policy block and stale display metadata.",
+      "current_significance": "Reconciles both the complete owner-count evolution and the two material post-introduction invocation-policy corrections to the frozen 37/37 dual-harness state. It also provides a concrete historical example of why metadata presence alone is insufficient: semantic invocation parity can drift even when every skill has a sidecar.",
       "refs": [
         {
-          "type": "commit",
-          "ref": "697d4ce9742da558fd1ba6697c8e9775e2e302dd",
+          "type": "pr",
+          "ref": "551",
           "changed_file_count": 46
+        },
+        {
+          "type": "pr",
+          "ref": "572",
+          "changed_file_count": 3
+        },
+        {
+          "type": "pr",
+          "ref": "650",
+          "changed_file_count": 12
+        },
+        {
+          "type": "pr",
+          "ref": "751",
+          "changed_file_count": 8
+        },
+        {
+          "type": "pr",
+          "ref": "752",
+          "changed_file_count": 20
+        },
+        {
+          "type": "pr",
+          "ref": "762",
+          "changed_file_count": 8
+        },
+        {
+          "type": "pr",
+          "ref": "766",
+          "changed_file_count": 4
+        },
+        {
+          "type": "pr",
+          "ref": "926",
+          "changed_file_count": 5
         }
       ],
-      "changed_paths_total": 46,
+      "changed_paths_total": 86,
       "current_frozen_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0005",
+          "path": ".agents/writing-docs.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0007",
+          "path": ".changeset/add-implement-spec-skill.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0018",
+          "path": ".claude-plugin/plugin.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0020",
+          "path": ".gitignore",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0024",
           "path": "AGENTS.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0027",
+          "path": "CONTEXT.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0047",
+          "path": "docs/engineering/wizard.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0053",
+          "path": "docs/productivity/wait-what.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0054",
+          "path": "docs/productivity/writing-for-agents.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0060",
+          "path": "skills/deprecated/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0063",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0064",
           "path": "skills/engineering/ask-matt/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0066",
           "path": "skills/engineering/code-review/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0070",
           "path": "skills/engineering/codebase-design/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0072",
           "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0077",
           "path": "skills/engineering/domain-modeling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0079",
           "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0081",
           "path": "skills/engineering/implement/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0084",
           "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0088",
           "path": "skills/engineering/prototype/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0090",
           "path": "skills/engineering/research/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0092",
           "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0093",
+          "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0094",
           "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0101",
           "path": "skills/engineering/tdd/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0105",
           "path": "skills/engineering/to-spec/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0107",
           "path": "skills/engineering/to-tickets/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0111",
           "path": "skills/engineering/triage/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0113",
           "path": "skills/engineering/wayfinder/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0114",
+          "path": "skills/engineering/wizard/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0115",
+          "path": "skills/engineering/wizard/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0117",
+          "path": "skills/in-progress/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0119",
           "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0120",
+          "path": "skills/in-progress/implement-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0121",
+          "path": "skills/in-progress/implement-spec/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0123",
           "path": "skills/in-progress/loop-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0127",
           "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0130",
           "path": "skills/in-progress/writing-beats/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0132",
           "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0134",
           "path": "skills/in-progress/writing-shape/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0137",
           "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0140",
           "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0142",
           "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0144",
           "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0147",
           "path": "skills/productivity/grill-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0149",
           "path": "skills/productivity/grilling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0151",
           "path": "skills/productivity/handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0157",
           "path": "skills/productivity/teach/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0160",
+          "path": "skills/productivity/wait-what/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0161",
+          "path": "skills/productivity/wait-what/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0162",
+          "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0163",
+          "path": "skills/productivity/writing-for-agents/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0164",
+          "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "historical_only_paths": [
         ".changeset/codex-skill-metadata.md",
+        ".changeset/graduate-wizard.md",
+        ".changeset/remove-deprecated-and-personal.md",
+        ".changeset/wait-what.md",
+        ".changeset/wizard-model-invoked.md",
+        ".changeset/writing-for-agents-codex-metadata.md",
+        ".changeset/writing-for-agents-rename.md",
+        "docs/productivity/writing-great-skills.md",
+        "skills/deprecated/design-an-interface/SKILL.md",
         "skills/deprecated/design-an-interface/agents/openai.yaml",
+        "skills/deprecated/qa/SKILL.md",
         "skills/deprecated/qa/agents/openai.yaml",
+        "skills/deprecated/request-refactor-plan/SKILL.md",
         "skills/deprecated/request-refactor-plan/agents/openai.yaml",
+        "skills/deprecated/ubiquitous-language/SKILL.md",
         "skills/deprecated/ubiquitous-language/agents/openai.yaml",
+        "skills/in-progress/to-questionnaire/SKILL.md",
+        "skills/in-progress/to-questionnaire/agents/openai.yaml",
         "skills/in-progress/wizard/agents/openai.yaml",
+        "skills/personal/README.md",
+        "skills/personal/edit-article/SKILL.md",
         "skills/personal/edit-article/agents/openai.yaml",
+        "skills/personal/obsidian-vault/SKILL.md",
         "skills/personal/obsidian-vault/agents/openai.yaml",
+        "skills/productivity/writing-great-skills/GLOSSARY.md",
+        "skills/productivity/writing-great-skills/SKILL.md",
         "skills/productivity/writing-great-skills/agents/openai.yaml"
       ]
     },
@@ -870,10 +1443,10 @@
     {
       "history_id": "H-009",
       "date": "2026-09-04",
-      "lineage_state": "PARTIAL",
+      "lineage_state": "RECONCILED",
       "area": "Local linking",
-      "event": "Frozen baseline merge PR #1025: `link-skills` stopped linking misc/ into local skill directories.",
-      "current_significance": "Current local link set = engineering + productivity + in-progress; misc excluded.",
+      "event": "PR #1025 changed local linking from every non-deprecated current skill to engineering + productivity + in-progress only by adding an explicit `misc/` exclusion. The PR states that all four misc skills had previously been symlinked into both local harness directories, that `misc/README.md` already described them as rarely used/not promoted, and that `in-progress/` remained linked deliberately because it is public and feedback-seeking. The same PR updated `CLAUDE.md` so the governance prose no longer claimed the script links \u201cevery skill.\u201d",
+      "current_significance": "Reconciles both the pre-frozen behavior and the rationale for the frozen 33-skill local-link set. The difference from the 25-skill plugin set is intentional: `in-progress/` is local-feedback surface, while `misc/` is excluded from both daily-driver local install and promoted plugin distribution.",
       "refs": [
         {
           "type": "pr",
@@ -885,7 +1458,7 @@
       "current_frozen_bindings": [
         {
           "history_id": "H-009",
-          "lineage_state": "PARTIAL",
+          "lineage_state": "RECONCILED",
           "area": "Local linking",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
@@ -893,7 +1466,7 @@
         },
         {
           "history_id": "H-009",
-          "lineage_state": "PARTIAL",
+          "lineage_state": "RECONCILED",
           "area": "Local linking",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
@@ -901,10 +1474,192 @@
         }
       ],
       "historical_only_paths": []
+    },
+    {
+      "history_id": "H-010",
+      "date": "2026-04-28",
+      "lineage_state": "RECONCILED",
+      "area": "scaffold-exercises variant contract / CT-020",
+      "event": "`skills/misc/scaffold-exercises/SKILL.md` was introduced already containing both the broad \u201cat least one of problem/solution/explainer\u201d rule and the narrower linter summary requiring problem/explainer/explainer.1. The file has one path-history commit, and its creation blob SHA `d87df28e7d8abb4e57ecc6e47d71c274d16054c7` is identical to the frozen-baseline blob SHA.",
+      "current_significance": "CT-020 is an introduction-time internal contract mismatch that remained byte-for-byte unchanged through the frozen baseline, not a later regression.",
+      "refs": [
+        {
+          "type": "commit",
+          "ref": "62f43a18177be6ec82da242e59ffbc490a4c22ea",
+          "changed_file_count": 43
+        }
+      ],
+      "changed_paths_total": 43,
+      "current_frozen_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0018",
+          "path": ".claude-plugin/plugin.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0060",
+          "path": "skills/deprecated/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0083",
+          "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0102",
+          "path": "skills/engineering/tdd/mocking.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0103",
+          "path": "skills/engineering/tdd/tests.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0135",
+          "path": "skills/misc/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0136",
+          "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0138",
+          "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0139",
+          "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0141",
+          "path": "skills/misc/scaffold-exercises/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0143",
+          "path": "skills/misc/setup-pre-commit/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0146",
+          "path": "skills/productivity/grill-me/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "historical_only_paths": [
+        "skills/deprecated/qa/SKILL.md",
+        "skills/deprecated/request-refactor-plan/SKILL.md",
+        "skills/deprecated/triage-issue/SKILL.md",
+        "skills/deprecated/ubiquitous-language/SKILL.md",
+        "skills/engineering/diagnose/SKILL.md",
+        "skills/engineering/diagnose/scripts/hitl-loop.template.sh",
+        "skills/engineering/domain-model/ADR-FORMAT.md",
+        "skills/engineering/domain-model/CONTEXT-FORMAT.md",
+        "skills/engineering/domain-model/SKILL.md",
+        "skills/engineering/github-triage/AGENT-BRIEF.md",
+        "skills/engineering/github-triage/OUT-OF-SCOPE.md",
+        "skills/engineering/github-triage/SKILL.md",
+        "skills/engineering/improve-codebase-architecture/DEEPENING.md",
+        "skills/engineering/improve-codebase-architecture/INTERFACE-DESIGN.md",
+        "skills/engineering/improve-codebase-architecture/LANGUAGE.md",
+        "skills/engineering/tdd/deep-modules.md",
+        "skills/engineering/tdd/interface-design.md",
+        "skills/engineering/tdd/refactoring.md",
+        "skills/engineering/to-issues/SKILL.md",
+        "skills/engineering/to-prd/SKILL.md",
+        "skills/engineering/zoom-out/SKILL.md",
+        "skills/personal/README.md",
+        "skills/personal/edit-article/SKILL.md",
+        "skills/personal/obsidian-vault/SKILL.md",
+        "skills/productivity/caveman/SKILL.md",
+        "skills/productivity/write-a-skill/SKILL.md"
+      ]
     }
   ],
-  "files_with_history_bindings": 69,
-  "binding_count": 88,
+  "files_with_history_bindings": 111,
+  "binding_count": 165,
   "file_rows": [
     {
       "mp_id": "MP-0001",
@@ -919,15 +1674,15 @@
       "history_bindings": [
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0002",
           "path": ".agents/adr/0002-ship-as-a-claude-code-plugin.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0003",
@@ -942,8 +1697,8 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0004",
           "path": ".agents/invocation.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -966,13 +1721,22 @@
         }
       ],
       "history_binding_count": 3,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0005",
       "path": ".agents/writing-docs.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0005",
+          "path": ".agents/writing-docs.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -994,8 +1758,17 @@
     {
       "mp_id": "MP-0007",
       "path": ".changeset/add-implement-spec-skill.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0007",
+          "path": ".changeset/add-implement-spec-skill.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -1094,15 +1867,15 @@
       "history_bindings": [
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0017",
           "path": ".claude-plugin/marketplace.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0018",
@@ -1110,15 +1883,31 @@
       "history_bindings": [
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0018",
+          "path": ".claude-plugin/plugin.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0018",
+          "path": ".claude-plugin/plugin.json",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
           "mp_id": "MP-0018",
           "path": ".claude-plugin/plugin.json",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "history_binding_count": 3,
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0019",
@@ -1155,9 +1944,17 @@
           "mp_id": "MP-0020",
           "path": ".gitignore",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0020",
+          "path": ".gitignore",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -1187,15 +1984,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0024",
           "path": "AGENTS.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0025",
@@ -1210,16 +2007,16 @@
       "history_bindings": [
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1234,21 +2031,38 @@
         },
         {
           "history_id": "H-009",
-          "lineage_state": "PARTIAL",
+          "lineage_state": "RECONCILED",
           "area": "Local linking",
+          "mp_id": "MP-0026",
+          "path": "CLAUDE.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
           "mp_id": "MP-0026",
           "path": "CLAUDE.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 4,
-      "has_partial_history_binding": true
+      "history_binding_count": 5,
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0027",
       "path": "CONTEXT.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0027",
+          "path": "CONTEXT.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -1264,8 +2078,16 @@
       "history_bindings": [
         {
           "history_id": "H-003",
-          "lineage_state": "PARTIAL",
-          "area": "Claude plugin",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0029",
           "path": "README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1277,10 +2099,18 @@
           "mp_id": "MP-0029",
           "path": "README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0029",
+          "path": "README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
-      "has_partial_history_binding": true
+      "history_binding_count": 4,
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0030",
@@ -1331,6 +2161,14 @@
       "path": "docs/engineering/grill-with-docs.md",
       "history_bindings": [
         {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0035",
+          "path": "docs/engineering/grill-with-docs.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
           "area": "Router/docs coherence",
@@ -1339,7 +2177,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -1368,15 +2206,33 @@
     {
       "mp_id": "MP-0038",
       "path": "docs/engineering/prototype.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0038",
+          "path": "docs/engineering/prototype.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0039",
       "path": "docs/engineering/research.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0039",
+          "path": "docs/engineering/research.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -1412,8 +2268,17 @@
     {
       "mp_id": "MP-0043",
       "path": "docs/engineering/to-spec.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0043",
+          "path": "docs/engineering/to-spec.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -1426,8 +2291,17 @@
     {
       "mp_id": "MP-0045",
       "path": "docs/engineering/triage.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0045",
+          "path": "docs/engineering/triage.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -1440,21 +2314,55 @@
     {
       "mp_id": "MP-0047",
       "path": "docs/engineering/wizard.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0047",
+          "path": "docs/engineering/wizard.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0047",
+          "path": "docs/engineering/wizard.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0048",
       "path": "docs/productivity/grill-me.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0048",
+          "path": "docs/productivity/grill-me.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0049",
       "path": "docs/productivity/grilling.md",
       "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0049",
+          "path": "docs/productivity/grilling.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
         {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
@@ -1464,7 +2372,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -1484,22 +2392,65 @@
     {
       "mp_id": "MP-0052",
       "path": "docs/productivity/to-questionnaire.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0052",
+          "path": "docs/productivity/to-questionnaire.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0053",
       "path": "docs/productivity/wait-what.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0053",
+          "path": "docs/productivity/wait-what.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0053",
+          "path": "docs/productivity/wait-what.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0054",
       "path": "docs/productivity/writing-for-agents.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0054",
+          "path": "docs/productivity/writing-for-agents.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0054",
+          "path": "docs/productivity/writing-for-agents.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -1548,15 +2499,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         },
         {
           "history_id": "H-009",
-          "lineage_state": "PARTIAL",
+          "lineage_state": "RECONCILED",
           "area": "Local linking",
           "mp_id": "MP-0057",
           "path": "scripts/link-skills.sh",
@@ -1564,7 +2515,7 @@
         }
       ],
       "history_binding_count": 2,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0058",
@@ -1592,8 +2543,25 @@
     {
       "mp_id": "MP-0060",
       "path": "skills/deprecated/README.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0060",
+          "path": "skills/deprecated/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0060",
+          "path": "skills/deprecated/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -1601,9 +2569,17 @@
       "path": "skills/engineering/README.md",
       "history_bindings": [
         {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -1615,10 +2591,18 @@
           "mp_id": "MP-0061",
           "path": "skills/engineering/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0061",
+          "path": "skills/engineering/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
-      "has_partial_history_binding": true
+      "history_binding_count": 4,
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0062",
@@ -1632,6 +2616,22 @@
       "path": "skills/engineering/ask-matt/SKILL.md",
       "history_bindings": [
         {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0063",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0063",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
           "history_id": "H-005",
           "lineage_state": "RECONCILED",
           "area": "Router/docs coherence",
@@ -1640,7 +2640,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 3,
       "has_partial_history_binding": false
     },
     {
@@ -1649,20 +2649,28 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0064",
           "path": "skills/engineering/ask-matt/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0065",
       "path": "skills/engineering/code-review/SKILL.md",
       "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0065",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
@@ -1680,7 +2688,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
+      "history_binding_count": 3,
       "has_partial_history_binding": false
     },
     {
@@ -1689,15 +2697,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0066",
           "path": "skills/engineering/code-review/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0067",
@@ -1726,15 +2734,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0070",
           "path": "skills/engineering/codebase-design/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0071",
@@ -1766,15 +2774,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0072",
           "path": "skills/engineering/diagnosing-bugs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0073",
@@ -1810,15 +2818,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0077",
           "path": "skills/engineering/domain-modeling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0078",
@@ -1842,15 +2850,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0079",
           "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0080",
@@ -1865,15 +2873,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0081",
           "path": "skills/engineering/implement/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0082",
@@ -1893,9 +2901,17 @@
           "mp_id": "MP-0083",
           "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0083",
+          "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -1904,28 +2920,46 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0084",
           "path": "skills/engineering/improve-codebase-architecture/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0085",
       "path": "skills/engineering/prototype/LOGIC.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0085",
+          "path": "skills/engineering/prototype/LOGIC.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0086",
       "path": "skills/engineering/prototype/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0086",
+          "path": "skills/engineering/prototype/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -1941,15 +2975,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0088",
           "path": "skills/engineering/prototype/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0089",
@@ -1964,15 +2998,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0090",
           "path": "skills/engineering/research/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0091",
@@ -1987,21 +3021,30 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0092",
           "path": "skills/engineering/resolving-merge-conflicts/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0093",
       "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0093",
+          "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2010,15 +3053,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0094",
           "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0095",
@@ -2030,22 +3073,49 @@
     {
       "mp_id": "MP-0096",
       "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0096",
+          "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0097",
       "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0097",
+          "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0098",
       "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0098",
+          "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2082,9 +3152,17 @@
           "mp_id": "MP-0100",
           "path": "skills/engineering/tdd/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0100",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 3,
+      "history_binding_count": 4,
       "has_partial_history_binding": false
     },
     {
@@ -2093,34 +3171,60 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0101",
           "path": "skills/engineering/tdd/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0102",
       "path": "skills/engineering/tdd/mocking.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0102",
+          "path": "skills/engineering/tdd/mocking.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0103",
       "path": "skills/engineering/tdd/tests.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0103",
+          "path": "skills/engineering/tdd/tests.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0104",
       "path": "skills/engineering/to-spec/SKILL.md",
       "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0104",
+          "path": "skills/engineering/to-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
@@ -2138,7 +3242,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
+      "history_binding_count": 3,
       "has_partial_history_binding": false
     },
     {
@@ -2147,15 +3251,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0105",
           "path": "skills/engineering/to-spec/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0106",
@@ -2187,15 +3291,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0107",
           "path": "skills/engineering/to-tickets/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0108",
@@ -2216,6 +3320,14 @@
       "path": "skills/engineering/triage/SKILL.md",
       "history_bindings": [
         {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0110",
+          "path": "skills/engineering/triage/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
           "area": "Cross-skill invocation",
@@ -2232,7 +3344,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
+      "history_binding_count": 3,
       "has_partial_history_binding": false
     },
     {
@@ -2241,20 +3353,28 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0111",
           "path": "skills/engineering/triage/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0112",
       "path": "skills/engineering/wayfinder/SKILL.md",
       "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0112",
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
@@ -2272,7 +3392,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
+      "history_binding_count": 3,
       "has_partial_history_binding": false
     },
     {
@@ -2281,48 +3401,116 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0113",
           "path": "skills/engineering/wayfinder/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0114",
       "path": "skills/engineering/wizard/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0114",
+          "path": "skills/engineering/wizard/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0114",
+          "path": "skills/engineering/wizard/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0115",
       "path": "skills/engineering/wizard/agents/openai.yaml",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0115",
+          "path": "skills/engineering/wizard/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0115",
+          "path": "skills/engineering/wizard/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0116",
       "path": "skills/engineering/wizard/template.sh",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0116",
+          "path": "skills/engineering/wizard/template.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0117",
       "path": "skills/in-progress/README.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0117",
+          "path": "skills/in-progress/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0117",
+          "path": "skills/in-progress/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0118",
       "path": "skills/in-progress/claude-handoff/SKILL.md",
       "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0118",
+          "path": "skills/in-progress/claude-handoff/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
         {
           "history_id": "H-007",
           "lineage_state": "RECONCILED",
@@ -2332,7 +3520,7 @@
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -2341,35 +3529,62 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0119",
           "path": "skills/in-progress/claude-handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0120",
       "path": "skills/in-progress/implement-spec/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0120",
+          "path": "skills/in-progress/implement-spec/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0121",
       "path": "skills/in-progress/implement-spec/agents/openai.yaml",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0121",
+          "path": "skills/in-progress/implement-spec/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0122",
       "path": "skills/in-progress/loop-me/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0122",
+          "path": "skills/in-progress/loop-me/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2378,15 +3593,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0123",
           "path": "skills/in-progress/loop-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0124",
@@ -2424,15 +3639,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0127",
           "path": "skills/in-progress/setup-ts-deep-modules/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0128",
@@ -2454,15 +3669,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0130",
           "path": "skills/in-progress/writing-beats/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0131",
@@ -2477,15 +3692,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0132",
           "path": "skills/in-progress/writing-fragments/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0133",
@@ -2500,28 +3715,46 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0134",
           "path": "skills/in-progress/writing-shape/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0135",
       "path": "skills/misc/README.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0135",
+          "path": "skills/misc/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0136",
       "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0136",
+          "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2530,28 +3763,46 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0137",
           "path": "skills/misc/git-guardrails-claude-code/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0138",
       "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0138",
+          "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0139",
       "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0139",
+          "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2560,21 +3811,30 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0140",
           "path": "skills/misc/migrate-to-shoehorn/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0141",
       "path": "skills/misc/scaffold-exercises/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0141",
+          "path": "skills/misc/scaffold-exercises/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2583,21 +3843,30 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0142",
           "path": "skills/misc/scaffold-exercises/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0143",
       "path": "skills/misc/setup-pre-commit/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0143",
+          "path": "skills/misc/setup-pre-commit/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2606,24 +3875,32 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0144",
           "path": "skills/misc/setup-pre-commit/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0145",
       "path": "skills/productivity/README.md",
       "history_bindings": [
         {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
@@ -2635,10 +3912,18 @@
           "mp_id": "MP-0145",
           "path": "skills/productivity/README.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0145",
+          "path": "skills/productivity/README.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 2,
-      "has_partial_history_binding": true
+      "history_binding_count": 4,
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0146",
@@ -2651,9 +3936,17 @@
           "mp_id": "MP-0146",
           "path": "skills/productivity/grill-me/SKILL.md",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-010",
+          "lineage_state": "RECONCILED",
+          "area": "scaffold-exercises variant contract / CT-020",
+          "mp_id": "MP-0146",
+          "path": "skills/productivity/grill-me/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
@@ -2662,21 +3955,30 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0147",
           "path": "skills/productivity/grill-me/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0148",
       "path": "skills/productivity/grilling/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0148",
+          "path": "skills/productivity/grilling/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
@@ -2684,16 +3986,24 @@
       "path": "skills/productivity/grilling/agents/openai.yaml",
       "history_bindings": [
         {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0149",
+          "path": "skills/productivity/grilling/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0149",
           "path": "skills/productivity/grilling/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
-      "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "history_binding_count": 2,
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0150",
@@ -2717,15 +4027,15 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0151",
           "path": "skills/productivity/handoff/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0152",
@@ -2768,63 +4078,166 @@
       "history_bindings": [
         {
           "history_id": "H-004",
-          "lineage_state": "PARTIAL",
-          "area": "Codex metadata",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
           "mp_id": "MP-0157",
           "path": "skills/productivity/teach/agents/openai.yaml",
           "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
         }
       ],
       "history_binding_count": 1,
-      "has_partial_history_binding": true
+      "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0158",
       "path": "skills/productivity/to-questionnaire/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0158",
+          "path": "skills/productivity/to-questionnaire/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0159",
       "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0159",
+          "path": "skills/productivity/to-questionnaire/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 1,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0160",
       "path": "skills/productivity/wait-what/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0160",
+          "path": "skills/productivity/wait-what/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0160",
+          "path": "skills/productivity/wait-what/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0161",
       "path": "skills/productivity/wait-what/agents/openai.yaml",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0161",
+          "path": "skills/productivity/wait-what/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0161",
+          "path": "skills/productivity/wait-what/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0162",
       "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0162",
+          "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0162",
+          "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0163",
       "path": "skills/productivity/writing-for-agents/SKILL.md",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0163",
+          "path": "skills/productivity/writing-for-agents/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0163",
+          "path": "skills/productivity/writing-for-agents/SKILL.md",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     },
     {
       "mp_id": "MP-0164",
       "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
-      "history_bindings": [],
-      "history_binding_count": 0,
+      "history_bindings": [
+        {
+          "history_id": "H-003",
+          "lineage_state": "RECONCILED",
+          "area": "Claude plugin promoted-set lineage",
+          "mp_id": "MP-0164",
+          "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        },
+        {
+          "history_id": "H-004",
+          "lineage_state": "RECONCILED",
+          "area": "Codex metadata owner-set and invocation lineage",
+          "mp_id": "MP-0164",
+          "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+          "binding_basis": "CHANGED_IN_EXACT_EVENT_EVIDENCE"
+        }
+      ],
+      "history_binding_count": 2,
       "has_partial_history_binding": false
     }
   ]

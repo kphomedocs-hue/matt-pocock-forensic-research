@@ -44,7 +44,7 @@
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -82,7 +82,7 @@
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
         "history_binding_count": 3,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -100,7 +100,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -138,7 +138,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CHANGESETS_INPUT_OR_GUIDE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -329,7 +329,7 @@
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -348,8 +348,8 @@
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
         "distribution_entry_count": 25,
-        "history_binding_count": 1,
-        "history_has_partial": true
+        "history_binding_count": 3,
+        "history_has_partial": false
       }
     },
     {
@@ -386,7 +386,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:GIT_CONFIGURATION",
         "orphan_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -464,7 +464,7 @@
         "orphan_closed": true,
         "symlink_target_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -501,8 +501,8 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 4,
-        "history_has_partial": true
+        "history_binding_count": 5,
+        "history_has_partial": false
       }
     },
     {
@@ -520,7 +520,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -558,8 +558,8 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 2,
-        "history_has_partial": true
+        "history_binding_count": 4,
+        "history_has_partial": false
       }
     },
     {
@@ -672,7 +672,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -729,7 +729,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -748,7 +748,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -824,7 +824,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -862,7 +862,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -900,7 +900,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -919,7 +919,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -938,7 +938,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -995,7 +995,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1014,7 +1014,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -1033,7 +1033,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:PROMOTED_HUMAN_DOC_PAGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -1091,7 +1091,7 @@
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
         "history_binding_count": 2,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1147,7 +1147,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -1166,8 +1166,8 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
         "orphan_closed": true,
-        "history_binding_count": 2,
-        "history_has_partial": true
+        "history_binding_count": 4,
+        "history_has_partial": false
       }
     },
     {
@@ -1209,7 +1209,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 3,
         "history_has_partial": false
       }
     },
@@ -1230,7 +1230,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1253,7 +1253,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 2,
+        "history_binding_count": 3,
         "history_has_partial": false
       }
     },
@@ -1274,7 +1274,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1356,7 +1356,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1400,7 +1400,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1501,7 +1501,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1545,7 +1545,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1589,7 +1589,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1631,7 +1631,7 @@
         "outgoing_operative_calls": 3,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -1652,7 +1652,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1670,7 +1670,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1694,7 +1694,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1734,7 +1734,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1778,7 +1778,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1822,7 +1822,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1845,7 +1845,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1866,7 +1866,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -1903,7 +1903,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1922,7 +1922,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1941,7 +1941,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -1984,7 +1984,7 @@
         "outgoing_operative_calls": 1,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 3,
+        "history_binding_count": 4,
         "history_has_partial": false
       }
     },
@@ -2005,7 +2005,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2023,7 +2023,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2042,7 +2042,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2066,7 +2066,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 2,
+        "history_binding_count": 3,
         "history_has_partial": false
       }
     },
@@ -2087,7 +2087,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2131,7 +2131,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2192,7 +2192,7 @@
         "outgoing_operative_calls": 2,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 2,
+        "history_binding_count": 3,
         "history_has_partial": false
       }
     },
@@ -2213,7 +2213,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2236,7 +2236,7 @@
         "outgoing_operative_calls": 4,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 2,
+        "history_binding_count": 3,
         "history_has_partial": false
       }
     },
@@ -2257,7 +2257,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2280,7 +2280,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -2300,7 +2300,7 @@
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
         "orphan_closed": true,
         "config_binding_count": 1,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -2319,7 +2319,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2338,7 +2338,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -2362,7 +2362,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -2383,7 +2383,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2406,7 +2406,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2426,7 +2426,7 @@
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
         "orphan_closed": true,
         "config_binding_count": 1,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2450,7 +2450,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2471,7 +2471,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2559,7 +2559,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2622,7 +2622,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2666,7 +2666,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2710,7 +2710,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2728,7 +2728,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:BUCKET_SKILL_CATALOG",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2752,7 +2752,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2773,7 +2773,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2791,7 +2791,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2815,7 +2815,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2836,7 +2836,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2859,7 +2859,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2880,7 +2880,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2903,7 +2903,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -2924,7 +2924,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -2942,8 +2942,8 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 2,
-        "history_has_partial": true
+        "history_binding_count": 4,
+        "history_has_partial": false
       }
     },
     {
@@ -2966,7 +2966,7 @@
         "outgoing_operative_calls": 1,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 1,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -2987,7 +2987,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -3010,7 +3010,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -3030,8 +3030,8 @@
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
         "orphan_closed": true,
         "config_binding_count": 1,
-        "history_binding_count": 1,
-        "history_has_partial": true
+        "history_binding_count": 2,
+        "history_has_partial": false
       }
     },
     {
@@ -3075,7 +3075,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -3195,7 +3195,7 @@
         "orphan_closed": true,
         "config_binding_count": 1,
         "history_binding_count": 1,
-        "history_has_partial": true
+        "history_has_partial": false
       }
     },
     {
@@ -3218,7 +3218,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -3238,7 +3238,7 @@
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
         "orphan_closed": true,
         "config_binding_count": 1,
-        "history_binding_count": 0,
+        "history_binding_count": 1,
         "history_has_partial": false
       }
     },
@@ -3262,7 +3262,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -3282,7 +3282,7 @@
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
         "orphan_closed": true,
         "config_binding_count": 1,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -3301,7 +3301,7 @@
         "raw_unresolved_reconciled": true,
         "orphan_state": "NON_ORPHAN_BY_INCOMING_EDGE",
         "orphan_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -3325,7 +3325,7 @@
         "outgoing_operative_calls": 0,
         "illegal_outgoing_operative_calls": 0,
         "promoted_router_obligation_closed": true,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     },
@@ -3345,7 +3345,7 @@
         "orphan_state": "NON_ORPHAN_BY_STRUCTURAL_ROLE:CODEX_METADATA_CONVENTION",
         "orphan_closed": true,
         "config_binding_count": 1,
-        "history_binding_count": 0,
+        "history_binding_count": 2,
         "history_has_partial": false
       }
     }
