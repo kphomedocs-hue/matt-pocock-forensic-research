@@ -32,6 +32,8 @@ FIXED_CLASSIFIER_CLOSURE_GATE_IDS = {34713153565}
 FIXED_PHASE3_PROMOTION_PROVENANCE_COMPAT_IDS = {34738911437}
 FIXED_PHASE3_QUALITY_RECHECK_IDS = {34740170053}
 FIXED_PHASE4_BATCH_BOOTSTRAP_TRIGGER_IDS = {34745903691}
+FIXED_PHASE4_GENERATED_STATUS_PRE_RENDER_IDS = {35131376649}
+FIXED_PHASE4_RUNTIME_COMMIT_RACE_IDS = {35131377043, 35131377033}
 
 
 def request(url: str, accept: str = "application/vnd.github+json") -> bytes:
@@ -115,6 +117,19 @@ def classify_failure(run_id: int, failed_step: str, log: str) -> tuple[str, str,
             "DETECTED_AND_BLOCKED_FIXED",
             "The first second-order Phase 3 quality gate deliberately failed closed after exposing duplicated history-definition truth and additional Phase 3 quality debt. History definitions were moved to the durable ledger, master-ledger connection counts and cryptographic build fingerprints were added, and the strengthened atomic Phase 3 rebuild subsequently passed.",
         )
+    if run_id in FIXED_PHASE4_GENERATED_STATUS_PRE_RENDER_IDS:
+        return (
+            "PHASE4_GENERATED_STATUS_PRE_RENDER",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The main guard correctly detected stale generated Phase 4/status files on the source commit. The dedicated Phase 4 validation workflow rendered and atomically published the checkpoint; the later remote main is current.",
+        )
+    if run_id in FIXED_PHASE4_RUNTIME_COMMIT_RACE_IDS:
+        return (
+            "PHASE4_RUNTIME_COMMIT_RACE",
+            "TEMPORARILY_STALE",
+            "An unrelated push launched runtime producers concurrently with Phase 4 rendering. Their isolated checks and rebuild gates passed; only the final evidence-publication commit lost the race, so no partial runtime evidence was published.",
+        )
+
     if run_id in FIXED_PHASE4_BATCH_BOOTSTRAP_TRIGGER_IDS:
         return (
             "PHASE4_BATCH_BOOTSTRAP_TRIGGER",
