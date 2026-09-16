@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **130**
+Failed workflow runs enumerated: **132**
 
-Cancelled workflow runs enumerated: **25**
+Cancelled workflow runs enumerated: **26**
 
-Total incident runs: **155**
+Total incident runs: **158**
 
-Incident entries classified: **155**
+Incident entries classified: **158**
 
 Unknown entries: **0**
 
@@ -20,8 +20,8 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 20 |
-| CLASSIFIER_REFRESH_SUPERSEDED | 22 |
+| CLASSIFIER_CLOSURE_GATE | 21 |
+| CLASSIFIER_REFRESH_SUPERSEDED | 23 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
 | FOUNDATION_GATE | 1 |
@@ -33,6 +33,7 @@ Unresolved/review-required entries: **0**
 | PHASE3_HISTORY_EVENT_COUNT_TRANSITION | 2 |
 | PHASE3_HISTORY_EXACT_EVIDENCE_GATE | 2 |
 | PHASE3_HISTORY_LEDGER_PARSER_SCOPE | 1 |
+| PHASE3_HISTORY_PARITY_PARSER_SCOPE | 1 |
 | PHASE3_PROMOTION_PROVENANCE_PARSER | 1 |
 | PHASE3_QUALITY_RECHECK_GATE | 1 |
 | PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT | 1 |
@@ -56,13 +57,13 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 25 |
-| DETECTED_AND_BLOCKED_FIXED | 17 |
+| DETECTED_AND_BLOCKED | 26 |
+| DETECTED_AND_BLOCKED_FIXED | 18 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
 | NO_RESEARCH_DATA_CHANGE_FIXED | 10 |
-| REDUNDANT_REFRESH_DISCARDED | 22 |
+| REDUNDANT_REFRESH_DISCARDED | 23 |
 | TEMPORARILY_STALE | 63 |
 | TRANSIENT_OR_INFRA | 1 |
 
@@ -225,6 +226,9 @@ Unresolved/review-required entries: **0**
 | 35128886485 | failure | 2026-09-16T17:33:06Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_BLOB_SHA_PARSER_SCOPE | DETECTED_AND_BLOCKED_FIXED |
 | 35128905967 | cancelled | 2026-09-16T17:33:17Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
 | 35129044168 | failure | 2026-09-16T17:34:38Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 35129364551 | failure | 2026-09-16T17:37:43Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_PARITY_PARSER_SCOPE | DETECTED_AND_BLOCKED_FIXED |
+| 35129383713 | cancelled | 2026-09-16T17:37:54Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 35129545058 | failure | 2026-09-16T17:39:29Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 
