@@ -81,6 +81,32 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
         versions = data.get("package_versions", {})
         if set(versions) != {"husky", "lint-staged", "prettier"} or any(not versions.get(x) for x in versions):
             errors.append(f"{bid}: pre-commit evidence lacks resolved Husky/lint-staged/Prettier versions")
+    elif result_file == "04_RELEASE_WORKFLOW_RUNTIME_RESULTS.json":
+        if data.get("hard_errors") not in ([], None):
+            errors.append(f"{bid}: release-workflow evidence contains hard errors")
+        upstream = data.get("upstream_workflow", {})
+        if upstream.get("repository") != "mattpocock/skills":
+            errors.append(f"{bid}: release-workflow evidence has wrong upstream repository")
+        if upstream.get("head_sha") != FROZEN:
+            errors.append(f"{bid}: release-workflow evidence head SHA is not frozen")
+        if upstream.get("run_id") != evidence.get("workflow_run_id"):
+            errors.append(f"{bid}: release-workflow evidence workflow run ID disagrees with matrix")
+        if upstream.get("conclusion") != "success":
+            errors.append(f"{bid}: release-workflow evidence job is not successful")
+        steps = {s.get("name"): s.get("conclusion") for s in upstream.get("completed_steps", [])}
+        for required in ("Checkout", "Setup Node.js", "Install dependencies", "Create Version Pull Request"):
+            if steps.get(required) != "success":
+                errors.append(f"{bid}: release-workflow evidence missing successful step {required}")
+        inputs = {x.get("path"): x.get("blob_sha") for x in data.get("frozen_source_inputs", [])}
+        required_blobs = {
+            ".github/workflows/release.yml": "b503eff7b073afe8a08d0b25cc31efca78caea02",
+            "package.json": "2200fefca3d8c1ebac5a823681915eec736dfa07",
+            "scripts/sync-plugin-version.mjs": "44063fc0d14a78927caf3990882ea3809157bc21",
+        }
+        for source_path, blob_sha in required_blobs.items():
+            if inputs.get(source_path) != blob_sha:
+                errors.append(f"{bid}: release-workflow evidence missing frozen blob provenance for {source_path}")
+        validate_named_tests(bid, evidence, data, result_file, errors)
     elif result_file == "04_ARCHITECTURE_REPORT_RUNTIME_RESULTS.json":
         validate_isolated_named_result(bid, evidence, data, result_file, errors)
     elif result_file == "04_IMPLEMENT_REVIEW_VISIBILITY_RESULTS.json":

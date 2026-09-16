@@ -826,9 +826,22 @@
       ],
       "state": "STATICALLY_ENFORCED",
       "machine_enforced": true,
-      "runtime_observed": false,
-      "adjudication": "The release workflow runs on main pushes, invokes changesets/action with version: npm run version and publish: npx changeset tag, while package.json's version command runs changeset version followed by sync-plugin-version.mjs. This gives a concrete static/CI path for package/plugin version propagation and tag creation, distinct from the stale package-lock issue.",
-      "next_evidence": "Observe an actual release/version-PR run later; static wiring is closed."
+      "runtime_observed": true,
+      "adjudication": "Frozen-source configuration establishes the intended Changesets version/tag route. An actual GitHub Actions Release run at the exact frozen commit completed its Version job, including Checkout, Node setup, npm ci, and the configured Create Version Pull Request action. The retained job metadata proves this path executed; it does not expose whether the run had a pending changeset or emitted a tag, so no claim of publication is made.",
+      "next_evidence": "Frozen Release workflow execution is observed. If needed, obtain an upstream action log or output that proves a pending-changeset run created a version PR and/or emitted a tag; that broader branch evidence is not inferred here.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "UPSTREAM_GITHUB_ACTIONS_OBSERVATION",
+          "test_ids": [
+            "RLS-001",
+            "RLS-002",
+            "RLS-003"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 33854812658,
+          "result_file": "04_RELEASE_WORKFLOW_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-030",

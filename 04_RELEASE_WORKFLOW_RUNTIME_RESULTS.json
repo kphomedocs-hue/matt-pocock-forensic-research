@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "evidence_type": "UPSTREAM_GITHUB_ACTIONS_OBSERVATION",
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "frozen_tree": "6e84c093fda2026396cea9fad6a924a6da0e1452",
+  "observed_at_utc": "2026-09-04T08:43:30Z",
+  "collection_date_utc": "2026-09-16T18:00:00Z",
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "hard_errors": [],
+  "upstream_workflow": {
+    "repository": "mattpocock/skills",
+    "workflow_name": "Release",
+    "workflow_path": ".github/workflows/release.yml",
+    "workflow_blob_sha": "b503eff7b073afe8a08d0b25cc31efca78caea02",
+    "run_id": 33854812658,
+    "run_number": 113,
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "3cca18b368ae95cdbdebbff572ccafa662551015",
+    "job_id": 100965546695,
+    "job_name": "Version",
+    "conclusion": "success",
+    "started_at_utc": "2026-09-04T08:43:32Z",
+    "completed_at_utc": "2026-09-04T08:45:46Z",
+    "html_url": "https://github.com/mattpocock/skills/actions/runs/33854812658/job/100965546695",
+    "completed_steps": [
+      {
+        "number": 2,
+        "name": "Checkout",
+        "conclusion": "success"
+      },
+      {
+        "number": 3,
+        "name": "Setup Node.js",
+        "conclusion": "success"
+      },
+      {
+        "number": 4,
+        "name": "Install dependencies",
+        "conclusion": "success"
+      },
+      {
+        "number": 5,
+        "name": "Create Version Pull Request",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "frozen_source_inputs": [
+    {
+      "path": ".github/workflows/release.yml",
+      "blob_sha": "b503eff7b073afe8a08d0b25cc31efca78caea02",
+      "assertion": "Main-push Release workflow invokes changesets/action with version `npm run version` and publish `npx changeset tag`."
+    },
+    {
+      "path": "package.json",
+      "blob_sha": "2200fefca3d8c1ebac5a823681915eec736dfa07",
+      "assertion": "`npm run version` is `changeset version && node scripts/sync-plugin-version.mjs`; package manager is npm@10.9.4."
+    },
+    {
+      "path": "scripts/sync-plugin-version.mjs",
+      "blob_sha": "44063fc0d14a78927caf3990882ea3809157bc21",
+      "assertion": "The post-Changesets executable copies package.json version to .claude-plugin/plugin.json."
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "blob_sha": "0a2e3088d2bcaaabcc02ff1c691c5e6c0f81d01d",
+      "assertion": "Frozen plugin version is 1.2.3, matching frozen package.json."
+    }
+  ],
+  "external_tool_versions": {
+    "package_manager": {
+      "declared": "npm@10.9.4",
+      "source": "frozen package.json packageManager"
+    },
+    "node": {
+      "declared": "22",
+      "exact_resolved_version": "not retained in GitHub job metadata",
+      "pin_status": "major-only"
+    },
+    "changesets_action": {
+      "declared": "changesets/action@v1",
+      "exact_resolved_version": "not retained in GitHub job metadata",
+      "pin_status": "major-only"
+    },
+    "changesets_cli": {
+      "declared": "@changesets/cli ^2.30.0",
+      "exact_resolved_version": "package-lock resolution not needed for this metadata observation",
+      "pin_status": "semver range"
+    }
+  },
+  "tests": [
+    {
+      "test_id": "RLS-001",
+      "behavior_ids": [
+        "B-029"
+      ],
+      "passed": true,
+      "assertion": "The observed Release run head SHA exactly equals the frozen source commit.",
+      "evidence": {
+        "workflow_run_id": 33854812658,
+        "head_sha": "3cca18b368ae95cdbdebbff572ccafa662551015",
+        "frozen_tree": "6e84c093fda2026396cea9fad6a924a6da0e1452"
+      }
+    },
+    {
+      "test_id": "RLS-002",
+      "behavior_ids": [
+        "B-029"
+      ],
+      "passed": true,
+      "assertion": "Exact frozen release.yml wires changesets/action version to npm run version and publish to npx changeset tag; exact package.json wires the version command through Changesets then plugin synchronization.",
+      "evidence": {
+        "release_workflow_blob_sha": "b503eff7b073afe8a08d0b25cc31efca78caea02",
+        "package_json_blob_sha": "2200fefca3d8c1ebac5a823681915eec736dfa07",
+        "sync_script_blob_sha": "44063fc0d14a78927caf3990882ea3809157bc21"
+      }
+    },
+    {
+      "test_id": "RLS-003",
+      "behavior_ids": [
+        "B-029"
+      ],
+      "passed": true,
+      "assertion": "The exact-frozen Release Version job completed successfully and its configured Create Version Pull Request step succeeded after dependency installation.",
+      "evidence": {
+        "job_id": 100965546695,
+        "job_conclusion": "success",
+        "required_steps": [
+          "Checkout",
+          "Setup Node.js",
+          "Install dependencies",
+          "Create Version Pull Request"
+        ],
+        "all_required_steps_conclusion": "success"
+      }
+    }
+  ],
+  "limitations": [
+    "GitHub job metadata confirms step completion but the connected log endpoint returned no decoded action output; it cannot establish whether this run had pending changesets, created a version PR, or emitted a tag.",
+    "This observation closes B-029 only for execution of the configured release/version-PR route at the frozen commit. It does not establish live publication side effects."
+  ]
+}
