@@ -31,7 +31,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forensic-classify-tooling-failures
+  group: forensic-classify-tooling-failures-${{ github.event_name }}
   cancel-in-progress: false
 
 jobs:
