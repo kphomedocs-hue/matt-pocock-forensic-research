@@ -82,9 +82,9 @@ jobs:
 
           hist = json.load(open('03_HISTORY_BINDINGS.json', encoding='utf-8'))
           assert hist['file_count'] == 164
-          assert hist['history_event_count'] == 9
+          assert hist['history_event_count'] == 10
           assert hist['history_definition_source'] == '05_HISTORY_LEDGER.md'
-          assert {e['history_id'] for e in hist['events']} == {f'H-{i:03d}' for i in range(1, 10)}
+          assert {e['history_id'] for e in hist['events']} == {f'H-{i:03d}' for i in range(1, 11)}
 
           closure = json.load(open('03_PHASE3_CLOSURE_INDEX.json', encoding='utf-8'))
           assert closure['file_count'] == 164

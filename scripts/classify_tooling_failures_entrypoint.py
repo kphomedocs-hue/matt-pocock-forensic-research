@@ -26,6 +26,8 @@ PHASE3_HISTORY_EVENT_COUNT_TRANSITION_IDS = {
 PHASE3_HISTORY_LEDGER_PARSER_SCOPE_IDS = {35127421564}
 PHASE3_HISTORY_BLOB_SHA_SCOPE_IDS = {35128886485}
 PHASE3_HISTORY_PARITY_PARSER_SCOPE_IDS = {35129364551}
+PHASE3_HISTORY_REBUILD_ASSERTION_TRANSITION_IDS = {35129777286}
+PHASE3_QUALITY_PRE_REBUILD_SNAPSHOT_IDS = {35129777299}
 TOOLING_CLASSIFIER_PENDING_SUPERSESSION_IDS = {35128905967}
 PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS = {
     34750032982,
@@ -145,6 +147,18 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE3_HISTORY_PARITY_PARSER_SCOPE",
             "DETECTED_AND_BLOCKED_FIXED",
             "The Phase 3 quality gate correctly blocked publication because its ledger-parity helper still read only the Evidence column and therefore disagreed with the builder's Event-plus-Evidence provenance contract. The validator now applies the same complete-field and blob-SHA rules as the builder.",
+        )
+    if run_id in PHASE3_HISTORY_REBUILD_ASSERTION_TRANSITION_IDS:
+        return (
+            "PHASE3_HISTORY_REBUILD_ASSERTION_TRANSITION",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The ordered Phase 3 rebuild generated a clean ten-event history binding and passed quality validation, then its atomic-output assertion still expected the retired nine-event denominator. The assertion now matches the durable H-001..H-010 ledger.",
+        )
+    if run_id in PHASE3_QUALITY_PRE_REBUILD_SNAPSHOT_IDS:
+        return (
+            "PHASE3_QUALITY_PRE_REBUILD_SNAPSHOT",
+            "NO_RESEARCH_DATA_CHANGE_FIXED",
+            "The standalone quality workflow ran immediately after its parser changed but before the ordered rebuild could publish the regenerated history bindings. It correctly failed closed on the old snapshot; the ordered rebuild is the authoritative regeneration path.",
         )
     if run_id in PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS:
         return (
