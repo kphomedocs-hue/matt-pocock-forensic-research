@@ -21,7 +21,7 @@ from collections import defaultdict
 SOURCE_REPO = "mattpocock/skills"
 FROZEN_COMMIT = "3cca18b368ae95cdbdebbff572ccafa662551015"
 EXPECTED_FILES = 164
-EXPECTED_HISTORY_EVENTS = 9
+EXPECTED_HISTORY_EVENTS = 10
 CENSUS = pathlib.Path("01_FILE_CENSUS.json")
 HISTORY_LEDGER = pathlib.Path("05_HISTORY_LEDGER.md")
 OUT_JSON = pathlib.Path("03_HISTORY_BINDINGS.json")
@@ -109,7 +109,7 @@ def parse_history_ledger() -> list[dict]:
         )
     expected_ids = {f"H-{i:03d}" for i in range(1, EXPECTED_HISTORY_EVENTS + 1)}
     if {event["id"] for event in events} != expected_ids:
-        raise SystemExit("Durable history ID set is not the expected contiguous H-001..H-009 set")
+        raise SystemExit("Durable history ID set is not the expected contiguous H-001..H-010 set")
     return events
 
 
