@@ -24,6 +24,8 @@ PHASE3_HISTORY_EVENT_COUNT_TRANSITION_IDS = {
 }
 
 PHASE3_HISTORY_LEDGER_PARSER_SCOPE_IDS = {35127421564}
+PHASE3_HISTORY_BLOB_SHA_SCOPE_IDS = {35128886485}
+TOOLING_CLASSIFIER_PENDING_SUPERSESSION_IDS = {35128905967}
 PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS = {
     34750032982,
     34753085869,
@@ -124,6 +126,18 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE3_HISTORY_LEDGER_PARSER_SCOPE",
             "DETECTED_AND_BLOCKED_FIXED",
             "The Phase 3 rebuild correctly refused to publish when the history parser scanned only the ledger Evidence column, even though H-003's exact PR/commit provenance is recorded in its durable Event column. The parser now reads the union of both ledger fields; no generated state was published by the failed run.",
+        )
+    if run_id in PHASE3_HISTORY_BLOB_SHA_SCOPE_IDS:
+        return (
+            "PHASE3_HISTORY_BLOB_SHA_PARSER_SCOPE",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The Phase 3 rebuild correctly refused to publish when the history parser treated H-010's frozen blob SHA as a commit API reference. The parser now excludes explicitly labeled blob SHA values and retains the event's exact creation commit.",
+        )
+    if run_id in TOOLING_CLASSIFIER_PENDING_SUPERSESSION_IDS:
+        return (
+            "CONCURRENCY_SUPERSEDED_PENDING",
+            "NO_RESEARCH_DATA_CHANGE",
+            "GitHub superseded this older pending classifier run when a newer run entered the same non-cancelling concurrency group. The newer classifier run remains the authoritative reconciliation path; this cancelled run did not modify research state.",
         )
     if run_id in PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS:
         return (

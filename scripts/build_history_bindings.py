@@ -85,6 +85,10 @@ def parse_history_ledger() -> list[dict]:
         exact_evidence = f"{event_text} {evidence}"
         prs = sorted(set(re.findall(r"PR\s+#(\d+)", exact_evidence, flags=re.IGNORECASE)))
         commits = sorted(set(re.findall(r"\b[0-9a-f]{40}\b", exact_evidence)))
+        # Blob identifiers prove frozen-file identity but are not API commit
+        # references. Keep them out of the event changed-file query.
+        blob_shas = set(re.findall(r"\bblob SHA\s+\`?([0-9a-f]{40})", exact_evidence, flags=re.IGNORECASE))
+        commits = [sha for sha in commits if sha not in blob_shas]
 
         # When a PR is named, use the PR changed-file set as the event boundary.
         # Merge/commit SHAs in the same evidence cell are supporting provenance,
