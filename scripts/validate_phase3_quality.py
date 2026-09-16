@@ -109,8 +109,11 @@ def history_ledger_rows(text: str) -> dict[str, dict]:
         if len(cells) != 7:
             raise SystemExit(f"Cannot parse history ledger row: {line}")
         hid, date, area, event, evidence, significance, state = cells
-        prs = sorted(set(re.findall(r"PR\s+#(\d+)", evidence, re.I)))
-        commits = sorted(set(re.findall(r"\b[0-9a-f]{40}\b", evidence)))
+        exact_evidence = f"{event} {evidence}"
+        prs = sorted(set(re.findall(r"PR\s+#(\d+)", exact_evidence, re.I)))
+        commits = sorted(set(re.findall(r"\b[0-9a-f]{40}\b", exact_evidence)))
+        blob_shas = set(re.findall(r"\bblob SHA\s+\`?([0-9a-f]{40})", exact_evidence, re.I))
+        commits = [sha for sha in commits if sha not in blob_shas]
         # A PR is the event boundary when explicitly present; merge/commit mentions
         # are supporting evidence and should not create a second binding event.
         refs = [("pr", p) for p in prs] if prs else [("commit", c) for c in commits]

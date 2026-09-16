@@ -25,6 +25,7 @@ PHASE3_HISTORY_EVENT_COUNT_TRANSITION_IDS = {
 
 PHASE3_HISTORY_LEDGER_PARSER_SCOPE_IDS = {35127421564}
 PHASE3_HISTORY_BLOB_SHA_SCOPE_IDS = {35128886485}
+PHASE3_HISTORY_PARITY_PARSER_SCOPE_IDS = {35129364551}
 TOOLING_CLASSIFIER_PENDING_SUPERSESSION_IDS = {35128905967}
 PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS = {
     34750032982,
@@ -138,6 +139,12 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "CONCURRENCY_SUPERSEDED_PENDING",
             "NO_RESEARCH_DATA_CHANGE",
             "GitHub superseded this older pending classifier run when a newer run entered the same non-cancelling concurrency group. The newer classifier run remains the authoritative reconciliation path; this cancelled run did not modify research state.",
+        )
+    if run_id in PHASE3_HISTORY_PARITY_PARSER_SCOPE_IDS:
+        return (
+            "PHASE3_HISTORY_PARITY_PARSER_SCOPE",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The Phase 3 quality gate correctly blocked publication because its ledger-parity helper still read only the Evidence column and therefore disagreed with the builder's Event-plus-Evidence provenance contract. The validator now applies the same complete-field and blob-SHA rules as the builder.",
         )
     if run_id in PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS:
         return (
