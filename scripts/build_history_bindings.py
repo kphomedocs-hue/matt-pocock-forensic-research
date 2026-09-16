@@ -80,8 +80,11 @@ def parse_history_ledger() -> list[dict]:
         if state not in {"RECONCILED", "PARTIAL", "NOT MATERIAL"}:
             raise SystemExit(f"Invalid history lineage state for {history_id}: {state}")
 
-        prs = sorted(set(re.findall(r"PR\s+#(\d+)", evidence, flags=re.IGNORECASE)))
-        commits = sorted(set(re.findall(r"\b[0-9a-f]{40}\b", evidence)))
+        # Exact provenance may be stated in either the Event or Evidence
+        # column. Both are durable ledger fields, so parse their union.
+        exact_evidence = f"{event_text} {evidence}"
+        prs = sorted(set(re.findall(r"PR\s+#(\d+)", exact_evidence, flags=re.IGNORECASE)))
+        commits = sorted(set(re.findall(r"\b[0-9a-f]{40}\b", exact_evidence)))
 
         # When a PR is named, use the PR changed-file set as the event boundary.
         # Merge/commit SHAs in the same evidence cell are supporting provenance,

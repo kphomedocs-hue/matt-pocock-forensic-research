@@ -22,6 +22,8 @@ PHASE3_HISTORY_EVENT_COUNT_TRANSITION_IDS = {
     34750032928,
     34753085943,
 }
+
+PHASE3_HISTORY_LEDGER_PARSER_SCOPE_IDS = {35127421564}
 PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS = {
     34750032982,
     34753085869,
@@ -116,6 +118,12 @@ def classify_failure(run_id: int, failed_step: str, log: str):
             "PHASE3_HISTORY_EVENT_COUNT_TRANSITION",
             "DETECTED_AND_BLOCKED_FIXED",
             "The ordered Phase 3 rebuild failed closed after the durable history ledger had grown from nine to ten events while the generated-history path still expected nine. No promotion occurred from the inconsistent state; the H-001..H-010 durable/generated history set is now reconciled.",
+        )
+    if run_id in PHASE3_HISTORY_LEDGER_PARSER_SCOPE_IDS:
+        return (
+            "PHASE3_HISTORY_LEDGER_PARSER_SCOPE",
+            "DETECTED_AND_BLOCKED_FIXED",
+            "The Phase 3 rebuild correctly refused to publish when the history parser scanned only the ledger Evidence column, even though H-003's exact PR/commit provenance is recorded in its durable Event column. The parser now reads the union of both ledger fields; no generated state was published by the failed run.",
         )
     if run_id in PHASE3_HISTORY_DEFINITION_RECONCILIATION_IDS:
         return (
