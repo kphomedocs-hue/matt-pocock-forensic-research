@@ -1,12 +1,12 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 126,
+  "failed_run_count": 128,
   "cancelled_run_count": 24,
-  "incident_run_count": 150,
-  "incident_entry_count": 150,
+  "incident_run_count": 152,
+  "incident_entry_count": 152,
   "classification_counts": {
-    "CLASSIFIER_CLOSURE_GATE": 18,
+    "CLASSIFIER_CLOSURE_GATE": 19,
     "CLASSIFIER_REFRESH_SUPERSEDED": 21,
     "CLASSIFIER_SCHEMA_TRANSITION": 1,
     "CROSS_WORKFLOW_CONCURRENCY_CANCEL": 3,
@@ -17,6 +17,7 @@
     "PHASE3_HISTORY_DEFINITION_RECONCILIATION": 4,
     "PHASE3_HISTORY_EVENT_COUNT_TRANSITION": 2,
     "PHASE3_HISTORY_EXACT_EVIDENCE_GATE": 2,
+    "PHASE3_HISTORY_LEDGER_PARSER_SCOPE": 1,
     "PHASE3_PROMOTION_PROVENANCE_PARSER": 1,
     "PHASE3_QUALITY_RECHECK_GATE": 1,
     "PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT": 1,
@@ -37,8 +38,8 @@
   },
   "impact_counts": {
     "DELAYED_PROMOTION": 10,
-    "DETECTED_AND_BLOCKED": 23,
-    "DETECTED_AND_BLOCKED_FIXED": 15,
+    "DETECTED_AND_BLOCKED": 24,
+    "DETECTED_AND_BLOCKED_FIXED": 16,
     "DISCARDED_EXECUTION_FIXED": 3,
     "FIXED_CONFIGURATION_MISMATCH": 3,
     "NO_DATA_CHANGE_FIXED": 1,
@@ -2149,6 +2150,34 @@
       "classification": "PUSH_RACE",
       "impact": "TEMPORARILY_STALE",
       "reason": "The B-008 architecture-report harness and every rebuild validator passed, but its generated-evidence commit lost a non-fast-forward race to concurrent main updates. No stale or invalid evidence was published from the rejected push; the later B-008 durable result remained green."
+    },
+    {
+      "run_id": 35127421564,
+      "run_conclusion": "failure",
+      "run_number": 11,
+      "workflow": "Rebuild Phase 3 state",
+      "created_at": "2026-09-16T17:19:02Z",
+      "head_sha": "0b1f3d24cf589f222c9d441c2526de310bb81fac",
+      "title": "fix(phase3): include reconciled H-010 in history bindings",
+      "job_id": 104899782847,
+      "failed_step": "Rebuild ordered Phase 3 state",
+      "classification": "PHASE3_HISTORY_LEDGER_PARSER_SCOPE",
+      "impact": "DETECTED_AND_BLOCKED_FIXED",
+      "reason": "The Phase 3 rebuild correctly refused to publish when the history parser scanned only the ledger Evidence column, even though H-003's exact PR/commit provenance is recorded in its durable Event column. The parser now reads the union of both ledger fields; no generated state was published by the failed run."
+    },
+    {
+      "run_id": 35127543108,
+      "run_conclusion": "failure",
+      "run_number": 130,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-16T17:20:13Z",
+      "head_sha": "0b1f3d24cf589f222c9d441c2526de310bb81fac",
+      "title": "Classify tooling failures",
+      "job_id": 104900186821,
+      "failed_step": "Validate tooling incident ledger outputs",
+      "classification": "CLASSIFIER_CLOSURE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
     }
   ]
 }

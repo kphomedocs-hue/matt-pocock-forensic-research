@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **126**
+Failed workflow runs enumerated: **128**
 
 Cancelled workflow runs enumerated: **24**
 
-Total incident runs: **150**
+Total incident runs: **152**
 
-Incident entries classified: **150**
+Incident entries classified: **152**
 
 Unknown entries: **0**
 
@@ -20,7 +20,7 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 18 |
+| CLASSIFIER_CLOSURE_GATE | 19 |
 | CLASSIFIER_REFRESH_SUPERSEDED | 21 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
@@ -31,6 +31,7 @@ Unresolved/review-required entries: **0**
 | PHASE3_HISTORY_DEFINITION_RECONCILIATION | 4 |
 | PHASE3_HISTORY_EVENT_COUNT_TRANSITION | 2 |
 | PHASE3_HISTORY_EXACT_EVIDENCE_GATE | 2 |
+| PHASE3_HISTORY_LEDGER_PARSER_SCOPE | 1 |
 | PHASE3_PROMOTION_PROVENANCE_PARSER | 1 |
 | PHASE3_QUALITY_RECHECK_GATE | 1 |
 | PHASE4_ARCHITECTURE_REPORT_BOOTSTRAP_MISSING_SCRIPT | 1 |
@@ -54,8 +55,8 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 23 |
-| DETECTED_AND_BLOCKED_FIXED | 15 |
+| DETECTED_AND_BLOCKED | 24 |
+| DETECTED_AND_BLOCKED_FIXED | 16 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
@@ -218,6 +219,8 @@ Unresolved/review-required entries: **0**
 | 34928290191 | failure | 2026-09-15T04:17:59Z | Phase 4 architecture-report runtime | Run isolated offline dependency harness | PHASE4_ARCHITECTURE_REPORT_CONNECTOR_ESCAPE_TRANSITION | NO_RESEARCH_DATA_CHANGE_FIXED |
 | 34928459181 | failure | 2026-09-15T04:20:39Z | Classify tooling failures | Validate tooling incident ledger outputs | TOOLING_CLASSIFIER_BACKLOG_CLOSURE | DETECTED_AND_BLOCKED_FIXED |
 | 34929956423 | failure | 2026-09-15T04:44:00Z | Phase 4 architecture-report runtime | Commit runtime evidence atomically | PUSH_RACE | TEMPORARILY_STALE |
+| 35127421564 | failure | 2026-09-16T17:19:02Z | Rebuild Phase 3 state | Rebuild ordered Phase 3 state | PHASE3_HISTORY_LEDGER_PARSER_SCOPE | DETECTED_AND_BLOCKED_FIXED |
+| 35127543108 | failure | 2026-09-16T17:20:13Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 
