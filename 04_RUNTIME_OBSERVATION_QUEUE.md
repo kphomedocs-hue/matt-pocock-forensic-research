@@ -6,15 +6,15 @@ This is an evidence-depth queue, not a breadth denominator. Every behavior row i
 
 Behavior denominator: **65**.
 Classified: **65/65**.
-Runtime-observed rows: **16/65**.
-Pending stronger evidence: **49**.
+Runtime-observed rows: **15/65**.
+Pending stronger evidence: **50**.
 
 ## Evidence classes
 
 | Class | Total | Observed | Pending | Meaning |
 |---|---:|---:|---:|---|
 | EXECUTION_OBSERVATION | 30 | 14 | 16 | Executable/runtime/CI contract; isolate and execute or obtain equivalent runtime evidence. |
-| EXTERNAL_DEPENDENCY_VALIDATION | 7 | 2 | 5 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
+| EXTERNAL_DEPENDENCY_VALIDATION | 7 | 1 | 6 | Behavior depends on an external service/tool/asset; validate the dependency assumption. |
 | MACHINE_CONSUMER_VALIDATION | 4 | 0 | 4 | Static machine-readable config; prove the intended consumer loads/obeys it. |
 | PROMPT_REDTEAM_LATER | 24 | 0 | 24 | Prompt/docs judgment contract; test adversarially in second-pass/red-team work. |
 
@@ -45,7 +45,7 @@ Pending stronger evidence: **49**.
 | B-021 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0093 | setup confirmation-before-write boundary | Later runtime observation can test whether supported harnesses consistently honor the checkpoint. |
 | B-022 | PROMPT_REDTEAM_LATER | CONFIRMED_MATCH | NO | MP-0023, MP-0093 | setup verification mode | A later runtime pass can test verification quality, but static design intent is reconciled. |
 | B-023 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0071 | diagnosing-bugs red-loop gate | Runtime/red-team testing should attempt to induce premature hypothesis generation and measure adherence. |
-| B-024 | EXTERNAL_DEPENDENCY_VALIDATION | CONFIRMED_WEAKNESS | YES | MP-0099, MP-0110 | triage exclusive state/category invariant | Frozen tracker behavior is runtime-observed. Agent adherence to removing conflicting roles remains a separate prompt/red-team question; this row does not establish agent behavior or promote the source to VERIFIED. |
+| B-024 | EXTERNAL_DEPENDENCY_VALIDATION | CONFIRMED_WEAKNESS | NO | MP-0099, MP-0110 | triage exclusive state/category invariant | Use a disposable tracker fixture that can create the exact canonical role labels, begin with an actual frozen state-role label, then observe whether an additive quick override leaves the prior state label in place. The current generic-label fixture is supporting-only. |
 | B-025 | EXECUTION_OBSERVATION | CONFIRMED_MATCH | NO | MP-0110 | triage verification-before-grilling | Later runtime observation can test whether the normal path actually performs the requested reproduction/checkout before grilling. |
 | B-026 | EXECUTION_OBSERVATION | RUNTIME_UNKNOWN | NO | MP-0120 | implement-spec frontier scheduling | Run a representative dependency graph with at least one blocked branch and verify that no blocked ticket starts early. |
 | B-027 | EXECUTION_OBSERVATION | CONFIRMED_GAP | NO | MP-0065, MP-0120 | implement-spec post-review fix revalidation | Add or identify a post-fix acceptance gate; runtime reproduction can demonstrate whether review-fix regressions can reach the ready state. |
