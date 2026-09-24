@@ -142,8 +142,8 @@
     "This test observes the external GitHub tracker’s additive-label behavior, not whether the triage agent obeys its prompt-level instruction to flag conflicts.",
     "The disposable repository remains because the connected GitHub tool has no repository-delete operation; the issue is closed and label-free."
   ],
-  "workflow_run_id": null,
-  "validation_workflow_run_id": null,
+  "workflow_run_id": 35992558197,
+  "validation_workflow_run_id": 35992558197,
   "promotion_eligible": true,
   "evidence_classification": "EXACT_CANONICAL_ROLE_EXTERNAL_DEPENDENCY_OBSERVATION",
   "fixture_label_setup": {

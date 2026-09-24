@@ -727,9 +727,22 @@
       ],
       "state": "CONFIRMED_WEAKNESS",
       "machine_enforced": false,
-      "runtime_observed": false,
-      "adjudication": "Triage explicitly states the one-category/one-state invariant and tells the agent to stop on pre-existing state-role conflicts. Generic GitHub labels are demonstrably additive in the isolated fixture, but the fixture could not create the frozen skill's exact custom canonical state labels; that supporting tracker observation does not establish the required role-transition behavior. The invariant therefore remains a prompt-level weakness, not a runtime-promoted finding.",
-      "next_evidence": "Use a disposable tracker fixture that can create the exact canonical role labels, begin with an actual frozen state-role label, then observe whether an additive quick override leaves the prior state label in place. The current generic-label fixture is supporting-only."
+      "runtime_observed": true,
+      "adjudication": "Triage explicitly states the one-category/one-state invariant and tells the agent to stop on pre-existing state-role conflicts. Exact isolated tracker observation: a fixture initially carrying `bug` + `needs-triage` retained both when additive quick-style labels `enhancement` + `ready-for-agent` were applied, yielding two category roles and two frozen canonical state roles. GitHub label operations are additive; the tracker does not enforce role exclusivity. This confirms the external-dependency weakness, while prompt adherence remains separate.",
+      "next_evidence": "Prompt-level red-team testing remains needed to determine whether a real triage agent flags/removes conflicts before acting; this external observation does not establish agent adherence.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_GITHUB_ISSUE_RUNTIME",
+          "test_ids": [
+            "GH-004",
+            "GH-005",
+            "GH-006"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 35992558197,
+          "result_file": "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-025",

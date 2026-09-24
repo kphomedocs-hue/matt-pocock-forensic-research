@@ -107,6 +107,15 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
             if inputs.get(source_path) != blob_sha:
                 errors.append(f"{bid}: release-workflow evidence missing frozen blob provenance for {source_path}")
         validate_named_tests(bid, evidence, data, result_file, errors)
+    elif result_file == "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json":
+        validate_isolated_named_result(bid, evidence, data, result_file, errors)
+        if data.get("promotion_eligible") is not True or data.get("evidence_classification") != "EXACT_CANONICAL_ROLE_EXTERNAL_DEPENDENCY_OBSERVATION":
+            errors.append(f"{bid}: B-024 evidence is not marked as exact canonical-role observation")
+        if data.get("workflow_run_id") != evidence.get("workflow_run_id"):
+            errors.append(f"{bid}: B-024 evidence workflow run ID disagrees with matrix")
+        expected = {"GH-004", "GH-005", "GH-006"}
+        if not expected.issubset(set(evidence.get("test_ids", []))):
+            errors.append(f"{bid}: B-024 evidence omits exact canonical-role test IDs")
     elif result_file == "04_ARCHITECTURE_REPORT_RUNTIME_RESULTS.json":
         validate_isolated_named_result(bid, evidence, data, result_file, errors)
     elif result_file == "04_IMPLEMENT_REVIEW_VISIBILITY_RESULTS.json":

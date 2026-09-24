@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 15,
-  "pending_total": 50,
+  "runtime_observed": 16,
+  "pending_total": 49,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -15,13 +15,13 @@
   },
   "observed_by_class": {
     "EXECUTION_OBSERVATION": 14,
-    "EXTERNAL_DEPENDENCY_VALIDATION": 1,
+    "EXTERNAL_DEPENDENCY_VALIDATION": 2,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
     "EXECUTION_OBSERVATION": 16,
-    "EXTERNAL_DEPENDENCY_VALIDATION": 6,
+    "EXTERNAL_DEPENDENCY_VALIDATION": 5,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
   },
@@ -635,8 +635,8 @@
         "EXTERNAL_DEPENDENCY"
       ],
       "evidence_class": "EXTERNAL_DEPENDENCY_VALIDATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0099",
         "MP-0110"
@@ -646,8 +646,8 @@
         "skills/engineering/triage/SKILL.md"
       ],
       "contradiction_ids": [],
-      "rationale": "Contract depends on behavior outside the frozen repository; validate the dependency/portability assumption separately from source truth.",
-      "next_evidence": "Use a disposable tracker fixture that can create the exact canonical role labels, begin with an actual frozen state-role label, then observe whether an additive quick override leaves the prior state label in place. The current generic-label fixture is supporting-only."
+      "rationale": "Exact isolated GitHub observation showed additive application of `enhancement` + `ready-for-agent` retains `bug` + `needs-triage`, producing two category and two frozen canonical state roles; tracker exclusivity is not enforced.",
+      "next_evidence": "Keep prompt-level triage-agent adherence separate; this only establishes external tracker behavior."
     },
     {
       "behavior_id": "B-025",
