@@ -43,7 +43,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Skill breadth coverage: 37/37.
 - High-risk non-SKILL surface coverage: 71/71.
 - Phase 4 hard errors: 0.
-- Tooling incident ledger: 179 entries from 143 failed + 36 cancelled runs.
+- Tooling incident ledger: 184 entries from 147 failed + 37 cancelled runs.
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 

@@ -34,7 +34,7 @@
         "B-024"
       ],
       "passed": true,
-      "assertion": "Initial fixture issue carried exactly one category label and one state label.",
+      "assertion": "Initial fixture issue carried the generic GitHub labels `bug` and `wontfix`.",
       "observed_labels": [
         "bug",
         "wontfix"
@@ -46,7 +46,7 @@
         "B-024"
       ],
       "passed": true,
-      "assertion": "Additive transition labels did not remove prior roles; the issue carried two category labels and two state labels.",
+      "assertion": "Additive generic GitHub labels did not remove prior labels; the issue carried four labels simultaneously.",
       "observed_labels": [
         "bug",
         "enhancement",
@@ -64,7 +64,7 @@
         "B-024"
       ],
       "passed": true,
-      "assertion": "Explicit removal of the prior labels restored one category and one state role.",
+      "assertion": "Explicit removal restored the remaining generic label pair before all labels were removed during cleanup.",
       "observed_labels": [
         "enhancement",
         "question"
