@@ -33,10 +33,10 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Phase 3: COMPLETE.
 - Phase 3 graph edges: 554.
 - Phase 4 behavior rows: 65.
-- Phase 4 runtime observed: 16/65.
-- Phase 4 pending stronger evidence: 49.
+- Phase 4 runtime observed: 15/65.
+- Phase 4 pending stronger evidence: 50.
 - Pending EXECUTION_OBSERVATION rows: 16.
-- Pending EXTERNAL_DEPENDENCY_VALIDATION rows: 5.
+- Pending EXTERNAL_DEPENDENCY_VALIDATION rows: 6.
 - Pending MACHINE_CONSUMER_VALIDATION rows: 4.
 - Pending PROMPT_REDTEAM_LATER rows: 24.
 - Current contradiction coverage: 20/20.
@@ -88,7 +88,6 @@ Runtime-observed rows include:
 - B-010 implement-review pre-commit visibility observation.
 - B-047 scaffold-exercises solution-only linter observation (CT-020 remains open).
 - B-029 release version/tag workflow execution observation.
-- B-024 triage label exclusivity external-tracker observation.
 
 ### Important contradiction/runtime findings
 
@@ -98,7 +97,7 @@ Runtime-observed rows include:
 - B-017 preserved a real Husky 9.1.7 drift: `.husky/pre-commit` itself is not executable, while the executable `.husky/_/pre-commit` shim runs it through `sh -e`. Functional commit-hook behavior was successfully observed; the stale frozen executable-bit predicate was not hidden with chmod.
 - B-008 was republished by successful GitHub Action 34930416829 after its workflow gained retry-on-push-race publication handling. B-010 was durably observed by Action 34929107528. B-047 was durably observed by Action 34930009546; its result records frozen source provenance, the exact external linter commit/version, named tests, and the public course lock evidence.
 - B-029 is durably recorded from upstream Release workflow run 33854812658 at the exact frozen source commit. The Version job, including the configured Create Version Pull Request step, succeeded. This establishes execution of the configured route, not confirmed tag publication; the retained job metadata has no action output proving a pending changeset, created PR, or tag.
-- B-024 is durably recorded from isolated private fixture issue #1. Additive labels produced two category plus two state labels; explicit removal restored the two-role shape. The issue was closed and cleaned; the connected GitHub tool cannot delete the fixture repository itself.
+- The generic GitHub-label fixture for B-024 is retained as supporting-only evidence. It did not create the frozen skill's exact custom canonical state labels, so B-024 remains unobserved and must not be promoted from that fixture.
 
 ## Persistence/control repairs completed before this handoff
 

@@ -83,9 +83,12 @@
     "fixture_repo_visibility": "private"
   },
   "limitations": [
+    "CORRECTION: `question` is a default GitHub label but not a frozen triage state role. The fixture therefore did not test an exact canonical state-role transition and cannot promote B-024.",
     "The connector exposes additive label operations and explicit removal, but not the triage skill's agent decision-making. This promotes only the external tracker invariant/weakness, not prompt adherence.",
     "The disposable repository itself cannot be deleted through the connected GitHub tool; the fixture issue was cleaned and closed."
   ],
   "workflow_run_id": 35988745325,
-  "validation_workflow_run_id": 35988745325
+  "validation_workflow_run_id": 35988745325,
+  "promotion_eligible": false,
+  "evidence_classification": "SUPPORTING_ONLY_GENERIC_GITHUB_LABEL_OBSERVATION"
 }
