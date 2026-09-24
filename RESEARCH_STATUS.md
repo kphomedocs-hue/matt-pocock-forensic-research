@@ -74,7 +74,7 @@ Breadth coverage does not imply runtime verification. No Phase 4 row is sufficie
 
 ## Tooling ledger
 
-Latest published durable classifier snapshot: **171 incident entries** from **139 failed + 32 cancelled runs**.
+Latest published durable classifier snapshot: **179 incident entries** from **143 failed + 36 cancelled runs**.
 
 - unknown entries: **0**;
 - unresolved/review-required entries: **0**.
