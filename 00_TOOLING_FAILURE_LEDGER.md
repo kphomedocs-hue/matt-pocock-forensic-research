@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **147**
+Failed workflow runs enumerated: **151**
 
-Cancelled workflow runs enumerated: **37**
+Cancelled workflow runs enumerated: **38**
 
-Total incident runs: **184**
+Total incident runs: **189**
 
-Incident entries classified: **184**
+Incident entries classified: **189**
 
 Unknown entries: **0**
 
@@ -20,8 +20,8 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 25 |
-| CLASSIFIER_REFRESH_SUPERSEDED | 34 |
+| CLASSIFIER_CLOSURE_GATE | 26 |
+| CLASSIFIER_REFRESH_SUPERSEDED | 35 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
 | FOUNDATION_GATE | 1 |
@@ -44,10 +44,10 @@ Unresolved/review-required entries: **0**
 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | 2 |
 | PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION | 1 |
 | PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | 1 |
-| PHASE4_GENERATED_STATUS_PRE_RENDER | 3 |
+| PHASE4_GENERATED_STATUS_PRE_RENDER | 4 |
 | PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY | 1 |
 | PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | 1 |
-| PHASE4_RUNTIME_COMMIT_RACE | 6 |
+| PHASE4_RUNTIME_COMMIT_RACE | 8 |
 | PHASE4_RUNTIME_PROVENANCE_ID_TYPE_TRANSITION | 1 |
 | PHASE4_RUNTIME_PROVENANCE_WIRING_TRANSITION | 1 |
 | PHASE4_STATUS_CHECKPOINT_BOOTSTRAP_TRANSITION | 1 |
@@ -61,14 +61,14 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 30 |
-| DETECTED_AND_BLOCKED_FIXED | 22 |
+| DETECTED_AND_BLOCKED | 31 |
+| DETECTED_AND_BLOCKED_FIXED | 23 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
 | NO_RESEARCH_DATA_CHANGE_FIXED | 11 |
-| REDUNDANT_REFRESH_DISCARDED | 34 |
-| TEMPORARILY_STALE | 69 |
+| REDUNDANT_REFRESH_DISCARDED | 35 |
+| TEMPORARILY_STALE | 71 |
 | TRANSIENT_OR_INFRA | 1 |
 
 ## Incident ledger
@@ -259,6 +259,11 @@ Unresolved/review-required entries: **0**
 | 35990308185 | failure | 2026-09-24T10:58:30Z | Phase 4 implement-review visibility runtime | Commit runtime evidence atomically | PHASE4_RUNTIME_COMMIT_RACE | TEMPORARILY_STALE |
 | 35990328472 | failure | 2026-09-24T10:58:44Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 35990336769 | cancelled | 2026-09-24T10:58:49Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 35992690329 | failure | 2026-09-24T11:23:01Z | Phase 4 scaffold-exercises linter runtime | Commit runtime evidence atomically | PHASE4_RUNTIME_COMMIT_RACE | TEMPORARILY_STALE |
+| 35992690343 | failure | 2026-09-24T11:23:01Z | Phase 4 main guard | Ensure validators are non-mutating on committed main | PHASE4_GENERATED_STATUS_PRE_RENDER | DETECTED_AND_BLOCKED_FIXED |
+| 35992690381 | failure | 2026-09-24T11:23:01Z | Phase 4 implement-review visibility runtime | Commit runtime evidence atomically | PHASE4_RUNTIME_COMMIT_RACE | TEMPORARILY_STALE |
+| 35992711891 | failure | 2026-09-24T11:23:15Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 35992730293 | cancelled | 2026-09-24T11:23:26Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
 
 ## Closure rule
 
