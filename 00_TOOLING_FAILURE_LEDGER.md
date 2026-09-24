@@ -4,13 +4,13 @@ Repository: `kphomedocs-hue/matt-pocock-forensic-research`
 
 Classifier version: **3**
 
-Failed workflow runs enumerated: **151**
+Failed workflow runs enumerated: **154**
 
 Cancelled workflow runs enumerated: **38**
 
-Total incident runs: **189**
+Total incident runs: **192**
 
-Incident entries classified: **189**
+Incident entries classified: **192**
 
 Unknown entries: **0**
 
@@ -20,7 +20,7 @@ Unresolved/review-required entries: **0**
 
 | Classification | Count |
 |---|---:|
-| CLASSIFIER_CLOSURE_GATE | 26 |
+| CLASSIFIER_CLOSURE_GATE | 28 |
 | CLASSIFIER_REFRESH_SUPERSEDED | 35 |
 | CLASSIFIER_SCHEMA_TRANSITION | 1 |
 | CROSS_WORKFLOW_CONCURRENCY_CANCEL | 3 |
@@ -44,7 +44,7 @@ Unresolved/review-required entries: **0**
 | PHASE4_CT019_ROW_ANCHOR_TRANSITION | 2 |
 | PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION | 1 |
 | PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION | 1 |
-| PHASE4_GENERATED_STATUS_PRE_RENDER | 4 |
+| PHASE4_GENERATED_STATUS_PRE_RENDER | 5 |
 | PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY | 1 |
 | PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION | 1 |
 | PHASE4_RUNTIME_COMMIT_RACE | 8 |
@@ -61,8 +61,8 @@ Unresolved/review-required entries: **0**
 | Impact | Count |
 |---|---:|
 | DELAYED_PROMOTION | 10 |
-| DETECTED_AND_BLOCKED | 31 |
-| DETECTED_AND_BLOCKED_FIXED | 23 |
+| DETECTED_AND_BLOCKED | 33 |
+| DETECTED_AND_BLOCKED_FIXED | 24 |
 | DISCARDED_EXECUTION_FIXED | 3 |
 | FIXED_CONFIGURATION_MISMATCH | 3 |
 | NO_DATA_CHANGE_FIXED | 1 |
@@ -264,6 +264,9 @@ Unresolved/review-required entries: **0**
 | 35992690381 | failure | 2026-09-24T11:23:01Z | Phase 4 implement-review visibility runtime | Commit runtime evidence atomically | PHASE4_RUNTIME_COMMIT_RACE | TEMPORARILY_STALE |
 | 35992711891 | failure | 2026-09-24T11:23:15Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 | 35992730293 | cancelled | 2026-09-24T11:23:26Z | Classify tooling failures |  | CLASSIFIER_REFRESH_SUPERSEDED | REDUNDANT_REFRESH_DISCARDED |
+| 36000105299 | failure | 2026-09-24T12:36:18Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
+| 36000105408 | failure | 2026-09-24T12:36:18Z | Phase 4 main guard | Ensure validators are non-mutating on committed main | PHASE4_GENERATED_STATUS_PRE_RENDER | DETECTED_AND_BLOCKED_FIXED |
+| 36000132237 | failure | 2026-09-24T12:36:34Z | Classify tooling failures | Validate tooling incident ledger outputs | CLASSIFIER_CLOSURE_GATE | DETECTED_AND_BLOCKED |
 
 ## Closure rule
 

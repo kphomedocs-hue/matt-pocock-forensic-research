@@ -1,12 +1,12 @@
 {
   "repository": "kphomedocs-hue/matt-pocock-forensic-research",
   "classification_version": 3,
-  "failed_run_count": 151,
+  "failed_run_count": 154,
   "cancelled_run_count": 38,
-  "incident_run_count": 189,
-  "incident_entry_count": 189,
+  "incident_run_count": 192,
+  "incident_entry_count": 192,
   "classification_counts": {
-    "CLASSIFIER_CLOSURE_GATE": 26,
+    "CLASSIFIER_CLOSURE_GATE": 28,
     "CLASSIFIER_REFRESH_SUPERSEDED": 35,
     "CLASSIFIER_SCHEMA_TRANSITION": 1,
     "CROSS_WORKFLOW_CONCURRENCY_CANCEL": 3,
@@ -30,7 +30,7 @@
     "PHASE4_CT019_ROW_ANCHOR_TRANSITION": 2,
     "PHASE4_DEEP_MODULE_HARNESS_BOOTSTRAP_TRANSITION": 1,
     "PHASE4_DEEP_MODULE_TYPESCRIPT_COMPATIBILITY_TRANSITION": 1,
-    "PHASE4_GENERATED_STATUS_PRE_RENDER": 4,
+    "PHASE4_GENERATED_STATUS_PRE_RENDER": 5,
     "PHASE4_PRECOMMIT_EXECUTABLE_PREDICATE_DISCOVERY": 1,
     "PHASE4_RUNTIME_ACCEPTANCE_SCHEMA_TRANSITION": 1,
     "PHASE4_RUNTIME_COMMIT_RACE": 8,
@@ -44,8 +44,8 @@
   },
   "impact_counts": {
     "DELAYED_PROMOTION": 10,
-    "DETECTED_AND_BLOCKED": 31,
-    "DETECTED_AND_BLOCKED_FIXED": 23,
+    "DETECTED_AND_BLOCKED": 33,
+    "DETECTED_AND_BLOCKED_FIXED": 24,
     "DISCARDED_EXECUTION_FIXED": 3,
     "FIXED_CONFIGURATION_MISMATCH": 3,
     "NO_DATA_CHANGE_FIXED": 1,
@@ -2702,6 +2702,48 @@
       "classification": "CLASSIFIER_REFRESH_SUPERSEDED",
       "impact": "REDUNDANT_REFRESH_DISCARDED",
       "reason": "A classifier refresh was superseded by a newer refresh; the latest refresh reconstructs the complete incident ledger from GitHub history."
+    },
+    {
+      "run_id": 36000105299,
+      "run_conclusion": "failure",
+      "run_number": 179,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-24T12:36:18Z",
+      "head_sha": "70d7516df7dc4ab8d4ba0cb4f5e706b66820c707",
+      "title": "docs(research): prioritize non-agent forensic frontier",
+      "job_id": 107634383583,
+      "failed_step": "Validate tooling incident ledger outputs",
+      "classification": "CLASSIFIER_CLOSURE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
+    },
+    {
+      "run_id": 36000105408,
+      "run_conclusion": "failure",
+      "run_number": 69,
+      "workflow": "Phase 4 main guard",
+      "created_at": "2026-09-24T12:36:18Z",
+      "head_sha": "70d7516df7dc4ab8d4ba0cb4f5e706b66820c707",
+      "title": "docs(research): prioritize non-agent forensic frontier",
+      "job_id": 107634382873,
+      "failed_step": "Ensure validators are non-mutating on committed main",
+      "classification": "PHASE4_GENERATED_STATUS_PRE_RENDER",
+      "impact": "DETECTED_AND_BLOCKED_FIXED",
+      "reason": "The main guard correctly detected stale generated Phase 4/status files on the source commit. The dedicated Phase 4 validation workflow rendered and atomically published the checkpoint; the later remote main is current."
+    },
+    {
+      "run_id": 36000132237,
+      "run_conclusion": "failure",
+      "run_number": 181,
+      "workflow": "Classify tooling failures",
+      "created_at": "2026-09-24T12:36:34Z",
+      "head_sha": "7500e045c2dc6c671ae9bda43dc675ffcc2aa7c4",
+      "title": "Classify tooling failures",
+      "job_id": 107634474541,
+      "failed_step": "Validate tooling incident ledger outputs",
+      "classification": "CLASSIFIER_CLOSURE_GATE",
+      "impact": "DETECTED_AND_BLOCKED",
+      "reason": "The classifier completed successfully, then its closure assertion intentionally blocked publication because at least one separately listed incident remained unknown or review-required."
     }
   ]
 }
