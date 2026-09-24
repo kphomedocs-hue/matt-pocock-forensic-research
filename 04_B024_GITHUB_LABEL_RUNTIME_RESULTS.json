@@ -86,5 +86,6 @@
     "The connector exposes additive label operations and explicit removal, but not the triage skill's agent decision-making. This promotes only the external tracker invariant/weakness, not prompt adherence.",
     "The disposable repository itself cannot be deleted through the connected GitHub tool; the fixture issue was cleaned and closed."
   ],
-  "workflow_run_id": 1
+  "workflow_run_id": 35988745325,
+  "validation_workflow_run_id": 35988745325
 }
