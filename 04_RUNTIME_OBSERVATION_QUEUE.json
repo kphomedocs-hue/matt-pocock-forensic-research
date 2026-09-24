@@ -646,8 +646,8 @@
         "skills/engineering/triage/SKILL.md"
       ],
       "contradiction_ids": [],
-      "rationale": "Exact isolated GitHub observation showed additive application of `enhancement` + `ready-for-agent` retains `bug` + `needs-triage`, producing two category and two frozen canonical state roles; tracker exclusivity is not enforced.",
-      "next_evidence": "Keep prompt-level triage-agent adherence separate; this only establishes external tracker behavior."
+      "rationale": "Contract depends on behavior outside the frozen repository; validate the dependency/portability assumption separately from source truth.",
+      "next_evidence": "Prompt-level red-team testing remains needed to determine whether a real triage agent flags/removes conflicts before acting; this external observation does not establish agent adherence."
     },
     {
       "behavior_id": "B-025",
