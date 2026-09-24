@@ -13,7 +13,14 @@
   "fixture_cleanup": {
     "issue_state": "closed",
     "labels": [],
-    "production_data": false
+    "production_data": false,
+    "canonical_fixture_labels_retained": [
+      "needs-triage",
+      "needs-info",
+      "ready-for-agent",
+      "ready-for-human",
+      "wontfix"
+    ]
   },
   "frozen_source_inputs": [
     {
@@ -76,6 +83,55 @@
         "remove question",
         "close issue"
       ]
+    },
+    {
+      "test_id": "GH-004",
+      "behavior_ids": [
+        "B-024"
+      ],
+      "passed": true,
+      "assertion": "Initial isolated fixture issue carried exactly one frozen category role and one frozen state role.",
+      "observed_labels": [
+        "bug",
+        "needs-triage"
+      ],
+      "operation_sequence": [
+        "reopen issue",
+        "add bug + needs-triage"
+      ]
+    },
+    {
+      "test_id": "GH-005",
+      "behavior_ids": [
+        "B-024"
+      ],
+      "passed": true,
+      "assertion": "An additive quick-style state update left the prior canonical state and category roles in place, producing conflicting frozen roles simultaneously.",
+      "observed_labels": [
+        "bug",
+        "enhancement",
+        "needs-triage",
+        "ready-for-agent"
+      ],
+      "operation_sequence": [
+        "add enhancement + ready-for-agent without removing bug or needs-triage"
+      ]
+    },
+    {
+      "test_id": "GH-006",
+      "behavior_ids": [
+        "B-024"
+      ],
+      "passed": true,
+      "assertion": "Explicit label removal restored the fixture to a closed, label-free state.",
+      "observed_labels": [],
+      "cleanup_sequence": [
+        "remove bug",
+        "remove enhancement",
+        "remove needs-triage",
+        "remove ready-for-agent",
+        "close issue"
+      ]
     }
   ],
   "external_tool_versions": {
@@ -83,12 +139,21 @@
     "fixture_repo_visibility": "private"
   },
   "limitations": [
-    "CORRECTION: `question` is a default GitHub label but not a frozen triage state role. The fixture therefore did not test an exact canonical state-role transition and cannot promote B-024.",
-    "The connector exposes additive label operations and explicit removal, but not the triage skill's agent decision-making. This promotes only the external tracker invariant/weakness, not prompt adherence.",
-    "The disposable repository itself cannot be deleted through the connected GitHub tool; the fixture issue was cleaned and closed."
+    "This test observes the external GitHub tracker’s additive-label behavior, not whether the triage agent obeys its prompt-level instruction to flag conflicts.",
+    "The disposable repository remains because the connected GitHub tool has no repository-delete operation; the issue is closed and label-free."
   ],
-  "workflow_run_id": 35988745325,
-  "validation_workflow_run_id": 35988745325,
-  "promotion_eligible": false,
-  "evidence_classification": "SUPPORTING_ONLY_GENERIC_GITHUB_LABEL_OBSERVATION"
+  "workflow_run_id": null,
+  "validation_workflow_run_id": null,
+  "promotion_eligible": true,
+  "evidence_classification": "EXACT_CANONICAL_ROLE_EXTERNAL_DEPENDENCY_OBSERVATION",
+  "fixture_label_setup": {
+    "created_via": "authenticated GitHub web UI",
+    "canonical_state_labels_created": [
+      "needs-triage",
+      "needs-info",
+      "ready-for-agent",
+      "ready-for-human"
+    ],
+    "existing_canonical_state_label": "wontfix"
+  }
 }
