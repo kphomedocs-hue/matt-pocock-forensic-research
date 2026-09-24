@@ -81,6 +81,21 @@ def validate_result_file(bid: str, evidence: dict, errors: list[str]) -> None:
         versions = data.get("package_versions", {})
         if set(versions) != {"husky", "lint-staged", "prettier"} or any(not versions.get(x) for x in versions):
             errors.append(f"{bid}: pre-commit evidence lacks resolved Husky/lint-staged/Prettier versions")
+    elif result_file == "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json":
+        if data.get("hard_errors") not in ([], None):
+            errors.append(f"{bid}: B-024 evidence contains hard errors")
+        if data.get("external_fixture_repository") != "kphomedocs-hue/matt-pocock-b024-label-fixture":
+            errors.append(f"{bid}: B-024 evidence has wrong fixture repository")
+        if data.get("fixture_cleanup", {}).get("issue_state") != "closed":
+            errors.append(f"{bid}: B-024 fixture issue was not cleaned up")
+        if data.get("fixture_cleanup", {}).get("labels") != []:
+            errors.append(f"{bid}: B-024 fixture issue retained labels after cleanup")
+        source_inputs = {x.get("path"): x.get("blob_sha") for x in data.get("frozen_source_inputs", [])}
+        if source_inputs.get("skills/engineering/triage/SKILL.md") != "37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e":
+            errors.append(f"{bid}: B-024 triage source provenance mismatch")
+        if source_inputs.get("skills/engineering/setup-matt-pocock-skills/triage-labels.md") != "b716855d485f3865f9dfde2a82141721f065b2e7":
+            errors.append(f"{bid}: B-024 label mapping provenance mismatch")
+        validate_named_tests(bid, evidence, data, result_file, errors)
     elif result_file == "04_RELEASE_WORKFLOW_RUNTIME_RESULTS.json":
         if data.get("hard_errors") not in ([], None):
             errors.append(f"{bid}: release-workflow evidence contains hard errors")

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "evidence_type": "ISOLATED_GITHUB_ISSUE_RUNTIME",
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "frozen_tree": "6e84c093fda2026396cea9fad6a924a6da0e1452",
+  "hard_errors": [],
+  "synthetic_inputs_only": true,
+  "user_or_live_repo_touched": false,
+  "external_fixture_repository": "kphomedocs-hue/matt-pocock-b024-label-fixture",
+  "fixture_issue_number": 1,
+  "fixture_issue_url": "https://github.com/kphomedocs-hue/matt-pocock-b024-label-fixture/issues/1",
+  "fixture_cleanup": {
+    "issue_state": "closed",
+    "labels": [],
+    "production_data": false
+  },
+  "frozen_source_inputs": [
+    {
+      "path": "skills/engineering/triage/SKILL.md",
+      "blob_sha": "37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e",
+      "assertion": "Triage requires exactly one category role and exactly one state role; conflicting state roles must be flagged."
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "blob_sha": "b716855d485f3865f9dfde2a82141721f065b2e7",
+      "assertion": "Canonical state-role mapping includes wontfix and other state labels."
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "GH-001",
+      "behavior_ids": [
+        "B-024"
+      ],
+      "passed": true,
+      "assertion": "Initial fixture issue carried exactly one category label and one state label.",
+      "observed_labels": [
+        "bug",
+        "wontfix"
+      ]
+    },
+    {
+      "test_id": "GH-002",
+      "behavior_ids": [
+        "B-024"
+      ],
+      "passed": true,
+      "assertion": "Additive transition labels did not remove prior roles; the issue carried two category labels and two state labels.",
+      "observed_labels": [
+        "bug",
+        "enhancement",
+        "question",
+        "wontfix"
+      ],
+      "operation_sequence": [
+        "add bug + wontfix",
+        "add enhancement + question"
+      ]
+    },
+    {
+      "test_id": "GH-003",
+      "behavior_ids": [
+        "B-024"
+      ],
+      "passed": true,
+      "assertion": "Explicit removal of the prior labels restored one category and one state role.",
+      "observed_labels": [
+        "enhancement",
+        "question"
+      ],
+      "cleanup_sequence": [
+        "remove bug",
+        "remove wontfix",
+        "remove enhancement",
+        "remove question",
+        "close issue"
+      ]
+    }
+  ],
+  "external_tool_versions": {
+    "github_api": "GitHub connector API; exact REST version not exposed by connector",
+    "fixture_repo_visibility": "private"
+  },
+  "limitations": [
+    "The connector exposes additive label operations and explicit removal, but not the triage skill's agent decision-making. This promotes only the external tracker invariant/weakness, not prompt adherence.",
+    "The disposable repository itself cannot be deleted through the connected GitHub tool; the fixture issue was cleaned and closed."
+  ],
+  "workflow_run_id": 1
+}

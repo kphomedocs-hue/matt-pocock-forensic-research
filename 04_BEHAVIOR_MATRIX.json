@@ -727,9 +727,22 @@
       ],
       "state": "CONFIRMED_WEAKNESS",
       "machine_enforced": false,
-      "runtime_observed": false,
-      "adjudication": "Triage explicitly states the one-category/one-state invariant and tells the agent to stop on pre-existing state-role conflicts. However, ordinary issue trackers permit multiple labels, and the quick state-override path says to apply the requested role directly without an explicit remove-other-state-label step. The invariant therefore depends on prompt adherence rather than tracker-level exclusivity.",
-      "next_evidence": "Runtime-test a transition from an already-state-labeled issue and determine whether prior state labels are reliably removed."
+      "runtime_observed": true,
+      "adjudication": "Frozen triage requires exactly one category role and one state role, but GitHub labels are additive and do not enforce role exclusivity. In the isolated private fixture, an issue began with one category/state pair (`bug` + `wontfix`); adding the requested transition labels (`enhancement` + `question`) left all four labels simultaneously. Explicit removal restored one category/state pair, proving cleanup is a separate operation rather than a tracker invariant.",
+      "next_evidence": "Frozen tracker behavior is runtime-observed. Agent adherence to removing conflicting roles remains a separate prompt/red-team question; this row does not establish agent behavior or promote the source to VERIFIED.",
+      "runtime_evidence": [
+        {
+          "evidence_type": "ISOLATED_GITHUB_ISSUE_RUNTIME",
+          "test_ids": [
+            "GH-001",
+            "GH-002",
+            "GH-003"
+          ],
+          "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "workflow_run_id": 1,
+          "result_file": "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json"
+        }
+      ]
     },
     {
       "behavior_id": "B-025",
