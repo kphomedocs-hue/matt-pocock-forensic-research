@@ -47,6 +47,12 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 
+### Persistent environment constraint
+
+- A real authenticated Codex CLI or Claude Code harness is unavailable and must be treated as unavailable for this research project.
+- Do not ask the user to provide credentials, do not install/configure an agent harness, and do not simulate its behavior.
+- The 16 pending `EXECUTION_OBSERVATION` rows remain permanently deferred unless the user explicitly changes this constraint; they are not a reason to block other evidence classes.
+
 Important epistemic rules:
 
 - CONNECTIONS TRACED is not VERIFIED.
