@@ -5,8 +5,8 @@
   "phase": 4,
   "behavior_denominator": 65,
   "classified_behaviors": 65,
-  "runtime_observed": 15,
-  "pending_total": 50,
+  "runtime_observed": 16,
+  "pending_total": 49,
   "evidence_class_counts": {
     "EXECUTION_OBSERVATION": 30,
     "EXTERNAL_DEPENDENCY_VALIDATION": 7,
@@ -15,13 +15,13 @@
   },
   "observed_by_class": {
     "EXECUTION_OBSERVATION": 14,
-    "EXTERNAL_DEPENDENCY_VALIDATION": 1,
+    "EXTERNAL_DEPENDENCY_VALIDATION": 2,
     "MACHINE_CONSUMER_VALIDATION": 0,
     "PROMPT_REDTEAM_LATER": 0
   },
   "pending_by_class": {
     "EXECUTION_OBSERVATION": 16,
-    "EXTERNAL_DEPENDENCY_VALIDATION": 6,
+    "EXTERNAL_DEPENDENCY_VALIDATION": 5,
     "MACHINE_CONSUMER_VALIDATION": 4,
     "PROMPT_REDTEAM_LATER": 24
   },
@@ -635,8 +635,8 @@
         "EXTERNAL_DEPENDENCY"
       ],
       "evidence_class": "EXTERNAL_DEPENDENCY_VALIDATION",
-      "runtime_observed": false,
-      "pending": true,
+      "runtime_observed": true,
+      "pending": false,
       "source_mp_ids": [
         "MP-0099",
         "MP-0110"
@@ -647,7 +647,7 @@
       ],
       "contradiction_ids": [],
       "rationale": "Contract depends on behavior outside the frozen repository; validate the dependency/portability assumption separately from source truth.",
-      "next_evidence": "Runtime-test a transition from an already-state-labeled issue and determine whether prior state labels are reliably removed."
+      "next_evidence": "Frozen tracker behavior is runtime-observed. Agent adherence to removing conflicting roles remains a separate prompt/red-team question; this row does not establish agent behavior or promote the source to VERIFIED."
     },
     {
       "behavior_id": "B-025",
