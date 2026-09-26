@@ -68,7 +68,7 @@ Breadth coverage does not imply runtime verification. No Phase 4 row is sufficie
 - Phase 5 History: **CONTRADICTION LINEAGE CLOSED**; all 20 current contradiction records have exact history links or explicit no-material-history dispositions.
 - Phase 6 Contradictions & Orphans: **IN PROGRESS**.
 - Phase 7 Runtime & Distribution: **IN PROGRESS**.
-- Phase 8 Second Pass: **STATIC REREAD COMPLETE**; durable result is `06_SECOND_PASS_STATIC_RED_TEAM.json`..
+- Phase 8 Second Pass: **STATIC REREAD COMPLETE**; durable result is `06_SECOND_PASS_STATIC_RED_TEAM.json`.
 - Phase 9 Red-Team Verification: **STATIC INVENTORY COMPLETE; RUNTIME/PROMPT RED-TEAM PENDING**.
 - Phase 10 System Reconstruction & KP Comparison: **BLOCKED by prior gates**.
 
