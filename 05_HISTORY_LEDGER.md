@@ -25,7 +25,13 @@ History is not required uniformly for all 164 physical files. It is required whe
 
 A high-impact item may leave Phase 5 only when its lineage is explicitly `RECONCILED` or explicitly determined `NOT MATERIAL`. `PARTIAL` is durable progress but not closure.
 
-## History work still required
+## Current history closure
 
-- Trace remaining current open defects that materially affect runtime behavior. CT-020 introduction lineage is reconciled by H-010.
-- For every high-impact current contradiction, identify introduction/fix/recurrence lineage where possible.
+- All 20 current contradiction records now have a durable lineage disposition in `05_CONTRADICTION_HISTORY_LINEAGE.json`.
+- Four contradictions are linked to exact history entries; sixteen carry explicit `NO_MATERIAL_HISTORY` dispositions because the current finding is a frozen cross-surface, authority, runtime-environment, or audit-correction conclusion rather than a claimed source-history regression.
+- This closes contradiction-specific lineage coverage without promoting any contradiction, file, or project claim to `VERIFIED`.
+
+## Remaining history scope
+
+- Selective history may still be expanded if the second pass identifies a new high-impact historical question.
+- No such expansion is required to retain the current contradiction-lineage closure.
