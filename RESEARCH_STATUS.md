@@ -65,7 +65,7 @@ Breadth coverage does not imply runtime verification. No Phase 4 row is sufficie
 
 ## Phase 5+ status
 
-- Phase 5 History: **IN PROGRESS**; currently registered H-events may be reconciled while contradiction-specific lineage can still remain.
+- Phase 5 History: **CONTRADICTION LINEAGE CLOSED**; all 20 current contradiction records have exact history links or explicit no-material-history dispositions.
 - Phase 6 Contradictions & Orphans: **IN PROGRESS**.
 - Phase 7 Runtime & Distribution: **IN PROGRESS**.
 - Phase 8 Second Pass: **NOT STARTED formally**.
@@ -83,11 +83,10 @@ The classifier preserves a previously published closed classification for the id
 
 ## Immediate next execution
 
-1. Complete contradiction-specific lineage: bind each current CT record to exact history evidence or an explicit no-material-history disposition.
-2. Perform the formal second pass on high-impact operative, support, configuration, and distribution surfaces using the completed graph/history context.
-3. Run static red-team checks for universal, exclusivity, and numerical claims that can be disproved without an agent harness.
-4. Keep execution, machine-consumer, external-dependency, and prompt/red-team evidence classes separate; the pending execution observations are deferred because no supported agent runtime is available.
-5. Do not advance `VERIFIED` until all applicable Phase 4–9 gates close for the relevant claim/file.
+1. Perform the formal second pass on high-impact operative, support, configuration, and distribution surfaces using the completed graph/history context.
+2. Run static red-team checks for universal, exclusivity, and numerical claims that can be disproved without an agent harness.
+3. Keep execution, machine-consumer, external-dependency, and prompt/red-team evidence classes separate; the pending execution observations are deferred because no supported agent runtime is available.
+4. Do not advance `VERIFIED` until all applicable Phase 4–9 gates close for the relevant claim/file.
 
 ## Resume instruction
 
