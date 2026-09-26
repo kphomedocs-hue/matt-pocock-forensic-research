@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "artifact": "SECOND_PASS_STATIC_RED_TEAM",
+  "generated_at_utc": "2026-09-26T04:49:18.222Z",
+  "source_repo": "mattpocock/skills",
+  "frozen_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "frozen_tree": "6e84c093fda2026396cea9fad6a924a6da0e1452",
+  "research_head_before_write": "0b7b4f970f0916b95f3a1601bbd2dcc4d7f2caba",
+  "second_pass": {
+    "physical_files_requested": 164,
+    "physical_files_fetched": 164,
+    "blob_sha_matches": 164,
+    "surfaces": [
+      "operative skills",
+      "support documents",
+      "configuration",
+      "scripts",
+      "plugin metadata",
+      "distribution documentation",
+      "handoff/documentation surfaces"
+    ],
+    "result": "COMPLETE_STATIC_REREAD"
+  },
+  "static_red_team": {
+    "absolute_language_inventory": {
+      "terms": [
+        "always",
+        "never",
+        "exactly",
+        "all",
+        "only",
+        "must"
+      ],
+      "files_scanned": 164,
+      "files_with_matches": 96,
+      "interpretation": "Inventory only; presence is not a defect. Each claim remains classified by the behavior matrix and applicable prompt/runtime evidence class."
+    },
+    "numerical_and_distribution_checks": {
+      "physical_files": 164,
+      "durable_notes": 164,
+      "connections_traced": 164,
+      "graph_edges": 554,
+      "behavior_rows": 65,
+      "runtime_observed_rows": 16,
+      "pending_stronger_evidence": 49,
+      "skill_coverage": "37/37",
+      "high_risk_surface_coverage": "71/71",
+      "contradiction_coverage": "20/20",
+      "formal_verified": "0/164",
+      "result": "CONSISTENT_WITH_CURRENT_MACHINE_ARTIFACTS"
+    },
+    "tooling_ledger_check": {
+      "failed_runs": 154,
+      "cancelled_runs": 38,
+      "incident_entries": 192,
+      "unknown": 0,
+      "unresolved": 0,
+      "result": "CLOSED"
+    },
+    "configuration_and_script_claims": {
+      "result": "RECONCILED_WITH_EXISTING_PHASE4_ARTIFACTS",
+      "notes": [
+        "Frozen plugin/package synchronization and local script behavior remain backed by B-018 runtime evidence.",
+        "Frozen package-lock root-version drift remains separately represented by B-004/CT-004.",
+        "Frozen local-link and list-skills selection semantics remain represented by B-019/B-020.",
+        "The five-rule dependency-cruiser configuration versus four-rule prose mismatch remains CT-012/B-012 and is not silently resolved."
+      ]
+    },
+    "runtime_boundary": {
+      "real_codex_or_claude_harness_available": false,
+      "runtime_claims_promoted": false,
+      "remaining_execution_observations_deferred": true
+    },
+    "b024_verification": {
+      "durable_result_file": "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json",
+      "workflow_run_id": 35992558197,
+      "verified_from_remote_main": true
+    },
+    "b008_publication_check": {
+      "local_commit_reported": "2551dad",
+      "found_on_remote_main": false,
+      "action": "not relied upon; no B-009 advancement"
+    }
+  },
+  "limitations": [
+    "Absolute-language inventory does not by itself adjudicate truth or agent adherence.",
+    "Static checks cannot replace Codex/Claude runtime observation.",
+    "This artifact does not promote any file or behavior to formal VERIFIED."
+  ]
+}
