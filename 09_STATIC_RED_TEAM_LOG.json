@@ -386,11 +386,121 @@
           "interpretation": "The frozen policy specifies the semantic-match and human-review contract. False-positive/false-negative performance cannot be inferred without red-team execution."
         }
       ]
+    },
+    {
+      "batch_id": "RT-008",
+      "completed_at": "2026-09-27",
+      "tests": [
+        {
+          "test_id": "RT-008-T01",
+          "behavior_id": "B-028",
+          "claim": "The frozen domain-modeling skill enforces inline glossary capture while keeping implementation details out of CONTEXT.md and ADRs sparse.",
+          "method": "Read frozen domain-modeling SKILL.md, CONTEXT-FORMAT.md, and ADR-FORMAT.md.",
+          "actual": {
+            "operative_sha": "9b97707e19ef1f590aada356f2b3f6bb881f91be",
+            "context_format_sha": "79bbb32f6fda55758b377c980f72a6cb2b8c670e",
+            "adr_format_sha": "d7e61f30a9fd8ca70d9ee68f019c2a9ebf2d13f7",
+            "inline_capture": "Update CONTEXT.md when a term is resolved; do not batch.",
+            "implementation_detail_rule": "CONTEXT.md is a glossary, not a spec, scratch pad, or repository for implementation decisions.",
+            "adr_rule": "Offer only for hard-to-reverse, surprising, or genuinely alternative decisions."
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen source contains the claimed inline-capture and scope discipline. It does not observe whether an agent leaks implementation detail in an actual context file."
+        },
+        {
+          "test_id": "RT-008-T02",
+          "behavior_id": "B-036",
+          "claim": "The frozen codebase-design family defines and reuses a controlled architecture vocabulary across the operative skill and its support documents.",
+          "method": "Read frozen codebase-design SKILL.md, DEEPENING.md, and DESIGN-IT-TWICE.md.",
+          "actual": {
+            "operative_sha": "3f63c8146dd2604b419c929e9876b90c30d410e9",
+            "deepening_sha": "cd94075cfd754d147555c5d747a16431ed4c7dd8",
+            "design_twice_sha": "7edc861a31b1b219b933af18079f66b564c5de67",
+            "operative_rule": "Use these terms exactly; do not substitute component, service, API, or boundary.",
+            "support_reuses": [
+              "module",
+              "interface",
+              "seam",
+              "adapter",
+              "leverage",
+              "locality"
+            ],
+            "cross_links_present": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen family is statically consistent about its stated vocabulary. This does not prove that an agent avoids prohibited substitutes during design work."
+        },
+        {
+          "test_id": "RT-008-T03",
+          "behavior_id": "B-042",
+          "claim": "The frozen loop-me workflow-spec contract refuses completion while unresolved questions remain and requires a shared understanding before action.",
+          "method": "Read frozen in-progress/loop-me/SKILL.md and productivity/grilling/SKILL.md.",
+          "actual": {
+            "loop_me_sha": "e58a474ca80feffdeb28842bc3bdee37da6510e7",
+            "grilling_sha": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
+            "completion_rule": "A workflow spec is done only when an implementer could build it without a single question.",
+            "unresolved_rule": "Nothing is done while a question remains.",
+            "grilling_completion": "Frontier empty; do not act until user confirms shared understanding."
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen prompts encode the asserted completion discipline. A live refusal to declare done on an underspecified workflow remains a runtime/prompt-adherence test."
+        },
+        {
+          "test_id": "RT-008-T04",
+          "behavior_id": "B-053",
+          "claim": "The frozen writing-for-agents family defines an explicit information hierarchy and a pointer-based progressive-disclosure discipline.",
+          "method": "Read frozen writing-for-agents SKILL.md and SKILL-MECHANICS.md.",
+          "actual": {
+            "operative_sha": "a37608daf6e835e767deecfb498facecaaba82ba",
+            "mechanics_sha": "9cdbdb22aadc438755392216e75ad9a14cc9832e",
+            "hierarchy": [
+              "always-loaded",
+              "in-file reference",
+              "disclosed reference"
+            ],
+            "progressive_disclosure_rule": "Inline material every branch needs; disclose material only some branches reach.",
+            "mechanics_scope": "SKILL-MECHANICS.md delegates universal writing doctrine to SKILL.md."
+          },
+          "verdict": "PASS",
+          "interpretation": "The doctrine and skill-specific split are explicit in frozen text. Applying the doctrine to every other repository surface is a separate repository-wide audit, not inferred here."
+        },
+        {
+          "test_id": "RT-008-T05",
+          "behavior_id": "B-063",
+          "claim": "The frozen Teach family specifies durable learning-record persistence, including sequential numbering, correction/supersession, and instructional use.",
+          "method": "Read frozen teach SKILL.md and LEARNING-RECORD-FORMAT.md.",
+          "actual": {
+            "operative_sha": "c679eeccd48ca720c8196e5d9a9e58223abf213b",
+            "format_sha": "953c61422776b47612c3c945920358ad7b5daee7",
+            "storage": "./learning-records/NNNN-slug.md",
+            "instructional_use": "Used to calculate the zone of proximal development.",
+            "correction_rule": "Later corrected/deepened record supersedes rather than deletes the old record.",
+            "mission_shift_cross_link": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen files define a persistence and revision contract. Cross-session persistence, numbering collisions, and use in later lessons remain unobserved."
+        },
+        {
+          "test_id": "RT-008-T06",
+          "behavior_id": "B-064",
+          "claim": "The frozen Teach family requires mission-grounded teaching and a user-confirmed update when the mission changes.",
+          "method": "Read frozen teach SKILL.md and MISSION-FORMAT.md.",
+          "actual": {
+            "operative_sha": "c679eeccd48ca720c8196e5d9a9e58223abf213b",
+            "format_sha": "45250bb1bad70988bf381625931df64645e10246",
+            "grounding_rule": "Every lesson should be tied to the mission.",
+            "revision_rule": "Update stale mission when the user's goal moves.",
+            "confirmation_rule": "Confirm with the user before changing MISSION.md and add a learning record."
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen source contains the mission-steering contract. Whether a mid-course mission change actually reorients downstream instruction remains a runtime observation."
+        }
+      ]
     }
   ],
   "summary": {
-    "tests": 22,
-    "pass": 12,
+    "tests": 28,
+    "pass": 18,
     "fail": 9,
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
