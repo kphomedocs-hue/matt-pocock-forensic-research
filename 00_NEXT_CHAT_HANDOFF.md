@@ -43,7 +43,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Skill breadth coverage: 37/37.
 - High-risk non-SKILL surface coverage: 71/71.
 - Phase 4 hard errors: 0.
-- Tooling incident ledger: 184 entries from 147 failed + 37 cancelled runs.
+- Tooling incident ledger: 192 entries from 154 failed + 38 cancelled runs.
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 
@@ -158,8 +158,8 @@ Fallback only if the new chat cannot access GitHub: upload the minimum resume fi
 ## Immediate next execution
 
 1. Re-read current `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
-2. Continue the 16 pending `EXECUTION_OBSERVATION` rows in small deterministic batches. Do not manufacture execution evidence when a supported agent runtime is unavailable; move only to independently runnable evidence classes.
-3. Prefer isolated local/synthetic tests with no live-user repository side effects.
+2. Keep the 16 pending `EXECUTION_OBSERVATION` rows deferred: a supported agent runtime is unavailable. Do not manufacture execution evidence; move only to independently runnable, non-agent evidence classes.
+3. Continue static prompt-red-team and frozen-file checks in small deterministic batches, keeping their findings separate from prompt-adherence/runtime evidence.
 4. Keep execution observations separate from machine-consumer, external-dependency, and prompt-red-team evidence classes.
 5. For each promoted row, record exact frozen source provenance, package/tool versions where applicable, named tests, workflow run ID, and durable result file.
 6. Rebuild/validate behavior matrix, integrity, coverage, runtime queue, foundation, runtime provenance, and research status before promotion.
