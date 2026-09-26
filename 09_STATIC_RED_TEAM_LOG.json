@@ -336,11 +336,61 @@
           "interpretation": "The basic on-disk coordination contract is explicit. This is not a concurrency proof; duplicate claims and malformed-file handling remain runtime red-team questions."
         }
       ]
+    },
+    {
+      "batch_id": "RT-007",
+      "completed_at": "2026-09-26",
+      "tests": [
+        {
+          "test_id": "RT-007-T01",
+          "claim": "The frozen TDD policy confines mocking to system boundaries and rejects mocking internal collaborators.",
+          "method": "Read frozen skills/engineering/tdd/SKILL.md and mocking.md.",
+          "actual": {
+            "operative_sha": "8fc086710806190ee7c4baa32089cb877a75736a",
+            "support_sha": "71cbfee674d93244ce81d1830b930ca9a69200bd",
+            "operative_links_mocking_support": true,
+            "boundary_rule": "Mock at system boundaries only.",
+            "internal_mocking_rejected": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen source explicitly defines the mocking boundary. Whether an agent follows or overrides it in a repository with established internal mocks remains unobserved."
+        },
+        {
+          "test_id": "RT-007-T02",
+          "claim": "The frozen TDD policy defines test-quality constraints that reject implementation-coupled and tautological tests.",
+          "method": "Read frozen skills/engineering/tdd/SKILL.md and tests.md.",
+          "actual": {
+            "operative_sha": "8fc086710806190ee7c4baa32089cb877a75736a",
+            "support_sha": "7ab86479f925a1f9e8ba680af33cb3b12e015381",
+            "public_seam_requirement": true,
+            "pre_agreed_seam_confirmation": true,
+            "implementation_coupled_rejected": true,
+            "tautological_rejected": true,
+            "independent_expected_value_required": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen text contains a concrete static quality policy. It does not demonstrate rejection of a brittle-but-passing test in a live TDD session."
+        },
+        {
+          "test_id": "RT-007-T03",
+          "claim": "The frozen triage out-of-scope memory contract directs semantic/conceptual matching and maintainer review instead of keyword-only automatic rejection.",
+          "method": "Read frozen skills/engineering/triage/OUT-OF-SCOPE.md deduplication and matching instructions.",
+          "actual": {
+            "support_sha": "c9fba2f77ee0619975ec8488c0d4861a0c7e3151",
+            "matching_rule": "Match by concept similarity, not keyword.",
+            "example": "night theme matches dark-mode.md",
+            "action_on_match": "Surface the prior decision to the maintainer and ask whether they still agree.",
+            "automatic_rejection_instruction_found": false
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen policy specifies the semantic-match and human-review contract. False-positive/false-negative performance cannot be inferred without red-team execution."
+        }
+      ]
     }
   ],
   "summary": {
-    "tests": 19,
-    "pass": 9,
+    "tests": 22,
+    "pass": 12,
     "fail": 9,
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
