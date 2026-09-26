@@ -11,7 +11,7 @@ Inputs fingerprinted: **14**. Outputs fingerprinted: **11**.
 | Path | SHA-256 | Bytes |
 |---|---|---:|
 | `01_FILE_CENSUS.json` | `d8b67db99e2e7f8faa238ce23d1ecdc351d62b1f927bca6eb2b24cc374ce638d` | 62852 |
-| `05_HISTORY_LEDGER.md` | `68d87d6bd97619be1e9d1e80fcdc1ed14b705fa1989ee3fcc00bd9f0f12f5346` | 9711 |
+| `05_HISTORY_LEDGER.md` | `56004a44b7edd09fdb581de7a617fb0988f6e6b97023b3d640e7ffa9f7c2a1ef` | 10227 |
 | `03_REFERENCE_DISPOSITIONS.json` | `fd73861af35577456935bf864f9542f72fe38f5ac921ddf50adf8fbd231f5f5b` | 1926 |
 | `03_ORPHAN_DISPOSITIONS.json` | `d5fccf73d72ff577277ddd513b0375a65953c2b67f5d18d44db06af14a3dd73c` | 2362 |
 | `scripts/build_connection_graph.py` | `0fd9a0fd04a10d9ab34b3870035cbbfd126bd4e1ad57bb03a438edf67fe8443d` | 20440 |

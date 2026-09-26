@@ -19,8 +19,8 @@
       "sha256": "fd73861af35577456935bf864f9542f72fe38f5ac921ddf50adf8fbd231f5f5b"
     },
     "05_HISTORY_LEDGER.md": {
-      "bytes": 9711,
-      "sha256": "68d87d6bd97619be1e9d1e80fcdc1ed14b705fa1989ee3fcc00bd9f0f12f5346"
+      "bytes": 10227,
+      "sha256": "56004a44b7edd09fdb581de7a617fb0988f6e6b97023b3d640e7ffa9f7c2a1ef"
     },
     "scripts/build_connection_graph.py": {
       "bytes": 20440,
