@@ -237,11 +237,60 @@
           "interpretation": "The desired criterion-quality gate is advisory documentation rather than an operative/template requirement. This supports the existing CONFIRMED_GAP without observing ticket-generation behavior."
         }
       ]
+    },
+    {
+      "batch_id": "RT-005",
+      "completed_at": "2026-09-26",
+      "tests": [
+        {
+          "test_id": "RT-005-T01",
+          "claim": "The frozen grill-with-docs wrapper explicitly delegates to both grilling and domain-modeling.",
+          "method": "Read frozen skills/engineering/grill-with-docs/SKILL.md opening delegation instruction.",
+          "actual": {
+            "wrapper_sha": "62b9efb6f991d1b229adee7506962f13ced0c499",
+            "delegation_instruction": "Call the Skill tool twice, for \"grilling\" and \"domain-modeling\".",
+            "both_named": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The aggregate delegation contract is explicit in the frozen wrapper. This does not observe whether a host invokes both tools or preserves both downstream contracts."
+        },
+        {
+          "test_id": "RT-005-T02",
+          "claim": "The frozen grill-me wrapper explicitly delegates to the shared grilling primitive.",
+          "method": "Read frozen skills/productivity/grill-me/SKILL.md opening delegation instruction.",
+          "actual": {
+            "wrapper_sha": "3947ff9c4ad980d14fc07fccbf659d47c114e81d",
+            "delegation_instruction": "Call the Skill tool with \"grilling\".",
+            "target_named": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The alias wrapper carries an explicit delegation instruction. Host-level delegation behavior remains a later runtime question."
+        },
+        {
+          "test_id": "RT-005-T03",
+          "claim": "The frozen ask-matt phase-boundary support document encodes an ordered five-question routing tree rather than presenting compacting as the first/default action.",
+          "method": "Read frozen skills/engineering/ask-matt/PHASE-BOUNDARIES.md decision sequence and compacting rule.",
+          "actual": {
+            "support_sha": "fb58ef9febcfd558cdb4517e370f19034869ba26",
+            "ordered_questions": [
+              "continue",
+              "context irrelevant / clear",
+              "handoff needed",
+              "AFK subagent",
+              "otherwise compact"
+            ],
+            "mid_phase_rule": "Mid-phase: continue or split remaining work; compacting mid-phase loses the thread.",
+            "compact_position": "last/default after prior questions"
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen support document statically contains the claimed ordering and compact-last rule. It does not establish whether routing decisions follow this tree in a live session."
+        }
+      ]
     }
   ],
   "summary": {
-    "tests": 13,
-    "pass": 3,
+    "tests": 16,
+    "pass": 6,
     "fail": 9,
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
