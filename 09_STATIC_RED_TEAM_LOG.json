@@ -183,12 +183,66 @@
           "interpretation": "The frozen prompt grants an effort-level Notes override without naming an independent authority or a required user approval. This confirms the existing self-authority weakness statically; it does not show that a model would misuse it."
         }
       ]
+    },
+    {
+      "batch_id": "RT-004",
+      "completed_at": "2026-09-26",
+      "tests": [
+        {
+          "test_id": "RT-004-T01",
+          "claim": "The frozen setup skill presents all defined generated documents for user review before writing them.",
+          "method": "Read frozen skills/engineering/setup-matt-pocock-skills/SKILL.md sections 3–4 and compare the draft list with its stated generated document set.",
+          "actual": {
+            "operative_sha": "7f6f576e2e54e0d287cbb9731ebe0343f54e50cf",
+            "confirmation_contract": "Explore, present what you found, confirm with the user, then write.",
+            "draft_includes": [
+              "Agent skills block",
+              "docs/agents/issue-tracker.md",
+              "docs/agents/domain.md",
+              "docs/agents/triage-labels.md when triage is installed"
+            ],
+            "write_follows_draft": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen prompt has a defined review-before-write checkpoint for the documents it produces. This is static prompt evidence only; harness adherence remains unobserved."
+        },
+        {
+          "test_id": "RT-004-T02",
+          "claim": "The frozen to-tickets operative prompt requires user approval before publishing tickets.",
+          "method": "Read frozen skills/engineering/to-tickets/SKILL.md around the proposed-breakdown, approval, and publish steps.",
+          "actual": {
+            "operative_sha": "e868c831fcfb1e124e010bcdf84a429ec879160f",
+            "approval_gate": "Iterate until the user approves the breakdown.",
+            "publication_order": "Publish the approved tickets.",
+            "pre_publication_gate_found": true
+          },
+          "verdict": "PASS",
+          "interpretation": "The approval-before-publication contract is explicit in the frozen operative prompt. This does not establish that an agent runtime consistently respects it."
+        },
+        {
+          "test_id": "RT-004-T03",
+          "claim": "The frozen to-tickets acceptance-criteria template requires each criterion to be falsifiable and false at the implementation base.",
+          "method": "Compare frozen skills/engineering/to-tickets/SKILL.md ticket template with docs/engineering/to-tickets.md acceptance-criteria guidance.",
+          "actual": {
+            "operative_sha": "e868c831fcfb1e124e010bcdf84a429ec879160f",
+            "documentation_sha": "6f6f894fe0bfecd2a8b05fb1053b22da74985d90",
+            "template_contains_generic_criteria_only": true,
+            "operative_falsification_or_base_false_requirement_found": false,
+            "documentation_admits_manual_check": "For each criterion, name the observation that would show it false, and confirm it fails at the commit the implementer starts from."
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-016"
+          ],
+          "interpretation": "The desired criterion-quality gate is advisory documentation rather than an operative/template requirement. This supports the existing CONFIRMED_GAP without observing ticket-generation behavior."
+        }
+      ]
     }
   ],
   "summary": {
-    "tests": 10,
-    "pass": 1,
-    "fail": 8,
+    "tests": 13,
+    "pass": 3,
+    "fail": 9,
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
     "formal_verification_promotions": 0
