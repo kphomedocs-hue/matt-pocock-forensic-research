@@ -505,5 +505,37 @@
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
     "formal_verification_promotions": 0
+  },
+  "prompt_redteam_static_coverage": {
+    "denominator": 24,
+    "behavior_ids": [
+      "B-003",
+      "B-005",
+      "B-007",
+      "B-009",
+      "B-011",
+      "B-013",
+      "B-021",
+      "B-022",
+      "B-028",
+      "B-031",
+      "B-032",
+      "B-036",
+      "B-039",
+      "B-042",
+      "B-048",
+      "B-053",
+      "B-057",
+      "B-058",
+      "B-059",
+      "B-060",
+      "B-061",
+      "B-062",
+      "B-063",
+      "B-064"
+    ],
+    "statically_checked": 24,
+    "remaining_static_checks": 0,
+    "boundary": "Static source checks establish only prompt/support-file presence, absence, drift, or cross-surface consistency. All PROMPT_REDTEAM_LATER behavior rows remain pending prompt-adherence/runtime evidence."
   }
 }
