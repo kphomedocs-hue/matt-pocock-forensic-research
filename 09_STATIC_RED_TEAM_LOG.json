@@ -286,11 +286,61 @@
           "interpretation": "The frozen support document statically contains the claimed ordering and compact-last rule. It does not establish whether routing decisions follow this tree in a live session."
         }
       ]
+    },
+    {
+      "batch_id": "RT-006",
+      "completed_at": "2026-09-26",
+      "tests": [
+        {
+          "test_id": "RT-006-T01",
+          "claim": "The frozen project intentionally has no separate setup verify/check mode and frames verification as a constrained natural-language use of the existing setup skill.",
+          "method": "Read frozen .out-of-scope/setup-skill-verify-mode.md and cross-check setup-matt-pocock-skills as a prompt-driven skill.",
+          "actual": {
+            "out_of_scope_sha": "418dba12c17b2cd77e0b3161b107c624b7b2ee97",
+            "operative_sha": "7f6f576e2e54e0d287cbb9731ebe0343f54e50cf",
+            "dedicated_mode_added": false,
+            "declared_workflow": "Run /setup-matt-pocock-skills and request a verification-only pass that does not rewrite files.",
+            "prompt_driven": true
+          },
+          "verdict": "PASS",
+          "interpretation": "Frozen design intent is internally consistent: no separate mode is shipped, while natural-language verification is the stated route. This does not prove that a host honors a no-rewrite request."
+        },
+        {
+          "test_id": "RT-006-T02",
+          "claim": "The frozen setup domain support contract requires relevant CONTEXT.md / CONTEXT-MAP.md and ADR reading before codebase exploration, while treating their absence as non-error.",
+          "method": "Read frozen skills/engineering/setup-matt-pocock-skills/domain.md.",
+          "actual": {
+            "support_sha": "35249041162b1eed5b873d97fc430fb3e4adb18f",
+            "pre_exploration_reads": [
+              "CONTEXT.md",
+              "CONTEXT-MAP.md when present",
+              "relevant docs/adr/"
+            ],
+            "absence_rule": "Proceed silently; do not flag absence or suggest creation upfront.",
+            "terminology_rule": "Use terms defined in CONTEXT.md and avoid explicit glossary synonyms."
+          },
+          "verdict": "PASS",
+          "interpretation": "The frozen support document contains the claimed consumption contract. Whether operative skills consistently read it remains an execution/machine-consumer question."
+        },
+        {
+          "test_id": "RT-006-T03",
+          "claim": "The frozen local Markdown tracker contract specifies a deterministic basic claim-before-work record structure.",
+          "method": "Read frozen skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md local tracker operations.",
+          "actual": {
+            "support_sha": "0209a19af92c9c485cf3acc3d9e253171517ea17",
+            "frontier_rule": "Scan open, unblocked, unclaimed files; first by number wins.",
+            "claim_rule": "Set Status: claimed and save before any work.",
+            "resolution_rule": "Append answer, set Status: resolved, then append a map context pointer."
+          },
+          "verdict": "PASS",
+          "interpretation": "The basic on-disk coordination contract is explicit. This is not a concurrency proof; duplicate claims and malformed-file handling remain runtime red-team questions."
+        }
+      ]
     }
   ],
   "summary": {
-    "tests": 16,
-    "pass": 6,
+    "tests": 19,
+    "pass": 9,
     "fail": 9,
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
