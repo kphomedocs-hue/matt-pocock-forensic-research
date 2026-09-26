@@ -125,12 +125,70 @@
           "interpretation": "The operative prompt makes redaction explicit, while the frozen documentation says the opposite. This independently supports existing frozen documentation drift; it does not test whether an agent follows the redaction instruction."
         }
       ]
+    },
+    {
+      "batch_id": "RT-003",
+      "completed_at": "2026-09-26",
+      "tests": [
+        {
+          "test_id": "RT-003-T01",
+          "claim": "The frozen diagnosing-bugs operative workflow hands off an architecture finding to improve-codebase-architecture.",
+          "method": "Compare frozen .changeset/user-invoked-skill-invocation.md, docs/engineering/diagnosing-bugs.md, skills/engineering/ask-matt/SKILL.md, and skills/engineering/diagnosing-bugs/SKILL.md.",
+          "actual": {
+            "changeset_sha": "18e6a7c38d55a5fb75f3b4bfceb6807e95060032",
+            "documentation_sha": "cd6887ac414d40695b52c6a121ba033cb8d5ce98",
+            "router_sha": "ae8eb9b211972d9ae584b41d0f1439c644494fc7",
+            "operative_sha": "061c25a524acaa93d4534e9e08a793c0a5fe45fd",
+            "changeset_records_handoff_removed": true,
+            "operative_handoff_instruction_found": false,
+            "docs_and_router_still_describe_handoff": true
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-009"
+          ],
+          "interpretation": "Frozen static evidence confirms a cross-surface drift: the operative handoff was removed because it targeted a user-invoked skill, but documentation and router text still claim it occurs. This does not observe an agent session."
+        },
+        {
+          "test_id": "RT-003-T02",
+          "claim": "The frozen in-progress index accurately describes retro as a non-functional design-only stub.",
+          "method": "Compare frozen skills/in-progress/README.md with skills/in-progress/retro/SKILL.md.",
+          "actual": {
+            "index_sha": "ee394b7985a8c296ffa068e63e4f5dcf23b8969b",
+            "operative_sha": "f5fed82c7b8597a852a4fa8d292b00a1d5c8bd16",
+            "index_statement": "STUB: design notes only, not functional yet.",
+            "operative_content": "Defines scope, primary-source session reading, environment-candidate categories, ranking, presentation, and adoption guidance."
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-011"
+          ],
+          "interpretation": "The index presents Retro as non-functional while the frozen operative file specifies a usable retrospective procedure. The static mismatch confirms maturity-description drift; runtime quality remains unobserved."
+        },
+        {
+          "test_id": "RT-003-T03",
+          "claim": "Wayfinder’s execution override has an independent authority boundary outside the operative prompt.",
+          "method": "Read frozen skills/engineering/wayfinder/SKILL.md for the planning default, Notes override, and any explicit user-authorship/approval or independent authority requirement.",
+          "actual": {
+            "operative_sha": "812805b760baf328db0ebdef6f3807e381f97016",
+            "planning_default": true,
+            "notes_execution_override": true,
+            "explicit_independent_authority_requirement_found": false,
+            "explicit_user_authorship_or_approval_requirement_found": false
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-013"
+          ],
+          "interpretation": "The frozen prompt grants an effort-level Notes override without naming an independent authority or a required user approval. This confirms the existing self-authority weakness statically; it does not show that a model would misuse it."
+        }
+      ]
     }
   ],
   "summary": {
-    "tests": 7,
+    "tests": 10,
     "pass": 1,
-    "fail": 5,
+    "fail": 8,
     "audit_correction_confirmed": 1,
     "phase9_complete": false,
     "formal_verification_promotions": 0
