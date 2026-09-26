@@ -1,1 +1,138 @@
-{"artifact":"static_red_team_log","schema_version":1,"frozen_source":{"repository":"mattpocock/skills","commit":"3cca18b368ae95cdbdebbff572ccafa662551015","tree":"6e84c093fda2026396cea9fad6a924a6da0e1452"},"scope_rule":"Tests directly falsifiable from frozen files/configuration only. No agent-runtime or external-service behavior is inferred.","batches":[{"batch_id":"RT-001","completed_at":"2026-09-25","tests":[{"test_id":"RT-001-T01","claim":"Frozen distribution denominators are 37 SKILL.md files, 37 Codex metadata owners, and 25 promoted plugin skills.","method":"find skills -name SKILL.md; find skills -path '*/agents/openai.yaml'; jq '.skills | length' .claude-plugin/plugin.json","actual":{"skill_md":37,"openai_yaml":37,"plugin_promoted":25},"verdict":"PASS","interpretation":"The stated frozen distribution denominators survive a direct recount."},{"test_id":"RT-001-T02","claim":"setup-ts-deep-modules has four error-level forbidden rules and unconditional intra-package freedom.","method":"Load dependency-cruiser.config.cjs and count forbidden entries; reread path predicates.","actual":{"forbidden_rules":5,"severity":"all error","additional_rule":"tests-folder-is-private"},"verdict":"FAIL","contradiction_ids":["CT-012"],"interpretation":"The fifth rule is separately named and prevents a non-test importer, including same-package implementation code, from importing tests/. The prose claim is not an exact description of the configuration."},{"test_id":"RT-001-T03","claim":"The documented migrate-to-shoehorn grep fails to discover 'as unknown as Type' double assertions.","method":"Run exact frozen grep pattern against a synthetic .test.ts fixture containing 'value as unknown as Request' and a lowercase-target control.","actual":{"double_assertion_found":true,"lowercase_control_found":false},"verdict":"PASS_FOR_AUDIT_CORRECTION","contradiction_ids":["CT-019"],"interpretation":"The pattern matches the later ' as Request' substring. The earlier discovery-gap allegation remains resolved; this does not validate migration edits."},{"test_id":"RT-001-T04","claim":"The operative TDD loop includes refactoring as a loop stage.","method":"Complete reread of frozen tdd/SKILL.md and its rule list.","actual":{"operative_text":"Refactoring is not part of the loop; it belongs to code-review.","secondary_surfaces":"Known README/bucket/metadata wording still says red-green-refactor."},"verdict":"FAIL","contradiction_ids":["CT-001"],"interpretation":"The operative source falsifies the claimed red-green-refactor loop; this is a current documentation/metadata drift, not an operative ambiguity."}]}],"summary":{"tests":4,"pass":1,"fail":2,"audit_correction_confirmed":1,"phase9_complete":false,"formal_verification_promotions":0}}
+{
+  "artifact": "static_red_team_log",
+  "schema_version": 1,
+  "frozen_source": {
+    "repository": "mattpocock/skills",
+    "commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+    "tree": "6e84c093fda2026396cea9fad6a924a6da0e1452"
+  },
+  "scope_rule": "Tests directly falsifiable from frozen files/configuration only. No agent-runtime or external-service behavior is inferred.",
+  "batches": [
+    {
+      "batch_id": "RT-001",
+      "completed_at": "2026-09-25",
+      "tests": [
+        {
+          "test_id": "RT-001-T01",
+          "claim": "Frozen distribution denominators are 37 SKILL.md files, 37 Codex metadata owners, and 25 promoted plugin skills.",
+          "method": "find skills -name SKILL.md; find skills -path '*/agents/openai.yaml'; jq '.skills | length' .claude-plugin/plugin.json",
+          "actual": {
+            "skill_md": 37,
+            "openai_yaml": 37,
+            "plugin_promoted": 25
+          },
+          "verdict": "PASS",
+          "interpretation": "The stated frozen distribution denominators survive a direct recount."
+        },
+        {
+          "test_id": "RT-001-T02",
+          "claim": "setup-ts-deep-modules has four error-level forbidden rules and unconditional intra-package freedom.",
+          "method": "Load dependency-cruiser.config.cjs and count forbidden entries; reread path predicates.",
+          "actual": {
+            "forbidden_rules": 5,
+            "severity": "all error",
+            "additional_rule": "tests-folder-is-private"
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-012"
+          ],
+          "interpretation": "The fifth rule is separately named and prevents a non-test importer, including same-package implementation code, from importing tests/. The prose claim is not an exact description of the configuration."
+        },
+        {
+          "test_id": "RT-001-T03",
+          "claim": "The documented migrate-to-shoehorn grep fails to discover 'as unknown as Type' double assertions.",
+          "method": "Run exact frozen grep pattern against a synthetic .test.ts fixture containing 'value as unknown as Request' and a lowercase-target control.",
+          "actual": {
+            "double_assertion_found": true,
+            "lowercase_control_found": false
+          },
+          "verdict": "PASS_FOR_AUDIT_CORRECTION",
+          "contradiction_ids": [
+            "CT-019"
+          ],
+          "interpretation": "The pattern matches the later ' as Request' substring. The earlier discovery-gap allegation remains resolved; this does not validate migration edits."
+        },
+        {
+          "test_id": "RT-001-T04",
+          "claim": "The operative TDD loop includes refactoring as a loop stage.",
+          "method": "Complete reread of frozen tdd/SKILL.md and its rule list.",
+          "actual": {
+            "operative_text": "Refactoring is not part of the loop; it belongs to code-review.",
+            "secondary_surfaces": "Known README/bucket/metadata wording still says red-green-refactor."
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-001"
+          ],
+          "interpretation": "The operative source falsifies the claimed red-green-refactor loop; this is a current documentation/metadata drift, not an operative ambiguity."
+        }
+      ]
+    },
+    {
+      "batch_id": "RT-002",
+      "completed_at": "2026-09-26",
+      "tests": [
+        {
+          "test_id": "RT-002-T01",
+          "claim": "ask-matt’s frozen operative instructions require a target SKILL.md to be opened before making a load-bearing routing claim.",
+          "method": "Read frozen skills/engineering/ask-matt/SKILL.md; search for a target-SKILL.md read/verification requirement; compare with docs/engineering/ask-matt.md.",
+          "actual": {
+            "operative_skill_sha": "ae8eb9b211972d9ae584b41d0f1439c644494fc7",
+            "documentation_sha": "67d1e46192cc22f2f93f6d463dbd831ce174518e",
+            "operative_requirement_found": false,
+            "documentation_statement": "Documentation says the router answers from one-line summaries and says users should ask it to open the target SKILL.md first; it is not an operative instruction."
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-003"
+          ],
+          "interpretation": "Frozen static evidence supports the existing CONFIRMED_GAP: the desired target-source verification is advisory documentation, not an operative prompt gate. This does not observe any agent response."
+        },
+        {
+          "test_id": "RT-002-T02",
+          "claim": "Teach’s frozen operative skill links or consumes its shipped GLOSSARY-FORMAT.md support contract.",
+          "method": "Read frozen skills/productivity/teach/SKILL.md and GLOSSARY-FORMAT.md; search the operative file for GLOSSARY-FORMAT.md or glossary-format linkage.",
+          "actual": {
+            "operative_skill_sha": "c679eeccd48ca720c8196e5d9a9e58223abf213b",
+            "support_file_sha": "fdd7e366ad9760588b28981e42b3d3b561e56aca",
+            "operative_link_found": false,
+            "documentation_sha": "012113bd2379a4318ad3c1c7e4f4e848bbc29990",
+            "documentation_statement": "Documentation explicitly records that GLOSSARY-FORMAT.md is no longer linked from SKILL.md."
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-005"
+          ],
+          "interpretation": "Frozen static evidence supports the existing CONFIRMED_GAP: the format exists but is not wired from the operative skill. This does not establish whether a harness or user supplies it by another path."
+        },
+        {
+          "test_id": "RT-002-T03",
+          "claim": "Frozen diagnosing-bugs documentation accurately states that the operative skill has no redaction instruction.",
+          "method": "Read frozen CHANGELOG.md, docs/engineering/diagnosing-bugs.md, and skills/engineering/diagnosing-bugs/SKILL.md; compare redaction statements.",
+          "actual": {
+            "changelog_sha": "26d68ffa7cf2f58471abd578042dded7b75675aa",
+            "documentation_sha": "cd6887ac414d40695b52c6a121ba033cb8d5ce98",
+            "operative_skill_sha": "061c25a524acaa93d4534e9e08a793c0a5fe45fd",
+            "changelog_records_redaction_added": true,
+            "operative_redact_section": true,
+            "documentation_claims_no_sanitisation_and_unimplemented_guardrail": true
+          },
+          "verdict": "FAIL",
+          "contradiction_ids": [
+            "CT-007"
+          ],
+          "interpretation": "The operative prompt makes redaction explicit, while the frozen documentation says the opposite. This independently supports existing frozen documentation drift; it does not test whether an agent follows the redaction instruction."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "tests": 7,
+    "pass": 1,
+    "fail": 5,
+    "audit_correction_confirmed": 1,
+    "phase9_complete": false,
+    "formal_verification_promotions": 0
+  }
+}
