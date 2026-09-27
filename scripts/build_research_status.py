@@ -27,6 +27,7 @@ def main() -> None:
     queue = load("04_RUNTIME_OBSERVATION_QUEUE.json")
     foundation = load("00_FOUNDATION_INTEGRITY.json")
     tooling = load("00_TOOLING_FAILURE_LEDGER.json")
+    static_red_team = load("09_STATIC_RED_TEAM_LOG.json")
 
     frozen = integrity.get("frozen_commit")
     if not frozen or frozen != queue.get("frozen_commit") or frozen != foundation.get("baseline", {}).get("frozen_commit"):
@@ -51,6 +52,8 @@ def main() -> None:
     state_counts = integrity.get("state_counts", {})
     machine_counts = integrity.get("machine_enforced_counts", {})
     note_status = foundation.get("note_status_counts", {})
+    prompt_static = static_red_team.get("prompt_redteam_static_coverage", {})
+    static_summary = static_red_team.get("summary", {})
 
     lines = [
         "# Research Status",
@@ -119,11 +122,11 @@ def main() -> None:
         "",
         "## Phase 5+ status",
         "",
-        "- Phase 5 History: **IN PROGRESS**; currently registered H-events may be reconciled while contradiction-specific lineage can still remain.",
+        "- Phase 5 History: **CONTRADICTION LINEAGE CLOSED**; all 20 current contradiction records have exact history links or explicit no-material-history dispositions.",
         "- Phase 6 Contradictions & Orphans: **IN PROGRESS**.",
         "- Phase 7 Runtime & Distribution: **IN PROGRESS**.",
-        "- Phase 8 Second Pass: **NOT STARTED formally**.",
-        "- Phase 9 Red-Team Verification: **NOT STARTED formally**.",
+        "- Phase 8 Second Pass: **STATIC REREAD COMPLETE**; durable result is `06_SECOND_PASS_STATIC_RED_TEAM.json`.",
+        f"- Phase 9 Red-Team Verification: **STATIC SOURCE COVERAGE COMPLETE**; {prompt_static.get('statically_checked', 0)}/{prompt_static.get('denominator', 0)} prompt-red-team behaviors checked, with {static_summary.get('tests', 0)} total static tests. Prompt-adherence/runtime evidence remains pending.",
         "- Phase 10 System Reconstruction & KP Comparison: **BLOCKED by prior gates**.",
         "",
         "## Tooling ledger",
@@ -137,11 +140,10 @@ def main() -> None:
         "",
         "## Immediate next execution",
         "",
-        "1. Complete contradiction-specific lineage: bind each current CT record to exact history evidence or an explicit no-material-history disposition.",
-        "2. Perform the formal second pass on high-impact operative, support, configuration, and distribution surfaces using the completed graph/history context.",
-        "3. Run static red-team checks for universal, exclusivity, and numerical claims that can be disproved without an agent harness.",
-        "4. Keep execution, machine-consumer, external-dependency, and prompt/red-team evidence classes separate; the pending execution observations are deferred because no supported agent runtime is available.",
-        "5. Do not advance `VERIFIED` until all applicable Phase 4–9 gates close for the relevant claim/file.",
+        "1. Reconcile static red-team coverage with the Phase 4 queue; keep prompt rows pending until actual prompt-adherence/runtime evidence exists.",
+        "2. Assess independently testable external-dependency and machine-consumer rows without an agent harness.",
+        "3. Keep execution, machine-consumer, external-dependency, prompt/red-team, and static-source evidence classes separate; the pending execution observations are deferred because no supported agent runtime is available.",
+        "4. Do not advance `VERIFIED` until all applicable Phase 4–9 gates close for the relevant claim/file.",
         "",
         "## Resume instruction",
         "",

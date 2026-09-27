@@ -69,7 +69,7 @@ Breadth coverage does not imply runtime verification. No Phase 4 row is sufficie
 - Phase 6 Contradictions & Orphans: **IN PROGRESS**.
 - Phase 7 Runtime & Distribution: **IN PROGRESS**.
 - Phase 8 Second Pass: **STATIC REREAD COMPLETE**; durable result is `06_SECOND_PASS_STATIC_RED_TEAM.json`.
-- Phase 9 Red-Team Verification: **STATIC INVENTORY COMPLETE; RUNTIME/PROMPT RED-TEAM PENDING**.
+- Phase 9 Red-Team Verification: **STATIC SOURCE COVERAGE COMPLETE**; 24/24 prompt-red-team behaviors checked, with 28 total static tests. Prompt-adherence/runtime evidence remains pending.
 - Phase 10 System Reconstruction & KP Comparison: **BLOCKED by prior gates**.
 
 ## Tooling ledger
@@ -83,9 +83,9 @@ The classifier preserves a previously published closed classification for the id
 
 ## Immediate next execution
 
-1. Perform the formal second pass on high-impact operative, support, configuration, and distribution surfaces using the completed graph/history context.
-2. Run static red-team checks for universal, exclusivity, and numerical claims that can be disproved without an agent harness.
-3. Keep execution, machine-consumer, external-dependency, and prompt/red-team evidence classes separate; the pending execution observations are deferred because no supported agent runtime is available.
+1. Reconcile static red-team coverage with the Phase 4 queue; keep prompt rows pending until actual prompt-adherence/runtime evidence exists.
+2. Assess independently testable external-dependency and machine-consumer rows without an agent harness.
+3. Keep execution, machine-consumer, external-dependency, prompt/red-team, and static-source evidence classes separate; the pending execution observations are deferred because no supported agent runtime is available.
 4. Do not advance `VERIFIED` until all applicable Phase 4–9 gates close for the relevant claim/file.
 
 ## Resume instruction

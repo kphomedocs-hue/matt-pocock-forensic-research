@@ -39,6 +39,8 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Pending EXTERNAL_DEPENDENCY_VALIDATION rows: 5.
 - Pending MACHINE_CONSUMER_VALIDATION rows: 4.
 - Pending PROMPT_REDTEAM_LATER rows: 24.
+- Static prompt-red-team source coverage: 24/24 behaviors; 28 static tests (18 pass, 9 fail, 1 audit correction).
+- Prompt-red-team adherence/runtime evidence remains pending: 24 rows (static source coverage is not an observation).
 - Current contradiction coverage: 20/20.
 - Skill breadth coverage: 37/37.
 - High-risk non-SKILL surface coverage: 71/71.
@@ -157,15 +159,15 @@ Fallback only if the new chat cannot access GitHub: upload the minimum resume fi
 
 ## Immediate next execution
 
-1. Re-read current `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
-2. Keep the 16 pending `EXECUTION_OBSERVATION` rows deferred: a supported agent runtime is unavailable. Do not manufacture execution evidence; move only to independently runnable, non-agent evidence classes.
-3. Continue static prompt-red-team and frozen-file checks in small deterministic batches, keeping their findings separate from prompt-adherence/runtime evidence.
-4. Keep execution observations separate from machine-consumer, external-dependency, and prompt-red-team evidence classes.
-5. For each promoted row, record exact frozen source provenance, package/tool versions where applicable, named tests, workflow run ID, and durable result file.
-6. Rebuild/validate behavior matrix, integrity, coverage, runtime queue, foundation, runtime provenance, and research status before promotion.
-7. If any harness/workflow run fails or is cancelled, reconcile it into `00_TOOLING_FAILURE_LEDGER.json` before moving to the next behavior.
+1. Re-read current `09_STATIC_RED_TEAM_LOG.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
+2. Reconcile static prompt-red-team coverage with the Phase 4 queue; keep all prompt rows pending until actual prompt-adherence/runtime evidence exists.
+3. Assess the five `EXTERNAL_DEPENDENCY_VALIDATION` and four `MACHINE_CONSUMER_VALIDATION` rows that can be independently tested without an agent harness.
+4. Keep the 16 pending `EXECUTION_OBSERVATION` rows deferred: a supported agent runtime is unavailable. Do not manufacture execution evidence.
+5. Keep execution observations separate from machine-consumer, external-dependency, prompt-red-team, and static-source evidence classes.
+6. For each promoted row, record exact frozen source provenance, package/tool versions where applicable, named tests, workflow run ID, and durable result file.
+7. Rebuild/validate behavior matrix, integrity, coverage, runtime queue, foundation, runtime provenance, and research status before promotion. Reconcile failed/cancelled runs into `00_TOOLING_FAILURE_LEDGER.json` before moving on.
 8. Do not promote any file to VERIFIED merely because a Phase 4 runtime test passed.
 
 ## Suggested new-chat opening instruction
 
-"Resume the Matt Pocock skills forensic research from GitHub. Treat `kphomedocs-hue/matt-pocock-forensic-research` current `main` as the durable authority and `mattpocock/skills` commit `3cca18b368ae95cdbdebbff572ccafa662551015` as the frozen source. Read `00_NEXT_CHAT_HANDOFF.md`, `00_RESEARCH_MANIFEST.md`, `RESEARCH_STATUS.md`, and the minimum resume artifacts listed there before doing any work. Then inspect the current runtime observation queue and continue Phase 4 with the next small deterministic EXECUTION_OBSERVATION batch. Do not rely on chat memory, do not advance VERIFIED, and reconcile every failed/cancelled tooling run before proceeding."
+"Resume the Matt Pocock skills forensic research from GitHub. Treat `kphomedocs-hue/matt-pocock-forensic-research` current `main` as the durable authority and `mattpocock/skills` commit `3cca18b368ae95cdbdebbff572ccafa662551015` as the frozen source. Read `00_NEXT_CHAT_HANDOFF.md`, `00_RESEARCH_MANIFEST.md`, `RESEARCH_STATUS.md`, and the minimum resume artifacts listed there before doing any work. Static prompt-red-team source coverage is 24/24 behaviors (28 tests), but all 24 prompt rows remain pending because source coverage is not prompt-adherence/runtime evidence. Then confirm the static/queue reconciliation and assess independently testable external and machine-consumer rows; keep execution rows deferred. Do not rely on chat memory, do not advance VERIFIED, and reconcile every failed/cancelled tooling run before proceeding."
