@@ -49,6 +49,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Tooling incident ledger: 192 entries from 154 failed + 38 cancelled runs.
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
+- Research Findings Architecture: `10_RESEARCH_FINDINGS_ARCHITECTURE.md` (controlled synthesis before any project adaptation).
 
 ### Persistent environment constraint
 
@@ -141,7 +142,8 @@ Before doing any new research, fetch the latest `main` of this repository and in
 12. `04_RUNTIME_OBSERVATION_QUEUE.json`
 13. `04_CONTRADICTION_REGISTER.md`
 14. `05_HISTORY_LEDGER.md`
-15. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
+15. `10_RESEARCH_FINDINGS_ARCHITECTURE.md`
+16. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
 
 For exact Phase 4 state, prefer `04_BEHAVIOR_MATRIX.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` over prose summaries.
 
