@@ -50,6 +50,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 - Research Findings Architecture: `10_RESEARCH_FINDINGS_ARCHITECTURE.md` (controlled synthesis before any project adaptation).
+- Neutral operating method: `11_NEUTRAL_OPERATING_METHOD.md` v1.0-static-reviewed; `12_NEUTRAL_METHOD_RED_TEAM.json` records 10/10 desk checks, 3/3 synthetic cases, and 4/4 negative controls. Static baseline only; staff trial remains unperformed.
 
 ### Persistent environment constraint
 
@@ -143,7 +144,9 @@ Before doing any new research, fetch the latest `main` of this repository and in
 13. `04_CONTRADICTION_REGISTER.md`
 14. `05_HISTORY_LEDGER.md`
 15. `10_RESEARCH_FINDINGS_ARCHITECTURE.md`
-16. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
+16. `11_NEUTRAL_OPERATING_METHOD.md`
+17. `12_NEUTRAL_METHOD_RED_TEAM.json`
+18. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
 
 For exact Phase 4 state, prefer `04_BEHAVIOR_MATRIX.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` over prose summaries.
 
@@ -172,4 +175,4 @@ Fallback only if the new chat cannot access GitHub: upload the minimum resume fi
 
 ## Suggested new-chat opening instruction
 
-"Resume the Matt Pocock skills forensic research from GitHub. Treat `kphomedocs-hue/matt-pocock-forensic-research` current `main` as the durable authority and `mattpocock/skills` commit `3cca18b368ae95cdbdebbff572ccafa662551015` as the frozen source. Read `00_NEXT_CHAT_HANDOFF.md`, `00_RESEARCH_MANIFEST.md`, `RESEARCH_STATUS.md`, and the minimum resume artifacts listed there before doing any work. Static prompt-red-team source coverage is 24/24 behaviors (28 tests), but all 24 prompt rows remain pending because source coverage is not prompt-adherence/runtime evidence. The feasibility screen found that all five external-dependency and four machine-consumer rows require the named agent/runtime; do not substitute generic host behavior. Keep execution rows deferred, Do not rely on chat memory, do not advance VERIFIED, and reconcile every failed/cancelled tooling run before proceeding."
+"Resume the Matt Pocock skills forensic research from GitHub. Treat `kphomedocs-hue/matt-pocock-forensic-research` current `main` as the durable authority and `mattpocock/skills` commit `3cca18b368ae95cdbdebbff572ccafa662551015` as the frozen source. Read `00_NEXT_CHAT_HANDOFF.md`, `00_RESEARCH_MANIFEST.md`, `RESEARCH_STATUS.md`, and the minimum resume artifacts listed there before doing any work. Static prompt-red-team source coverage is 24/24 behaviors (28 tests), but all 24 prompt rows remain pending because source coverage is not prompt-adherence/runtime evidence. The feasibility screen found that all five external-dependency and four machine-consumer rows require the named agent/runtime; do not substitute generic host behavior. Keep execution rows deferred. The neutral method v1.0-static-reviewed and its synthetic red-team record are separate adaptation artifacts, not runtime proof. Do not rely on chat memory, do not advance VERIFIED, and reconcile every failed/cancelled tooling run before proceeding."

@@ -1,0 +1,515 @@
+{
+  "artifact": "NEUTRAL_METHOD_RED_TEAM",
+  "schema_version": 1,
+  "method_path": "11_NEUTRAL_OPERATING_METHOD.md",
+  "method_version": "v1.0-static-reviewed",
+  "frozen_source_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "scope": "Desk-level internal consistency and synthetic state traces for the neutral adaptation method; not Matt Pocock agent-runtime tests, staff trial, or proof of tool enforcement.",
+  "prior_issues": [
+    {
+      "id": "N-01",
+      "claim": "Rejected review has explicit state and revision route",
+      "result": "PASS",
+      "anchors": [
+        "| REVIEW | REJECTED |",
+        "| REJECTED | IN PROGRESS |"
+      ]
+    },
+    {
+      "id": "N-02",
+      "claim": "Reopen has owner request, independent authorization, and return routes",
+      "result": "PASS",
+      "anchors": [
+        "| ACCEPTED | REOPENED |",
+        "| REOPENED | IN PROGRESS |"
+      ]
+    },
+    {
+      "id": "N-03",
+      "claim": "Blocked work records prior state and returns there",
+      "result": "PASS",
+      "anchors": [
+        "| BLOCKED | Prior state |",
+        "if BLOCKED, also prior state"
+      ]
+    },
+    {
+      "id": "N-04",
+      "claim": "Reviewer is independent of every output contributor",
+      "result": "PASS",
+      "anchors": [
+        "distinct from every contributor",
+        "silence is never approval"
+      ]
+    },
+    {
+      "id": "N-05",
+      "claim": "Every transition is append-only and represented in the work record",
+      "result": "PASS",
+      "anchors": [
+        "Transition history | Append-only",
+        "baseline version for every change"
+      ]
+    },
+    {
+      "id": "N-06",
+      "claim": "Prototype reject and inconclusive routes are explicit",
+      "result": "PASS",
+      "anchors": [
+        "| PROTOTYPING | DEFINED |",
+        "Inconclusive results stay in PROTOTYPING"
+      ]
+    },
+    {
+      "id": "N-07",
+      "claim": "Material baseline changes require a new version",
+      "result": "PASS",
+      "anchors": [
+        "a new version is required",
+        "Specification baseline | Version"
+      ]
+    },
+    {
+      "id": "N-08",
+      "claim": "Three independent verdicts gate acceptance",
+      "result": "PASS",
+      "anchors": [
+        "All three must PASS",
+        "| REVIEW | ACCEPTED |"
+      ]
+    },
+    {
+      "id": "N-09",
+      "claim": "No-prototype path requires a reason",
+      "result": "PASS",
+      "anchors": [
+        "| DEFINED | SPECIFIED |",
+        "no-prototype reason"
+      ]
+    },
+    {
+      "id": "N-10",
+      "claim": "Freeze scope and evidence-class boundary are explicit",
+      "result": "PASS",
+      "anchors": [
+        "v1.0-static-reviewed",
+        "not staff-use validation"
+      ]
+    }
+  ],
+  "transition_model": {
+    "DEFINED": [
+      "PROTOTYPING",
+      "SPECIFIED",
+      "CANCELLED"
+    ],
+    "PROTOTYPING": [
+      "SPECIFIED",
+      "DEFINED",
+      "BLOCKED",
+      "CANCELLED"
+    ],
+    "SPECIFIED": [
+      "IN PROGRESS",
+      "DEFINED",
+      "BLOCKED",
+      "CANCELLED"
+    ],
+    "IN PROGRESS": [
+      "REVIEW",
+      "DEFINED",
+      "BLOCKED",
+      "CANCELLED"
+    ],
+    "REVIEW": [
+      "ACCEPTED",
+      "REJECTED",
+      "DEFINED",
+      "BLOCKED",
+      "CANCELLED"
+    ],
+    "REJECTED": [
+      "IN PROGRESS",
+      "DEFINED",
+      "CANCELLED"
+    ],
+    "ACCEPTED": [
+      "REOPENED"
+    ],
+    "REOPENED": [
+      "IN PROGRESS",
+      "DEFINED",
+      "CANCELLED"
+    ],
+    "BLOCKED": [
+      "PROTOTYPING",
+      "SPECIFIED",
+      "IN PROGRESS",
+      "REVIEW",
+      "CANCELLED"
+    ],
+    "CANCELLED": []
+  },
+  "synthetic_cases": [
+    {
+      "id": "C-01",
+      "name": "Routine accepted without prototype",
+      "contributors": [
+        "Contributor-A"
+      ],
+      "reviewer": "Reviewer-B",
+      "expected": "ACCEPTED",
+      "events": [
+        {
+          "from": "DEFINED",
+          "to": "SPECIFIED",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:00:00Z",
+          "reason": "No material uncertainty; record skip and approve v1",
+          "evidence": "synthetic://case/0",
+          "baseline_version": "v1",
+          "prototype_skip_reason": "Existing standard input; no untested assumption"
+        },
+        {
+          "from": "SPECIFIED",
+          "to": "IN PROGRESS",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:01:00Z",
+          "reason": "Assign contributor and approved criteria",
+          "evidence": "synthetic://case/1",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "IN PROGRESS",
+          "to": "REVIEW",
+          "actor": "Contributor-A",
+          "timestamp_utc": "2026-09-27T18:02:00Z",
+          "reason": "Submit output and evidence",
+          "evidence": "synthetic://case/2",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "REVIEW",
+          "to": "ACCEPTED",
+          "actor": "Reviewer-B",
+          "timestamp_utc": "2026-09-27T18:03:00Z",
+          "reason": "All three independent axes pass",
+          "evidence": "synthetic://case/3",
+          "baseline_version": "v1",
+          "review_verdicts": {
+            "specification_fidelity": "PASS",
+            "quality_and_standards": "PASS",
+            "operational_readiness": "PASS"
+          }
+        }
+      ],
+      "result": "PASS",
+      "problems": []
+    },
+    {
+      "id": "C-02",
+      "name": "Rejected prototype and rejected review then revision",
+      "contributors": [
+        "Contributor-A"
+      ],
+      "reviewer": "Reviewer-B",
+      "expected": "ACCEPTED",
+      "events": [
+        {
+          "from": "DEFINED",
+          "to": "PROTOTYPING",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:10:00Z",
+          "reason": "Test uncertain assumption",
+          "evidence": "synthetic://case/10",
+          "baseline_version": "unassigned"
+        },
+        {
+          "from": "PROTOTYPING",
+          "to": "DEFINED",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:11:00Z",
+          "reason": "Reject assumption; revise decision",
+          "evidence": "synthetic://case/11",
+          "baseline_version": "unassigned"
+        },
+        {
+          "from": "DEFINED",
+          "to": "PROTOTYPING",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:12:00Z",
+          "reason": "Test revised assumption",
+          "evidence": "synthetic://case/12",
+          "baseline_version": "unassigned"
+        },
+        {
+          "from": "PROTOTYPING",
+          "to": "SPECIFIED",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:13:00Z",
+          "reason": "Adopt conclusive result and approve v1",
+          "evidence": "synthetic://case/13",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "SPECIFIED",
+          "to": "IN PROGRESS",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:14:00Z",
+          "reason": "Assign slice",
+          "evidence": "synthetic://case/14",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "IN PROGRESS",
+          "to": "REVIEW",
+          "actor": "Contributor-A",
+          "timestamp_utc": "2026-09-27T18:15:00Z",
+          "reason": "Submit output 1",
+          "evidence": "synthetic://case/15",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "REVIEW",
+          "to": "REJECTED",
+          "actor": "Reviewer-B",
+          "timestamp_utc": "2026-09-27T18:16:00Z",
+          "reason": "Quality axis fails; retain rejected output",
+          "evidence": "synthetic://case/16",
+          "baseline_version": "v1",
+          "review_verdicts": {
+            "specification_fidelity": "PASS",
+            "quality_and_standards": "FAIL",
+            "operational_readiness": "PASS"
+          }
+        },
+        {
+          "from": "REJECTED",
+          "to": "IN PROGRESS",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:17:00Z",
+          "reason": "Revise output under same baseline and ID",
+          "evidence": "synthetic://case/17",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "IN PROGRESS",
+          "to": "REVIEW",
+          "actor": "Contributor-A",
+          "timestamp_utc": "2026-09-27T18:18:00Z",
+          "reason": "Submit output 2",
+          "evidence": "synthetic://case/18",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "REVIEW",
+          "to": "ACCEPTED",
+          "actor": "Reviewer-B",
+          "timestamp_utc": "2026-09-27T18:19:00Z",
+          "reason": "All axes pass revised output",
+          "evidence": "synthetic://case/19",
+          "baseline_version": "v1",
+          "review_verdicts": {
+            "specification_fidelity": "PASS",
+            "quality_and_standards": "PASS",
+            "operational_readiness": "PASS"
+          }
+        }
+      ],
+      "result": "PASS",
+      "problems": []
+    },
+    {
+      "id": "C-03",
+      "name": "Blocked, unblocked, accepted, reopened and reviewed again",
+      "contributors": [
+        "Contributor-A"
+      ],
+      "reviewer": "Reviewer-B",
+      "expected": "ACCEPTED",
+      "events": [
+        {
+          "from": "DEFINED",
+          "to": "SPECIFIED",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:20:00Z",
+          "reason": "No prototype needed; approve v1",
+          "evidence": "synthetic://case/20",
+          "baseline_version": "v1",
+          "prototype_skip_reason": "Inputs are established"
+        },
+        {
+          "from": "SPECIFIED",
+          "to": "IN PROGRESS",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:21:00Z",
+          "reason": "Assign contributor",
+          "evidence": "synthetic://case/21",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "IN PROGRESS",
+          "to": "BLOCKED",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:22:00Z",
+          "reason": "Missing input; owner to supply it",
+          "evidence": "synthetic://case/22",
+          "baseline_version": "v1",
+          "blocked_from": "IN PROGRESS",
+          "blocker_owner": "Owner-A",
+          "next_unblock_action": "Supply input"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "IN PROGRESS",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:23:00Z",
+          "reason": "Input supplied",
+          "evidence": "synthetic://case/23",
+          "baseline_version": "v1",
+          "unblock_evidence": "synthetic://input"
+        },
+        {
+          "from": "IN PROGRESS",
+          "to": "REVIEW",
+          "actor": "Contributor-A",
+          "timestamp_utc": "2026-09-27T18:24:00Z",
+          "reason": "Submit output 1",
+          "evidence": "synthetic://case/24",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "REVIEW",
+          "to": "ACCEPTED",
+          "actor": "Reviewer-B",
+          "timestamp_utc": "2026-09-27T18:25:00Z",
+          "reason": "All axes pass",
+          "evidence": "synthetic://case/25",
+          "baseline_version": "v1",
+          "review_verdicts": {
+            "specification_fidelity": "PASS",
+            "quality_and_standards": "PASS",
+            "operational_readiness": "PASS"
+          }
+        },
+        {
+          "from": "ACCEPTED",
+          "to": "REOPENED",
+          "actor": "Reviewer-B",
+          "timestamp_utc": "2026-09-27T18:26:00Z",
+          "reason": "Owner requested reopening after invalidated output; independent authorization",
+          "evidence": "synthetic://case/26",
+          "baseline_version": "v1",
+          "owner_request": "Owner-A",
+          "accepted_snapshot": "synthetic://accepted/1"
+        },
+        {
+          "from": "REOPENED",
+          "to": "IN PROGRESS",
+          "actor": "Owner-A",
+          "timestamp_utc": "2026-09-27T18:27:00Z",
+          "reason": "Correct output under unchanged v1 baseline",
+          "evidence": "synthetic://case/27",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "IN PROGRESS",
+          "to": "REVIEW",
+          "actor": "Contributor-A",
+          "timestamp_utc": "2026-09-27T18:28:00Z",
+          "reason": "Submit corrected output 2",
+          "evidence": "synthetic://case/28",
+          "baseline_version": "v1"
+        },
+        {
+          "from": "REVIEW",
+          "to": "ACCEPTED",
+          "actor": "Reviewer-B",
+          "timestamp_utc": "2026-09-27T18:29:00Z",
+          "reason": "All axes pass again",
+          "evidence": "synthetic://case/29",
+          "baseline_version": "v1",
+          "review_verdicts": {
+            "specification_fidelity": "PASS",
+            "quality_and_standards": "PASS",
+            "operational_readiness": "PASS"
+          }
+        }
+      ],
+      "result": "PASS",
+      "problems": []
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "NC-01",
+      "name": "Contributor attempts self-accept",
+      "attempt": {
+        "actor": "Contributor-A",
+        "review_verdicts": {
+          "specification_fidelity": "PASS",
+          "quality_and_standards": "PASS",
+          "operational_readiness": "PASS"
+        }
+      },
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "result": "PASS"
+    },
+    {
+      "id": "NC-02",
+      "name": "Missing operational verdict",
+      "attempt": {
+        "actor": "Reviewer-B",
+        "review_verdicts": {
+          "specification_fidelity": "PASS",
+          "quality_and_standards": "PASS"
+        }
+      },
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "result": "PASS"
+    },
+    {
+      "id": "NC-03",
+      "name": "Blocked in IN PROGRESS attempts to jump to REVIEW",
+      "attempt": {
+        "blocked_from": "IN PROGRESS",
+        "to": "REVIEW"
+      },
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "result": "PASS"
+    },
+    {
+      "id": "NC-04",
+      "name": "Acceptance baseline silently edited",
+      "attempt": {
+        "old": "v1",
+        "now": "v2",
+        "route": "IN PROGRESS"
+      },
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "result": "PASS"
+    }
+  ],
+  "summary": {
+    "issues_checked": 10,
+    "issues_passed": 10,
+    "synthetic_cases": 3,
+    "cases_passed": 3,
+    "negative_controls": 4,
+    "negative_passed": 4,
+    "formal_source_verification_promotions": 0,
+    "staff_trial_complete": false
+  },
+  "baseline": {
+    "status": "FROZEN_STATIC_BASELINE",
+    "version": "v1.0-static-reviewed",
+    "note": "Freeze is scoped to the neutral method after desk review; no live user/staff or agent adherence evidence is claimed.",
+    "method_blob_sha": "4f3dc9653e5a86456c079dc4a1faf5687aa41271",
+    "previous_method_blob_sha": "e8385e42812ce106fa5ce77db25b313b800e1a83",
+    "research_head_before_write": "37a887cfc9ddd01d26cb05421cd4496a9bf0e2b8"
+  }
+}

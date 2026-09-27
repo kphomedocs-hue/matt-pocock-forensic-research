@@ -1,5 +1,7 @@
 # Neutral Operating Method
 
+Version: **v1.0-static-reviewed**. Status: **frozen static baseline** after the ten desk checks and three synthetic scenario traces in `12_NEUTRAL_METHOD_RED_TEAM.json`. This freeze applies only to this method document; it does not promote the forensic research or claim staff-use/runtime validation. Amendments require a new version and a fresh review.
+
 ## Purpose
 
 This is a project-independent method extracted from the forensic research. It is deliberately neutral: it does not assume Codex, Claude, SharePoint, a specific tracker, or a specific deliverable.
@@ -11,7 +13,7 @@ It makes work understandable, reviewable, reversible, and recoverable. It does n
 ~~~mermaid
 flowchart TD
   A["Decision"] --> B["Shared terms"]
-  B --> C["Prototype uncertainty"]
+  B --> C["Prototype if needed"]
   C --> D["Specification and acceptance"]
   D --> E["Vertical slice"]
   E --> F["Review and evidence"]
@@ -28,7 +30,7 @@ For each important term, record its meaning, what it excludes, and its owner. A 
 
 ### 3. Prototype uncertainty
 
-Test one uncertain question with the smallest useful experiment:
+When a material assumption is uncertain, test one question with the smallest useful experiment:
 
 - one representative input;
 - one uncertain rule or interface;
@@ -36,13 +38,13 @@ Test one uncertain question with the smallest useful experiment:
 - one pass/fail condition;
 - one recorded result.
 
-A prototype removes uncertainty; it is not automatically the final deliverable.
+A prototype removes uncertainty; it is not automatically the final deliverable. If no material uncertainty exists, the owner records a no-prototype reason and proceeds from DEFINED to SPECIFIED.
 
 Prototype exit is explicit: record the question, result, decision (adopt, revise, or reject), and owner who authorizes moving to specification. If the result is inconclusive, keep the work in PROTOTYPING rather than silently proceeding.
 
 ### 4. Write the specification
 
-State the input, work to be performed, output, constraints, exclusions, acceptance scenarios, review owner, and evidence location.
+State the input, work to be performed, output, constraints, exclusions, acceptance scenarios, review owner, and evidence location. The owner approves a numbered specification baseline before IN PROGRESS. A material change to scope, shared terms, or acceptance criteria returns work to DEFINED for a new baseline; prior versions and work remain evidence.
 
 Acceptance must be falsifiable. “Looks good” is not sufficient; visible contents, scale, exclusions, and comparison rules are reviewable.
 
@@ -74,7 +76,7 @@ Review three separate axes:
 | Quality and standards | Is it technically and visually acceptable? |
 | Operational readiness | Can the next person use, approve, or maintain it? |
 
-REVIEW is not ACCEPTED.
+REVIEW is not ACCEPTED. The reviewer records a separate PASS or FAIL with evidence for each axis. All three must PASS for acceptance. Any FAIL requires REJECTED with reasons; missing evidence cannot count as PASS.
 
 ### 8. Preserve evidence
 
@@ -82,43 +84,49 @@ For every accepted result, preserve the decision or brief, source/reference, acc
 
 ## State model
 
-~~~
-DEFINED → PROTOTYPING → SPECIFIED → IN PROGRESS → REVIEW → ACCEPTED
-   ↑             ↓              ↓          ↓          ↓
-   └────────── REOPENED ←──── BLOCKED ←───┴──────────┘
-~~~
+State names are work-item states. A specification baseline is a separate versioned record. Each transition appends one entry with from, to, actor, timestamp, reason, evidence link, and baseline version. No entry overwrites an earlier result.
 
-Roles and transition rules:
+| From | To | Authorizer and guard |
+|---|---|---|
+| DEFINED | PROTOTYPING | Owner records the uncertain question. |
+| DEFINED | SPECIFIED | Owner records why no prototype is needed and approves the numbered specification baseline. |
+| PROTOTYPING | SPECIFIED | Owner records a conclusive prototype result and approves the numbered baseline. |
+| PROTOTYPING | DEFINED | Owner rejects the assumption; the decision must be revised. Inconclusive results stay in PROTOTYPING. |
+| SPECIFIED | IN PROGRESS | Owner assigns a contributor and confirms the approved baseline and acceptance checks. |
+| IN PROGRESS | REVIEW | Contributor submits output and evidence against the approved baseline; a named independent reviewer is available. |
+| REVIEW | ACCEPTED | Reviewer, distinct from every contributor to the reviewed output, records PASS with evidence for all three axes. |
+| REVIEW | REJECTED | Reviewer records at least one FAIL or missing evidence with reasons. |
+| REJECTED | IN PROGRESS | Owner authorizes revision against the same baseline; retain the rejection and use the same work ID. |
+| ACCEPTED | REOPENED | Owner requests, and an independent reviewer authorizes, reopening with the invalidated assumption or output and the accepted snapshot linked. |
+| REOPENED | IN PROGRESS | Owner confirms the existing baseline still applies; output is corrected under the same ID. |
+| REOPENED | DEFINED | Owner records a material decision/scope/acceptance change and prepares a new baseline. |
+| PROTOTYPING, SPECIFIED, IN PROGRESS, or REVIEW | BLOCKED | Owner records the prior state, cause, blocker owner, and next unblock action. |
+| BLOCKED | Prior state | Owner records resolution evidence; the work resumes at the saved state and cannot bypass review. |
+| PROTOTYPING, SPECIFIED, IN PROGRESS, REVIEW, or REJECTED | DEFINED | Owner records a material baseline change; a new version is required before further work. |
+| Any nonterminal state | CANCELLED | Owner records the reason and preserves the history; a replacement gets a new ID or an explicit link. |
 
-- Owner: accountable for scope, progress, and requesting review.
-- Contributor: performs the current slice and records its evidence.
-- Reviewer: checks acceptance and may ACCEPT or REJECT. The owner cannot self-accept unless the project explicitly records an independent substitute review.
-- Every transition records actor, date, reason, and evidence link.
-- Only the reviewer may move REVIEW to ACCEPTED or REJECTED.
-- BLOCKED may be entered from PROTOTYPING, SPECIFIED, or IN PROGRESS and must name the blocker, owner, and next unblock action.
-- A resolved blocker returns to the previous active state; it does not skip review.
-- REOPENED is used when an accepted result no longer satisfies the current specification; it must identify the changed assumption.
-- A revision returns to IN PROGRESS without silently creating a new identity.
-- Rejected results remain evidence; they are not deleted.
-- If the designated reviewer is unavailable, appoint a named substitute before work enters REVIEW; silence is not approval.
+The reviewer is a named person distinct from those who produced the reviewed output. The owner may review only if the owner did not contribute to that output. If no independent reviewer is available, hold the work in IN PROGRESS or BLOCKED until one is named; silence is never approval. A reviewer change is logged before review.
+
+REJECTED is a review outcome, not deletion. ACCEPTED is a reviewed snapshot, not immunity from later reopening. REOPENED cannot return directly to ACCEPTED. A changed baseline never silently edits the accepted snapshot or prior transition entries.
 
 ## Minimum work record
 
 | Field | Required content |
 |---|---|
-| ID | Stable identifier |
-| Decision | Outcome being pursued |
-| Context | Why it matters |
-| Scope | Included and excluded work |
-| Terms | Relevant vocabulary |
-| Acceptance | Observable pass conditions |
-| Slice | Current reviewable outcome |
-| Owner | Person responsible for progress |
-| Reviewer | Person who accepts or rejects |
-| Evidence | Links to source, output, and checks |
-| State | One state from the model |
-| Blocker | Cause and next action, if blocked |
-| Revision | What changed and why |
+| ID | Stable identifier; keep the same ID for revision/reopening |
+| Decision and context | Outcome, why it matters, accountable owner |
+| Scope and terms | Included/excluded work; shared terms and version |
+| Specification baseline | Version, approval actor/date, inputs, constraints, acceptance criteria, and source link |
+| Prototype | Question/result/evidence and decision, or explicit no-prototype reason |
+| Slice | Reviewable outcome, input, output, and dependency/blocker |
+| People | Owner, contributors, independent reviewer, and any logged substitute |
+| Current state | One state from the transition table; if BLOCKED, also prior state, cause, blocker owner, and unblock action |
+| Review verdicts | Separate PASS/FAIL, evidence, and reason for specification fidelity, quality/standards, and operational readiness |
+| Evidence | Links to source, submitted output, checks, rejected output, and accepted snapshot as applicable |
+| Transition history | Append-only from/to, actor, timestamp, reason, evidence link, and baseline version for every change |
+| Revision/reopen | What changed, why, authorizer, and link to the prior version or accepted snapshot |
+
+This record is a minimum logical schema, not a requirement to buy software or create a separate form for every field. The reviewer and owner check the actual output, not merely a status label.
 
 ## Controls retained from the research
 
@@ -160,4 +168,4 @@ Before adapting this method to any project:
 6. Exclude mechanisms that depend on unavailable agent-runtime behavior.
 7. Record every project-specific deviation as an explicit adaptation.
 
-This method is the controlled bridge between the research findings and any later project implementation.
+This method is the controlled bridge between the research findings and any later project implementation. The three examples in `12_NEUTRAL_METHOD_RED_TEAM.json` are synthetic desk checks; they are not staff-use validation or proof that a tool enforces these rules.
