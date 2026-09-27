@@ -51,7 +51,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Tooling unresolved/review-required entries: 0.
 - Research Findings Architecture: `10_RESEARCH_FINDINGS_ARCHITECTURE.md` (controlled synthesis before any project adaptation).
 - Neutral operating method: `11_NEUTRAL_OPERATING_METHOD.md` v1.0-static-reviewed; `12_NEUTRAL_METHOD_RED_TEAM.json` records 10/10 desk checks, 3/3 synthetic cases, and 4/4 negative controls. Static baseline only; staff trial remains unperformed.
-- Pre-application human trial and pilot gate: `13_PRE_APPLICATION_TRIAL_AND_PILOT_GATE.md` is READY FOR HUMAN TRIAL, not a completed trial. It recommends A3351 conditionally; no live project has been changed.
+- Pre-application human trial and pilot gate: `13_PRE_APPLICATION_TRIAL_AND_PILOT_GATE.md` is READY FOR HUMAN TRIAL, not a completed trial. It now uses separate card IDs, concealed scoring, mandatory retained evidence, and a determinate v2 route. `14_PRE_TRIAL_DESK_RECHECK.md` records the static recheck and corrections. It recommends A3351 conditionally; no live project has been changed.
 
 ### Persistent environment constraint
 
@@ -148,7 +148,8 @@ Before doing any new research, fetch the latest `main` of this repository and in
 16. `11_NEUTRAL_OPERATING_METHOD.md`
 17. `12_NEUTRAL_METHOD_RED_TEAM.json`
 18. `13_PRE_APPLICATION_TRIAL_AND_PILOT_GATE.md`
-19. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
+19. `14_PRE_TRIAL_DESK_RECHECK.md`
+20. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
 
 For exact Phase 4 state, prefer `04_BEHAVIOR_MATRIX.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` over prose summaries.
 
