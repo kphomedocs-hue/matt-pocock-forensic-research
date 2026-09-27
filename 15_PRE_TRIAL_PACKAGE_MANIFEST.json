@@ -1,0 +1,33 @@
+{
+  "artifact": "PRE_TRIAL_PACKAGE_MANIFEST",
+  "schema_version": 1,
+  "purpose": "Frozen static package for a disposable two-person human trial of the neutral operating method. Not a human-trial result, agent-runtime proof, or permission to modify live projects.",
+  "frozen_source_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "method_blob": "4f3dc9653e5a86456c079dc4a1faf5687aa41271",
+  "method_version": "v1.0-static-reviewed",
+  "human_trial_status": "NOT_YET_RUN",
+  "live_project_changes": false,
+  "trial_scope": "Fictional disposable inputs only; retain restricted or redacted minimum evidence.",
+  "package_blobs": {
+    "10_RESEARCH_FINDINGS_ARCHITECTURE.md": "5839df1e9fb6b6fe4e28943043a1140253f7d847",
+    "11_NEUTRAL_OPERATING_METHOD.md": "4f3dc9653e5a86456c079dc4a1faf5687aa41271",
+    "12_NEUTRAL_METHOD_RED_TEAM.json": "55fc598a8628a6b93be39e7780bf449718239265",
+    "13_PRE_APPLICATION_TRIAL_AND_PILOT_GATE.md": "36165f340526e622d6ef01f529cdbf77a29b2276",
+    "14_PRE_TRIAL_DESK_RECHECK.md": "4512eef29dc675680a9bcfdb7ac6b03f3f842078",
+    "16_HUMAN_TRIAL_KIT.md": "8a741e66545034e509ae030aaacd2b4fddaefa30",
+    "scripts/validate_pretrial_package.py": "ced9d6713c09a369be86ad9d513543c2997890d0"
+  },
+  "validation_command": "python scripts/validate_pretrial_package.py",
+  "required_preconditions": [
+    "Two independent human roles: owner/contributor A and reviewer B",
+    "Three separate work IDs: TRIAL-C1, TRIAL-C2, TRIAL-C3",
+    "Sealed Card 3 prompts and Card 2 defective PDF seed",
+    "Restricted or redacted evidence retention agreed before start"
+  ],
+  "exclusions": [
+    "No running project files",
+    "No Codex or Claude runtime claim",
+    "No formal VERIFIED promotion",
+    "No evidence invented before human use"
+  ]
+}
