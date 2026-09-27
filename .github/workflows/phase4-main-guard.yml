@@ -30,6 +30,8 @@ jobs:
         run: python scripts/build_phase4_runtime_queue.py
       - name: Validate Phase 4 runtime provenance
         run: python scripts/validate_phase4_runtime_provenance.py
+      - name: Validate frozen pre-trial package
+        run: python scripts/validate_pretrial_package.py
       - name: Rebuild human research checkpoint
         run: python scripts/build_research_status.py
       - name: Ensure validators are non-mutating on committed main
