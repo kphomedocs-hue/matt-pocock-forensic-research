@@ -38,6 +38,8 @@ Test one uncertain question with the smallest useful experiment:
 
 A prototype removes uncertainty; it is not automatically the final deliverable.
 
+Prototype exit is explicit: record the question, result, decision (adopt, revise, or reject), and owner who authorizes moving to specification. If the result is inconclusive, keep the work in PROTOTYPING rather than silently proceeding.
+
 ### 4. Write the specification
 
 State the input, work to be performed, output, constraints, exclusions, acceptance scenarios, review owner, and evidence location.
@@ -82,15 +84,23 @@ For every accepted result, preserve the decision or brief, source/reference, acc
 
 ~~~
 DEFINED → PROTOTYPING → SPECIFIED → IN PROGRESS → REVIEW → ACCEPTED
-                                      ↘ BLOCKED
+   ↑             ↓              ↓          ↓          ↓
+   └────────── REOPENED ←──── BLOCKED ←───┴──────────┘
 ~~~
 
-Rules:
+Roles and transition rules:
 
-- Only the owner or reviewer may move work to ACCEPTED.
-- BLOCKED states the cause and next unblock action.
+- Owner: accountable for scope, progress, and requesting review.
+- Contributor: performs the current slice and records its evidence.
+- Reviewer: checks acceptance and may ACCEPT or REJECT. The owner cannot self-accept unless the project explicitly records an independent substitute review.
+- Every transition records actor, date, reason, and evidence link.
+- Only the reviewer may move REVIEW to ACCEPTED or REJECTED.
+- BLOCKED may be entered from PROTOTYPING, SPECIFIED, or IN PROGRESS and must name the blocker, owner, and next unblock action.
+- A resolved blocker returns to the previous active state; it does not skip review.
+- REOPENED is used when an accepted result no longer satisfies the current specification; it must identify the changed assumption.
 - A revision returns to IN PROGRESS without silently creating a new identity.
 - Rejected results remain evidence; they are not deleted.
+- If the designated reviewer is unavailable, appoint a named substitute before work enters REVIEW; silence is not approval.
 
 ## Minimum work record
 
