@@ -11,7 +11,7 @@ It does not modify the frozen source, create runtime evidence, or promote any fi
 - Durable authority: this repository's latest main branch.
 - Source studied: mattpocock/skills at frozen commit 3cca18b368ae95cdbdebbff572ccafa662551015 and tree 6e84c093fda2026396cea9fad6a924a6da0e1452.
 - Machine-readable artifacts outrank this summary.
-- Every conclusion is one of: source fact, structural inference, or future KP adaptation recommendation.
+- The evidence table below reports source and audit facts. The five-layer model is a structural inference. The working principles and adaptation decisions are recommendations, not observed runtime behavior.
 - A written instruction is not treated as a guaranteed behavior unless an appropriate enforcement or runtime evidence layer proves it.
 
 ## What has been fully studied statically
@@ -28,19 +28,11 @@ It does not modify the frozen source, create runtime evidence, or promote any fi
 | Formal second static reread | 164/164 matching frozen blobs | 06_SECOND_PASS_STATIC_RED_TEAM.json |
 | Static prompt red-team coverage | 24/24 behaviors; 28 tests | 09_STATIC_RED_TEAM_LOG.json |
 
-The research-control system itself is clean: foundation hard errors 0, warnings 0, and the tooling ledger has no unknown or unresolved entries.
+The foundation integrity check reports 0 hard errors and 0 warnings. The tooling ledger classifies every recorded incident (0 UNKNOWN or UNRESOLVED classifications); that classification does not establish that every incident's cause was fixed. The static red-team has 9 failed claims, Phase 9 is incomplete, and formal VERIFIED remains 0/164.
 
-## The architecture discovered
+## Structural inference: five control layers
 
-~~~mermaid
-flowchart TD
-  A["Decision / task"] --> B["Primary skill and support material"]
-  B --> C["Metadata, scripts, tracker, distribution"]
-  C --> D["Observable acceptance and review"]
-  D --> E["Durable record and later improvement"]
-~~~
-
-The repository has five distinct control layers. They must be evaluated separately.
+The five-layer model below separates instructions, supporting files, configuration, external services, and the agent that consumes them. A task's review and durable record are operating steps across these layers, not additional repository layers.
 
 | Layer | Role | Audit conclusion |
 |---|---|---|
@@ -56,7 +48,7 @@ These are portable principles extracted from the source architecture. They are n
 
 1. Start with a decision, not a vague task.
 2. Define shared terms before handover.
-3. Prototype the uncertainty first with a small vertical test.
+3. If a material assumption is uncertain, test it with a small vertical prototype; otherwise record why a prototype is unnecessary.
 4. Write observable acceptance criteria.
 5. Split work into coherent vertical slices.
 6. Test public seams and handoff points.
@@ -82,7 +74,7 @@ These are portable principles extracted from the source architecture. They are n
 | Use templates, checklists, and named review gates | ADAPT | Retain only when they match the actual Parkar workflow and have a clear owner. |
 | Treat agent prompts as automatic enforcement | REJECT | The audit found that prompt text alone does not guarantee execution. |
 | Reproduce Claude/Codex invocation or marketplace behavior | DEFER | Requires the named runtime and real observed behavior. |
-| Carry source contradictions forward as fixed | REJECT | They remain evidence findings until upstream changes and is independently reassessed. |
+| Carry source contradictions forward as fixed | REJECT | They remain evidence findings until upstream changes are independently reassessed. |
 
 ## Remaining boundary
 
