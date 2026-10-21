@@ -1,0 +1,120 @@
+{
+  "artifact": "MINIMUM_EVIDENCE_SCHEMA_AUTHOR_REVIEW",
+  "version": "0.1-draft",
+  "recorded_at_utc": "2026-10-21T18:33:52Z",
+  "review_type": "AUTHOR_SELF_REVIEW_NOT_INDEPENDENT_APPROVAL",
+  "status": "DRAFT_NOT_ADOPTED",
+  "research_snapshot": "48dcfb47a8153e69316d9f6d47bee02b8b44ae8e",
+  "input_source_catalog": {
+    "labels": {
+      "path": "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json",
+      "blob_sha": "ce8106b6f5746a856e01ac4f24dd31806d337ab7"
+    },
+    "linter": {
+      "path": "04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json",
+      "blob_sha": "5b0c7d0a6ca8f33c8af30e514b900fa896bd9596"
+    },
+    "grep": {
+      "path": "04_CT019_REPRODUCTION.json",
+      "blob_sha": "96f4e798dd8a6a778eca8f8ce0e865367bb5a329"
+    },
+    "matrix": {
+      "path": "04_BEHAVIOR_MATRIX.json",
+      "blob_sha": "255ba6e696169caa241f1f03108af8e4000cc20b"
+    }
+  },
+  "tested_file_blobs": {
+    "19_MINIMUM_EVIDENCE_SCHEMA.md": "0f15d91ba422ecf4e49929acce833b36ed10ca2a",
+    "19_EVIDENCE_RECORD_EXAMPLES.json": "3eb2fac91ecbd0b3545c6a74918c1e1a7a485ab1",
+    "scripts/validate_evidence_draft.py": "89ab61ca013ba8f8a04b2f64a636a9a5f95c0301",
+    "tests/test_evidence_draft.py": "eeb2a1f751d8b8d35868a6ac5455c9a187f2325c"
+  },
+  "case_ids": [
+    "B-024",
+    "B-047",
+    "B-046"
+  ],
+  "selected_check_count": 6,
+  "gap_review": [
+    {
+      "gap": "Source provenance confused with task approval",
+      "draft_control": "Pinned source catalog plus a separate specification_approval field",
+      "historical_evidence": "Source pins present; task approval UNKNOWN"
+    },
+    {
+      "gap": "Final assertions mistaken for preapproved criteria",
+      "draft_control": "Separate criteria_preapproval field",
+      "historical_evidence": "UNKNOWN in all three cases"
+    },
+    {
+      "gap": "Missing roles and event times",
+      "draft_control": "Required method-evidence slots; UNKNOWN requires a null value and explanation",
+      "historical_evidence": "UNKNOWN, not reconstructed from workflow IDs or Git identities"
+    },
+    {
+      "gap": "Inference presented as fact",
+      "draft_control": "RECORDED requires exact source equality; INFERRED requires a reason and source locators",
+      "historical_evidence": "B-046 reconstructed criterion explicitly INFERRED"
+    },
+    {
+      "gap": "Passing tests mistaken for method acceptance",
+      "draft_control": "Separate reported_outcome and adoption_status; draft cannot assert ACCEPTED",
+      "historical_evidence": "All three retain adoption_status NOT_ESTABLISHED"
+    },
+    {
+      "gap": "Review axes omitted",
+      "draft_control": "Three separate review-evidence fields",
+      "historical_evidence": "All remain UNKNOWN"
+    },
+    {
+      "gap": "Blocked/resume and reopen routes untested",
+      "draft_control": "Do not claim route coverage from this sample",
+      "historical_evidence": "UNCOVERED"
+    },
+    {
+      "gap": "Future working-tree drift affects historical replay",
+      "draft_control": "Git reads the pinned snapshot; file-only mode verifies pinned bytes; no Git fallback",
+      "historical_evidence": "Local pinned-file mode tested; CI Git mode pending at capture"
+    }
+  ],
+  "local_validation": {
+    "command": "python scripts/validate_evidence_draft.py",
+    "exit_code": 0,
+    "result": {
+      "artifact": "EVIDENCE_DRAFT_MAPPING_VALIDATION",
+      "snapshot": {
+        "repository": "kphomedocs-hue/matt-pocock-forensic-research",
+        "commit": "48dcfb47a8153e69316d9f6d47bee02b8b44ae8e"
+      },
+      "hard_errors": [],
+      "records_checked": 3,
+      "unknown_method_fields": 30,
+      "claim": "Documentary shape and value mappings only",
+      "method_adoption": "NOT_ESTABLISHED",
+      "human_trial_claimed": false
+    }
+  },
+  "local_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "new_test_methods": 20,
+    "existing_pretrial_test_methods": 36,
+    "total_methods": 56,
+    "output": "test_bad_shapes_do_not_crash (test_evidence_draft.EvidenceDraftTests.test_bad_shapes_do_not_crash) ... ok\ntest_boolean_is_not_integer_evidence (test_evidence_draft.EvidenceDraftTests.test_boolean_is_not_integer_evidence) ... ok\ntest_changed_recorded_outcome_rejected_for_each_check (test_evidence_draft.EvidenceDraftTests.test_changed_recorded_outcome_rejected_for_each_check) ... ok\ntest_changed_source_bytes_rejected (test_evidence_draft.EvidenceDraftTests.test_changed_source_bytes_rejected) ... ok\ntest_cli_keeps_thirty_unknowns_and_no_adoption (test_evidence_draft.EvidenceDraftTests.test_cli_keeps_thirty_unknowns_and_no_adoption) ... ok\ntest_duplicate_record_and_check_ids_rejected (test_evidence_draft.EvidenceDraftTests.test_duplicate_record_and_check_ids_rejected) ... ok\ntest_git_reader_targets_snapshot_not_current_branch (test_evidence_draft.EvidenceDraftTests.test_git_reader_targets_snapshot_not_current_branch) ... ok\ntest_inference_cannot_supply_method_authorization (test_evidence_draft.EvidenceDraftTests.test_inference_cannot_supply_method_authorization) ... ok\ntest_inference_requires_sources_and_reason (test_evidence_draft.EvidenceDraftTests.test_inference_requires_sources_and_reason) ... ok\ntest_missing_git_snapshot_does_not_fallback_to_working_tree (test_evidence_draft.EvidenceDraftTests.test_missing_git_snapshot_does_not_fallback_to_working_tree) ... ok\ntest_missing_limits_rejected (test_evidence_draft.EvidenceDraftTests.test_missing_limits_rejected) ... ok\ntest_missing_method_field_rejected (test_evidence_draft.EvidenceDraftTests.test_missing_method_field_rejected) ... ok\ntest_missing_or_broken_reference (test_evidence_draft.EvidenceDraftTests.test_missing_or_broken_reference) ... ok\ntest_positive_bundle_and_source_pins (test_evidence_draft.EvidenceDraftTests.test_positive_bundle_and_source_pins) ... ok\ntest_scope_escalation_rejected (test_evidence_draft.EvidenceDraftTests.test_scope_escalation_rejected) ... ok\ntest_snapshot_and_source_catalog_cannot_silently_drift (test_evidence_draft.EvidenceDraftTests.test_snapshot_and_source_catalog_cannot_silently_drift) ... ok\ntest_strict_json_and_pointer_handling (test_evidence_draft.EvidenceDraftTests.test_strict_json_and_pointer_handling) ... ok\ntest_symlink_source_rejected (test_evidence_draft.EvidenceDraftTests.test_symlink_source_rejected) ... ok\ntest_unknown_cannot_hide_claim_or_evidence (test_evidence_draft.EvidenceDraftTests.test_unknown_cannot_hide_claim_or_evidence) ... ok\ntest_unknown_reason_required (test_evidence_draft.EvidenceDraftTests.test_unknown_reason_required) ... ok\ntest_benign_attempt_is_not_reported_as_rejected (test_pretrial_package.ControlTests.test_benign_attempt_is_not_reported_as_rejected) ... ok\ntest_control_ids_and_schema (test_pretrial_package.ControlTests.test_control_ids_and_schema) ... ok\ntest_four_controls_execute (test_pretrial_package.ControlTests.test_four_controls_execute) ... ok\ntest_historical_labels_do_not_determine_results (test_pretrial_package.ControlTests.test_historical_labels_do_not_determine_results) ... ok\ntest_cli_package_and_executed_results (test_pretrial_package.ManifestTests.test_cli_package_and_executed_results) ... ok\ntest_complete_manifest (test_pretrial_package.ManifestTests.test_complete_manifest) ... ok\ntest_missing_files_bad_hash_and_drift (test_pretrial_package.ManifestTests.test_missing_files_bad_hash_and_drift) ... ok\ntest_omitted_or_empty_manifest_rejected (test_pretrial_package.ManifestTests.test_omitted_or_empty_manifest_rejected) ... ok\ntest_raw_bytes_hash_not_newline_normalized (test_pretrial_package.ManifestTests.test_raw_bytes_hash_not_newline_normalized) ... ok\ntest_symlinks_rejected (test_pretrial_package.ManifestTests.test_symlinks_rejected) ... ok\ntest_traversal_and_absolute_path_rejected_before_read (test_pretrial_package.ManifestTests.test_traversal_and_absolute_path_rejected_before_read) ... ok\ntest_accept_rejects_each_failed_axis (test_pretrial_package.TraceTests.test_accept_rejects_each_failed_axis) ... ok\ntest_accept_rejects_missing_axis (test_pretrial_package.TraceTests.test_accept_rejects_missing_axis) ... ok\ntest_all_event_fields_reject_wrong_types_and_empty_values (test_pretrial_package.TraceTests.test_all_event_fields_reject_wrong_types_and_empty_values) ... ok\ntest_all_forbidden_edges_from_reachable_prefixes (test_pretrial_package.TraceTests.test_all_forbidden_edges_from_reachable_prefixes) ... ok\ntest_blocked_metadata_and_resolution (test_pretrial_package.TraceTests.test_blocked_metadata_and_resolution) ... ok\ntest_blocked_resume_cannot_skip (test_pretrial_package.TraceTests.test_blocked_resume_cannot_skip) ... ok\ntest_cancel_is_terminal (test_pretrial_package.TraceTests.test_cancel_is_terminal) ... ok\ntest_every_transition_rejects_unknown_actor (test_pretrial_package.TraceTests.test_every_transition_rejects_unknown_actor) ... ok\ntest_every_transition_requires_metadata (test_pretrial_package.TraceTests.test_every_transition_requires_metadata) ... ok\ntest_historical_positive_traces (test_pretrial_package.TraceTests.test_historical_positive_traces) ... ok\ntest_malformed_shapes_fail_closed (test_pretrial_package.TraceTests.test_malformed_shapes_fail_closed) ... ok\ntest_material_change_requires_new_baseline (test_pretrial_package.TraceTests.test_material_change_requires_new_baseline) ... ok\ntest_no_prototype_requires_reason (test_pretrial_package.TraceTests.test_no_prototype_requires_reason) ... ok\ntest_no_silent_work_id_change (test_pretrial_package.TraceTests.test_no_silent_work_id_change) ... ok\ntest_noncontributing_owner_can_review (test_pretrial_package.TraceTests.test_noncontributing_owner_can_review) ... ok\ntest_numbered_baseline_required (test_pretrial_package.TraceTests.test_numbered_baseline_required) ... ok\ntest_real_evidence_not_accepted_as_synthetic (test_pretrial_package.TraceTests.test_real_evidence_not_accepted_as_synthetic) ... ok\ntest_reject_requires_failure (test_pretrial_package.TraceTests.test_reject_requires_failure) ... ok\ntest_reopen_cannot_directly_accept (test_pretrial_package.TraceTests.test_reopen_cannot_directly_accept) ... ok\ntest_reopen_requires_request_snapshot_and_reviewer (test_pretrial_package.TraceTests.test_reopen_requires_request_snapshot_and_reviewer) ... ok\ntest_reviewer_cannot_be_any_contributor (test_pretrial_package.TraceTests.test_reviewer_cannot_be_any_contributor) ... ok\ntest_route_and_terminal (test_pretrial_package.TraceTests.test_route_and_terminal) ... ok\ntest_silent_baseline_change_at_every_postapproval_event (test_pretrial_package.TraceTests.test_silent_baseline_change_at_every_postapproval_event) ... ok\ntest_timestamp_format_and_order (test_pretrial_package.TraceTests.test_timestamp_format_and_order) ... ok\ntest_verdict_values_and_shape_fail_closed (test_pretrial_package.TraceTests.test_verdict_values_and_shape_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 56 tests in 0.258s\n\nOK\n"
+  },
+  "remote_ci_at_capture": "NOT_YET_OBSERVED_FOR_THIS_UNCOMMITTED_PACKAGE",
+  "limitations": [
+    "Checks source-byte and value consistency, not truth or semantic relevance of a citation.",
+    "No authenticated actor, independent reviewer, or real-time approval is established.",
+    "No direct reconstruction of historical work states is claimed.",
+    "No new GitHub-label, linter, grep, agent-runtime or human experiment was performed.",
+    "Unknown method fields are 30 field occurrences across three records, not 30 newly found failures.",
+    "No usability or administrative-burden measurement was performed."
+  ],
+  "frozen_method_changed": false,
+  "pretrial_package_changed": false,
+  "live_project_changes": false,
+  "human_trial_claimed": false,
+  "formal_verification_promotions": 0,
+  "decision": "Draft complete for field-set review; operational adoption and prospective template require a separate decision."
+}

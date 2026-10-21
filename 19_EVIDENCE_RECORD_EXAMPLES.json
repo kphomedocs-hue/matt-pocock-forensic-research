@@ -1,0 +1,765 @@
+{
+  "artifact": "MINIMUM_EVIDENCE_DRAFT_EXAMPLES",
+  "version": "0.1-draft",
+  "status": "DRAFT_NOT_ADOPTED",
+  "snapshot": {
+    "repository": "kphomedocs-hue/matt-pocock-forensic-research",
+    "commit": "48dcfb47a8153e69316d9f6d47bee02b8b44ae8e"
+  },
+  "source_catalog": {
+    "labels": {
+      "path": "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json",
+      "blob_sha": "ce8106b6f5746a856e01ac4f24dd31806d337ab7"
+    },
+    "linter": {
+      "path": "04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json",
+      "blob_sha": "5b0c7d0a6ca8f33c8af30e514b900fa896bd9596"
+    },
+    "grep": {
+      "path": "04_CT019_REPRODUCTION.json",
+      "blob_sha": "96f4e798dd8a6a778eca8f8ce0e865367bb5a329"
+    },
+    "matrix": {
+      "path": "04_BEHAVIOR_MATRIX.json",
+      "blob_sha": "255ba6e696169caa241f1f03108af8e4000cc20b"
+    }
+  },
+  "records": [
+    {
+      "record_id": "RETRO-B-024-01",
+      "subject_id": "B-024",
+      "mode": "RETROSPECTIVE",
+      "question": {
+        "basis": "RECORDED",
+        "value": "Every triaged item maintains exactly one category role and exactly one state role.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/23/claim"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "inputs": [
+        {
+          "basis": "RECORDED",
+          "value": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "evidence": [
+            {
+              "source": "labels",
+              "pointer": "/frozen_commit"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": [
+            {
+              "path": "skills/engineering/triage/SKILL.md",
+              "blob_sha": "37ddea1e3dcf8fb5be5b92e4e45f2c34b8e61d3e",
+              "assertion": "Triage requires exactly one category role and exactly one state role; conflicting state roles must be flagged."
+            },
+            {
+              "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+              "blob_sha": "b716855d485f3865f9dfde2a82141721f065b2e7",
+              "assertion": "Canonical state-role mapping includes wontfix and other state labels."
+            }
+          ],
+          "evidence": [
+            {
+              "source": "labels",
+              "pointer": "/frozen_source_inputs"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": 35992558197,
+          "evidence": [
+            {
+              "source": "labels",
+              "pointer": "/workflow_run_id"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        }
+      ],
+      "checks": [
+        {
+          "check_id": "GH-004",
+          "criterion": {
+            "basis": "RECORDED",
+            "value": "Initial isolated fixture issue carried exactly one frozen category role and one frozen state role.",
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/3/assertion"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "observation": {
+            "basis": "RECORDED",
+            "value": [
+              "bug",
+              "needs-triage"
+            ],
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/3/observed_labels"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "reported_outcome": {
+            "basis": "RECORDED",
+            "value": true,
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/3/passed"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          }
+        },
+        {
+          "check_id": "GH-005",
+          "criterion": {
+            "basis": "RECORDED",
+            "value": "An additive quick-style state update left the prior canonical state and category roles in place, producing conflicting frozen roles simultaneously.",
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/4/assertion"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "observation": {
+            "basis": "RECORDED",
+            "value": [
+              "bug",
+              "enhancement",
+              "needs-triage",
+              "ready-for-agent"
+            ],
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/4/observed_labels"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "reported_outcome": {
+            "basis": "RECORDED",
+            "value": true,
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/4/passed"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          }
+        },
+        {
+          "check_id": "GH-006",
+          "criterion": {
+            "basis": "RECORDED",
+            "value": "Explicit label removal restored the fixture to a closed, label-free state.",
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/5/assertion"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "observation": {
+            "basis": "RECORDED",
+            "value": [],
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/5/observed_labels"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "reported_outcome": {
+            "basis": "RECORDED",
+            "value": true,
+            "evidence": [
+              {
+                "source": "labels",
+                "pointer": "/tests/5/passed"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          }
+        }
+      ],
+      "conclusion": {
+        "basis": "RECORDED",
+        "value": "Triage explicitly states the one-category/one-state invariant and tells the agent to stop on pre-existing state-role conflicts. Exact isolated tracker observation: a fixture initially carrying `bug` + `needs-triage` retained both when additive quick-style labels `enhancement` + `ready-for-agent` were applied, yielding two category roles and two frozen canonical state roles. GitHub label operations are additive; the tracker does not enforce role exclusivity. This confirms the external-dependency weakness, while prompt adherence remains separate.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/23/adjudication"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "limits": [
+        "This replay reads retained JSON; it does not repeat the GitHub label operations or independently verify cleanup.",
+        "Recorded assertions are not proof that acceptance criteria were approved before execution.",
+        "External tracker behavior does not establish triage-agent adherence."
+      ],
+      "next_action": {
+        "basis": "RECORDED",
+        "value": "Prompt-level red-team testing remains needed to determine whether a real triage agent flags/removes conflicts before acting; this external observation does not establish agent adherence.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/23/next_evidence"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "method_evidence": {
+        "owner": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "contributors": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "reviewer": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "specification_approval": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "criteria_preapproval": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "event_times": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "transition_history": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "specification_fidelity_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "quality_and_standards_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "operational_readiness_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-024 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        }
+      },
+      "adoption_status": "NOT_ESTABLISHED"
+    },
+    {
+      "record_id": "RETRO-B-047-01",
+      "subject_id": "B-047",
+      "mode": "RETROSPECTIVE",
+      "question": {
+        "basis": "RECORDED",
+        "value": "The variant combinations described as valid by scaffold-exercises match the combinations its mandatory linter accepts.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/46/claim"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "inputs": [
+        {
+          "basis": "RECORDED",
+          "value": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "evidence": [
+            {
+              "source": "linter",
+              "pointer": "/frozen_commit"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": {
+            "repo": "mattpocock/ai-hero-cli",
+            "commit": "5071b7d2d0e0514e134dadd26d9bed23c7c54365",
+            "tag": "v0.2.8",
+            "package_version": "0.2.8",
+            "entrypoint": "dist/bin.cjs"
+          },
+          "evidence": [
+            {
+              "source": "linter",
+              "pointer": "/external_linter"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": {
+            "repo": "ai-hero-dev/cohort-002-skill-building",
+            "commit": "73969f1a1ec65b390f0532bb8ae6c693376fca9e",
+            "declared_range": "^0.2.8",
+            "exact_lock_entry": "ai-hero-cli@0.2.8:"
+          },
+          "evidence": [
+            {
+              "source": "linter",
+              "pointer": "/external_course_lock"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": 34930009546,
+          "evidence": [
+            {
+              "source": "linter",
+              "pointer": "/workflow_run_id"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        }
+      ],
+      "checks": [
+        {
+          "check_id": "SE-002",
+          "criterion": {
+            "basis": "RECORDED",
+            "value": [
+              "fixture contains exactly one solution/readme.md variant with real content",
+              "no problem, explainer, or explainer.1 directory exists",
+              "the tagged external linter exits non-zero and names the missing primary-variant rule"
+            ],
+            "evidence": [
+              {
+                "source": "linter",
+                "pointer": "/tests/1/assertions"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "observation": {
+            "basis": "RECORDED",
+            "value": {
+              "command": [
+                "node",
+                "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/external-ai-hero-cli/dist/bin.cjs",
+                "internal",
+                "lint",
+                "--root",
+                "/tmp/phase4-scaffold-exercises-x_wrpuc5/solution-only/exercises",
+                "--cwd",
+                "/tmp/phase4-scaffold-exercises-x_wrpuc5/solution-only"
+              ],
+              "returncode": 1,
+              "stdout": "01-contracts\n  01.01-solution-only\n    No problem, explainer, or explainer.1 folder found in the exercise.\n",
+              "stderr": ""
+            },
+            "evidence": [
+              {
+                "source": "linter",
+                "pointer": "/tests/1/evidence/linter_run"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "reported_outcome": {
+            "basis": "RECORDED",
+            "value": true,
+            "evidence": [
+              {
+                "source": "linter",
+                "pointer": "/tests/1/passed"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          }
+        },
+        {
+          "check_id": "SE-003",
+          "criterion": {
+            "basis": "RECORDED",
+            "value": [
+              "fixture contains exactly one explainer/readme.md variant with real content",
+              "the same tagged external linter accepts that primary variant"
+            ],
+            "evidence": [
+              {
+                "source": "linter",
+                "pointer": "/tests/2/assertions"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "observation": {
+            "basis": "RECORDED",
+            "value": {
+              "command": [
+                "node",
+                "/home/runner/work/matt-pocock-forensic-research/matt-pocock-forensic-research/external-ai-hero-cli/dist/bin.cjs",
+                "internal",
+                "lint",
+                "--root",
+                "/tmp/phase4-scaffold-exercises-x_wrpuc5/explainer-only/exercises",
+                "--cwd",
+                "/tmp/phase4-scaffold-exercises-x_wrpuc5/explainer-only"
+              ],
+              "returncode": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            "evidence": [
+              {
+                "source": "linter",
+                "pointer": "/tests/2/evidence/linter_run"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "reported_outcome": {
+            "basis": "RECORDED",
+            "value": true,
+            "evidence": [
+              {
+                "source": "linter",
+                "pointer": "/tests/2/passed"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          }
+        }
+      ],
+      "conclusion": {
+        "basis": "RECORDED",
+        "value": "Frozen scaffold-exercises permits a solution-only exercise, but isolated execution of the exact external ai-hero-cli v0.2.8 linter selected by the public course lock rejects a solution-only readme fixture with the stated missing-primary-variant error. An explainer-only control passes. The prompt/linter mismatch is operational; CT-020 remains open.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/46/adjudication"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "limits": [
+        "The rejected solution-only fixture is an expected test observation, not a REJECTED work-item transition.",
+        "Passing test assertions demonstrate a retained mismatch result; they do not close CT-020 or approve operational use.",
+        "The pair of fixtures resembles a prototype, but there is no recorded owner-authorized PROTOTYPING transition in this sample."
+      ],
+      "next_action": {
+        "basis": "RECORDED",
+        "value": "Frozen behavior is runtime-observed. Source-side correction must make the allowed-variant prose and mandatory linter acceptance set identical, then rerun solution-only and explainer-only fixtures.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/46/next_evidence"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "method_evidence": {
+        "owner": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "contributors": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "reviewer": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "specification_approval": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "criteria_preapproval": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "event_times": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "transition_history": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "specification_fidelity_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "quality_and_standards_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "operational_readiness_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-047 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        }
+      },
+      "adoption_status": "NOT_ESTABLISHED"
+    },
+    {
+      "record_id": "RETRO-B-046-01",
+      "subject_id": "B-046",
+      "mode": "RETROSPECTIVE",
+      "question": {
+        "basis": "RECORDED",
+        "value": "The migration's discovery command finds the assertion forms the skill promises to replace, including `as unknown as Type`.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/45/claim"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "inputs": [
+        {
+          "basis": "RECORDED",
+          "value": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "evidence": [
+            {
+              "source": "grep",
+              "pointer": "/frozen_commit"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": "grep -r \" as [A-Z]\" --include=\"*.test.ts\" --include=\"*.spec.ts\"",
+          "evidence": [
+            {
+              "source": "grep",
+              "pointer": "/documented_command"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": "// SIMPLE_ASSERTION\nconst simple = {} as Request;\n// DOUBLE_ASSERTION\nconst doubled = {} as unknown as Request;\n// LOWERCASE_TARGET_CONTROL\nconst lower = {} as request;\n",
+          "evidence": [
+            {
+              "source": "grep",
+              "pointer": "/fixture"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        },
+        {
+          "basis": "RECORDED",
+          "value": "34926350919",
+          "evidence": [
+            {
+              "source": "grep",
+              "pointer": "/workflow_run_id"
+            }
+          ],
+          "reason": "Exact value from the retained record; not a new execution observation."
+        }
+      ],
+      "checks": [
+        {
+          "check_id": "CT019-R1",
+          "criterion": {
+            "basis": "INFERRED",
+            "value": "Determine whether the documented pattern finds both advertised assertion forms while excluding the lowercase-target control.",
+            "evidence": [
+              {
+                "source": "grep",
+                "pointer": "/documented_command"
+              },
+              {
+                "source": "grep",
+                "pointer": "/fixture"
+              }
+            ],
+            "reason": "Retrospective reconstruction from the fixture and command, not a pre-approved specification."
+          },
+          "observation": {
+            "basis": "RECORDED",
+            "value": "fixture.test.ts:const simple = {} as Request;\nfixture.test.ts:const doubled = {} as unknown as Request;\n",
+            "evidence": [
+              {
+                "source": "grep",
+                "pointer": "/stdout"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          },
+          "reported_outcome": {
+            "basis": "RECORDED",
+            "value": "CT-019 original discovery-gap hypothesis is false: grep scans the whole line, and the second `as Request` substring in `as unknown as Request` satisfies ` as [A-Z]`.",
+            "evidence": [
+              {
+                "source": "grep",
+                "pointer": "/conclusion"
+              }
+            ],
+            "reason": "Exact value from the retained record; not a new execution observation."
+          }
+        }
+      ],
+      "conclusion": {
+        "basis": "RECORDED",
+        "value": "Exact frozen-command reproduction disproved the earlier discovery-gap hypothesis. The grep searches each whole line; a documented `as unknown as Request` fixture is returned because its second ` as Request` substring satisfies ` as [A-Z]`. A lowercase-target control (`as request`) did not match. The discovery command therefore covers both advertised assertion forms, although the subsequent migration edits remain prompt-driven rather than mechanically guaranteed.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/45/adjudication"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "limits": [
+        "A command return code is not an independent review verdict.",
+        "The correction concerns assertion discovery only, not the later migration edits.",
+        "Earlier workflow IDs listed in the behavior matrix are references; this draft does not independently verify their logs or infer dates from their numbers."
+      ],
+      "next_action": {
+        "basis": "RECORDED",
+        "value": "If deeper verification is needed, test the actual edit/import/type-check migration on representative single- and double-assertion files; discovery coverage itself is closed.",
+        "evidence": [
+          {
+            "source": "matrix",
+            "pointer": "/rows/45/next_evidence"
+          }
+        ],
+        "reason": "Exact value from the retained record; not a new execution observation."
+      },
+      "method_evidence": {
+        "owner": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "contributors": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "reviewer": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "specification_approval": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "criteria_preapproval": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "event_times": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "transition_history": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "specification_fidelity_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "quality_and_standards_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        },
+        "operational_readiness_review": {
+          "basis": "UNKNOWN",
+          "value": null,
+          "evidence": [],
+          "reason": "Not established for B-046 by the selected result record and behavior-matrix row. Absence from this sample is not proof it never existed."
+        }
+      },
+      "adoption_status": "NOT_ESTABLISHED"
+    }
+  ]
+}

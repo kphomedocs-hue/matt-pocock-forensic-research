@@ -34,6 +34,10 @@ jobs:
         run: python scripts/validate_pretrial_package.py
       - name: Test pre-trial semantic rejection rules
         run: python -m unittest discover -s tests -p 'test_pretrial*.py' -v
+      - name: Validate draft documentary evidence mappings
+        run: |
+          python scripts/validate_evidence_draft.py
+          python -m unittest discover -s tests -p 'test_evidence_draft.py' -v
       - name: Rebuild human research checkpoint
         run: python scripts/build_research_status.py
       - name: Ensure validators are non-mutating on committed main

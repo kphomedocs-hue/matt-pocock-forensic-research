@@ -55,6 +55,7 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Semantic hardening: `17_PRE_TRIAL_SEMANTIC_RECHECK.md` and `17_PRE_TRIAL_SEMANTIC_RESULTS.json` supersede the earlier validator assurance. Manifest schema 2 pins the new checker and regression suite. Local Python 3.12.14 execution: 36 test methods passed, including 1,448 malformed-field subcases and 68 forbidden state-pair subcases; three positive traces/24 transitions passed; all four negative attempts actually executed and rejected for the expected reasons; package hard errors 0. Remote CI is not established by these local results. The checker validates only the synthetic schema, not evidence authenticity or the complete operating method. VERIFIED remains 0/164 and the 49 pending behavior rows are unchanged.
 - Historical replay: `18_HISTORICAL_TRACE_REPLAY.md` and its JSON record a read-only replay of B-024, B-047 and B-046/CT-019 from the machine artifacts at the prior head. It found useful decision/test/provenance detail, but none of the three is a complete trace under method v1.0; explicit role identities, task-baseline approval, transition times, append-only work history and three-axis reviews are absent. No blocked/resume or reopen trace was found in these selected records (not evidence such events never occurred). This is not human-trial evidence, does not establish method usability, and did not change the frozen method or any live project. Next: draft and review a minimum evidence schema before deciding whether more historical replay is worthwhile.
 - Remote CI for semantic-hardening commit `deb711e72a3ae3c4c2ca7f84d2ae732844b20fdf`: Phase 4 main guard run `39651125957` completed SUCCESS, including the new semantic test step. This reports CI for that exact commit only.
+- Minimum evidence draft: `19_MINIMUM_EVIDENCE_SCHEMA.md` and `19_EVIDENCE_RECORD_EXAMPLES.json` define and populate a retrospective documentary contract, DRAFT_NOT_ADOPTED. Three records map six checks to four pinned JSON sources at research commit `48dcfb47a8153e69316d9f6d47bee02b8b44ae8e`. RECORDED means exact retained-source value, INFERRED means interpretation, UNKNOWN remains explicit. All 30 method-evidence field occurrences remain unknown; no approval was invented. `scripts/validate_evidence_draft.py` checks structure, source hashes and value mappings, not truth, relevance, identity, or readiness. Its regression suite and local results are documented in `19_EVIDENCE_SCHEMA_REVIEW.json`. The frozen method and pre-trial package are unchanged. Next decision: review this draft field set; no operational adoption or additional replay is automatic.
 
 ### Persistent environment constraint
 
@@ -158,7 +159,8 @@ Before doing any new research, fetch the latest `main` of this repository and in
 23. `17_PRE_TRIAL_SEMANTIC_RECHECK.md` and `17_PRE_TRIAL_SEMANTIC_RESULTS.json`
 24. `scripts/pretrial_semantics.py` and `tests/test_pretrial_package.py`
 25. `18_HISTORICAL_TRACE_REPLAY.md` and `18_HISTORICAL_TRACE_REPLAY.json`
-26. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
+26. `19_MINIMUM_EVIDENCE_SCHEMA.md`, `19_EVIDENCE_RECORD_EXAMPLES.json` and `19_EVIDENCE_SCHEMA_REVIEW.json`
+27. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
 
 For exact Phase 4 state, prefer `04_BEHAVIOR_MATRIX.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` over prose summaries.
 
@@ -177,7 +179,7 @@ Fallback only if the new chat cannot access GitHub: upload the minimum resume fi
 
 ## Immediate next execution
 
-For the pre-application refinement track: validator hardening is complete only within the synthetic scope documented in artifact 17; the read-only sample replay is documented in artifact 18. Next draft a minimum evidence schema sized to the demonstrated research cases. Do not alter the frozen method until that schema is reviewed. Do not infer missing actors or transitions, relabel synthetic evidence as human results, or apply any method to live projects. Evidence authenticity, per-axis evidence, prototype judgments, and durable append-only history remain open before any claim of full automated enforcement.
+For the pre-application refinement track: artifact 17 contains synthetic guard checks, artifact 18 contains the documentary replay, and artifact 19 contains the minimum evidence draft and worked mappings. The drafting step is complete; the next bounded decision is review/approval or revision of the field set, not another automatic audit cycle. Any prospective template or operational adaptation needs a separate decision. Do not alter the frozen method, infer missing actors or transitions, relabel retained/synthetic evidence as new human results, or apply the method to live projects. Evidence authenticity, per-axis review, prototype judgments, and append-only history remain open.
 
 1. Re-read current `09_STATIC_RED_TEAM_LOG.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
 2. Preserve the static/queue reconciliation: all prompt rows remain pending until actual prompt-adherence/runtime evidence exists.
