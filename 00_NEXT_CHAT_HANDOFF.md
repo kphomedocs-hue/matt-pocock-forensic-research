@@ -50,8 +50,9 @@ All frozen-source claims must be fetched at that exact commit/tree/blob. Default
 - Tooling unknown entries: 0.
 - Tooling unresolved/review-required entries: 0.
 - Research Findings Architecture: `10_RESEARCH_FINDINGS_ARCHITECTURE.md` (controlled synthesis before any project adaptation).
-- Neutral operating method: `11_NEUTRAL_OPERATING_METHOD.md` v1.0-static-reviewed; `12_NEUTRAL_METHOD_RED_TEAM.json` records 10/10 desk checks, 3/3 synthetic cases, and 4/4 negative controls. Static baseline only; staff trial remains unperformed.
-- Pre-application human trial and pilot gate: `13_PRE_APPLICATION_TRIAL_AND_PILOT_GATE.md` is READY FOR HUMAN TRIAL, not a completed trial. It uses separate card IDs, concealed scoring, mandatory retained evidence, and a determinate v2 route. `14_PRE_TRIAL_DESK_RECHECK.md` records the static recheck. `15_PRE_TRIAL_PACKAGE_MANIFEST.json` freezes the package; `scripts/validate_pretrial_package.py` passed with 0 hard errors (3 synthetic cases, 24 transitions, 4 negative controls); `16_HUMAN_TRIAL_KIT.md` separates participant and observer materials. It recommends A3351 conditionally; no live project has been changed.
+- Neutral operating method: `11_NEUTRAL_OPERATING_METHOD.md` v1.0-static-reviewed is unchanged. `12_NEUTRAL_METHOD_RED_TEAM.json` preserves historical desk checks, three synthetic traces, and four recorded negative-control outcomes. Those historical labels were not themselves executable validation. Staff trial remains unperformed.
+- Pre-application gate: `13_PRE_APPLICATION_TRIAL_AND_PILOT_GATE.md` and `16_HUMAN_TRIAL_KIT.md` are plans, not a completed trial or evidence that separate concealed packets/PDF fixtures exist. Earlier READY language is conditional on actual fixture preparation. No live project has changed.
+- Semantic hardening: `17_PRE_TRIAL_SEMANTIC_RECHECK.md` and `17_PRE_TRIAL_SEMANTIC_RESULTS.json` supersede the earlier validator assurance. Manifest schema 2 pins the new checker and regression suite. Local Python 3.12.14 execution: 36 test methods passed, including 1,448 malformed-field subcases and 68 forbidden state-pair subcases; three positive traces/24 transitions passed; all four negative attempts actually executed and rejected for the expected reasons; package hard errors 0. Remote CI is not established by these local results. The checker validates only the synthetic schema, not evidence authenticity or the complete operating method. VERIFIED remains 0/164 and the 49 pending behavior rows are unchanged.
 
 ### Persistent environment constraint
 
@@ -152,7 +153,9 @@ Before doing any new research, fetch the latest `main` of this repository and in
 20. `15_PRE_TRIAL_PACKAGE_MANIFEST.json`
 21. `16_HUMAN_TRIAL_KIT.md`
 22. `scripts/validate_pretrial_package.py`
-23. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
+23. `17_PRE_TRIAL_SEMANTIC_RECHECK.md` and `17_PRE_TRIAL_SEMANTIC_RESULTS.json`
+24. `scripts/pretrial_semantics.py` and `tests/test_pretrial_package.py`
+25. this file, `00_NEXT_CHAT_HANDOFF.md`, as a convenience pointer only.
 
 For exact Phase 4 state, prefer `04_BEHAVIOR_MATRIX.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` over prose summaries.
 
@@ -170,6 +173,8 @@ When testing a behavior, fetch the exact source/config/script files named in tha
 Fallback only if the new chat cannot access GitHub: upload the minimum resume files listed above plus the exact frozen source files needed for the next selected behavior. Do not build a new independent source-of-truth ZIP unless necessary.
 
 ## Immediate next execution
+
+For the pre-application refinement track: validator hardening is complete only within the synthetic scope documented in artifact 17. Next consider read-only replay of selected completed work after defining the evidence schema, without relabeling synthetic or missing evidence as human results. No historical replay has been performed yet. The operating method still needs evidence authenticity, per-axis evidence, prototype judgments, and durable append-only history controls before any claim of full automated enforcement.
 
 1. Re-read current `09_STATIC_RED_TEAM_LOG.json` and `04_RUNTIME_OBSERVATION_QUEUE.json` from latest `main`.
 2. Preserve the static/queue reconciliation: all prompt rows remain pending until actual prompt-adherence/runtime evidence exists.

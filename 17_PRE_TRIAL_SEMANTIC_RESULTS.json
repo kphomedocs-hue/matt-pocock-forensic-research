@@ -1,0 +1,83 @@
+{
+  "artifact": "PRE_TRIAL_SEMANTIC_LOCAL_RESULTS",
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-21T18:14:14Z",
+  "research_parent": "03c7d59acf0c39de97e65725896b67bf9e8d26d2",
+  "environment": "Local scratch staging; Python 3.12.14; no network used by tests",
+  "evidence_class": "SYNTHETIC_TRACE_CHECK_ONLY",
+  "input_blobs": {
+    "method": "4f3dc9653e5a86456c079dc4a1faf5687aa41271",
+    "historical_red_team": "55fc598a8628a6b93be39e7780bf449718239265",
+    "validator": "1be9e4932e06d819e114ca7dd8f3d3a48f108cf4",
+    "semantic_checker": "b1790d53a09eae9fd3fce7933b3a1a344eac3b95",
+    "regression_suite": "93fec465e565b9cdffad75323349af2854d856de"
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -p 'test_pretrial*.py' -v",
+    "exit_code": 0,
+    "test_methods": 36,
+    "malformed_field_subcases": 1448,
+    "forbidden_state_pair_subcases": 68,
+    "output": "test_benign_attempt_is_not_reported_as_rejected (test_pretrial_package.ControlTests.test_benign_attempt_is_not_reported_as_rejected) ... ok\ntest_control_ids_and_schema (test_pretrial_package.ControlTests.test_control_ids_and_schema) ... ok\ntest_four_controls_execute (test_pretrial_package.ControlTests.test_four_controls_execute) ... ok\ntest_historical_labels_do_not_determine_results (test_pretrial_package.ControlTests.test_historical_labels_do_not_determine_results) ... ok\ntest_cli_package_and_executed_results (test_pretrial_package.ManifestTests.test_cli_package_and_executed_results) ... ok\ntest_complete_manifest (test_pretrial_package.ManifestTests.test_complete_manifest) ... ok\ntest_missing_files_bad_hash_and_drift (test_pretrial_package.ManifestTests.test_missing_files_bad_hash_and_drift) ... ok\ntest_omitted_or_empty_manifest_rejected (test_pretrial_package.ManifestTests.test_omitted_or_empty_manifest_rejected) ... ok\ntest_raw_bytes_hash_not_newline_normalized (test_pretrial_package.ManifestTests.test_raw_bytes_hash_not_newline_normalized) ... ok\ntest_symlinks_rejected (test_pretrial_package.ManifestTests.test_symlinks_rejected) ... ok\ntest_traversal_and_absolute_path_rejected_before_read (test_pretrial_package.ManifestTests.test_traversal_and_absolute_path_rejected_before_read) ... ok\ntest_accept_rejects_each_failed_axis (test_pretrial_package.TraceTests.test_accept_rejects_each_failed_axis) ... ok\ntest_accept_rejects_missing_axis (test_pretrial_package.TraceTests.test_accept_rejects_missing_axis) ... ok\ntest_all_event_fields_reject_wrong_types_and_empty_values (test_pretrial_package.TraceTests.test_all_event_fields_reject_wrong_types_and_empty_values) ... ok\ntest_all_forbidden_edges_from_reachable_prefixes (test_pretrial_package.TraceTests.test_all_forbidden_edges_from_reachable_prefixes) ... ok\ntest_blocked_metadata_and_resolution (test_pretrial_package.TraceTests.test_blocked_metadata_and_resolution) ... ok\ntest_blocked_resume_cannot_skip (test_pretrial_package.TraceTests.test_blocked_resume_cannot_skip) ... ok\ntest_cancel_is_terminal (test_pretrial_package.TraceTests.test_cancel_is_terminal) ... ok\ntest_every_transition_rejects_unknown_actor (test_pretrial_package.TraceTests.test_every_transition_rejects_unknown_actor) ... ok\ntest_every_transition_requires_metadata (test_pretrial_package.TraceTests.test_every_transition_requires_metadata) ... ok\ntest_historical_positive_traces (test_pretrial_package.TraceTests.test_historical_positive_traces) ... ok\ntest_malformed_shapes_fail_closed (test_pretrial_package.TraceTests.test_malformed_shapes_fail_closed) ... ok\ntest_material_change_requires_new_baseline (test_pretrial_package.TraceTests.test_material_change_requires_new_baseline) ... ok\ntest_no_prototype_requires_reason (test_pretrial_package.TraceTests.test_no_prototype_requires_reason) ... ok\ntest_no_silent_work_id_change (test_pretrial_package.TraceTests.test_no_silent_work_id_change) ... ok\ntest_noncontributing_owner_can_review (test_pretrial_package.TraceTests.test_noncontributing_owner_can_review) ... ok\ntest_numbered_baseline_required (test_pretrial_package.TraceTests.test_numbered_baseline_required) ... ok\ntest_real_evidence_not_accepted_as_synthetic (test_pretrial_package.TraceTests.test_real_evidence_not_accepted_as_synthetic) ... ok\ntest_reject_requires_failure (test_pretrial_package.TraceTests.test_reject_requires_failure) ... ok\ntest_reopen_cannot_directly_accept (test_pretrial_package.TraceTests.test_reopen_cannot_directly_accept) ... ok\ntest_reopen_requires_request_snapshot_and_reviewer (test_pretrial_package.TraceTests.test_reopen_requires_request_snapshot_and_reviewer) ... ok\ntest_reviewer_cannot_be_any_contributor (test_pretrial_package.TraceTests.test_reviewer_cannot_be_any_contributor) ... ok\ntest_route_and_terminal (test_pretrial_package.TraceTests.test_route_and_terminal) ... ok\ntest_silent_baseline_change_at_every_postapproval_event (test_pretrial_package.TraceTests.test_silent_baseline_change_at_every_postapproval_event) ... ok\ntest_timestamp_format_and_order (test_pretrial_package.TraceTests.test_timestamp_format_and_order) ... ok\ntest_verdict_values_and_shape_fail_closed (test_pretrial_package.TraceTests.test_verdict_values_and_shape_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 0.182s\n\nOK\n"
+  },
+  "package": {
+    "command": "python scripts/validate_pretrial_package.py",
+    "exit_code": 0,
+    "result": {
+      "artifact": "PRE_TRIAL_PACKAGE_VALIDATION",
+      "method_blob": "4f3dc9653e5a86456c079dc4a1faf5687aa41271",
+      "synthetic_case_count": 3,
+      "synthetic_transition_count": 24,
+      "executed_negative_control_count": 4,
+      "executed_negative_controls": [
+        {
+          "id": "NC-01",
+          "expected_error": "REVIEW_AUTHORITY",
+          "rejected_as_expected": true,
+          "errors": [
+            "event[3]:REVIEW_AUTHORITY"
+          ]
+        },
+        {
+          "id": "NC-02",
+          "expected_error": "VERDICT_AXES",
+          "rejected_as_expected": true,
+          "errors": [
+            "event[3]:VERDICT_AXES",
+            "event[3]:ACCEPT_REQUIRES_PASS"
+          ]
+        },
+        {
+          "id": "NC-03",
+          "expected_error": "BLOCKED_RESUME",
+          "rejected_as_expected": true,
+          "errors": [
+            "event[3]:BLOCKED_RESUME"
+          ]
+        },
+        {
+          "id": "NC-04",
+          "expected_error": "BASELINE_DRIFT",
+          "rejected_as_expected": true,
+          "errors": [
+            "event[2]:BASELINE_DRIFT"
+          ]
+        }
+      ],
+      "evidence_class": "SYNTHETIC_TRACE_CHECK_ONLY",
+      "human_evidence_validated": false,
+      "hard_errors": [],
+      "human_trial_claimed": false,
+      "live_project_changes": false
+    }
+  },
+  "remote_ci": "NOT_OBSERVED_AT_LOCAL_CAPTURE",
+  "human_trial": "NOT_YET_RUN",
+  "historical_work_replay": "NOT_RUN",
+  "live_project_changes": false,
+  "development_notes": [
+    "Old manifest correctly failed after implementation changes until hashes were repinned.",
+    "Exploratory nonempty-prose mutation incorrectly expected rejection of reason UNKNOWN; corrected the test assumption, not the structural reason check."
+  ],
+  "limitations_report": "17_PRE_TRIAL_SEMANTIC_RECHECK.md"
+}
