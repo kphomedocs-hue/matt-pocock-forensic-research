@@ -1,0 +1,112 @@
+{
+  "artifact": "HISTORICAL_METHOD_TRACE_REPLAY",
+  "schema_version": 1,
+  "research_head": "deb711e72a3ae3c4c2ca7f84d2ae732844b20fdf",
+  "frozen_subject_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+  "replay_type": "retrospective_read_only_documentary_analysis",
+  "human_trial": false,
+  "live_projects_changed": false,
+  "method_version_reviewed": "v1.0-static-reviewed",
+  "method_blob": "4f3dc9653e5a86456c079dc4a1faf5687aa41271",
+  "cases": [
+    {
+      "id": "B-024",
+      "tests": [
+        "GH-004",
+        "GH-005",
+        "GH-006"
+      ],
+      "workflow_run_id": 35992558197,
+      "result_file": "04_B024_GITHUB_LABEL_RUNTIME_RESULTS.json",
+      "observed": "Additive tracker labels can leave conflicting category and state roles; fixture cleanup closed issue and removed labels.",
+      "method_signals": [
+        "falsifiable_question",
+        "small_controlled_fixture",
+        "source_versioned_evidence",
+        "bounded_conclusion"
+      ],
+      "unknowns": [
+        "owner identity",
+        "contributor identity",
+        "reviewer and independence",
+        "task baseline approval",
+        "transition timestamps",
+        "three_axis_review",
+        "append_only_work_state_history"
+      ],
+      "limitation": "External tracker behavior only; no agent prompt adherence."
+    },
+    {
+      "id": "B-047",
+      "tests": [
+        "SE-001",
+        "SE-002",
+        "SE-003"
+      ],
+      "workflow_run_id": 34930009546,
+      "result_file": "04_SCAFFOLD_EXERCISES_LINTER_RESULTS.json",
+      "observed": "Solution-only synthetic fixture rejected by pinned linter; explainer-only control accepted; source gap remains open.",
+      "method_signals": [
+        "falsifiable_question",
+        "controlled_positive_negative_fixtures",
+        "pinned_external_dependency",
+        "next_action_recorded"
+      ],
+      "inferred": [
+        "fixture experiment resembles prototype; not an explicit method state"
+      ],
+      "unknowns": [
+        "owner identity",
+        "contributor identity",
+        "reviewer and independence",
+        "task baseline approval",
+        "transition timestamps",
+        "three_axis_review",
+        "append_only_work_state_history"
+      ],
+      "limitation": "Does not show source correction or agent adherence."
+    },
+    {
+      "id": "B-046",
+      "tests": [
+        "CT019-R1"
+      ],
+      "workflow_run_ids": [
+        34748243021,
+        34866017975,
+        34926350919
+      ],
+      "result_file": "04_CT019_REPRODUCTION.json",
+      "observed": "Exact grep control returned simple and double assertions but not lowercase target; original discovery-gap hypothesis withdrawn as false positive.",
+      "method_signals": [
+        "question",
+        "exact_command",
+        "controlled_fixture",
+        "observed_output",
+        "explicit_decision_correction",
+        "durable_provenance"
+      ],
+      "unknowns": [
+        "owner identity",
+        "contributor identity",
+        "reviewer and independence",
+        "task baseline approval",
+        "transition timestamps",
+        "three_axis_review",
+        "append_only_work_state_history"
+      ],
+      "limitation": "Prior run IDs establish repeated recorded reproduction; not exact event/actor sequence."
+    }
+  ],
+  "coverage": {
+    "documented_case_count": 3,
+    "formal_method_traces": 0,
+    "explicit_owner_contributor_reviewer_roles": 0,
+    "three_axis_reviews": 0,
+    "blocked_resume_cases_found_in_selected_records": 0,
+    "reopen_cases_found_in_selected_records": 0,
+    "unknown_is_not_failure": true
+  },
+  "decision": "Supports bounded claims, provenance, controlled tests, and visible correction history. Does not establish method compliance, usability, efficiency, or live-project readiness.",
+  "next": "Draft a minimum retrospective work-record schema; leave frozen method unchanged pending review."
+}
